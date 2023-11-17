@@ -197,7 +197,7 @@ namespace Bc_prace
 
         private void txtBoxPLCIP_TextChanged(object sender, EventArgs e)
         {
-
+               
         }
 
 
