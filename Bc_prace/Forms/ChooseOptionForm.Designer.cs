@@ -40,6 +40,8 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel1 = new Panel();
+            components = new System.ComponentModel.Container();
+            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();

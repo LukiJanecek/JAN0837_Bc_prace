@@ -1,0 +1,11 @@
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\bin\Debug\net5.0\Sharp7Lib.deps.json
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\bin\Debug\net5.0\Sharp7Lib.dll
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\bin\Debug\net5.0\Sharp7Lib.pdb
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.AssemblyInfoInputs.cache
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.AssemblyInfo.cs
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.dll
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\refint\Sharp7Lib.dll
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\Sharp7Lib.pdb
+C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_bc_prace\Sharp7\obj\Debug\net5.0\ref\Sharp7Lib.dll
