@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "R4KCxkX2+0rcRBtgYSmSJ79t7EWhV/GZtIEmYe0SAc90j9ApFPgUYqruFkpTwAxPq/LZxH+ab1eLlXDIQogJxA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_bc_prace\\Sharp7\\Sharp7Lib.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
