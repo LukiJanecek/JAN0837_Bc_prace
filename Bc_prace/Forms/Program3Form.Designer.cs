@@ -36,6 +36,7 @@
             panel1 = new Panel();
             btnPedestrian1 = new Button();
             btnPedestrian2 = new Button();
+            userControlCrossroad1 = new Controls.UserControlCrossroad();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,11 +122,19 @@
             btnPedestrian2.Text = "Pedestrian";
             btnPedestrian2.UseVisualStyleBackColor = true;
             // 
+            // userControlCrossroad1
+            // 
+            userControlCrossroad1.Location = new Point(166, 103);
+            userControlCrossroad1.Name = "userControlCrossroad1";
+            userControlCrossroad1.Size = new Size(188, 188);
+            userControlCrossroad1.TabIndex = 32;
+            // 
             // Program3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(userControlCrossroad1);
             Controls.Add(btnPedestrian2);
             Controls.Add(btnPedestrian1);
             Controls.Add(panel1);
@@ -150,5 +159,6 @@
         private Panel panel1;
         private Button btnPedestrian1;
         private Button btnPedestrian2;
+        private Controls.UserControlCrossroad userControlCrossroad1;
     }
 }
