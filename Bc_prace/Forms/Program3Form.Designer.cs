@@ -46,7 +46,7 @@
             statusStripGarage.Location = new Point(0, 578);
             statusStripGarage.Name = "statusStripGarage";
             statusStripGarage.Padding = new Padding(1, 0, 16, 0);
-            statusStripGarage.Size = new Size(914, 22);
+            statusStripGarage.Size = new Size(1045, 22);
             statusStripGarage.TabIndex = 0;
             statusStripGarage.Text = "statusStrip1";
             // 
@@ -84,7 +84,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(519, 104);
+            radioButton1.Location = new Point(50, 358);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(117, 24);
             radioButton1.TabIndex = 28;
@@ -96,17 +96,20 @@
             // panel1
             // 
             panel1.Controls.Add(btnEnd);
+            panel1.Controls.Add(btnPedestrian1);
+            panel1.Controls.Add(radioButton1);
+            panel1.Controls.Add(btnPedestrian2);
             panel1.Controls.Add(btnEmergency);
             panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(725, 0);
+            panel1.Location = new Point(856, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(189, 578);
             panel1.TabIndex = 29;
             // 
             // btnPedestrian1
             // 
-            btnPedestrian1.Location = new Point(180, 383);
+            btnPedestrian1.Location = new Point(16, 283);
             btnPedestrian1.Name = "btnPedestrian1";
             btnPedestrian1.Size = new Size(94, 29);
             btnPedestrian1.TabIndex = 30;
@@ -115,7 +118,7 @@
             // 
             // btnPedestrian2
             // 
-            btnPedestrian2.Location = new Point(468, 383);
+            btnPedestrian2.Location = new Point(16, 236);
             btnPedestrian2.Name = "btnPedestrian2";
             btnPedestrian2.Size = new Size(94, 29);
             btnPedestrian2.TabIndex = 31;
@@ -124,27 +127,25 @@
             // 
             // userControlCrossroad1
             // 
-            userControlCrossroad1.Location = new Point(166, 103);
+            userControlCrossroad1.Location = new Point(12, 12);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(188, 188);
+            userControlCrossroad1.Size = new Size(703, 548);
             userControlCrossroad1.TabIndex = 32;
             // 
             // Program3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1045, 600);
             Controls.Add(userControlCrossroad1);
-            Controls.Add(btnPedestrian2);
-            Controls.Add(btnPedestrian1);
             Controls.Add(panel1);
-            Controls.Add(radioButton1);
             Controls.Add(statusStripGarage);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program3Form";
             Text = "Program3";
             Load += Program3_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
