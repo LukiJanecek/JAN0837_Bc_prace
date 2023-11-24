@@ -30,6 +30,8 @@ namespace Bc_prace.Controls
         private float TrafficLights_width = 20;
         private float crosswalk_width = 20;
         private float crosswalk_height = 60;
+        private float TrafficLightsCrosswalk_width = 20;
+        private float TrafficLightsCrosswalk_height = 40;
         private float FreeSpace = 5;
 
         /*
@@ -328,9 +330,41 @@ namespace Bc_prace.Controls
 
             //trafficlights
             #region trafficlight
-            //crossroad1 - top
-            g.DrawRectangle(WhitePen, x, y, TrafficLights_width, TrafficLights_height);
-            
+            //crossroad1 - trafficlight - top
+            g.DrawRectangle(WhitePen, x + lenght + 3 * FreeSpace + 2 * crosswalk_width, y + 3 * FreeSpace, TrafficLights_width, TrafficLights_height);
+
+            //crossroad1 - trafficlight - left
+            g.DrawRectangle(WhitePen, x + 3 * FreeSpace, y + 4 * lenght + FreeSpace, TrafficLights_height, TrafficLights_width);
+
+            //crossroad1 - trafficlight - right
+            g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + lenght + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_height, TrafficLights_width);
+
+            //crossroad1 - trafficlight - bottom
+            g.DrawRectangle(WhitePen, x + lenght * 4 + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLights_width, TrafficLights_height);
+
+            //crossroad1 - crosswalk - top
+            g.DrawRectangle(WhitePen, x, y, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
+            //crossroad1 - crosswalk - left
+            //crossroad1 - crosswalk - right
+            //crossroad1 - crosswalk - bottom
+
+            //crossroad2 - trafficlight - top
+            g.DrawRectangle(WhitePen, x + lenght * 6 + 3 * FreeSpace + 2 * crosswalk_width, y + 3 * FreeSpace, TrafficLights_width, TrafficLights_height);
+
+            //crossroad2 - trafficlight - left
+            g.DrawRectangle(WhitePen, x + lenght * 5 + 3 * FreeSpace, y + 4 * lenght + FreeSpace, TrafficLights_height, TrafficLights_width);
+
+            //crossroad2 - trafficlight - right
+            g.DrawRectangle(WhitePen, x + lenght * 10 + FreeSpace, y + lenght + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_height, TrafficLights_width);
+
+            //crossroad2 - trafficlight - bottom
+            g.DrawRectangle(WhitePen, x + lenght * 9 + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLights_width, TrafficLights_height);
+
+            //crossroad2 - crosswalk - top
+            //crossroad2 - crosswalk - left
+            //crossroad2 - crosswalk - right
+            //crossroad2 - crosswalk - bottom
+
 
             #endregion
 
