@@ -43,10 +43,10 @@
             // statusStripGarage
             // 
             statusStripGarage.ImageScalingSize = new Size(20, 20);
-            statusStripGarage.Location = new Point(0, 578);
+            statusStripGarage.Location = new Point(0, 711);
             statusStripGarage.Name = "statusStripGarage";
             statusStripGarage.Padding = new Padding(1, 0, 16, 0);
-            statusStripGarage.Size = new Size(1045, 22);
+            statusStripGarage.Size = new Size(1524, 22);
             statusStripGarage.TabIndex = 0;
             statusStripGarage.Text = "statusStrip1";
             // 
@@ -73,7 +73,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 496);
+            btnEnd.Location = new Point(3, 629);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 27;
@@ -102,9 +102,9 @@
             panel1.Controls.Add(btnEmergency);
             panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(856, 0);
+            panel1.Location = new Point(1335, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 578);
+            panel1.Size = new Size(189, 711);
             panel1.TabIndex = 29;
             // 
             // btnPedestrian1
@@ -129,14 +129,14 @@
             // 
             userControlCrossroad1.Location = new Point(12, 12);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(703, 548);
+            userControlCrossroad1.Size = new Size(1320, 686);
             userControlCrossroad1.TabIndex = 32;
             // 
             // Program3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 600);
+            ClientSize = new Size(1524, 733);
             Controls.Add(userControlCrossroad1);
             Controls.Add(panel1);
             Controls.Add(statusStripGarage);
