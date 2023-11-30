@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bc_prace.Controls;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
 
@@ -35,7 +36,39 @@ namespace Bc_prace
 
         private void Program3_Load(object sender, EventArgs e)
         {
+            rBtnCrossroadBasic.Checked = true;
+            rBtnCrossroadExtension1.Checked = false;
+            rBtnCrossroadExtension2.Checked = false;
+            rBtnCrossroadExtension3.Checked = false;
 
+            Draw();
+
+        }
+
+        private void Draw()
+        {
+            if (rBtnCrossroadBasic.Checked)
+            {
+                // Vykreslete čáry pro křižovatku
+                userControlCrossroad1.BasicCrossroad();
+            }
+            else if (rBtnCrossroadExtension1.Checked)
+            {
+                // Vykreslete čáry pro volbu 1
+                userControlCrossroad1.CrossroadExtension1();
+            }
+            else if (rBtnCrossroadExtension2.Checked)
+            {
+                // Vykreslete čáry pro volbu 2
+                userControlCrossroad1.CrossroadExtension2();
+
+            }
+            else if (rBtnCrossroadExtension3.Checked)
+            {
+                // Vykreslete čáry pro volbu 3
+                userControlCrossroad1.CrossroadExtension3();
+
+            }
         }
 
         //Emergency + system error 
