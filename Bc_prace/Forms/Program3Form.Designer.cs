@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            statusStripGarage = new StatusStrip();
+            statusStripCrossroad = new StatusStrip();
             btnSettings = new Button();
             btnEmergency = new Button();
             btnEnd = new Button();
@@ -45,15 +45,15 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // statusStripGarage
+            // statusStripCrossroad
             // 
-            statusStripGarage.ImageScalingSize = new Size(20, 20);
-            statusStripGarage.Location = new Point(0, 862);
-            statusStripGarage.Name = "statusStripGarage";
-            statusStripGarage.Padding = new Padding(1, 0, 16, 0);
-            statusStripGarage.Size = new Size(1651, 22);
-            statusStripGarage.TabIndex = 0;
-            statusStripGarage.Text = "statusStrip1";
+            statusStripCrossroad.ImageScalingSize = new Size(20, 20);
+            statusStripCrossroad.Location = new Point(0, 860);
+            statusStripCrossroad.Name = "statusStripCrossroad";
+            statusStripCrossroad.Padding = new Padding(1, 0, 16, 0);
+            statusStripCrossroad.Size = new Size(1651, 24);
+            statusStripCrossroad.TabIndex = 0;
+            statusStripCrossroad.Text = "statusStrip1";
             // 
             // btnSettings
             // 
@@ -78,7 +78,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 781);
+            btnEnd.Location = new Point(3, 779);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 27;
@@ -112,7 +112,7 @@
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1462, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 862);
+            panel1.Size = new Size(189, 860);
             panel1.TabIndex = 29;
             // 
             // rBtnCrossroadExtension3
@@ -171,7 +171,7 @@
             userControlCrossroad1.Dock = DockStyle.Fill;
             userControlCrossroad1.Location = new Point(0, 0);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1462, 862);
+            userControlCrossroad1.Size = new Size(1462, 860);
             userControlCrossroad1.TabIndex = 32;
             // 
             // panel2
@@ -181,7 +181,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1462, 862);
+            panel2.Size = new Size(1462, 860);
             panel2.TabIndex = 33;
             // 
             // Program3Form
@@ -191,7 +191,7 @@
             ClientSize = new Size(1651, 884);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(statusStripGarage);
+            Controls.Add(statusStripCrossroad);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program3Form";
             Text = "Program3";
@@ -205,7 +205,7 @@
 
         #endregion
 
-        private StatusStrip statusStripGarage;
+        private StatusStrip statusStripCrossroad;
         private Button btnSettings;
         private Button btnEmergency;
         private Button btnEnd;

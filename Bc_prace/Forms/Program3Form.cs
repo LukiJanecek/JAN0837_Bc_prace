@@ -24,9 +24,9 @@ namespace Bc_prace
         #region Settings 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            statusStripGarage.Items.Clear();
+            statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
-            statusStripGarage.Items.Add(lblStatus);
+            statusStripCrossroad.Items.Add(lblStatus);
 
             Program3SettingsForm Settings = new Program3SettingsForm();
             Settings.ShowDialog(this);
@@ -49,22 +49,38 @@ namespace Bc_prace
         {
             if (rBtnCrossroadBasic.Checked)
             {
+                statusStripCrossroad.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
+                statusStripCrossroad.Items.Add(lblStatus);
+
                 // Vykreslete čáry pro křižovatku
                 userControlCrossroad1.BasicCrossroad();
             }
             else if (rBtnCrossroadExtension1.Checked)
             {
+                statusStripCrossroad.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
+                statusStripCrossroad.Items.Add(lblStatus);
+
                 // Vykreslete čáry pro volbu 1
                 userControlCrossroad1.CrossroadExtension1();
             }
             else if (rBtnCrossroadExtension2.Checked)
             {
+                statusStripCrossroad.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
+                statusStripCrossroad.Items.Add(lblStatus);
+
                 // Vykreslete čáry pro volbu 2
                 userControlCrossroad1.CrossroadExtension2();
 
             }
             else if (rBtnCrossroadExtension3.Checked)
             {
+                statusStripCrossroad.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
+                statusStripCrossroad.Items.Add(lblStatus);
+
                 // Vykreslete čáry pro volbu 3
                 userControlCrossroad1.CrossroadExtension3();
 

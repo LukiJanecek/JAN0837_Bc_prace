@@ -321,6 +321,9 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + lenght * 12, y + lenght * 9, x + lenght * 13, y + lenght * 9);
             g.DrawLine(WhitePen, x + lenght * 13, y + lenght * 9, x + lenght * 14, y + lenght * 9);
 
+            //pravá spojka mezi crossroad2 a T2 - čára pro auto
+            g.DrawLine(WhitePen, x + lenght * 9, y + lenght * 8, x + lenght * 10, y + lenght * 8);
+
             //whiteline - T
             //left
             g.DrawLine(WhitePen, x + lenght * 2, y + lenght * 10, x + lenght * 2, y + lenght * 11);
@@ -328,6 +331,10 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + lenght * 3, y + lenght * 8, x + lenght * 4, y + lenght * 8);
             //right
             g.DrawLine(WhitePen, x + lenght * 6, y + lenght * 9, x + lenght * 6, y + lenght * 10);
+
+            g.DrawLine(WhitePen, x + lenght * 8, y + lenght * 10, x + lenght * 8, y + lenght * 11);
+
+            g.DrawLine(WhitePen, x + lenght * 12, y + lenght * 9, x + lenght * 12, y + lenght * 10);
 
             //Center lines
             #region Center lines
@@ -352,44 +359,36 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + lenght * 10, y + lenght * 6, x + lenght * 10, y + lenght * 8);
 
             //horizontal center line - top 
-            g.DrawLine(WhitePen, x, y + lenght * 3, x + lenght_interrupted, y + lenght * 3);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 2, y + lenght * 3, x + lenght_interrupted * 3, y + lenght * 3);
+            g.DrawLine(WhitePen, x, y + lenght * 4, x + lenght_interrupted, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght_interrupted * 2, y + lenght * 4, x + lenght_interrupted * 3, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght, y + lenght * 4, x + lenght * 2, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght * 6, y + lenght * 4, x + lenght * 8, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght * 12, y + lenght * 4, x + lenght * 13, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght * 13 + lenght_interrupted, y + lenght * 4, x + lenght * 13 + lenght_interrupted * 2, y + lenght * 4);
+            g.DrawLine(WhitePen, x + lenght * 13 + lenght_interrupted * 3, y + lenght * 4, x + lenght * 13 + lenght_interrupted * 4, y + lenght * 4);
+
             //g.DrawLine(WhitePen, x + lenght_interrupted * 4, y + lenght * 3, x + lenght_interrupted * 5, y + lenght * 3);
             //g.DrawLine(WhitePen, x + lenght_interrupted * 6, y + lenght * 3, x + lenght_interrupted * 7, y + lenght * 3);
-            
+
             g.DrawLine(WhitePen, x + lenght, y + lenght * 10, x + lenght * 2, y + lenght * 10);
             g.DrawLine(WhitePen, x + lenght * 6, y + lenght * 10, x + lenght * 8, y + lenght * 10);
 
             g.DrawLine(WhitePen, x + lenght * 12, y + lenght * 10, x + lenght * 13, y + lenght * 10);
-
-            g.DrawLine(WhitePen, x + lenght_interrupted * 36, y + lenght * 10, x + lenght_interrupted * 37, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 38, y + lenght * 10, x + lenght_interrupted * 39, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 40, y + lenght * 10, x + lenght_interrupted * 41, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 42, y + lenght * 10, x + lenght_interrupted * 43, y + lenght * 10);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 44, y + lenght * 3, x + lenght_interrupted * 45, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 46, y + lenght * 3, x + lenght_interrupted * 47, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 48, y + lenght * 3, x + lenght_interrupted * 49, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 50, y + lenght * 3, x + lenght_interrupted * 51, y + lenght * 3);
 
             //horizontal center line - bottom 
+            //left T
             g.DrawLine(WhitePen, x, y + lenght * 10, x + lenght_interrupted, y + lenght * 10);
             g.DrawLine(WhitePen, x + lenght_interrupted * 2, y + lenght * 10, x + lenght_interrupted * 3, y + lenght * 10);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 4, y + lenght * 3, x + lenght_interrupted * 5, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 6, y + lenght * 3, x + lenght_interrupted * 7, y + lenght * 3);
-
             g.DrawLine(WhitePen, x + lenght, y + lenght * 10, x + lenght * 2, y + lenght * 10);
+            
             g.DrawLine(WhitePen, x + lenght * 6, y + lenght * 10, x + lenght * 8, y + lenght * 10);
 
+            //right T 
             g.DrawLine(WhitePen, x + lenght * 12, y + lenght * 10, x + lenght * 13, y + lenght * 10);
+            g.DrawLine(WhitePen, x + lenght * 13 + lenght_interrupted, y + lenght * 10, x + lenght * 13 + lenght_interrupted * 2, y + lenght * 10);
+            g.DrawLine(WhitePen, x + lenght * 13 + lenght_interrupted * 3, y + lenght * 10, x + lenght * 13 + lenght_interrupted * 4, y + lenght * 10);
 
-            g.DrawLine(WhitePen, x + lenght_interrupted * 36, y + lenght * 10, x + lenght_interrupted * 37, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 38, y + lenght * 10, x + lenght_interrupted * 39, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 40, y + lenght * 10, x + lenght_interrupted * 41, y + lenght * 10);
-            g.DrawLine(WhitePen, x + lenght_interrupted * 42, y + lenght * 10, x + lenght_interrupted * 43, y + lenght * 10);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 44, y + lenght * 3, x + lenght_interrupted * 45, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 46, y + lenght * 3, x + lenght_interrupted * 47, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 48, y + lenght * 3, x + lenght_interrupted * 49, y + lenght * 3);
-            //g.DrawLine(WhitePen, x + lenght_interrupted * 50, y + lenght * 3, x + lenght_interrupted * 51, y + lenght * 3);
+
 
 
             #endregion
@@ -397,7 +396,7 @@ namespace Bc_prace.Controls
             //Crosswalks
             #region Crosswalks
 
-            //crossroad1 - top
+            //crossroad1 - crosswalk - top
             g.DrawRectangle(WhitePen, x + lenght * 3 + FreeSpace, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 3 + 2 * FreeSpace + crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 3 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
@@ -405,7 +404,7 @@ namespace Bc_prace.Controls
             g.DrawRectangle(WhitePen, x + lenght * 4 + 2 * FreeSpace + crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 4 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
 
-            //crossroad1 - left
+            //crossroad1 - crosswalk - left
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + 3 * lenght + FreeSpace, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + 3 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + 3 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
@@ -413,7 +412,7 @@ namespace Bc_prace.Controls
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + 4 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + 4 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
 
-            //crossroad1 - right
+            //crossroad1 - crosswalk - right
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + 3 * lenght + FreeSpace, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + 3 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + 3 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
@@ -421,7 +420,7 @@ namespace Bc_prace.Controls
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + 4 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + 4 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
 
-            //crossroad1 - bottom
+            //crossroad1 - crosswalk - bottom
             g.DrawRectangle(WhitePen, x + lenght * 3 + FreeSpace, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 3 + 2 * FreeSpace + crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 3 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
@@ -429,23 +428,23 @@ namespace Bc_prace.Controls
             g.DrawRectangle(WhitePen, x + lenght * 4 + 2 * FreeSpace + crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 4 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
 
-            //crossroad2 - top
+            //crossroad2 - crosswalk - top
             g.DrawRectangle(WhitePen, x + lenght * 9 + FreeSpace, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 9 + 2 * FreeSpace + crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 9 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + FreeSpace, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + 2 * FreeSpace + crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 2 + FreeSpace, crosswalk_width, crosswalk_height);
-            
-            //crossroad2 - bottom
+
+            //crossroad2 - crosswalk - bottom
             g.DrawRectangle(WhitePen, x + lenght * 9 + FreeSpace, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 9 + 2 * FreeSpace + crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 9 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + FreeSpace, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + 2 * FreeSpace + crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
             g.DrawRectangle(WhitePen, x + lenght * 10 + 3 * FreeSpace + 2 * crosswalk_width, y + lenght * 5 + FreeSpace, crosswalk_width, crosswalk_height);
-            
-            //crossroad2 - left
+
+            //crossroad2 - crosswalk - left
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + 3 * lenght + FreeSpace, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + 3 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + 3 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
@@ -453,14 +452,28 @@ namespace Bc_prace.Controls
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + 4 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + 4 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
 
-            //crossroad2 - right
+            //crossroad2 - crosswalk - right
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 3 * lenght + FreeSpace, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 3 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 3 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 4 * lenght + FreeSpace, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 4 * lenght + 2 * FreeSpace + crosswalk_width, crosswalk_height, crosswalk_width);
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + 4 * lenght + 3 * FreeSpace + 2 * crosswalk_width, crosswalk_height, crosswalk_width);
-            
+
+            //left T
+            //left T - crosswalk - top
+
+            //left T - crosswalk - left
+
+            //left T - crosswalk - right
+
+            //right T
+            //right T - crosswalk - top
+
+            //right T - crosswalk - left
+
+            //right T - crosswalk - right
+
             #endregion
 
             //TrafficLights
@@ -487,6 +500,19 @@ namespace Bc_prace.Controls
             //crossroad2 - trafficlight - bottom
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + lenght * 6 + FreeSpace, TrafficLights_width, TrafficLights_height);
 
+            //left T
+            //left T - trafficlight - top
+
+            //left T - trafficlight - left
+
+            //left T - trafficlight - right
+
+            //right T
+            //right T - trafficlight - top
+
+            //right T - trafficlight - left
+
+            //right T - trafficlight - right
 
             #endregion
 
@@ -495,54 +521,68 @@ namespace Bc_prace.Controls
 
             //crossroad1
             //top
-            //crossroad1 - crosswalk - top - left
+            //crossroad1 - CrosswalkLights - top - left
             g.DrawRectangle(WhitePen, x + lenght * 2+ crosswalk_width + 3 * FreeSpace, y + lenght * 2 + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
-            //crossroad1 - crosswalk - top - right
+            //crossroad1 - CrosswalkLights - top - right
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + lenght * 2 + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
 
             //bottom
-            //crossroad1 - crosswalk - bottom - left
+            //crossroad1 - CrosswalkLights - bottom - left
             g.DrawRectangle(WhitePen, x + lenght * 2 + crosswalk_width + 3 * FreeSpace, y + lenght * 5 + 2 * crosswalk_width + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
-            //crossroad1 - crosswalk - bottom - right
+            //crossroad1 - CrosswalkLights - bottom - right
             g.DrawRectangle(WhitePen, x + lenght * 5 + FreeSpace, y + lenght * 5 + 2 * crosswalk_width + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
 
             //left
-            //crossroad1 - crosswalk - left - top
+            //crossroad1 - CrosswalkLights - left - top
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + lenght * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            //crossroad1 - crosswalk - left - bottom
+            //crossroad1 - CrosswalkLights - left - bottom
             g.DrawRectangle(WhitePen, x + lenght * 2 + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            
+
             //right
-            //crossroad1 - crosswalk - right - top
+            //crossroad1 - CrosswalkLights - right - top
             g.DrawRectangle(WhitePen, x + lenght * 5 + 2 * crosswalk_width + FreeSpace, y + lenght * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            //crossroad1 - crosswalk - right - bottom
+            //crossroad1 - CrosswalkLights - right - bottom
             g.DrawRectangle(WhitePen, x + lenght * 5 + 2 * crosswalk_width + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            
-            
+
+
             //crossroad2
             //top
-            //crossroad2 - crosswalk - top - left
+            //crossroad2 - CrosswalkLights - top - left
             g.DrawRectangle(WhitePen, x + lenght * 8 + crosswalk_width + 3 * FreeSpace, y + lenght * 2 + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
-            //crossroad2 - crosswalk - top - right
+            //crossroad2 - CrosswalkLights - top - right
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + lenght * 2 + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
 
             //bottom
-            //crossroad2 - crosswalk - bottom - left
+            //crossroad2 - CrosswalkLights - bottom - left
             g.DrawRectangle(WhitePen, x + lenght * 8 + crosswalk_width + 3 * FreeSpace, y + lenght * 5 + 2 * crosswalk_width + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
-            //crossroad2 - crosswalk - bottom - right
+            //crossroad2 - CrosswalkLights - bottom - right
             g.DrawRectangle(WhitePen, x + lenght * 11 + FreeSpace, y + lenght * 5 + 2 * crosswalk_width + FreeSpace, TrafficLightsCrosswalk_height, TrafficLightsCrosswalk_width);
 
             //left
-            //crossroad2 - crosswalk - left - top
+            //crossroad2 - CrosswalkLights - left - top
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + lenght * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            //crossroad2 - crosswalk - left - bottom
+            //crossroad2 - CrosswalkLights - left - bottom
             g.DrawRectangle(WhitePen, x + lenght * 8 + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            
+
             //right
-            //crossroad2 - crosswalk - right - top
+            //crossroad2 - CrosswalkLights - right - top
             g.DrawRectangle(WhitePen, x + lenght * 11 + 2 * crosswalk_width + FreeSpace, y + lenght * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
-            //crossroad2 - crosswalk - right - bottom
+            //crossroad2 - CrosswalkLights - right - bottom
             g.DrawRectangle(WhitePen, x + lenght * 11 + 2 * crosswalk_width + FreeSpace, y + lenght * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_height);
+
+            //left T
+            //left T - CrosswalkLights - top
+
+            //left T - CrosswalkLights - left
+
+            //left T - CrosswalkLights - right
+
+            //right T
+            //right T - CrosswalkLights - top
+
+            //right T - CrosswalkLights - left
+
+            //right T - CrosswalkLights - right
 
             #endregion
 
