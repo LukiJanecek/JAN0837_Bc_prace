@@ -48,10 +48,10 @@
             // statusStripCrossroad
             // 
             statusStripCrossroad.ImageScalingSize = new Size(20, 20);
-            statusStripCrossroad.Location = new Point(0, 860);
+            statusStripCrossroad.Location = new Point(0, 862);
             statusStripCrossroad.Name = "statusStripCrossroad";
             statusStripCrossroad.Padding = new Padding(1, 0, 16, 0);
-            statusStripCrossroad.Size = new Size(1651, 24);
+            statusStripCrossroad.Size = new Size(1651, 22);
             statusStripCrossroad.TabIndex = 0;
             statusStripCrossroad.Text = "statusStrip1";
             // 
@@ -78,7 +78,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 779);
+            btnEnd.Location = new Point(3, 781);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 27;
@@ -112,7 +112,7 @@
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1462, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 860);
+            panel1.Size = new Size(189, 862);
             panel1.TabIndex = 29;
             // 
             // rBtnCrossroadExtension3
@@ -125,6 +125,7 @@
             rBtnCrossroadExtension3.TabStop = true;
             rBtnCrossroadExtension3.Text = "Crossroad extension 3";
             rBtnCrossroadExtension3.UseVisualStyleBackColor = true;
+            rBtnCrossroadExtension3.CheckedChanged += rBtnCrossroadExtension3_CheckedChanged;
             // 
             // rBtnCrossroadExtension2
             // 
@@ -136,6 +137,7 @@
             rBtnCrossroadExtension2.TabStop = true;
             rBtnCrossroadExtension2.Text = "Crossroad extension 2";
             rBtnCrossroadExtension2.UseVisualStyleBackColor = true;
+            rBtnCrossroadExtension2.CheckedChanged += rBtnCrossroadExtension2_CheckedChanged;
             // 
             // rBtnCrossroadExtension1
             // 
@@ -147,6 +149,7 @@
             rBtnCrossroadExtension1.TabStop = true;
             rBtnCrossroadExtension1.Text = "Crossroad extension 1";
             rBtnCrossroadExtension1.UseVisualStyleBackColor = true;
+            rBtnCrossroadExtension1.CheckedChanged += rBtnCrossroadExtension1_CheckedChanged;
             // 
             // btnPedestrian1
             // 
@@ -171,7 +174,7 @@
             userControlCrossroad1.Dock = DockStyle.Fill;
             userControlCrossroad1.Location = new Point(0, 0);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1462, 860);
+            userControlCrossroad1.Size = new Size(1462, 862);
             userControlCrossroad1.TabIndex = 32;
             // 
             // panel2
@@ -181,7 +184,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1462, 860);
+            panel2.Size = new Size(1462, 862);
             panel2.TabIndex = 33;
             // 
             // Program3Form

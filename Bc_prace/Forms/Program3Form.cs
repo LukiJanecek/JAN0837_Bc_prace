@@ -49,43 +49,57 @@ namespace Bc_prace
         {
             if (rBtnCrossroadBasic.Checked)
             {
-                statusStripCrossroad.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
-                statusStripCrossroad.Items.Add(lblStatus);
-
                 // Vykreslete čáry pro křižovatku
                 userControlCrossroad1.BasicCrossroad();
             }
             else if (rBtnCrossroadExtension1.Checked)
             {
-                statusStripCrossroad.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
-                statusStripCrossroad.Items.Add(lblStatus);
-
                 // Vykreslete čáry pro volbu 1
                 userControlCrossroad1.CrossroadExtension1();
             }
             else if (rBtnCrossroadExtension2.Checked)
             {
-                statusStripCrossroad.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
-                statusStripCrossroad.Items.Add(lblStatus);
-
                 // Vykreslete čáry pro volbu 2
                 userControlCrossroad1.CrossroadExtension2();
 
             }
             else if (rBtnCrossroadExtension3.Checked)
             {
-                statusStripCrossroad.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
-                statusStripCrossroad.Items.Add(lblStatus);
-
                 // Vykreslete čáry pro volbu 3
                 userControlCrossroad1.CrossroadExtension3();
 
             }
         }
+
+        #region Radiobutton clicked
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
+            statusStripCrossroad.Items.Add(lblStatus);
+        }
+
+        private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
+            statusStripCrossroad.Items.Add(lblStatus);
+        }
+
+        private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 2");
+            statusStripCrossroad.Items.Add(lblStatus);
+        }
+
+        private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 3");
+            statusStripCrossroad.Items.Add(lblStatus);
+        }
+        #endregion
 
         //Emergency + system error 
         #region Emergency + system error 
@@ -103,9 +117,6 @@ namespace Bc_prace
         }
         #endregion
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
