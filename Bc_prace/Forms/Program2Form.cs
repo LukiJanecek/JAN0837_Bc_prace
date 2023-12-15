@@ -15,10 +15,10 @@ namespace Bc_prace
     public partial class Program2Form : Form
     {
 
-
         public Program2Form()
         {
             InitializeComponent();
+            InitializeButton();
         }
 
         //Varialbes
@@ -28,6 +28,8 @@ namespace Bc_prace
         int countWax = 0;
         int countSoap = 0;
         int countActiveFoam = 0;
+
+        int SignalizationCount = 0;
 
         #endregion
 
@@ -79,5 +81,62 @@ namespace Bc_prace
         #endregion
 
 
+
+        //Car signalization
+        #region Car signalization
+
+        private void InitializeButton()
+        {
+            // Nastavení výchozí barvy a textu tlačítka
+            btnSignalization.BackColor = System.Drawing.Color.Green;
+            btnSignalization.Text = "Start";
+
+            btnSignalization.Click += btnSignalization_Click;
+
+        }
+
+        private void btnSignalization_Click(object sender, EventArgs e)
+        {
+            // Inkrementace počítadla kliknutí
+            SignalizationCount++;
+
+            //SignalizationCount = SignalizationCount % 4 + 1;
+
+            // Podle počtu kliknutí změň barvu a text tlačítka
+            switch (SignalizationCount % 4)
+            {
+                case 1:
+                    btnSignalization.BackColor = System.Drawing.Color.Green;
+                    btnSignalization.Text = "Start";
+                    /*
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Start");
+                    statusStripCarWash.Items.Add(lblStatus);
+                    */
+                    break;
+
+                case 2:
+                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
+                    btnSignalization.Text = "Wait";
+                    /*
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Wait");
+                    statusStripCarWash.Items.Add(lblStatus);
+                    */
+                    break;
+
+                case 3:
+                    btnSignalization.BackColor = System.Drawing.Color.Red;
+                    btnSignalization.Text = "Stop";
+                    /*
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Stop");
+                    statusStripCarWash.Items.Add(lblStatus);
+                    */
+                    break;
+            }
+        }
+
+        #endregion
     }
 }

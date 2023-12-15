@@ -34,6 +34,7 @@
             btnEnd = new Button();
             btnStartCarWash = new Button();
             panel1 = new Panel();
+            btnSignalization = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,11 +100,22 @@
             panel1.Size = new Size(188, 578);
             panel1.TabIndex = 40;
             // 
+            // btnSignalization
+            // 
+            btnSignalization.Location = new Point(147, 298);
+            btnSignalization.Name = "btnSignalization";
+            btnSignalization.Size = new Size(129, 89);
+            btnSignalization.TabIndex = 41;
+            btnSignalization.Text = "button1";
+            btnSignalization.UseVisualStyleBackColor = true;
+            btnSignalization.Click += btnSignalization_Click;
+            // 
             // Program2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnSignalization);
             Controls.Add(panel1);
             Controls.Add(btnStartCarWash);
             Controls.Add(statusStripCarWash);
@@ -124,5 +136,6 @@
         private Button btnEnd;
         private Button btnStartCarWash;
         private Panel panel1;
+        private Button btnSignalization;
     }
 }
