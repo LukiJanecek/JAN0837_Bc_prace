@@ -78,16 +78,16 @@
             // statusStripElevatorSettings
             // 
             statusStripElevatorSettings.ImageScalingSize = new Size(20, 20);
-            statusStripElevatorSettings.Location = new Point(0, 458);
+            statusStripElevatorSettings.Location = new Point(0, 456);
             statusStripElevatorSettings.Name = "statusStripElevatorSettings";
-            statusStripElevatorSettings.Size = new Size(590, 22);
+            statusStripElevatorSettings.Size = new Size(590, 24);
             statusStripElevatorSettings.TabIndex = 12;
             statusStripElevatorSettings.Text = "statusStrip1";
             // 
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 396);
+            btnEnd.Location = new Point(3, 394);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(110, 52);
             btnEnd.TabIndex = 13;
@@ -101,7 +101,7 @@
             propertyGridElevator.Location = new Point(0, 0);
             propertyGridElevator.Margin = new Padding(3, 4, 3, 4);
             propertyGridElevator.Name = "propertyGridElevator";
-            propertyGridElevator.Size = new Size(590, 458);
+            propertyGridElevator.Size = new Size(590, 456);
             propertyGridElevator.TabIndex = 14;
             // 
             // btnSetData
@@ -134,7 +134,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(590, 458);
+            panel1.Size = new Size(590, 456);
             panel1.TabIndex = 17;
             // 
             // panel3
@@ -143,7 +143,7 @@
             panel3.Controls.Add(btnSetData);
             panel3.Controls.Add(btnCancel);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 381);
+            panel3.Location = new Point(0, 379);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(590, 77);
@@ -169,8 +169,12 @@
             panel2.Location = new Point(471, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(119, 458);
+            panel2.Size = new Size(119, 456);
             panel2.TabIndex = 18;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program1SettingsForm
             // 
@@ -205,5 +209,6 @@
         private Panel panel2;
         private Panel panel3;
         private Button btnLoadData;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }

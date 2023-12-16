@@ -114,6 +114,10 @@
             btnCancel.TabIndex = 2;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program3SettingsForm
             // 
@@ -143,5 +147,6 @@
         private Button btnLoadData;
         private Button btnSetData;
         private PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }

@@ -34,7 +34,7 @@
             button3 = new Button();
             button4 = new Button();
             btnEnd = new Button();
-            statusStrip1 = new StatusStrip();
+            statusStripCarWashSelection = new StatusStrip();
             lblPerfectPolishDescription = new Label();
             lblPerfectWashDescription = new Label();
             panel1 = new Panel();
@@ -102,15 +102,15 @@
             btnEnd.UseVisualStyleBackColor = true;
             btnEnd.Click += btnEnd_Click;
             // 
-            // statusStrip1
+            // statusStripCarWashSelection
             // 
-            statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 313);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Padding = new Padding(1, 0, 16, 0);
-            statusStrip1.Size = new Size(794, 22);
-            statusStrip1.TabIndex = 6;
-            statusStrip1.Text = "statusStrip1";
+            statusStripCarWashSelection.ImageScalingSize = new Size(20, 20);
+            statusStripCarWashSelection.Location = new Point(0, 311);
+            statusStripCarWashSelection.Name = "statusStripCarWashSelection";
+            statusStripCarWashSelection.Padding = new Padding(1, 0, 16, 0);
+            statusStripCarWashSelection.Size = new Size(794, 24);
+            statusStripCarWashSelection.TabIndex = 6;
+            statusStripCarWashSelection.Text = "statusStrip1";
             // 
             // lblPerfectPolishDescription
             // 
@@ -134,7 +134,7 @@
             // 
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 236);
+            panel1.Location = new Point(0, 234);
             panel1.Name = "panel1";
             panel1.Size = new Size(794, 77);
             panel1.TabIndex = 9;
@@ -159,8 +159,12 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 45);
             panel3.Name = "panel3";
-            panel3.Size = new Size(794, 191);
+            panel3.Size = new Size(794, 189);
             panel3.TabIndex = 11;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program2SelectionForm
             // 
@@ -170,7 +174,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(statusStrip1);
+            Controls.Add(statusStripCarWashSelection);
             Name = "Program2SelectionForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Program2 -> Selection";
@@ -191,11 +195,12 @@
         private Button button3;
         private Button button4;
         private Button btnEnd;
-        private StatusStrip statusStrip1;
+        private StatusStrip statusStripCarWashSelection;
         private Label lblPerfectPolishDescription;
         private Label lblPerfectWashDescription;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }

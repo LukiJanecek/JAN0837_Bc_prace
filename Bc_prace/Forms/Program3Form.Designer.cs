@@ -186,6 +186,10 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1462, 862);
             panel2.TabIndex = 33;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program3Form
             // 
@@ -221,5 +225,6 @@
         private RadioButton rBtnCrossroadExtension3;
         private RadioButton rBtnCrossroadExtension2;
         private RadioButton rBtnCrossroadExtension1;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }

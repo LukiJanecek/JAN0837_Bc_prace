@@ -109,6 +109,10 @@
             btnSignalization.Text = "button1";
             btnSignalization.UseVisualStyleBackColor = true;
             btnSignalization.Click += btnSignalization_Click;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program2Form
             // 
@@ -137,5 +141,6 @@
         private Button btnStartCarWash;
         private Panel panel1;
         private Button btnSignalization;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }

@@ -20,16 +20,15 @@ namespace Bc_prace
         //Tia variablesx
         #region Tia connection
         public S7Client client = new S7Client();
-        private byte[] send_buffer = new byte[5u];
-        private byte[] read_buffer = new byte[6u];
+        public byte[] send_buffer = new byte[5u];
+        public byte[] read_buffer = new byte[6u];
         bool Option1 = false;
         bool Option2 = false;
         bool Option3 = false;
-        public int ActualFloor;
-
+        
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
-            int readResult = client.DBRead(1, 0, read_buffer.Length, read_buffer);
+            int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
                 if (readResult != 0)
                 {
                     //možná raději přidat label 
@@ -67,12 +66,14 @@ namespace Bc_prace
             // ale cool podmínka X error hláška
             */
 
-            Option1 = true;
-            S7.SetBitAt(ref send_buffer, 0, 0, true);
+            
 
             statusStrip1.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
             statusStrip1.Items.Add(lblStatus);
+
+            Option1 = true;
+            S7.SetBitAt(ref send_buffer, 0, 0, true);
 
             Program1Form Program1 = new Program1Form();
             Program1.Show();
@@ -95,12 +96,14 @@ namespace Bc_prace
             // ale cool podmínka X error hláška
             */
 
-            Option2 = true;
-            S7.SetBitAt(ref send_buffer, 0, 1, true);
+            
 
             statusStrip1.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
             statusStrip1.Items.Add(lblStatus);
+
+            Option2 = true;
+            S7.SetBitAt(ref send_buffer, 0, 1, true);
 
             Program2Form Program2 = new Program2Form();
             Program2.Show();
@@ -122,12 +125,14 @@ namespace Bc_prace
             // ale cool podmínka X error hláška */
 
 
-            Option3 = true;
-            S7.SetBitAt(ref send_buffer, 0, 2, true);
+            
             
             statusStrip1.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
             statusStrip1.Items.Add(lblStatus);
+
+            Option3 = true;
+            S7.SetBitAt(ref send_buffer, 0, 2, true);
 
             Program3Form Program3 = new Program3Form();
             Program3.Show();

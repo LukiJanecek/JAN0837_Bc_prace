@@ -280,6 +280,10 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(379, 85);
             panel5.TabIndex = 22;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program2SettingsForm
             // 
@@ -331,5 +335,6 @@
         private Button btnLoadData;
         private Panel panel4;
         private Panel panel5;
+        private System.Windows.Forms.Timer Timer_read_from_PLC;
     }
 }
