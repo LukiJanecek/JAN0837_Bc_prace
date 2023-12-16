@@ -89,7 +89,7 @@ namespace Bc_prace
         {
             // Nastavení výchozí barvy a textu tlačítka
             btnSignalization.BackColor = System.Drawing.Color.Green;
-            btnSignalization.Text = "Start";
+            btnSignalization.Text = "Go";
 
             btnSignalization.Click += btnSignalization_Click;
 
@@ -107,7 +107,7 @@ namespace Bc_prace
             {
                 case 1:
                     btnSignalization.BackColor = System.Drawing.Color.Green;
-                    btnSignalization.Text = "Start";
+                    btnSignalization.Text = "Go";
                     /*
                     statusStripCarWash.Items.Clear();
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Start");
@@ -117,7 +117,7 @@ namespace Bc_prace
 
                 case 2:
                     btnSignalization.BackColor = System.Drawing.Color.Yellow;
-                    btnSignalization.Text = "Wait";
+                    btnSignalization.Text = "Error";
                     /*
                     statusStripCarWash.Items.Clear();
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Wait");
