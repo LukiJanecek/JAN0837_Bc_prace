@@ -189,7 +189,7 @@
             //
             //Timer_read_from_PLC
             //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            //Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program3Form
             // 

@@ -23,7 +23,7 @@ namespace Bc_prace
 
         //Tia connection
         #region Tia connection
-
+        /*
         //zde vypisu vsechny promenne
         public S7Client client = new S7Client();
         public byte[] send_buffer = new byte[5u];
@@ -164,6 +164,7 @@ namespace Bc_prace
 
         #endregion
 
+        /*
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
             int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
@@ -313,11 +314,14 @@ namespace Bc_prace
                 #endregion
                 */
                 #endregion
-
+        /*
             }
         }
+        
+        
 
         #endregion
+        */
 
         //Settings
         #region Settings 
