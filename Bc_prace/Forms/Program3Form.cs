@@ -372,6 +372,10 @@ namespace Bc_prace
                 userControlCrossroad1.CrossroadExtension3();
 
             }
+            else
+            {
+
+            }
         }
 
         #region Radiobutton clicked
