@@ -330,8 +330,8 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
             statusStripCrossroad.Items.Add(lblStatus);
-
-            Program3SettingsForm Settings = new Program3SettingsForm();
+                        
+            Program2SettingsForm Settings = new Program2SettingsForm();
             Settings.ShowDialog(this);
         }
         #endregion
@@ -339,12 +339,12 @@ namespace Bc_prace
 
         private void Program3_Load(object sender, EventArgs e)
         {
-            rBtnCrossroadBasic.Checked = true;
+            rBtnCrossroadBasic.Checked = false;
             rBtnCrossroadExtension1.Checked = false;
             rBtnCrossroadExtension2.Checked = false;
             rBtnCrossroadExtension3.Checked = false;
 
-            Draw();
+            //Draw();
 
         }
 
@@ -380,6 +380,9 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
             statusStripCrossroad.Items.Add(lblStatus);
+
+            userControlCrossroad1.BasicCrossroad();
+
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -387,6 +390,8 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
             statusStripCrossroad.Items.Add(lblStatus);
+
+            userControlCrossroad1.CrossroadExtension1();
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -394,6 +399,8 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 2");
             statusStripCrossroad.Items.Add(lblStatus);
+
+            userControlCrossroad1.CrossroadExtension2();
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -401,6 +408,8 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 3");
             statusStripCrossroad.Items.Add(lblStatus);
+
+            userControlCrossroad1.CrossroadExtension3();
         }
         #endregion
 
