@@ -35,7 +35,9 @@
             btnStartCarWash = new Button();
             panel1 = new Panel();
             btnSignalization = new Button();
+            panel2 = new Panel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripCarWash
@@ -81,7 +83,7 @@
             // 
             // btnStartCarWash
             // 
-            btnStartCarWash.Location = new Point(12, 298);
+            btnStartCarWash.Location = new Point(12, 12);
             btnStartCarWash.Name = "btnStartCarWash";
             btnStartCarWash.Size = new Size(129, 89);
             btnStartCarWash.TabIndex = 39;
@@ -102,32 +104,38 @@
             // 
             // btnSignalization
             // 
-            btnSignalization.Location = new Point(147, 298);
+            btnSignalization.Location = new Point(12, 107);
             btnSignalization.Name = "btnSignalization";
             btnSignalization.Size = new Size(129, 89);
             btnSignalization.TabIndex = 41;
-            btnSignalization.Text = "button1";
+            btnSignalization.Text = "Signalization";
             btnSignalization.UseVisualStyleBackColor = true;
             btnSignalization.Click += btnSignalization_Click;
-            //
-            //Timer_read_from_PLC
-            //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(btnSignalization);
+            panel2.Controls.Add(btnStartCarWash);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(155, 578);
+            panel2.TabIndex = 42;
             // 
             // Program2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(btnSignalization);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(btnStartCarWash);
             Controls.Add(statusStripCarWash);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program2Form";
             Text = "Program2";
             Load += Program2_Load;
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +150,6 @@
         private Panel panel1;
         private Button btnSignalization;
         private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private Panel panel2;
     }
 }

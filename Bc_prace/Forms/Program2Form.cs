@@ -145,7 +145,7 @@ namespace Bc_prace
             statusStripCarWash.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
             statusStripCarWash.Items.Add(lblStatus);
-            
+
             Program2SettingsForm Settings = new Program2SettingsForm();
             Settings.ShowDialog(this);
         }
