@@ -48,10 +48,10 @@
             // statusStripCrossroad
             // 
             statusStripCrossroad.ImageScalingSize = new Size(20, 20);
-            statusStripCrossroad.Location = new Point(0, 862);
+            statusStripCrossroad.Location = new Point(0, 1011);
             statusStripCrossroad.Name = "statusStripCrossroad";
             statusStripCrossroad.Padding = new Padding(1, 0, 16, 0);
-            statusStripCrossroad.Size = new Size(1651, 22);
+            statusStripCrossroad.Size = new Size(1902, 22);
             statusStripCrossroad.TabIndex = 0;
             statusStripCrossroad.Text = "statusStrip1";
             // 
@@ -78,7 +78,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 781);
+            btnEnd.Location = new Point(3, 930);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 27;
@@ -110,9 +110,9 @@
             panel1.Controls.Add(btnEmergency);
             panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1462, 0);
+            panel1.Location = new Point(1713, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 862);
+            panel1.Size = new Size(189, 1011);
             panel1.TabIndex = 29;
             // 
             // rBtnCrossroadExtension3
@@ -174,7 +174,7 @@
             userControlCrossroad1.Dock = DockStyle.Fill;
             userControlCrossroad1.Location = new Point(0, 0);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1462, 862);
+            userControlCrossroad1.Size = new Size(1713, 1011);
             userControlCrossroad1.TabIndex = 32;
             // 
             // panel2
@@ -184,18 +184,14 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1462, 862);
+            panel2.Size = new Size(1713, 1011);
             panel2.TabIndex = 33;
-            //
-            //Timer_read_from_PLC
-            //
-            //Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program3Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1651, 884);
+            ClientSize = new Size(1902, 1033);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCrossroad);

@@ -36,6 +36,7 @@
             panel1 = new Panel();
             btnSignalization = new Button();
             panel2 = new Panel();
+            userControlCarWash1 = new Controls.UserControlCarWash();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -46,7 +47,7 @@
             statusStripCarWash.Location = new Point(0, 578);
             statusStripCarWash.Name = "statusStripCarWash";
             statusStripCarWash.Padding = new Padding(1, 0, 16, 0);
-            statusStripCarWash.Size = new Size(914, 22);
+            statusStripCarWash.Size = new Size(1388, 22);
             statusStripCarWash.TabIndex = 0;
             statusStripCarWash.Text = "statusStrip1";
             // 
@@ -97,7 +98,7 @@
             panel1.Controls.Add(btnSettings);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(726, 0);
+            panel1.Location = new Point(1200, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(188, 578);
             panel1.TabIndex = 40;
@@ -122,11 +123,20 @@
             panel2.Size = new Size(155, 578);
             panel2.TabIndex = 42;
             // 
+            // userControlCarWash1
+            // 
+            userControlCarWash1.Dock = DockStyle.Fill;
+            userControlCarWash1.Location = new Point(155, 0);
+            userControlCarWash1.Name = "userControlCarWash1";
+            userControlCarWash1.Size = new Size(1045, 578);
+            userControlCarWash1.TabIndex = 43;
+            // 
             // Program2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(1388, 600);
+            Controls.Add(userControlCarWash1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCarWash);
@@ -151,5 +161,6 @@
         private Button btnSignalization;
         private System.Windows.Forms.Timer Timer_read_from_PLC;
         private Panel panel2;
+        private Controls.UserControlCarWash userControlCarWash1;
     }
 }

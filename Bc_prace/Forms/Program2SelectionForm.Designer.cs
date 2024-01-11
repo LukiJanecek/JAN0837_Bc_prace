@@ -177,7 +177,7 @@
             Controls.Add(statusStripCarWashSelection);
             Name = "Program2SelectionForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Program2 -> Selection";
+            Text = "Program2 -> Select washing program";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

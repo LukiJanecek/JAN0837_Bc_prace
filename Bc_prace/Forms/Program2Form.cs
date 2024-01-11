@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bc_prace.Controls.MyGraphControl.Entities;
+using Bc_prace.Controls;
 using Bc_prace.Settings;
 using Sharp7;
 
@@ -153,9 +154,7 @@ namespace Bc_prace
 
         private void Program2_Load(object sender, EventArgs e)
         {
-
-
-
+            
         }
 
         //Emergency + system error 
