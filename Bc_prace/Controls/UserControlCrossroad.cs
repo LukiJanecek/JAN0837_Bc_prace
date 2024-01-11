@@ -20,6 +20,8 @@ namespace Bc_prace.Controls
         //Variables
         #region Variables
 
+        private Button btnCrosswalk1;
+
         //beggining points of drawing
         private float x = 15;
         private float y = 15;
@@ -47,6 +49,7 @@ namespace Bc_prace.Controls
         public UserControlCrossroad()
         {
             InitializeComponent();
+            InitializeButtons();
             DoubleBuffered = true;
             Paint += UserControl1_Paint;         
 
@@ -692,6 +695,34 @@ namespace Bc_prace.Controls
             */
             #endregion
         }
+
+        //BTNs in UserControl
+        private void InitializeButtons()
+        {
+            //crosswalk - 
+            btnCrosswalk1 = new Button();
+            btnCrosswalk1.Text = "";
+            btnCrosswalk1.BackColor = Color.Blue;
+            btnCrosswalk1.Visible = true;
+            btnCrosswalk1.Enabled = true;
+            btnCrosswalk1.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnCrosswalk1.Size = new Size(10, 10);
+            btnCrosswalk1.Click += btnCrosswalk1_Click;
+
+            //final add to UserControl 
+            this.Controls.Add(btnCrosswalk1);
+
+        }
+
+        //Methods for BTN_CLick action
+        #region Methods for BTN_CLick action
+
+        private void btnCrosswalk1_Click(object? sender, EventArgs e)
+        {
+            
+        }
+
+        #endregion
 
         //Methods for rendering crossroad
         #region Methods for rendering crossroad

@@ -191,7 +191,7 @@ namespace Bc_prace
                 */
         #endregion
 
-        #region Output varialbes 
+        #region Output variables 
         /*
         //crossorad1
         #region Crossroad1
