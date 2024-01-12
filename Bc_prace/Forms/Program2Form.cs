@@ -56,22 +56,25 @@ namespace Bc_prace
 
         //output
         #region Output variables 
-        bool CarWashPositionShower;
-        bool CarWashPositionCar;
-        bool CarWashGreenLight;
-        bool CarWashRedLight;
-        bool CarWashYellowLight;
-        bool CarWashDoor1UP;
-        bool CarWashDoor1DOWN;
-        bool CarWashDoor2UP;
-        bool CarWashDoor2DOWN;
-        bool CarWashWater;
-        bool CarWashWashingChemicalsFRONT;
-        bool CarWashWashingChemicalsSIDES;
-        bool CarWashWashingChemicalsBACK;
-        bool CarWashWax;
-        bool CarWashVarnishProtection;
-        bool CarWashDry;
+        bool CarWashPositionShower = false;
+        bool CarWashPositionCar = false;
+        bool CarWashGreenLight = false;
+        bool CarWashRedLight = false;
+        bool CarWashYellowLight = false;
+        bool CarWashDoor1UP = false;
+        bool CarWashDoor1DOWN = false;
+        bool CarWashDoor2UP = false;
+        bool CarWashDoor2DOWN = false;
+        bool CarWashWater = false;
+        bool CarWashWashingChemicalsFRONT = false;
+        bool CarWashWashingChemicalsSIDES = false;
+        bool CarWashWashingChemicalsBACK = false;
+        bool CarWashWax = false;
+        bool CarWashVarnishProtection = false;
+        bool CarWashDry = false;
+        bool CarWashSoap = false;
+        bool CarWashActiveFoam = false;
+        bool CarWashBrushes = false;
         #endregion
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
@@ -125,10 +128,142 @@ namespace Bc_prace
                 */
                 #endregion
 
+                //action on variable 
+                #region Action on variable
+                
+                //toto asi nebude fungvat 
+                if (CarWashGreenLight) //Green light
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    btnSignalization.BackColor = System.Drawing.Color.Green;
+                    btnSignalization.Text = "Go";
+                }
+                else if (CarWashYellowLight) //Yellow light
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: Error!");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
+                    btnSignalization.Text = "Error";
+                }
+                else if (CarWashRedLight) //Red light
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: STOP!");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    btnSignalization.BackColor = System.Drawing.Color.Red;
+                    btnSignalization.Text = "Stop";
+                }
+                else
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error! Car should move.");
+                    statusStripCarWash.Items.Add(lblStatus);
+                }
+                
+                //Door1 UP
+                if (CarWashDoor1UP)
+                {
+                    userControlCarWash1.door1UP();
+                }
+
+                //Door1 DOWN
+                if (CarWashDoor1DOWN)
+                {
+                    userControlCarWash1.door1DOWN();
+                }
+
+                //Door2 UP
+                if (CarWashDoor2UP)
+                {
+                    userControlCarWash1.door2UP();
+                }
+
+                //door2 DOWN
+                if (CarWashDoor2DOWN)
+                {
+                    userControlCarWash1.door2DOWN();
+                }
+
+                //Water
+                if (CarWashWater)
+                {
+                    userControlCarWash1.WaterSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.WaterSignalizationOFF();
+
+                }
+
+                //Wax
+                if (CarWashWax)
+                {
+                    userControlCarWash1.WaxSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.WaxSignalizationOFF();
+
+                }
+
+                //ActiveFoam
+                if (CarWashActiveFoam)
+                {
+                    userControlCarWash1.DryingSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.DryingSignalizationOFF();
+
+                }
+
+                //Soap 
+                if (CarWashSoap)
+                {
+                    userControlCarWash1.SoapSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.SoapSignalizationOFF();
+
+                }
+
+                //Brushes
+                if (CarWashBrushes)
+                {
+                    userControlCarWash1.BrushesSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.BrushesSignalizationOFF();
+
+                }
+
+                //Drying
+                if (CarWashDry)
+                {
+                    userControlCarWash1.DryingSignalizationON();
+                }
+                else
+                {
+                    userControlCarWash1.DryingSignalizationOFF();
+
+                }
+
+                #endregion
+
             }
         }
 
         #endregion
+
+        
 
         //Start CarWash
         #region Start CarWash
@@ -188,57 +323,16 @@ namespace Bc_prace
 
         private void InitializeButton()
         {
-            // Nastavení výchozí barvy a textu tlačítka
+            //setting default background color and text 
             btnSignalization.BackColor = System.Drawing.Color.Green;
             btnSignalization.Text = "Go";
 
-            //toto půjde pryč
-            btnSignalization.Click += btnSignalization_Click;
+            statusStripCarWash.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
+            statusStripCarWash.Items.Add(lblStatus);
 
         }
-
-        private void btnSignalization_Click(object sender, EventArgs e)
-        {
-            // Inkrementace počítadla kliknutí
-            SignalizationCount++;
-
-            //SignalizationCount = SignalizationCount % 4 + 1;
-
-            // Podle počtu kliknutí změň barvu a text tlačítka
-            switch (SignalizationCount % 4)
-            {
-                case 1:
-                    btnSignalization.BackColor = System.Drawing.Color.Green;
-                    btnSignalization.Text = "Go";
-                    /*
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Start");
-                    statusStripCarWash.Items.Add(lblStatus);
-                    */
-                    break;
-
-                case 2:
-                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
-                    btnSignalization.Text = "Error";
-                    /*
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Wait");
-                    statusStripCarWash.Items.Add(lblStatus);
-                    */
-                    break;
-
-                case 3:
-                    btnSignalization.BackColor = System.Drawing.Color.Red;
-                    btnSignalization.Text = "Stop";
-                    /*
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Stop");
-                    statusStripCarWash.Items.Add(lblStatus);
-                    */
-                    break;
-            }
-        }
-
+                
         #endregion
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -249,6 +343,10 @@ namespace Bc_prace
             userControlCarWash1.BrushesSignalizationON();
             userControlCarWash1.SoapSignalizationON();
             userControlCarWash1.ActiveFoamSignalizationON();
+
+            userControlCarWash1.door1UP();
+            userControlCarWash1.door2UP();
+
         }
 
         private void btnTest2_Click(object sender, EventArgs e)
@@ -259,6 +357,10 @@ namespace Bc_prace
             userControlCarWash1.BrushesSignalizationOFF();
             userControlCarWash1.SoapSignalizationOFF();
             userControlCarWash1.ActiveFoamSignalizationOFF();
+
+            userControlCarWash1.door1DOWN();
+            userControlCarWash1.door2DOWN();
+                        
         }
     }
 }

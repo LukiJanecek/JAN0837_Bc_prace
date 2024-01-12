@@ -27,7 +27,16 @@ namespace Bc_prace.Controls
         private float door1Y;
         private float door2X;
         private float door2Y;
-        
+
+        private float aDoor1;
+        private float bDoor1;
+        private float cDoor1;
+        private float dDoor1;
+        private float aDoor2;
+        private float bDoor2;
+        private float cDoor2;
+        private float dDoor2;   
+            
         private float WaxX;
         private float WaxY;
         private float WaterX;
@@ -40,6 +49,8 @@ namespace Bc_prace.Controls
         private float DryingY;
         private float BrushesX;
         private float BrushesY;
+
+        private float timeDoor = 200;
 
         //basic parametres
         private float length = 100;
@@ -93,12 +104,12 @@ namespace Bc_prace.Controls
 
             //front door
             #region Front door 
-            g.DrawRectangle(BlackPen, door1X, door1Y, door_width, door_height);
+            g.DrawRectangle(BlackPen, door1X + aDoor1, door1Y + bDoor1, door_width + cDoor1, door_height + dDoor1);
             #endregion
 
             //back door 
             #region Back door 
-            g.DrawRectangle(BlackPen, door2X, door2Y, door_width, door_height);
+            g.DrawRectangle(BlackPen, door2X + aDoor2, door2Y + bDoor2, door_width + cDoor2, door_height + dDoor2);
             #endregion
 
             #endregion
@@ -173,6 +184,47 @@ namespace Bc_prace.Controls
 
         //Methods for reaction on Tia variable change 
         #region Methods for reaction on Tia variable change 
+
+        public async void door1UP()
+        {
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            {
+                bDoor1 -= 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
+        public async void door1DOWN()
+        {
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            {
+                bDoor1 += 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
+        public async void door2UP()
+        {
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length)/10)
+            {
+                bDoor2 -= 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
+        public async void door2DOWN() 
+        {
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            {
+                bDoor2 += 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
         public void WaterSignalizationON()
         {
             var g = this.CreateGraphics();

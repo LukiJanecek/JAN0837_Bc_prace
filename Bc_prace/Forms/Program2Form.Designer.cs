@@ -120,7 +120,7 @@
             btnSignalization.TabIndex = 41;
             btnSignalization.Text = "Signalization";
             btnSignalization.UseVisualStyleBackColor = true;
-            btnSignalization.Click += btnSignalization_Click;
+            btnSignalization.Enabled = false;
             // 
             // panel2
             // 
