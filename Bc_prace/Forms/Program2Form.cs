@@ -73,7 +73,7 @@ namespace Bc_prace
         bool CarWashVarnishProtection;
         bool CarWashDry;
         #endregion
-
+        
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
             int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
@@ -154,12 +154,20 @@ namespace Bc_prace
 
         private void Program2_Load(object sender, EventArgs e)
         {
-            
+
         }
+
+        //Reaction on Tia variable change
+        #region Reaction on Tia variable change
+
+        
+
+
+        #endregion
 
         //Emergency + system error 
         #region Emergency + system error 
-        private void btnEmergency_Click(object sender, EventArgs e)
+private void btnEmergency_Click(object sender, EventArgs e)
         {
             statusStripCarWash.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
@@ -175,8 +183,6 @@ namespace Bc_prace
         }
         #endregion
 
-
-
         //Car signalization
         #region Car signalization
 
@@ -186,6 +192,7 @@ namespace Bc_prace
             btnSignalization.BackColor = System.Drawing.Color.Green;
             btnSignalization.Text = "Go";
 
+            //toto půjde pryč
             btnSignalization.Click += btnSignalization_Click;
 
         }

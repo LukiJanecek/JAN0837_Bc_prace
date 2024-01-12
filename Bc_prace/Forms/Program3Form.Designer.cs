@@ -48,18 +48,18 @@
             // statusStripCrossroad
             // 
             statusStripCrossroad.ImageScalingSize = new Size(20, 20);
-            statusStripCrossroad.Location = new Point(0, 1011);
+            statusStripCrossroad.Location = new Point(0, 753);
             statusStripCrossroad.Name = "statusStripCrossroad";
-            statusStripCrossroad.Padding = new Padding(1, 0, 16, 0);
-            statusStripCrossroad.Size = new Size(1902, 22);
+            statusStripCrossroad.Size = new Size(1664, 22);
             statusStripCrossroad.TabIndex = 0;
             statusStripCrossroad.Text = "statusStrip1";
             // 
             // btnSettings
             // 
-            btnSettings.Location = new Point(3, 3);
+            btnSettings.Location = new Point(3, 2);
+            btnSettings.Margin = new Padding(3, 2, 3, 2);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(177, 79);
+            btnSettings.Size = new Size(155, 59);
             btnSettings.TabIndex = 25;
             btnSettings.Text = "Settings";
             btnSettings.UseVisualStyleBackColor = true;
@@ -67,9 +67,10 @@
             // 
             // btnEmergency
             // 
-            btnEmergency.Location = new Point(3, 88);
+            btnEmergency.Location = new Point(3, 66);
+            btnEmergency.Margin = new Padding(3, 2, 3, 2);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(177, 79);
+            btnEmergency.Size = new Size(155, 59);
             btnEmergency.TabIndex = 26;
             btnEmergency.Text = "Emergency button ";
             btnEmergency.UseVisualStyleBackColor = true;
@@ -78,9 +79,10 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 930);
+            btnEnd.Location = new Point(3, 693);
+            btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(177, 79);
+            btnEnd.Size = new Size(155, 59);
             btnEnd.TabIndex = 27;
             btnEnd.Text = "End/close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -89,9 +91,10 @@
             // rBtnCrossroadBasic
             // 
             rBtnCrossroadBasic.AutoSize = true;
-            rBtnCrossroadBasic.Location = new Point(6, 339);
+            rBtnCrossroadBasic.Location = new Point(5, 254);
+            rBtnCrossroadBasic.Margin = new Padding(3, 2, 3, 2);
             rBtnCrossroadBasic.Name = "rBtnCrossroadBasic";
-            rBtnCrossroadBasic.Size = new Size(132, 24);
+            rBtnCrossroadBasic.Size = new Size(106, 19);
             rBtnCrossroadBasic.TabIndex = 28;
             rBtnCrossroadBasic.TabStop = true;
             rBtnCrossroadBasic.Text = "Basic crossroad";
@@ -110,17 +113,19 @@
             panel1.Controls.Add(btnEmergency);
             panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1713, 0);
+            panel1.Location = new Point(1499, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 1011);
+            panel1.Size = new Size(165, 753);
             panel1.TabIndex = 29;
             // 
             // rBtnCrossroadExtension3
             // 
             rBtnCrossroadExtension3.AutoSize = true;
-            rBtnCrossroadExtension3.Location = new Point(6, 429);
+            rBtnCrossroadExtension3.Location = new Point(5, 322);
+            rBtnCrossroadExtension3.Margin = new Padding(3, 2, 3, 2);
             rBtnCrossroadExtension3.Name = "rBtnCrossroadExtension3";
-            rBtnCrossroadExtension3.Size = new Size(175, 24);
+            rBtnCrossroadExtension3.Size = new Size(141, 19);
             rBtnCrossroadExtension3.TabIndex = 34;
             rBtnCrossroadExtension3.TabStop = true;
             rBtnCrossroadExtension3.Text = "Crossroad extension 3";
@@ -130,9 +135,10 @@
             // rBtnCrossroadExtension2
             // 
             rBtnCrossroadExtension2.AutoSize = true;
-            rBtnCrossroadExtension2.Location = new Point(6, 399);
+            rBtnCrossroadExtension2.Location = new Point(5, 299);
+            rBtnCrossroadExtension2.Margin = new Padding(3, 2, 3, 2);
             rBtnCrossroadExtension2.Name = "rBtnCrossroadExtension2";
-            rBtnCrossroadExtension2.Size = new Size(175, 24);
+            rBtnCrossroadExtension2.Size = new Size(141, 19);
             rBtnCrossroadExtension2.TabIndex = 33;
             rBtnCrossroadExtension2.TabStop = true;
             rBtnCrossroadExtension2.Text = "Crossroad extension 2";
@@ -142,9 +148,10 @@
             // rBtnCrossroadExtension1
             // 
             rBtnCrossroadExtension1.AutoSize = true;
-            rBtnCrossroadExtension1.Location = new Point(6, 369);
+            rBtnCrossroadExtension1.Location = new Point(5, 277);
+            rBtnCrossroadExtension1.Margin = new Padding(3, 2, 3, 2);
             rBtnCrossroadExtension1.Name = "rBtnCrossroadExtension1";
-            rBtnCrossroadExtension1.Size = new Size(175, 24);
+            rBtnCrossroadExtension1.Size = new Size(141, 19);
             rBtnCrossroadExtension1.TabIndex = 32;
             rBtnCrossroadExtension1.TabStop = true;
             rBtnCrossroadExtension1.Text = "Crossroad extension 1";
@@ -153,18 +160,20 @@
             // 
             // btnPedestrian1
             // 
-            btnPedestrian1.Location = new Point(16, 283);
+            btnPedestrian1.Location = new Point(14, 212);
+            btnPedestrian1.Margin = new Padding(3, 2, 3, 2);
             btnPedestrian1.Name = "btnPedestrian1";
-            btnPedestrian1.Size = new Size(94, 29);
+            btnPedestrian1.Size = new Size(82, 22);
             btnPedestrian1.TabIndex = 30;
             btnPedestrian1.Text = "Pedestrian";
             btnPedestrian1.UseVisualStyleBackColor = true;
             // 
             // btnPedestrian2
             // 
-            btnPedestrian2.Location = new Point(16, 236);
+            btnPedestrian2.Location = new Point(14, 177);
+            btnPedestrian2.Margin = new Padding(3, 2, 3, 2);
             btnPedestrian2.Name = "btnPedestrian2";
-            btnPedestrian2.Size = new Size(94, 29);
+            btnPedestrian2.Size = new Size(82, 22);
             btnPedestrian2.TabIndex = 31;
             btnPedestrian2.Text = "Pedestrian";
             btnPedestrian2.UseVisualStyleBackColor = true;
@@ -173,8 +182,9 @@
             // 
             userControlCrossroad1.Dock = DockStyle.Fill;
             userControlCrossroad1.Location = new Point(0, 0);
+            userControlCrossroad1.Margin = new Padding(3, 2, 3, 2);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1713, 1011);
+            userControlCrossroad1.Size = new Size(1499, 753);
             userControlCrossroad1.TabIndex = 32;
             // 
             // panel2
@@ -182,20 +192,18 @@
             panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1713, 1011);
+            panel2.Size = new Size(1499, 753);
             panel2.TabIndex = 33;
             // 
             // Program3Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1902, 1033);
+            ClientSize = new Size(1664, 775);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCrossroad);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Program3Form";
             Text = "Program3";
             Load += Program3_Load;

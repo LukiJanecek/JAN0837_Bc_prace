@@ -423,7 +423,9 @@ namespace Bc_prace
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
         {
-
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency error");
+            statusStripCrossroad.Items.Add(lblStatus);
         }
         #endregion
 

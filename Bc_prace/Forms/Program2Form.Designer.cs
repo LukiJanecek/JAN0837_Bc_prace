@@ -44,18 +44,18 @@
             // statusStripCarWash
             // 
             statusStripCarWash.ImageScalingSize = new Size(20, 20);
-            statusStripCarWash.Location = new Point(0, 578);
+            statusStripCarWash.Location = new Point(0, 539);
             statusStripCarWash.Name = "statusStripCarWash";
-            statusStripCarWash.Padding = new Padding(1, 0, 16, 0);
-            statusStripCarWash.Size = new Size(1388, 22);
+            statusStripCarWash.Size = new Size(1334, 22);
             statusStripCarWash.TabIndex = 0;
             statusStripCarWash.Text = "statusStrip1";
             // 
             // btnSettings
             // 
-            btnSettings.Location = new Point(3, 3);
+            btnSettings.Location = new Point(3, 2);
+            btnSettings.Margin = new Padding(3, 2, 3, 2);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(177, 79);
+            btnSettings.Size = new Size(155, 59);
             btnSettings.TabIndex = 25;
             btnSettings.Text = "Settings";
             btnSettings.UseVisualStyleBackColor = true;
@@ -63,9 +63,10 @@
             // 
             // btnEmergency
             // 
-            btnEmergency.Location = new Point(3, 88);
+            btnEmergency.Location = new Point(3, 66);
+            btnEmergency.Margin = new Padding(3, 2, 3, 2);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(177, 79);
+            btnEmergency.Size = new Size(155, 59);
             btnEmergency.TabIndex = 37;
             btnEmergency.Text = "Emergency button";
             btnEmergency.UseVisualStyleBackColor = true;
@@ -74,9 +75,10 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 496);
+            btnEnd.Location = new Point(3, 477);
+            btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(177, 79);
+            btnEnd.Size = new Size(155, 59);
             btnEnd.TabIndex = 38;
             btnEnd.Text = "End/close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -84,9 +86,10 @@
             // 
             // btnStartCarWash
             // 
-            btnStartCarWash.Location = new Point(12, 12);
+            btnStartCarWash.Location = new Point(10, 9);
+            btnStartCarWash.Margin = new Padding(3, 2, 3, 2);
             btnStartCarWash.Name = "btnStartCarWash";
-            btnStartCarWash.Size = new Size(129, 89);
+            btnStartCarWash.Size = new Size(113, 67);
             btnStartCarWash.TabIndex = 39;
             btnStartCarWash.Text = "Start washing";
             btnStartCarWash.UseVisualStyleBackColor = true;
@@ -98,16 +101,18 @@
             panel1.Controls.Add(btnSettings);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1200, 0);
+            panel1.Location = new Point(1170, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(188, 578);
+            panel1.Size = new Size(164, 539);
             panel1.TabIndex = 40;
             // 
             // btnSignalization
             // 
-            btnSignalization.Location = new Point(12, 107);
+            btnSignalization.Location = new Point(10, 80);
+            btnSignalization.Margin = new Padding(3, 2, 3, 2);
             btnSignalization.Name = "btnSignalization";
-            btnSignalization.Size = new Size(129, 89);
+            btnSignalization.Size = new Size(113, 67);
             btnSignalization.TabIndex = 41;
             btnSignalization.Text = "Signalization";
             btnSignalization.UseVisualStyleBackColor = true;
@@ -119,28 +124,29 @@
             panel2.Controls.Add(btnStartCarWash);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(155, 578);
+            panel2.Size = new Size(136, 539);
             panel2.TabIndex = 42;
             // 
             // userControlCarWash1
             // 
             userControlCarWash1.Dock = DockStyle.Fill;
-            userControlCarWash1.Location = new Point(155, 0);
+            userControlCarWash1.Location = new Point(136, 0);
+            userControlCarWash1.Margin = new Padding(3, 2, 3, 2);
             userControlCarWash1.Name = "userControlCarWash1";
-            userControlCarWash1.Size = new Size(1045, 578);
+            userControlCarWash1.Size = new Size(1034, 539);
             userControlCarWash1.TabIndex = 43;
             // 
             // Program2Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1388, 600);
+            ClientSize = new Size(1334, 561);
             Controls.Add(userControlCarWash1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCarWash);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Program2Form";
             Text = "Program2";
             Load += Program2_Load;
