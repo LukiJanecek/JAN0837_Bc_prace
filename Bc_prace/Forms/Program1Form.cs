@@ -362,7 +362,7 @@ namespace Bc_prace
                     await Task.Delay(500);
                 }
             }
-            else if (ActualFloor == 3) 
+            else if (ActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)

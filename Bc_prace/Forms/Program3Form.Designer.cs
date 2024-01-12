@@ -37,10 +37,9 @@
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
-            btnPedestrian1 = new Button();
-            btnPedestrian2 = new Button();
             userControlCrossroad1 = new Controls.UserControlCrossroad();
             panel2 = new Panel();
+            btnTest = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -103,13 +102,12 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(rBtnCrossroadExtension3);
             panel1.Controls.Add(rBtnCrossroadExtension2);
             panel1.Controls.Add(rBtnCrossroadExtension1);
             panel1.Controls.Add(btnEnd);
-            panel1.Controls.Add(btnPedestrian1);
             panel1.Controls.Add(rBtnCrossroadBasic);
-            panel1.Controls.Add(btnPedestrian2);
             panel1.Controls.Add(btnEmergency);
             panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
@@ -158,26 +156,6 @@
             rBtnCrossroadExtension1.UseVisualStyleBackColor = true;
             rBtnCrossroadExtension1.CheckedChanged += rBtnCrossroadExtension1_CheckedChanged;
             // 
-            // btnPedestrian1
-            // 
-            btnPedestrian1.Location = new Point(14, 212);
-            btnPedestrian1.Margin = new Padding(3, 2, 3, 2);
-            btnPedestrian1.Name = "btnPedestrian1";
-            btnPedestrian1.Size = new Size(82, 22);
-            btnPedestrian1.TabIndex = 30;
-            btnPedestrian1.Text = "Pedestrian";
-            btnPedestrian1.UseVisualStyleBackColor = true;
-            // 
-            // btnPedestrian2
-            // 
-            btnPedestrian2.Location = new Point(14, 177);
-            btnPedestrian2.Margin = new Padding(3, 2, 3, 2);
-            btnPedestrian2.Name = "btnPedestrian2";
-            btnPedestrian2.Size = new Size(82, 22);
-            btnPedestrian2.TabIndex = 31;
-            btnPedestrian2.Text = "Pedestrian";
-            btnPedestrian2.UseVisualStyleBackColor = true;
-            // 
             // userControlCrossroad1
             // 
             userControlCrossroad1.Dock = DockStyle.Fill;
@@ -195,6 +173,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1499, 753);
             panel2.TabIndex = 33;
+            // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(34, 391);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(75, 23);
+            btnTest.TabIndex = 35;
+            btnTest.Text = "Test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
             // 
             // Program3Form
             // 
@@ -222,13 +210,12 @@
         private Button btnEnd;
         private RadioButton rBtnCrossroadBasic;
         private Panel panel1;
-        private Button btnPedestrian1;
-        private Button btnPedestrian2;
         private Controls.UserControlCrossroad userControlCrossroad1;
         private Panel panel2;
         private RadioButton rBtnCrossroadExtension3;
         private RadioButton rBtnCrossroadExtension2;
         private RadioButton rBtnCrossroadExtension1;
         private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private Button btnTest;
     }
 }

@@ -37,6 +37,8 @@
             btnSignalization = new Button();
             panel2 = new Panel();
             userControlCarWash1 = new Controls.UserControlCarWash();
+            btnTest = new Button();
+            btnTest2 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -97,6 +99,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTest2);
+            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnSettings);
             panel1.Controls.Add(btnEmergency);
@@ -138,6 +142,26 @@
             userControlCarWash1.Size = new Size(1034, 539);
             userControlCarWash1.TabIndex = 43;
             // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(31, 220);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(75, 23);
+            btnTest.TabIndex = 39;
+            btnTest.Text = "Test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(29, 260);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(75, 23);
+            btnTest2.TabIndex = 40;
+            btnTest2.Text = "Test2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click;
+            // 
             // Program2Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,5 +192,7 @@
         private System.Windows.Forms.Timer Timer_read_from_PLC;
         private Panel panel2;
         private Controls.UserControlCarWash userControlCarWash1;
+        private Button btnTest;
+        private Button btnTest2;
     }
 }

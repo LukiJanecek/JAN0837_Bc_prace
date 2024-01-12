@@ -47,11 +47,13 @@ namespace Bc_prace.Controls
         private float door_height = 100; //should be equal to length
         private float signalizationCircle_diameter = 10;
 
-        private SolidBrush green = new SolidBrush(Color.Green);
-        private SolidBrush yellow = new SolidBrush(Color.Yellow);
-        private SolidBrush red = new SolidBrush(Color.Red);
-        private SolidBrush white = new SolidBrush(Color.White);
-        private SolidBrush blue = new SolidBrush(Color.Blue);   
+        private SolidBrush white = new SolidBrush(Color.White); //default
+        private SolidBrush green = new SolidBrush(Color.Green); //soap
+        private SolidBrush yellow = new SolidBrush(Color.Yellow); //wax
+        private SolidBrush red = new SolidBrush(Color.Red); //brushes
+        private SolidBrush blue = new SolidBrush(Color.Blue); //water
+        private SolidBrush brown = new SolidBrush(Color.Brown); //drying
+        private SolidBrush purple = new SolidBrush(Color.Purple); //activefoam
 
         #endregion
         public UserControlCarWash()
@@ -187,64 +189,64 @@ namespace Bc_prace.Controls
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void WaxSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void SoapSignalizationON()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void SoapSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
 
         public void ActiveFoamSignalizationON()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void ActiveFoamSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
 
         public void BrushesSignalizationON()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void BrushesSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
 
         public void DryingSignalizationON()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void DryingSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
 
         #endregion
