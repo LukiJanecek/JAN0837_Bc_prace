@@ -361,7 +361,10 @@ namespace Bc_prace
 
             userControlCarWash1.door1DOWN();
             userControlCarWash1.door2DOWN();
-                        
+
+            userControlCarWash1.MovePictureRight();
+
+
         }
     }
 }

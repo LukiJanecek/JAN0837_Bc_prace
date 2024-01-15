@@ -81,7 +81,6 @@ namespace Bc_prace.Controls
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
             InitializeCarImage();
-
         }
 
         private void UserControl1_Paint(object? sender, PaintEventArgs e)
@@ -329,31 +328,66 @@ namespace Bc_prace.Controls
         #region Car pictures 
 
         public void InitializeCarImage()
-        {
+        {            
+            if (pictureBoxCar != null && !pictureBoxCar.IsDisposed)
+            {
+                Controls.Remove(pictureBoxCar);
+                pictureBoxCar.Dispose();
+            }
+
             pictureBoxCar = new PictureBox();
 
             if (picture == 1)
             {
+                //Controls.Remove(pictureBoxCar);
+                //this.Refresh();
+                //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
-
             }
             else if (picture == 2)
             {
+                //Controls.Remove(pictureBoxCar);
+                //this.Refresh();
+                //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
             }
             else if (picture == 3)
             {
+                //Controls.Remove(pictureBoxCar);
+                //this.Refresh();
+                //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
             }
             else if (picture == 4)
             {
+                //Controls.Remove(pictureBoxCar);
+                //this.Refresh();
+                //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+            }
+            else
+            {
+                picture = 1;
             }
 
 
             pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
             pictureBoxCar.Size = new Size(64, 64); //all pictures are for 64 px 
             Controls.Add(pictureBoxCar);
+        }
+
+        public async void MovePictureRight() //možná budu muset přidat krok o kolik se má posunout
+        {
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            {
+                pictureX += 10;
+                pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+
+            picture++;
+            InitializeCarImage();
         }
 
         #endregion
