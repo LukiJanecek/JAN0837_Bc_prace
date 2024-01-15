@@ -55,6 +55,11 @@ namespace Bc_prace.Controls
         //images of car
         private PictureBox pictureBoxCar;
 
+        private float pictureX;
+        private float pictureY;
+
+        private int picture = 1;
+
         //basic parametres
         private float length = 100;
         private float door_width = 20;
@@ -326,9 +331,28 @@ namespace Bc_prace.Controls
         public void InitializeCarImage()
         {
             pictureBoxCar = new PictureBox();
-            pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png"); 
-            pictureBoxCar.Location = new Point(Convert.ToInt32(length), Convert.ToInt32(length * 3 + (length / 2))); 
-            pictureBoxCar.Size = new Size(64, 64); 
+
+            if (picture == 1)
+            {
+                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
+
+            }
+            else if (picture == 2)
+            {
+                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
+            }
+            else if (picture == 3)
+            {
+                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
+            }
+            else if (picture == 4)
+            {
+                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+            }
+
+
+            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
+            pictureBoxCar.Size = new Size(64, 64); //all pictures are for 64 px 
             Controls.Add(pictureBoxCar);
         }
 
