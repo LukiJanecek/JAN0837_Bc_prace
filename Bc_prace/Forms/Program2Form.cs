@@ -11,6 +11,8 @@ using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Controls;
 using Bc_prace.Settings;
 using Sharp7;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Reflection.Metadata;
 
 namespace Bc_prace
 {
@@ -330,9 +332,8 @@ namespace Bc_prace
             statusStripCarWash.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
             statusStripCarWash.Items.Add(lblStatus);
-
         }
-                
+        
         #endregion
 
         private void btnTest_Click(object sender, EventArgs e)

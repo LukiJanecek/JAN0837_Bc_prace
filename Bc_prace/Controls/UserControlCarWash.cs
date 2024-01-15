@@ -35,8 +35,8 @@ namespace Bc_prace.Controls
         private float aDoor2;
         private float bDoor2;
         private float cDoor2;
-        private float dDoor2;   
-            
+        private float dDoor2;
+
         private float WaxX;
         private float WaxY;
         private float WaterX;
@@ -51,6 +51,9 @@ namespace Bc_prace.Controls
         private float BrushesY;
 
         private float timeDoor = 200;
+
+        //images of car
+        private PictureBox pictureBoxCar;
 
         //basic parametres
         private float length = 100;
@@ -72,6 +75,8 @@ namespace Bc_prace.Controls
             InitializeComponent();
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
+            InitializeCarImage();
+
         }
 
         private void UserControl1_Paint(object? sender, PaintEventArgs e)
@@ -117,13 +122,13 @@ namespace Bc_prace.Controls
             //edges 
             #region Edges 
             //left wall 
-            g.DrawLine(BlackPen, x + length * 2, y + length * 4, x + length * 2, y + length);
+            g.DrawLine(BlackPen, x + length * 2, y + length * 3, x + length * 2, y + length);
 
             //roof 
             g.DrawLine(BlackPen, x + length * 2, y + length, x + length * 8, y + length);
 
             //right wall 
-            g.DrawLine(BlackPen, x + length * 8, y + length, x + length * 8, y + length * 4);
+            g.DrawLine(BlackPen, x + length * 8, y + length, x + length * 8, y + length * 3);
 
             #endregion
 
@@ -131,9 +136,9 @@ namespace Bc_prace.Controls
 
             //Inner signalization 
             #region Inner cyclus signalization 
-            
+
             //label in UserControl
-            Font labelFont = new Font("Arial", 9); 
+            Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
 
             //car position
@@ -149,7 +154,7 @@ namespace Bc_prace.Controls
             WaxY = y + length + 10;
             g.DrawString(labelWax, labelFont, labelBrush, WaxX, WaxY);
             g.DrawEllipse(BlackPen, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
-                        
+
             //Water
             string labelWater = "Water";
             WaterX = x + length * 2 + 20;
@@ -163,7 +168,7 @@ namespace Bc_prace.Controls
             ActiveFoamY = y + length + 50;
             g.DrawString(labelActiveFoam, labelFont, labelBrush, ActiveFoamX, ActiveFoamY);
             g.DrawEllipse(BlackPen, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
-                        
+
             //Soap
             string labelSoap = "Soap";
             SoapX = x + length * 2 + 20;
@@ -192,6 +197,8 @@ namespace Bc_prace.Controls
         //Methods for reaction on Tia variable change 
         #region Methods for reaction on Tia variable change 
 
+        //door movement
+        #region Door movement
         public async void door1UP()
         {
             for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
@@ -214,7 +221,7 @@ namespace Bc_prace.Controls
 
         public async void door2UP()
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length)/10)
+            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
             {
                 bDoor2 -= 10;
                 this.Refresh();
@@ -222,7 +229,7 @@ namespace Bc_prace.Controls
             }
         }
 
-        public async void door2DOWN() 
+        public async void door2DOWN()
         {
             for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
             {
@@ -231,11 +238,14 @@ namespace Bc_prace.Controls
                 await Task.Delay(Convert.ToInt32(timeDoor));
             }
         }
+        #endregion
 
+        //Inner situation signalization
+        #region Inner situation signalization
         public void WaterSignalizationON()
         {
             var g = this.CreateGraphics();
-                        
+
             g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
         public void WaterSignalizationOFF()
@@ -307,6 +317,22 @@ namespace Bc_prace.Controls
 
             g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
         }
+
+        #endregion
+
+        //Car pictures 
+        #region Car pictures 
+
+        public void InitializeCarImage()
+        {
+            pictureBoxCar = new PictureBox();
+            pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png"); 
+            pictureBoxCar.Location = new Point(Convert.ToInt32(length), Convert.ToInt32(length * 3 + (length / 2))); 
+            pictureBoxCar.Size = new Size(64, 64); 
+            Controls.Add(pictureBoxCar);
+        }
+
+        #endregion
 
         #endregion
     }
