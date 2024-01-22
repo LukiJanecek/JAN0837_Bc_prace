@@ -871,6 +871,7 @@ namespace Bc_prace.Controls
             btnRightTTopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
 
             #endregion
+
             #endregion
 
 
@@ -999,6 +1000,7 @@ namespace Bc_prace.Controls
             #region crossroad1
 
             #region Corners
+            
             //left top corner 
             //vertical line
             g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length * 3);
@@ -1007,7 +1009,6 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
             g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
             */
-
             //horizontal line
             g.DrawLine(WhitePen, x, y + length * 3, x + length * 3, y + length * 3);
             /*
@@ -1024,10 +1025,8 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
             g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
             */
-
             //horizontal line 
             g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 9);
-
             /*
             g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
             g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
@@ -1036,29 +1035,62 @@ namespace Bc_prace.Controls
             */
 
             //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
+            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
+            */
+            //horizontal line 
+            //crossroad - mid up - mid 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
+            */
 
-            //right botoom corner 
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
+            */
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 9, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
             //top 
+            //white line - crossroad1 - top - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
+            //white line - crossroad1 - top - exteral
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
 
             //bottom
+            //white line - crossroad1 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
+            //white line - crossroad1 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right   
 
             //left 
-
-            //right
-
-            #endregion
-
-            #endregion
-
-
-            //crossroad - left up corner
-
-
             //white line - crossorad1 - left - internal
             //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
             //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
@@ -1066,56 +1098,17 @@ namespace Bc_prace.Controls
             //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
             g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
 
-            
-
-            //white line - crossroad1 - top
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
-            //exteral
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
-
-            //crossroad - mid up - left
-            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
-            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
-
-            //crossroad - mid up - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
-            //jednoduše
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
-                        
-            //white line - crossroad1 - right
-            //internal line
+            //right
+            //white line - crossroad1 - right - internal
             //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
             //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
-            //external line
+            //white line - crossroad1 - right - external
             g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
+                                                                                                  //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
 
-            //crossroad - mid down - left
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
+            #endregion
 
-            //crossroad - mid down - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
-                     
-            //white line - crossroad1 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right      
+            #endregion
 
             #endregion
 
@@ -1140,7 +1133,6 @@ namespace Bc_prace.Controls
             //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 13, y + length * 4);
             //g.DrawLine(WhitePen, x + length * 13 + length_interrupted, y + length * 4, x + length * 13 + length_interrupted * 2, y + length * 4);
             //g.DrawLine(WhitePen, x + length * 13 + length_interrupted * 3, y + length * 4, x + length * 13 + length_interrupted * 4, y + length * 4);
-
             //g.DrawLine(WhitePen, x + length_interrupted * 4, y + length * 3, x + length_interrupted * 5, y + length * 3);
             //g.DrawLine(WhitePen, x + length_interrupted * 6, y + length * 3, x + length_interrupted * 7, y + length * 3);
                                   
@@ -1341,25 +1333,115 @@ namespace Bc_prace.Controls
             #region crossroad1
 
             #region Corners
-            //left top corner 
 
-            //right top corner
+            //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
+            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
+            */
+
+            //horizontal line
+            g.DrawLine(WhitePen, x, y + length * 3, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
+            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x, y + length * 5, x + length * 3, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
+            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
+            */
 
-            //right botoom corner 
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
+            */
+
+            //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
+            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
+            */
+
+            //horizontal line 
+            //crossroad - mid up - mid 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
+            */
+
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
+            */
+
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 9, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
             //top 
+            //white line - crossroad1 - top - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
+            //white line - crossroad1 - top - exteral
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
 
             //bottom
+            //white line - crossroad1 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
+            //white line - crossroad1 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right   
 
             //left 
+            //white line - crossorad1 - left - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
+            //white line - crossroad1 - left - external
+            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
 
             //right
+            //white line - crossroad1 - right - internal
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
+            //white line - crossroad1 - right - external
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
 
             #endregion
 
@@ -1370,172 +1452,97 @@ namespace Bc_prace.Controls
 
             #region Corners
             //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
+            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
+            */
 
             //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
+            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 14, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
+            */
 
-            //right botoom corner 
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 14, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
-            //top 
-
-            //bottom
-
-            //left 
-
-            //right
-
-            #endregion
-
-            #endregion
-
-
-
-            //crossroad - left up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
-            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
-            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
-
-            //white line - crossorad1 - left - internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
-            //white line - crossroad1 - left - external
-            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
-
-            //crossroad - left down corner
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
-            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
-
-            //white line - crossroad1 - top
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
-            //exteral
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
-
-            //crossroad - mid up - left
-            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
-            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
-
-            //crossroad - mid up - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
-            //jednoduše
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
-
-            //crossroad - mid up - right 
-            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
-            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
-
-            //white line - crossroad1 - right
-            //internal line
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
-            //external line
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
-
-            //crossroad - mid down - left
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
-
-            //crossroad - mid down - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
-
-            //crossroad - mid down - right
-            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
-
-            //white line - crossroad1 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right
-
-            //white line - crossroad2 - left
-            //exteranl
-            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
-
-            //crossroad - right up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
-            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
-
-            //white line - crossroad2 - top
-            //external
+            //top
+            //white line - crossorad 2 - top - external
             g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 10, y + length * 2); //left
             //g.DrawLine(WhitePen, x + length * 10, y + length * 2, x + length * 11, y + length * 2); //right
-            //internal
+            //white line - crossorad 2 - top - internal
             //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 10, y + length * 3); //left
             //g.DrawLine(WhitePen, x + length * 10, y + length * 3, x + length * 11, y + length * 3); //right
 
-            //crossroad - right down corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
-
-            //white line - crossroad2 - bottom
-            //internal
+            //bottom
+            //white line - crossorad 2 - bottom - internal
             //g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 10, y + length * 5); //left
             //g.DrawLine(WhitePen, x + length * 10, y + length * 5, x + length * 11, y + length * 5); //right
-            //external
+            //white line - crossorad 2 - bottom - external
             //g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 10, y + length * 6); //left
             g.DrawLine(WhitePen, x + length * 10, y + length * 6, x + length * 11, y + length * 6); //right
 
-            //white line - crossroad2 - right
-            //internal
+            //left 
+            //white line - crossroad2 - left - exteranl
+            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
+            //white line - crossroad2 - left - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
+
+            //right
+            //white line - crossorad 2 - right - internal
             //g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 11, y + length * 4); //up
             //g.DrawLine(WhitePen, x + length * 11, y + length * 4, x + length * 11, y + length * 5); //down
-            //external
+            //white line - crossorad 2 - right - external
             g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 12, y + length * 4); //up
             //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 12, y + length * 5); //down
-                                             
+
+            #endregion
+
+            #endregion
+
             #endregion
 
             //Center lines
@@ -1552,6 +1559,7 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 4, y + length * 8);
 
             //vertical center line - right
+            //top
             g.DrawLine(WhitePen, x + length * 10, y, x + length * 10, y + length_interrupted);
             g.DrawLine(WhitePen, x + length * 10, y + length_interrupted * 2, x + length * 10, y + length_interrupted * 3);
             //g.DrawLine(WhitePen, x + length * 4, y + length_interrupted * 4, x + length * 4, y + length_interrupted * 5);
@@ -1568,7 +1576,6 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 13, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted, y + length * 4, x + length * 13 + length_interrupted * 2, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted * 3, y + length * 4, x + length * 13 + length_interrupted * 4, y + length * 4);
-
             //g.DrawLine(WhitePen, x + length_interrupted * 4, y + length * 3, x + length_interrupted * 5, y + length * 3);
             //g.DrawLine(WhitePen, x + length_interrupted * 6, y + length * 3, x + length_interrupted * 7, y + length * 3);
                       
@@ -1898,25 +1905,115 @@ namespace Bc_prace.Controls
             #region crossroad1
 
             #region Corners
-            //left top corner 
 
-            //right top corner
+            //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
+            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
+            */
+
+            //horizontal line
+            g.DrawLine(WhitePen, x, y + length * 3, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
+            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x, y + length * 5, x + length * 3, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
+            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
+            */
 
-            //right botoom corner 
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
+            */
+
+            //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
+            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
+            */
+
+            //horizontal line 
+            //crossroad - mid up - mid 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
+            */
+
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
+            */
+
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 9, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
             //top 
+            //white line - crossroad1 - top - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
+            //white line - crossroad1 - top - exteral
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
 
             //bottom
+            //white line - crossroad1 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
+            //white line - crossroad1 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right   
 
             //left 
+            //white line - crossorad1 - left - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
+            //white line - crossroad1 - left - external
+            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
 
             //right
+            //white line - crossroad1 - right - internal
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
+            //white line - crossroad1 - right - external
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
 
             #endregion
 
@@ -1927,24 +2024,92 @@ namespace Bc_prace.Controls
 
             #region Corners
             //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
+            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
+            */
 
             //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
+            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 14, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
+            */
 
-            //right botoom corner 
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 14, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
-            //top 
+            //top
+            //white line - crossorad 2 - top - external
+            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 10, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 2, x + length * 11, y + length * 2); //right
+            //white line - crossorad 2 - top - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 10, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 3, x + length * 11, y + length * 3); //right
 
             //bottom
+            //white line - crossorad 2 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 10, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 5, x + length * 11, y + length * 5); //right
+            //white line - crossorad 2 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 10, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 10, y + length * 6, x + length * 11, y + length * 6); //right
 
             //left 
+            //white line - crossroad2 - left - exteranl
+            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
+            //white line - crossroad2 - left - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
 
             //right
+            //white line - crossorad 2 - right - internal
+            //g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 11, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 11, y + length * 4, x + length * 11, y + length * 5); //down
+            //white line - crossorad 2 - right - external
+            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 12, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 12, y + length * 5); //down
 
             #endregion
 
@@ -1955,193 +2120,44 @@ namespace Bc_prace.Controls
 
             #region Corners
             //left top corner 
+            //horizontal line 
+            g.DrawLine(WhitePen, x, y + length * 9, x + length * 3, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 9, x + length, y + length * 9);
+            g.DrawLine(WhitePen, x + length, y + length * 9, x + length * 2, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 9, x + length * 3, y + length * 9);
+            */
 
             //right top corner
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 9, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 6, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 7, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 9, x + length * 8, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 9, x + length * 9, y + length * 9);
+            */
 
-            //left bottom corner
-
-            //right botoom corner 
+            //bottom line
+            g.DrawLine(WhitePen, x, y + length * 11, x + length * 9, y + length * 11);
 
             #endregion
 
             #region whitelines / traffic lines 
 
-            //top 
-
-            //bottom
-
-            //left 
-
-            //right
-
-            #endregion
-
-            #endregion
-
-
-            //crossroad - left up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
-            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
-            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
-
-            //white line - crossorad1 - left - internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
-            //white line - crossroad1 - left - external
-            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
-
-            //crossroad - left down corner
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
-            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
-
-            //white line - crossroad1 - top
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
-            //exteral
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
-
-            //crossroad - mid up - left
-            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
-            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
-
-            //crossroad - mid up - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
-            //jednoduše
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
-
-            //crossroad - mid up - right 
-            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
-            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
-
-            //white line - crossroad1 - right
-            //internal line
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
-            //external line
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
-
-            //crossroad - mid down - left
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
-
-            //crossroad - mid down - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
-
-            //crossroad - mid down - right
-            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
-
-            //white line - crossroad1 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right
-
-            //white line - crossroad2 - left
-            //exteranl
-            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
-
-            //crossroad - right up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
-            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
-
-            //white line - crossroad2 - top
-            //external
-            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 10, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 2, x + length * 11, y + length * 2); //right
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 10, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 3, x + length * 11, y + length * 3); //right
-
-            //crossroad - right down corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
-
-            //white line - crossroad2 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 10, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 5, x + length * 11, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 10, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 10, y + length * 6, x + length * 11, y + length * 6); //right
-
-            //white line - crossroad2 - right
-            //internal
-            //g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 11, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 11, y + length * 4, x + length * 11, y + length * 5); //down
-            //external
-            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 12, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 12, y + length * 5); //down
-
-            //crossroad - T - left 
-            g.DrawLine(WhitePen, x, y + length * 9, x + length, y + length * 9);
-            g.DrawLine(WhitePen, x + length, y + length * 9, x + length * 2, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 9, x + length * 3, y + length * 9);
-
-            //crossroad - T - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 6, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 7, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 9, x + length * 8, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 9, x + length * 9, y + length * 9);
-
-            //crossroad - T - bottom 
-            g.DrawLine(WhitePen, x, y + length * 11, x + length * 9, y + length * 11);
-
-            //whiteline - T
-            //left
-            g.DrawLine(WhitePen, x + length * 2, y + length * 10, x + length * 2, y + length * 11);
             //top
             g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 4, y + length * 8);
+            
+            //left
+            g.DrawLine(WhitePen, x + length * 2, y + length * 10, x + length * 2, y + length * 11);
+
             //right
             g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 6, y + length * 10);
-                        
+
+            #endregion
+
+            #endregion
+                                    
             #endregion
 
             //Center lines
@@ -2158,6 +2174,7 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 4, y + length * 8);
 
             //vertical center line - right
+            //top
             g.DrawLine(WhitePen, x + length * 10, y, x + length * 10, y + length_interrupted);
             g.DrawLine(WhitePen, x + length * 10, y + length_interrupted * 2, x + length * 10, y + length_interrupted * 3);
             //g.DrawLine(WhitePen, x + length * 4, y + length_interrupted * 4, x + length * 4, y + length_interrupted * 5);
@@ -2174,26 +2191,17 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 13, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted, y + length * 4, x + length * 13 + length_interrupted * 2, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted * 3, y + length * 4, x + length * 13 + length_interrupted * 4, y + length * 4);
-
             //g.DrawLine(WhitePen, x + length_interrupted * 4, y + length * 3, x + length_interrupted * 5, y + length * 3);
             //g.DrawLine(WhitePen, x + length_interrupted * 6, y + length * 3, x + length_interrupted * 7, y + length * 3);
-
             g.DrawLine(WhitePen, x + length, y + length * 10, x + length * 2, y + length * 10);
             g.DrawLine(WhitePen, x + length * 6, y + length * 10, x + length * 8, y + length * 10);
-
             
             //horizontal center line - bottom 
             //left T
             g.DrawLine(WhitePen, x, y + length * 10, x + length_interrupted, y + length * 10);
             g.DrawLine(WhitePen, x + length_interrupted * 2, y + length * 10, x + length_interrupted * 3, y + length * 10);
             g.DrawLine(WhitePen, x + length, y + length * 10, x + length * 2, y + length * 10);
-
             g.DrawLine(WhitePen, x + length * 6, y + length * 10, x + length * 8, y + length * 10);
-
-            
-
-
-
 
             #endregion
                         
@@ -2621,25 +2629,115 @@ namespace Bc_prace.Controls
             #region crossroad1
 
             #region Corners
-            //left top corner 
 
-            //right top corner
+            //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
+            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
+            */
+
+            //horizontal line
+            g.DrawLine(WhitePen, x, y + length * 3, x + length * 3, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
+            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x, y + length * 5, x + length * 3, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
+            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
+            */
 
-            //right botoom corner 
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
+            */
+
+            //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
+            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
+            */
+
+            //horizontal line 
+            //crossroad - mid up - mid 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
+            */
+
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
+            */
+
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 9, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
             //top 
+            //white line - crossroad1 - top - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
+            //white line - crossroad1 - top - exteral
+            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
 
             //bottom
+            //white line - crossroad1 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
+            //white line - crossroad1 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right   
 
             //left 
+            //white line - crossorad1 - left - internal
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
+            //white line - crossroad1 - left - external
+            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
 
             //right
+            //white line - crossroad1 - right - internal
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
+            //white line - crossroad1 - right - external
+            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
 
             #endregion
 
@@ -2650,24 +2748,92 @@ namespace Bc_prace.Controls
 
             #region Corners
             //left top corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
+            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
+            */
 
             //right top corner
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
+            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 14, y + length * 3);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
+            */
 
             //left bottom corner
+            //vertical line 
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
+            */
 
-            //right botoom corner 
+            //right bottom corner 
+            //vertical line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
+            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
+            */
+            //horizontal line
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 14, y + length * 5);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
+            */
 
             #endregion
 
             #region whitelines / traffic lines 
 
-            //top 
+            //top
+            //white line - crossorad 2 - top - external
+            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 10, y + length * 2); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 2, x + length * 11, y + length * 2); //right
+            //white line - crossorad 2 - top - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 10, y + length * 3); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 3, x + length * 11, y + length * 3); //right
 
             //bottom
+            //white line - crossorad 2 - bottom - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 10, y + length * 5); //left
+            //g.DrawLine(WhitePen, x + length * 10, y + length * 5, x + length * 11, y + length * 5); //right
+            //white line - crossorad 2 - bottom - external
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 10, y + length * 6); //left
+            g.DrawLine(WhitePen, x + length * 10, y + length * 6, x + length * 11, y + length * 6); //right
 
             //left 
+            //white line - crossroad2 - left - exteranl
+            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
+            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
+            //white line - crossroad2 - left - internal
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
 
             //right
+            //white line - crossorad 2 - right - internal
+            //g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 11, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 11, y + length * 4, x + length * 11, y + length * 5); //down
+            //white line - crossorad 2 - right - external
+            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 12, y + length * 4); //up
+            //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 12, y + length * 5); //down
 
             #endregion
 
@@ -2678,24 +2844,39 @@ namespace Bc_prace.Controls
 
             #region Corners
             //left top corner 
+            //horizontal line 
+            g.DrawLine(WhitePen, x, y + length * 9, x + length * 3, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x, y + length * 9, x + length, y + length * 9);
+            g.DrawLine(WhitePen, x + length, y + length * 9, x + length * 2, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 2, y + length * 9, x + length * 3, y + length * 9);
+            */
 
             //right top corner
+            //horizontal line 
+            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 9, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 6, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 7, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 7, y + length * 9, x + length * 8, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 8, y + length * 9, x + length * 9, y + length * 9);
+            */
 
-            //left bottom corner
-
-            //right botoom corner 
+            //bottom line
+            g.DrawLine(WhitePen, x, y + length * 11, x + length * 9, y + length * 11);
 
             #endregion
 
             #region whitelines / traffic lines 
 
-            //top 
+            //top
+            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 4, y + length * 8);
 
-            //bottom
-
-            //left 
+            //left
+            g.DrawLine(WhitePen, x + length * 2, y + length * 10, x + length * 2, y + length * 11);
 
             //right
+            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 6, y + length * 10);
 
             #endregion
 
@@ -2705,204 +2886,34 @@ namespace Bc_prace.Controls
             #region Right T
 
             #region Corners
-            //left top corner 
-
+            
             //right top corner
+            g.DrawLine(WhitePen, x + length * 11, y + length * 9, x + length * 14, y + length * 9);
+            /*
+            g.DrawLine(WhitePen, x + length * 11, y + length * 9, x + length * 12, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 12, y + length * 9, x + length * 13, y + length * 9);
+            g.DrawLine(WhitePen, x + length * 13, y + length * 9, x + length * 14, y + length * 9);
+            */
 
-            //left bottom corner
-
-            //right botoom corner 
+            //bottom line 
+            g.DrawLine(WhitePen, x + length * 9, y + length * 11, x + length * 14, y + length * 11);
 
             #endregion
 
             #region whitelines / traffic lines 
 
             //top 
-
-            //bottom
-
-            //left 
-
-            //right
-
-            #endregion
-
-            #endregion
-
-            //crossroad - left up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length);
-            g.DrawLine(WhitePen, x + length * 3, y + length, x + length * 3, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 3, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 3, x + length, y + length * 3);
-            g.DrawLine(WhitePen, x + length, y + length * 3, x + length * 2, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 3, y + length * 3);
-
-            //white line - crossorad1 - left - internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 3, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 4, x + length * 3, y + length * 5); //down
-            //white line - crossroad1 - left - external
-            //g.DrawLine(WhitePen, x + length * 2, y + length * 3, x + length * 2, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 2, y + length * 4, x + length * 2, y + length * 5); //down
-
-            //crossroad - left down corner
-            //horizontal line
-            g.DrawLine(WhitePen, x, y + length * 5, x + length, y + length * 5);
-            g.DrawLine(WhitePen, x + length, y + length * 5, x + length * 2, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 5, x + length * 3, y + length * 5);
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 3, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 3, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 7, x + length * 3, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 3, y + length * 9);
-
-            //white line - crossroad1 - top
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 3, x + length * 4, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 3, x + length * 5, y + length * 3); //right
-            //exteral
-            g.DrawLine(WhitePen, x + length * 3, y + length * 2, x + length * 4, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 2, x + length * 5, y + length * 2); //right
-
-            //crossroad - mid up - left
-            g.DrawLine(WhitePen, x + length * 5, y, x + length * 5, y + length);
-            g.DrawLine(WhitePen, x + length * 5, y + length, x + length * 5, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 2, x + length * 5, y + length * 3);
-
-            //crossroad - mid up - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 6, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 7, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 3, x + length * 8, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 9, y + length * 3);
-            //jednoduše
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 9, y + length * 3);
-
-            //crossroad - mid up - right 
-            g.DrawLine(WhitePen, x + length * 9, y, x + length * 9, y + length);
-            g.DrawLine(WhitePen, x + length * 9, y + length, x + length * 9, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 9, y + length * 3);
-
-            //white line - crossroad1 - right
-            //internal line
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 3, x + length * 5, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 5, y + length * 4, x + length * 5, y + length * 5); //down
-            //external line
-            g.DrawLine(WhitePen, x + length * 6, y + length * 3, x + length * 6, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 6, y + length * 4, x + length * 6, y + length * 5); //down
-
-            //crossroad - mid down - left
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 5, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 6, x + length * 5, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 7, x + length * 5, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 5, y + length * 8, x + length * 5, y + length * 9);
-
-            //crossroad - mid down - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 5, x + length * 6, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 5, x + length * 7, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 5, x + length * 8, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 5, x + length * 9, y + length * 5);
-
-            //crossroad - mid down - right
-            g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 9, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 9, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 7, x + length * 9, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 9, y + length * 9);
-
-            //white line - crossroad1 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 5, x + length * 4, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 4, y + length * 5, x + length * 5, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 3, y + length * 6, x + length * 4, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 5, y + length * 6); //right
-
-            //white line - crossroad2 - left
-            //exteranl
-            //g.DrawLine(WhitePen, x + length * 8, y + length * 3, x + length * 8, y + length * 4); //up
-            g.DrawLine(WhitePen, x + length * 8, y + length * 4, x + length * 8, y + length * 5); //down
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 9, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 4, x + length * 9, y + length * 5); //down 
-
-            //crossroad - right up corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y, x + length * 11, y + length);
-            g.DrawLine(WhitePen, x + length * 11, y + length, x + length * 11, y + length * 2);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 2, x + length * 11, y + length * 3);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 12, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 13, y + length * 3);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 3, x + length * 14, y + length * 3);
-
-            //white line - crossroad2 - top
-            //external
-            g.DrawLine(WhitePen, x + length * 9, y + length * 2, x + length * 10, y + length * 2); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 2, x + length * 11, y + length * 2); //right
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 3, x + length * 10, y + length * 3); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 3, x + length * 11, y + length * 3); //right
-
-            //crossroad - right down corner
-            //vertical line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 11, y + length * 6);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 6, x + length * 11, y + length * 7);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 7, x + length * 11, y + length * 8);
-            g.DrawLine(WhitePen, x + length * 11, y + length * 8, x + length * 11, y + length * 9);
-            //horizontal line
-            g.DrawLine(WhitePen, x + length * 11, y + length * 5, x + length * 12, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 5, x + length * 13, y + length * 5);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 5, x + length * 14, y + length * 5);
-
-            //white line - crossroad2 - bottom
-            //internal
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 5, x + length * 10, y + length * 5); //left
-            //g.DrawLine(WhitePen, x + length * 10, y + length * 5, x + length * 11, y + length * 5); //right
-            //external
-            //g.DrawLine(WhitePen, x + length * 9, y + length * 6, x + length * 10, y + length * 6); //left
-            g.DrawLine(WhitePen, x + length * 10, y + length * 6, x + length * 11, y + length * 6); //right
-
-            //white line - crossroad2 - right
-            //internal
-            //g.DrawLine(WhitePen, x + length * 11, y + length * 3, x + length * 11, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 11, y + length * 4, x + length * 11, y + length * 5); //down
-            //external
-            g.DrawLine(WhitePen, x + length * 12, y + length * 3, x + length * 12, y + length * 4); //up
-            //g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 12, y + length * 5); //down
-
-            //crossroad - T - left 
-            g.DrawLine(WhitePen, x, y + length * 9, x + length, y + length * 9);
-            g.DrawLine(WhitePen, x + length, y + length * 9, x + length * 2, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 2, y + length * 9, x + length * 3, y + length * 9);
-
-            //crossroad - T - mid 
-            g.DrawLine(WhitePen, x + length * 5, y + length * 9, x + length * 6, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 7, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 7, y + length * 9, x + length * 8, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 8, y + length * 9, x + length * 9, y + length * 9);
-
-            //crossroad - T - bottom 
-            g.DrawLine(WhitePen, x, y + length * 11, x + length * 14, y + length * 11);
-
-            //crossroad - T - right
-            g.DrawLine(WhitePen, x + length * 11, y + length * 9, x + length * 12, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 12, y + length * 9, x + length * 13, y + length * 9);
-            g.DrawLine(WhitePen, x + length * 13, y + length * 9, x + length * 14, y + length * 9);
-
-            //pravá spojka mezi crossroad2 a T2 - čára pro auto
             g.DrawLine(WhitePen, x + length * 9, y + length * 8, x + length * 10, y + length * 8);
 
-            //whiteline - T
-            //left
-            g.DrawLine(WhitePen, x + length * 2, y + length * 10, x + length * 2, y + length * 11);
-            //top
-            g.DrawLine(WhitePen, x + length * 3, y + length * 8, x + length * 4, y + length * 8);
-            //right
-            g.DrawLine(WhitePen, x + length * 6, y + length * 9, x + length * 6, y + length * 10);
-
+            //left 
             g.DrawLine(WhitePen, x + length * 8, y + length * 10, x + length * 8, y + length * 11);
 
+            //right
             g.DrawLine(WhitePen, x + length * 12, y + length * 9, x + length * 12, y + length * 10);
+
+            #endregion
+
+            #endregion
 
             #endregion
 
@@ -2920,6 +2931,7 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 4, y + length * 6, x + length * 4, y + length * 8);
 
             //vertical center line - right
+            //top
             g.DrawLine(WhitePen, x + length * 10, y, x + length * 10, y + length_interrupted);
             g.DrawLine(WhitePen, x + length * 10, y + length_interrupted * 2, x + length * 10, y + length_interrupted * 3);
             //g.DrawLine(WhitePen, x + length * 4, y + length_interrupted * 4, x + length * 4, y + length_interrupted * 5);
@@ -2936,13 +2948,10 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x + length * 12, y + length * 4, x + length * 13, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted, y + length * 4, x + length * 13 + length_interrupted * 2, y + length * 4);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted * 3, y + length * 4, x + length * 13 + length_interrupted * 4, y + length * 4);
-
             //g.DrawLine(WhitePen, x + length_interrupted * 4, y + length * 3, x + length_interrupted * 5, y + length * 3);
             //g.DrawLine(WhitePen, x + length_interrupted * 6, y + length * 3, x + length_interrupted * 7, y + length * 3);
-
             g.DrawLine(WhitePen, x + length, y + length * 10, x + length * 2, y + length * 10);
             g.DrawLine(WhitePen, x + length * 6, y + length * 10, x + length * 8, y + length * 10);
-
             g.DrawLine(WhitePen, x + length * 12, y + length * 10, x + length * 13, y + length * 10);
 
             //horizontal center line - bottom 
@@ -2950,16 +2959,11 @@ namespace Bc_prace.Controls
             g.DrawLine(WhitePen, x, y + length * 10, x + length_interrupted, y + length * 10);
             g.DrawLine(WhitePen, x + length_interrupted * 2, y + length * 10, x + length_interrupted * 3, y + length * 10);
             g.DrawLine(WhitePen, x + length, y + length * 10, x + length * 2, y + length * 10);
-
             g.DrawLine(WhitePen, x + length * 6, y + length * 10, x + length * 8, y + length * 10);
-
             //right T 
             g.DrawLine(WhitePen, x + length * 12, y + length * 10, x + length * 13, y + length * 10);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted, y + length * 10, x + length * 13 + length_interrupted * 2, y + length * 10);
             g.DrawLine(WhitePen, x + length * 13 + length_interrupted * 3, y + length * 10, x + length * 13 + length_interrupted * 4, y + length * 10);
-
-
-
 
             #endregion
                         
@@ -3406,7 +3410,6 @@ namespace Bc_prace.Controls
             */
 
             #endregion
-
 
             #endregion
                       
