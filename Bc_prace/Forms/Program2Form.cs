@@ -264,9 +264,7 @@ namespace Bc_prace
         }
 
         #endregion
-
-        
-
+                
         //Start CarWash
         #region Start CarWash
         private void btnStartCarWash_Click(object sender, EventArgs e)

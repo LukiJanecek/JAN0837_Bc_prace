@@ -49,6 +49,8 @@ namespace Bc_prace.Controls
         private float DryingY;
         private float BrushesX;
         private float BrushesY;
+        private float CarSignalizationX;
+        private float CarSignalizationY;
 
         private float timeDoor = 200;
 
@@ -144,13 +146,20 @@ namespace Bc_prace.Controls
             //label in UserControl
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
-
+            
             //car position
             g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //position line  
             g.DrawLine(BlackPen, x + length * 3, y + length * 2, x + length * 7, y + length * 2);
             g.DrawEllipse(BlackPen, x + length * 3 - (signalizationCircle_diameter / 2), y + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
+
+            //car signalization 
+            string labelCarSignalization = "GO!";
+            CarSignalizationX = x + length * 5 + 20;
+            CarSignalizationY = y + length * 2 + length / 2;
+            g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+            g.DrawEllipse(BlackPen, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //Wax
             string labelWax = "Wax";
