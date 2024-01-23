@@ -25,7 +25,7 @@ namespace Bc_prace
             InitializeButton();
         }
 
-        //Varialbes
+        //Variables
         #region Variables
 
         //Count

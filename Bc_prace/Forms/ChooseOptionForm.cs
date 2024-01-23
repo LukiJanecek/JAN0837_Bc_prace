@@ -17,7 +17,19 @@ namespace Bc_prace
 {
     public partial class ChooseOptionForm : Form
     {
-        //Tia variablesx
+        //Variables
+        #region Variables 
+
+        private static bool program1Opened = false;
+        private static bool program2Opened = false;
+        private static bool program3Opened = false;
+
+        Program1Form Program1 = null;
+        Program2Form Program2 = null;
+        Program3Form Program3 = null;
+        #endregion
+
+        //Tia variables
         #region Tia connection
         public S7Client client = new S7Client();
         public byte[] send_buffer = new byte[5u];
@@ -66,17 +78,29 @@ namespace Bc_prace
             // ale cool podmínka X error hláška
             */
 
-            
+            if (!program1Opened)
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
+                statusStrip1.Items.Add(lblStatus);
 
-            statusStrip1.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
-            statusStrip1.Items.Add(lblStatus);
+                Option1 = true;
+                S7.SetBitAt(ref send_buffer, 0, 0, true);
 
-            Option1 = true;
-            S7.SetBitAt(ref send_buffer, 0, 0, true);
+                Program1 = new Program1Form();
+                Program1.Show();
+                program1Opened = true;
+                                
+                Program1.FormClosed += (sender, e) => { program1Opened = false; };
+            }
+            else
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 1 is already running.");
+                statusStrip1.Items.Add(lblStatus);
 
-            Program1Form Program1 = new Program1Form();
-            Program1.Show();
+                Program1.BringToFront();
+            }
         }
 
         private void btnProgram2_Click(object sender, EventArgs e)
@@ -96,18 +120,31 @@ namespace Bc_prace
             // ale cool podmínka X error hláška
             */
 
-            
+            if (!program2Opened)
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
+                statusStrip1.Items.Add(lblStatus);
 
-            statusStrip1.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
-            statusStrip1.Items.Add(lblStatus);
+                Option2 = true;
+                S7.SetBitAt(ref send_buffer, 0, 1, true);
 
-            Option2 = true;
-            S7.SetBitAt(ref send_buffer, 0, 1, true);
+                Program2 = new Program2Form();
+                Program2.Show();
+                program2Opened = true;
 
-            Program2Form Program2 = new Program2Form();
-            Program2.Show();
-        }
+                Program2.FormClosed += (sender, e) => { program1Opened = false; };
+            }
+            else
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 2 is already running");
+                statusStrip1.Items.Add(lblStatus);
+
+                Program2.BringToFront();
+            }
+
+    }
 
         private void btnProgram3_Click(object sender, EventArgs e)
         {
@@ -127,15 +164,35 @@ namespace Bc_prace
 
             
             
-            statusStrip1.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
-            statusStrip1.Items.Add(lblStatus);
+            
 
-            Option3 = true;
-            S7.SetBitAt(ref send_buffer, 0, 2, true);
+            if (!program3Opened)
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
+                statusStrip1.Items.Add(lblStatus);
 
-            Program3Form Program3 = new Program3Form();
-            Program3.Show();
+                Option3 = true;
+                S7.SetBitAt(ref send_buffer, 0, 2, true);
+
+                Program3 = new Program3Form();
+                Program3.Show();
+                program3Opened = true;
+
+                Program3.FormClosed += (sender, e) => { program1Opened = false; };
+            }
+            else
+            {
+                statusStrip1.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 3 is already running");
+                statusStrip1.Items.Add(lblStatus);
+
+                if (Program3 != null && !Program3.IsDisposed)
+                {
+                    Program3.BringToFront();
+                }
+            }
+
         }
         #endregion
 

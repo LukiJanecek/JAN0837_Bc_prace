@@ -982,6 +982,8 @@ namespace Bc_prace.Controls
 
             //BTN allow
             #region BTN alow 
+
+            //crossroad 1
             btnCrossroad1TopCrosswalkLEFT.Visible = true;
             btnCrossroad1TopCrosswalkLEFT.Enabled = true;
             btnCrossroad1TopCrosswalkRIGHT.Visible = true;
@@ -991,6 +993,28 @@ namespace Bc_prace.Controls
             btnCrossroad1LeftCrosswalkBOTTOM.Visible = true;
             btnCrossroad1LeftCrosswalkBOTTOM.Enabled = true;
 
+            //crossorad2 
+            btnCrossroad2LeftCrosswalkBOTTOM.Visible = false;
+            btnCrossroad2LeftCrosswalkBOTTOM.Enabled = false;
+            btnCrossroad2LeftCrosswalkTOP.Visible = false;
+            btnCrossroad2LeftCrosswalkTOP.Enabled = false;
+            btnCrossroad2RightCrosswalkBOTTOM.Visible = false;
+            btnCrossroad2RightCrosswalkBOTTOM.Enabled = false;
+            btnCrossroad2RightCrosswalkTOP.Visible = false;
+            btnCrossroad2RightCrosswalkTOP.Enabled = false;
+
+            //left T
+            btnLeftTLeftCrosswalkTOP.Visible = false;
+            btnLeftTLeftCrosswalkTOP.Enabled = false;
+            btnLeftTLeftCrosswalkBOTTOM.Visible = false;
+            btnLeftTLeftCrosswalkBOTTOM.Enabled = false;
+
+            //right T
+            btnRightTTopCrosswalkLEFT.Visible = false;
+            btnRightTTopCrosswalkLEFT.Enabled = false;
+            btnRightTTopCrosswalkRIGHT.Visible = false;
+            btnRightTTopCrosswalkRIGHT.Enabled = false;
+            
             #endregion
 
             //Traffic lines
@@ -1000,7 +1024,7 @@ namespace Bc_prace.Controls
             #region crossroad1
 
             #region Corners
-            
+
             //left top corner 
             //vertical line
             g.DrawLine(WhitePen, x + length * 3, y, x + length * 3, y + length * 3);
@@ -1323,6 +1347,18 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkTOP.Enabled = true;
             btnCrossroad2RightCrosswalkBOTTOM.Visible = true;
             btnCrossroad2RightCrosswalkBOTTOM.Enabled = true;
+
+            //left T
+            btnLeftTLeftCrosswalkTOP.Visible = false;
+            btnLeftTLeftCrosswalkTOP.Enabled = false;
+            btnLeftTLeftCrosswalkBOTTOM.Visible = false;
+            btnLeftTLeftCrosswalkBOTTOM.Enabled = false;
+
+            //right T
+            btnRightTTopCrosswalkLEFT.Visible = false;
+            btnRightTTopCrosswalkLEFT.Enabled = false;
+            btnRightTTopCrosswalkRIGHT.Visible = false;
+            btnRightTTopCrosswalkRIGHT.Enabled = false;
 
             #endregion
 
@@ -1894,7 +1930,12 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkTOP.Enabled = true;
             btnLeftTLeftCrosswalkBOTTOM.Visible = true;
             btnLeftTLeftCrosswalkBOTTOM.Enabled = true;
-
+                        
+            //right T
+            btnRightTTopCrosswalkLEFT.Visible = false;
+            btnRightTTopCrosswalkLEFT.Enabled = false;
+            btnRightTTopCrosswalkRIGHT.Visible = false;
+            btnRightTTopCrosswalkRIGHT.Enabled = false;
 
             #endregion
 
