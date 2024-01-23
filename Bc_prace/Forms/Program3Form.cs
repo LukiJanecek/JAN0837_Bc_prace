@@ -322,21 +322,7 @@ namespace Bc_prace
 
         #endregion
         */
-
-        //Settings
-        #region Settings 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            statusStripCrossroad.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
-            statusStripCrossroad.Items.Add(lblStatus);
-
-            Program2SettingsForm Settings = new Program2SettingsForm();
-            Settings.ShowDialog(this);
-        }
-        #endregion
-
-
+             
         private void Program3_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

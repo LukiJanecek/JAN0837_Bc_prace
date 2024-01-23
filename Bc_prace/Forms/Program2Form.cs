@@ -275,20 +275,7 @@ namespace Bc_prace
             Selection.ShowDialog(this);
         }
         #endregion
-
-        //Settings
-        #region Settings 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            statusStripCarWash.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
-            statusStripCarWash.Items.Add(lblStatus);
-
-            Program2SettingsForm Settings = new Program2SettingsForm();
-            Settings.ShowDialog(this);
-        }
-        #endregion
-
+                
         private void Program2_Load(object sender, EventArgs e)
         {
 

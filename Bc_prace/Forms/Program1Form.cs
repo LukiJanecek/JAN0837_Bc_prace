@@ -45,30 +45,9 @@ namespace Bc_prace
 
         public int ActualFloor;
 
-        //Settings variables
-        private Program1SettingsForm SettingsFunctions;
-
         int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
 
-        public void SettingsVariables()
-        {
 
-            SettingsFunctions.Show();
-
-            /*
-            string ElevatorSpeed = SettingsFunctions.ElevatorSpeed;
-            string InactivityTime = SettingsFunctions.InactivityTime;
-            string TimeDoorOPEN = SettingsFunctions.TimeDoorOPEN;
-            string TimeDoorCLOSE = SettingsFunctions.TimeDoorCLOSE;
-            */
-
-            /*
-            bool success1 = int.TryParse(ElevatorSpeed, out ElevatorSpeedValue);
-            bool success2 = int.TryParse(InactivityTime, out InactivityTimeValue);
-            bool success3 = int.TryParse(TimeDoorOPEN, out TimeDoorOPENValue);
-            bool success4 = int.TryParse(TimeDoorCLOSE, out TimeDoorCLOSEValue);
-            */
-        }
         #endregion
 
         //Connection between varibles from TiaPortal + C# 
@@ -95,8 +74,6 @@ namespace Bc_prace
         public Program1Form()
         {
             InitializeComponent();
-
-            SettingsFunctions = new Program1SettingsForm();
 
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
@@ -660,30 +637,6 @@ namespace Bc_prace
         }
         #endregion
 
-        //Settings
-        #region Settings 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
-            statusStripElevator.Items.Add(lblStatus);
-
-            Program1SettingsForm Settings = new Program1SettingsForm();
-            Settings.ShowDialog(this);
-        }
-
-        private void btnSettingsStrip_Click(object sender, EventArgs e)
-        {
-            statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Settings");
-            statusStripElevator.Items.Add(lblStatus);
-
-            Program1SettingsForm Settings = new Program1SettingsForm();
-            Settings.ShowDialog(this);
-        }
-
-        #endregion
-
         //Emergency + system error 
         #region Emergency + system error
         private void btnCabinEmergency_Click(object sender, EventArgs e)
@@ -756,5 +709,10 @@ namespace Bc_prace
         #endregion
 
         #endregion
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

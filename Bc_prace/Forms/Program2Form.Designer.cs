@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             statusStripCarWash = new StatusStrip();
-            btnSettings = new Button();
             btnEmergency = new Button();
             btnEnd = new Button();
             btnStartCarWash = new Button();
@@ -51,17 +50,6 @@
             statusStripCarWash.Size = new Size(1334, 22);
             statusStripCarWash.TabIndex = 0;
             statusStripCarWash.Text = "statusStrip1";
-            // 
-            // btnSettings
-            // 
-            btnSettings.Location = new Point(3, 2);
-            btnSettings.Margin = new Padding(3, 2, 3, 2);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(155, 59);
-            btnSettings.TabIndex = 25;
-            btnSettings.Text = "Settings";
-            btnSettings.UseVisualStyleBackColor = true;
-            btnSettings.Click += btnSettings_Click;
             // 
             // btnEmergency
             // 
@@ -102,7 +90,6 @@
             panel1.Controls.Add(btnTest2);
             panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnEnd);
-            panel1.Controls.Add(btnSettings);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1170, 0);
@@ -183,7 +170,6 @@
         #endregion
 
         private StatusStrip statusStripCarWash;
-        private Button btnSettings;
         private Button btnEmergency;
         private Button btnEnd;
         private Button btnStartCarWash;

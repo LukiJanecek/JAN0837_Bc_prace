@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             statusStripCrossroad = new StatusStrip();
-            btnSettings = new Button();
             btnEmergency = new Button();
             btnEnd = new Button();
             rBtnCrossroadBasic = new RadioButton();
@@ -52,17 +51,6 @@
             statusStripCrossroad.Size = new Size(1664, 22);
             statusStripCrossroad.TabIndex = 0;
             statusStripCrossroad.Text = "statusStrip1";
-            // 
-            // btnSettings
-            // 
-            btnSettings.Location = new Point(3, 2);
-            btnSettings.Margin = new Padding(3, 2, 3, 2);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(155, 59);
-            btnSettings.TabIndex = 25;
-            btnSettings.Text = "Settings";
-            btnSettings.UseVisualStyleBackColor = true;
-            btnSettings.Click += btnSettings_Click;
             // 
             // btnEmergency
             // 
@@ -109,7 +97,6 @@
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(rBtnCrossroadBasic);
             panel1.Controls.Add(btnEmergency);
-            panel1.Controls.Add(btnSettings);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1499, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
@@ -205,7 +192,6 @@
         #endregion
 
         private StatusStrip statusStripCrossroad;
-        private Button btnSettings;
         private Button btnEmergency;
         private Button btnEnd;
         private RadioButton rBtnCrossroadBasic;

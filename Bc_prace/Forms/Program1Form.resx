@@ -129,21 +129,6 @@
   <metadata name="panelCabinBtn.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSettingsStrip.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEMSURBVDhPldO9SgNBFIbh0RTGxoCIUZBUpg2ItZAUBnIn
-        1haSXIZNGhGSMhFFsBFJKd6BpSBWgdSCikbfbzmzLIddcD94YDjzszO7s6Eg6/jAr1mgVFqIk6MtFKaB
-        M+xgDefwC/RRwZ61NTbNFTToC2/WzvOKb2tfIskR/MD/+MEBwo0VvAk6aGNqNe8CYRszK0Sa7HON7Jg7
-        bCDJKrKfTU/2OUbs/8QK0ujtxpcj2rZPF7H/HZqTZBMPiJ2iM/vcIjvmCfsIYyt4OrO2rSf7ydEjwiGW
-        ViirhyQjqKCL9GLtPLpkOr/a90izi1PUoS8ygJ88RBU1nKCJwuie+wV0Y0vlGXOjref8jSH8AXRfjMKZ
-        sIvTAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

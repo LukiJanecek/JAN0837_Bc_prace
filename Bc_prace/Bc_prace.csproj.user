@@ -17,22 +17,13 @@
     <Compile Update="Forms\Program1Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Program1SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Program2Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Program2SelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Program2SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Program3Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Program3SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
