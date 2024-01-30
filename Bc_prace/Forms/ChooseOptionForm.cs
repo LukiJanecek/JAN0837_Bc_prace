@@ -99,7 +99,12 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 1 is already running.");
                 statusStrip1.Items.Add(lblStatus);
 
-                Program1.BringToFront();
+                if (Program1 != null && !Program1.IsDisposed)
+                {
+                    Program1.BringToFront();
+                }
+
+
             }
         }
 
@@ -141,10 +146,14 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 2 is already running");
                 statusStrip1.Items.Add(lblStatus);
 
-                Program2.BringToFront();
+                if (Program2 != null && !Program2.IsDisposed)
+                {
+                    Program2.BringToFront();
+                }
+                
             }
 
-    }
+        }
 
         private void btnProgram3_Click(object sender, EventArgs e)
         {
@@ -187,10 +196,12 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 3 is already running");
                 statusStrip1.Items.Add(lblStatus);
 
+
                 if (Program3 != null && !Program3.IsDisposed)
                 {
                     Program3.BringToFront();
                 }
+
             }
 
         }
