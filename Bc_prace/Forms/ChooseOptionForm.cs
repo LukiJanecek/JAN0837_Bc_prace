@@ -34,6 +34,7 @@ namespace Bc_prace
         public S7Client client = new S7Client();
         public byte[] send_buffer = new byte[5u];
         public byte[] read_buffer = new byte[6u];
+
         bool Option1 = false;
         bool Option2 = false;
         bool Option3 = false;
@@ -48,6 +49,7 @@ namespace Bc_prace
                     statusStrip1.Items.Add(lblStatus1);
 
                     Console.WriteLine("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
+                    //přidat dialogové okno
                 }
                 else
                 {
@@ -225,7 +227,7 @@ namespace Bc_prace
                 statusStrip1.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
 
-                /*int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
+                int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
                 if (writeResult == 0)
                 {
                     Option1 = false;
@@ -238,7 +240,8 @@ namespace Bc_prace
                 else
                 {
                     Console.WriteLine("Tia didn't respond. BE doesn't work properly.");
-                }*/
+                    //přidat dialogové okno 
+                }
 
                 /*int readResult = client.DBRead(1, 0, read_buffer.Length, read_buffer);
                 if (readResult != 0)

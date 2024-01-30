@@ -170,6 +170,10 @@
             btnTest.Text = "Test";
             btnTest.UseVisualStyleBackColor = true;
             btnTest.Click += btnTest_Click;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program3Form
             // 

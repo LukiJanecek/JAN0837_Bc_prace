@@ -148,6 +148,10 @@
             btnTest2.Text = "Test2";
             btnTest2.UseVisualStyleBackColor = true;
             btnTest2.Click += btnTest2_Click;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program2Form
             // 

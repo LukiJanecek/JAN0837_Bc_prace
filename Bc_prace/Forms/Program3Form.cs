@@ -23,7 +23,7 @@ namespace Bc_prace
 
         //Tia connection
         #region Tia connection
-        /*
+        
         //zde vypisu vsechny promenne
         public S7Client client = new S7Client();
         public byte[] send_buffer = new byte[5u];
@@ -163,8 +163,7 @@ namespace Bc_prace
         #endregion
 
         #endregion
-
-        /*
+        
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
             int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
@@ -175,6 +174,7 @@ namespace Bc_prace
                 statusStripCrossroad.Items.Add(lblStatus1);
 
                 Console.WriteLine("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
+                //přidat dialogové okno
             }
             else
             {
@@ -189,9 +189,9 @@ namespace Bc_prace
                 CrossroadEmergencySTOP = S7.GetBitAt(read_buffer, ,);
                 CrossroadErrorSystem = S7.GetBitAt(read_buffer, ,);
                 */
-        #endregion
+                #endregion
 
-        #region Output variables 
+                #region Output variables 
         /*
         //crossorad1
         #region Crossroad1
@@ -314,14 +314,14 @@ namespace Bc_prace
         #endregion
         */
         #endregion
-        /*
+        
             }
         }
         
         
 
         #endregion
-        */
+        
              
         private void Program3_Load(object sender, EventArgs e)
         {

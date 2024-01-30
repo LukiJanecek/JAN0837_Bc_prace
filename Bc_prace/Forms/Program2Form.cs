@@ -89,6 +89,7 @@ namespace Bc_prace
                 statusStripCarWash.Items.Add(lblStatus1);
 
                 Console.WriteLine("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
+                //přidat dialogové okno
             }
             else
             {

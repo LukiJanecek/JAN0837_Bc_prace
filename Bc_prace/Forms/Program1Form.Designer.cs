@@ -525,6 +525,10 @@
             btnCabinMoveToRight.Text = "Right";
             btnCabinMoveToRight.UseVisualStyleBackColor = true;
             btnCabinMoveToRight.Click += btnCabinMoveToRight_Click;
+            //
+            //Timer_read_from_PLC
+            //
+            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
             // 
             // Program1Form
             // 
