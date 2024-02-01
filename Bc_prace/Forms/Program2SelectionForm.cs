@@ -61,20 +61,18 @@ namespace Bc_prace
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
             int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
-            if (readResult != 0)
+            if (readResult == 0)
             {
-                //možná raději přidat label 
+                statusStripCarWashSelection.Items.Clear();
                 ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
                 statusStripCarWashSelection.Items.Add(lblStatus1);
 
-                Console.WriteLine("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
-                //přidat dialogové okno
+                //MessageBox
+                MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
             else
             {
-                //data přečtena 
-                //všechny moje proměnné:
-
                 //input
                 #region Input variables
                 /*

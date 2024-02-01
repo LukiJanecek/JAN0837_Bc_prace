@@ -39,6 +39,8 @@
             userControlCrossroad1 = new Controls.UserControlCrossroad();
             panel2 = new Panel();
             btnTest = new Button();
+            components = new System.ComponentModel.Container();
+            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();

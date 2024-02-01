@@ -72,6 +72,8 @@
             btnCabinMoveToUp = new Button();
             btnCabinMoveToLeft = new Button();
             btnCabinMoveToRight = new Button();
+            components = new System.ComponentModel.Container();
+            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)panelCabin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor2).BeginInit();
