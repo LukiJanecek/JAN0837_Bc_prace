@@ -24,6 +24,8 @@ namespace Bc_prace
         private static bool program2Opened = false;
         private static bool program3Opened = false;
 
+        private bool errorMessageBoxShown = false;
+
         Program1Form Program1 = null;
         Program2Form Program2 = null;
         Program3Form Program3 = null;
@@ -32,8 +34,11 @@ namespace Bc_prace
         //Tia variables
         #region Tia connection
         public S7Client client = new S7Client();
-        private byte[] send_buffer = new byte[5u]; 
-        private byte[] read_buffer = new byte[6u];//možná změnit velikost, Klus měl 6u 
+
+        //možná změnit velikost, Klus měl 6u
+        //we need to read/write 3 bits (3 times bool) -> 1 byte
+        private byte[] read_buffer = new byte[1];
+        private byte[] send_buffer = new byte[1];
 
         bool Option1 = false;
         bool Option2 = false;
@@ -41,23 +46,43 @@ namespace Bc_prace
         
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
-            int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
-            if (readResult == 0)
+            try
             {
-                statusStrip1.Items.Clear();
-                ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
-                statusStrip1.Items.Add(lblStatus1);
-                                
-                //MessageBox
-                MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
+                //pokud je readResult roven 0, tak čtení bylo úspěšné
+                if (readResult != 0)
+                {
+                    statusStrip1.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
+                    statusStrip1.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    Option1 = S7.GetBitAt(read_buffer, 0, 0);
+                    Option2 = S7.GetBitAt(read_buffer, 0, 1);
+                    Option3 = S7.GetBitAt(read_buffer, 0, 2);
+
+                    errorMessageBoxShown = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Option1 = S7.GetBitAt(read_buffer, 0, 0);
-                Option2 = S7.GetBitAt(read_buffer, 0, 1);
-                Option3 = S7.GetBitAt(read_buffer, 0, 2);
+                if (!errorMessageBoxShown)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
+            
         }
 
         #endregion
@@ -79,15 +104,24 @@ namespace Bc_prace
 
                 Option1 = true;
                 S7.SetBitAt(ref send_buffer, 0, 0, true);
+
+                //write to PLC
                 int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-                //chci neco vypsat
-                if (writeResult == 0)
+                if (writeResult != 0)
                 {
-                    //write was successful
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
                 else
                 {
-                    //write error
+                    //write was successful
                 }
 
                 Program1 = new Program1Form();
@@ -122,14 +156,23 @@ namespace Bc_prace
                 Option2 = true;
                 S7.SetBitAt(ref send_buffer, 0, 1, Option2);
                 int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-                //chci neco vypsat
-                if(writeResult == 0)
+
+                //write to PLC
+                if (writeResult != 0)
                 {
-                    //write was successful
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
                 else
                 {
-                    //write error
+                    //write was successful
                 }
 
                 Program2 = new Program2Form();
@@ -164,14 +207,23 @@ namespace Bc_prace
                 Option3 = true;
                 S7.SetBitAt(ref send_buffer, 0, 2, Option3);
                 int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-                //chci neco vypsat
-                if (writeResult == 0)
+                
+                //write to PLC
+                if (writeResult != 0)
                 {
-                    //write was successful
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
                 else
                 {
-                    //write error
+                    //write was successful
                 }
 
                 Program3 = new Program3Form();
@@ -248,23 +300,32 @@ namespace Bc_prace
         {
             //Option1 = false
             Option1 = false;
-            S7.SetBitAt(ref send_buffer, 0, 0, false);
+            S7.SetBitAt(ref send_buffer, 0, 0, Option1);
             //Option2 = false
             Option2 = false;
             S7.SetBitAt(ref send_buffer, 0, 1, Option2);
             //Option3 = false
             Option3 = false;
             S7.SetBitAt(ref send_buffer, 0, 2, Option3);
+            
+            //write to PLC
             int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-            //chci neco vypsat
-            if (writeResult == 0)
-            {
-                //write was successful
-            }   
-            else
+            if (writeResult != 0)
             {
                 //write error
-            }   
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
 
             //Tia disconnect
             client.Disconnect();
