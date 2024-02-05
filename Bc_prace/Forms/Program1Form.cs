@@ -24,6 +24,12 @@ namespace Bc_prace
         private System.Windows.Forms.Timer DoorCLOSETimer = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer DoorOPENTimer = new System.Windows.Forms.Timer();
 
+        private bool errorMessageBoxShown = false;
+
+        Program1Form Program1 = null;
+
+        bool Option1;
+
         //private bool DoorOPEN = false;
         //private bool DoorCLOSE = true;
 
@@ -53,18 +59,11 @@ namespace Bc_prace
         //Connection between varibles from TiaPortal + C# 
         #region Tia variables 
 
-        //db1 => testing db
-        //db4 => elevetor db
-        //db5 => carwash db
+        //ChooseOptionForm
+        //we need to read/write 3 bits (3 times bool) -> 1 byte
+        private byte[] read_buffer_ChooseOptionForm = new byte[1];
+        private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
-        /*bool db1Bool_Var = true;
-        plc.Write();
-
-        int Int_Var = 1231354654;
-        plc.Write();*/
-
-        //int Int_var = S7.GetIntAt(readBuffer, 0);
-        //lblneco1.Text = Int_var.ToString();
         byte[] readBuffer = new byte[4];
 
         #endregion
@@ -652,17 +651,26 @@ namespace Bc_prace
         private void btnEnd_Click(object sender, EventArgs e)
         {
             //Option1 = false
-            bool Option1 = false;
-            S7.SetBitAt(ref send_buffer, 0, 0, false);
-            int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-            //chci neco vypsat???
-            if (writeResult == 0)
+            Option1 = false;
+            S7.SetBitAt(ref send_buffer_ChooseOptionForm, 0, 0, Option1);
+            
+            //write to PLC
+            int writeResult = client.DBWrite(11, 0, send_buffer_ChooseOptionForm.Length, send_buffer_ChooseOptionForm);
+            if (writeResult != 0)
             {
-                //write was successful
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
             else
             {
-                //write error
+                //write was successful
             }
 
             this.Close();

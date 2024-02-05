@@ -11,6 +11,7 @@ using Bc_prace.Controls;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
 using Sharp7;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace Bc_prace
 {
@@ -21,13 +22,28 @@ namespace Bc_prace
             InitializeComponent();
         }
 
+        //C# variables
+        #region 
+        private bool errorMessageBoxShown = false;
+
+        Program3Form Program3 = null;
+
+        bool Option3;
+
+        #endregion
+
         //Tia connection
         #region Tia connection
-        
+
         //zde vypisu vsechny promenne
         public S7Client client = new S7Client();
         public byte[] send_buffer = new byte[5u];
         public byte[] read_buffer = new byte[6u];
+
+        //ChooseOptionForm
+        //we need to read/write 3 bits (3 times bool) -> 1 byte
+        private byte[] read_buffer_ChooseOptionForm = new byte[1];
+        private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
         //input 
         #region Input variables 
@@ -421,17 +437,26 @@ namespace Bc_prace
         private void btnEnd_Click(object sender, EventArgs e)
         {
             //Option3 = false
-            bool Option3 = false;
-            S7.SetBitAt(ref send_buffer, 0, 3, false);
-            int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-            //chci neco vypsat???
-            if (writeResult == 0)
+            Option3 = false;
+            S7.SetBitAt(ref send_buffer_ChooseOptionForm, 0, 2, Option3);
+
+            //write to PLC
+            int writeResult = client.DBWrite(11, 0, send_buffer_ChooseOptionForm.Length, send_buffer_ChooseOptionForm);
+            if (writeResult != 0)
             {
-                //write was successful
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
             else
             {
-                //write error
+                //write was successful
             }
 
             this.Close();
