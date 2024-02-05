@@ -56,8 +56,8 @@ namespace Bc_prace
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
         //Form2
-        private byte[] read_Buffer_Form2 = new byte[4];
-        private byte[] send_Buffer_Form2 = new byte[4];
+        private byte[] read_buffer_Form2 = new byte[4];
+        private byte[] send_buffer_Form2 = new byte[4];
 
         //input
         #region Input variables
@@ -95,7 +95,7 @@ namespace Bc_prace
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
-            int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
+            int readResult = client.DBRead(11, 0, read_buffer_Form2.Length, read_buffer_Form2);
             if (readResult == 0)
             {
                 statusStripCarWash.Items.Clear();
