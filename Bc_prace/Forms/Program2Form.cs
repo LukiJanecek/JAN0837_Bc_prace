@@ -49,13 +49,15 @@ namespace Bc_prace
 
         //zde vypisu vsechny promenne
         public S7Client client = new S7Client();
-        public byte[] send_buffer = new byte[5u];
-        public byte[] read_buffer = new byte[6u];
 
         //ChooseOptionForm
         //we need to read/write 3 bits (3 times bool) -> 1 byte
         private byte[] read_buffer_ChooseOptionForm = new byte[1];
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
+
+        //Form2
+        private byte[] read_Buffer_Form2 = new byte[4];
+        private byte[] send_Buffer_Form2 = new byte[4];
 
         //input
         #region Input variables
