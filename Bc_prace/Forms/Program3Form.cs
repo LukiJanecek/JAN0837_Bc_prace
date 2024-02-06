@@ -20,6 +20,11 @@ namespace Bc_prace
         public Program3Form()
         {
             InitializeComponent();
+
+            //start timer
+            Timer_read_from_PLC.Start();
+            //set time interval (ms)
+            Timer_read_from_PLC.Interval = 100;
         }
 
         //Variables

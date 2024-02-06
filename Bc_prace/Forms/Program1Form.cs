@@ -142,6 +142,11 @@ namespace Bc_prace
             lblElevatorFloorX = lblElevatorFloor.Location.X;
             lblElevatorFloorY = lblElevatorFloor.Location.Y;
 
+            //start timer
+            Timer_read_from_PLC.Start();
+            //set time interval (ms)
+            Timer_read_from_PLC.Interval = 100;
+
         }
 
         private void Program1_Load(object sender, EventArgs e)

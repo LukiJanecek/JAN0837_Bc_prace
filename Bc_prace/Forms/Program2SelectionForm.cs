@@ -17,6 +17,11 @@ namespace Bc_prace
         public Program2SelectionForm()
         {
             InitializeComponent();
+
+            //start timer
+            Timer_read_from_PLC.Start();
+            //set time interval (ms)
+            Timer_read_from_PLC.Interval = 100;
         }
 
         //Variables
@@ -24,6 +29,8 @@ namespace Bc_prace
 
         //C# variables
         #region C# variables
+
+        private bool errorMessageBoxShown = false;
 
         #endregion
 
@@ -79,55 +86,74 @@ namespace Bc_prace
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
-            int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
-            if (readResult == 0)
+            try
             {
-                statusStripCarWashSelection.Items.Clear();
-                ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
-                statusStripCarWashSelection.Items.Add(lblStatus1);
+                int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
+                if (readResult != 0)
+                {
+                    statusStripCarWashSelection.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCarWashSelection.Items.Add(lblStatus1);
 
-                //MessageBox
-                MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //input
+                    #region Input variables
+                    /*
+                    CarWashEmergencySTOP = S7.GetBitAt(read_buffer, ,);
+                    CarWashErrorSystem = S7.GetBitAt(read_buffer, ,);
+                    CarWashStartCarWash = S7.GetBitAt(read_buffer, ,);
+                    CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashPerfetWash = S7.GetBitAt(read_buffer, ,);
+                    CarWashPerfectPolish = S7.GetBitAt(read_buffer, ,);
+                    */
+                    #endregion
+
+                    //output
+                    #region Output variables 
+                    /*
+                    CarWashPositionShower = S7.GetBitAt(read_buffer, ,);
+                    CarWashPositionCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashGreenLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashRedLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashYellowLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor1UP = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor1DOWN = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor2UP = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor2DOWN = S7.GetBitAt(read_buffer, ,);
+                    CarWashWater = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer, ,);
+                    CarWashWax = S7.GetBitAt(read_buffer, ,);
+                    CarWashVarnishProtection = S7.GetBitAt(read_buffer, ,);
+                    CarWashDry = S7.GetBitAt(read_buffer, ,);
+                    */
+                    #endregion
+
+                }
             }
-            else
+            catch (Exception ex) 
             {
-                //input
-                #region Input variables
-                /*
-                CarWashEmergencySTOP = S7.GetBitAt(read_buffer, ,);
-                CarWashErrorSystem = S7.GetBitAt(read_buffer, ,);
-                CarWashStartCarWash = S7.GetBitAt(read_buffer, ,);
-                CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer, ,);
-                CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer, ,);
-                CarWashPerfetWash = S7.GetBitAt(read_buffer, ,);
-                CarWashPerfectPolish = S7.GetBitAt(read_buffer, ,);
-                */
-                #endregion
-
-                //output
-                #region Output variables 
-                /*
-                CarWashPositionShower = S7.GetBitAt(read_buffer, ,);
-                CarWashPositionCar = S7.GetBitAt(read_buffer, ,);
-                CarWashGreenLight = S7.GetBitAt(read_buffer, ,);
-                CarWashRedLight = S7.GetBitAt(read_buffer, ,);
-                CarWashYellowLight = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor1UP = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor1DOWN = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor2UP = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor2DOWN = S7.GetBitAt(read_buffer, ,);
-                CarWashWater = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer, ,);
-                CarWashWax = S7.GetBitAt(read_buffer, ,);
-                CarWashVarnishProtection = S7.GetBitAt(read_buffer, ,);
-                CarWashDry = S7.GetBitAt(read_buffer, ,);
-                */
-                #endregion
-
+                if (!errorMessageBoxShown)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
+
+            
+            
         }
 
         #endregion
