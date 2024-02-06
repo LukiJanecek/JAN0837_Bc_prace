@@ -20,6 +20,9 @@ namespace Bc_prace
         //Variables
         #region Variables 
 
+        //C# variables
+        #region C# variables
+
         private static bool program1Opened = false;
         private static bool program2Opened = false;
         private static bool program3Opened = false;
@@ -29,10 +32,12 @@ namespace Bc_prace
         Program1Form Program1 = null;
         Program2Form Program2 = null;
         Program3Form Program3 = null;
+
         #endregion
 
         //Tia variables
-        #region Tia connection
+        #region Tia variables
+
         public S7Client client = new S7Client();
 
         //možná změnit velikost, Klus měl 6u
@@ -43,7 +48,14 @@ namespace Bc_prace
         bool Option1 = false;
         bool Option2 = false;
         bool Option3 = false;
-        
+
+        #endregion
+
+        #endregion
+
+        //Tia variables
+        #region Tia connection
+
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
             try

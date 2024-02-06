@@ -19,16 +19,25 @@ namespace Bc_prace
             InitializeComponent();
         }
 
-        //Tia connection
-        #region Tia connection
+        //Variables
+        #region Variables
 
-        //zde vypisu vsechny promenne
+        //C# variables
+        #region C# variables
+
+        #endregion
+
+        //Tia variables
+        #region Tia variables
+
         public S7Client client = new S7Client();
+
         public byte[] send_buffer = new byte[5u];
         public byte[] read_buffer = new byte[6u];
 
         //input
         #region Input variables
+
         bool CarWashEmergencySTOP;
         bool CarWashErrorSystem;
         bool CarWashStartCarWash;
@@ -36,10 +45,12 @@ namespace Bc_prace
         bool CarWashWaitingForOutgoingCar;
         bool CarWashPerfetWash;
         bool CarWashPerfectPolish;
+
         #endregion
 
         //output
         #region Output variables 
+
         bool CarWashPositionShower;
         bool CarWashPositionCar;
         bool CarWashGreenLight;
@@ -56,7 +67,15 @@ namespace Bc_prace
         bool CarWashWax;
         bool CarWashVarnishProtection;
         bool CarWashDry;
+
         #endregion
+
+        #endregion
+
+        #endregion
+
+        //Tia connection
+        #region Tia connection
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {

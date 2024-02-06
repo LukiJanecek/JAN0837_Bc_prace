@@ -29,9 +29,10 @@ namespace Bc_prace
         //Variables
         #region Variables
 
-        private bool errorMessageBoxShown = false;
+        //C# variables
+        #region C# variables
 
-        Program2Form Program2 = null;
+        private bool errorMessageBoxShown = false;
 
         bool Option2;
 
@@ -44,10 +45,9 @@ namespace Bc_prace
 
         #endregion
 
-        //Tia connection
-        #region Tia connection
+        //Tia variables
+        #region Tia variables
 
-        //zde vypisu vsechny promenne
         public S7Client client = new S7Client();
 
         //ChooseOptionForm
@@ -61,6 +61,7 @@ namespace Bc_prace
 
         //input
         #region Input variables
+
         bool CarWashEmergencySTOP;
         bool CarWashErrorSystem;
         bool CarWashStartCarWash;
@@ -68,10 +69,12 @@ namespace Bc_prace
         bool CarWashWaitingForOutgoingCar;
         bool CarWashPerfetWash;
         bool CarWashPerfectPolish;
+
         #endregion
 
         //output
         #region Output variables 
+
         bool CarWashPositionShower = false;
         bool CarWashPositionCar = false;
         bool CarWashGreenLight = false;
@@ -91,193 +94,218 @@ namespace Bc_prace
         bool CarWashSoap = false;
         bool CarWashActiveFoam = false;
         bool CarWashBrushes = false;
+
         #endregion
+
+        #endregion
+
+        #endregion
+
+        //Tia connection
+        #region Tia connection
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
-            int readResult = client.DBRead(11, 0, read_buffer_Form2.Length, read_buffer_Form2);
-            if (readResult == 0)
+            try
             {
-                statusStripCarWash.Items.Clear();
-                ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
-                statusStripCarWash.Items.Add(lblStatus1);
+                int readResult = client.DBRead(11, 0, read_buffer_Form2.Length, read_buffer_Form2);
+                if (readResult == 0)
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCarWash.Items.Add(lblStatus1);
 
-                //MessageBox
-                MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //input
+                    #region Input variables
+                    /*
+                    CarWashEmergencySTOP = S7.GetBitAt(read_buffer, ,);
+                    CarWashErrorSystem = S7.GetBitAt(read_buffer, ,);
+                    CarWashStartCarWash = S7.GetBitAt(read_buffer, ,);
+                    CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashPerfetWash = S7.GetBitAt(read_buffer, ,);
+                    CarWashPerfectPolish = S7.GetBitAt(read_buffer, ,);
+                    */
+                    #endregion
+
+                    //output
+                    #region Output variables 
+                    /*
+                    CarWashPositionShower = S7.GetBitAt(read_buffer, ,);
+                    CarWashPositionCar = S7.GetBitAt(read_buffer, ,);
+                    CarWashGreenLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashRedLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashYellowLight = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor1UP = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor1DOWN = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor2UP = S7.GetBitAt(read_buffer, ,);
+                    CarWashDoor2DOWN = S7.GetBitAt(read_buffer, ,);
+                    CarWashWater = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer, ,);
+                    CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer, ,);
+                    CarWashWax = S7.GetBitAt(read_buffer, ,);
+                    CarWashVarnishProtection = S7.GetBitAt(read_buffer, ,);
+                    CarWashDry = S7.GetBitAt(read_buffer, ,);
+                    */
+                    #endregion
+
+                    //action on variable 
+                    #region Action on variable
+
+                    //toto asi nebude fungvat 
+                    if (CarWashGreenLight) //Green light
+                    {
+                        statusStripCarWash.Items.Clear();
+                        ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
+                        statusStripCarWash.Items.Add(lblStatus);
+
+                        btnSignalization.BackColor = System.Drawing.Color.Green;
+                        btnSignalization.Text = "Go";
+                    }
+                    else if (CarWashYellowLight) //Yellow light
+                    {
+                        statusStripCarWash.Items.Clear();
+                        ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: Error!");
+                        statusStripCarWash.Items.Add(lblStatus);
+
+                        btnSignalization.BackColor = System.Drawing.Color.Yellow;
+                        btnSignalization.Text = "Error";
+                    }
+                    else if (CarWashRedLight) //Red light
+                    {
+                        statusStripCarWash.Items.Clear();
+                        ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: STOP!");
+                        statusStripCarWash.Items.Add(lblStatus);
+
+                        btnSignalization.BackColor = System.Drawing.Color.Red;
+                        btnSignalization.Text = "Stop";
+                    }
+                    else
+                    {
+                        statusStripCarWash.Items.Clear();
+                        ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error! Car should move.");
+                        statusStripCarWash.Items.Add(lblStatus);
+                    }
+
+                    //Door1 UP
+                    if (CarWashDoor1UP)
+                    {
+                        userControlCarWash1.door1UP();
+                    }
+
+                    //Door1 DOWN
+                    if (CarWashDoor1DOWN)
+                    {
+                        userControlCarWash1.door1DOWN();
+                    }
+
+                    //Door2 UP
+                    if (CarWashDoor2UP)
+                    {
+                        userControlCarWash1.door2UP();
+                    }
+
+                    //door2 DOWN
+                    if (CarWashDoor2DOWN)
+                    {
+                        userControlCarWash1.door2DOWN();
+                    }
+
+                    //Water
+                    if (CarWashWater)
+                    {
+                        userControlCarWash1.WaterSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.WaterSignalizationOFF();
+
+                    }
+
+                    //Wax
+                    if (CarWashWax)
+                    {
+                        userControlCarWash1.WaxSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.WaxSignalizationOFF();
+
+                    }
+
+                    //ActiveFoam
+                    if (CarWashActiveFoam)
+                    {
+                        userControlCarWash1.DryingSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.DryingSignalizationOFF();
+
+                    }
+
+                    //Soap 
+                    if (CarWashSoap)
+                    {
+                        userControlCarWash1.SoapSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.SoapSignalizationOFF();
+
+                    }
+
+                    //Brushes
+                    if (CarWashBrushes)
+                    {
+                        userControlCarWash1.BrushesSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.BrushesSignalizationOFF();
+
+                    }
+
+                    //Drying
+                    if (CarWashDry)
+                    {
+                        userControlCarWash1.DryingSignalizationON();
+                    }
+                    else
+                    {
+                        userControlCarWash1.DryingSignalizationOFF();
+
+                    }
+
+                    #endregion
+
+                    errorMessageBoxShown = false;
+                }
             }
-            else
+            catch (Exception ex) 
             {
-                //input
-                #region Input variables
-                /*
-                CarWashEmergencySTOP = S7.GetBitAt(read_buffer, ,);
-                CarWashErrorSystem = S7.GetBitAt(read_buffer, ,);
-                CarWashStartCarWash = S7.GetBitAt(read_buffer, ,);
-                CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer, ,);
-                CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer, ,);
-                CarWashPerfetWash = S7.GetBitAt(read_buffer, ,);
-                CarWashPerfectPolish = S7.GetBitAt(read_buffer, ,);
-                */
-                #endregion
-
-                //output
-                #region Output variables 
-                /*
-                CarWashPositionShower = S7.GetBitAt(read_buffer, ,);
-                CarWashPositionCar = S7.GetBitAt(read_buffer, ,);
-                CarWashGreenLight = S7.GetBitAt(read_buffer, ,);
-                CarWashRedLight = S7.GetBitAt(read_buffer, ,);
-                CarWashYellowLight = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor1UP = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor1DOWN = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor2UP = S7.GetBitAt(read_buffer, ,);
-                CarWashDoor2DOWN = S7.GetBitAt(read_buffer, ,);
-                CarWashWater = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer, ,);
-                CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer, ,);
-                CarWashWax = S7.GetBitAt(read_buffer, ,);
-                CarWashVarnishProtection = S7.GetBitAt(read_buffer, ,);
-                CarWashDry = S7.GetBitAt(read_buffer, ,);
-                */
-                #endregion
-
-                //action on variable 
-                #region Action on variable
-                
-                //toto asi nebude fungvat 
-                if (CarWashGreenLight) //Green light
+                if (!errorMessageBoxShown)
                 {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
-                    statusStripCarWash.Items.Add(lblStatus);
-
-                    btnSignalization.BackColor = System.Drawing.Color.Green;
-                    btnSignalization.Text = "Go";
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-                else if (CarWashYellowLight) //Yellow light
-                {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: Error!");
-                    statusStripCarWash.Items.Add(lblStatus);
-
-                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
-                    btnSignalization.Text = "Error";
-                }
-                else if (CarWashRedLight) //Red light
-                {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: STOP!");
-                    statusStripCarWash.Items.Add(lblStatus);
-
-                    btnSignalization.BackColor = System.Drawing.Color.Red;
-                    btnSignalization.Text = "Stop";
-                }
-                else
-                {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error! Car should move.");
-                    statusStripCarWash.Items.Add(lblStatus);
-                }
-                
-                //Door1 UP
-                if (CarWashDoor1UP)
-                {
-                    userControlCarWash1.door1UP();
-                }
-
-                //Door1 DOWN
-                if (CarWashDoor1DOWN)
-                {
-                    userControlCarWash1.door1DOWN();
-                }
-
-                //Door2 UP
-                if (CarWashDoor2UP)
-                {
-                    userControlCarWash1.door2UP();
-                }
-
-                //door2 DOWN
-                if (CarWashDoor2DOWN)
-                {
-                    userControlCarWash1.door2DOWN();
-                }
-
-                //Water
-                if (CarWashWater)
-                {
-                    userControlCarWash1.WaterSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.WaterSignalizationOFF();
-
-                }
-
-                //Wax
-                if (CarWashWax)
-                {
-                    userControlCarWash1.WaxSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.WaxSignalizationOFF();
-
-                }
-
-                //ActiveFoam
-                if (CarWashActiveFoam)
-                {
-                    userControlCarWash1.DryingSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.DryingSignalizationOFF();
-
-                }
-
-                //Soap 
-                if (CarWashSoap)
-                {
-                    userControlCarWash1.SoapSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.SoapSignalizationOFF();
-
-                }
-
-                //Brushes
-                if (CarWashBrushes)
-                {
-                    userControlCarWash1.BrushesSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.BrushesSignalizationOFF();
-
-                }
-
-                //Drying
-                if (CarWashDry)
-                {
-                    userControlCarWash1.DryingSignalizationON();
-                }
-                else
-                {
-                    userControlCarWash1.DryingSignalizationOFF();
-
-                }
-
-                #endregion
-
-            }
+            }              
         }
 
         #endregion
-                
+
         //Start CarWash
         #region Start CarWash
         private void btnStartCarWash_Click(object sender, EventArgs e)
