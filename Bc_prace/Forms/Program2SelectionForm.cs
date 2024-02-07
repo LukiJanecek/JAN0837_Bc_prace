@@ -39,8 +39,8 @@ namespace Bc_prace
 
         public S7Client client = new S7Client();
 
-        public byte[] send_buffer = new byte[5u];
-        public byte[] read_buffer = new byte[6u];
+        public byte[] send_buffer = new byte[1];
+        public byte[] read_buffer = new byte[1];
 
         //input
         #region Input variables

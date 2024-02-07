@@ -61,8 +61,8 @@ namespace Bc_prace
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
         //Form2
-        private byte[] read_buffer_Form2 = new byte[4];
-        private byte[] send_buffer_Form2 = new byte[4];
+        private byte[] read_buffer_Form2 = new byte[1];
+        private byte[] send_buffer_Form2 = new byte[1];
 
         //input
         #region Input variables
