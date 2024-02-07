@@ -17,6 +17,46 @@ namespace Bc_prace
 {
     public partial class Program1Form : Form
     {
+    
+        public Program1Form()
+        {
+            InitializeComponent();
+
+            //Cabin door position
+            panelDoorLeftX = panelDoorLeft.Location.X;
+            panelDoorLeftY = panelDoorLeft.Location.Y;
+            panelDoorRightX = panelDoorRight.Location.X;
+            panelDoorRightY = panelDoorRight.Location.Y;
+            panelCabinX = panelCabin.Location.X;
+            panelCabinY = panelCabin.Location.Y;
+            lblElevatorFloorX = lblElevatorFloor.Location.X;
+            lblElevatorFloorY = lblElevatorFloor.Location.Y;
+
+            //start timer
+            Timer_read_from_PLC.Start();
+            //set time interval (ms)
+            Timer_read_from_PLC.Interval = 100;
+
+        }
+
+        private void Program1_Load(object sender, EventArgs e)
+        {
+            //Set start position for cabin doors (CLOSE) 
+            //Left door
+            panelDoorLeftX = 410;
+            panelDoorLeftY = 120;
+            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
+            //Right door 
+            panelDoorRightX = 560;
+            panelDoorRightY = 120;
+            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
+            //Cabin
+            panelCabinX = 35;
+            panelCabinY = 15;
+            lblElevatorFloorX = 40;
+            lblElevatorFloorY = 53;
+        }
+                
         //Variables
         #region Variables
 
@@ -127,46 +167,7 @@ namespace Bc_prace
         #endregion
 
         #endregion
-
-        public Program1Form()
-        {
-            InitializeComponent();
-
-            //Cabin door position
-            panelDoorLeftX = panelDoorLeft.Location.X;
-            panelDoorLeftY = panelDoorLeft.Location.Y;
-            panelDoorRightX = panelDoorRight.Location.X;
-            panelDoorRightY = panelDoorRight.Location.Y;
-            panelCabinX = panelCabin.Location.X;
-            panelCabinY = panelCabin.Location.Y;
-            lblElevatorFloorX = lblElevatorFloor.Location.X;
-            lblElevatorFloorY = lblElevatorFloor.Location.Y;
-
-            //start timer
-            Timer_read_from_PLC.Start();
-            //set time interval (ms)
-            Timer_read_from_PLC.Interval = 100;
-
-        }
-
-        private void Program1_Load(object sender, EventArgs e)
-        {
-            //Set start position for cabin doors (CLOSE) 
-            //Left door
-            panelDoorLeftX = 410;
-            panelDoorLeftY = 120;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            //Right door 
-            panelDoorRightX = 560;
-            panelDoorRightY = 120;
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            //Cabin
-            panelCabinX = 35;
-            panelCabinY = 15;
-            lblElevatorFloorX = 40;
-            lblElevatorFloorY = 53;
-        }
-
+                
         //Tia connection
         #region Tia connection
         
@@ -174,7 +175,8 @@ namespace Bc_prace
         {
             try
             {
-                int readResult = client.DBRead(11, 0, read_buffer_Form1.Length, read_buffer_Form1);
+                //DB4 => Elevator_DB
+                int readResult = client.DBRead(4, 0, read_buffer_Form1.Length, read_buffer_Form1);
                 if (readResult != 0)
                 {
                     statusStripElevator.Items.Clear();
@@ -184,7 +186,7 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB4!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;

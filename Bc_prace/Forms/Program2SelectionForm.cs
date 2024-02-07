@@ -88,7 +88,8 @@ namespace Bc_prace
         {
             try
             {
-                int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
+                //DB5 => CarWash_DB
+                int readResult = client.DBRead(5, 0, read_buffer.Length, read_buffer);
                 if (readResult != 0)
                 {
                     statusStripCarWashSelection.Items.Clear();
@@ -98,7 +99,7 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB5!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;

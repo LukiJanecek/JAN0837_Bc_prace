@@ -60,6 +60,7 @@ namespace Bc_prace
         {
             try
             {
+                //DB11 => Maintain_DB
                 int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
                 //pokud je readResult roven 0, tak čtení bylo úspěšné
                 if (readResult != 0)
@@ -71,7 +72,7 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;

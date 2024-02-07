@@ -113,8 +113,9 @@ namespace Bc_prace
         {
             try
             {
-                int readResult = client.DBRead(11, 0, read_buffer_Form2.Length, read_buffer_Form2);
-                if (readResult == 0)
+                //DB5 => CarWash_DB
+                int readResult = client.DBRead(5, 0, read_buffer_Form2.Length, read_buffer_Form2);
+                if (readResult != 0)
                 {
                     statusStripCarWash.Items.Clear();
                     ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
@@ -123,7 +124,7 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB5!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -165,9 +166,12 @@ namespace Bc_prace
                     CarWashDry = S7.GetBitAt(read_buffer, ,);
                     */
                     #endregion
+                                      
+                    errorMessageBoxShown = false;
+                }
 
-                    //action on variable 
-                    #region Action on variable
+                //action on variable 
+                #region Action on variable
 
                     //toto asi nebude fungvat 
                     if (CarWashGreenLight) //Green light
@@ -296,8 +300,6 @@ namespace Bc_prace
 
                     #endregion
 
-                    errorMessageBoxShown = false;
-                }
             }
             catch (Exception ex) 
             {

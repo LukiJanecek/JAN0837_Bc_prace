@@ -49,9 +49,25 @@ namespace Bc_prace
         private byte[] read_buffer_ChooseOptionForm = new byte[1];
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
-        //Form3
-        private byte[] read_buffer_Form3 = new byte[4];
-        private byte[] send_buffer_Form3 = new byte[4];
+        //DB14 => Crossroad_DB
+        private byte[] read_buffer_DB14 = new byte[6];
+        private byte[] send_buffer_DB14 = new byte[6];
+
+        //DB1 => Crossroad_1_DB - Crossroad 1
+        private byte[] read_buffer_DB1 = new byte[4];
+        private byte[] send_buffer_DB1 = new byte[4];
+
+        //DB19 => Crossroad_2_DB - Crossroad 2 
+        private byte[] read_buffer_DB19 = new byte[4];
+        private byte[] send_buffer_DB19 = new byte[4];
+
+        //DB20 => Crossroad_LeftT_DB - Left T 
+        private byte[] read_buffer_DB20 = new byte[4];
+        private byte[] send_buffer_DB20 = new byte[4];
+
+        //DB21 => Crossroad_RightT_DB - Right T
+        private byte[] read_buffer_DB21 = new byte[4];
+        private byte[] send_buffer_DB21 = new byte[4];
 
         //input 
         #region Input variables 
@@ -207,8 +223,11 @@ namespace Bc_prace
         {
             try
             {
-                int readResult = client.DBRead(11, 0, read_buffer_Form3.Length, read_buffer_Form3);
-                if (readResult == 0)
+                //DB14 => Crossroad_DB - modes and timers
+                #region Reading from DB14 Crossroad_DB
+
+                int readResultDB14 = client.DBRead(14, 0, read_buffer_DB14.Length, read_buffer_DB14);
+                if (readResultDB14 != 0)
                 {
                     statusStripCrossroad.Items.Clear();
                     ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
@@ -217,7 +236,7 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -363,6 +382,146 @@ namespace Bc_prace
                     #endregion
 
                 }
+
+                #endregion
+
+                //DB1 => Crossroad_1_DB - Crossroad 1
+                #region Reading from DB1 Crossroad_1_DB
+
+                int readResultDB1 = client.DBRead(1, 0, read_buffer_DB1.Length, read_buffer_DB1);
+                if (readResultDB1 != 0)
+                {
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB1!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //Inpit variable
+                    #region Input variables
+
+                    #endregion
+
+                    //Output variables
+                    #region Output variables
+
+                    #endregion
+                }
+
+                #endregion
+
+                //DB19 => Crossroad_2_DB - Crossroad 2 
+                #region Reading from DB19 Crossroad_2_DB
+
+                int readResultDB19 = client.DBRead(19, 0, read_buffer_DB19.Length, read_buffer_DB19);
+                if (readResultDB19 != 0)
+                {
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB19!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //Inpit variable
+                    #region Input variables
+
+                    #endregion
+
+                    //Output variables
+                    #region Output variables
+
+                    #endregion
+                }
+
+                #endregion
+
+                //DB20 => Crossroad_LeftT_DB - Left T 
+                #region Reading from DB20 Crossroad_LeftT_DB
+
+                int readResultDB20 = client.DBRead(20, 0, read_buffer_DB20.Length, read_buffer_DB20);
+                if (readResultDB20 != 0)
+                {
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB20!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //Inpit variable
+                    #region Input variables
+
+                    #endregion
+
+                    //Output variables
+                    #region Output variables
+
+                    #endregion
+                }
+
+                #endregion
+
+                //DB21 => Crossroad_RightT_DB - Right T
+                #region Reading from DB21 Crossroad_RightT_DB
+
+                int readResultDB21 = client.DBRead(21, 0, read_buffer_DB21.Length, read_buffer_DB21);
+                if (readResultDB21 != 0)
+                {
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB21!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //Inpit variable
+                    #region Input variables
+
+                    #endregion
+
+                    //Output variables
+                    #region Output variables
+
+                    #endregion
+                }
+
+                #endregion
+
+
             }
             catch (Exception ex) 
             {
