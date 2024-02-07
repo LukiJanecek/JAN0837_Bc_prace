@@ -98,11 +98,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB5!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else

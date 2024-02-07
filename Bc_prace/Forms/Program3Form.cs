@@ -235,11 +235,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else
@@ -397,11 +397,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB1!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else
@@ -431,11 +431,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB19!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else
@@ -465,11 +465,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB20!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else
@@ -499,11 +499,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB21!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
                 else

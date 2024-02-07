@@ -27,7 +27,7 @@ namespace Bc_prace
         private static bool program2Opened = false;
         private static bool program3Opened = false;
 
-        private bool errorMessageBoxShown = false;
+        private bool errorMessageBoxShown;
 
         Program1Form Program1 = null;
         Program2Form Program2 = null;
@@ -71,11 +71,11 @@ namespace Bc_prace
 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11!!!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                        
                     }
                 }
                 else
@@ -95,7 +95,6 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-            
         }
 
         #endregion
