@@ -253,6 +253,8 @@ namespace Bc_prace
 
                 s7MultiVar = new S7MultiVar(client);
 
+                //BACHA na duplikaci bufferů!!!
+
                 //DB14 => Crossroad_DB - modes and timers
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
                 //DB1 => Crossroad_1_DB - Crossroad 1
@@ -269,10 +271,24 @@ namespace Bc_prace
                 if (multivarResult == 0)
                 {
                     //Read was successful
+
+                    //toto je stejné jako při jiném čtení
                 }
                 else
                 {
                     //error
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
                 }
 
                 #endregion
