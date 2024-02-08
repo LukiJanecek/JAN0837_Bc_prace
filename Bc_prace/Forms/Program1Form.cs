@@ -242,13 +242,13 @@ namespace Bc_prace
                     ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4, 11, 5); 
                     ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4, 11, 6); 
                     ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4, 11, 7); 
-                    ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 12);
-                    ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 12);
+                    ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 12); //Time
+                    ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 12); //Time
                     ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4, 20, 0); 
                     ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4, 20, 1); 
                     ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4, 22);
                     ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 24, 0); 
-                    ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26);
+                    ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26); //Time
                     
                     #endregion
 

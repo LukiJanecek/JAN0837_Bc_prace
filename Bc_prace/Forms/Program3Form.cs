@@ -136,38 +136,20 @@ namespace Bc_prace
         //Crossroad_1_DB DB1
         #region Crossroad_1_DB DB1
 
-        #endregion
-
-        //Crossroad_2_DB DB19
-        #region Crossroad_2_DB DB19
-
-        #endregion
-
-        //Crossroad_LeftT_DB DB20
-        #region Crossroad_LeftT_DB DB20
-
-        #endregion
-
-        //Crossroad_RightT_DB DB21
-        #region Crossroad_RightT_DB DB21
-
-        #endregion
-
-        //crossorad1
-        #region Crossroad1
+        int Crossroad1CrosswalkSQ;
 
         bool Crossroad1TopRED;
         bool Crossroad1TopGREEN;
-        bool Crossroad1TopYellow;
+        bool Crossroad1TopYELLOW;
         bool Crossroad1LeftRED;
         bool Crossroad1LeftGREEN;
-        bool Crossroad1LeftYellow;
+        bool Crossroad1LeftYELLOW;
         bool Crossroad1RightRED;
         bool Crossroad1RightGREEN;
-        bool Crossroad1RightYellow;
+        bool Crossroad1RightYELLOW;
         bool Crossroad1BottomRED;
         bool Crossroad1BottomGREEN;
-        bool Crossroad1BottomYellow;
+        bool Crossroad1BottomYELLOW;
 
         bool Crossroad1TopCrosswalkRED1;
         bool Crossroad1TopCrosswalkRED2;
@@ -177,19 +159,13 @@ namespace Bc_prace
         bool Crossroad1LeftCrosswalkRED2;
         bool Crossroad1LeftCrosswalkGREEN1;
         bool Crossroad1LeftCrosswalkGREEN2;
-        bool Crossroad1RightCrosswalkRED1;
-        bool Crossroad1RightCrosswalkRED2;
-        bool Crossroad1RightCrosswalkGREEN1;
-        bool Crossroad1RightCrosswalkGREEN2;
-        bool Crossroad1BottomCrosswalkRED1;
-        bool Crossroad1BottomCrosswalkRED2;
-        bool Crossroad1BottomCrosswalkGREEN1;
-        bool Crossroad1BottomCrosswalkGREEN2;
 
         #endregion
 
-        //crossroad2
-        #region Crossroad2
+        //Crossroad_2_DB DB19
+        #region Crossroad_2_DB DB19
+        
+        int Crossroad2CrosswalkSQ;
 
         bool Crossroad2TopRED;
         bool Crossroad2TopGREEN;
@@ -203,11 +179,7 @@ namespace Bc_prace
         bool Crossroad2BottomRED;
         bool Crossroad2BottomGREEN;
         bool Crossroad2BottomYellow;
-
-        bool Crossroad2TopCrosswalkRED1;
-        bool Crossroad2TopCrosswalkRED2;
-        bool Crossroad2TopCrosswalkGREEN1;
-        bool Crossroad2TopCrosswalkGREEN2;
+               
         bool Crossroad2LeftCrosswalkRED1;
         bool Crossroad2LeftCrosswalkRED2;
         bool Crossroad2LeftCrosswalkGREEN1;
@@ -216,15 +188,13 @@ namespace Bc_prace
         bool Crossroad2RightCrosswalkRED2;
         bool Crossroad2RightCrosswalkGREEN1;
         bool Crossroad2RightCrosswalkGREEN2;
-        bool Crossroad2BottomCrosswalkRED1;
-        bool Crossroad2BottomCrosswalkRED2;
-        bool Crossroad2BottomCrosswalkGREEN1;
-        bool Crossroad2BottomCrosswalkGREEN2;
-
+        
         #endregion
 
-        //LeftT
-        #region LeftT
+        //Crossroad_LeftT_DB DB20
+        #region Crossroad_LeftT_DB DB20
+
+        int CrossroadLeftTCrosswalkSQ;
 
         bool CrossroadLeftTTopRED;
         bool CrossroadLeftTTopGREEN;
@@ -235,24 +205,18 @@ namespace Bc_prace
         bool CrossroadLeftTRightRED;
         bool CrossroadLeftTRightGREEN;
         bool CrossroadLeftTRightYellow;
-
-        bool CrossroadLeftTTopCrosswalkRED1;
-        bool CrossroadLeftTTopCrosswalkRED2;
-        bool CrossroadLeftTTopCrosswalkGREEN1;
-        bool CrossroadLeftTTopCrosswalkGREEN2;
+                
         bool CrossroadLeftTLeftCrosswalkRED1;
         bool CrossroadLeftTLeftCrosswalkRED2;
         bool CrossroadLeftTLeftCrosswalkGREEN1;
         bool CrossroadLeftTLeftCrosswalkGREEN2;
-        bool CrossroadLeftTRightCrosswalkRED1;
-        bool CrossroadLeftTRightCrosswalkRED2;
-        bool CrossroadLeftTRightCrosswalkGREEN1;
-        bool CrossroadLeftTRightCrosswalkGREEN2;
-
+        
         #endregion
 
-        //RightT
-        #region RightT
+        //Crossroad_RightT_DB DB21
+        #region Crossroad_RightT_DB DB21
+
+        int CrossroadRightTCrosswalkSQ;
 
         bool CrossroadRightTTopRED;
         bool CrossroadRightTTopGREEN;
@@ -268,17 +232,9 @@ namespace Bc_prace
         bool CrossroadRightTTopCrosswalkRED2;
         bool CrossroadRightTTopCrosswalkGREEN1;
         bool CrossroadRightTTopCrosswalkGREEN2;
-        bool CrossroadRightTLeftCrosswalkRED1;
-        bool CrossroadRightTLeftCrosswalkRED2;
-        bool CrossroadRightTLeftCrosswalkGREEN1;
-        bool CrossroadRightTLeftCrosswalkGREEN2;
-        bool CrossroadRightTRightCrosswalkRED1;
-        bool CrossroadRightTRightCrosswalkRED2;
-        bool CrossroadRightTRightCrosswalkGREEN1;
-        bool CrossroadRightTRightCrosswalkGREEN2;
-
+        
         #endregion
-
+                      
         #endregion
 
         #endregion
@@ -393,15 +349,37 @@ namespace Bc_prace
                     //Inpit variable
                     #region Input variables
 
-                    Crossroad1LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB14, 0, 0); 
-                    Crossroad1LeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB14, 0, 1);
-                    Crossroad1TopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB14, 0, 2);
-                    Crossroad1TopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB14, 0, 3);
+                    Crossroad1LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1, 0, 0); 
+                    Crossroad1LeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB1, 0, 1);
+                    Crossroad1TopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1, 0, 2);
+                    Crossroad1TopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB1, 0, 3);
 
                     #endregion
 
                     //Output variables
                     #region Output variables
+
+                    Crossroad1CrosswalkSQ = S7.GetIntAt(read_buffer_DB1, 2);
+                    Crossroad1TopRED = S7.GetBitAt(read_buffer_DB1, 4, 0); 
+                    Crossroad1TopGREEN = S7.GetBitAt(read_buffer_DB1, 4, 1);
+                    Crossroad1TopYELLOW = S7.GetBitAt(read_buffer_DB1, 4, 2);
+                    Crossroad1LeftRED = S7.GetBitAt(read_buffer_DB1, 4, 3);
+                    Crossroad1LeftGREEN = S7.GetBitAt(read_buffer_DB1, 4, 4);
+                    Crossroad1LeftYELLOW = S7.GetBitAt(read_buffer_DB1, 4, 5);
+                    Crossroad1RightRED = S7.GetBitAt(read_buffer_DB1, 4, 6);
+                    Crossroad1RightGREEN = S7.GetBitAt(read_buffer_DB1, 4, 7);
+                    Crossroad1RightYELLOW = S7.GetBitAt(read_buffer_DB1, 5, 0);
+                    Crossroad1BottomRED = S7.GetBitAt(read_buffer_DB1, 5, 1);
+                    Crossroad1BottomGREEN = S7.GetBitAt(read_buffer_DB1, 5, 2);
+                    Crossroad1BottomYELLOW = S7.GetBitAt(read_buffer_DB1, 5, 3);
+                    Crossroad1TopCrosswalkRED1 = S7.GetBitAt(read_buffer_DB1, 5, 4);
+                    Crossroad1TopCrosswalkRED2 = S7.GetBitAt(read_buffer_DB1, 5, 5);
+                    Crossroad1TopCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB1, 5, 6);
+                    Crossroad1TopCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1, 5, 7);
+                    Crossroad1LeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB1, 6, 0);
+                    Crossroad1LeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB1, 6, 1);
+                    Crossroad1LeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB1, 6, 2);
+                    Crossroad1LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1, 6, 3);
 
                     #endregion
                 }
@@ -442,6 +420,28 @@ namespace Bc_prace
                     //Output variables
                     #region Output variables
 
+                    Crossroad2CrosswalkSQ = S7.GetIntAt(read_buffer_DB19, 2);
+                    Crossroad2TopRED = S7.GetBitAt(read_buffer_DB19, 4, 0);
+                    Crossroad2TopGREEN = S7.GetBitAt(read_buffer_DB19, 4, 1);
+                    Crossroad2TopYellow = S7.GetBitAt(read_buffer_DB19, 4, 2);
+                    Crossroad2LeftRED = S7.GetBitAt(read_buffer_DB19, 4, 3);
+                    Crossroad2LeftGREEN = S7.GetBitAt(read_buffer_DB19, 4, 4);
+                    Crossroad2LeftYellow = S7.GetBitAt(read_buffer_DB19, 4, 5);
+                    Crossroad2RightRED = S7.GetBitAt(read_buffer_DB19, 4, 6);
+                    Crossroad2RightGREEN = S7.GetBitAt(read_buffer_DB19, 4, 7);
+                    Crossroad2RightYellow = S7.GetBitAt(read_buffer_DB19, 5, 0);
+                    Crossroad2BottomRED = S7.GetBitAt(read_buffer_DB19, 5, 1);
+                    Crossroad2BottomGREEN = S7.GetBitAt(read_buffer_DB19, 5, 2);
+                    Crossroad2BottomYellow = S7.GetBitAt(read_buffer_DB19, 5, 3);
+                    Crossroad2RightCrosswalkRED1 = S7.GetBitAt(read_buffer_DB19, 5, 4);
+                    Crossroad2RightCrosswalkRED2 = S7.GetBitAt(read_buffer_DB19, 5, 5);
+                    Crossroad2RightCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB19, 5, 6);
+                    Crossroad2RightCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19, 5, 7);
+                    Crossroad2LeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB19, 6, 0);
+                    Crossroad2LeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB19, 6, 1);
+                    Crossroad2LeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB19, 6, 2);
+                    Crossroad2LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19, 6, 3);
+                                        
                     #endregion
                 }
 
@@ -471,13 +471,28 @@ namespace Bc_prace
                     //Inpit variable
                     #region Input variables
 
-                    CrossroadLeftTLeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19, 0, 0);
-                    CrossroadLeftTLeftCrosswalkBTN2= S7.GetBitAt(read_buffer_DB19, 0, 1);
+                    CrossroadLeftTLeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB20, 0, 0);
+                    CrossroadLeftTLeftCrosswalkBTN2= S7.GetBitAt(read_buffer_DB20, 0, 1);
 
                     #endregion
 
                     //Output variables
                     #region Output variables
+
+                    CrossroadLeftTCrosswalkSQ = S7.GetIntAt(read_buffer_DB20, 2);
+                    CrossroadLeftTTopRED = S7.GetBitAt(read_buffer_DB20, 4, 0);
+                    CrossroadLeftTTopGREEN = S7.GetBitAt(read_buffer_DB20, 4, 1);
+                    CrossroadLeftTTopYellow = S7.GetBitAt(read_buffer_DB20, 4, 2);
+                    CrossroadLeftTLeftRED = S7.GetBitAt(read_buffer_DB20, 4, 3);
+                    CrossroadLeftTLeftGREEN = S7.GetBitAt(read_buffer_DB20, 4, 4);
+                    CrossroadLeftTLeftYellow = S7.GetBitAt(read_buffer_DB20, 4, 5);
+                    CrossroadLeftTRightRED = S7.GetBitAt(read_buffer_DB20, 4, 6);
+                    CrossroadLeftTRightGREEN = S7.GetBitAt(read_buffer_DB20, 4, 7);
+                    CrossroadLeftTRightYellow = S7.GetBitAt(read_buffer_DB20, 5, 0);
+                    CrossroadLeftTLeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB20, 5, 1);
+                    CrossroadLeftTLeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB20, 5, 2);
+                    CrossroadLeftTLeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB20, 5, 3);
+                    CrossroadLeftTLeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB20, 5, 4);
 
                     #endregion
                 }
@@ -508,13 +523,28 @@ namespace Bc_prace
                     //Inpit variable
                     #region Input variables
 
-                    CrossroadRightTTopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19, 0, 0); 
-                    CrossroadRightTTopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19, 0, 1);
+                    CrossroadRightTTopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB21, 0, 0); 
+                    CrossroadRightTTopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB21, 0, 1);
 
                     #endregion
 
                     //Output variables
                     #region Output variables
+
+                    CrossroadRightTCrosswalkSQ = S7.GetIntAt(read_buffer_DB21, 2);
+                    CrossroadRightTTopRED = S7.GetBitAt(read_buffer_DB21, 4, 0);
+                    CrossroadRightTTopGREEN = S7.GetBitAt(read_buffer_DB21, 4, 1);
+                    CrossroadRightTTopYellow = S7.GetBitAt(read_buffer_DB21, 4, 2);
+                    CrossroadRightTLeftRED = S7.GetBitAt(read_buffer_DB21, 4, 3);
+                    CrossroadRightTLeftGREEN = S7.GetBitAt(read_buffer_DB21, 4, 4);
+                    CrossroadRightTLeftYellow = S7.GetBitAt(read_buffer_DB21, 4, 5);
+                    CrossroadRightTRightRED = S7.GetBitAt(read_buffer_DB21, 4, 6);
+                    CrossroadRightTRightGREEN = S7.GetBitAt(read_buffer_DB21, 4, 7);
+                    CrossroadRightTRightYellow = S7.GetBitAt(read_buffer_DB21, 5, 0);
+                    CrossroadRightTTopCrosswalkRED1 = S7.GetBitAt(read_buffer_DB21, 5, 1);
+                    CrossroadRightTTopCrosswalkRED2 = S7.GetBitAt(read_buffer_DB21, 5, 2);
+                    CrossroadRightTTopCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB21, 5, 3);
+                    CrossroadRightTTopCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB21, 5, 4);
 
                     #endregion
                 }
