@@ -60,9 +60,9 @@ namespace Bc_prace
         private byte[] read_buffer_ChooseOptionForm = new byte[1];
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
-        //Form2
-        private byte[] read_buffer_Form2 = new byte[1];
-        private byte[] send_buffer_Form2 = new byte[1];
+        //DB5 => CarWash_DB 3.7
+        private byte[] read_buffer_DB5 = new byte[4];
+        private byte[] send_buffer_DB5 = new byte[4];
 
         //input
         #region Input variables
@@ -114,7 +114,7 @@ namespace Bc_prace
             try
             {
                 //DB5 => CarWash_DB
-                int readResult = client.DBRead(5, 0, read_buffer_Form2.Length, read_buffer_Form2);
+                int readResult = client.DBRead(5, 0, read_buffer_DB5.Length, read_buffer_DB5);
                 if (readResult != 0)
                 {
                     statusStripCarWash.Items.Clear();

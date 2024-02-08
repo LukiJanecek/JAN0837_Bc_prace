@@ -75,7 +75,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11!!!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                        
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
@@ -139,7 +139,7 @@ namespace Bc_prace
                 Program1 = new Program1Form();
                 Program1.Show();
                 program1Opened = true;
-                                
+
                 Program1.FormClosed += (sender, e) => { program1Opened = false; };
             }
             else
@@ -203,7 +203,7 @@ namespace Bc_prace
                 {
                     Program2.BringToFront();
                 }
-                
+
             }
 
         }
@@ -219,7 +219,7 @@ namespace Bc_prace
                 Option3 = true;
                 S7.SetBitAt(ref send_buffer, 0, 2, Option3);
                 int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
-                
+
                 //write to PLC
                 if (writeResult != 0)
                 {
@@ -282,7 +282,7 @@ namespace Bc_prace
                 //start timer
                 Timer_read_from_PLC.Start();
                 //set time interval (ms)
-                Timer_read_from_PLC.Interval = 100;   
+                Timer_read_from_PLC.Interval = 100;
             }
             else
             {
@@ -297,7 +297,7 @@ namespace Bc_prace
 
         private void txtBoxPLCIP_TextChanged(object sender, EventArgs e)
         {
-               
+
         }
 
 
@@ -319,7 +319,7 @@ namespace Bc_prace
             //Option3 = false
             Option3 = false;
             S7.SetBitAt(ref send_buffer, 0, 2, Option3);
-            
+
             //write to PLC
             int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
             if (writeResult != 0)

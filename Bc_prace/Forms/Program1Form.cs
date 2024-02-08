@@ -97,14 +97,14 @@ namespace Bc_prace
 
         public S7Client client = new S7Client();
 
-        //ChooseOptionForm
+        //ChooseOptionForm 0.3
         //we need to read/write 3 bits (3 times bool) -> 1 byte
         private byte[] read_buffer_ChooseOptionForm = new byte[1];
         private byte[] send_buffer_ChooseOptionForm = new byte[1];
 
-        //Form1
-        private byte[] read_buffer_Form1 = new byte[1];
-        private byte[] send_buffer_Form1 = new byte[1];
+        //DB4 => Elevator_DB 31
+        private byte[] read_buffer_DB4 = new byte[32];
+        private byte[] send_buffer_DB4 = new byte[32];
 
         //inputs
         #region Input variables 
@@ -176,7 +176,7 @@ namespace Bc_prace
             try
             {
                 //DB4 => Elevator_DB
-                int readResult = client.DBRead(4, 0, read_buffer_Form1.Length, read_buffer_Form1);
+                int readResult = client.DBRead(4, 0, read_buffer_DB4.Length, read_buffer_DB4);
                 if (readResult != 0)
                 {
                     statusStripElevator.Items.Clear();
