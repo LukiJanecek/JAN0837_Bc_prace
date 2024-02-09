@@ -45,30 +45,29 @@ namespace Bc_prace
         public S7Client client = new S7Client();
         public S7MultiVar s7MultiVar;
 
-        //ChooseOptionForm
-        //we need to read/write 3 bits (3 times bool) -> 1 byte
-        private byte[] read_buffer_ChooseOptionForm = new byte[1];
-        private byte[] send_buffer_ChooseOptionForm = new byte[1];
+        //DB11 => Maintain_DB 0.2
+        private byte[] read_buffer_DB11 = new byte[1];
+        private byte[] send_buffer_DB11 = new byte[1];
 
         //DB14 => Crossroad_DB 110.0
-        private byte[] read_buffer_DB14 = new byte[111]; 
-        private byte[] send_buffer_DB14 = new byte[111];
+        private byte[] read_buffer_DB14 = new byte[110]; 
+        private byte[] send_buffer_DB14 = new byte[110];
 
         //DB1 => Crossroad_1_DB - Crossroad 1 6.3
-        private byte[] read_buffer_DB1 = new byte[7];
-        private byte[] send_buffer_DB1 = new byte[7];
+        private byte[] read_buffer_DB1 = new byte[6];
+        private byte[] send_buffer_DB1 = new byte[6];
 
         //DB19 => Crossroad_2_DB - Crossroad 2 6.3
-        private byte[] read_buffer_DB19 = new byte[7];
-        private byte[] send_buffer_DB19 = new byte[7];
+        private byte[] read_buffer_DB19 = new byte[6];
+        private byte[] send_buffer_DB19 = new byte[6];
 
         //DB20 => Crossroad_LeftT_DB - Left T 5.4 
-        private byte[] read_buffer_DB20 = new byte[6];
-        private byte[] send_buffer_DB20 = new byte[6];
+        private byte[] read_buffer_DB20 = new byte[5];
+        private byte[] send_buffer_DB20 = new byte[5];
 
         //DB21 => Crossroad_RightT_DB - Right T 5.4
-        private byte[] read_buffer_DB21 = new byte[6];
-        private byte[] send_buffer_DB21 = new byte[6];
+        private byte[] read_buffer_DB21 = new byte[5];
+        private byte[] send_buffer_DB21 = new byte[5];
 
         //input 
         #region Input variables 
@@ -252,8 +251,6 @@ namespace Bc_prace
                 #region Multi read -> MultiVar
 
                 s7MultiVar = new S7MultiVar(client);
-
-                //BACHA na duplikaci bufferů!!!
 
                 //DB14 => Crossroad_DB - modes and timers
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
@@ -467,6 +464,8 @@ namespace Bc_prace
                 }
 
                 #endregion
+
+                /*
 
                 //DB14 => Crossroad_DB - modes and timers
                 #region Reading from DB14 Crossroad_DB
@@ -742,6 +741,7 @@ namespace Bc_prace
 
                 #endregion
 
+                */
 
             }
             catch (Exception ex) 
@@ -858,10 +858,10 @@ namespace Bc_prace
         {
             //Option3 = false
             Option3 = false;
-            S7.SetBitAt(ref send_buffer_ChooseOptionForm, 0, 2, Option3);
+            S7.SetBitAt(ref send_buffer_DB11, 0, 2, Option3);
 
             //write to PLC
-            int writeResult = client.DBWrite(11, 0, send_buffer_ChooseOptionForm.Length, send_buffer_ChooseOptionForm);
+            int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResult != 0)
             {
                 //write error

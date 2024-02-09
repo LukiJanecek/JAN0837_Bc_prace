@@ -38,10 +38,11 @@ namespace Bc_prace
         #region Tia variables
 
         public S7Client client = new S7Client();
+        public S7MultiVar s7MultiVar;
 
         //DB5 => CarWash_DB 3.7
-        private byte[] read_buffer_DB5 = new byte[4];
-        private byte[] send_buffer_DB5 = new byte[4];
+        private byte[] read_buffer_DB5 = new byte[3];
+        private byte[] send_buffer_DB5 = new byte[3];
 
         //input
         #region Input variables
@@ -89,26 +90,16 @@ namespace Bc_prace
         {
             try
             {
-                //DB5 => CarWash_DB
-                int readResult = client.DBRead(5, 0, read_buffer_DB5.Length, read_buffer_DB5);
-                if (readResult != 0)
-                {
-                    statusStripCarWashSelection.Items.Clear();
-                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
-                    statusStripCarWashSelection.Items.Add(lblStatus1);
+                s7MultiVar = new S7MultiVar(client);
 
-                    if (!errorMessageBoxShown)
-                    {
-                        errorMessageBoxShown = true;
+                //DB5 => Crossroad_DB - modes and timers
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 5, 0, read_buffer_DB5.Length, ref read_buffer_DB5);
 
-                        //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB5!!!", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    }
-                }
-                else
+                int multivarResult = s7MultiVar.Read();
+
+                if (multivarResult == 0)
                 {
-                    //input variables
+                    //input
                     #region Input variables
 
                     CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5, 0, 0);
@@ -121,7 +112,7 @@ namespace Bc_prace
 
                     #endregion
 
-                    //output variables
+                    //output
                     #region Output variables 
 
                     CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 2, 0);
@@ -143,9 +134,84 @@ namespace Bc_prace
 
                     #endregion
 
+                    errorMessageBoxShown = false;
                 }
+                else
+                {
+                    //error
+                    statusStripCarWashSelection.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCarWashSelection.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                /*
+                //DB5 => CarWash_DB
+                int readResult = client.DBRead(5, 0, read_buffer_DB5.Length, read_buffer_DB5);
+                if (readResult != 0)
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCarWash.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB5!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                else
+                {
+                    //input
+                    #region Input variables
+                    
+                    CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5, 0, 0);
+                    CarWashErrorSystem = S7.GetBitAt(read_buffer_DB5, 0, 1);
+                    CarWashStartCarWash = S7.GetBitAt(read_buffer_DB5, 0, 2);
+                    CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer_DB5, 0, 3);
+                    CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer_DB5, 0, 4);
+                    CarWashPerfetWash = S7.GetBitAt(read_buffer_DB5, 0, 5);
+                    CarWashPerfectPolish = S7.GetBitAt(read_buffer_DB5, 0, 6);
+                    
+                    #endregion
+
+                    //output
+                    #region Output variables 
+                    
+                    CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 2, 0);
+                    CarWashPositionCar = S7.GetBitAt(read_buffer_DB5, 2, 1);
+                    CarWashGreenLight = S7.GetBitAt(read_buffer_DB5, 2, 2);
+                    CarWashRedLight = S7.GetBitAt(read_buffer_DB5, 2, 3);
+                    CarWashYellowLight = S7.GetBitAt(read_buffer_DB5, 2, 4);
+                    CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5, 2, 5);
+                    CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5, 2, 6);
+                    CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5, 2, 7);
+                    CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5, 3, 0);
+                    CarWashWater = S7.GetBitAt(read_buffer_DB5, 3, 1);
+                    CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5, 3, 2);
+                    CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5, 3, 3);
+                    CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5, 3, 4);
+                    CarWashWax = S7.GetBitAt(read_buffer_DB5, 3, 5);
+                    CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 6);
+                    CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 7);
+                    
+                    #endregion
+                                      
+                    errorMessageBoxShown = false;
+                }
+                */
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 if (!errorMessageBoxShown)
                 {
@@ -153,9 +219,6 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-
-            
-            
         }
 
         #endregion

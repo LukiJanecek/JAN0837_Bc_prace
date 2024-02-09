@@ -96,15 +96,15 @@ namespace Bc_prace
         #region Tia variables 
 
         public S7Client client = new S7Client();
+        public S7MultiVar s7MultiVar;
 
-        //ChooseOptionForm 0.3
-        //we need to read/write 3 bits (3 times bool) -> 1 byte
-        private byte[] read_buffer_ChooseOptionForm = new byte[1];
-        private byte[] send_buffer_ChooseOptionForm = new byte[1];
+        //DB11 => Maintain_DB 0.2
+        private byte[] read_buffer_DB11 = new byte[1];
+        private byte[] send_buffer_DB11 = new byte[1];
 
         //DB4 => Elevator_DB 31
-        private byte[] read_buffer_DB4 = new byte[32];
-        private byte[] send_buffer_DB4 = new byte[32];
+        private byte[] read_buffer_DB4 = new byte[31];
+        private byte[] send_buffer_DB4 = new byte[31];
 
         //inputs
         #region Input variables 
@@ -175,6 +175,92 @@ namespace Bc_prace
         {
             try
             {
+                s7MultiVar = new S7MultiVar(client);
+
+                //DB4 => Crossroad_DB - modes and timers
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, read_buffer_DB4.Length, ref read_buffer_DB4);
+
+                int multivarResult = s7MultiVar.Read();
+
+                if (multivarResult == 0)
+                {
+                    //input variables
+                    #region Input variables
+
+                    ElevatorBTNCabin1 = S7.GetBitAt(read_buffer_DB4, 0, 0);
+                    ElevatorBTNCabin2 = S7.GetBitAt(read_buffer_DB4, 0, 1);
+                    ElevatorBTNCabin3 = S7.GetBitAt(read_buffer_DB4, 0, 2);
+                    ElevatorBTNCabin4 = S7.GetBitAt(read_buffer_DB4, 0, 3);
+                    ElevatorBTNCabin5 = S7.GetBitAt(read_buffer_DB4, 0, 4);
+                    ElevatorBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 0, 5);
+                    ElevatorBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 0, 6);
+                    ElevatorBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 0, 7);
+                    ElevatorBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 1, 0);
+                    ElevatorBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 1, 1);
+                    ElevatorDoorSEQ = S7.GetBitAt(read_buffer_DB4, 1, 2);
+                    ElevatorBTNOPENCLOSE = S7.GetBitAt(read_buffer_DB4, 1, 3);
+                    ElevatorEmergencySTOP = S7.GetBitAt(read_buffer_DB4, 1, 4);
+                    ElevatorErrorSystem = S7.GetBitAt(read_buffer_DB4, 1, 5);
+
+                    #endregion
+
+                    //output variables
+                    #region Output variables
+
+                    ElevatorMotorON = S7.GetBitAt(read_buffer_DB4, 2, 0); ;
+                    ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4, 2, 1);
+                    ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4, 2, 2);
+                    ElevatroHoming = S7.GetBitAt(read_buffer_DB4, 2, 3);
+                    ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4, 2, 4);
+                    ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4, 4);
+                    ElevatorMoving = S7.GetBitAt(read_buffer_DB4, 6, 0);
+                    ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4, 6, 1);
+                    ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4, 8);
+                    ElevatorDirection = S7.GetBitAt(read_buffer_DB4, 10, 0);
+                    ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4, 10, 1);
+                    ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4, 10, 2);
+                    ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4, 10, 3);
+                    ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4, 10, 4);
+                    ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4, 10, 5);
+                    ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4, 10, 6);
+                    ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4, 10, 7);
+                    ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4, 11, 0);
+                    ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4, 11, 1);
+                    ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4, 11, 2);
+                    ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4, 11, 3);
+                    ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4, 11, 4);
+                    ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4, 11, 5);
+                    ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4, 11, 6);
+                    ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4, 11, 7);
+                    ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 12); //Time
+                    ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 12); //Time
+                    ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4, 20, 0);
+                    ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4, 20, 1);
+                    ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4, 22);
+                    ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 24, 0);
+                    ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26); //Time
+
+                    #endregion
+
+                    errorMessageBoxShown = false;
+                }
+                else
+                {
+                    //error
+                    statusStripElevator.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripElevator.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB4!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                /*
                 //DB4 => Elevator_DB
                 int readResult = client.DBRead(4, 0, read_buffer_DB4.Length, read_buffer_DB4);
                 if (readResult != 0)
@@ -254,6 +340,7 @@ namespace Bc_prace
 
                     errorMessageBoxShown = false;
                 }
+                */
             }
             catch (Exception ex)
             {
@@ -674,10 +761,10 @@ namespace Bc_prace
         {
             //Option1 = false
             Option1 = false;
-            S7.SetBitAt(ref send_buffer_ChooseOptionForm, 0, 0, Option1);
+            S7.SetBitAt(ref send_buffer_DB11, 0, 0, Option1);
             
             //write to PLC
-            int writeResult = client.DBWrite(11, 0, send_buffer_ChooseOptionForm.Length, send_buffer_ChooseOptionForm);
+            int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResult != 0)
             {
                 //write error

@@ -39,11 +39,11 @@ namespace Bc_prace
         #region Tia variables
 
         public S7Client client = new S7Client();
+        public S7MultiVar s7MultiVar;
 
-        //možná změnit velikost, Klus měl 6u
-        //we need to read/write 3 bits (3 times bool) -> 1 byte
-        private byte[] read_buffer = new byte[1];
-        private byte[] send_buffer = new byte[1];
+        //DB11 => Maintain_DB 0.2
+        private byte[] read_buffer_DB11 = new byte[1];
+        private byte[] send_buffer_DB11 = new byte[1];
 
         bool Option1 = false;
         bool Option2 = false;
@@ -60,8 +60,40 @@ namespace Bc_prace
         {
             try
             {
+                s7MultiVar = new S7MultiVar(client);
+
+                //DB11 => Crossroad_DB - modes and timers
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
+
+                int multivarResult = s7MultiVar.Read();
+
+                if (multivarResult == 0)
+                {
+                    Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
+                    Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
+                    Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
+
+                    errorMessageBoxShown = false;
+                }
+                else
+                {
+                    //error
+                    statusStripChooseOption.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripChooseOption.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+                /*
                 //DB11 => Maintain_DB
-                int readResult = client.DBRead(11, 0, read_buffer.Length, read_buffer);
+                int readResult = client.DBRead(11, 0, read_buffer_DB11.Length, read_buffer_DB11);
                 //pokud je readResult roven 0, tak čtení bylo úspěšné
                 if (readResult != 0)
                 {
@@ -80,12 +112,13 @@ namespace Bc_prace
                 }
                 else
                 {
-                    Option1 = S7.GetBitAt(read_buffer, 0, 0);
-                    Option2 = S7.GetBitAt(read_buffer, 0, 1);
-                    Option3 = S7.GetBitAt(read_buffer, 0, 2);
+                    Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
+                    Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
+                    Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
 
                     errorMessageBoxShown = false;
                 }
+                */
             }
             catch (Exception ex)
             {
@@ -110,15 +143,17 @@ namespace Bc_prace
         {
             if (!program1Opened)
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
                 Option1 = true;
-                S7.SetBitAt(ref send_buffer, 0, 0, true);
+                S7.SetBitAt(ref send_buffer_DB11, 0, 0, true);
 
                 //write to PLC
-                int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
+                s7MultiVar = new S7MultiVar(client);
+                //writeResult = s7MultiVar.Write();
+                int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResult != 0)
                 {
                     //write error
@@ -144,9 +179,9 @@ namespace Bc_prace
             }
             else
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 1 is already running.");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
                 if (Program1 != null && !Program1.IsDisposed)
                 {
@@ -161,13 +196,13 @@ namespace Bc_prace
         {
             if (!program2Opened)
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
                 Option2 = true;
-                S7.SetBitAt(ref send_buffer, 0, 1, Option2);
-                int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
+                S7.SetBitAt(ref send_buffer_DB11, 0, 1, Option2);
+                int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
 
                 //write to PLC
                 if (writeResult != 0)
@@ -195,9 +230,9 @@ namespace Bc_prace
             }
             else
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 2 is already running");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
                 if (Program2 != null && !Program2.IsDisposed)
                 {
@@ -212,13 +247,13 @@ namespace Bc_prace
         {
             if (!program3Opened)
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
                 Option3 = true;
-                S7.SetBitAt(ref send_buffer, 0, 2, Option3);
-                int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
+                S7.SetBitAt(ref send_buffer_DB11, 0, 2, Option3);
+                int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
 
                 //write to PLC
                 if (writeResult != 0)
@@ -246,9 +281,9 @@ namespace Bc_prace
             }
             else
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 3 is already running");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
 
 
                 if (Program3 != null && !Program3.IsDisposed)
@@ -266,17 +301,17 @@ namespace Bc_prace
         private void btnConnect_Click(object sender, EventArgs e)
         {
             btnConnect.Text = "Connecting...";
-            statusStrip1.Items.Clear();
+            statusStripChooseOption.Items.Clear();
             ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text);
-            statusStrip1.Items.Add(lblStat);
+            statusStripChooseOption.Items.Add(lblStat);
 
             int plc = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
 
             if (plc == 0)
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
 
                 //start timer
@@ -286,9 +321,9 @@ namespace Bc_prace
             }
             else
             {
-                statusStrip1.Items.Clear();
+                statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text + "FAILED! Please, chech your IP address or PLC itself.");
-                statusStrip1.Items.Add(lblStatus);
+                statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connect";
             }
         }
@@ -312,16 +347,16 @@ namespace Bc_prace
         {
             //Option1 = false
             Option1 = false;
-            S7.SetBitAt(ref send_buffer, 0, 0, Option1);
+            S7.SetBitAt(ref send_buffer_DB11, 0, 0, Option1);
             //Option2 = false
             Option2 = false;
-            S7.SetBitAt(ref send_buffer, 0, 1, Option2);
+            S7.SetBitAt(ref send_buffer_DB11, 0, 1, Option2);
             //Option3 = false
             Option3 = false;
-            S7.SetBitAt(ref send_buffer, 0, 2, Option3);
+            S7.SetBitAt(ref send_buffer_DB11, 0, 2, Option3);
 
             //write to PLC
-            int writeResult = client.DBWrite(11, 0, send_buffer.Length, send_buffer);
+            int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResult != 0)
             {
                 //write error

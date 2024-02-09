@@ -36,7 +36,7 @@
             txtBoxPLCIP = new TextBox();
             lblTypePLCIP = new Label();
             lblChooseSIM = new Label();
-            statusStrip1 = new StatusStrip();
+            statusStripChooseOption = new StatusStrip();
             btnEnd = new Button();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -119,15 +119,15 @@
             lblChooseSIM.TabIndex = 7;
             lblChooseSIM.Text = "Choose your simulation:";
             // 
-            // statusStrip1
+            // statusStripChooseOption
             // 
-            statusStrip1.ImageScalingSize = new Size(20, 20);
-            statusStrip1.Location = new Point(0, 273);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Padding = new Padding(1, 0, 12, 0);
-            statusStrip1.Size = new Size(610, 22);
-            statusStrip1.TabIndex = 8;
-            statusStrip1.Text = "statusStrip1";
+            statusStripChooseOption.ImageScalingSize = new Size(20, 20);
+            statusStripChooseOption.Location = new Point(0, 273);
+            statusStripChooseOption.Name = "statusStripChooseOption";
+            statusStripChooseOption.Padding = new Padding(1, 0, 12, 0);
+            statusStripChooseOption.Size = new Size(610, 22);
+            statusStripChooseOption.TabIndex = 8;
+            statusStripChooseOption.Text = "statusStrip1";
             // 
             // btnEnd
             // 
@@ -188,7 +188,7 @@
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(statusStrip1);
+            Controls.Add(statusStripChooseOption);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ChooseOptionForm";
             Text = "Connect your PLC and choose your simulation";
@@ -211,7 +211,7 @@
         private TextBox txtBoxPLCIP;
         private Label lblTypePLCIP;
         private Label lblChooseSIM;
-        private StatusStrip statusStrip1;
+        private StatusStrip statusStripChooseOption;
         private Button btnEnd;
         private Panel panel2;
         private Panel panel3;
