@@ -75,7 +75,6 @@ namespace Bc_prace
         //Crossroad_DB DB14
         #region Crossroad_DB DB14
 
-        bool CrossroadPedestrianBTN;
         bool CrossroadModeOFF;
         bool CrossroadModeNIGHT;
         bool CrossroadModeDAY;
