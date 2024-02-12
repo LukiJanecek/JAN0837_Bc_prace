@@ -171,6 +171,9 @@ namespace Bc_prace
                     //write was successful
                 }
 
+                //stop timer
+                Timer_read_from_PLC.Stop();
+
                 Program1 = new Program1Form();
                 Program1.Show();
                 program1Opened = true;
@@ -222,6 +225,9 @@ namespace Bc_prace
                     //write was successful
                 }
 
+                //stop timer
+                Timer_read_from_PLC.Stop();
+
                 Program2 = new Program2Form();
                 Program2.Show();
                 program2Opened = true;
@@ -272,6 +278,9 @@ namespace Bc_prace
                 {
                     //write was successful
                 }
+
+                //stop timer
+                Timer_read_from_PLC.Stop();
 
                 Program3 = new Program3Form();
                 Program3.Show();
