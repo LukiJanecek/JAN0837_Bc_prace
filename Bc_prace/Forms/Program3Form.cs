@@ -457,7 +457,7 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
 
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB14!!!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
