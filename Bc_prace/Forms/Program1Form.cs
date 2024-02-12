@@ -103,8 +103,8 @@ namespace Bc_prace
         private byte[] send_buffer_DB11 = new byte[1];
 
         //DB4 => Elevator_DB 31
-        private byte[] read_buffer_DB4 = new byte[31];
-        private byte[] send_buffer_DB4 = new byte[31];
+        private byte[] read_buffer_DB4 = new byte[32]; //31
+        private byte[] send_buffer_DB4 = new byte[32]; //31
 
         //inputs
         #region Input variables 
@@ -781,6 +781,9 @@ namespace Bc_prace
             {
                 //write was successful
             }
+
+            //stop timer
+            Timer_read_from_PLC.Stop();
 
             this.Close();
         }

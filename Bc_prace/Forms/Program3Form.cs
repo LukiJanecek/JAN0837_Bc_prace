@@ -878,6 +878,9 @@ namespace Bc_prace
                 //write was successful
             }
 
+            //stop timer
+            Timer_read_from_PLC.Stop();
+
             this.Close();
         }
         #endregion
