@@ -153,6 +153,7 @@ namespace Bc_prace
                 //write to PLC
                 s7MultiVar = new S7MultiVar(client);
                 //writeResult = s7MultiVar.Write();
+
                 int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResult != 0)
                 {
