@@ -20,6 +20,13 @@ namespace Bc_prace
         //Variables
         #region Variables 
 
+        public class DataSource
+        {
+            //zde jsou vsechny promenne z Tia
+            public bool cislo { get; set; }
+
+        }
+
         //C# variables
         #region C# variables
 
@@ -60,6 +67,61 @@ namespace Bc_prace
         {
             try
             {
+                //Maintain_DB 
+                #region Maintain_DB 
+
+                #endregion
+
+                //Program1
+                #region Program 1 
+
+                //DB4 
+                #region DB4 
+
+                #endregion
+
+                #endregion
+
+                //Program2
+                #region Program2 
+
+                //DB5
+                #region DB5
+
+                #endregion
+
+                #endregion
+
+                //Program3
+                #region Program3 
+
+                //DB14
+                #region DB14
+
+                #endregion
+
+                //DB1
+                #region DB1
+
+                #endregion
+
+                //DB29
+                #region DB29
+
+                #endregion
+
+                //DB20
+                #region DB20
+
+                #endregion
+
+                //DB21
+                #region DB21
+
+                #endregion
+
+                #endregion
+
                 s7MultiVar = new S7MultiVar(client);
 
                 //DB11 => Crossroad_DB - modes and timers
