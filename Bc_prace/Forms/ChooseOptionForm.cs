@@ -19,14 +19,7 @@ namespace Bc_prace
     {
         //Variables
         #region Variables 
-
-        public class DataSource
-        {
-            //zde jsou vsechny promenne z Tia
-            public bool cislo { get; set; }
-
-        }
-
+                
         //C# variables
         #region C# variables
 
@@ -51,35 +44,7 @@ namespace Bc_prace
         //DB11 => Maintain_DB 0.2
         private byte[] read_buffer_DB11 = new byte[1024];
         private byte[] send_buffer_DB11 = new byte[1024];
-
-        //DB4 => Elevator_DB 31
-        private byte[] read_buffer_DB4 = new byte[1024]; //32
-        private byte[] send_buffer_DB4 = new byte[1024]; //32
-
-        //DB5 => CarWash_DB 3.7
-        private byte[] read_buffer_DB5 = new byte[1024]; //3
-        private byte[] send_buffer_DB5 = new byte[1024]; //3
-
-        //DB14 => Crossroad_DB 110.0
-        private byte[] read_buffer_DB14 = new byte[1024]; //110
-        private byte[] send_buffer_DB14 = new byte[1024]; //110
-
-        //DB1 => Crossroad_1_DB - Crossroad 1 6.3
-        private byte[] read_buffer_DB1 = new byte[1024]; //6
-        private byte[] send_buffer_DB1 = new byte[1024]; //6
-
-        //DB19 => Crossroad_2_DB - Crossroad 2 6.3
-        private byte[] read_buffer_DB19 = new byte[1024]; //6
-        private byte[] send_buffer_DB19 = new byte[1024]; //6
-
-        //DB20 => Crossroad_LeftT_DB - Left T 5.4 
-        private byte[] read_buffer_DB20 = new byte[1024]; //5
-        private byte[] send_buffer_DB20 = new byte[1024]; //5 
-
-        //DB21 => Crossroad_RightT_DB - Right T 5.4
-        private byte[] read_buffer_DB21 = new byte[1024];
-        private byte[] send_buffer_DB21 = new byte[1024];
-
+                
         bool Option1 = false;
         bool Option2 = false;
         bool Option3 = false;
