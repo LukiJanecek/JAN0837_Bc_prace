@@ -42,8 +42,8 @@ namespace Bc_prace
         public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB 0.2
-        private byte[] read_buffer_DB11 = new byte[1024];
-        private byte[] send_buffer_DB11 = new byte[1024];
+        private byte[] read_buffer_DB11 = new byte[1024]; //1
+        private byte[] send_buffer_DB11 = new byte[1024]; //1
                 
         bool Option1 = false;
         bool Option2 = false;
@@ -60,10 +60,7 @@ namespace Bc_prace
         {
             try
             {
-                s7MultiVar = new S7MultiVar(client);
-
-                //Maintain_DB 
-                
+                s7MultiVar = new S7MultiVar(client);             
                 
                 //DB11 => Crossroad_DB - modes and timers
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
@@ -94,13 +91,6 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
-
-                
-
-                           
-
-
-
 
                 /*
                 //DB11 => Maintain_DB
@@ -202,8 +192,6 @@ namespace Bc_prace
                 {
                     Program1.BringToFront();
                 }
-
-
             }
         }
 

@@ -46,28 +46,28 @@ namespace Bc_prace
         public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB 0.2
-        private byte[] read_buffer_DB11 = new byte[1];
-        private byte[] send_buffer_DB11 = new byte[1];
+        private byte[] read_buffer_DB11 = new byte[1024]; //1
+        private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB14 => Crossroad_DB 110.0
-        private byte[] read_buffer_DB14 = new byte[111]; 
-        private byte[] send_buffer_DB14 = new byte[111];
+        private byte[] read_buffer_DB14 = new byte[1024]; //110 
+        private byte[] send_buffer_DB14 = new byte[1024]; //110
 
         //DB1 => Crossroad_1_DB - Crossroad 1 6.3
-        private byte[] read_buffer_DB1 = new byte[7];
-        private byte[] send_buffer_DB1 = new byte[7];
+        private byte[] read_buffer_DB1 = new byte[1024]; //6 
+        private byte[] send_buffer_DB1 = new byte[1024]; //6
 
         //DB19 => Crossroad_2_DB - Crossroad 2 6.3
-        private byte[] read_buffer_DB19 = new byte[7];
-        private byte[] send_buffer_DB19 = new byte[7];
+        private byte[] read_buffer_DB19 = new byte[1024]; //6 
+        private byte[] send_buffer_DB19 = new byte[1024]; //6
 
         //DB20 => Crossroad_LeftT_DB - Left T 5.4 
-        private byte[] read_buffer_DB20 = new byte[5];
-        private byte[] send_buffer_DB20 = new byte[5];
+        private byte[] read_buffer_DB20 = new byte[1024]; //5
+        private byte[] send_buffer_DB20 = new byte[1024]; //5
 
         //DB21 => Crossroad_RightT_DB - Right T 5.4
-        private byte[] read_buffer_DB21 = new byte[5];
-        private byte[] send_buffer_DB21 = new byte[5];
+        private byte[] read_buffer_DB21 = new byte[1024]; //5
+        private byte[] send_buffer_DB21 = new byte[1024]; //5
 
         //input 
         #region Input variables 

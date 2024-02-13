@@ -99,12 +99,12 @@ namespace Bc_prace
         public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB 0.2
-        private byte[] read_buffer_DB11 = new byte[1];
-        private byte[] send_buffer_DB11 = new byte[1];
+        private byte[] read_buffer_DB11 = new byte[1024]; //1
+        private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB4 => Elevator_DB 31
-        private byte[] read_buffer_DB4 = new byte[32]; //31
-        private byte[] send_buffer_DB4 = new byte[32]; //31
+        private byte[] read_buffer_DB4 = new byte[1024]; //31
+        private byte[] send_buffer_DB4 = new byte[1024]; //31
 
         //inputs
         #region Input variables 
