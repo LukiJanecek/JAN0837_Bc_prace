@@ -45,48 +45,48 @@ namespace Bc_prace
         public S7Client client = new S7Client();
         public S7MultiVar s7MultiVar;
 
-        //DB11 => Maintain_DB 0.2
+        //DB11 => Maintain_DB -> size 0.2 -> 1 struct -> 3 variables 
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
 
-        //DB14 => Crossroad_DB 110.0
-        //first struct
+        //DB14 => Crossroad_DB -> size 110.0 -> 2 structs 
+        //first struct -> x variables
         private byte[] read_buffer_DB14_1 = new byte[1024]; //110 
         private byte[] send_buffer_DB14_1 = new byte[1024]; //110
-        //second struct 
+        //second struct -> y variables
         private byte[] read_buffer_DB14_2 = new byte[1024]; //110 
         private byte[] send_buffer_DB14_2 = new byte[1024]; //110
 
-        //DB1 => Crossroad_1_DB - Crossroad 1 6.3
-        //first struct
+        //DB1 => Crossroad_1_DB -> Crossroad 1 -> size 6.3 -> 2 structs 
+        //first struct -> x variables 
         private byte[] read_buffer_DB1_1 = new byte[1024]; //6 
         private byte[] send_buffer_DB1_1 = new byte[1024]; //6
-        //second struct
+        //second struct -> y variables 
         private byte[] read_buffer_DB1_2 = new byte[1024]; //6 
         private byte[] send_buffer_DB1_2 = new byte[1024]; //6
 
-        //DB19 => Crossroad_2_DB - Crossroad 2 6.3
-        //first struct
+        //DB19 => Crossroad_2_DB -> Crossroad 2 -> size 6.3 -> 2 structs 
+        //first struct -> x variables
         private byte[] read_buffer_DB19_1 = new byte[1024]; //6 
         private byte[] send_buffer_DB19_1 = new byte[1024]; //6
-        //second struct
+        //second struct -> y variables 
         private byte[] read_buffer_DB19_2 = new byte[1024]; //6 
         private byte[] send_buffer_DB19_2 = new byte[1024]; //6
 
 
-        //DB20 => Crossroad_LeftT_DB - Left T 5.4 
-        //first struct
+        //DB20 => Crossroad_LeftT_DB - Left T -> size 5.4 -> 2 structs
+        //first struct -> x variables
         private byte[] read_buffer_DB20_1 = new byte[1024]; //5
         private byte[] send_buffer_DB20_1 = new byte[1024]; //5
-        //second struct 
+        //second struct -> y variables 
         private byte[] read_buffer_DB20_2 = new byte[1024]; //5
         private byte[] send_buffer_DB20_2 = new byte[1024]; //5
 
-        //DB21 => Crossroad_RightT_DB - Right T 5.4
-        //first struct
+        //DB21 => Crossroad_RightT_DB - Right T -> size 5.4 -> 2 structs
+        //first struct -> x variables
         private byte[] read_buffer_DB21_1 = new byte[1024]; //5
         private byte[] send_buffer_DB21_1 = new byte[1024]; //5
-        //second struct
+        //second struct -> y variables
         private byte[] read_buffer_DB21_2 = new byte[1024]; //5
         private byte[] send_buffer_DB21_2 = new byte[1024]; //
 

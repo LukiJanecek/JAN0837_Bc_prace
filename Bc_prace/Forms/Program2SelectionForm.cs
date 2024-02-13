@@ -40,11 +40,11 @@ namespace Bc_prace
         public S7Client client = new S7Client();
         public S7MultiVar s7MultiVar;
 
-        //DB5 => CarWash_DB 3.7
-        //first struct 
+        //DB5 => CarWash_DB -> size 3.7 -> 2 structs
+        //first struct -> x variables
         private byte[] read_buffer_DB5_1 = new byte[1024]; //3
         private byte[] send_buffer_DB5_1 = new byte[1024]; //3
-        //second struct 
+        //second struct -> y vyriables
         private byte[] read_buffer_DB5_2 = new byte[1024]; //3
         private byte[] send_buffer_DB5_2 = new byte[1024]; //3
 

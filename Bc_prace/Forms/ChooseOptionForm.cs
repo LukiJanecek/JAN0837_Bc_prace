@@ -41,7 +41,7 @@ namespace Bc_prace
         public S7Client client = new S7Client();
         public S7MultiVar s7MultiVar;
 
-        //DB11 => Maintain_DB 0.2
+        //DB11 => Maintain_DB -> size 0.2 -> 1 struct -> 3 variables 
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
                 
