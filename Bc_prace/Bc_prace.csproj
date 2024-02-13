@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\JAN0837_bc_prace\Sharp7\Sharp7Lib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Language.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

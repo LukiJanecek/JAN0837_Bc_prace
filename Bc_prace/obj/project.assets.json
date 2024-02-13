@@ -59,16 +59,6 @@
             "related": ".pdb"
           }
         }
-      },
-      "Sharp7Lib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/Sharp7Lib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Sharp7Lib.dll": {}
-        }
       }
     }
   },
@@ -155,19 +145,13 @@
         "sharp7.1.1.84.nupkg.sha512",
         "sharp7.nuspec"
       ]
-    },
-    "Sharp7Lib/1.0.0": {
-      "type": "project",
-      "path": "../Sharp7/Sharp7Lib.csproj",
-      "msbuildProject": "../Sharp7/Sharp7Lib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "Newtonsoft.Json >= 13.0.3",
       "OxyPlot.WindowsForms >= 2.1.2",
-      "Sharp7 >= 1.1.84",
-      "Sharp7Lib >= 1.0.0"
+      "Sharp7 >= 1.1.84"
     ]
   },
   "packageFolders": {
@@ -201,11 +185,7 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {
-            "C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_bc_prace\\Sharp7\\Sharp7Lib.csproj": {
-              "projectPath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_bc_prace\\Sharp7\\Sharp7Lib.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
