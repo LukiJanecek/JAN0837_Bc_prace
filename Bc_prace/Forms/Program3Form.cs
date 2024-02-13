@@ -252,13 +252,13 @@ namespace Bc_prace
                 s7MultiVar = new S7MultiVar(client);
 
                 //DB14 => Crossroad_DB - modes and timers
-                //s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
 
                 //DB1 => Crossroad_1_DB - Crossroad 1
-                //s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1.Length, ref read_buffer_DB1);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1.Length, ref read_buffer_DB1);
 
                 //DB19 => Crossroad_2_DB - Crossroad 2 
-                //s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19.Length, ref read_buffer_DB19);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19.Length, ref read_buffer_DB19);
 
                 //DB20 => Crossroad_LeftT_DB - Left T
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 20, 0, read_buffer_DB20.Length, ref read_buffer_DB20);
