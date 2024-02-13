@@ -61,8 +61,12 @@ namespace Bc_prace
         private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB5 => CarWash_DB 3.7
-        private byte[] read_buffer_DB5 = new byte[1024]; //3
-        private byte[] send_buffer_DB5 = new byte[1024]; //3
+        //first struct 
+        private byte[] read_buffer_DB5_1 = new byte[1024]; //3
+        private byte[] send_buffer_DB5_1 = new byte[1024]; //3
+        //second struct 
+        private byte[] read_buffer_DB5_2 = new byte[1024]; //3
+        private byte[] send_buffer_DB5_2 = new byte[1024]; //3
 
         //input
         #region Input variables
