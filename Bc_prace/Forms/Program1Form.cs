@@ -105,7 +105,7 @@ namespace Bc_prace
         //DB4 => Elevator_DB 26
         //first struct
         private byte[] read_buffer_DB4_1 = new byte[1024]; //26 
-        private byte[] send_buffer_DB4 = new byte[1024]; //26
+        private byte[] send_buffer_DB4_1 = new byte[1024]; //26
         //second struct 
         private byte[] read_buffer_DB4_2 = new byte[1024]; //26
         private byte[] send_buffer_DB4_2 = new byte[1024]; //26
@@ -183,7 +183,7 @@ namespace Bc_prace
                 s7MultiVar = new S7MultiVar(client);
 
                 //DB4 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, 2, ref read_buffer_DB4); // read_buffer_DB4.Length
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, read_buffer_DB4_1.Length, ref read_buffer_DB4_1); // read_buffer_DB4.Length
 
                 int multivarResult = s7MultiVar.Read();
 

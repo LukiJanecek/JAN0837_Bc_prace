@@ -273,19 +273,19 @@ namespace Bc_prace
                 s7MultiVar = new S7MultiVar(client);
 
                 //DB14 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14_1.Length, ref read_buffer_DB14_1);
 
                 //DB1 => Crossroad_1_DB - Crossroad 1
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1.Length, ref read_buffer_DB1);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1_1.Length, ref read_buffer_DB1_1);
 
                 //DB19 => Crossroad_2_DB - Crossroad 2 
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19.Length, ref read_buffer_DB19);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19_1.Length, ref read_buffer_DB19_1);
 
                 //DB20 => Crossroad_LeftT_DB - Left T
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 20, 0, read_buffer_DB20.Length, ref read_buffer_DB20);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 20, 0, read_buffer_DB20_1.Length, ref read_buffer_DB20_1);
 
                 //DB21 => Crossroad_RightT_DB - Right T
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 21, 0, read_buffer_DB21.Length, ref read_buffer_DB21);
+                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 21, 0, read_buffer_DB21_1.Length, ref read_buffer_DB21_1);
 
                 int multivarResult = s7MultiVar.Read();
 
