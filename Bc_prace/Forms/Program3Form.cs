@@ -468,7 +468,6 @@ namespace Bc_prace
 
                     #endregion
 
-
                 }
                 else
                 {
@@ -777,9 +776,6 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-
-
-            
         }
                 
         #endregion
