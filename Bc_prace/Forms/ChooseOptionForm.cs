@@ -65,9 +65,9 @@ namespace Bc_prace
                 //DB11 => Crossroad_DB - modes and timers
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
 
-                int multivarResultDB11 = s7MultiVar.Read();
+                int multivarResult = s7MultiVar.Read();
 
-                if (multivarResultDB11 == 0)
+                if (multivarResult == 0)
                 {
                     Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                     Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
@@ -87,7 +87,8 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
 
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!" +
+                            $"Error message {multivarResult}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
