@@ -47,6 +47,19 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "Sharp7/1.1.84": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Sharp7.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sharp7.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "Sharp7Lib/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -128,6 +141,21 @@
         "oxyplot.windowsforms.nuspec"
       ]
     },
+    "Sharp7/1.1.84": {
+      "sha512": "UgclK+VLmrUhyqAeEj7iQysB6K5q1T9fxYGPn3in+Ky+jya4rOHzNgr+9aOh7bSbAwWMgg+HfNBjNG+80RQ+BA==",
+      "type": "package",
+      "path": "sharp7/1.1.84",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Sharp7.dll",
+        "lib/net40/Sharp7.pdb",
+        "lib/netstandard2.0/Sharp7.dll",
+        "lib/netstandard2.0/Sharp7.pdb",
+        "sharp7.1.1.84.nupkg.sha512",
+        "sharp7.nuspec"
+      ]
+    },
     "Sharp7Lib/1.0.0": {
       "type": "project",
       "path": "../Sharp7/Sharp7Lib.csproj",
@@ -138,6 +166,7 @@
     "net6.0-windows7.0": [
       "Newtonsoft.Json >= 13.0.3",
       "OxyPlot.WindowsForms >= 2.1.2",
+      "Sharp7 >= 1.1.84",
       "Sharp7Lib >= 1.0.0"
     ]
   },
@@ -196,6 +225,10 @@
           "OxyPlot.WindowsForms": {
             "target": "Package",
             "version": "[2.1.2, )"
+          },
+          "Sharp7": {
+            "target": "Package",
+            "version": "[1.1.84, )"
           }
         },
         "imports": [

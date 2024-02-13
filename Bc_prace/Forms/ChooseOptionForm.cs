@@ -103,9 +103,9 @@ namespace Bc_prace
                 //DB11 => Crossroad_DB - modes and timers
                 s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
 
-                int multivarResult = s7MultiVar.Read();
+                int multivarResultDB11 = s7MultiVar.Read();
 
-                if (multivarResult == 0)
+                if (multivarResultDB11 == 0)
                 {
                     Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                     Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);

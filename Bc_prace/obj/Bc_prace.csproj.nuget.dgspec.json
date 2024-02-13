@@ -55,6 +55,10 @@
             "OxyPlot.WindowsForms": {
               "target": "Package",
               "version": "[2.1.2, )"
+            },
+            "Sharp7": {
+              "target": "Package",
+              "version": "[1.1.84, )"
             }
           },
           "imports": [
