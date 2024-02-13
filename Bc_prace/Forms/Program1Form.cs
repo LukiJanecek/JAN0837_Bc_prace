@@ -764,7 +764,7 @@ namespace Bc_prace
         {
             //Option1 = false
             Option1 = false;
-            S7.SetBitAt(ref send_buffer_DB11, 0, 0, Option1);
+            S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
             
             //write to PLC
             int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
