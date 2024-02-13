@@ -129,35 +129,35 @@ namespace Bc_prace
                     //input
                     #region Input variables
 
-                    CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5, 0, 0);
-                    CarWashErrorSystem = S7.GetBitAt(read_buffer_DB5, 0, 1);
-                    CarWashStartCarWash = S7.GetBitAt(read_buffer_DB5, 0, 2);
-                    CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer_DB5, 0, 3);
-                    CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer_DB5, 0, 4);
-                    CarWashPerfetWash = S7.GetBitAt(read_buffer_DB5, 0, 5);
-                    CarWashPerfectPolish = S7.GetBitAt(read_buffer_DB5, 0, 6);
+                    CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5_1, 0, 0);
+                    CarWashErrorSystem = S7.GetBitAt(read_buffer_DB5_1, 0, 1);
+                    CarWashStartCarWash = S7.GetBitAt(read_buffer_DB5_1, 0, 2);
+                    CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer_DB5_1, 0, 3);
+                    CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer_DB5_1, 0, 4);
+                    CarWashPerfetWash = S7.GetBitAt(read_buffer_DB5_1, 0, 5);
+                    CarWashPerfectPolish = S7.GetBitAt(read_buffer_DB5_1, 0, 6);
 
                     #endregion
 
                     //output
                     #region Output variables 
 
-                    CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 2, 0);
-                    CarWashPositionCar = S7.GetBitAt(read_buffer_DB5, 2, 1);
-                    CarWashGreenLight = S7.GetBitAt(read_buffer_DB5, 2, 2);
-                    CarWashRedLight = S7.GetBitAt(read_buffer_DB5, 2, 3);
-                    CarWashYellowLight = S7.GetBitAt(read_buffer_DB5, 2, 4);
-                    CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5, 2, 5);
-                    CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5, 2, 6);
-                    CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5, 2, 7);
-                    CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5, 3, 0);
-                    CarWashWater = S7.GetBitAt(read_buffer_DB5, 3, 1);
-                    CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5, 3, 2);
-                    CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5, 3, 3);
-                    CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5, 3, 4);
-                    CarWashWax = S7.GetBitAt(read_buffer_DB5, 3, 5);
-                    CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 6);
-                    CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 7);
+                    CarWashPositionShower = S7.GetBitAt(read_buffer_DB5_1, 2, 0);
+                    CarWashPositionCar = S7.GetBitAt(read_buffer_DB5_1, 2, 1);
+                    CarWashGreenLight = S7.GetBitAt(read_buffer_DB5_1, 2, 2);
+                    CarWashRedLight = S7.GetBitAt(read_buffer_DB5_1, 2, 3);
+                    CarWashYellowLight = S7.GetBitAt(read_buffer_DB5_1, 2, 4);
+                    CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5_1, 2, 5);
+                    CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5_1, 2, 6);
+                    CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5_1, 2, 7);
+                    CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5_1, 3, 0);
+                    CarWashWater = S7.GetBitAt(read_buffer_DB5_1, 3, 1);
+                    CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5_1, 3, 2);
+                    CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5_1, 3, 3);
+                    CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5_1, 3, 4);
+                    CarWashWax = S7.GetBitAt(read_buffer_DB5_1, 3, 5);
+                    CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5_1, 3, 6);
+                    CarWashDry = S7.GetBitAt(read_buffer_DB5_1, 3, 7);
 
                     #endregion
 
