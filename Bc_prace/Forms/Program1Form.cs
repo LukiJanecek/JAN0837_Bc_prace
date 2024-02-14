@@ -96,13 +96,14 @@ namespace Bc_prace
         #region Tia variables 
 
         public S7Client client = new S7Client();
-        public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
+        private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
         private byte[] read_buffer_DB4_1 = new byte[1024]; //26 
         private byte[] send_buffer_DB4_1 = new byte[1024]; //26
@@ -180,14 +181,14 @@ namespace Bc_prace
             try
             {
                 
-                s7MultiVar = new S7MultiVar(client);
+                S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, read_buffer_DB4_1.Length, ref read_buffer_DB4_1); // read_buffer_DB4.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, read_buffer_DB4_1.Length, ref read_buffer_DB4_1); // read_buffer_DB4.Length
 
-                int multivarResult = s7MultiVar.Read();
+                int readResult = reader.Read();
 
-                if (multivarResult == 0)
+                if (readResult == 0)
                 {
                     //input variables
                     #region Input variables
@@ -262,7 +263,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!!" +
-                            $"Error message {multivarResult}", "Error",
+                            $"Error message {readResult}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }

@@ -54,13 +54,14 @@ namespace Bc_prace
         #region Tia variables
 
         public S7Client client = new S7Client();
-        public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+        private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
         private byte[] read_buffer_DB5_1 = new byte[1024]; //3
         private byte[] send_buffer_DB5_1 = new byte[1024]; //3
@@ -117,14 +118,14 @@ namespace Bc_prace
         {
             try
             {
-                s7MultiVar = new S7MultiVar(client);
+                S7MultiVar reader = new S7MultiVar(client);
 
                 //DB5 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 5, 0, read_buffer_DB5_1.Length, ref read_buffer_DB5_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 5, 0, read_buffer_DB5_1.Length, ref read_buffer_DB5_1);
 
-                int multivarResult = s7MultiVar.Read();
+                int readResult = reader.Read();
 
-                if (multivarResult == 0)
+                if (readResult == 0)
                 {
                     //input
                     #region Input variables
@@ -176,7 +177,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB14!!!" +
-                            $"Error message {multivarResult}", "Error",
+                            $"Error message {readResult}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }

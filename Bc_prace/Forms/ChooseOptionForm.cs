@@ -39,9 +39,9 @@ namespace Bc_prace
         #region Tia variables
 
         public S7Client client = new S7Client();
-        public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
                 
@@ -60,14 +60,14 @@ namespace Bc_prace
         {
             try
             {
-                s7MultiVar = new S7MultiVar(client);             
-                
+                S7MultiVar reader = new S7MultiVar(client);
+
                 //DB11 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
 
-                int multivarResult = s7MultiVar.Read();
+                int readResult = reader.Read();
 
-                if (multivarResult == 0)
+                if (readResult == 0)
                 {
                     Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                     Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
@@ -88,7 +88,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB14!" +
-                            $"Error message {multivarResult}", "Error",
+                            $"Error message {readResult}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
@@ -153,7 +153,7 @@ namespace Bc_prace
                 S7.SetBitAt(send_buffer_DB11, 0, 0, true);
 
                 //write to PLC
-                s7MultiVar = new S7MultiVar(client);
+                S7MultiVar writer = new S7MultiVar(client);
                 //writeResult = s7MultiVar.Write();
 
                 int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);

@@ -43,13 +43,14 @@ namespace Bc_prace
         #region Tia variables
 
         public S7Client client = new S7Client();
-        public S7MultiVar s7MultiVar;
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
         private byte[] read_buffer_DB11 = new byte[1024]; //1
         private byte[] send_buffer_DB11 = new byte[1024]; //1
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
+        private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
         private byte[] read_buffer_DB14_1 = new byte[1024]; //110 
         private byte[] send_buffer_DB14_1 = new byte[1024]; //110
@@ -58,7 +59,8 @@ namespace Bc_prace
         private byte[] send_buffer_DB14_2 = new byte[1024]; //110
         //other structs are Timers 
 
-        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3  
+        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+        private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
         private byte[] read_buffer_DB1_1 = new byte[1024]; //6 
         private byte[] send_buffer_DB1_1 = new byte[1024]; //6
@@ -67,6 +69,7 @@ namespace Bc_prace
         private byte[] send_buffer_DB1_2 = new byte[1024]; //6
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+        private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
         private byte[] read_buffer_DB19_1 = new byte[1024]; //6 
         private byte[] send_buffer_DB19_1 = new byte[1024]; //6
@@ -75,6 +78,7 @@ namespace Bc_prace
         private byte[] send_buffer_DB19_2 = new byte[1024]; //6
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
         private byte[] read_buffer_DB20_1 = new byte[1024]; //5
         private byte[] send_buffer_DB20_1 = new byte[1024]; //5
@@ -83,6 +87,7 @@ namespace Bc_prace
         private byte[] send_buffer_DB20_2 = new byte[1024]; //5
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
         private byte[] read_buffer_DB21_1 = new byte[1024]; //5
         private byte[] send_buffer_DB21_1 = new byte[1024]; //5
@@ -270,26 +275,26 @@ namespace Bc_prace
                 //Trying read variable with other method
                 #region Multi read -> MultiVar
 
-                s7MultiVar = new S7MultiVar(client);
+                S7MultiVar reader = new S7MultiVar(client);
 
                 //DB14 => Crossroad_DB - modes and timers
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14_1.Length, ref read_buffer_DB14_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 14, 0, read_buffer_DB14_1.Length, ref read_buffer_DB14_1);
 
                 //DB1 => Crossroad_1_DB - Crossroad 1
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1_1.Length, ref read_buffer_DB1_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 1, 0, read_buffer_DB1_1.Length, ref read_buffer_DB1_1);
 
                 //DB19 => Crossroad_2_DB - Crossroad 2 
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19_1.Length, ref read_buffer_DB19_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 19, 0, read_buffer_DB19_1.Length, ref read_buffer_DB19_1);
 
                 //DB20 => Crossroad_LeftT_DB - Left T
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 20, 0, read_buffer_DB20_1.Length, ref read_buffer_DB20_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 20, 0, read_buffer_DB20_1.Length, ref read_buffer_DB20_1);
 
                 //DB21 => Crossroad_RightT_DB - Right T
-                s7MultiVar.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 21, 0, read_buffer_DB21_1.Length, ref read_buffer_DB21_1);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 21, 0, read_buffer_DB21_1.Length, ref read_buffer_DB21_1);
 
-                int multivarResult = s7MultiVar.Read();
+                int readResult = reader.Read();
 
-                if (multivarResult == 0)
+                if (readResult == 0)
                 {
                     //Read was successful
 
@@ -482,7 +487,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB14!!!" + 
-                            $"Error message {multivarResult}", "Error",
+                            $"Error message {readResult}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
