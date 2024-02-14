@@ -180,11 +180,10 @@ namespace Bc_prace
         {
             try
             {
-                
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Crossroad_DB - modes and timers
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, 4, 0, read_buffer_DB4_1.Length, ref read_buffer_DB4_1); // read_buffer_DB4.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4_1.Length, ref read_buffer_DB4_1); // read_buffer_DB4.Length
 
                 int readResult = reader.Read();
 
@@ -773,7 +772,7 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
             
             //write to PLC
-            int writeResult = client.DBWrite(11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResult != 0)
             {
                 //write error
@@ -804,7 +803,7 @@ namespace Bc_prace
         }
 
         //ElevatorCabin - parametets and position
-        #region ElevatorCabin - parametets and position
+        #region ElevatorCabin - parameters and position
 
         #region Movemnent
         private void btnCabinMoveToRight_Click(object sender, EventArgs e)
