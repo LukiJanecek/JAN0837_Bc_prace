@@ -60,6 +60,9 @@ namespace Bc_prace
         {
             try
             {
+                //Trying read variable with other method
+                #region Multi read -> MultiVar
+
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB11 => Crossroad_DB - modes and timers
@@ -92,6 +95,8 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
+
+                #endregion
 
                 /*
                 //DB11 => Maintain_DB

@@ -180,6 +180,9 @@ namespace Bc_prace
         {
             try
             {
+                //Trying read variable with other method
+                #region Multi read -> MultiVar   
+
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
@@ -269,7 +272,9 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
-                
+
+                #endregion
+
                 /*
                 //DB4 => Elevator_DB
                 int readResult = client.DBRead(4, 0, read_buffer_DB4.Length, read_buffer_DB4);
@@ -351,7 +356,7 @@ namespace Bc_prace
                     errorMessageBoxShown = false;
                 }
                 */
-                
+
             }
             catch (Exception ex)
             {

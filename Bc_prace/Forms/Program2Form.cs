@@ -118,6 +118,9 @@ namespace Bc_prace
         {
             try
             {
+                //Trying read variable with other method
+                #region Multi read -> MultiVar
+
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
@@ -184,6 +187,9 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
+
+                #endregion
+
                 /*
                 //DB5 => CarWash_DB
                 int readResult = client.DBRead(5, 0, read_buffer_DB5.Length, read_buffer_DB5);
@@ -241,7 +247,7 @@ namespace Bc_prace
                                       
                     errorMessageBoxShown = false;
                 }
-                */           
+                */
             }
             catch (Exception ex) 
             {
