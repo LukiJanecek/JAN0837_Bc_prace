@@ -188,9 +188,9 @@ namespace Bc_prace
                 //second struct -> Output -> 32 variables -> size 26
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
 
-                int readResult = reader.Read();
+                int readResultDB4 = reader.Read();
 
-                if (readResult == 0)
+                if (readResultDB4 == 0)
                 {
                     //input variables
                     #region Input variables
@@ -265,7 +265,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!! \n\n" +
-                            $"Error message {readResult} \n", "Error",
+                            $"Error message {readResultDB4} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }

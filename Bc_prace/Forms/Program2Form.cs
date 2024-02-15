@@ -126,9 +126,9 @@ namespace Bc_prace
                 //second struct -> Output -> 16 variables -> 3.7 size
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, 0, ref read_buffer_DB5_Output); //read_buffer_DB5_Output.Length
 
-                int readResult = reader.Read();
+                int readResultDB5 = reader.Read();
 
-                if (readResult == 0)
+                if (readResultDB5 == 0)
                 {
                     //input
                     #region Input variables
@@ -180,7 +180,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB5!!! \n\n" +
-                            $"Error message {readResult} \n", "Error",
+                            $"Error message {readResultDB5} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }

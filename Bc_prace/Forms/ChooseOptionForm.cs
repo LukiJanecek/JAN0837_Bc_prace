@@ -65,9 +65,9 @@ namespace Bc_prace
                 //DB11 => Crossroad_DB - modes and timers
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); 
 
-                int readResult = reader.Read();
+                int readResultDB11 = reader.Read();
 
-                if (readResult == 0)
+                if (readResultDB11 == 0)
                 {
                     Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                     Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
@@ -88,7 +88,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11! \n\n" +
-                            $"Error message: {readResult} \n", "Error",
+                            $"Error message: {readResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
