@@ -60,12 +60,12 @@ namespace Bc_prace
         {
             try
             {
-                //Trying read variable with other method
+                //Reading variables with MultiVar method
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
 
-                //DB11 => Crossroad_DB - modes and timers
+                //DB11 => Maintain_DB - modes and timers
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); 
 
                 int readResultDB11 = reader.Read();
@@ -98,22 +98,26 @@ namespace Bc_prace
 
                 #endregion
 
-                /*
+                //Reading variables with DBRead method
+                #region DBRead
+
                 //DB11 => Maintain_DB
-                int readResult = client.DBRead(11, 0, read_buffer_DB11.Length, read_buffer_DB11);
+                int readResultDB11 = client.DBRead(DBNumber_DB11, 0, read_buffer_DB11.Length, read_buffer_DB11);
                 //pokud je readResult roven 0, tak čtení bylo úspěšné
-                if (readResult != 0)
+                if (readResultDB11 != 0)
                 {
-                    statusStrip1.Items.Clear();
-                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read!!!");
-                    statusStrip1.Items.Add(lblStatus1);
+                    //error
+                    statusStripChooseOption.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripChooseOption.Items.Add(lblStatus1);
 
                     if (!errorMessageBoxShown)
                     {
                         errorMessageBoxShown = true;
 
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11!!!", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!! \n\n" +
+                            $"Error message {readResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
@@ -125,7 +129,9 @@ namespace Bc_prace
 
                     errorMessageBoxShown = false;
                 }
-                */
+
+                #endregion
+
             }
             catch (Exception ex)
             {
