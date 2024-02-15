@@ -63,7 +63,7 @@ namespace Bc_prace
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB11 => Crossroad_DB - modes and timers
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); //read_buffer_DB11.Lenght
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); 
 
                 int readResult = reader.Read();
 

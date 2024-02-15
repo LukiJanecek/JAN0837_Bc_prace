@@ -277,49 +277,20 @@ namespace Bc_prace
 
                 S7MultiVar reader = new S7MultiVar(client);
 
+                //DB14 => Crossroad_DB - modes and timers
+                #region Reading from DB14 Crossroad_DB
+
                 //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0
                 //first struct -> Input -> 5 variables -> size 0.4
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14_Input.Length, ref read_buffer_DB14_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, 0, ref read_buffer_DB14_Input); //read_buffer_DB14_Input.Length
                 //second struct -> Output -> 1 variable -> size 2.0
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14_Output.Length, ref read_buffer_DB14_Output);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, 0, ref read_buffer_DB14_Output); //read_buffer_DB14_Output.Length
                 //other structs are Timers 
 
-                //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
-                //first struct -> Input -> 4 variables -> size 0.3
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1_Input.Length, ref read_buffer_DB1_Input);
-                //second struct -> Output -> 21 variables -> size 6.3 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1_Output.Length, ref read_buffer_DB1_Output);
+                int readResultDB14 = reader.Read();
 
-                //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
-                //first struct -> Input -> 4 variables -> size 0.3
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19_Input.Length, ref read_buffer_DB19_Input);
-                //second struct -> Output -> 21 variables -> size 6.3
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19_Input.Length, ref read_buffer_DB19_Input);
-
-                //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
-                //first struct -> Input -> 2 variables -> size 0.1
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20_Input.Length, ref read_buffer_DB20_Input);
-                //second struct -> Output -> 14 variables -> size 5.
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20_Output.Length, ref read_buffer_DB20_Output);
-
-                //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
-                //first struct -> Input -> 2 variables -> size 0.1
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21_Input.Length, ref read_buffer_DB21_Input);
-                //second struct -> Output -> 14 variables -> size 5.4
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21_Output.Length, ref read_buffer_DB21_Output);
-
-
-                int readResult = reader.Read();
-
-                if (readResult == 0)
+                if (readResultDB14 == 0)
                 {
-                    //Read was successful
-
-                    //toto je stejné jako při jiném čtení
-
-                    //DB14 => Crossroad_DB - modes and timers
-                    #region Reading from DB14 Crossroad_DB
-
                     //Input variables
                     #region Input variables
 
@@ -339,11 +310,41 @@ namespace Bc_prace
                     #endregion
 
                     //other structs are Timers
+                }
+                else
+                {
+                    //error
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
 
-                    #endregion
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
 
-                    //DB1 => Crossroad_1_DB - Crossroad 1
-                    #region Reading from DB1 Crossroad_1_DB
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB14!!! \n\n" +
+                            $"Error message {readResultDB14} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                #endregion
+
+                //DB1 => Crossroad_1_DB - Crossroad 1
+                #region Reading from DB1 Crossroad_1_DB
+
+                //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+                //first struct -> Input -> 4 variables -> size 0.3
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, 0, ref read_buffer_DB1_Input); //read_buffer_DB1_Input.Length
+                //second struct -> Output -> 21 variables -> size 6.3 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, 0, ref read_buffer_DB1_Output); //read_buffer_DB1_Output.Length
+
+                int readResultDB1 = reader.Read();
+
+                if (readResultDB1 == 0)
+                {
+                    //Read was successful
 
                     //Inpit variable
                     #region Input variables
@@ -380,13 +381,44 @@ namespace Bc_prace
                     Crossroad1LeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB1_Output, 6, 2);
                     Crossroad1LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1_Output, 6, 3);
 
-                    #endregion
+                    #endregion                    
 
-                    #endregion
+                }
+                else
+                {
+                    //error
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
 
-                    //DB19 => Crossroad_2_DB - Crossroad 2 
-                    #region Reading from DB19 Crossroad_2_DB
-                    
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB1!!! \n\n" +
+                            $"Error message {readResultDB1} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                #endregion
+
+                //DB19 => Crossroad_2_DB - Crossroad 2 
+                #region Reading from DB19 Crossroad_2_DB
+
+                //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+                //first struct -> Input -> 4 variables -> size 0.3
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, 0, ref read_buffer_DB19_Input); //read_buffer_DB19_Input.Length
+                //second struct -> Output -> 21 variables -> size 6.3
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, 0, ref read_buffer_DB19_Output); //read_buffer_DB19_Input.Length
+
+                int readResultDB19 = reader.Read();
+
+                if (readResultDB19 == 0)
+                {
+                    //Read was successful
+                                      
                     //Input variable
                     #region Input variables
 
@@ -423,12 +455,43 @@ namespace Bc_prace
                     Crossroad2LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19_Output, 6, 3);
 
                     #endregion
+                                        
+                }
+                else
+                {
+                    //error
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
 
-                    #endregion
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
 
-                    //DB20 => Crossroad_LeftT_DB - Left T 
-                    #region Reading from DB20 Crossroad_LeftT_DB
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB19!!! \n\n" +
+                            $"Error message {readResultDB19} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
 
+                #endregion
+
+                //DB20 => Crossroad_LeftT_DB - Left T 
+                #region Reading from DB20 Crossroad_LeftT_DB
+
+                //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+                //first struct -> Input -> 2 variables -> size 0.1
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, 0, ref read_buffer_DB20_Input); //read_buffer_DB20_Input.Length
+                //second struct -> Output -> 14 variables -> size 5.
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, 0, ref read_buffer_DB20_Output); //read_buffer_DB20_Output.Length
+
+                int readResultDB20 = reader.Read();
+
+                if (readResultDB20 == 0)
+                {
+                    //Read was successful
+                                        
                     //Input variable
                     #region Input variables
 
@@ -456,12 +519,43 @@ namespace Bc_prace
                     CrossroadLeftTLeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB20_Output, 5, 4);
 
                     #endregion
+                                        
+                }
+                else
+                {
+                    //error
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripCrossroad.Items.Add(lblStatus1);
 
-                    #endregion
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
 
-                    //DB21 => Crossroad_RightT_DB - Right T
-                    #region Reading from DB21 Crossroad_RightT_DB
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB20!!! \n\n" +
+                            $"Error message {readResultDB20} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
 
+                #endregion
+
+                //DB21 => Crossroad_RightT_DB - Right T
+                #region Reading from DB21 Crossroad_RightT_DB
+
+                //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+                //first struct -> Input -> 2 variables -> size 0.1
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, 0, ref read_buffer_DB21_Input); //read_buffer_DB21_Input.Length
+                //second struct -> Output -> 14 variables -> size 5.4
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, 0, ref read_buffer_DB21_Output); //read_buffer_DB21_Output.Length
+
+                int readResultDB21 = reader.Read();
+
+                if (readResultDB21 == 0)
+                {
+                    //Read was successful       
+                    
                     //Input variable
                     #region Input variables
 
@@ -490,8 +584,6 @@ namespace Bc_prace
 
                     #endregion
 
-                    #endregion
-
                 }
                 else
                 {
@@ -505,11 +597,13 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
 
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DBs in Program3!!! \n\n" + 
-                            $"Error message {readResult} \n", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB21!!! \n\n" + 
+                            $"Error message {readResultDB21} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
+
+                #endregion
 
                 #endregion
 

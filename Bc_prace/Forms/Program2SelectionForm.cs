@@ -98,9 +98,9 @@ namespace Bc_prace
 
                 //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
                 //first struct -> Input -> 7 variables -> 0.6 size 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, read_buffer_DB5_Input.Length, ref read_buffer_DB5_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, 0, ref read_buffer_DB5_Input); //read_buffer_DB5_Input.Length
                 //second struct -> Output -> 16 variables -> 3.7 size
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, read_buffer_DB5_Output.Length, ref read_buffer_DB5_Output);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, 0, ref read_buffer_DB5_Output); //read_buffer_DB5_Input.Length
 
                 int readResult = reader.Read();
 

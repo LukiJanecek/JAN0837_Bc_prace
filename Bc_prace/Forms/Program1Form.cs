@@ -105,8 +105,8 @@ namespace Bc_prace
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
-        private byte[] read_buffer_DB4_Input = new byte[1024]; //26 
-        private byte[] send_buffer_DB4_Input = new byte[1024]; //26
+        private byte[] read_buffer_DB4_Input = new byte[1]; //26 
+        private byte[] send_buffer_DB4_Input = new byte[1]; //26
         //second struct -> Output -> 32 variables -> size 26
         private byte[] read_buffer_DB4_Output = new byte[1024]; //26
         private byte[] send_buffer_DB4_Output = new byte[1024]; //26
@@ -184,9 +184,9 @@ namespace Bc_prace
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
                 //first struct -> Input -> 14 variables -> size 1.5 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 14, ref read_buffer_DB4_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 0, ref read_buffer_DB4_Input);
                 //second struct -> Output -> 32 variables -> size 26
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
 
                 int readResult = reader.Read();
 
