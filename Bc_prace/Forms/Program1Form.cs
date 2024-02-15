@@ -99,8 +99,8 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1024]; //1
-        private byte[] send_buffer_DB11 = new byte[1024]; //1
+        private byte[] read_buffer_DB11 = new byte[1]; //1
+        private byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
@@ -690,7 +690,7 @@ namespace Bc_prace
         {
             lblElevatorCabin.Text = "Closing door";
             statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Closong door");
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Closing door");
             statusStripElevator.Items.Add(lblStatus);
 
             //panelDoorLeft.Left = panelDoorLeft.Width;
@@ -769,7 +769,7 @@ namespace Bc_prace
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
-        {
+        {            
             //Option1 = false
             Option1 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
@@ -782,7 +782,8 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                        $"Error message: {writeResult} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;

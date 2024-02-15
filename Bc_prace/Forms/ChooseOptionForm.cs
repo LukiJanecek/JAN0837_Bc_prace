@@ -42,8 +42,8 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1024]; //1
-        private byte[] send_buffer_DB11 = new byte[1024]; //1
+        private byte[] read_buffer_DB11 = new byte[1]; //1
+        private byte[] send_buffer_DB11 = new byte[1]; //1
                 
         bool Option1 = false;
         bool Option2 = false;
@@ -63,7 +63,7 @@ namespace Bc_prace
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB11 => Crossroad_DB - modes and timers
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); //read_buffer_DB11.Lenght
 
                 int readResult = reader.Read();
 
@@ -156,14 +156,15 @@ namespace Bc_prace
                 S7MultiVar writer = new S7MultiVar(client);
                 //writeResult = s7MultiVar.Write();
 
-                int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+                int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
                 if (writeResult != 0)
                 {
                     //write error
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResult} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -215,7 +216,8 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResult} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -267,7 +269,8 @@ namespace Bc_prace
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResult} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -362,14 +365,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
             //write to PLC
-            int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
             if (writeResult != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResult} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;

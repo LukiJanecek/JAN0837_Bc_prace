@@ -46,8 +46,8 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1024]; //1
-        private byte[] send_buffer_DB11 = new byte[1024]; //1
+        private byte[] read_buffer_DB11 = new byte[1]; //1
+        private byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
@@ -913,7 +913,8 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data couldt be written to PLC!!!", "Error",
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                        $"Error message: {writeResult} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
