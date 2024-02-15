@@ -184,10 +184,9 @@ namespace Bc_prace
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
                 //first struct -> Input -> 14 variables -> size 1.5 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4_Input.Length, ref read_buffer_DB4_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 14, ref read_buffer_DB4_Input);
                 //second struct -> Output -> 32 variables -> size 26
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4_Output.Length, ref read_buffer_DB4_Output); 
-
+                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
 
                 int readResult = reader.Read();
 
@@ -265,8 +264,8 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
 
                         //MessageBox
-                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!!" +
-                            $"Error message {readResult}", "Error",
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!! \n\n" +
+                            $"Error message {readResult} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
