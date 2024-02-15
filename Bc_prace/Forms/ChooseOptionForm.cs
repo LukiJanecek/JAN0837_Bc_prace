@@ -334,6 +334,13 @@ namespace Bc_prace
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
 
+                //0 -> MPI -> Multi Point Interface
+                //1 -> PPI -> Point to Point interface
+                //2 -> OP -> Engineering point
+                //3 -> S7 Basic -> S7 communication using Ethernet or Profibus
+                //10 -> ISOTCP -> TCP/IP protocol -> Ethernet
+                client.SetConnectionType(1);
+
                 //start timer
                 Timer_read_from_PLC.Start();
                 //set time interval (ms)
