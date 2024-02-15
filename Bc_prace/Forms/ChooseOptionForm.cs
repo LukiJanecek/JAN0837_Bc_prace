@@ -151,20 +151,17 @@ namespace Bc_prace
 
                 Option1 = true;
                 S7.SetBitAt(send_buffer_DB11, 0, 0, true);
-
+                                
                 //write to PLC
-                S7MultiVar writer = new S7MultiVar(client);
-                //writeResult = s7MultiVar.Write();
-
-                int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
-                if (writeResult != 0)
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
+                if (writeResultDB11 != 0)
                 {
                     //write error
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResult} \n", "Error",
+                            $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -207,17 +204,17 @@ namespace Bc_prace
 
                 Option2 = true;
                 S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
-                int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
 
                 //write to PLC
-                if (writeResult != 0)
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);            
+                if (writeResultDB11 != 0)
                 {
                     //write error
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResult} \n", "Error",
+                            $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -260,17 +257,17 @@ namespace Bc_prace
 
                 Option3 = true;
                 S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
-                int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
 
                 //write to PLC
-                if (writeResult != 0)
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);             
+                if (writeResultDB11 != 0)
                 {
                     //write error
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResult} \n", "Error",
+                            $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -365,15 +362,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
             //write to PLC
-            int writeResult = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
-            if (writeResult != 0)
+            int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            if (writeResultDB11 != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResult} \n", "Error",
+                            $"Error message: {writeResultDB11} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
