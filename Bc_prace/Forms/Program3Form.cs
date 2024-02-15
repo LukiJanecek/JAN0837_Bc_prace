@@ -607,6 +607,8 @@ namespace Bc_prace
 
                 #endregion
 
+                /*
+
                 //Reading variables with DBRead method
                 #region DBRead
 
@@ -900,6 +902,8 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
+
+                */
 
             }
             catch (Exception ex) 
