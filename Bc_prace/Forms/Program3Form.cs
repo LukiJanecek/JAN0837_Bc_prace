@@ -22,9 +22,9 @@ namespace Bc_prace
             InitializeComponent();
 
             //start timer
-            Timer_read_from_PLC.Start();
+            //Timer_read_from_PLC.Start();
             //set time interval (ms)
-            Timer_read_from_PLC.Interval = 100;
+            //Timer_read_from_PLC.Interval = 100;
         }
 
         //Variables
