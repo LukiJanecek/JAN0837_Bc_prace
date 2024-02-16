@@ -95,7 +95,7 @@ namespace Bc_prace
         //Tia variables 
         #region Tia variables 
 
-        public S7Client client = new S7Client();
+        public S7Client clientElevator = new S7Client();
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
@@ -183,7 +183,7 @@ namespace Bc_prace
                 //Reading variables with MultiVar method
                 #region Multi read -> MultiVar   
 
-                S7MultiVar reader = new S7MultiVar(client);
+                S7MultiVar reader = new S7MultiVar(clientElevator);
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
                 //first struct -> Input -> 14 variables -> size 1.5 
@@ -787,7 +787,7 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
             
             //write to PLC
-            int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            int writeResultDB11 = clientElevator.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResultDB11 != 0)
             {
                 //write error

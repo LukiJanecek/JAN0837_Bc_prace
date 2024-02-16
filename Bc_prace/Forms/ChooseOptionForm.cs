@@ -44,10 +44,83 @@ namespace Bc_prace
         private int DBNumber_DB11 = 11;
         private byte[] read_buffer_DB11 = new byte[1]; //1
         private byte[] send_buffer_DB11 = new byte[1]; //1
-                
+
+        //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
+        private int DBNumber_DB4 = 4;
+        //first struct -> Input -> 14 variables -> size 1.5 
+        private byte[] read_buffer_DB4_Input = new byte[2]; //26 
+        private byte[] send_buffer_DB4_Input = new byte[2]; //26
+        //second struct -> Output -> 32 variables -> size 26
+        private byte[] read_buffer_DB4_Output = new byte[1024]; //26
+        private byte[] send_buffer_DB4_Output = new byte[1024]; //26
+
+        //MaintainDB variables
         bool Option1 = false;
         bool Option2 = false;
         bool Option3 = false;
+
+        //ElevatorDB variables 
+        #region ElevatorDB variables 
+
+        //inputs
+        #region Input variables 
+
+        bool ElevatorBTNCabin1;
+        bool ElevatorBTNCabin2;
+        bool ElevatorBTNCabin3;
+        bool ElevatorBTNCabin4;
+        bool ElevatorBTNCabin5;
+        bool ElevatorBTNFloor1;
+        bool ElevatorBTNFloor2;
+        bool ElevatorBTNFloor3;
+        bool ElevatorBTNFloor4;
+        bool ElevatorBTNFloor5;
+        bool ElevatorDoorSEQ;
+        bool ElevatorBTNOPENCLOSE;
+        bool ElevatorEmergencySTOP;
+        bool ElevatorErrorSystem;
+
+        #endregion
+
+        //outputs
+        #region Output variables
+
+        bool ElevatorMotorON;
+        bool ElevatorMotorDOWN;
+        bool ElevatorMotorUP;
+        bool ElevatroHoming;
+        bool ElevatorSystemReady;
+        int ElevatorActualFloor;
+        bool ElevatorMoving;
+        bool ElevatorSystemWorking;
+        int ElevatorGoToFloor;
+        bool ElevatorDirection;
+        bool ElevatorActualFloorLED1;
+        bool ElevatorActualFloorLED2;
+        bool ElevatorActualFloorLED3;
+        bool ElevatorActualFloorLED4;
+        bool ElevatorActualFloorLED5;
+        bool ElevatorActualFloorCabinLED1;
+        bool ElevatorActualFloorCabinLED2;
+        bool ElevatorActualFloorCabinLED3;
+        bool ElevatorActualFloorCabinLED4;
+        bool ElevatorActualFloorCabinLED5;
+        bool ElevatorActualFloorSENS1;
+        bool ElevatorActualFloorSENS2;
+        bool ElevatorActualFloorSENS3;
+        bool ElevatorActualFloorSENS4;
+        bool ElevatorActualFloorSENS5;
+        int ElevatorTimeDoorSQOPEN; //time
+        int ElevatroTimeDoorSQCLOSE; //time
+        bool ElevatorDoorClOSE;
+        bool ElevatorDoorOPEN;
+        int ElevatorCabinSpeed;
+        bool ElevatorInactivity;
+        int ElevatorTimeToGetDown; //time
+
+        #endregion
+
+        #endregion
 
         #endregion
 
@@ -92,6 +165,91 @@ namespace Bc_prace
                         //MessageBox
                         MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data from PLC weren't read from DB11! \n\n" +
                             $"Error message: {readResultDB11} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
+                //first struct -> Input -> 14 variables -> size 1.5 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 2, ref read_buffer_DB4_Input);
+                //second struct -> Output -> 32 variables -> size 26
+                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
+
+                int readResultDB4 = reader.Read();
+
+                if (readResultDB4 == 0)
+                {
+                    //read OK
+                    //input variables
+                    #region Input variables
+
+                    ElevatorBTNCabin1 = S7.GetBitAt(read_buffer_DB4_Input, 0, 0);
+                    ElevatorBTNCabin2 = S7.GetBitAt(read_buffer_DB4_Input, 0, 1);
+                    ElevatorBTNCabin3 = S7.GetBitAt(read_buffer_DB4_Input, 0, 2);
+                    ElevatorBTNCabin4 = S7.GetBitAt(read_buffer_DB4_Input, 0, 3);
+                    ElevatorBTNCabin5 = S7.GetBitAt(read_buffer_DB4_Input, 0, 4);
+                    ElevatorBTNFloor1 = S7.GetBitAt(read_buffer_DB4_Input, 0, 5);
+                    ElevatorBTNFloor2 = S7.GetBitAt(read_buffer_DB4_Input, 0, 6);
+                    ElevatorBTNFloor3 = S7.GetBitAt(read_buffer_DB4_Input, 0, 7);
+                    ElevatorBTNFloor4 = S7.GetBitAt(read_buffer_DB4_Input, 1, 0);
+                    ElevatorBTNFloor5 = S7.GetBitAt(read_buffer_DB4_Input, 1, 1);
+                    ElevatorDoorSEQ = S7.GetBitAt(read_buffer_DB4_Input, 1, 2);
+                    ElevatorBTNOPENCLOSE = S7.GetBitAt(read_buffer_DB4_Input, 1, 3);
+                    ElevatorEmergencySTOP = S7.GetBitAt(read_buffer_DB4_Input, 1, 4);
+                    ElevatorErrorSystem = S7.GetBitAt(read_buffer_DB4_Input, 1, 5);
+
+                    #endregion
+
+                    //output variables
+                    #region Output variables
+
+                    ElevatorMotorON = S7.GetBitAt(read_buffer_DB4_Output, 2, 0); ;
+                    ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4_Output, 2, 1);
+                    ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4_Output, 2, 2);
+                    ElevatroHoming = S7.GetBitAt(read_buffer_DB4_Output, 2, 3);
+                    ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4_Output, 2, 4);
+                    ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4_Output, 4);
+                    ElevatorMoving = S7.GetBitAt(read_buffer_DB4_Output, 6, 0);
+                    ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4_Output, 6, 1);
+                    ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4_Output, 8);
+                    ElevatorDirection = S7.GetBitAt(read_buffer_DB4_Output, 10, 0);
+                    ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4_Output, 10, 1);
+                    ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4_Output, 10, 2);
+                    ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4_Output, 10, 3);
+                    ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4_Output, 10, 4);
+                    ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4_Output, 10, 5);
+                    ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4_Output, 10, 6);
+                    ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4_Output, 10, 7);
+                    ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4_Output, 11, 0);
+                    ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4_Output, 11, 1);
+                    ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4_Output, 11, 2);
+                    ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4_Output, 11, 3);
+                    ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4_Output, 11, 4);
+                    ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4_Output, 11, 5);
+                    ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4_Output, 11, 6);
+                    ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4_Output, 11, 7);
+                    ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4_Output, 12); //Time
+                    ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4_Output, 12); //Time
+                    ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4_Output, 20, 0);
+                    ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4_Output, 20, 1);
+                    ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4_Output, 22);
+                    ElevatorInactivity = S7.GetBitAt(read_buffer_DB4_Output, 24, 0);
+                    ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4_Output, 26); //Time
+
+                    #endregion
+
+                    errorMessageBoxShown = false;
+                }
+                else
+                {
+                    //error
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't read from DB4!!! \n\n" +
+                            $"Error message {readResultDB4} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
