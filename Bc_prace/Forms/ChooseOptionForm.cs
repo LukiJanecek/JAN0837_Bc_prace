@@ -325,6 +325,13 @@ namespace Bc_prace
             ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text);
             statusStripChooseOption.Items.Add(lblStat);
 
+            //0 -> MPI -> Multi Point Interface -> zde připojení nefunguje 
+            //1 -> PPI -> Point to Point interface
+            //2 -> OP -> Engineering point
+            //3 -> S7 Basic -> S7 communication using Ethernet or Profibus
+            //10 -> ISOTCP -> TCP/IP protocol -> Ethernet -> zde připojení nefunguje
+            client.SetConnectionType(1);
+
             int plc = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
 
             if (plc == 0)
@@ -333,14 +340,7 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
-
-                //0 -> MPI -> Multi Point Interface
-                //1 -> PPI -> Point to Point interface
-                //2 -> OP -> Engineering point
-                //3 -> S7 Basic -> S7 communication using Ethernet or Profibus
-                //10 -> ISOTCP -> TCP/IP protocol -> Ethernet
-                client.SetConnectionType(1);
-
+                                
                 //start timer
                 Timer_read_from_PLC.Start();
                 //set time interval (ms)
