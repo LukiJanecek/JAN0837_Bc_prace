@@ -53,6 +53,15 @@ namespace Bc_prace
         //second struct -> Output -> 32 variables -> size 26
         private byte[] read_buffer_DB4_Output = new byte[1024]; //26
         private byte[] send_buffer_DB4_Output = new byte[1024]; //26
+        
+        //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+        private int DBNumber_DB5 = 5;
+        //first struct -> Input -> 7 variables -> 0.6 size 
+        private byte[] read_buffer_DB5_Input = new byte[1024]; //3
+        private byte[] send_buffer_DB5_Input = new byte[1024]; //3
+        //second struct -> Output -> 16 variables -> 3.7 size
+        private byte[] read_buffer_DB5_Output = new byte[1024]; //3
+        private byte[] send_buffer_DB5_Output = new byte[1024]; //3
 
         //MaintainDB variables
         bool Option1 = false;
@@ -117,6 +126,49 @@ namespace Bc_prace
         int ElevatorCabinSpeed;
         bool ElevatorInactivity;
         int ElevatorTimeToGetDown; //time
+
+        #endregion
+
+        #endregion
+
+        //CarWashDB variables 
+        #region CarWashDB variables
+
+        //input
+        #region Input variables
+
+        bool CarWashEmergencySTOP;
+        bool CarWashErrorSystem;
+        bool CarWashStartCarWash;
+        bool CarWashWaitingForIncomingCar;
+        bool CarWashWaitingForOutgoingCar;
+        bool CarWashPerfetWash;
+        bool CarWashPerfectPolish;
+
+        #endregion
+
+        //output
+        #region Output variables 
+
+        bool CarWashPositionShower = false;
+        bool CarWashPositionCar = false;
+        bool CarWashGreenLight = false;
+        bool CarWashRedLight = false;
+        bool CarWashYellowLight = false;
+        bool CarWashDoor1UP = false;
+        bool CarWashDoor1DOWN = false;
+        bool CarWashDoor2UP = false;
+        bool CarWashDoor2DOWN = false;
+        bool CarWashWater = false;
+        bool CarWashWashingChemicalsFRONT = false;
+        bool CarWashWashingChemicalsSIDES = false;
+        bool CarWashWashingChemicalsBACK = false;
+        bool CarWashWax = false;
+        bool CarWashVarnishProtection = false;
+        bool CarWashDry = false;
+        bool CarWashSoap = false;
+        bool CarWashActiveFoam = false;
+        bool CarWashBrushes = false;
 
         #endregion
 
