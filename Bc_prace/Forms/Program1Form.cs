@@ -807,7 +807,7 @@ namespace Bc_prace
             }
 
             //stop timer
-            Timer_read_from_PLC.Stop();
+            //Timer_read_from_PLC.Stop();
 
             this.Close();
         }
