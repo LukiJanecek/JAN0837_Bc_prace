@@ -1,5 +1,4 @@
-﻿using Sharp7;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +11,7 @@ using System.Windows.Forms;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
 using static System.Windows.Forms.Design.AxImporter;
+using Sharp7;
 
 namespace Bc_prace
 {

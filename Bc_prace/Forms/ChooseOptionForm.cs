@@ -352,6 +352,12 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text + "FAILED! Please, chech your IP address or PLC itself.");
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connect";
+
+                //MessageBox
+                MessageBox.Show("PLC didn´t connected. Please, chech your IP address or PLC itself.\n\n" +
+                    $"Error message: {plc} \n", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
             }
         }
         #endregion
