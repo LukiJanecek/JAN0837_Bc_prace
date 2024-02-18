@@ -1006,7 +1006,11 @@ namespace Bc_prace
                                 
                 //write to PLC
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
-                if (writeResultDB11 != 0)
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
                 {
                     //write error
                     if (!errorMessageBoxShown)
@@ -1018,10 +1022,6 @@ namespace Bc_prace
 
                         errorMessageBoxShown = true;
                     }
-                }
-                else
-                {
-                    //write was successful
                 }
 
                 //stop timer
@@ -1059,7 +1059,11 @@ namespace Bc_prace
 
                 //write to PLC
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);            
-                if (writeResultDB11 != 0)
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
                 {
                     //write error
                     if (!errorMessageBoxShown)
@@ -1071,10 +1075,6 @@ namespace Bc_prace
 
                         errorMessageBoxShown = true;
                     }
-                }
-                else
-                {
-                    //write was successful
                 }
 
                 //stop timer
@@ -1112,7 +1112,11 @@ namespace Bc_prace
 
                 //write to PLC
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);             
-                if (writeResultDB11 != 0)
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
                 {
                     //write error
                     if (!errorMessageBoxShown)
@@ -1124,10 +1128,6 @@ namespace Bc_prace
 
                         errorMessageBoxShown = true;
                     }
-                }
-                else
-                {
-                    //write was successful
                 }
 
                 //stop timer
@@ -1228,7 +1228,11 @@ namespace Bc_prace
 
             //write to PLC
             int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-            if (writeResultDB11 != 0)
+            if (writeResultDB11 == 0)
+            {
+                //write was successful
+            }
+            else
             {
                 //write error
                 if (!errorMessageBoxShown)
@@ -1240,10 +1244,6 @@ namespace Bc_prace
 
                     errorMessageBoxShown = true;
                 }
-            }
-            else
-            {
-                //write was successful
             }
 
             //Tia disconnect
