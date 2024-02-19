@@ -196,25 +196,25 @@ namespace Bc_prace
         //output
         #region Output variables 
 
-        public bool CarWashPositionShower = false;
-        public bool CarWashPositionCar = false;
-        public bool CarWashGreenLight = false;
-        public bool CarWashRedLight = false;
-        public bool CarWashYellowLight = false;
-        public bool CarWashDoor1UP = false;
-        public bool CarWashDoor1DOWN = false;
-        public bool CarWashDoor2UP = false;
-        public bool CarWashDoor2DOWN = false;
-        public bool CarWashWater = false;
-        public bool CarWashWashingChemicalsFRONT = false;
-        public bool CarWashWashingChemicalsSIDES = false;
-        public bool CarWashWashingChemicalsBACK = false;
-        public bool CarWashWax = false;
-        public bool CarWashVarnishProtection = false;
-        public bool CarWashDry = false;
-        public bool CarWashSoap = false;
-        public bool CarWashActiveFoam = false;
-        public bool CarWashBrushes = false;
+        public bool CarWashPositionShower;
+        public bool CarWashPositionCar;
+        public bool CarWashGreenLight;
+        public bool CarWashRedLight;
+        public bool CarWashYellowLight;
+        public bool CarWashDoor1UP;
+        public bool CarWashDoor1DOWN;
+        public bool CarWashDoor2UP;
+        public bool CarWashDoor2DOWN;
+        public bool CarWashWater;
+        public bool CarWashWashingChemicalsFRONT;
+        public bool CarWashWashingChemicalsSIDES;
+        public bool CarWashWashingChemicalsBACK;
+        public bool CarWashWax;
+        public bool CarWashVarnishProtection;
+        public bool CarWashDry;
+        public bool CarWashSoap;
+        public bool CarWashActiveFoam;
+        public bool CarWashBrushes;
 
         #endregion
 

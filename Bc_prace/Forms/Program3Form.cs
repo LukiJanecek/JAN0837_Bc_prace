@@ -19,86 +19,6 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
-        public Program3Form(ChooseOptionForm chooseOptionFormInstance)
-        {
-            InitializeComponent();
-
-            this.chooseOptionFormInstance = chooseOptionFormInstance;
-
-            //start timer
-            //Timer_read_from_PLC.Start();
-            //set time interval (ms)
-            //Timer_read_from_PLC.Interval = 100;
-        }
-
-        //Variables
-        #region Variables
-
-        //C# variables
-        #region C# variables
-
-        private bool errorMessageBoxShown = false;
-
-        bool Option3;
-
-        #endregion
-
-        //Tia variables
-        #region Tia variables
-
-        public S7Client client = new S7Client();
-
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
-        private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1]; //1
-        private byte[] send_buffer_DB11 = new byte[1]; //1
-
-        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
-        private int DBNumber_DB14 = 14;
-        //first struct -> Input -> 5 variables -> size 0.4
-        private byte[] read_buffer_DB14_Input = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Input = new byte[1024]; //110
-        //second struct -> Output -> 1 variable -> size 2.0
-        private byte[] read_buffer_DB14_Output = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Output = new byte[1024]; //110
-        //other structs are Timers 
-
-        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
-        private int DBNumber_DB1 = 1;
-        //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB1_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Input = new byte[1024]; //6
-        //second struct -> Output -> 21 variables -> size 6.3 
-        private byte[] read_buffer_DB1_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Output = new byte[1024]; //6
-
-        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
-        private int DBNumber_DB19 = 19;
-        //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB19_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Input = new byte[1024]; //6
-        //second struct -> Output -> 21 variables -> size 6.3  
-        private byte[] read_buffer_DB19_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Output = new byte[1024]; //6
-
-        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
-        private int DBNumber_DB20 = 20;
-        //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB20_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Input = new byte[1024]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB20_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Output = new byte[1024]; //5
-
-        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
-        private int DBNumber_DB21 = 21;
-        //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB21_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Input = new byte[1024]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB21_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Output = new byte[1024]; //5
-
         //input 
         #region Input variables 
 
@@ -192,7 +112,7 @@ namespace Bc_prace
 
         //Crossroad_2_DB DB19
         #region Crossroad_2_DB DB19
-        
+
         int Crossroad2CrosswalkSQ;
 
         bool Crossroad2TopRED;
@@ -207,7 +127,7 @@ namespace Bc_prace
         bool Crossroad2BottomRED;
         bool Crossroad2BottomGREEN;
         bool Crossroad2BottomYellow;
-               
+
         bool Crossroad2LeftCrosswalkRED1;
         bool Crossroad2LeftCrosswalkRED2;
         bool Crossroad2LeftCrosswalkGREEN1;
@@ -216,7 +136,7 @@ namespace Bc_prace
         bool Crossroad2RightCrosswalkRED2;
         bool Crossroad2RightCrosswalkGREEN1;
         bool Crossroad2RightCrosswalkGREEN2;
-        
+
         #endregion
 
         //Crossroad_LeftT_DB DB20
@@ -233,12 +153,12 @@ namespace Bc_prace
         bool CrossroadLeftTRightRED;
         bool CrossroadLeftTRightGREEN;
         bool CrossroadLeftTRightYellow;
-                
+
         bool CrossroadLeftTLeftCrosswalkRED1;
         bool CrossroadLeftTLeftCrosswalkRED2;
         bool CrossroadLeftTLeftCrosswalkGREEN1;
         bool CrossroadLeftTLeftCrosswalkGREEN2;
-        
+
         #endregion
 
         //Crossroad_RightT_DB DB21
@@ -260,11 +180,257 @@ namespace Bc_prace
         bool CrossroadRightTTopCrosswalkRED2;
         bool CrossroadRightTTopCrosswalkGREEN1;
         bool CrossroadRightTTopCrosswalkGREEN2;
-        
-        #endregion
-                      
+
         #endregion
 
+        #endregion
+
+        public Program3Form(ChooseOptionForm chooseOptionFormInstance)
+        {
+            InitializeComponent();
+
+            this.chooseOptionFormInstance = chooseOptionFormInstance;
+
+            //input 
+            #region Input variables 
+
+            //Crossroad_DB DB14
+            #region Crossroad_DB DB14
+
+            CrossroadModeOFF = chooseOptionFormInstance.CrossroadModeOFF;
+            CrossroadModeNIGHT = chooseOptionFormInstance.CrossroadModeNIGHT;
+            CrossroadModeDAY = chooseOptionFormInstance.CrossroadModeDAY;
+            CrossroadEmergencySTOP = chooseOptionFormInstance.CrossroadEmergencySTOP;
+            CrossroadErrorSystem = chooseOptionFormInstance.CrossroadErrorSystem;
+
+            #endregion
+
+            //Crossroad_1_DB DB1
+            #region Crossroad_1_DB DB1
+
+            Crossroad1LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN1;
+            Crossroad1LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN2;
+            Crossroad1TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN1;
+            Crossroad1TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN2;
+
+            #endregion
+
+            //Crossroad_2_DB DB19
+            #region Crossroad_2_DB DB19
+
+            Crossroad2LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN1;
+            Crossroad2LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN2;
+            Crossroad2TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN1;
+            Crossroad2TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN2;
+
+            #endregion
+
+            //Crossroad_LeftT_DB DB20
+            #region Crossroad_LeftT_DB DB20
+
+            CrossroadLeftTLeftCrosswalkBTN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN1;
+            CrossroadLeftTLeftCrosswalkBTN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN2;
+
+            #endregion
+
+            //Crossroad_RightT_DB DB21
+            #region Crossroad_RightT_DB DB21
+
+            CrossroadRightTTopCrosswalkBTN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN1;
+            CrossroadRightTTopCrosswalkBTN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN2;
+
+            #endregion
+
+            #endregion
+
+            //output
+            #region Output variables 
+
+            //Crossroad_DB DB14
+            #region Crossroad_DB DB14
+
+            TrafficLightsSQ = chooseOptionFormInstance.TrafficLightsSQ;
+
+            #endregion
+
+            //Crossroad_1_DB DB1
+            #region Crossroad_1_DB DB1
+
+            Crossroad1CrosswalkSQ = chooseOptionFormInstance.Crossroad1CrosswalkSQ;
+
+            Crossroad1TopRED = chooseOptionFormInstance.Crossroad1TopRED;
+            Crossroad1TopGREEN = chooseOptionFormInstance.Crossroad1TopGREEN;
+            Crossroad1TopYELLOW = chooseOptionFormInstance.Crossroad1TopYELLOW;
+            Crossroad1LeftRED = chooseOptionFormInstance.Crossroad1LeftRED;
+            Crossroad1LeftGREEN = chooseOptionFormInstance.Crossroad1LeftGREEN;
+            Crossroad1LeftYELLOW = chooseOptionFormInstance.Crossroad1LeftYELLOW;
+            Crossroad1RightRED = chooseOptionFormInstance.Crossroad1RightRED;
+            Crossroad1RightGREEN = chooseOptionFormInstance.Crossroad1RightGREEN;
+            Crossroad1RightYELLOW = chooseOptionFormInstance.Crossroad1RightYELLOW;
+            Crossroad1BottomRED = chooseOptionFormInstance.Crossroad1BottomRED;
+            Crossroad1BottomGREEN = chooseOptionFormInstance.Crossroad1BottomGREEN;
+            Crossroad1BottomYELLOW = chooseOptionFormInstance.Crossroad1BottomYELLOW;
+
+            Crossroad1TopCrosswalkRED1 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED1;
+            Crossroad1TopCrosswalkRED2 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED2;
+            Crossroad1TopCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN1;
+            Crossroad1TopCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN2;
+            Crossroad1LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED1;
+            Crossroad1LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED2;
+            Crossroad1LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN1;
+            Crossroad1LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN2;
+
+            #endregion
+
+            //Crossroad_2_DB DB19
+            #region Crossroad_2_DB DB19
+
+            Crossroad2CrosswalkSQ = chooseOptionFormInstance.Crossroad2CrosswalkSQ;
+
+            Crossroad2TopRED = chooseOptionFormInstance.Crossroad2TopRED;
+            Crossroad2TopGREEN = chooseOptionFormInstance.Crossroad2TopGREEN;
+            Crossroad2TopYellow = chooseOptionFormInstance.Crossroad2TopYellow;
+            Crossroad2LeftRED = chooseOptionFormInstance.Crossroad2LeftRED;
+            Crossroad2LeftGREEN = chooseOptionFormInstance.Crossroad2LeftGREEN;
+            Crossroad2LeftYellow = chooseOptionFormInstance.Crossroad2LeftYellow;
+            Crossroad2RightRED = chooseOptionFormInstance.Crossroad2RightRED;
+            Crossroad2RightGREEN = chooseOptionFormInstance.Crossroad2RightGREEN;
+            Crossroad2RightYellow = chooseOptionFormInstance.Crossroad2RightYellow;
+            Crossroad2BottomRED = chooseOptionFormInstance.Crossroad2BottomRED;
+            Crossroad2BottomGREEN = chooseOptionFormInstance.Crossroad2BottomGREEN;
+            Crossroad2BottomYellow = chooseOptionFormInstance.Crossroad2BottomYellow;
+
+            Crossroad2LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED1;
+            Crossroad2LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED2;
+            Crossroad2LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN1;
+            Crossroad2LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN2;
+            Crossroad2RightCrosswalkRED1 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED1;
+            Crossroad2RightCrosswalkRED2 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED2;
+            Crossroad2RightCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN1;
+            Crossroad2RightCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN2;
+
+            #endregion
+
+            //Crossroad_LeftT_DB DB20
+            #region Crossroad_LeftT_DB DB20
+
+            CrossroadLeftTCrosswalkSQ = chooseOptionFormInstance.CrossroadLeftTCrosswalkSQ;
+
+            CrossroadLeftTTopRED = chooseOptionFormInstance.CrossroadLeftTTopRED;
+            CrossroadLeftTTopGREEN = chooseOptionFormInstance.CrossroadLeftTTopGREEN;
+            CrossroadLeftTTopYellow = chooseOptionFormInstance.CrossroadLeftTTopYellow;
+            CrossroadLeftTLeftRED = chooseOptionFormInstance.CrossroadLeftTLeftRED;
+            CrossroadLeftTLeftGREEN = chooseOptionFormInstance.CrossroadLeftTLeftGREEN;
+            CrossroadLeftTLeftYellow = chooseOptionFormInstance.CrossroadLeftTLeftYellow;
+            CrossroadLeftTRightRED = chooseOptionFormInstance.CrossroadLeftTRightRED;
+            CrossroadLeftTRightGREEN = chooseOptionFormInstance.CrossroadLeftTRightGREEN;
+            CrossroadLeftTRightYellow = chooseOptionFormInstance.CrossroadLeftTRightYellow;
+
+            CrossroadLeftTLeftCrosswalkRED1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED1;
+            CrossroadLeftTLeftCrosswalkRED2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED2;
+            CrossroadLeftTLeftCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN1;
+            CrossroadLeftTLeftCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN2;
+
+            #endregion
+
+            //Crossroad_RightT_DB DB21
+            #region Crossroad_RightT_DB DB21
+
+            CrossroadRightTCrosswalkSQ = chooseOptionFormInstance.CrossroadRightTCrosswalkSQ;
+
+            CrossroadRightTTopRED = chooseOptionFormInstance.CrossroadRightTTopRED;
+            CrossroadRightTTopGREEN = chooseOptionFormInstance.CrossroadRightTTopGREEN;
+            CrossroadRightTTopYellow = chooseOptionFormInstance.CrossroadRightTTopYellow;
+            CrossroadRightTLeftRED = chooseOptionFormInstance.CrossroadRightTLeftRED;
+            CrossroadRightTLeftGREEN = chooseOptionFormInstance.CrossroadRightTLeftGREEN;
+            CrossroadRightTLeftYellow = chooseOptionFormInstance.CrossroadRightTLeftYellow;
+            CrossroadRightTRightRED = chooseOptionFormInstance.CrossroadRightTRightRED;
+            CrossroadRightTRightGREEN = chooseOptionFormInstance.CrossroadRightTRightGREEN;
+            CrossroadRightTRightYellow = chooseOptionFormInstance.CrossroadRightTRightYellow;
+
+            CrossroadRightTTopCrosswalkRED1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED1;
+            CrossroadRightTTopCrosswalkRED2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED2;
+            CrossroadRightTTopCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN1;
+            CrossroadRightTTopCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN2;
+
+            #endregion
+
+            #endregion
+
+            //start timer
+            //Timer_read_from_PLC.Start();
+            //set time interval (ms)
+            //Timer_read_from_PLC.Interval = 100;
+        }
+
+        //Variables
+        #region Variables
+
+        //C# variables
+        #region C# variables
+
+        private bool errorMessageBoxShown = false;
+
+        bool Option3;
+
+        #endregion
+
+        //Tia variables
+        #region Tia variables
+
+        public S7Client client = new S7Client();
+
+        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
+        private byte[] read_buffer_DB11 = new byte[1]; //1
+        private byte[] send_buffer_DB11 = new byte[1]; //1
+
+        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
+        private int DBNumber_DB14 = 14;
+        //first struct -> Input -> 5 variables -> size 0.4
+        private byte[] read_buffer_DB14_Input = new byte[1024]; //110 
+        private byte[] send_buffer_DB14_Input = new byte[1024]; //110
+        //second struct -> Output -> 1 variable -> size 2.0
+        private byte[] read_buffer_DB14_Output = new byte[1024]; //110 
+        private byte[] send_buffer_DB14_Output = new byte[1024]; //110
+        //other structs are Timers 
+
+        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+        private int DBNumber_DB1 = 1;
+        //first struct -> Input -> 4 variables -> size 0.3
+        private byte[] read_buffer_DB1_Input = new byte[1024]; //6 
+        private byte[] send_buffer_DB1_Input = new byte[1024]; //6
+        //second struct -> Output -> 21 variables -> size 6.3 
+        private byte[] read_buffer_DB1_Output = new byte[1024]; //6 
+        private byte[] send_buffer_DB1_Output = new byte[1024]; //6
+
+        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+        private int DBNumber_DB19 = 19;
+        //first struct -> Input -> 4 variables -> size 0.3
+        private byte[] read_buffer_DB19_Input = new byte[1024]; //6 
+        private byte[] send_buffer_DB19_Input = new byte[1024]; //6
+        //second struct -> Output -> 21 variables -> size 6.3  
+        private byte[] read_buffer_DB19_Output = new byte[1024]; //6 
+        private byte[] send_buffer_DB19_Output = new byte[1024]; //6
+
+        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB20 = 20;
+        //first struct -> Input -> 2 variables -> size 0.1
+        private byte[] read_buffer_DB20_Input = new byte[1024]; //5
+        private byte[] send_buffer_DB20_Input = new byte[1024]; //5
+        //second struct -> Output -> 14 variables -> size 5.4
+        private byte[] read_buffer_DB20_Output = new byte[1024]; //5
+        private byte[] send_buffer_DB20_Output = new byte[1024]; //5
+
+        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB21 = 21;
+        //first struct -> Input -> 2 variables -> size 0.1
+        private byte[] read_buffer_DB21_Input = new byte[1024]; //5
+        private byte[] send_buffer_DB21_Input = new byte[1024]; //5
+        //second struct -> Output -> 14 variables -> size 5.4
+        private byte[] read_buffer_DB21_Output = new byte[1024]; //5
+        private byte[] send_buffer_DB21_Output = new byte[1024]; //5
+               
         #endregion
 
         #endregion

@@ -83,6 +83,7 @@ namespace Bc_prace
             
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
+            //Input variables
             ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
             ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
             ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
@@ -98,6 +99,7 @@ namespace Bc_prace
             ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
             ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
 
+            //Output variables
             ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON;
             ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN;
             ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP;

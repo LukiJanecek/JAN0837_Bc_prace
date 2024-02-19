@@ -21,6 +21,44 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
+        //input
+        #region Input variables
+
+        bool CarWashEmergencySTOP;
+        bool CarWashErrorSystem;
+        bool CarWashStartCarWash;
+        bool CarWashWaitingForIncomingCar;
+        bool CarWashWaitingForOutgoingCar;
+        bool CarWashPerfetWash;
+        bool CarWashPerfectPolish;
+
+        #endregion
+
+        //output
+        #region Output variables 
+
+        bool CarWashPositionShower;
+        bool CarWashPositionCar;
+        bool CarWashGreenLight;
+        bool CarWashRedLight;
+        bool CarWashYellowLight;
+        bool CarWashDoor1UP;
+        bool CarWashDoor1DOWN;
+        bool CarWashDoor2UP;
+        bool CarWashDoor2DOWN;
+        bool CarWashWater;
+        bool CarWashWashingChemicalsFRONT;
+        bool CarWashWashingChemicalsSIDES;
+        bool CarWashWashingChemicalsBACK;
+        bool CarWashWax;
+        bool CarWashVarnishProtection;
+        bool CarWashDry;
+        bool CarWashSoap;
+        bool CarWashActiveFoam;
+        bool CarWashBrushes;
+
+        #endregion
+
         public Program2Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
@@ -28,10 +66,42 @@ namespace Bc_prace
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
+            //Input variables 
+            CarWashEmergencySTOP = chooseOptionFormInstance.CarWashEmergencySTOP;
+            CarWashErrorSystem = chooseOptionFormInstance.CarWashErrorSystem;
+            CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash;
+            CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar;
+            CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar;
+            CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash;
+            CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish;
+
+            //Output variables
+            CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
+            CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
+            CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
+            CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
+            CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;
+            CarWashDoor1UP = chooseOptionFormInstance.CarWashDoor1UP;
+            CarWashDoor1DOWN = chooseOptionFormInstance.CarWashDoor1DOWN;
+            CarWashDoor2UP = chooseOptionFormInstance.CarWashDoor2UP;
+            CarWashDoor2DOWN = chooseOptionFormInstance.CarWashDoor2DOWN;
+            CarWashWater = chooseOptionFormInstance.CarWashWater;
+            CarWashWashingChemicalsFRONT = chooseOptionFormInstance.CarWashWashingChemicalsFRONT;
+            CarWashWashingChemicalsSIDES = chooseOptionFormInstance.CarWashWashingChemicalsSIDES;
+            CarWashWashingChemicalsBACK = chooseOptionFormInstance.CarWashWashingChemicalsBACK;
+            CarWashWax = chooseOptionFormInstance.CarWashWax;
+            CarWashVarnishProtection = chooseOptionFormInstance.CarWashVarnishProtection;
+            CarWashDry = chooseOptionFormInstance.CarWashDry;
+            CarWashSoap = chooseOptionFormInstance.CarWashSoap;
+            CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
+            CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
+
             //start timer
             //Timer_read_from_PLC.Start();
             //set time interval (ms)
             //Timer_read_from_PLC.Interval = 100;
+
+
         }
 
         //Variables
@@ -71,45 +141,7 @@ namespace Bc_prace
         //second struct -> Output -> 16 variables -> 3.7 size
         private byte[] read_buffer_DB5_Output = new byte[1024]; //3
         private byte[] send_buffer_DB5_Output = new byte[1024]; //3
-
-        //input
-        #region Input variables
-
-        bool CarWashEmergencySTOP;
-        bool CarWashErrorSystem;
-        bool CarWashStartCarWash;
-        bool CarWashWaitingForIncomingCar;
-        bool CarWashWaitingForOutgoingCar;
-        bool CarWashPerfetWash;
-        bool CarWashPerfectPolish;
-
-        #endregion
-
-        //output
-        #region Output variables 
-
-        bool CarWashPositionShower = false;
-        bool CarWashPositionCar = false;
-        bool CarWashGreenLight = false;
-        bool CarWashRedLight = false;
-        bool CarWashYellowLight = false;
-        bool CarWashDoor1UP = false;
-        bool CarWashDoor1DOWN = false;
-        bool CarWashDoor2UP = false;
-        bool CarWashDoor2DOWN = false;
-        bool CarWashWater = false;
-        bool CarWashWashingChemicalsFRONT = false;
-        bool CarWashWashingChemicalsSIDES = false;
-        bool CarWashWashingChemicalsBACK = false;
-        bool CarWashWax = false;
-        bool CarWashVarnishProtection = false;
-        bool CarWashDry = false;
-        bool CarWashSoap = false;
-        bool CarWashActiveFoam = false;
-        bool CarWashBrushes = false;
-
-        #endregion
-
+                
         #endregion
 
         #endregion
@@ -408,7 +440,7 @@ namespace Bc_prace
         #region Start CarWash
         private void btnStartCarWash_Click(object sender, EventArgs e)
         {
-            Program2SelectionForm Selection = new Program2SelectionForm();
+            Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
             Selection.ShowDialog(this);
         }
         #endregion
