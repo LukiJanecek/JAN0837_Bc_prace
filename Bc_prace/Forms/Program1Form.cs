@@ -21,10 +21,15 @@ namespace Bc_prace
 
         S7Client client;
 
+        private bool errorMessageBoxShown = false;
+
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
+
+        //MaintainDB variables
+        bool Option1 = false;
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
@@ -109,6 +114,8 @@ namespace Bc_prace
             read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
             send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
 
+            Option1 = chooseOptionFormInstance.Option1;
+
             //Input variables
             ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
             ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
@@ -170,9 +177,9 @@ namespace Bc_prace
             lblElevatorFloorY = lblElevatorFloor.Location.Y;
 
             //start timer
-            //Timer_read_from_PLC.Start();
+            Timer_read_actual.Start();
             //set time interval (ms)
-            //Timer_read_from_PLC.Interval = 100;
+            Timer_read_actual.Interval = 100;
 
         }
 
@@ -200,10 +207,6 @@ namespace Bc_prace
         //C# variables
         #region C# variables
 
-        private bool errorMessageBoxShown = false;
-
-        bool Option1;
-
         //private bool DoorOPEN = false;
         //private bool DoorCLOSE = true;
 
@@ -229,28 +232,19 @@ namespace Bc_prace
 
         #endregion
 
-        //Tia variables 
-        #region Tia variables 
-
-        public S7Client clientElevator = new S7Client();
-
-               
-
-        #endregion
-
         #endregion
 
         //Tia connection
         #region Tia connection
 
-        private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
+        private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {
                 //Reading variables with MultiVar method
                 #region Multi read -> MultiVar   
 
-                S7MultiVar reader = new S7MultiVar(clientElevator);
+                S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
                 //first struct -> Input -> 14 variables -> size 1.5 
@@ -854,7 +848,7 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
             
             //write to PLC
-            int writeResultDB11 = clientElevator.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResultDB11 != 0)
             {
                 //write error

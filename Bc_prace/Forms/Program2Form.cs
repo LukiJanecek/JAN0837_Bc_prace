@@ -23,10 +23,15 @@ namespace Bc_prace
 
         S7Client client;
 
+        private bool errorMessageBoxShown = false;
+
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
+
+        //MaintainDB variables
+        bool Option2 = false;
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
@@ -83,7 +88,7 @@ namespace Bc_prace
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
-
+                        
             //buffers
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
@@ -91,6 +96,8 @@ namespace Bc_prace
             send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
             read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
             send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
+
+            Option2 = chooseOptionFormInstance.Option2;
 
             //Input variables 
             CarWashEmergencySTOP = chooseOptionFormInstance.CarWashEmergencySTOP;
@@ -123,9 +130,9 @@ namespace Bc_prace
             CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
 
             //start timer
-            //Timer_read_from_PLC.Start();
+            Timer_read_actual.Start();
             //set time interval (ms)
-            //Timer_read_from_PLC.Interval = 100;
+            Timer_read_actual.Interval = 100;
 
 
         }
@@ -136,10 +143,6 @@ namespace Bc_prace
         //C# variables
         #region C# variables
 
-        private bool errorMessageBoxShown = false;
-
-        bool Option2;
-
         //Count
         int countWax = 0;
         int countSoap = 0;
@@ -148,15 +151,13 @@ namespace Bc_prace
         int SignalizationCount = 0;
 
         #endregion
-
-        
-
+                
         #endregion
 
         //Tia connection
         #region Tia connection
 
-        private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
+        private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {

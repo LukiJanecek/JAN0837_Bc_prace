@@ -41,7 +41,7 @@
             panel2 = new Panel();
             panel3 = new Panel();
             components = new System.ComponentModel.Container();
-            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
+            Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -164,9 +164,9 @@
             panel3.Size = new Size(794, 189);
             panel3.TabIndex = 11;
             //
-            //Timer_read_from_PLC
+            //Timer_read_actual
             //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program2SelectionForm
             // 
@@ -203,6 +203,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private System.Windows.Forms.Timer Timer_read_actual;
     }
 }

@@ -40,7 +40,7 @@
             panel2 = new Panel();
             btnTest = new Button();
             components = new System.ComponentModel.Container();
-            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
+            Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -173,9 +173,9 @@
             btnTest.UseVisualStyleBackColor = true;
             btnTest.Click += btnTest_Click;
             //
-            //Timer_read_from_PLC
+            //Timer_read_actual
             //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program3Form
             // 
@@ -207,7 +207,7 @@
         private RadioButton rBtnCrossroadExtension3;
         private RadioButton rBtnCrossroadExtension2;
         private RadioButton rBtnCrossroadExtension1;
-        private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private System.Windows.Forms.Timer Timer_read_actual;
         private Button btnTest;
     }
 }

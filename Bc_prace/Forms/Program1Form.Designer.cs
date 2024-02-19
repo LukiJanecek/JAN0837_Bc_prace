@@ -73,7 +73,7 @@
             btnCabinMoveToLeft = new Button();
             btnCabinMoveToRight = new Button();
             components = new System.ComponentModel.Container();
-            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
+            Timer_read_actual = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)panelCabin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor2).BeginInit();
@@ -528,9 +528,9 @@
             btnCabinMoveToRight.UseVisualStyleBackColor = true;
             btnCabinMoveToRight.Click += btnCabinMoveToRight_Click;
             //
-            //Timer_read_from_PLC
+            //Timer_read_actual
             //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program1Form
             // 
@@ -623,7 +623,7 @@
         private Button btnCabinLengthBigger;
         private Button btnCabinLengthSmaller;
         private Button btnCabinWidthBigger;
-        private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private System.Windows.Forms.Timer Timer_read_actual;
         private Button btnTest;
     }
 }

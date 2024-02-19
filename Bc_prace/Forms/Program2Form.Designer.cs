@@ -39,7 +39,7 @@
             btnTest = new Button();
             btnTest2 = new Button();
             components = new System.ComponentModel.Container();
-            Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
+            Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -151,9 +151,9 @@
             btnTest2.UseVisualStyleBackColor = true;
             btnTest2.Click += btnTest2_Click;
             //
-            //Timer_read_from_PLC
+            //Timer_read_actual
             //
-            Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
+            Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program2Form
             // 
@@ -181,7 +181,7 @@
         private Button btnStartCarWash;
         private Panel panel1;
         private Button btnSignalization;
-        private System.Windows.Forms.Timer Timer_read_from_PLC;
+        private System.Windows.Forms.Timer Timer_read_actual;
         private Panel panel2;
         private Controls.UserControlCarWash userControlCarWash1;
         private Button btnTest;

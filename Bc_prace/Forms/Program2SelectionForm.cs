@@ -18,6 +18,8 @@ namespace Bc_prace
 
         S7Client client;
 
+        private bool errorMessageBoxShown = false;
+
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
@@ -117,27 +119,15 @@ namespace Bc_prace
             CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
 
             //start timer
-            //Timer_read_from_PLC.Start();
+            Timer_read_actual.Start();
             //set time interval (ms)
-            //Timer_read_from_PLC.Interval = 100;
+            Timer_read_actual.Interval = 100;
         }
-
-        //Variables
-        #region Variables
-
-        //C# variables
-        #region C# variables
-
-        private bool errorMessageBoxShown = false;
-
-        #endregion
-                
-        #endregion
-
+               
         //Tia connection
         #region Tia connection
 
-        private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
+        private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {

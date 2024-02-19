@@ -21,10 +21,15 @@ namespace Bc_prace
 
         S7Client client;
 
+        private bool errorMessageBoxShown = false;
+
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
+
+        //MaintainDB variables
+        bool Option3 = false;
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
@@ -244,7 +249,7 @@ namespace Bc_prace
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
-            client = chooseOptionFormInstance.client;
+            client = chooseOptionFormInstance.client;           
 
             //buffers 
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
@@ -269,6 +274,8 @@ namespace Bc_prace
             send_buffer_DB21_Input = chooseOptionFormInstance.send_buffer_DB21_Input;
             read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
             send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
+
+            Option3 = chooseOptionFormInstance.Option3;
 
             //input 
             #region Input variables 
@@ -437,29 +444,15 @@ namespace Bc_prace
             #endregion
 
             //start timer
-            //Timer_read_from_PLC.Start();
+            Timer_read_actual.Start();
             //set time interval (ms)
-            //Timer_read_from_PLC.Interval = 100;
+            Timer_read_actual.Interval = 100;
         }
-
-        //Variables
-        #region Variables
-
-        //C# variables
-        #region C# variables
-
-        private bool errorMessageBoxShown = false;
-
-        bool Option3;
-
-        #endregion
                 
-        #endregion
-
         //Tia connection
         #region Tia connection
 
-        private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
+        private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {
