@@ -42,72 +42,72 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1]; //1
-        private byte[] send_buffer_DB11 = new byte[1]; //1
+        public byte[] read_buffer_DB11 = new byte[1]; //1
+        public byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
-        private byte[] read_buffer_DB4_Input = new byte[2]; //26 
-        private byte[] send_buffer_DB4_Input = new byte[2]; //26
+        public byte[] read_buffer_DB4_Input = new byte[2]; //26 
+        public byte[] send_buffer_DB4_Input = new byte[2]; //26
         //second struct -> Output -> 32 variables -> size 26
-        private byte[] read_buffer_DB4_Output = new byte[1024]; //26
-        private byte[] send_buffer_DB4_Output = new byte[1024]; //26
+        public byte[] read_buffer_DB4_Output = new byte[1024]; //26
+        public byte[] send_buffer_DB4_Output = new byte[1024]; //26
         
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
-        private byte[] read_buffer_DB5_Input = new byte[1024]; //3
-        private byte[] send_buffer_DB5_Input = new byte[1024]; //3
+        public byte[] read_buffer_DB5_Input = new byte[1024]; //3
+        public byte[] send_buffer_DB5_Input = new byte[1024]; //3
         //second struct -> Output -> 16 variables -> 3.7 size
-        private byte[] read_buffer_DB5_Output = new byte[1024]; //3
-        private byte[] send_buffer_DB5_Output = new byte[1024]; //3
+        public byte[] read_buffer_DB5_Output = new byte[1024]; //3
+        public byte[] send_buffer_DB5_Output = new byte[1024]; //3
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
-        private byte[] read_buffer_DB14_Input = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Input = new byte[1024]; //110
+        public byte[] read_buffer_DB14_Input = new byte[1024]; //110 
+        public byte[] send_buffer_DB14_Input = new byte[1024]; //110
         //second struct -> Output -> 1 variable -> size 2.0
-        private byte[] read_buffer_DB14_Output = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Output = new byte[1024]; //110
+        public byte[] read_buffer_DB14_Output = new byte[1024]; //110 
+        public byte[] send_buffer_DB14_Output = new byte[1024]; //110
         //other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB1_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Input = new byte[1024]; //6
+        public byte[] read_buffer_DB1_Input = new byte[1024]; //6 
+        public byte[] send_buffer_DB1_Input = new byte[1024]; //6
         //second struct -> Output -> 21 variables -> size 6.3 
-        private byte[] read_buffer_DB1_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Output = new byte[1024]; //6
+        public byte[] read_buffer_DB1_Output = new byte[1024]; //6 
+        public byte[] send_buffer_DB1_Output = new byte[1024]; //6
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB19_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Input = new byte[1024]; //6
+        public byte[] read_buffer_DB19_Input = new byte[1024]; //6 
+        public byte[] send_buffer_DB19_Input = new byte[1024]; //6
         //second struct -> Output -> 21 variables -> size 6.3  
-        private byte[] read_buffer_DB19_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Output = new byte[1024]; //6
+        public byte[] read_buffer_DB19_Output = new byte[1024]; //6 
+        public byte[] send_buffer_DB19_Output = new byte[1024]; //6
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB20_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Input = new byte[1024]; //5
+        public byte[] read_buffer_DB20_Input = new byte[1024]; //5
+        public byte[] send_buffer_DB20_Input = new byte[1024]; //5
         //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB20_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Output = new byte[1024]; //5
+        public byte[] read_buffer_DB20_Output = new byte[1024]; //5
+        public byte[] send_buffer_DB20_Output = new byte[1024]; //5
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB21_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Input = new byte[1024]; //5
+        public byte[] read_buffer_DB21_Input = new byte[1024]; //5
+        public byte[] send_buffer_DB21_Input = new byte[1024]; //5
         //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB21_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Output = new byte[1024]; //5
+        public byte[] read_buffer_DB21_Output = new byte[1024]; //5
+        public byte[] send_buffer_DB21_Output = new byte[1024]; //5
 
         //MaintainDB variables
         public bool Option1 = false;

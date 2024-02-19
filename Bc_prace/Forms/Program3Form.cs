@@ -19,6 +19,59 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
+        S7Client client;
+
+        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
+        byte[] read_buffer_DB11;
+        byte[] send_buffer_DB11;
+
+        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
+        private int DBNumber_DB14 = 14;
+        //first struct -> Input -> 5 variables -> size 0.4
+        byte[] read_buffer_DB14_Input;
+        byte[] send_buffer_DB14_Input;
+        //second struct -> Output -> 1 variable -> size 2.0
+        byte[] read_buffer_DB14_Output;
+        byte[] send_buffer_DB14_Output;
+        //other structs are Timers 
+
+        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+        private int DBNumber_DB1 = 1;
+        //first struct -> Input -> 4 variables -> size 0.3
+        byte[] read_buffer_DB1_Input;
+        byte[] send_buffer_DB1_Input;
+        //second struct -> Output -> 21 variables -> size 6.3 
+        byte[] read_buffer_DB1_Output;
+        byte[] send_buffer_DB1_Output;
+
+        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+        private int DBNumber_DB19 = 19;
+        //first struct -> Input -> 4 variables -> size 0.3
+        byte[] read_buffer_DB19_Input;
+        byte[] send_buffer_DB19_Input;
+        //second struct -> Output -> 21 variables -> size 6.3  
+        byte[] read_buffer_DB19_Output;
+        byte[] send_buffer_DB19_Output;
+
+        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB20 = 20;
+        //first struct -> Input -> 2 variables -> size 0.1
+        byte[] read_buffer_DB20_Input;
+        byte[] send_buffer_DB20_Input;
+        //second struct -> Output -> 14 variables -> size 5.4
+        byte[] read_buffer_DB20_Output;
+        byte[] send_buffer_DB20_Output;
+
+        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB21 = 21;
+        //first struct -> Input -> 2 variables -> size 0.1
+        byte[] read_buffer_DB21_Input;
+        byte[] send_buffer_DB21_Input;
+        //second struct -> Output -> 14 variables -> size 5.4
+        byte[] read_buffer_DB21_Output;
+        byte[] send_buffer_DB21_Output;
+
         //input 
         #region Input variables 
 
@@ -190,6 +243,32 @@ namespace Bc_prace
             InitializeComponent();
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
+
+            client = chooseOptionFormInstance.client;
+
+            //buffers 
+            read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
+            send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
+            read_buffer_DB14_Input = chooseOptionFormInstance.read_buffer_DB14_Input;
+            send_buffer_DB14_Input = chooseOptionFormInstance.send_buffer_DB14_Input;
+            read_buffer_DB14_Output = chooseOptionFormInstance.read_buffer_DB14_Output;
+            send_buffer_DB14_Output = chooseOptionFormInstance.send_buffer_DB14_Output;
+            read_buffer_DB1_Input = chooseOptionFormInstance.read_buffer_DB1_Input;
+            send_buffer_DB1_Input = chooseOptionFormInstance.send_buffer_DB1_Input;
+            read_buffer_DB1_Output = chooseOptionFormInstance.read_buffer_DB1_Output;
+            send_buffer_DB1_Output = chooseOptionFormInstance.send_buffer_DB1_Output;
+            read_buffer_DB19_Input = chooseOptionFormInstance.read_buffer_DB19_Input;
+            send_buffer_DB19_Input = chooseOptionFormInstance.send_buffer_DB19_Input;
+            read_buffer_DB19_Output = chooseOptionFormInstance.read_buffer_DB19_Output;
+            send_buffer_DB19_Output = chooseOptionFormInstance.send_buffer_DB19_Output;
+            read_buffer_DB20_Input = chooseOptionFormInstance.read_buffer_DB20_Input;
+            send_buffer_DB20_Input = chooseOptionFormInstance.send_buffer_DB20_Input;
+            read_buffer_DB20_Output = chooseOptionFormInstance.read_buffer_DB20_Output;
+            send_buffer_DB20_Output = chooseOptionFormInstance.send_buffer_DB20_Output;
+            read_buffer_DB21_Input = chooseOptionFormInstance.read_buffer_DB21_Input;
+            send_buffer_DB21_Input = chooseOptionFormInstance.send_buffer_DB21_Input;
+            read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
+            send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
 
             //input 
             #region Input variables 
@@ -374,65 +453,7 @@ namespace Bc_prace
         bool Option3;
 
         #endregion
-
-        //Tia variables
-        #region Tia variables
-
-        public S7Client client = new S7Client();
-
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
-        private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1]; //1
-        private byte[] send_buffer_DB11 = new byte[1]; //1
-
-        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
-        private int DBNumber_DB14 = 14;
-        //first struct -> Input -> 5 variables -> size 0.4
-        private byte[] read_buffer_DB14_Input = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Input = new byte[1024]; //110
-        //second struct -> Output -> 1 variable -> size 2.0
-        private byte[] read_buffer_DB14_Output = new byte[1024]; //110 
-        private byte[] send_buffer_DB14_Output = new byte[1024]; //110
-        //other structs are Timers 
-
-        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
-        private int DBNumber_DB1 = 1;
-        //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB1_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Input = new byte[1024]; //6
-        //second struct -> Output -> 21 variables -> size 6.3 
-        private byte[] read_buffer_DB1_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB1_Output = new byte[1024]; //6
-
-        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
-        private int DBNumber_DB19 = 19;
-        //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB19_Input = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Input = new byte[1024]; //6
-        //second struct -> Output -> 21 variables -> size 6.3  
-        private byte[] read_buffer_DB19_Output = new byte[1024]; //6 
-        private byte[] send_buffer_DB19_Output = new byte[1024]; //6
-
-        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
-        private int DBNumber_DB20 = 20;
-        //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB20_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Input = new byte[1024]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB20_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB20_Output = new byte[1024]; //5
-
-        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
-        private int DBNumber_DB21 = 21;
-        //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB21_Input = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Input = new byte[1024]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB21_Output = new byte[1024]; //5
-        private byte[] send_buffer_DB21_Output = new byte[1024]; //5
-               
-        #endregion
-
+                
         #endregion
 
         //Tia connection

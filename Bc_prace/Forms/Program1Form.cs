@@ -19,6 +19,22 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
+        S7Client client;
+
+        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        private int DBNumber_DB11 = 11;
+        byte[] read_buffer_DB11;
+        byte[] send_buffer_DB11;
+
+        //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
+        private int DBNumber_DB4 = 4;
+        //first struct -> Input -> 14 variables -> size 1.5 
+        byte[] read_buffer_DB4_Input;
+        byte[] send_buffer_DB4_Input;
+        //second struct -> Output -> 32 variables -> size 26
+        byte[] read_buffer_DB4_Output;
+        byte[] send_buffer_DB4_Output;
+
         //inputs
         #region Input variables 
 
@@ -82,6 +98,16 @@ namespace Bc_prace
             InitializeComponent();
             
             this.chooseOptionFormInstance = chooseOptionFormInstance;
+
+            client = chooseOptionFormInstance.client;
+
+            //buffers
+            read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
+            send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
+            read_buffer_DB4_Input = chooseOptionFormInstance.read_buffer_DB4_Input;
+            send_buffer_DB4_Input = chooseOptionFormInstance.send_buffer_DB4_Input;
+            read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
+            send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
 
             //Input variables
             ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
@@ -208,21 +234,7 @@ namespace Bc_prace
 
         public S7Client clientElevator = new S7Client();
 
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
-        private int DBNumber_DB11 = 11;
-        private byte[] read_buffer_DB11 = new byte[1]; //1
-        private byte[] send_buffer_DB11 = new byte[1]; //1
-
-        //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
-        private int DBNumber_DB4 = 4;
-        //first struct -> Input -> 14 variables -> size 1.5 
-        private byte[] read_buffer_DB4_Input = new byte[1]; //26 
-        private byte[] send_buffer_DB4_Input = new byte[1]; //26
-        //second struct -> Output -> 32 variables -> size 26
-        private byte[] read_buffer_DB4_Output = new byte[1024]; //26
-        private byte[] send_buffer_DB4_Output = new byte[1024]; //26
-
-        
+               
 
         #endregion
 
