@@ -19,11 +19,14 @@ namespace Bc_prace
 {
     public partial class Program2Form : Form
     {
+        private ChooseOptionForm chooseOptionFormInstance;
 
-        public Program2Form()
+        public Program2Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
             InitializeButton();
+
+            this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             //start timer
             //Timer_read_from_PLC.Start();

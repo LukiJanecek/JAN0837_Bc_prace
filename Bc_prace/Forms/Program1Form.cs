@@ -17,10 +17,119 @@ namespace Bc_prace
 {
     public partial class Program1Form : Form
     {
-    
-        public Program1Form()
+        private ChooseOptionForm chooseOptionFormInstance;
+
+        //inputs
+        #region Input variables 
+
+        bool ElevatorBTNCabin1;
+        bool ElevatorBTNCabin2;
+        bool ElevatorBTNCabin3;
+        bool ElevatorBTNCabin4;
+        bool ElevatorBTNCabin5;
+        bool ElevatorBTNFloor1;
+        bool ElevatorBTNFloor2;
+        bool ElevatorBTNFloor3;
+        bool ElevatorBTNFloor4;
+        bool ElevatorBTNFloor5;
+        bool ElevatorDoorSEQ;
+        bool ElevatorBTNOPENCLOSE;
+        bool ElevatorEmergencySTOP;
+        bool ElevatorErrorSystem;
+
+        #endregion
+
+        //outputs
+        #region Output variables
+
+        bool ElevatorMotorON;
+        bool ElevatorMotorDOWN;
+        bool ElevatorMotorUP;
+        bool ElevatroHoming;
+        bool ElevatorSystemReady;
+        int ElevatorActualFloor;
+        bool ElevatorMoving;
+        bool ElevatorSystemWorking;
+        int ElevatorGoToFloor;
+        bool ElevatorDirection;
+        bool ElevatorActualFloorLED1;
+        bool ElevatorActualFloorLED2;
+        bool ElevatorActualFloorLED3;
+        bool ElevatorActualFloorLED4;
+        bool ElevatorActualFloorLED5;
+        bool ElevatorActualFloorCabinLED1;
+        bool ElevatorActualFloorCabinLED2;
+        bool ElevatorActualFloorCabinLED3;
+        bool ElevatorActualFloorCabinLED4;
+        bool ElevatorActualFloorCabinLED5;
+        bool ElevatorActualFloorSENS1;
+        bool ElevatorActualFloorSENS2;
+        bool ElevatorActualFloorSENS3;
+        bool ElevatorActualFloorSENS4;
+        bool ElevatorActualFloorSENS5;
+        int ElevatorTimeDoorSQOPEN; //time
+        int ElevatroTimeDoorSQCLOSE; //time
+        bool ElevatorDoorClOSE;
+        bool ElevatorDoorOPEN;
+        int ElevatorCabinSpeed;
+        bool ElevatorInactivity;
+        int ElevatorTimeToGetDown; //time
+
+        #endregion
+
+        public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
+            
+            this.chooseOptionFormInstance = chooseOptionFormInstance;
+
+            ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
+            ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
+            ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
+            ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
+            ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
+            ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
+            ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
+            ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
+            ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
+            ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
+            ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
+            ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
+            ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
+            ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
+
+            ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON;
+            ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN;
+            ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP;
+            ElevatroHoming = chooseOptionFormInstance.ElevatroHoming;
+            ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady;
+            ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor;
+            ElevatorMoving = chooseOptionFormInstance.ElevatorMoving;
+            ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking;
+            ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor;
+            ElevatorDirection = chooseOptionFormInstance.ElevatorDirection;
+            ElevatorActualFloorLED1 = chooseOptionFormInstance.ElevatorActualFloorLED1;
+            ElevatorActualFloorLED2 = chooseOptionFormInstance.ElevatorActualFloorLED2;
+            ElevatorActualFloorLED3 = chooseOptionFormInstance.ElevatorActualFloorLED3;
+            ElevatorActualFloorLED4 = chooseOptionFormInstance.ElevatorActualFloorLED4;
+            ElevatorActualFloorLED5 = chooseOptionFormInstance.ElevatorActualFloorLED5;
+            ElevatorActualFloorCabinLED1 = chooseOptionFormInstance.ElevatorActualFloorCabinLED1;
+            ElevatorActualFloorCabinLED2 = chooseOptionFormInstance.ElevatorActualFloorCabinLED2;
+            ElevatorActualFloorCabinLED3 = chooseOptionFormInstance.ElevatorActualFloorCabinLED3;
+            ElevatorActualFloorCabinLED4 = chooseOptionFormInstance.ElevatorActualFloorCabinLED4;
+            ElevatorActualFloorCabinLED5 = chooseOptionFormInstance.ElevatorActualFloorCabinLED5;
+            ElevatorActualFloorSENS1 = chooseOptionFormInstance.ElevatorActualFloorSENS1;
+            ElevatorActualFloorSENS2 = chooseOptionFormInstance.ElevatorActualFloorSENS2;
+            ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
+            ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
+            ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
+            ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN; 
+            ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; 
+            ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
+            ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
+            ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
+            ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity;
+            ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown;
 
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
@@ -111,63 +220,7 @@ namespace Bc_prace
         private byte[] read_buffer_DB4_Output = new byte[1024]; //26
         private byte[] send_buffer_DB4_Output = new byte[1024]; //26
 
-        //inputs
-        #region Input variables 
-
-        bool ElevatorBTNCabin1;
-        bool ElevatorBTNCabin2;
-        bool ElevatorBTNCabin3;
-        bool ElevatorBTNCabin4;
-        bool ElevatorBTNCabin5;
-        bool ElevatorBTNFloor1;
-        bool ElevatorBTNFloor2;
-        bool ElevatorBTNFloor3;
-        bool ElevatorBTNFloor4;
-        bool ElevatorBTNFloor5;
-        bool ElevatorDoorSEQ;
-        bool ElevatorBTNOPENCLOSE;
-        bool ElevatorEmergencySTOP;
-        bool ElevatorErrorSystem;
-
-        #endregion
-
-        //outputs
-        #region Output variables
-
-        bool ElevatorMotorON;
-        bool ElevatorMotorDOWN;
-        bool ElevatorMotorUP;
-        bool ElevatroHoming;
-        bool ElevatorSystemReady;
-        int ElevatorActualFloor;
-        bool ElevatorMoving;
-        bool ElevatorSystemWorking;
-        int ElevatorGoToFloor;
-        bool ElevatorDirection;
-        bool ElevatorActualFloorLED1;
-        bool ElevatorActualFloorLED2;
-        bool ElevatorActualFloorLED3;
-        bool ElevatorActualFloorLED4;
-        bool ElevatorActualFloorLED5;
-        bool ElevatorActualFloorCabinLED1;
-        bool ElevatorActualFloorCabinLED2;
-        bool ElevatorActualFloorCabinLED3;
-        bool ElevatorActualFloorCabinLED4;
-        bool ElevatorActualFloorCabinLED5;
-        bool ElevatorActualFloorSENS1;
-        bool ElevatorActualFloorSENS2;
-        bool ElevatorActualFloorSENS3;
-        bool ElevatorActualFloorSENS4;
-        bool ElevatorActualFloorSENS5;
-        int ElevatorTimeDoorSQOPEN; //time
-        int ElevatroTimeDoorSQCLOSE; //time
-        bool ElevatorDoorClOSE;
-        bool ElevatorDoorOPEN;
-        int ElevatorCabinSpeed;
-        bool ElevatorInactivity;
-        int ElevatorTimeToGetDown; //time
-
-        #endregion
+        
 
         #endregion
 

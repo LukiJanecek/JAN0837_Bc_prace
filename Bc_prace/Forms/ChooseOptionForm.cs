@@ -110,9 +110,9 @@ namespace Bc_prace
         private byte[] send_buffer_DB21_Output = new byte[1024]; //5
 
         //MaintainDB variables
-        bool Option1 = false;
-        bool Option2 = false;
-        bool Option3 = false;
+        public bool Option1 = false;
+        public bool Option2 = false;
+        public bool Option3 = false;
 
         //ElevatorDB variables 
         #region ElevatorDB variables 
@@ -120,58 +120,58 @@ namespace Bc_prace
         //inputs
         #region Input variables 
 
-        bool ElevatorBTNCabin1;
-        bool ElevatorBTNCabin2;
-        bool ElevatorBTNCabin3;
-        bool ElevatorBTNCabin4;
-        bool ElevatorBTNCabin5;
-        bool ElevatorBTNFloor1;
-        bool ElevatorBTNFloor2;
-        bool ElevatorBTNFloor3;
-        bool ElevatorBTNFloor4;
-        bool ElevatorBTNFloor5;
-        bool ElevatorDoorSEQ;
-        bool ElevatorBTNOPENCLOSE;
-        bool ElevatorEmergencySTOP;
-        bool ElevatorErrorSystem;
+        public bool ElevatorBTNCabin1;
+        public bool ElevatorBTNCabin2;
+        public bool ElevatorBTNCabin3;
+        public bool ElevatorBTNCabin4;
+        public bool ElevatorBTNCabin5;
+        public bool ElevatorBTNFloor1;
+        public bool ElevatorBTNFloor2;
+        public bool ElevatorBTNFloor3;
+        public bool ElevatorBTNFloor4;
+        public bool ElevatorBTNFloor5;
+        public bool ElevatorDoorSEQ;
+        public bool ElevatorBTNOPENCLOSE;
+        public bool ElevatorEmergencySTOP;
+        public bool ElevatorErrorSystem;
 
         #endregion
 
         //outputs
         #region Output variables
 
-        bool ElevatorMotorON;
-        bool ElevatorMotorDOWN;
-        bool ElevatorMotorUP;
-        bool ElevatroHoming;
-        bool ElevatorSystemReady;
-        int ElevatorActualFloor;
-        bool ElevatorMoving;
-        bool ElevatorSystemWorking;
-        int ElevatorGoToFloor;
-        bool ElevatorDirection;
-        bool ElevatorActualFloorLED1;
-        bool ElevatorActualFloorLED2;
-        bool ElevatorActualFloorLED3;
-        bool ElevatorActualFloorLED4;
-        bool ElevatorActualFloorLED5;
-        bool ElevatorActualFloorCabinLED1;
-        bool ElevatorActualFloorCabinLED2;
-        bool ElevatorActualFloorCabinLED3;
-        bool ElevatorActualFloorCabinLED4;
-        bool ElevatorActualFloorCabinLED5;
-        bool ElevatorActualFloorSENS1;
-        bool ElevatorActualFloorSENS2;
-        bool ElevatorActualFloorSENS3;
-        bool ElevatorActualFloorSENS4;
-        bool ElevatorActualFloorSENS5;
-        int ElevatorTimeDoorSQOPEN; //time
-        int ElevatroTimeDoorSQCLOSE; //time
-        bool ElevatorDoorClOSE;
-        bool ElevatorDoorOPEN;
-        int ElevatorCabinSpeed;
-        bool ElevatorInactivity;
-        int ElevatorTimeToGetDown; //time
+        public bool ElevatorMotorON;
+        public bool ElevatorMotorDOWN;
+        public bool ElevatorMotorUP;
+        public bool ElevatroHoming;
+        public bool ElevatorSystemReady;
+        public int ElevatorActualFloor;
+        public bool ElevatorMoving;
+        public bool ElevatorSystemWorking;
+        public int ElevatorGoToFloor;
+        public bool ElevatorDirection;
+        public bool ElevatorActualFloorLED1;
+        public bool ElevatorActualFloorLED2;
+        public bool ElevatorActualFloorLED3;
+        public bool ElevatorActualFloorLED4;
+        public bool ElevatorActualFloorLED5;
+        public bool ElevatorActualFloorCabinLED1;
+        public bool ElevatorActualFloorCabinLED2;
+        public bool ElevatorActualFloorCabinLED3;
+        public bool ElevatorActualFloorCabinLED4;
+        public bool ElevatorActualFloorCabinLED5;
+        public bool ElevatorActualFloorSENS1;
+        public bool ElevatorActualFloorSENS2;
+        public bool ElevatorActualFloorSENS3;
+        public bool ElevatorActualFloorSENS4;
+        public bool ElevatorActualFloorSENS5;
+        public int ElevatorTimeDoorSQOPEN; //time
+        public int ElevatroTimeDoorSQCLOSE; //time
+        public bool ElevatorDoorClOSE;
+        public bool ElevatorDoorOPEN;
+        public int ElevatorCabinSpeed;
+        public bool ElevatorInactivity;
+        public int ElevatorTimeToGetDown; //time
 
         #endregion
 
@@ -183,38 +183,38 @@ namespace Bc_prace
         //input
         #region Input variables
 
-        bool CarWashEmergencySTOP;
-        bool CarWashErrorSystem;
-        bool CarWashStartCarWash;
-        bool CarWashWaitingForIncomingCar;
-        bool CarWashWaitingForOutgoingCar;
-        bool CarWashPerfetWash;
-        bool CarWashPerfectPolish;
+        public bool CarWashEmergencySTOP;
+        public bool CarWashErrorSystem;
+        public bool CarWashStartCarWash;
+        public bool CarWashWaitingForIncomingCar;
+        public bool CarWashWaitingForOutgoingCar;
+        public bool CarWashPerfetWash;
+        public bool CarWashPerfectPolish;
 
         #endregion
 
         //output
         #region Output variables 
 
-        bool CarWashPositionShower = false;
-        bool CarWashPositionCar = false;
-        bool CarWashGreenLight = false;
-        bool CarWashRedLight = false;
-        bool CarWashYellowLight = false;
-        bool CarWashDoor1UP = false;
-        bool CarWashDoor1DOWN = false;
-        bool CarWashDoor2UP = false;
-        bool CarWashDoor2DOWN = false;
-        bool CarWashWater = false;
-        bool CarWashWashingChemicalsFRONT = false;
-        bool CarWashWashingChemicalsSIDES = false;
-        bool CarWashWashingChemicalsBACK = false;
-        bool CarWashWax = false;
-        bool CarWashVarnishProtection = false;
-        bool CarWashDry = false;
-        bool CarWashSoap = false;
-        bool CarWashActiveFoam = false;
-        bool CarWashBrushes = false;
+        public bool CarWashPositionShower = false;
+        public bool CarWashPositionCar = false;
+        public bool CarWashGreenLight = false;
+        public bool CarWashRedLight = false;
+        public bool CarWashYellowLight = false;
+        public bool CarWashDoor1UP = false;
+        public bool CarWashDoor1DOWN = false;
+        public bool CarWashDoor2UP = false;
+        public bool CarWashDoor2DOWN = false;
+        public bool CarWashWater = false;
+        public bool CarWashWashingChemicalsFRONT = false;
+        public bool CarWashWashingChemicalsSIDES = false;
+        public bool CarWashWashingChemicalsBACK = false;
+        public bool CarWashWax = false;
+        public bool CarWashVarnishProtection = false;
+        public bool CarWashDry = false;
+        public bool CarWashSoap = false;
+        public bool CarWashActiveFoam = false;
+        public bool CarWashBrushes = false;
 
         #endregion
 
@@ -229,47 +229,47 @@ namespace Bc_prace
         //Crossroad_DB DB14
         #region Crossroad_DB DB14
 
-        bool CrossroadModeOFF;
-        bool CrossroadModeNIGHT;
-        bool CrossroadModeDAY;
-        bool CrossroadEmergencySTOP;
-        bool CrossroadErrorSystem;
+        public bool CrossroadModeOFF;
+        public bool CrossroadModeNIGHT;
+        public bool CrossroadModeDAY;
+        public bool CrossroadEmergencySTOP;
+        public bool CrossroadErrorSystem;
 
         #endregion
 
         //Crossroad_1_DB DB1
         #region Crossroad_1_DB DB1
 
-        bool Crossroad1LeftCrosswalkBTN1;
-        bool Crossroad1LeftCrosswalkBTN2;
-        bool Crossroad1TopCrosswalkBTN1;
-        bool Crossroad1TopCrosswalkBTN2;
+        public bool Crossroad1LeftCrosswalkBTN1;
+        public bool Crossroad1LeftCrosswalkBTN2;
+        public bool Crossroad1TopCrosswalkBTN1;
+        public bool Crossroad1TopCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_2_DB DB19
         #region Crossroad_2_DB DB19
 
-        bool Crossroad2LeftCrosswalkBTN1;
-        bool Crossroad2LeftCrosswalkBTN2;
-        bool Crossroad2TopCrosswalkBTN1;
-        bool Crossroad2TopCrosswalkBTN2;
+        public bool Crossroad2LeftCrosswalkBTN1;
+        public bool Crossroad2LeftCrosswalkBTN2;
+        public bool Crossroad2TopCrosswalkBTN1;
+        public bool Crossroad2TopCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_LeftT_DB DB20
         #region Crossroad_LeftT_DB DB20
 
-        bool CrossroadLeftTLeftCrosswalkBTN1;
-        bool CrossroadLeftTLeftCrosswalkBTN2;
+        public bool CrossroadLeftTLeftCrosswalkBTN1;
+        public bool CrossroadLeftTLeftCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_RightT_DB DB21
         #region Crossroad_RightT_DB DB21
 
-        bool CrossroadRightTTopCrosswalkBTN1;
-        bool CrossroadRightTTopCrosswalkBTN2;
+        public bool CrossroadRightTTopCrosswalkBTN1;
+        public bool CrossroadRightTTopCrosswalkBTN2;
 
         #endregion
 
@@ -281,109 +281,109 @@ namespace Bc_prace
         //Crossroad_DB DB14
         #region Crossroad_DB DB14
 
-        int TrafficLightsSQ;
+        public int TrafficLightsSQ;
 
         #endregion
 
         //Crossroad_1_DB DB1
         #region Crossroad_1_DB DB1
 
-        int Crossroad1CrosswalkSQ;
+        public int Crossroad1CrosswalkSQ;
 
-        bool Crossroad1TopRED;
-        bool Crossroad1TopGREEN;
-        bool Crossroad1TopYELLOW;
-        bool Crossroad1LeftRED;
-        bool Crossroad1LeftGREEN;
-        bool Crossroad1LeftYELLOW;
-        bool Crossroad1RightRED;
-        bool Crossroad1RightGREEN;
-        bool Crossroad1RightYELLOW;
-        bool Crossroad1BottomRED;
-        bool Crossroad1BottomGREEN;
-        bool Crossroad1BottomYELLOW;
+        public bool Crossroad1TopRED;
+        public bool Crossroad1TopGREEN;
+        public bool Crossroad1TopYELLOW;
+        public bool Crossroad1LeftRED;
+        public bool Crossroad1LeftGREEN;
+        public bool Crossroad1LeftYELLOW;
+        public bool Crossroad1RightRED;
+        public bool Crossroad1RightGREEN;
+        public bool Crossroad1RightYELLOW;
+        public bool Crossroad1BottomRED;
+        public bool Crossroad1BottomGREEN;
+        public bool Crossroad1BottomYELLOW;
 
-        bool Crossroad1TopCrosswalkRED1;
-        bool Crossroad1TopCrosswalkRED2;
-        bool Crossroad1TopCrosswalkGREEN1;
-        bool Crossroad1TopCrosswalkGREEN2;
-        bool Crossroad1LeftCrosswalkRED1;
-        bool Crossroad1LeftCrosswalkRED2;
-        bool Crossroad1LeftCrosswalkGREEN1;
-        bool Crossroad1LeftCrosswalkGREEN2;
+        public bool Crossroad1TopCrosswalkRED1;
+        public bool Crossroad1TopCrosswalkRED2;
+        public bool Crossroad1TopCrosswalkGREEN1;
+        public bool Crossroad1TopCrosswalkGREEN2;
+        public bool Crossroad1LeftCrosswalkRED1;
+        public bool Crossroad1LeftCrosswalkRED2;
+        public bool Crossroad1LeftCrosswalkGREEN1;
+        public bool Crossroad1LeftCrosswalkGREEN2;
 
         #endregion
 
         //Crossroad_2_DB DB19
         #region Crossroad_2_DB DB19
 
-        int Crossroad2CrosswalkSQ;
+        public int Crossroad2CrosswalkSQ;
 
-        bool Crossroad2TopRED;
-        bool Crossroad2TopGREEN;
-        bool Crossroad2TopYellow;
-        bool Crossroad2LeftRED;
-        bool Crossroad2LeftGREEN;
-        bool Crossroad2LeftYellow;
-        bool Crossroad2RightRED;
-        bool Crossroad2RightGREEN;
-        bool Crossroad2RightYellow;
-        bool Crossroad2BottomRED;
-        bool Crossroad2BottomGREEN;
-        bool Crossroad2BottomYellow;
+        public bool Crossroad2TopRED;
+        public bool Crossroad2TopGREEN;
+        public bool Crossroad2TopYellow;
+        public bool Crossroad2LeftRED;
+        public bool Crossroad2LeftGREEN;
+        public bool Crossroad2LeftYellow;
+        public bool Crossroad2RightRED;
+        public bool Crossroad2RightGREEN;
+        public bool Crossroad2RightYellow;
+        public bool Crossroad2BottomRED;
+        public bool Crossroad2BottomGREEN;
+        public bool Crossroad2BottomYellow;
 
-        bool Crossroad2LeftCrosswalkRED1;
-        bool Crossroad2LeftCrosswalkRED2;
-        bool Crossroad2LeftCrosswalkGREEN1;
-        bool Crossroad2LeftCrosswalkGREEN2;
-        bool Crossroad2RightCrosswalkRED1;
-        bool Crossroad2RightCrosswalkRED2;
-        bool Crossroad2RightCrosswalkGREEN1;
-        bool Crossroad2RightCrosswalkGREEN2;
+        public bool Crossroad2LeftCrosswalkRED1;
+        public bool Crossroad2LeftCrosswalkRED2;
+        public bool Crossroad2LeftCrosswalkGREEN1;
+        public bool Crossroad2LeftCrosswalkGREEN2;
+        public bool Crossroad2RightCrosswalkRED1;
+        public bool Crossroad2RightCrosswalkRED2;
+        public bool Crossroad2RightCrosswalkGREEN1;
+        public bool Crossroad2RightCrosswalkGREEN2;
 
         #endregion
 
         //Crossroad_LeftT_DB DB20
         #region Crossroad_LeftT_DB DB20
 
-        int CrossroadLeftTCrosswalkSQ;
+        public int CrossroadLeftTCrosswalkSQ;
 
-        bool CrossroadLeftTTopRED;
-        bool CrossroadLeftTTopGREEN;
-        bool CrossroadLeftTTopYellow;
-        bool CrossroadLeftTLeftRED;
-        bool CrossroadLeftTLeftGREEN;
-        bool CrossroadLeftTLeftYellow;
-        bool CrossroadLeftTRightRED;
-        bool CrossroadLeftTRightGREEN;
-        bool CrossroadLeftTRightYellow;
+        public bool CrossroadLeftTTopRED;
+        public bool CrossroadLeftTTopGREEN;
+        public bool CrossroadLeftTTopYellow;
+        public bool CrossroadLeftTLeftRED;
+        public bool CrossroadLeftTLeftGREEN;
+        public bool CrossroadLeftTLeftYellow;
+        public bool CrossroadLeftTRightRED;
+        public bool CrossroadLeftTRightGREEN;
+        public bool CrossroadLeftTRightYellow;
 
-        bool CrossroadLeftTLeftCrosswalkRED1;
-        bool CrossroadLeftTLeftCrosswalkRED2;
-        bool CrossroadLeftTLeftCrosswalkGREEN1;
-        bool CrossroadLeftTLeftCrosswalkGREEN2;
+        public bool CrossroadLeftTLeftCrosswalkRED1;
+        public bool CrossroadLeftTLeftCrosswalkRED2;
+        public bool CrossroadLeftTLeftCrosswalkGREEN1;
+        public bool CrossroadLeftTLeftCrosswalkGREEN2;
 
         #endregion
 
         //Crossroad_RightT_DB DB21
         #region Crossroad_RightT_DB DB21
 
-        int CrossroadRightTCrosswalkSQ;
+        public int CrossroadRightTCrosswalkSQ;
 
-        bool CrossroadRightTTopRED;
-        bool CrossroadRightTTopGREEN;
-        bool CrossroadRightTTopYellow;
-        bool CrossroadRightTLeftRED;
-        bool CrossroadRightTLeftGREEN;
-        bool CrossroadRightTLeftYellow;
-        bool CrossroadRightTRightRED;
-        bool CrossroadRightTRightGREEN;
-        bool CrossroadRightTRightYellow;
+        public bool CrossroadRightTTopRED;
+        public bool CrossroadRightTTopGREEN;
+        public bool CrossroadRightTTopYellow;
+        public bool CrossroadRightTLeftRED;
+        public bool CrossroadRightTLeftGREEN;
+        public bool CrossroadRightTLeftYellow;
+        public bool CrossroadRightTRightRED;
+        public bool CrossroadRightTRightGREEN;
+        public bool CrossroadRightTRightYellow;
 
-        bool CrossroadRightTTopCrosswalkRED1;
-        bool CrossroadRightTTopCrosswalkRED2;
-        bool CrossroadRightTTopCrosswalkGREEN1;
-        bool CrossroadRightTTopCrosswalkGREEN2;
+        public bool CrossroadRightTTopCrosswalkRED1;
+        public bool CrossroadRightTTopCrosswalkRED2;
+        public bool CrossroadRightTTopCrosswalkGREEN1;
+        public bool CrossroadRightTTopCrosswalkGREEN2;
 
         #endregion
 
@@ -1027,7 +1027,7 @@ namespace Bc_prace
                 //stop timer
                 //Timer_read_from_PLC.Stop();
 
-                Program1 = new Program1Form();
+                Program1 = new Program1Form(this);
                 Program1.Show();
                 program1Opened = true;
 
@@ -1080,7 +1080,7 @@ namespace Bc_prace
                 //stop timer
                 //Timer_read_from_PLC.Stop();
 
-                Program2 = new Program2Form();
+                Program2 = new Program2Form(this);
                 Program2.Show();
                 program2Opened = true;
 
@@ -1133,7 +1133,7 @@ namespace Bc_prace
                 //stop timer
                 //Timer_read_from_PLC.Stop();
 
-                Program3 = new Program3Form();
+                Program3 = new Program3Form(this);
                 Program3.Show();
                 program3Opened = true;
 

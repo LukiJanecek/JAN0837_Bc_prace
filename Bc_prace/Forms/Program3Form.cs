@@ -17,9 +17,13 @@ namespace Bc_prace
 {
     public partial class Program3Form : Form
     {
-        public Program3Form()
+        private ChooseOptionForm chooseOptionFormInstance;
+
+        public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
+
+            this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             //start timer
             //Timer_read_from_PLC.Start();
