@@ -450,7 +450,7 @@ namespace Bc_prace
                 //first struct -> Input -> 14 variables -> size 1.5 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 2, ref read_buffer_DB4_Input);
                 //second struct -> Output -> 32 variables -> size 26
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
 
                 int readResultDB4 = reader.Read();
 

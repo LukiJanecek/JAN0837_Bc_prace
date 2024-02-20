@@ -513,12 +513,11 @@ namespace Bc_prace
             else
             {
                 //write was successful
+                this.Close();
             }
 
             //stop timer
-            //Timer_read_from_PLC.Stop();
-
-            this.Close();
+            //Timer_read_from_PLC.Stop();            
         }
         #endregion
 

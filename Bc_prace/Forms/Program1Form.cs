@@ -250,16 +250,16 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
-                /*
+                
                 #region Multi read -> MultiVar   
 
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
                 //first struct -> Input -> 14 variables -> size 1.5 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 2, ref read_buffer_DB4_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 0, ref read_buffer_DB4_Input);
                 //second struct -> Output -> 32 variables -> size 26
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
 
                 int readResultDB4 = reader.Read();
 
@@ -344,7 +344,7 @@ namespace Bc_prace
                 }
 
                 #endregion
-                */
+                
 
                 //DBRead
                 /*
@@ -876,12 +876,11 @@ namespace Bc_prace
             else
             {
                 //write was successful
+                this.Close();
             }
 
             //stop timer
-            //Timer_read_from_PLC.Stop();
-
-            this.Close();
+            //Timer_read_from_PLC.Stop();            
         }
         #endregion
 
