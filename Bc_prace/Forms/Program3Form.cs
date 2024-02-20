@@ -274,175 +274,7 @@ namespace Bc_prace
             send_buffer_DB21_Input = chooseOptionFormInstance.send_buffer_DB21_Input;
             read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
             send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
-
-            Option3 = chooseOptionFormInstance.Option3;
-
-            //input 
-            #region Input variables 
-
-            //Crossroad_DB DB14
-            #region Crossroad_DB DB14
-
-            CrossroadModeOFF = chooseOptionFormInstance.CrossroadModeOFF;
-            CrossroadModeNIGHT = chooseOptionFormInstance.CrossroadModeNIGHT;
-            CrossroadModeDAY = chooseOptionFormInstance.CrossroadModeDAY;
-            CrossroadEmergencySTOP = chooseOptionFormInstance.CrossroadEmergencySTOP;
-            CrossroadErrorSystem = chooseOptionFormInstance.CrossroadErrorSystem;
-
-            #endregion
-
-            //Crossroad_1_DB DB1
-            #region Crossroad_1_DB DB1
-
-            Crossroad1LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN1;
-            Crossroad1LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN2;
-            Crossroad1TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN1;
-            Crossroad1TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN2;
-
-            #endregion
-
-            //Crossroad_2_DB DB19
-            #region Crossroad_2_DB DB19
-
-            Crossroad2LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN1;
-            Crossroad2LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN2;
-            Crossroad2TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN1;
-            Crossroad2TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN2;
-
-            #endregion
-
-            //Crossroad_LeftT_DB DB20
-            #region Crossroad_LeftT_DB DB20
-
-            CrossroadLeftTLeftCrosswalkBTN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN1;
-            CrossroadLeftTLeftCrosswalkBTN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN2;
-
-            #endregion
-
-            //Crossroad_RightT_DB DB21
-            #region Crossroad_RightT_DB DB21
-
-            CrossroadRightTTopCrosswalkBTN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN1;
-            CrossroadRightTTopCrosswalkBTN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN2;
-
-            #endregion
-
-            #endregion
-
-            //output
-            #region Output variables 
-
-            //Crossroad_DB DB14
-            #region Crossroad_DB DB14
-
-            TrafficLightsSQ = chooseOptionFormInstance.TrafficLightsSQ;
-
-            #endregion
-
-            //Crossroad_1_DB DB1
-            #region Crossroad_1_DB DB1
-
-            Crossroad1CrosswalkSQ = chooseOptionFormInstance.Crossroad1CrosswalkSQ;
-
-            Crossroad1TopRED = chooseOptionFormInstance.Crossroad1TopRED;
-            Crossroad1TopGREEN = chooseOptionFormInstance.Crossroad1TopGREEN;
-            Crossroad1TopYELLOW = chooseOptionFormInstance.Crossroad1TopYELLOW;
-            Crossroad1LeftRED = chooseOptionFormInstance.Crossroad1LeftRED;
-            Crossroad1LeftGREEN = chooseOptionFormInstance.Crossroad1LeftGREEN;
-            Crossroad1LeftYELLOW = chooseOptionFormInstance.Crossroad1LeftYELLOW;
-            Crossroad1RightRED = chooseOptionFormInstance.Crossroad1RightRED;
-            Crossroad1RightGREEN = chooseOptionFormInstance.Crossroad1RightGREEN;
-            Crossroad1RightYELLOW = chooseOptionFormInstance.Crossroad1RightYELLOW;
-            Crossroad1BottomRED = chooseOptionFormInstance.Crossroad1BottomRED;
-            Crossroad1BottomGREEN = chooseOptionFormInstance.Crossroad1BottomGREEN;
-            Crossroad1BottomYELLOW = chooseOptionFormInstance.Crossroad1BottomYELLOW;
-
-            Crossroad1TopCrosswalkRED1 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED1;
-            Crossroad1TopCrosswalkRED2 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED2;
-            Crossroad1TopCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN1;
-            Crossroad1TopCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN2;
-            Crossroad1LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED1;
-            Crossroad1LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED2;
-            Crossroad1LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN1;
-            Crossroad1LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN2;
-
-            #endregion
-
-            //Crossroad_2_DB DB19
-            #region Crossroad_2_DB DB19
-
-            Crossroad2CrosswalkSQ = chooseOptionFormInstance.Crossroad2CrosswalkSQ;
-
-            Crossroad2TopRED = chooseOptionFormInstance.Crossroad2TopRED;
-            Crossroad2TopGREEN = chooseOptionFormInstance.Crossroad2TopGREEN;
-            Crossroad2TopYellow = chooseOptionFormInstance.Crossroad2TopYellow;
-            Crossroad2LeftRED = chooseOptionFormInstance.Crossroad2LeftRED;
-            Crossroad2LeftGREEN = chooseOptionFormInstance.Crossroad2LeftGREEN;
-            Crossroad2LeftYellow = chooseOptionFormInstance.Crossroad2LeftYellow;
-            Crossroad2RightRED = chooseOptionFormInstance.Crossroad2RightRED;
-            Crossroad2RightGREEN = chooseOptionFormInstance.Crossroad2RightGREEN;
-            Crossroad2RightYellow = chooseOptionFormInstance.Crossroad2RightYellow;
-            Crossroad2BottomRED = chooseOptionFormInstance.Crossroad2BottomRED;
-            Crossroad2BottomGREEN = chooseOptionFormInstance.Crossroad2BottomGREEN;
-            Crossroad2BottomYellow = chooseOptionFormInstance.Crossroad2BottomYellow;
-
-            Crossroad2LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED1;
-            Crossroad2LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED2;
-            Crossroad2LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN1;
-            Crossroad2LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN2;
-            Crossroad2RightCrosswalkRED1 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED1;
-            Crossroad2RightCrosswalkRED2 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED2;
-            Crossroad2RightCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN1;
-            Crossroad2RightCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN2;
-
-            #endregion
-
-            //Crossroad_LeftT_DB DB20
-            #region Crossroad_LeftT_DB DB20
-
-            CrossroadLeftTCrosswalkSQ = chooseOptionFormInstance.CrossroadLeftTCrosswalkSQ;
-
-            CrossroadLeftTTopRED = chooseOptionFormInstance.CrossroadLeftTTopRED;
-            CrossroadLeftTTopGREEN = chooseOptionFormInstance.CrossroadLeftTTopGREEN;
-            CrossroadLeftTTopYellow = chooseOptionFormInstance.CrossroadLeftTTopYellow;
-            CrossroadLeftTLeftRED = chooseOptionFormInstance.CrossroadLeftTLeftRED;
-            CrossroadLeftTLeftGREEN = chooseOptionFormInstance.CrossroadLeftTLeftGREEN;
-            CrossroadLeftTLeftYellow = chooseOptionFormInstance.CrossroadLeftTLeftYellow;
-            CrossroadLeftTRightRED = chooseOptionFormInstance.CrossroadLeftTRightRED;
-            CrossroadLeftTRightGREEN = chooseOptionFormInstance.CrossroadLeftTRightGREEN;
-            CrossroadLeftTRightYellow = chooseOptionFormInstance.CrossroadLeftTRightYellow;
-
-            CrossroadLeftTLeftCrosswalkRED1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED1;
-            CrossroadLeftTLeftCrosswalkRED2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED2;
-            CrossroadLeftTLeftCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN1;
-            CrossroadLeftTLeftCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN2;
-
-            #endregion
-
-            //Crossroad_RightT_DB DB21
-            #region Crossroad_RightT_DB DB21
-
-            CrossroadRightTCrosswalkSQ = chooseOptionFormInstance.CrossroadRightTCrosswalkSQ;
-
-            CrossroadRightTTopRED = chooseOptionFormInstance.CrossroadRightTTopRED;
-            CrossroadRightTTopGREEN = chooseOptionFormInstance.CrossroadRightTTopGREEN;
-            CrossroadRightTTopYellow = chooseOptionFormInstance.CrossroadRightTTopYellow;
-            CrossroadRightTLeftRED = chooseOptionFormInstance.CrossroadRightTLeftRED;
-            CrossroadRightTLeftGREEN = chooseOptionFormInstance.CrossroadRightTLeftGREEN;
-            CrossroadRightTLeftYellow = chooseOptionFormInstance.CrossroadRightTLeftYellow;
-            CrossroadRightTRightRED = chooseOptionFormInstance.CrossroadRightTRightRED;
-            CrossroadRightTRightGREEN = chooseOptionFormInstance.CrossroadRightTRightGREEN;
-            CrossroadRightTRightYellow = chooseOptionFormInstance.CrossroadRightTRightYellow;
-
-            CrossroadRightTTopCrosswalkRED1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED1;
-            CrossroadRightTTopCrosswalkRED2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED2;
-            CrossroadRightTTopCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN1;
-            CrossroadRightTTopCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN2;
-
-            #endregion
-
-            #endregion
-
+                        
             //start timer
             Timer_read_actual.Start();
             //set time interval (ms)
@@ -456,7 +288,176 @@ namespace Bc_prace
         {
             try
             {
+                Option3 = chooseOptionFormInstance.Option3;
+
+                //Input variables
+                #region Input variables 
+
+                //Crossroad_DB DB14
+                #region Crossroad_DB DB14
+
+                CrossroadModeOFF = chooseOptionFormInstance.CrossroadModeOFF;
+                CrossroadModeNIGHT = chooseOptionFormInstance.CrossroadModeNIGHT;
+                CrossroadModeDAY = chooseOptionFormInstance.CrossroadModeDAY;
+                CrossroadEmergencySTOP = chooseOptionFormInstance.CrossroadEmergencySTOP;
+                CrossroadErrorSystem = chooseOptionFormInstance.CrossroadErrorSystem;
+
+                #endregion
+
+                //Crossroad_1_DB DB1
+                #region Crossroad_1_DB DB1
+
+                Crossroad1LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN1;
+                Crossroad1LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN2;
+                Crossroad1TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN1;
+                Crossroad1TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN2;
+
+                #endregion
+
+                //Crossroad_2_DB DB19
+                #region Crossroad_2_DB DB19
+
+                Crossroad2LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN1;
+                Crossroad2LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN2;
+                Crossroad2TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN1;
+                Crossroad2TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2TopCrosswalkBTN2;
+
+                #endregion
+
+                //Crossroad_LeftT_DB DB20
+                #region Crossroad_LeftT_DB DB20
+
+                CrossroadLeftTLeftCrosswalkBTN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN1;
+                CrossroadLeftTLeftCrosswalkBTN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN2;
+
+                #endregion
+
+                //Crossroad_RightT_DB DB21
+                #region Crossroad_RightT_DB DB21
+
+                CrossroadRightTTopCrosswalkBTN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN1;
+                CrossroadRightTTopCrosswalkBTN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN2;
+
+                #endregion
+
+                #endregion
+
+                //Output variables
+                #region Output variables 
+
+                //Crossroad_DB DB14
+                #region Crossroad_DB DB14
+
+                TrafficLightsSQ = chooseOptionFormInstance.TrafficLightsSQ;
+
+                #endregion
+
+                //Crossroad_1_DB DB1
+                #region Crossroad_1_DB DB1
+
+                Crossroad1CrosswalkSQ = chooseOptionFormInstance.Crossroad1CrosswalkSQ;
+
+                Crossroad1TopRED = chooseOptionFormInstance.Crossroad1TopRED;
+                Crossroad1TopGREEN = chooseOptionFormInstance.Crossroad1TopGREEN;
+                Crossroad1TopYELLOW = chooseOptionFormInstance.Crossroad1TopYELLOW;
+                Crossroad1LeftRED = chooseOptionFormInstance.Crossroad1LeftRED;
+                Crossroad1LeftGREEN = chooseOptionFormInstance.Crossroad1LeftGREEN;
+                Crossroad1LeftYELLOW = chooseOptionFormInstance.Crossroad1LeftYELLOW;
+                Crossroad1RightRED = chooseOptionFormInstance.Crossroad1RightRED;
+                Crossroad1RightGREEN = chooseOptionFormInstance.Crossroad1RightGREEN;
+                Crossroad1RightYELLOW = chooseOptionFormInstance.Crossroad1RightYELLOW;
+                Crossroad1BottomRED = chooseOptionFormInstance.Crossroad1BottomRED;
+                Crossroad1BottomGREEN = chooseOptionFormInstance.Crossroad1BottomGREEN;
+                Crossroad1BottomYELLOW = chooseOptionFormInstance.Crossroad1BottomYELLOW;
+
+                Crossroad1TopCrosswalkRED1 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED1;
+                Crossroad1TopCrosswalkRED2 = chooseOptionFormInstance.Crossroad1TopCrosswalkRED2;
+                Crossroad1TopCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN1;
+                Crossroad1TopCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkGREEN2;
+                Crossroad1LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED1;
+                Crossroad1LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkRED2;
+                Crossroad1LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN1;
+                Crossroad1LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkGREEN2;
+
+                #endregion
+
+                //Crossroad_2_DB DB19
+                #region Crossroad_2_DB DB19
+
+                Crossroad2CrosswalkSQ = chooseOptionFormInstance.Crossroad2CrosswalkSQ;
+
+                Crossroad2TopRED = chooseOptionFormInstance.Crossroad2TopRED;
+                Crossroad2TopGREEN = chooseOptionFormInstance.Crossroad2TopGREEN;
+                Crossroad2TopYellow = chooseOptionFormInstance.Crossroad2TopYellow;
+                Crossroad2LeftRED = chooseOptionFormInstance.Crossroad2LeftRED;
+                Crossroad2LeftGREEN = chooseOptionFormInstance.Crossroad2LeftGREEN;
+                Crossroad2LeftYellow = chooseOptionFormInstance.Crossroad2LeftYellow;
+                Crossroad2RightRED = chooseOptionFormInstance.Crossroad2RightRED;
+                Crossroad2RightGREEN = chooseOptionFormInstance.Crossroad2RightGREEN;
+                Crossroad2RightYellow = chooseOptionFormInstance.Crossroad2RightYellow;
+                Crossroad2BottomRED = chooseOptionFormInstance.Crossroad2BottomRED;
+                Crossroad2BottomGREEN = chooseOptionFormInstance.Crossroad2BottomGREEN;
+                Crossroad2BottomYellow = chooseOptionFormInstance.Crossroad2BottomYellow;
+
+                Crossroad2LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED1;
+                Crossroad2LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED2;
+                Crossroad2LeftCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN1;
+                Crossroad2LeftCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkGREEN2;
+                Crossroad2RightCrosswalkRED1 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED1;
+                Crossroad2RightCrosswalkRED2 = chooseOptionFormInstance.Crossroad2RightCrosswalkRED2;
+                Crossroad2RightCrosswalkGREEN1 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN1;
+                Crossroad2RightCrosswalkGREEN2 = chooseOptionFormInstance.Crossroad2RightCrosswalkGREEN2;
+
+                #endregion
+
+                //Crossroad_LeftT_DB DB20
+                #region Crossroad_LeftT_DB DB20
+
+                CrossroadLeftTCrosswalkSQ = chooseOptionFormInstance.CrossroadLeftTCrosswalkSQ;
+
+                CrossroadLeftTTopRED = chooseOptionFormInstance.CrossroadLeftTTopRED;
+                CrossroadLeftTTopGREEN = chooseOptionFormInstance.CrossroadLeftTTopGREEN;
+                CrossroadLeftTTopYellow = chooseOptionFormInstance.CrossroadLeftTTopYellow;
+                CrossroadLeftTLeftRED = chooseOptionFormInstance.CrossroadLeftTLeftRED;
+                CrossroadLeftTLeftGREEN = chooseOptionFormInstance.CrossroadLeftTLeftGREEN;
+                CrossroadLeftTLeftYellow = chooseOptionFormInstance.CrossroadLeftTLeftYellow;
+                CrossroadLeftTRightRED = chooseOptionFormInstance.CrossroadLeftTRightRED;
+                CrossroadLeftTRightGREEN = chooseOptionFormInstance.CrossroadLeftTRightGREEN;
+                CrossroadLeftTRightYellow = chooseOptionFormInstance.CrossroadLeftTRightYellow;
+
+                CrossroadLeftTLeftCrosswalkRED1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED1;
+                CrossroadLeftTLeftCrosswalkRED2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED2;
+                CrossroadLeftTLeftCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN1;
+                CrossroadLeftTLeftCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkGREEN2;
+
+                #endregion
+
+                //Crossroad_RightT_DB DB21
+                #region Crossroad_RightT_DB DB21
+
+                CrossroadRightTCrosswalkSQ = chooseOptionFormInstance.CrossroadRightTCrosswalkSQ;
+
+                CrossroadRightTTopRED = chooseOptionFormInstance.CrossroadRightTTopRED;
+                CrossroadRightTTopGREEN = chooseOptionFormInstance.CrossroadRightTTopGREEN;
+                CrossroadRightTTopYellow = chooseOptionFormInstance.CrossroadRightTTopYellow;
+                CrossroadRightTLeftRED = chooseOptionFormInstance.CrossroadRightTLeftRED;
+                CrossroadRightTLeftGREEN = chooseOptionFormInstance.CrossroadRightTLeftGREEN;
+                CrossroadRightTLeftYellow = chooseOptionFormInstance.CrossroadRightTLeftYellow;
+                CrossroadRightTRightRED = chooseOptionFormInstance.CrossroadRightTRightRED;
+                CrossroadRightTRightGREEN = chooseOptionFormInstance.CrossroadRightTRightGREEN;
+                CrossroadRightTRightYellow = chooseOptionFormInstance.CrossroadRightTRightYellow;
+
+                CrossroadRightTTopCrosswalkRED1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED1;
+                CrossroadRightTTopCrosswalkRED2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED2;
+                CrossroadRightTTopCrosswalkGREEN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN1;
+                CrossroadRightTTopCrosswalkGREEN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkGREEN2;
+
+                #endregion
+
+                #endregion
+
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -790,7 +791,9 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
+                */
 
+                //DBRead
                 /*
 
                 //Reading variables with DBRead method

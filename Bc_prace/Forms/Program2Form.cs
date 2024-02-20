@@ -96,39 +96,7 @@ namespace Bc_prace
             send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
             read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
             send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
-
-            Option2 = chooseOptionFormInstance.Option2;
-
-            //Input variables 
-            CarWashEmergencySTOP = chooseOptionFormInstance.CarWashEmergencySTOP;
-            CarWashErrorSystem = chooseOptionFormInstance.CarWashErrorSystem;
-            CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash;
-            CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar;
-            CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar;
-            CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash;
-            CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish;
-
-            //Output variables
-            CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
-            CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
-            CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
-            CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
-            CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;
-            CarWashDoor1UP = chooseOptionFormInstance.CarWashDoor1UP;
-            CarWashDoor1DOWN = chooseOptionFormInstance.CarWashDoor1DOWN;
-            CarWashDoor2UP = chooseOptionFormInstance.CarWashDoor2UP;
-            CarWashDoor2DOWN = chooseOptionFormInstance.CarWashDoor2DOWN;
-            CarWashWater = chooseOptionFormInstance.CarWashWater;
-            CarWashWashingChemicalsFRONT = chooseOptionFormInstance.CarWashWashingChemicalsFRONT;
-            CarWashWashingChemicalsSIDES = chooseOptionFormInstance.CarWashWashingChemicalsSIDES;
-            CarWashWashingChemicalsBACK = chooseOptionFormInstance.CarWashWashingChemicalsBACK;
-            CarWashWax = chooseOptionFormInstance.CarWashWax;
-            CarWashVarnishProtection = chooseOptionFormInstance.CarWashVarnishProtection;
-            CarWashDry = chooseOptionFormInstance.CarWashDry;
-            CarWashSoap = chooseOptionFormInstance.CarWashSoap;
-            CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
-            CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
-
+                        
             //start timer
             Timer_read_actual.Start();
             //set time interval (ms)
@@ -161,7 +129,48 @@ namespace Bc_prace
         {
             try
             {
+                Option2 = chooseOptionFormInstance.Option2;
+
+                //Input variables 
+                #region Input variables 
+
+                CarWashEmergencySTOP = chooseOptionFormInstance.CarWashEmergencySTOP;
+                CarWashErrorSystem = chooseOptionFormInstance.CarWashErrorSystem;
+                CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash;
+                CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar;
+                CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar;
+                CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash;
+                CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish;
+
+                #endregion
+
+                //Output variables
+                #region Output variables 
+
+                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
+                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
+                CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
+                CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
+                CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;
+                CarWashDoor1UP = chooseOptionFormInstance.CarWashDoor1UP;
+                CarWashDoor1DOWN = chooseOptionFormInstance.CarWashDoor1DOWN;
+                CarWashDoor2UP = chooseOptionFormInstance.CarWashDoor2UP;
+                CarWashDoor2DOWN = chooseOptionFormInstance.CarWashDoor2DOWN;
+                CarWashWater = chooseOptionFormInstance.CarWashWater;
+                CarWashWashingChemicalsFRONT = chooseOptionFormInstance.CarWashWashingChemicalsFRONT;
+                CarWashWashingChemicalsSIDES = chooseOptionFormInstance.CarWashWashingChemicalsSIDES;
+                CarWashWashingChemicalsBACK = chooseOptionFormInstance.CarWashWashingChemicalsBACK;
+                CarWashWax = chooseOptionFormInstance.CarWashWax;
+                CarWashVarnishProtection = chooseOptionFormInstance.CarWashVarnishProtection;
+                CarWashDry = chooseOptionFormInstance.CarWashDry;
+                CarWashSoap = chooseOptionFormInstance.CarWashSoap;
+                CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
+                CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
+
+                #endregion
+
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -232,7 +241,9 @@ namespace Bc_prace
                 }
 
                 #endregion
+                */
 
+                //DBRead
                 /*
                 //Reading variables with DBRead method
                 #region DBRead

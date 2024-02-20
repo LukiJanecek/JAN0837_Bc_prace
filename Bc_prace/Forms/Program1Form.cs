@@ -113,59 +113,7 @@ namespace Bc_prace
             send_buffer_DB4_Input = chooseOptionFormInstance.send_buffer_DB4_Input;
             read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
             send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
-
-            Option1 = chooseOptionFormInstance.Option1;
-
-            //Input variables
-            ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
-            ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
-            ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
-            ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
-            ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
-            ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
-            ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
-            ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
-            ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
-            ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
-            ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
-            ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
-            ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
-            ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
-
-            //Output variables
-            ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON;
-            ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN;
-            ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP;
-            ElevatroHoming = chooseOptionFormInstance.ElevatroHoming;
-            ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady;
-            ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor;
-            ElevatorMoving = chooseOptionFormInstance.ElevatorMoving;
-            ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking;
-            ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor;
-            ElevatorDirection = chooseOptionFormInstance.ElevatorDirection;
-            ElevatorActualFloorLED1 = chooseOptionFormInstance.ElevatorActualFloorLED1;
-            ElevatorActualFloorLED2 = chooseOptionFormInstance.ElevatorActualFloorLED2;
-            ElevatorActualFloorLED3 = chooseOptionFormInstance.ElevatorActualFloorLED3;
-            ElevatorActualFloorLED4 = chooseOptionFormInstance.ElevatorActualFloorLED4;
-            ElevatorActualFloorLED5 = chooseOptionFormInstance.ElevatorActualFloorLED5;
-            ElevatorActualFloorCabinLED1 = chooseOptionFormInstance.ElevatorActualFloorCabinLED1;
-            ElevatorActualFloorCabinLED2 = chooseOptionFormInstance.ElevatorActualFloorCabinLED2;
-            ElevatorActualFloorCabinLED3 = chooseOptionFormInstance.ElevatorActualFloorCabinLED3;
-            ElevatorActualFloorCabinLED4 = chooseOptionFormInstance.ElevatorActualFloorCabinLED4;
-            ElevatorActualFloorCabinLED5 = chooseOptionFormInstance.ElevatorActualFloorCabinLED5;
-            ElevatorActualFloorSENS1 = chooseOptionFormInstance.ElevatorActualFloorSENS1;
-            ElevatorActualFloorSENS2 = chooseOptionFormInstance.ElevatorActualFloorSENS2;
-            ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
-            ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
-            ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
-            ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN; 
-            ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; 
-            ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
-            ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
-            ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
-            ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity;
-            ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown;
-
+                       
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
             panelDoorLeftY = panelDoorLeft.Location.Y;
@@ -241,7 +189,68 @@ namespace Bc_prace
         {
             try
             {
+                Option1 = chooseOptionFormInstance.Option1;
+
+                //Input variables
+                #region Input variables 
+
+                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
+                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
+                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
+                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
+                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
+                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
+                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
+                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
+                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
+                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
+                ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
+                ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
+                ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
+                ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
+
+                #endregion
+
+                //Output variables
+                #region Output variables 
+
+                ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON;
+                ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN;
+                ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP;
+                ElevatroHoming = chooseOptionFormInstance.ElevatroHoming;
+                ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady;
+                ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor;
+                ElevatorMoving = chooseOptionFormInstance.ElevatorMoving;
+                ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking;
+                ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor;
+                ElevatorDirection = chooseOptionFormInstance.ElevatorDirection;
+                ElevatorActualFloorLED1 = chooseOptionFormInstance.ElevatorActualFloorLED1;
+                ElevatorActualFloorLED2 = chooseOptionFormInstance.ElevatorActualFloorLED2;
+                ElevatorActualFloorLED3 = chooseOptionFormInstance.ElevatorActualFloorLED3;
+                ElevatorActualFloorLED4 = chooseOptionFormInstance.ElevatorActualFloorLED4;
+                ElevatorActualFloorLED5 = chooseOptionFormInstance.ElevatorActualFloorLED5;
+                ElevatorActualFloorCabinLED1 = chooseOptionFormInstance.ElevatorActualFloorCabinLED1;
+                ElevatorActualFloorCabinLED2 = chooseOptionFormInstance.ElevatorActualFloorCabinLED2;
+                ElevatorActualFloorCabinLED3 = chooseOptionFormInstance.ElevatorActualFloorCabinLED3;
+                ElevatorActualFloorCabinLED4 = chooseOptionFormInstance.ElevatorActualFloorCabinLED4;
+                ElevatorActualFloorCabinLED5 = chooseOptionFormInstance.ElevatorActualFloorCabinLED5;
+                ElevatorActualFloorSENS1 = chooseOptionFormInstance.ElevatorActualFloorSENS1;
+                ElevatorActualFloorSENS2 = chooseOptionFormInstance.ElevatorActualFloorSENS2;
+                ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
+                ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
+                ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
+                ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN;
+                ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE;
+                ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
+                ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
+                ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
+                ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity;
+                ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown;
+
+                #endregion
+
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar   
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -335,7 +344,9 @@ namespace Bc_prace
                 }
 
                 #endregion
+                */
 
+                //DBRead
                 /*
                 //Reading variables with DBRead method
                 #region DBRead
