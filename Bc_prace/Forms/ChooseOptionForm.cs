@@ -43,6 +43,7 @@ namespace Bc_prace
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         public byte[] read_buffer_DB11 = new byte[1]; //1
+        public byte[] previous_buffer_DB11 = new byte[1];
         public byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
@@ -417,6 +418,23 @@ namespace Bc_prace
 
                 if (readResultDB11 == 0)
                 {
+                    //comparison values in buffers -> catching value changes 
+                    if (!ArraysAreEqual(read_buffer_DB11, previous_buffer_DB11))
+                    {
+                        // Zde můžete provést akci na základě změněné hodnoty
+                        Console.WriteLine("Data se změnila!");
+
+                        // Aktualizace předchozího bufferu
+                        Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
+
+                        // Aktualizace proměnných na základě nových dat
+                        Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
+                        Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
+                        Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
+
+                        errorMessageBoxShown = false;
+                    }
+
                     Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                     Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
                     Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
@@ -982,6 +1000,25 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
+        }
+
+        private bool ArraysAreEqual(byte[] array1, byte[] array2)
+        {
+            // Porovnání dvou polí bytů
+            if (array1.Length != array2.Length)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < array1.Length; i++)
+            {
+                if (array1[i] != array2[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         #endregion
