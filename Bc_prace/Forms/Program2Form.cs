@@ -45,7 +45,7 @@ namespace Bc_prace
         byte[] read_buffer_DB5_Output;
         byte[] send_buffer_DB5_Output;
 
-        //input
+        //Input variables
         #region Input variables
 
         bool CarWashEmergencySTOP;
@@ -58,7 +58,7 @@ namespace Bc_prace
 
         #endregion
 
-        //output
+        //Output variables 
         #region Output variables 
 
         bool CarWashPositionShower;
@@ -91,10 +91,12 @@ namespace Bc_prace
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
-                        
+
             //buffers
+            //DB11 => Maintain_DB
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
+            //DB5 => CarWash_DB
             read_buffer_DB5_Input = chooseOptionFormInstance.read_buffer_DB5_Input;
             send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
             read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;

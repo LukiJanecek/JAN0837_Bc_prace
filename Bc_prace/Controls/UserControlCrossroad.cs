@@ -1,4 +1,5 @@
 ﻿using Bc_prace.Controls.MyGraphControl.Entities;
+using Sharp7;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,232 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlCrossroad : UserControl
     {
+        private Program3Form program3FormInstance;
+
+        S7Client client;
+
+        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
+        private int DBNumber_DB14 = 14;
+        //first struct -> Input -> 5 variables -> size 0.4
+        private byte[] read_buffer_DB14_Input;
+        public byte[] previous_buffer_DB14_Input;
+        public byte[] PreviousBufferHash_DB14_Input;
+        private byte[] send_buffer_DB14_Input;
+        //second struct -> Output -> 1 variable -> size 2.0
+        private byte[] read_buffer_DB14_Output;
+        private byte[] send_buffer_DB14_Output;
+        //other structs are Timers 
+
+        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+        private int DBNumber_DB1 = 1;
+        //first struct -> Input -> 4 variables -> size 0.3
+        private byte[] read_buffer_DB1_Input;
+        public byte[] previous_buffer_DB1_Input;
+        public byte[] PreviousBufferHash_DB1_Input;
+        private byte[] send_buffer_DB1_Input;
+        //second struct -> Output -> 21 variables -> size 6.3 
+        private byte[] read_buffer_DB1_Output;
+        private byte[] send_buffer_DB1_Output;
+
+        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+        private int DBNumber_DB19 = 19;
+        //first struct -> Input -> 4 variables -> size 0.3
+        private byte[] read_buffer_DB19_Input;
+        public byte[] previous_buffer_DB19_Input;
+        public byte[] PreviousBufferHash_DB19_Input;
+        private byte[] send_buffer_DB19_Input;
+        //second struct -> Output -> 21 variables -> size 6.3  
+        private byte[] read_buffer_DB19_Output;
+        private byte[] send_buffer_DB19_Output;
+
+        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB20 = 20;
+        //first struct -> Input -> 2 variables -> size 0.1
+        private byte[] read_buffer_DB20_Input;
+        public byte[] previous_buffer_DB20_Input;
+        public byte[] PreviousBufferHash_DB20_Input;
+        private byte[] send_buffer_DB20_Input;
+        //second struct -> Output -> 14 variables -> size 5.4
+        private byte[] read_buffer_DB20_Output;
+        private byte[] send_buffer_DB20_Output;
+
+        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+        private int DBNumber_DB21 = 21;
+        //first struct -> Input -> 2 variables -> size 0.1
+        private byte[] read_buffer_DB21_Input;
+        public byte[] previous_buffer_DB21_Input;
+        public byte[] PreviousBufferHash_DB21_Input;
+        private byte[] send_buffer_DB21_Input;
+        //second struct -> Output -> 14 variables -> size 5.4
+        private byte[] read_buffer_DB21_Output;
+        private byte[] send_buffer_DB21_Output;
+
+        //Input variables
+        #region Input variables 
+
+        //Crossroad_DB DB14
+        #region Crossroad_DB DB14
+
+        bool CrossroadModeOFF;
+        bool CrossroadModeNIGHT;
+        bool CrossroadModeDAY;
+        bool CrossroadEmergencySTOP;
+        bool CrossroadErrorSystem;
+
+        #endregion
+
+        //Crossroad_1_DB DB1
+        #region Crossroad_1_DB DB1
+
+        bool Crossroad1LeftCrosswalkBTN1;
+        bool Crossroad1LeftCrosswalkBTN2;
+        bool Crossroad1TopCrosswalkBTN1;
+        bool Crossroad1TopCrosswalkBTN2;
+
+        #endregion
+
+        //Crossroad_2_DB DB19
+        #region Crossroad_2_DB DB19
+
+        bool Crossroad2LeftCrosswalkBTN1;
+        bool Crossroad2LeftCrosswalkBTN2;
+        bool Crossroad2RightCrosswalkBTN1;
+        bool Crossroad2RightCrosswalkBTN2;
+
+        #endregion
+
+        //Crossroad_LeftT_DB DB20
+        #region Crossroad_LeftT_DB DB20
+
+        bool CrossroadLeftTLeftCrosswalkBTN1;
+        bool CrossroadLeftTLeftCrosswalkBTN2;
+
+        #endregion
+
+        //Crossroad_RightT_DB DB21
+        #region Crossroad_RightT_DB DB21
+
+        bool CrossroadRightTTopCrosswalkBTN1;
+        bool CrossroadRightTTopCrosswalkBTN2;
+
+        #endregion
+
+        #endregion
+
+        //Output variables
+        #region Output variables 
+
+        //Crossroad_DB DB14
+        #region Crossroad_DB DB14
+
+        int TrafficLightsSQ;
+
+        #endregion
+
+        //Crossroad_1_DB DB1
+        #region Crossroad_1_DB DB1
+
+        int Crossroad1CrosswalkSQ;
+
+        bool Crossroad1TopRED;
+        bool Crossroad1TopGREEN;
+        bool Crossroad1TopYELLOW;
+        bool Crossroad1LeftRED;
+        bool Crossroad1LeftGREEN;
+        bool Crossroad1LeftYELLOW;
+        bool Crossroad1RightRED;
+        bool Crossroad1RightGREEN;
+        bool Crossroad1RightYELLOW;
+        bool Crossroad1BottomRED;
+        bool Crossroad1BottomGREEN;
+        bool Crossroad1BottomYELLOW;
+
+        bool Crossroad1TopCrosswalkRED1;
+        bool Crossroad1TopCrosswalkRED2;
+        bool Crossroad1TopCrosswalkGREEN1;
+        bool Crossroad1TopCrosswalkGREEN2;
+        bool Crossroad1LeftCrosswalkRED1;
+        bool Crossroad1LeftCrosswalkRED2;
+        bool Crossroad1LeftCrosswalkGREEN1;
+        bool Crossroad1LeftCrosswalkGREEN2;
+
+        #endregion
+
+        //Crossroad_2_DB DB19
+        #region Crossroad_2_DB DB19
+
+        int Crossroad2CrosswalkSQ;
+
+        bool Crossroad2TopRED;
+        bool Crossroad2TopGREEN;
+        bool Crossroad2TopYellow;
+        bool Crossroad2LeftRED;
+        bool Crossroad2LeftGREEN;
+        bool Crossroad2LeftYellow;
+        bool Crossroad2RightRED;
+        bool Crossroad2RightGREEN;
+        bool Crossroad2RightYellow;
+        bool Crossroad2BottomRED;
+        bool Crossroad2BottomGREEN;
+        bool Crossroad2BottomYellow;
+
+        bool Crossroad2LeftCrosswalkRED1;
+        bool Crossroad2LeftCrosswalkRED2;
+        bool Crossroad2LeftCrosswalkGREEN1;
+        bool Crossroad2LeftCrosswalkGREEN2;
+        bool Crossroad2RightCrosswalkRED1;
+        bool Crossroad2RightCrosswalkRED2;
+        bool Crossroad2RightCrosswalkGREEN1;
+        bool Crossroad2RightCrosswalkGREEN2;
+
+        #endregion
+
+        //Crossroad_LeftT_DB DB20
+        #region Crossroad_LeftT_DB DB20
+
+        int CrossroadLeftTCrosswalkSQ;
+
+        bool CrossroadLeftTTopRED;
+        bool CrossroadLeftTTopGREEN;
+        bool CrossroadLeftTTopYellow;
+        bool CrossroadLeftTLeftRED;
+        bool CrossroadLeftTLeftGREEN;
+        bool CrossroadLeftTLeftYellow;
+        bool CrossroadLeftTRightRED;
+        bool CrossroadLeftTRightGREEN;
+        bool CrossroadLeftTRightYellow;
+
+        bool CrossroadLeftTLeftCrosswalkRED1;
+        bool CrossroadLeftTLeftCrosswalkRED2;
+        bool CrossroadLeftTLeftCrosswalkGREEN1;
+        bool CrossroadLeftTLeftCrosswalkGREEN2;
+
+        #endregion
+
+        //Crossroad_RightT_DB DB21
+        #region Crossroad_RightT_DB DB21
+
+        int CrossroadRightTCrosswalkSQ;
+
+        bool CrossroadRightTTopRED;
+        bool CrossroadRightTTopGREEN;
+        bool CrossroadRightTTopYellow;
+        bool CrossroadRightTLeftRED;
+        bool CrossroadRightTLeftGREEN;
+        bool CrossroadRightTLeftYellow;
+        bool CrossroadRightTRightRED;
+        bool CrossroadRightTRightGREEN;
+        bool CrossroadRightTRightYellow;
+
+        bool CrossroadRightTTopCrosswalkRED1;
+        bool CrossroadRightTTopCrosswalkRED2;
+        bool CrossroadRightTTopCrosswalkGREEN1;
+        bool CrossroadRightTTopCrosswalkGREEN2;
+
+        #endregion
+
+        #endregion
+
         //Variables
         #region Variables
         //Crossroad1
@@ -36,6 +263,8 @@ namespace Bc_prace.Controls
         //Right T
         private Button btnRightTTopCrosswalkLEFT;
         private Button btnRightTTopCrosswalkRIGHT;
+
+        public event EventHandler<string>? ButtonClicked;
 
         //beggining points of drawing
         private float x = 15;
@@ -62,14 +291,45 @@ namespace Bc_prace.Controls
 
         #endregion
 
-
-        public UserControlCrossroad()
+        public UserControlCrossroad(Program3Form program3FormInstance)
         {
             InitializeComponent();
             InitializeButtons();
+
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
 
+            this.program3FormInstance = program3FormInstance;
+
+            client = program3FormInstance.client;
+
+            //buffers 
+            //DB14 => Crossroad_DB
+            read_buffer_DB14_Input = program3FormInstance.read_buffer_DB14_Input;
+            send_buffer_DB14_Input = program3FormInstance.send_buffer_DB14_Input;
+            read_buffer_DB14_Output = program3FormInstance.read_buffer_DB14_Output;
+            send_buffer_DB14_Output = program3FormInstance.send_buffer_DB14_Output;
+            //DB1 => Crossroad_1_DB
+            read_buffer_DB1_Input = program3FormInstance.read_buffer_DB1_Input;
+            send_buffer_DB1_Input = program3FormInstance.send_buffer_DB1_Input;
+            read_buffer_DB1_Output = program3FormInstance.read_buffer_DB1_Output;
+            send_buffer_DB1_Output = program3FormInstance.send_buffer_DB1_Output;
+            //DB19 => Crossroad_2_DB
+            read_buffer_DB19_Input = program3FormInstance.read_buffer_DB19_Input;
+            send_buffer_DB19_Input = program3FormInstance.send_buffer_DB19_Input;
+            read_buffer_DB19_Output = program3FormInstance.read_buffer_DB19_Output;
+            send_buffer_DB19_Output = program3FormInstance.send_buffer_DB19_Output;
+            //DB20 => Crossroad_LeftT_DB
+            read_buffer_DB20_Input = program3FormInstance.read_buffer_DB20_Input;
+            send_buffer_DB20_Input = program3FormInstance.send_buffer_DB20_Input;
+            read_buffer_DB20_Output = program3FormInstance.read_buffer_DB20_Output;
+            send_buffer_DB20_Output = program3FormInstance.send_buffer_DB20_Output;
+            //DB21 => Crossroad_RightT_DB
+            read_buffer_DB21_Input = program3FormInstance.read_buffer_DB21_Input;
+            send_buffer_DB21_Input = program3FormInstance.send_buffer_DB21_Input;
+            read_buffer_DB21_Output = program3FormInstance.read_buffer_DB21_Output;
+            send_buffer_DB21_Output = program3FormInstance.send_buffer_DB21_Output;
+                        
         }
 
         private void UserControl1_Paint(object? sender, PaintEventArgs e)
@@ -731,6 +991,8 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkLEFT.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkLEFT.Click += btnCrossroad1TopCrosswalkLEFT_Click;
+            btnCrossroad1TopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkLEFT");
+            
             //right
             btnCrossroad1TopCrosswalkRIGHT = new Button();
             btnCrossroad1TopCrosswalkRIGHT.Text = "Crossroad1 Top crosswalk";
@@ -740,6 +1002,8 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkRIGHT.Location = new System.Drawing.Point(Convert.ToInt32(length * 6), Convert.ToInt32(length)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
+            btnCrossroad1TopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkRIGHT");
+
 
             #endregion
 
@@ -754,7 +1018,8 @@ namespace Bc_prace.Controls
             btnCrossroad1LeftCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 2)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkTOP.Click += btnCrossroad1LeftCrosswalkTOP_Click;
-            
+            btnCrossroad1LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad1LeftCrosswalkTOP");
+
             //bottom
             btnCrossroad1LeftCrosswalkBOTTOM = new Button();
             btnCrossroad1LeftCrosswalkBOTTOM.Text = "Crossroad1 Left crosswalk";
@@ -764,6 +1029,7 @@ namespace Bc_prace.Controls
             btnCrossroad1LeftCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 6)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkBOTTOM.Click += btnCrossroad1LeftCrosswalkBOTTOM_Click;
+            btnCrossroad1LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad1LeftCrosswalkBOTTOM");
 
             #endregion
 
@@ -783,6 +1049,8 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 2)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkTOP.Click += btnCrossroad2LeftCrosswalkTOP_Click;
+            btnCrossroad2LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkTOP");
+
 
             //bottom
             btnCrossroad2LeftCrosswalkBOTTOM = new Button();
@@ -793,6 +1061,8 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 6)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkBOTTOM.Click += btnCrossroad2LeftCrosswalkBOTTOM_Click;
+            btnCrossroad2LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkBOTTOM");
+
             #endregion
 
             //Crossroad2 - right crosswalk
@@ -806,6 +1076,7 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length * 13), Convert.ToInt32(length * 2)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkTOP.Click += btnCrossroad2RightCrosswalkTOP_Click;
+            btnCrossroad2RightCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkTOP");
 
             //bottom
             btnCrossroad2RightCrosswalkBOTTOM = new Button();
@@ -816,6 +1087,8 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length * 13), Convert.ToInt32(length * 6)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkBOTTOM.Click += btnCrossroad2RightCrosswalkBOTTOM_Click;
+            btnCrossroad2RightCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkBOTTOM");
+
             #endregion
 
             #endregion
@@ -833,6 +1106,7 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnLeftTLeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkTOP.Click += btnLeftTLeftCrosswalkTOP_CLick;
+            btnLeftTLeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkTOP");
 
             //bottom
             btnLeftTLeftCrosswalkBOTTOM = new Button();
@@ -843,6 +1117,8 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 12)); //cannot invert float to int 
             btnLeftTLeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkBOTTOM.Click += btnLeftTLeftCrosswalkBOTTOM_CLick;
+            btnLeftTLeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkBOTTOM");
+
             #endregion
 
             #endregion
@@ -860,6 +1136,8 @@ namespace Bc_prace.Controls
             btnRightTTopCrosswalkLEFT.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnRightTTopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnRightTTopCrosswalkLEFT.Click += btnCrossroad1TopCrosswalkLEFT_Click;
+            btnRightTTopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkLEFT");
+
             //right
             btnRightTTopCrosswalkRIGHT = new Button();
             btnRightTTopCrosswalkRIGHT.Text = "RightT\nTop crosswalk";
@@ -869,6 +1147,7 @@ namespace Bc_prace.Controls
             btnRightTTopCrosswalkRIGHT.Location = new System.Drawing.Point(Convert.ToInt32(length * 12), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnRightTTopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnRightTTopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
+            btnRightTTopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkRIGHT");
 
             #endregion
 
@@ -899,63 +1178,68 @@ namespace Bc_prace.Controls
         //Methods for BTN_CLick action
         #region Methods for BTN_CLick action
 
+        private void OnButtonClicked(string buttonIdentifier)
+        {
+            ButtonClicked?.Invoke(this, buttonIdentifier);
+        }
+
         private void btnCrossroad1TopCrosswalkLEFT_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
         }
 
         private void btnCrossroad1TopCrosswalkRIGHT_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad1TopCrosswalkRIGHT");
         }
 
         private void btnCrossroad1LeftCrosswalkTOP_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad1LeftCrosswalkTOP");
         }
 
         private void btnCrossroad1LeftCrosswalkBOTTOM_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad1LeftCrosswalkBOTTOM");
         }
 
         private void btnCrossroad2LeftCrosswalkTOP_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad2LeftCrosswalkTOP");
         }
 
         private void btnCrossroad2LeftCrosswalkBOTTOM_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad2LeftCrosswalkBOTTOM");
         }
 
         private void btnCrossroad2RightCrosswalkTOP_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad2RightCrosswalkTOP");
         }
 
         private void btnCrossroad2RightCrosswalkBOTTOM_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnCrossroad2RightCrosswalkBOTTOM");
         }
 
         private void btnLeftTLeftCrosswalkTOP_CLick(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnLeftTLeftCrosswalkTOP");
         }
 
         private void btnLeftTLeftCrosswalkBOTTOM_CLick(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnLeftTLeftCrosswalkBOTTOM");
         }
 
         private void btnRightTTopCrosswalkLEFT_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnRightTTopCrosswalkLEFT");
         }
         private void btnRightTTopCrosswalkRIGHT_Click(object? sender, EventArgs e)
         {
-
+            ButtonClicked?.Invoke(this, "btnRightTTopCrosswalkRIGHT");
         }
 
         #endregion

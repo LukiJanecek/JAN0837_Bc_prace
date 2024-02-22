@@ -255,8 +255,8 @@ namespace Bc_prace
 
         public bool Crossroad2LeftCrosswalkBTN1;
         public bool Crossroad2LeftCrosswalkBTN2;
-        public bool Crossroad2TopCrosswalkBTN1;
-        public bool Crossroad2TopCrosswalkBTN2;
+        public bool Crossroad2RightCrosswalkBTN1;
+        public bool Crossroad2RightCrosswalkBTN2;
 
         #endregion
 
@@ -499,7 +499,7 @@ namespace Bc_prace
 
                 if (readResultDB4 == 0)
                 {
-                    //input variables
+                    //Input variables
                     #region Input variables
 
                     ElevatorBTNCabin1 = S7.GetBitAt(read_buffer_DB4_Input, 0, 0);
@@ -519,7 +519,7 @@ namespace Bc_prace
 
                     #endregion
 
-                    //output variables
+                    //Output variables
                     #region Output variables
 
                     ElevatorMotorON = S7.GetBitAt(read_buffer_DB4_Output, 2, 0); ;
@@ -796,8 +796,8 @@ namespace Bc_prace
 
                     Crossroad2LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 0);
                     Crossroad2LeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19_Input, 0, 1);
-                    Crossroad2TopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 2);
-                    Crossroad2TopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19_Input, 0, 3);
+                    Crossroad2RightCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 2);
+                    Crossroad2RightCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19_Input, 0, 3);
 
                     #endregion
 

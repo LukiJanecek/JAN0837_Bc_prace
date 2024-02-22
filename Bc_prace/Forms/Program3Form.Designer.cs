@@ -36,7 +36,7 @@
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
-            userControlCrossroad1 = new Controls.UserControlCrossroad();
+            userControlCrossroad1 = new Controls.UserControlCrossroad(this);
             panel2 = new Panel();
             btnTest = new Button();
             components = new System.ComponentModel.Container();

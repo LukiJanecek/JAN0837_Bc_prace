@@ -45,7 +45,7 @@ namespace Bc_prace
         public byte[] PreviousBufferHash_DB4_Output;
         byte[] send_buffer_DB4_Output;
 
-        //inputs
+        //Input variables
         #region Input variables 
 
         bool ElevatorBTNCabin1;
@@ -65,7 +65,7 @@ namespace Bc_prace
 
         #endregion
 
-        //outputs
+        //Output variables
         #region Output variables
 
         bool ElevatorMotorON;
@@ -112,8 +112,10 @@ namespace Bc_prace
             client = chooseOptionFormInstance.client;
 
             //buffers
+            //DB11 => Maintain_DB
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
+            //DB4 => Elevator_DB
             read_buffer_DB4_Input = chooseOptionFormInstance.read_buffer_DB4_Input;
             send_buffer_DB4_Input = chooseOptionFormInstance.send_buffer_DB4_Input;
             read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
