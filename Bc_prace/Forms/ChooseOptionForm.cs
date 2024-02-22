@@ -44,15 +44,15 @@ namespace Bc_prace
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         public byte[] read_buffer_DB11 = new byte[1]; //1
-        public byte[] previous_buffer_DB11 = new byte[1];
+        public byte[] previous_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
         public byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
-        public byte[] read_buffer_DB4_Input = new byte[2]; //26 
-        public byte[] send_buffer_DB4_Input = new byte[2]; //26
+        public byte[] read_buffer_DB4_Input = new byte[1024]; //26 
+        public byte[] send_buffer_DB4_Input = new byte[1024]; //26
         //second struct -> Output -> 32 variables -> size 26
         public byte[] read_buffer_DB4_Output = new byte[1024]; //26
         public byte[] send_buffer_DB4_Output = new byte[1024]; //26
@@ -405,6 +405,15 @@ namespace Bc_prace
         {
             try
             {
+                if (previous_buffer_DB11 == null)
+                {
+                    previous_buffer_DB11 = new byte[read_buffer_DB11.Length];
+                    Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB11 = ComputeHash(read_buffer_DB11);
+                }
+
                 //Reading variables with MultiVar method
                 #region Multi read -> MultiVar
 

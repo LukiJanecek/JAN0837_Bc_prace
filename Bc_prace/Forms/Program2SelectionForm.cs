@@ -30,7 +30,7 @@ namespace Bc_prace
         private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
         byte[] read_buffer_DB5_Input;
-        public byte[] previous_buffer_DB5_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB5_Input;
         public byte[] PreviousBufferHash_DB5_Input;
         byte[] send_buffer_DB5_Input;
         //second struct -> Output -> 16 variables -> 3.7 size
@@ -104,6 +104,15 @@ namespace Bc_prace
         {
             try
             {
+                if (previous_buffer_DB5_Input == null)
+                {
+                    previous_buffer_DB5_Input = new byte[read_buffer_DB5_Input.Length];
+                    Array.Copy(read_buffer_DB5_Input, previous_buffer_DB5_Input, read_buffer_DB5_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB5_Input = ComputeHash(read_buffer_DB5_Input);
+                }
+
                 //Input variables 
                 #region Input variables 
 
@@ -167,11 +176,46 @@ namespace Bc_prace
                         PreviousBufferHash_DB5_Input = currentHashDB5_Input;
 
                         // Aktualizace proměnných na základě nových dat
+                        
+                        //Input variables
+                        #region Input variables
+
+                        CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5_Input, 0, 0);
+                        CarWashErrorSystem = S7.GetBitAt(read_buffer_DB5_Input, 0, 1);
+                        CarWashStartCarWash = S7.GetBitAt(read_buffer_DB5_Input, 0, 2);
+                        CarWashWaitingForIncomingCar = S7.GetBitAt(read_buffer_DB5_Input, 0, 3);
+                        CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer_DB5_Input, 0, 4);
+                        CarWashPerfetWash = S7.GetBitAt(read_buffer_DB5_Input, 0, 5);
+                        CarWashPerfectPolish = S7.GetBitAt(read_buffer_DB5_Input, 0, 6);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables 
+
+                        CarWashPositionShower = S7.GetBitAt(read_buffer_DB5_Output, 2, 0);
+                        CarWashPositionCar = S7.GetBitAt(read_buffer_DB5_Output, 2, 1);
+                        CarWashGreenLight = S7.GetBitAt(read_buffer_DB5_Output, 2, 2);
+                        CarWashRedLight = S7.GetBitAt(read_buffer_DB5_Output, 2, 3);
+                        CarWashYellowLight = S7.GetBitAt(read_buffer_DB5_Output, 2, 4);
+                        CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5_Output, 2, 5);
+                        CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5_Output, 2, 6);
+                        CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5_Output, 2, 7);
+                        CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5_Output, 3, 0);
+                        CarWashWater = S7.GetBitAt(read_buffer_DB5_Output, 3, 1);
+                        CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5_Output, 3, 2);
+                        CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5_Output, 3, 3);
+                        CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5_Output, 3, 4);
+                        CarWashWax = S7.GetBitAt(read_buffer_DB5_Output, 3, 5);
+                        CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5_Output, 3, 6);
+                        CarWashDry = S7.GetBitAt(read_buffer_DB5_Output, 3, 7);
+
+                        #endregion
 
                         errorMessageBoxShown = false;
                     }
 
-                    //input
+                    //Input variables
                     #region Input variables
 
                     CarWashEmergencySTOP = S7.GetBitAt(read_buffer_DB5_Input, 0, 0);
@@ -184,7 +228,7 @@ namespace Bc_prace
 
                     #endregion
 
-                    //output
+                    //Output variables
                     #region Output variables 
 
                     CarWashPositionShower = S7.GetBitAt(read_buffer_DB5_Output, 2, 0);

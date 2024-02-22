@@ -36,7 +36,7 @@ namespace Bc_prace
         private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
         byte[] read_buffer_DB14_Input;
-        public byte[] previous_buffer_DB14_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB14_Input;
         public byte[] PreviousBufferHash_DB14_Input;
         byte[] send_buffer_DB14_Input;
         //second struct -> Output -> 1 variable -> size 2.0
@@ -48,7 +48,7 @@ namespace Bc_prace
         private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
         byte[] read_buffer_DB1_Input;
-        public byte[] previous_buffer_DB1_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB1_Input;
         public byte[] PreviousBufferHash_DB1_Input;
         byte[] send_buffer_DB1_Input;
         //second struct -> Output -> 21 variables -> size 6.3 
@@ -59,7 +59,7 @@ namespace Bc_prace
         private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
         byte[] read_buffer_DB19_Input;
-        public byte[] previous_buffer_DB19_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB19_Input;
         public byte[] PreviousBufferHash_DB19_Input;
         byte[] send_buffer_DB19_Input;
         //second struct -> Output -> 21 variables -> size 6.3  
@@ -70,7 +70,7 @@ namespace Bc_prace
         private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
         byte[] read_buffer_DB20_Input;
-        public byte[] previous_buffer_DB20_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB20_Input;
         public byte[] PreviousBufferHash_DB20_Input;
         byte[] send_buffer_DB20_Input;
         //second struct -> Output -> 14 variables -> size 5.4
@@ -81,7 +81,7 @@ namespace Bc_prace
         private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
         byte[] read_buffer_DB21_Input;
-        public byte[] previous_buffer_DB21_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] previous_buffer_DB21_Input;
         public byte[] PreviousBufferHash_DB21_Input;
         byte[] send_buffer_DB21_Input;
         //second struct -> Output -> 14 variables -> size 5.4
@@ -299,6 +299,56 @@ namespace Bc_prace
         {
             try
             {
+                //DB14 => Crossroad_DB
+                if (previous_buffer_DB14_Input == null)
+                {
+                    previous_buffer_DB14_Input = new byte[read_buffer_DB14_Input.Length];
+                    Array.Copy(read_buffer_DB14_Input, previous_buffer_DB14_Input, read_buffer_DB14_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB14_Input = ComputeHash(read_buffer_DB14_Input);
+                }
+
+                //DB1 => Crossroad_1_DB
+                if (previous_buffer_DB1_Input == null)
+                {
+                    previous_buffer_DB1_Input = new byte[read_buffer_DB1_Input.Length];
+                    Array.Copy(read_buffer_DB1_Input, previous_buffer_DB1_Input, read_buffer_DB1_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB1_Input = ComputeHash(read_buffer_DB1_Input);
+                }
+
+                //DB19 => Crossroad_2_DB
+                if (previous_buffer_DB19_Input == null)
+                {
+                    previous_buffer_DB19_Input = new byte[read_buffer_DB19_Input.Length];
+                    Array.Copy(read_buffer_DB19_Input, previous_buffer_DB19_Input, read_buffer_DB19_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB19_Input = ComputeHash(read_buffer_DB19_Input);
+                }
+
+                //DB20 => Crossroad_LeftT_DB
+                if (previous_buffer_DB20_Input == null)
+                {
+                    previous_buffer_DB20_Input = new byte[read_buffer_DB20_Input.Length];
+                    Array.Copy(read_buffer_DB20_Input, previous_buffer_DB20_Input, read_buffer_DB20_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB20_Input = ComputeHash(read_buffer_DB20_Input);
+                }
+
+                //DB21 => Crossroad_RightT_DB
+                if (previous_buffer_DB21_Input == null)
+                {
+                    previous_buffer_DB21_Input = new byte[read_buffer_DB21_Input.Length];
+                    Array.Copy(read_buffer_DB21_Input, previous_buffer_DB21_Input, read_buffer_DB21_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB21_Input = ComputeHash(read_buffer_DB21_Input);
+                }
+
                 Option3 = chooseOptionFormInstance.Option3;
 
                 //Input variables
@@ -496,6 +546,24 @@ namespace Bc_prace
                         PreviousBufferHash_DB14_Input = currentHashDB14_Input;
 
                         // Aktualizace proměnných na základě nových dat
+                        
+                        //Input variables
+                        #region Input variables
+
+                        CrossroadModeOFF = S7.GetBitAt(read_buffer_DB14_Input, 0, 0);
+                        CrossroadModeNIGHT = S7.GetBitAt(read_buffer_DB14_Input, 0, 1);
+                        CrossroadModeDAY = S7.GetBitAt(read_buffer_DB14_Input, 0, 2);
+                        CrossroadEmergencySTOP = S7.GetBitAt(read_buffer_DB14_Input, 0, 3);
+                        CrossroadErrorSystem = S7.GetBitAt(read_buffer_DB14_Input, 0, 4);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables 
+
+                        TrafficLightsSQ = S7.GetIntAt(read_buffer_DB14_Output, 2);
+
+                        #endregion
 
                         errorMessageBoxShown = false;
                     }
@@ -519,6 +587,8 @@ namespace Bc_prace
                     #endregion
 
                     //other structs are Timers
+
+                    errorMessageBoxShown = false;
                 }
                 else
                 {
@@ -563,13 +633,48 @@ namespace Bc_prace
                         PreviousBufferHash_DB1_Input = currentHashDB1_Input;
 
                         // Aktualizace proměnných na základě nových dat
+                        
+                        //Input variables
+                        #region Input variables
+
+                        Crossroad1LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1_Input, 0, 0);
+                        Crossroad1LeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB1_Input, 0, 1);
+                        Crossroad1TopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1_Input, 0, 2);
+                        Crossroad1TopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB1_Input, 0, 3);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables
+
+                        Crossroad1CrosswalkSQ = S7.GetIntAt(read_buffer_DB1_Output, 2);
+                        Crossroad1TopRED = S7.GetBitAt(read_buffer_DB1_Output, 4, 0);
+                        Crossroad1TopGREEN = S7.GetBitAt(read_buffer_DB1_Output, 4, 1);
+                        Crossroad1TopYELLOW = S7.GetBitAt(read_buffer_DB1_Output, 4, 2);
+                        Crossroad1LeftRED = S7.GetBitAt(read_buffer_DB1_Output, 4, 3);
+                        Crossroad1LeftGREEN = S7.GetBitAt(read_buffer_DB1_Output, 4, 4);
+                        Crossroad1LeftYELLOW = S7.GetBitAt(read_buffer_DB1_Output, 4, 5);
+                        Crossroad1RightRED = S7.GetBitAt(read_buffer_DB1_Output, 4, 6);
+                        Crossroad1RightGREEN = S7.GetBitAt(read_buffer_DB1_Output, 4, 7);
+                        Crossroad1RightYELLOW = S7.GetBitAt(read_buffer_DB1_Output, 5, 0);
+                        Crossroad1BottomRED = S7.GetBitAt(read_buffer_DB1_Output, 5, 1);
+                        Crossroad1BottomGREEN = S7.GetBitAt(read_buffer_DB1_Output, 5, 2);
+                        Crossroad1BottomYELLOW = S7.GetBitAt(read_buffer_DB1_Output, 5, 3);
+                        Crossroad1TopCrosswalkRED1 = S7.GetBitAt(read_buffer_DB1_Output, 5, 4);
+                        Crossroad1TopCrosswalkRED2 = S7.GetBitAt(read_buffer_DB1_Output, 5, 5);
+                        Crossroad1TopCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB1_Output, 5, 6);
+                        Crossroad1TopCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1_Output, 5, 7);
+                        Crossroad1LeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB1_Output, 6, 0);
+                        Crossroad1LeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB1_Output, 6, 1);
+                        Crossroad1LeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB1_Output, 6, 2);
+                        Crossroad1LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1_Output, 6, 3);
+
+                        #endregion
 
                         errorMessageBoxShown = false;
                     }
-
-                    //Read was successful
-
-                    //Inpit variable
+                                        
+                    //Input variables
                     #region Input variables
 
                     Crossroad1LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1_Input, 0, 0);
@@ -605,6 +710,8 @@ namespace Bc_prace
                     Crossroad1LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB1_Output, 6, 3);
 
                     #endregion                    
+
+                    errorMessageBoxShown = false;
 
                 }
                 else
@@ -650,13 +757,48 @@ namespace Bc_prace
                         PreviousBufferHash_DB19_Input = currentHashDB19_Input;
 
                         // Aktualizace proměnných na základě nových dat
+                        
+                        //Input variables
+                        #region Input variables
+
+                        Crossroad2LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 0);
+                        Crossroad2LeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19_Input, 0, 1);
+                        Crossroad2TopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 2);
+                        Crossroad2TopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB19_Input, 0, 3);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables
+
+                        Crossroad2CrosswalkSQ = S7.GetIntAt(read_buffer_DB19_Output, 2);
+                        Crossroad2TopRED = S7.GetBitAt(read_buffer_DB19_Output, 4, 0);
+                        Crossroad2TopGREEN = S7.GetBitAt(read_buffer_DB19_Output, 4, 1);
+                        Crossroad2TopYellow = S7.GetBitAt(read_buffer_DB19_Output, 4, 2);
+                        Crossroad2LeftRED = S7.GetBitAt(read_buffer_DB19_Output, 4, 3);
+                        Crossroad2LeftGREEN = S7.GetBitAt(read_buffer_DB19_Output, 4, 4);
+                        Crossroad2LeftYellow = S7.GetBitAt(read_buffer_DB19_Output, 4, 5);
+                        Crossroad2RightRED = S7.GetBitAt(read_buffer_DB19_Output, 4, 6);
+                        Crossroad2RightGREEN = S7.GetBitAt(read_buffer_DB19_Output, 4, 7);
+                        Crossroad2RightYellow = S7.GetBitAt(read_buffer_DB19_Output, 5, 0);
+                        Crossroad2BottomRED = S7.GetBitAt(read_buffer_DB19_Output, 5, 1);
+                        Crossroad2BottomGREEN = S7.GetBitAt(read_buffer_DB19_Output, 5, 2);
+                        Crossroad2BottomYellow = S7.GetBitAt(read_buffer_DB19_Output, 5, 3);
+                        Crossroad2RightCrosswalkRED1 = S7.GetBitAt(read_buffer_DB19_Output, 5, 4);
+                        Crossroad2RightCrosswalkRED2 = S7.GetBitAt(read_buffer_DB19_Output, 5, 5);
+                        Crossroad2RightCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB19_Output, 5, 6);
+                        Crossroad2RightCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19_Output, 5, 7);
+                        Crossroad2LeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB19_Output, 6, 0);
+                        Crossroad2LeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB19_Output, 6, 1);
+                        Crossroad2LeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB19_Output, 6, 2);
+                        Crossroad2LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19_Output, 6, 3);
+
+                        #endregion
 
                         errorMessageBoxShown = false;
                     }
 
-                    //Read was successful
-
-                    //Input variable
+                    //Input variables
                     #region Input variables
 
                     Crossroad2LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB19_Input, 0, 0);
@@ -692,7 +834,9 @@ namespace Bc_prace
                     Crossroad2LeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB19_Output, 6, 3);
 
                     #endregion
-                                        
+
+                    errorMessageBoxShown = false;
+
                 }
                 else
                 {
@@ -738,12 +882,38 @@ namespace Bc_prace
 
                         // Aktualizace proměnných na základě nových dat
 
+                        //Input variables
+                        #region Input variables
+
+                        CrossroadLeftTLeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB20_Input, 0, 0);
+                        CrossroadLeftTLeftCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB20_Input, 0, 1);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables
+
+                        CrossroadLeftTCrosswalkSQ = S7.GetIntAt(read_buffer_DB20_Output, 2);
+                        CrossroadLeftTTopRED = S7.GetBitAt(read_buffer_DB20_Output, 4, 0);
+                        CrossroadLeftTTopGREEN = S7.GetBitAt(read_buffer_DB20_Output, 4, 1);
+                        CrossroadLeftTTopYellow = S7.GetBitAt(read_buffer_DB20_Output, 4, 2);
+                        CrossroadLeftTLeftRED = S7.GetBitAt(read_buffer_DB20_Output, 4, 3);
+                        CrossroadLeftTLeftGREEN = S7.GetBitAt(read_buffer_DB20_Output, 4, 4);
+                        CrossroadLeftTLeftYellow = S7.GetBitAt(read_buffer_DB20_Output, 4, 5);
+                        CrossroadLeftTRightRED = S7.GetBitAt(read_buffer_DB20_Output, 4, 6);
+                        CrossroadLeftTRightGREEN = S7.GetBitAt(read_buffer_DB20_Output, 4, 7);
+                        CrossroadLeftTRightYellow = S7.GetBitAt(read_buffer_DB20_Output, 5, 0);
+                        CrossroadLeftTLeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB20_Output, 5, 1);
+                        CrossroadLeftTLeftCrosswalkRED2 = S7.GetBitAt(read_buffer_DB20_Output, 5, 2);
+                        CrossroadLeftTLeftCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB20_Output, 5, 3);
+                        CrossroadLeftTLeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB20_Output, 5, 4);
+
+                        #endregion
+
                         errorMessageBoxShown = false;
                     }
-
-                    //Read was successful
-
-                    //Input variable
+                                        
+                    //Input variables
                     #region Input variables
 
                     CrossroadLeftTLeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB20_Input, 0, 0);
@@ -770,7 +940,8 @@ namespace Bc_prace
                     CrossroadLeftTLeftCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB20_Output, 5, 4);
 
                     #endregion
-                                        
+
+                    errorMessageBoxShown = false;
                 }
                 else
                 {
@@ -816,12 +987,38 @@ namespace Bc_prace
 
                         // Aktualizace proměnných na základě nových dat
 
+                        //Input variables
+                        #region Input variables
+
+                        CrossroadRightTTopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB21_Input, 0, 0);
+                        CrossroadRightTTopCrosswalkBTN2 = S7.GetBitAt(read_buffer_DB21_Input, 0, 1);
+
+                        #endregion
+
+                        //Output variables
+                        #region Output variables
+
+                        CrossroadRightTCrosswalkSQ = S7.GetIntAt(read_buffer_DB21_Output, 2);
+                        CrossroadRightTTopRED = S7.GetBitAt(read_buffer_DB21_Output, 4, 0);
+                        CrossroadRightTTopGREEN = S7.GetBitAt(read_buffer_DB21_Output, 4, 1);
+                        CrossroadRightTTopYellow = S7.GetBitAt(read_buffer_DB21_Output, 4, 2);
+                        CrossroadRightTLeftRED = S7.GetBitAt(read_buffer_DB21_Output, 4, 3);
+                        CrossroadRightTLeftGREEN = S7.GetBitAt(read_buffer_DB21_Output, 4, 4);
+                        CrossroadRightTLeftYellow = S7.GetBitAt(read_buffer_DB21_Output, 4, 5);
+                        CrossroadRightTRightRED = S7.GetBitAt(read_buffer_DB21_Output, 4, 6);
+                        CrossroadRightTRightGREEN = S7.GetBitAt(read_buffer_DB21_Output, 4, 7);
+                        CrossroadRightTRightYellow = S7.GetBitAt(read_buffer_DB21_Output, 5, 0);
+                        CrossroadRightTTopCrosswalkRED1 = S7.GetBitAt(read_buffer_DB21_Output, 5, 1);
+                        CrossroadRightTTopCrosswalkRED2 = S7.GetBitAt(read_buffer_DB21_Output, 5, 2);
+                        CrossroadRightTTopCrosswalkGREEN1 = S7.GetBitAt(read_buffer_DB21_Output, 5, 3);
+                        CrossroadRightTTopCrosswalkGREEN2 = S7.GetBitAt(read_buffer_DB21_Output, 5, 4);
+
+                        #endregion
+
                         errorMessageBoxShown = false;
                     }
-
-                    //Read was successful       
-
-                    //Input variable
+    
+                    //Input variables
                     #region Input variables
 
                     CrossroadRightTTopCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB21_Input, 0, 0);
@@ -849,6 +1046,8 @@ namespace Bc_prace
 
                     #endregion
 
+                    errorMessageBoxShown = false;
+
                 }
                 else
                 {
@@ -872,7 +1071,6 @@ namespace Bc_prace
 
                 #endregion
                 
-
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
