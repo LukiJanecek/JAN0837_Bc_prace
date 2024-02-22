@@ -242,10 +242,9 @@ namespace Bc_prace
 
                 #endregion
                 */
-
-                //DBRead
-                /*
+                                
                 //Reading variables with DBRead method
+                /*
                 #region DBRead
 
                 //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7

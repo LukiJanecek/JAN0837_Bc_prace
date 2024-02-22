@@ -976,8 +976,9 @@ namespace Bc_prace
 
                 #endregion
 
-                /*
+                
                 //Reading variables with DBRead method
+                /*
                 #region DBRead
 
                 //DB11 => Maintain_DB

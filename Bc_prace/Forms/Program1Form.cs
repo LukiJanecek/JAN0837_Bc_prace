@@ -344,11 +344,9 @@ namespace Bc_prace
                 }
 
                 #endregion
-                
-
-                //DBRead
-                /*
+                                               
                 //Reading variables with DBRead method
+                /*
                 #region DBRead
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
