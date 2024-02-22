@@ -30,6 +30,8 @@ namespace Bc_prace
         private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
         byte[] read_buffer_DB5_Input;
+        public byte[] previous_buffer_DB5_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB5_Input;
         byte[] send_buffer_DB5_Input;
         //second struct -> Output -> 16 variables -> 3.7 size
         byte[] read_buffer_DB5_Output;
@@ -141,7 +143,6 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
-                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -156,6 +157,20 @@ namespace Bc_prace
 
                 if (readResultDB5 == 0)
                 {
+                    byte[] currentHashDB5_Input = ComputeHash(read_buffer_DB5_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB5_Input, PreviousBufferHash_DB5_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB5_Input, previous_buffer_DB5_Input, read_buffer_DB5_Input.Length);
+                        PreviousBufferHash_DB5_Input = currentHashDB5_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //input
                     #region Input variables
 
@@ -212,7 +227,7 @@ namespace Bc_prace
                 }
 
                 #endregion
-                */
+                
                                
                 //Reading variables with DBRead method
                 /*

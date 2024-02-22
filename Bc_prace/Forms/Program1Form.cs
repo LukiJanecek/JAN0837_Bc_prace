@@ -272,11 +272,11 @@ namespace Bc_prace
                     byte[] currentHashDB4_Input = ComputeHash(read_buffer_DB4_Input);
 
                     // Porovnání hashe s předchozím hashem
-                    if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB11))
+                    if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB4_Input))
                     {
                         // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
-                        PreviousBufferHash_DB11 = currentHashDB4_Input;
+                        PreviousBufferHash_DB4_Input = currentHashDB4_Input;
 
                         // Aktualizace proměnných na základě nových dat
                         
