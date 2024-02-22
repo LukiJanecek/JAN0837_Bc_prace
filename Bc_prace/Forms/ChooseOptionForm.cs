@@ -429,7 +429,7 @@ namespace Bc_prace
                         Console.WriteLine("Data se změnila!");
 
                         // Aktualizace předchozího bufferu a hashe
-                        Array.Copy(read_buffer_DB11, PreviousBuffer_DB11, read_buffer_DB11.Length);
+                        Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
                         PreviousBufferHash_DB11 = currentHash;
 
                         // Aktualizace proměnných na základě nových dat
