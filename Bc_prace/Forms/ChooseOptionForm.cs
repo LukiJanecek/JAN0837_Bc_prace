@@ -12,6 +12,7 @@ using Bc_prace.Controls.MyGraphControl.Entities;
 using Microsoft.VisualBasic;
 using Bc_prace.Settings;
 using Sharp7;
+using System.Security.Cryptography;
 
 namespace Bc_prace
 {
@@ -44,6 +45,7 @@ namespace Bc_prace
         private int DBNumber_DB11 = 11;
         public byte[] read_buffer_DB11 = new byte[1]; //1
         public byte[] previous_buffer_DB11 = new byte[1];
+        public byte[] PreviousBufferHash_DB11;
         public byte[] send_buffer_DB11 = new byte[1]; //1
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
@@ -418,6 +420,26 @@ namespace Bc_prace
 
                 if (readResultDB11 == 0)
                 {
+                    byte[] currentHash = ComputeHash(read_buffer_DB11);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHash, PreviousBufferHash_DB11))
+                    {
+                        // Zde můžete provést akci na základě změněné hodnoty
+                        Console.WriteLine("Data se změnila!");
+
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB11, PreviousBuffer_DB11, read_buffer_DB11.Length);
+                        PreviousBufferHash_DB11 = currentHash;
+
+                        // Aktualizace proměnných na základě nových dat
+                        Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
+                        Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
+                        Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //comparison values in buffers -> catching value changes 
                     if (!ArraysAreEqual(read_buffer_DB11, previous_buffer_DB11))
                     {
@@ -1019,6 +1041,14 @@ namespace Bc_prace
             }
 
             return true;
+        }
+
+        private byte[] ComputeHash(byte[] data)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                return sha256.ComputeHash(data);
+            }
         }
 
         #endregion
