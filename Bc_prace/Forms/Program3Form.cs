@@ -36,6 +36,8 @@ namespace Bc_prace
         private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
         byte[] read_buffer_DB14_Input;
+        public byte[] previous_buffer_DB14_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB14_Input;
         byte[] send_buffer_DB14_Input;
         //second struct -> Output -> 1 variable -> size 2.0
         byte[] read_buffer_DB14_Output;
@@ -46,6 +48,8 @@ namespace Bc_prace
         private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
         byte[] read_buffer_DB1_Input;
+        public byte[] previous_buffer_DB1_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB1_Input;
         byte[] send_buffer_DB1_Input;
         //second struct -> Output -> 21 variables -> size 6.3 
         byte[] read_buffer_DB1_Output;
@@ -55,6 +59,8 @@ namespace Bc_prace
         private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
         byte[] read_buffer_DB19_Input;
+        public byte[] previous_buffer_DB19_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB19_Input;
         byte[] send_buffer_DB19_Input;
         //second struct -> Output -> 21 variables -> size 6.3  
         byte[] read_buffer_DB19_Output;
@@ -64,6 +70,8 @@ namespace Bc_prace
         private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
         byte[] read_buffer_DB20_Input;
+        public byte[] previous_buffer_DB20_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB20_Input;
         byte[] send_buffer_DB20_Input;
         //second struct -> Output -> 14 variables -> size 5.4
         byte[] read_buffer_DB20_Output;
@@ -73,6 +81,8 @@ namespace Bc_prace
         private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
         byte[] read_buffer_DB21_Input;
+        public byte[] previous_buffer_DB21_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB21_Input;
         byte[] send_buffer_DB21_Input;
         //second struct -> Output -> 14 variables -> size 5.4
         byte[] read_buffer_DB21_Output;
@@ -458,7 +468,6 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
-                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -477,6 +486,20 @@ namespace Bc_prace
 
                 if (readResultDB14 == 0)
                 {
+                    byte[] currentHashDB14_Input = ComputeHash(read_buffer_DB14_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB14_Input, PreviousBufferHash_DB14_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB14_Input, previous_buffer_DB14_Input, read_buffer_DB14_Input.Length);
+                        PreviousBufferHash_DB14_Input = currentHashDB14_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //Input variables
                     #region Input variables
 
@@ -530,6 +553,20 @@ namespace Bc_prace
 
                 if (readResultDB1 == 0)
                 {
+                    byte[] currentHashDB1_Input = ComputeHash(read_buffer_DB1_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB1_Input, PreviousBufferHash_DB1_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB1_Input, previous_buffer_DB1_Input, read_buffer_DB1_Input.Length);
+                        PreviousBufferHash_DB1_Input = currentHashDB1_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //Read was successful
 
                     //Inpit variable
@@ -603,8 +640,22 @@ namespace Bc_prace
 
                 if (readResultDB19 == 0)
                 {
+                    byte[] currentHashDB19_Input = ComputeHash(read_buffer_DB19_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB19_Input, PreviousBufferHash_DB19_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB19_Input, previous_buffer_DB19_Input, read_buffer_DB19_Input.Length);
+                        PreviousBufferHash_DB19_Input = currentHashDB19_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //Read was successful
-                                      
+
                     //Input variable
                     #region Input variables
 
@@ -676,8 +727,22 @@ namespace Bc_prace
 
                 if (readResultDB20 == 0)
                 {
+                    byte[] currentHashDB20_Input = ComputeHash(read_buffer_DB20_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB20_Input, PreviousBufferHash_DB20_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB20_Input, previous_buffer_DB20_Input, read_buffer_DB20_Input.Length);
+                        PreviousBufferHash_DB20_Input = currentHashDB20_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //Read was successful
-                                        
+
                     //Input variable
                     #region Input variables
 
@@ -740,8 +805,22 @@ namespace Bc_prace
 
                 if (readResultDB21 == 0)
                 {
+                    byte[] currentHashDB21_Input = ComputeHash(read_buffer_DB21_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB21_Input, PreviousBufferHash_DB21_Input))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB21_Input, previous_buffer_DB21_Input, read_buffer_DB21_Input.Length);
+                        PreviousBufferHash_DB21_Input = currentHashDB21_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //Read was successful       
-                    
+
                     //Input variable
                     #region Input variables
 
@@ -792,7 +871,7 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
-                */
+                
 
                 //Reading variables with DBRead method
                 /*
