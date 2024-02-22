@@ -14,6 +14,7 @@ using Sharp7;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Reflection.Metadata;
 using static System.Windows.Forms.Design.AxImporter;
+using System.Security.Cryptography;
 
 namespace Bc_prace
 {
@@ -469,6 +470,14 @@ namespace Bc_prace
             }
 
             return true;
+        }
+
+        private byte[] ComputeHash(byte[] data)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                return sha256.ComputeHash(data);
+            }
         }
 
         #endregion

@@ -12,6 +12,7 @@ using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
 using static System.Windows.Forms.Design.AxImporter;
 using Sharp7;
+using System.Security.Cryptography;
 
 namespace Bc_prace
 {
@@ -26,6 +27,7 @@ namespace Bc_prace
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
+        public byte[] PreviousBufferHash_DB11;
         byte[] send_buffer_DB11;
 
         //MaintainDB variables
@@ -35,9 +37,12 @@ namespace Bc_prace
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
         byte[] read_buffer_DB4_Input;
+        public byte[] previous_buffer_DB4_Input = new byte[1]; //tady se musi poresit velikost
+        public byte[] PreviousBufferHash_DB4_Input;
         byte[] send_buffer_DB4_Input;
         //second struct -> Output -> 32 variables -> size 26
         byte[] read_buffer_DB4_Output;
+        public byte[] PreviousBufferHash_DB4_Output;
         byte[] send_buffer_DB4_Output;
 
         //inputs
@@ -250,7 +255,6 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
-                
                 #region Multi read -> MultiVar   
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -265,6 +269,21 @@ namespace Bc_prace
 
                 if (readResultDB4 == 0)
                 {
+                    byte[] currentHashDB4_Input = ComputeHash(read_buffer_DB4_Input);
+
+                    // Porovnání hashe s předchozím hashem
+                    if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB11))
+                    {
+                        // Aktualizace předchozího bufferu a hashe
+                        Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
+                        PreviousBufferHash_DB11 = currentHashDB4_Input;
+
+                        // Aktualizace proměnných na základě nových dat
+                        
+
+                        errorMessageBoxShown = false;
+                    }
+
                     //input variables
                     #region Input variables
 
@@ -462,6 +481,14 @@ namespace Bc_prace
             }
 
             return true;
+        }
+
+        private byte[] ComputeHash(byte[] data)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                return sha256.ComputeHash(data);
+            }
         }
 
         #endregion
