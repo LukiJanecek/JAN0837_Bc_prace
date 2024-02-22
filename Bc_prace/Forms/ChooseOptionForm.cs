@@ -420,17 +420,14 @@ namespace Bc_prace
 
                 if (readResultDB11 == 0)
                 {
-                    byte[] currentHash = ComputeHash(read_buffer_DB11);
+                    byte[] currentHashDB11 = ComputeHash(read_buffer_DB11);
 
                     // Porovnání hashe s předchozím hashem
-                    if (!ArraysAreEqual(currentHash, PreviousBufferHash_DB11))
+                    if (!ArraysAreEqual(currentHashDB11, PreviousBufferHash_DB11))
                     {
-                        // Zde můžete provést akci na základě změněné hodnoty
-                        Console.WriteLine("Data se změnila!");
-
                         // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
-                        PreviousBufferHash_DB11 = currentHash;
+                        PreviousBufferHash_DB11 = currentHashDB11;
 
                         // Aktualizace proměnných na základě nových dat
                         Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
@@ -443,9 +440,6 @@ namespace Bc_prace
                     //comparison values in buffers -> catching value changes 
                     if (!ArraysAreEqual(read_buffer_DB11, previous_buffer_DB11))
                     {
-                        // Zde můžete provést akci na základě změněné hodnoty
-                        Console.WriteLine("Data se změnila!");
-
                         // Aktualizace předchozího bufferu
                         Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
 
