@@ -261,9 +261,9 @@ namespace Bc_prace
 
             //Adding UserControlCrossroad
             userControlCrossroad = new UserControlCrossroad(this);
-            userControlCrossroad.ButtonClicked += UserControlCrossroad_ButtonClicked;
             Controls.Add(userControlCrossroad);
-
+            userControlCrossroad.ButtonClicked += UserControlCrossroad_ButtonClicked;
+            
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;

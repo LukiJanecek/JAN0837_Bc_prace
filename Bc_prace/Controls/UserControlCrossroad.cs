@@ -20,6 +20,7 @@ namespace Bc_prace.Controls
     public partial class UserControlCrossroad : UserControl
     {
         private Program3Form program3FormInstance;
+        private ChooseOptionForm chooseOptionFormInstance;
 
         S7Client client;
 
@@ -291,7 +292,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        public UserControlCrossroad(Program3Form program3FormInstance)
+        public UserControlCrossroad(Program3Form program3FormInstance) //ChooseOptionForm chooseOptionFormInstance
         {
             InitializeComponent();
             InitializeButtons();
