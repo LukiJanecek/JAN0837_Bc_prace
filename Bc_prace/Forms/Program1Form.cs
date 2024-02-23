@@ -528,6 +528,8 @@ namespace Bc_prace
             }
             catch (Exception ex)
             {
+                ErrorSystem();
+
                 if (!errorMessageBoxShown)
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Error",
@@ -988,7 +990,7 @@ namespace Bc_prace
             }
         }
 
-        private void ErrorSystem(object sender, EventArgs e)
+        private void ErrorSystem()
         {
             statusStripElevator.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
@@ -1017,6 +1019,7 @@ namespace Bc_prace
                 //write was successful
             }
         }
+
         #endregion
 
         //btn End 

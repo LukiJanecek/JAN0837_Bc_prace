@@ -1406,13 +1406,11 @@ namespace Bc_prace
             }
         }
         #endregion
-
-
+                
         private void txtBoxPLCIP_TextChanged(object sender, EventArgs e)
         {
 
         }
-
 
         private void ChooseOption_Load(object sender, EventArgs e)
         {
@@ -1459,6 +1457,7 @@ namespace Bc_prace
             //close program
             this.Close();
         }
+
         #endregion
     }
 }

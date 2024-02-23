@@ -1375,6 +1375,8 @@ namespace Bc_prace
             }
             catch (Exception ex)
             {
+                ErrorSystem();
+
                 if (!errorMessageBoxShown)
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Error",
@@ -1835,7 +1837,61 @@ namespace Bc_prace
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency error");
             statusStripCrossroad.Items.Add(lblStatus);
+
+            CrossroadEmergencySTOP = true;
+            S7.SetBitAt(send_buffer_DB14_Input, 0, 3, CrossroadEmergencySTOP);
+
+            //write to PLC
+            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14_Input.Length, send_buffer_DB14_Input);
+            if (writeResultDB14_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
+                        $"Error message: {writeResultDB14_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
+
+        private void ErrorSystem()
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+            statusStripCrossroad.Items.Add(lblStatus);
+
+            CrossroadErrorSystem = true;
+            S7.SetBitAt(send_buffer_DB14_Input, 0, 4, CrossroadErrorSystem);
+
+            //write to PLC
+            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14_Input.Length, send_buffer_DB14_Input);
+            if (writeResultDB14_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
+                        $"Error message: {writeResultDB14_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
         #endregion
 
         //btn End 

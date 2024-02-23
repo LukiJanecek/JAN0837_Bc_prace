@@ -376,6 +376,8 @@ namespace Bc_prace
             }
             catch (Exception ex) 
             {
+                ErrorSystem();
+
                 if (!errorMessageBoxShown)
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Error",
@@ -557,15 +559,7 @@ namespace Bc_prace
         {
 
         }
-
-        //Reaction on Tia variable change
-        #region Reaction on Tia variable change
-
-
-
-
-        #endregion
-
+                
         //Emergency + system error 
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
@@ -573,7 +567,61 @@ namespace Bc_prace
             statusStripCarWash.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
             statusStripCarWash.Items.Add(lblStatus);
+
+            CarWashEmergencySTOP = true;
+            S7.SetBitAt(send_buffer_DB5_Input, 0, 0, CarWashEmergencySTOP);
+
+            //write to PLC
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            if (writeResultDB5_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                        $"Error message: {writeResultDB5_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
+
+        private void ErrorSystem()
+        {
+            statusStripCarWash.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+            statusStripCarWash.Items.Add(lblStatus);
+
+            CarWashErrorSystem = true;
+            S7.SetBitAt(send_buffer_DB5_Input, 0, 1, CarWashErrorSystem);
+
+            //write to PLC
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            if (writeResultDB5_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                        $"Error message: {writeResultDB5_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
         #endregion
 
         //btn End 
