@@ -311,56 +311,6 @@ namespace Bc_prace
         {
             try
             {
-                //DB14 => Crossroad_DB
-                if (previous_buffer_DB14_Input == null)
-                {
-                    previous_buffer_DB14_Input = new byte[read_buffer_DB14_Input.Length];
-                    Array.Copy(read_buffer_DB14_Input, previous_buffer_DB14_Input, read_buffer_DB14_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB14_Input = ComputeHash(read_buffer_DB14_Input);
-                }
-
-                //DB1 => Crossroad_1_DB
-                if (previous_buffer_DB1_Input == null)
-                {
-                    previous_buffer_DB1_Input = new byte[read_buffer_DB1_Input.Length];
-                    Array.Copy(read_buffer_DB1_Input, previous_buffer_DB1_Input, read_buffer_DB1_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB1_Input = ComputeHash(read_buffer_DB1_Input);
-                }
-
-                //DB19 => Crossroad_2_DB
-                if (previous_buffer_DB19_Input == null)
-                {
-                    previous_buffer_DB19_Input = new byte[read_buffer_DB19_Input.Length];
-                    Array.Copy(read_buffer_DB19_Input, previous_buffer_DB19_Input, read_buffer_DB19_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB19_Input = ComputeHash(read_buffer_DB19_Input);
-                }
-
-                //DB20 => Crossroad_LeftT_DB
-                if (previous_buffer_DB20_Input == null)
-                {
-                    previous_buffer_DB20_Input = new byte[read_buffer_DB20_Input.Length];
-                    Array.Copy(read_buffer_DB20_Input, previous_buffer_DB20_Input, read_buffer_DB20_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB20_Input = ComputeHash(read_buffer_DB20_Input);
-                }
-
-                //DB21 => Crossroad_RightT_DB
-                if (previous_buffer_DB21_Input == null)
-                {
-                    previous_buffer_DB21_Input = new byte[read_buffer_DB21_Input.Length];
-                    Array.Copy(read_buffer_DB21_Input, previous_buffer_DB21_Input, read_buffer_DB21_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB21_Input = ComputeHash(read_buffer_DB21_Input);
-                }
-
                 Option3 = chooseOptionFormInstance.Option3;
 
                 //Input variables
@@ -530,14 +480,23 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB14 => Crossroad_DB - modes and timers
                 #region Reading from DB14 Crossroad_DB
-
                 //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0
+                if (previous_buffer_DB14_Input == null)
+                {
+                    previous_buffer_DB14_Input = new byte[read_buffer_DB14_Input.Length];
+                    Array.Copy(read_buffer_DB14_Input, previous_buffer_DB14_Input, read_buffer_DB14_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB14_Input = ComputeHash(read_buffer_DB14_Input);
+                }
+
                 //first struct -> Input -> 5 variables -> size 0.4
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, 0, ref read_buffer_DB14_Input); //read_buffer_DB14_Input.Length
                 //second struct -> Output -> 1 variable -> size 2.0
@@ -624,8 +583,16 @@ namespace Bc_prace
 
                 //DB1 => Crossroad_1_DB - Crossroad 1
                 #region Reading from DB1 Crossroad_1_DB
-
                 //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+                if (previous_buffer_DB1_Input == null)
+                {
+                    previous_buffer_DB1_Input = new byte[read_buffer_DB1_Input.Length];
+                    Array.Copy(read_buffer_DB1_Input, previous_buffer_DB1_Input, read_buffer_DB1_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB1_Input = ComputeHash(read_buffer_DB1_Input);
+                }
+
                 //first struct -> Input -> 4 variables -> size 0.3
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, 0, ref read_buffer_DB1_Input); //read_buffer_DB1_Input.Length
                 //second struct -> Output -> 21 variables -> size 6.3 
@@ -748,8 +715,16 @@ namespace Bc_prace
 
                 //DB19 => Crossroad_2_DB - Crossroad 2 
                 #region Reading from DB19 Crossroad_2_DB
-
                 //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+                if (previous_buffer_DB19_Input == null)
+                {
+                    previous_buffer_DB19_Input = new byte[read_buffer_DB19_Input.Length];
+                    Array.Copy(read_buffer_DB19_Input, previous_buffer_DB19_Input, read_buffer_DB19_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB19_Input = ComputeHash(read_buffer_DB19_Input);
+                }
+
                 //first struct -> Input -> 4 variables -> size 0.3
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, 0, ref read_buffer_DB19_Input); //read_buffer_DB19_Input.Length
                 //second struct -> Output -> 21 variables -> size 6.3
@@ -872,8 +847,16 @@ namespace Bc_prace
 
                 //DB20 => Crossroad_LeftT_DB - Left T 
                 #region Reading from DB20 Crossroad_LeftT_DB
-
                 //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+                if (previous_buffer_DB20_Input == null)
+                {
+                    previous_buffer_DB20_Input = new byte[read_buffer_DB20_Input.Length];
+                    Array.Copy(read_buffer_DB20_Input, previous_buffer_DB20_Input, read_buffer_DB20_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB20_Input = ComputeHash(read_buffer_DB20_Input);
+                }
+
                 //first struct -> Input -> 2 variables -> size 0.1
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, 0, ref read_buffer_DB20_Input); //read_buffer_DB20_Input.Length
                 //second struct -> Output -> 14 variables -> size 5.
@@ -977,8 +960,16 @@ namespace Bc_prace
 
                 //DB21 => Crossroad_RightT_DB - Right T
                 #region Reading from DB21 Crossroad_RightT_DB
-
                 //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+                if (previous_buffer_DB21_Input == null)
+                {
+                    previous_buffer_DB21_Input = new byte[read_buffer_DB21_Input.Length];
+                    Array.Copy(read_buffer_DB21_Input, previous_buffer_DB21_Input, read_buffer_DB21_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB21_Input = ComputeHash(read_buffer_DB21_Input);
+                }
+
                 //first struct -> Input -> 2 variables -> size 0.1
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, 0, ref read_buffer_DB21_Input); //read_buffer_DB21_Input.Length
                 //second struct -> Output -> 14 variables -> size 5.4
@@ -1082,6 +1073,7 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
+                */
 
                 //Reading variables with DBRead method
                 /*
@@ -1504,6 +1496,7 @@ namespace Bc_prace
         #endregion
 
         //Buttons in UserControlCrossroad clicked event
+        #region Buttons in UserControlCrossroad clicked event
         private void UserControlCrossroad_ButtonClicked(object? sender, string buttonIdentifier)
         {
             if (sender != null)
@@ -1832,6 +1825,8 @@ namespace Bc_prace
             }
             */
         }
+
+        #endregion
 
         //Emergency + system error 
         #region Emergency + system error 

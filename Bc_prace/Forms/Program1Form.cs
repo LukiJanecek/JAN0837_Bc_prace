@@ -196,15 +196,6 @@ namespace Bc_prace
         {
             try
             {
-                if (previous_buffer_DB4_Input == null)
-                {
-                    previous_buffer_DB4_Input = new byte[read_buffer_DB4_Input.Length];
-                    Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB4_Input = ComputeHash(read_buffer_DB4_Input);
-                }
-
                 Option1 = chooseOptionFormInstance.Option1;
 
                 //Input variables
@@ -266,11 +257,21 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar   
 
                 S7MultiVar reader = new S7MultiVar(client);
 
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
+                if (previous_buffer_DB4_Input == null)
+                {
+                    previous_buffer_DB4_Input = new byte[read_buffer_DB4_Input.Length];
+                    Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
+
+                    // Inicializace hashe při prvním spuštění
+                    PreviousBufferHash_DB4_Input = ComputeHash(read_buffer_DB4_Input);
+                }
+
                 //first struct -> Input -> 14 variables -> size 1.5 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 0, ref read_buffer_DB4_Input);
                 //second struct -> Output -> 32 variables -> size 26
@@ -431,7 +432,8 @@ namespace Bc_prace
                 }
 
                 #endregion
-                                               
+                */
+
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
@@ -521,6 +523,8 @@ namespace Bc_prace
                 #endregion
 
                 */
+
+                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {

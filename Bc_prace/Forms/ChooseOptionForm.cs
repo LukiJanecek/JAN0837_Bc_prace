@@ -426,7 +426,6 @@ namespace Bc_prace
 
                 //DB11 => Maintain_DB
                 #region Reading from DB11 Maintain_DB
-
                 //DB11 => Maintain_DB - modes and timers
                 if (previous_buffer_DB11 == null)
                 {
@@ -459,24 +458,6 @@ namespace Bc_prace
 
                         errorMessageBoxShown = false;
                     }
-
-                    //comparison values in buffers -> catching value changes 
-                    if (!ArraysAreEqual(read_buffer_DB11, previous_buffer_DB11))
-                    {
-                        // Aktualizace předchozího bufferu
-                        Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
-
-                        // Aktualizace proměnných na základě nových dat
-                        Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
-                        Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
-                        Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
-
-                        errorMessageBoxShown = false;
-                    }
-
-                    Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
-                    Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
-                    Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
 
                     errorMessageBoxShown = false;
                 }
@@ -1134,7 +1115,7 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
-                                
+
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
