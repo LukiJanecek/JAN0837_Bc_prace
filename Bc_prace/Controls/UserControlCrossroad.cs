@@ -22,7 +22,7 @@ namespace Bc_prace.Controls
         private Program3Form program3FormInstance;
         private ChooseOptionForm chooseOptionFormInstance;
 
-        S7Client client;
+        private S7Client client;
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
