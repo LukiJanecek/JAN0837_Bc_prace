@@ -963,6 +963,59 @@ namespace Bc_prace
             statusStripElevator.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
             statusStripElevator.Items.Add(lblStatus);
+
+            ElevatorEmergencySTOP = true;
+            S7.SetBitAt(send_buffer_DB4_Input, 1, 4, ElevatorEmergencySTOP);
+
+            //write to PLC
+            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4_Input.Length, send_buffer_DB4_Input);
+            if (writeResultDB4_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: {writeResultDB4_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
+        private void ErrorSystem(object sender, EventArgs e)
+        {
+            statusStripElevator.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+            statusStripElevator.Items.Add(lblStatus);
+
+            ElevatorErrorSystem = true;
+            S7.SetBitAt(send_buffer_DB4_Input, 1, 5, ElevatorErrorSystem);
+
+            //write to PLC
+            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4_Input.Length, send_buffer_DB4_Input);
+            if (writeResultDB4_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: {writeResultDB4_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
         #endregion
 
