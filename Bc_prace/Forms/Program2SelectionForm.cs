@@ -98,7 +98,7 @@ namespace Bc_prace
             //set time interval (ms)
             Timer_read_actual.Interval = 100;
         }
-               
+
         //Tia connection
         #region Tia connection
 
@@ -265,8 +265,8 @@ namespace Bc_prace
                 }
 
                 #endregion
-                */     
-                
+                */
+
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
@@ -332,6 +332,7 @@ namespace Bc_prace
 
                 */
 
+                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {
@@ -342,15 +343,76 @@ namespace Bc_prace
                 }
             }
         }
-                
+
         #endregion
 
         //btn End 
         #region Close window
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            //closing form
             this.Close();
         }
+        #endregion
+
+        //Choosing washing variant
+        #region Choosing washing variant
+        private void btnPerfectPolish_Click(object sender, EventArgs e)
+        {
+            CarWashPerfectPolish = true;
+            S7.SetBitAt(send_buffer_DB5_Input, 0, 6, CarWashPerfectPolish);
+
+            //write to PLC
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            if (writeResultDB5_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                        $"Error message: {writeResultDB5_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+                //closing form
+                this.Close();
+            }
+        }
+
+        private void btnPerfectWash_Click(object sender, EventArgs e)
+        {
+            CarWashPerfetWash = true;
+            S7.SetBitAt(send_buffer_DB5_Input, 0, 5, CarWashPerfetWash);
+
+            //write to PLC
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            if (writeResultDB5_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                        $"Error message: {writeResultDB5_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+                //closing form
+                this.Close();
+            }
+        }
+
         #endregion
     }
 }

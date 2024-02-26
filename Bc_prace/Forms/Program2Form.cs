@@ -106,8 +106,6 @@ namespace Bc_prace
             Timer_read_actual.Start();
             //set time interval (ms)
             Timer_read_actual.Interval = 100;
-
-
         }
 
         //Variables
@@ -305,7 +303,7 @@ namespace Bc_prace
 
                 #endregion
                 */
-                
+
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
@@ -373,6 +371,7 @@ namespace Bc_prace
 
                 */
 
+                errorMessageBoxShown = false;
             }
             catch (Exception ex) 
             {
@@ -523,8 +522,31 @@ namespace Bc_prace
         #region Start CarWash
         private void btnStartCarWash_Click(object sender, EventArgs e)
         {
-            Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
-            Selection.ShowDialog(this);
+            CarWashStartCarWash = true;
+            S7.SetBitAt(send_buffer_DB5_Input, 0, 2, CarWashStartCarWash);
+
+            //write to PLC
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            if (writeResultDB5_Input != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                        $"Error message: {writeResultDB5_Input} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+                //Selection form activated
+                Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
+                Selection.ShowDialog(this);
+            }            
         }
         #endregion
                 

@@ -1153,6 +1153,7 @@ namespace Bc_prace
 
                 */
 
+                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {
