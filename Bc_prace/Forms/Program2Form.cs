@@ -133,7 +133,7 @@ namespace Bc_prace
         private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 Option2 = chooseOptionFormInstance.Option2;
 
                 //Input variables 

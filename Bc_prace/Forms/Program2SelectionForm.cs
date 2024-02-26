@@ -106,15 +106,6 @@ namespace Bc_prace
         {
             try
             {
-                if (previous_buffer_DB5_Input == null)
-                {
-                    previous_buffer_DB5_Input = new byte[read_buffer_DB5_Input.Length];
-                    Array.Copy(read_buffer_DB5_Input, previous_buffer_DB5_Input, read_buffer_DB5_Input.Length);
-
-                    // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB5_Input = ComputeHash(read_buffer_DB5_Input);
-                }
-
                 //Input variables 
                 #region Input variables 
 
@@ -154,6 +145,7 @@ namespace Bc_prace
                 #endregion
 
                 //Reading variables with MultiVar method
+                /*
                 #region Multi read -> MultiVar
 
                 S7MultiVar reader = new S7MultiVar(client);
@@ -273,8 +265,8 @@ namespace Bc_prace
                 }
 
                 #endregion
+                */     
                 
-                               
                 //Reading variables with DBRead method
                 /*
                 #region DBRead
