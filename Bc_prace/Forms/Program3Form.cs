@@ -1384,8 +1384,34 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
+
+            //Action on variable change
+            #region Action on variable change
+            
+            if (rBtnCrossroadBasic.Checked)
+            {
+
+            }
+            else if (rBtnCrossroadExtension1.Checked)
+            {
+
+            }
+            else if (rBtnCrossroadExtension2.Checked)
+            {
+
+            }
+            else if (rBtnCrossroadExtension3.Checked)
+            {
+
+            }
+            else
+            {
+                //nothing
+            }
+
+            #endregion
         }
-                
+
         #endregion
 
         private void Program3_Load(object sender, EventArgs e)
@@ -1417,13 +1443,11 @@ namespace Bc_prace
             {
                 // Vykreslete čáry pro volbu 2
                 userControlCrossroad1.CrossroadExtension2();
-
             }
             else if (rBtnCrossroadExtension3.Checked)
             {
                 // Vykreslete čáry pro volbu 3
                 userControlCrossroad1.CrossroadExtension3();
-
             }
             else
             {

@@ -3743,6 +3743,118 @@ namespace Bc_prace.Controls
 
         #endregion
 
+        //Methods for UpdateTrafficLights
+        #region Methods for UpdateTrafficLights
+        public void UpdateTrafficLightsCrossroad1TOP(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        public void UpdateTrafficLightsCrossroad1BOTTOM(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        public void UpdateTrafficLightsCrossroad1LEFT(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        public void UpdateTrafficLightsCrossroad1RIGHT(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        public void UpdateTrafficLightsCrossroad1CrosswalkTOP(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        public void UpdateTrafficLightsCrossroad1CrosswalkLEFT(bool red, bool yellow, bool green)
+        {
+            if (red)
+            {
+
+            }
+            else if (yellow)
+            {
+
+            }
+            else if (green)
+            {
+
+            }
+
+            Invalidate();
+        }
+
+        #endregion
+
         private void UserControlCrossroad_Load(object sender, EventArgs e)
         {
 
