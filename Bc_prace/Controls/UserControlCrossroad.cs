@@ -1185,63 +1185,63 @@ namespace Bc_prace.Controls
             ButtonClicked?.Invoke(this, buttonIdentifier);
         }
 
-        private void btnCrossroad1TopCrosswalkLEFT_Click(object? sender, EventArgs e)
+        private void btnCrossroad1TopCrosswalkLEFT_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
+            ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
         }
 
-        private void btnCrossroad1TopCrosswalkRIGHT_Click(object? sender, EventArgs e)
+        private void btnCrossroad1TopCrosswalkRIGHT_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad1TopCrosswalkRIGHT");
+            ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkRIGHT");
         }
 
-        private void btnCrossroad1LeftCrosswalkTOP_Click(object? sender, EventArgs e)
+        private void btnCrossroad1LeftCrosswalkTOP_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad1LeftCrosswalkTOP");
+            ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkTOP");
         }
 
-        private void btnCrossroad1LeftCrosswalkBOTTOM_Click(object? sender, EventArgs e)
+        private void btnCrossroad1LeftCrosswalkBOTTOM_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad1LeftCrosswalkBOTTOM");
+            ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkBOTTOM");
         }
 
-        private void btnCrossroad2LeftCrosswalkTOP_Click(object? sender, EventArgs e)
+        private void btnCrossroad2LeftCrosswalkTOP_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad2LeftCrosswalkTOP");
+            ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkTOP");
         }
 
-        private void btnCrossroad2LeftCrosswalkBOTTOM_Click(object? sender, EventArgs e)
+        private void btnCrossroad2LeftCrosswalkBOTTOM_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad2LeftCrosswalkBOTTOM");
+            ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkBOTTOM");
         }
 
-        private void btnCrossroad2RightCrosswalkTOP_Click(object? sender, EventArgs e)
+        private void btnCrossroad2RightCrosswalkTOP_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad2RightCrosswalkTOP");
+            ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkTOP");
         }
 
-        private void btnCrossroad2RightCrosswalkBOTTOM_Click(object? sender, EventArgs e)
+        private void btnCrossroad2RightCrosswalkBOTTOM_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnCrossroad2RightCrosswalkBOTTOM");
+            ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkBOTTOM");
         }
 
-        private void btnLeftTLeftCrosswalkTOP_CLick(object? sender, EventArgs e)
+        private void btnLeftTLeftCrosswalkTOP_CLick(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnLeftTLeftCrosswalkTOP");
+            ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkTOP");
         }
 
-        private void btnLeftTLeftCrosswalkBOTTOM_CLick(object? sender, EventArgs e)
+        private void btnLeftTLeftCrosswalkBOTTOM_CLick(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnLeftTLeftCrosswalkBOTTOM");
+            ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkBOTTOM");
         }
 
-        private void btnRightTTopCrosswalkLEFT_Click(object? sender, EventArgs e)
+        private void btnRightTTopCrosswalkLEFT_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnRightTTopCrosswalkLEFT");
+            ButtonClicked.Invoke(this, "btnRightTTopCrosswalkLEFT");
         }
-        private void btnRightTTopCrosswalkRIGHT_Click(object? sender, EventArgs e)
+        private void btnRightTTopCrosswalkRIGHT_Click(object sender, EventArgs e)
         {
-            ButtonClicked?.Invoke(this, "btnRightTTopCrosswalkRIGHT");
+            ButtonClicked.Invoke(this, "btnRightTTopCrosswalkRIGHT");
         }
 
         #endregion
