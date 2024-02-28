@@ -106,7 +106,7 @@ namespace Bc_prace
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            
+
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
@@ -120,7 +120,7 @@ namespace Bc_prace
             send_buffer_DB4_Input = chooseOptionFormInstance.send_buffer_DB4_Input;
             read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
             send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
-                       
+
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
             panelDoorLeftY = panelDoorLeft.Location.Y;
@@ -131,11 +131,13 @@ namespace Bc_prace
             lblElevatorFloorX = lblElevatorFloor.Location.X;
             lblElevatorFloorY = lblElevatorFloor.Location.Y;
 
-            //start timer
-            Timer_read_actual.Start();
-            //set time interval (ms)
-            Timer_read_actual.Interval = 100;
-
+            if (client.Connected)
+            {
+                //start timer
+                Timer_read_actual.Start();
+                //set time interval (ms)
+                Timer_read_actual.Interval = 100;
+            }
         }
 
         private void Program1_Load(object sender, EventArgs e)

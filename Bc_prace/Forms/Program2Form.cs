@@ -101,11 +101,14 @@ namespace Bc_prace
             send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
             read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
             send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
-                        
-            //start timer
-            Timer_read_actual.Start();
-            //set time interval (ms)
-            Timer_read_actual.Interval = 100;
+            
+            if (client.Connected)
+            {
+                //start timer
+                Timer_read_actual.Start();
+                //set time interval (ms)
+                Timer_read_actual.Interval = 100;
+            }
         }
 
         //Variables
