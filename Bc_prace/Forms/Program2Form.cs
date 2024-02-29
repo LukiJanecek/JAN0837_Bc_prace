@@ -101,7 +101,7 @@ namespace Bc_prace
             send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
             read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
             send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
-            
+
             if (client.Connected)
             {
                 //start timer
@@ -125,7 +125,7 @@ namespace Bc_prace
         int SignalizationCount = 0;
 
         #endregion
-                
+
         #endregion
 
         //Tia connection
@@ -376,7 +376,7 @@ namespace Bc_prace
 
                 errorMessageBoxShown = false;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 ErrorSystem();
 
@@ -518,7 +518,7 @@ namespace Bc_prace
             #endregion
 
         }
-                
+
         #endregion
 
         //Start CarWash
@@ -549,15 +549,15 @@ namespace Bc_prace
                 //Selection form activated
                 Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
                 Selection.ShowDialog(this);
-            }            
+            }
         }
         #endregion
-                
+
         private void Program2_Load(object sender, EventArgs e)
         {
 
         }
-                
+
         //Emergency + system error 
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
@@ -669,7 +669,7 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
             statusStripCarWash.Items.Add(lblStatus);
         }
-        
+
         #endregion
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -700,6 +700,16 @@ namespace Bc_prace
 
             userControlCarWash1.MovePictureRight();
 
+
+        }
+
+        private void btnCarMoveLEFT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCarMoveRIGHT_Click(object sender, EventArgs e)
+        {
 
         }
     }
