@@ -331,7 +331,7 @@ namespace Bc_prace.Controls
             send_buffer_DB21_Input = program3FormInstance.send_buffer_DB21_Input;
             read_buffer_DB21_Output = program3FormInstance.read_buffer_DB21_Output;
             send_buffer_DB21_Output = program3FormInstance.send_buffer_DB21_Output;
-                        
+
         }
 
         private void UserControl1_Paint(object? sender, PaintEventArgs e)
@@ -347,6 +347,193 @@ namespace Bc_prace.Controls
             Pen RedPen = new Pen(Color.Red, 2);
             Pen GreenPen = new Pen(Color.Green, 2);
             Pen YellowPen = new Pen(Color.Yellow, 2);
+
+            //Crossroad1
+            #region Crossroad1 
+
+            #region Lights 
+
+            //TOP
+            #region TOP
+            if (program3FormInstance.Crossroad1TopRED)
+            {
+                //RedLight => ON
+                g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+            }
+            else if (program3FormInstance.Crossroad1TopYELLOW)
+            {
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => ON
+                g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+            }
+            else if (program3FormInstance.Crossroad1TopGREEN)
+            {
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => ON
+                g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+            }
+            else
+            {
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+            }
+            #endregion
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+
+            //RIGHT
+            #region RIGHT 
+
+            #endregion
+
+            //BOTTOM
+            #region BOTTOM 
+
+            #endregion
+
+            #endregion
+
+            #region Crosswalk lights
+
+            //TOP
+            #region TOP
+
+            #endregion
+
+            //LEFT
+            #region LEFT 
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //Crossroad2
+            #region Crossroad2 
+
+            #region Lights 
+
+            //TOP
+            #region TOP
+
+            #endregion
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+
+            //RIGHT
+            #region RIGHT 
+
+            #endregion
+
+            //BOTTOM
+            #region BOTTOM 
+
+            #endregion
+
+            #endregion
+
+            #region Crosswalk lights
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+
+            //RIGHT
+            #region RIGHT 
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //LeftT
+            #region LeftT 
+
+            #region Lights 
+
+            //TOP
+            #region TOP
+
+            #endregion
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+
+            //RIGHT
+            #region RIGHT 
+
+            #endregion
+                        
+            #endregion
+
+            #region Crosswalk lights
+
+            //TOP
+            #region TOP
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //RightT
+            #region RightT 
+
+            #region Lights 
+
+            //TOP
+            #region TOP
+
+            #endregion
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+
+            //RIGHT
+            #region RIGHT 
+
+            #endregion
+
+           #endregion
+
+            #region Crosswalk lights
+
+            //LEFT
+            #region LEFT
+
+            #endregion
+                        
+            #endregion
+
+            #endregion
 
             #region Původní nástavba 
             /*
@@ -3766,18 +3953,18 @@ namespace Bc_prace.Controls
             {
                 //RedLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
-                //YellowLight
+                //YellowLight => ON
                 g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
-                //GreenLight
+                //GreenLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
             else if (GreenLight)
             {
-                //RedLight
+                //RedLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
-                //YellowLight
+                //YellowLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
-                //GreenLight
+                //GreenLight => ON
                 g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
             else

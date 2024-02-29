@@ -95,47 +95,47 @@ namespace Bc_prace
         //Crossroad_DB DB14
         #region Crossroad_DB DB14
 
-        bool CrossroadModeOFF;
-        bool CrossroadModeNIGHT;
-        bool CrossroadModeDAY;
-        bool CrossroadEmergencySTOP;
-        bool CrossroadErrorSystem;
+        public bool CrossroadModeOFF;
+        public bool CrossroadModeNIGHT;
+        public bool CrossroadModeDAY;
+        public bool CrossroadEmergencySTOP;
+        public bool CrossroadErrorSystem;
 
         #endregion
 
         //Crossroad_1_DB DB1
         #region Crossroad_1_DB DB1
 
-        bool Crossroad1LeftCrosswalkBTN1;
-        bool Crossroad1LeftCrosswalkBTN2;
-        bool Crossroad1TopCrosswalkBTN1;
-        bool Crossroad1TopCrosswalkBTN2;
+        public bool Crossroad1LeftCrosswalkBTN1;
+        public bool Crossroad1LeftCrosswalkBTN2;
+        public bool Crossroad1TopCrosswalkBTN1;
+        public bool Crossroad1TopCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_2_DB DB19
         #region Crossroad_2_DB DB19
 
-        bool Crossroad2LeftCrosswalkBTN1;
-        bool Crossroad2LeftCrosswalkBTN2;
-        bool Crossroad2RightCrosswalkBTN1;
-        bool Crossroad2RightCrosswalkBTN2;
+        public bool Crossroad2LeftCrosswalkBTN1;
+        public bool Crossroad2LeftCrosswalkBTN2;
+        public bool Crossroad2RightCrosswalkBTN1;
+        public bool Crossroad2RightCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_LeftT_DB DB20
         #region Crossroad_LeftT_DB DB20
 
-        bool CrossroadLeftTLeftCrosswalkBTN1;
-        bool CrossroadLeftTLeftCrosswalkBTN2;
+        public bool CrossroadLeftTLeftCrosswalkBTN1;
+        public bool CrossroadLeftTLeftCrosswalkBTN2;
 
         #endregion
 
         //Crossroad_RightT_DB DB21
         #region Crossroad_RightT_DB DB21
 
-        bool CrossroadRightTTopCrosswalkBTN1;
-        bool CrossroadRightTTopCrosswalkBTN2;
+        public bool CrossroadRightTTopCrosswalkBTN1;
+        public bool CrossroadRightTTopCrosswalkBTN2;
 
         #endregion
 
@@ -147,36 +147,36 @@ namespace Bc_prace
         //Crossroad_DB DB14
         #region Crossroad_DB DB14
 
-        int TrafficLightsSQ;
+        public int TrafficLightsSQ;
 
         #endregion
 
         //Crossroad_1_DB DB1
         #region Crossroad_1_DB DB1
 
-        int Crossroad1CrosswalkSQ;
+        public int Crossroad1CrosswalkSQ;
 
-        bool Crossroad1TopRED;
-        bool Crossroad1TopGREEN;
-        bool Crossroad1TopYELLOW;
-        bool Crossroad1LeftRED;
-        bool Crossroad1LeftGREEN;
-        bool Crossroad1LeftYELLOW;
-        bool Crossroad1RightRED;
-        bool Crossroad1RightGREEN;
-        bool Crossroad1RightYELLOW;
-        bool Crossroad1BottomRED;
-        bool Crossroad1BottomGREEN;
-        bool Crossroad1BottomYELLOW;
+        public bool Crossroad1TopRED;
+        public bool Crossroad1TopGREEN;
+        public bool Crossroad1TopYELLOW;
+        public bool Crossroad1LeftRED;
+        public bool Crossroad1LeftGREEN;
+        public bool Crossroad1LeftYELLOW;
+        public bool Crossroad1RightRED;
+        public bool Crossroad1RightGREEN;
+        public bool Crossroad1RightYELLOW;
+        public bool Crossroad1BottomRED;
+        public bool Crossroad1BottomGREEN;
+        public bool Crossroad1BottomYELLOW;
 
-        bool Crossroad1TopCrosswalkRED1;
-        bool Crossroad1TopCrosswalkRED2;
-        bool Crossroad1TopCrosswalkGREEN1;
-        bool Crossroad1TopCrosswalkGREEN2;
-        bool Crossroad1LeftCrosswalkRED1;
-        bool Crossroad1LeftCrosswalkRED2;
-        bool Crossroad1LeftCrosswalkGREEN1;
-        bool Crossroad1LeftCrosswalkGREEN2;
+        public bool Crossroad1TopCrosswalkRED1;
+        public bool Crossroad1TopCrosswalkRED2;
+        public bool Crossroad1TopCrosswalkGREEN1;
+        public bool Crossroad1TopCrosswalkGREEN2;
+        public bool Crossroad1LeftCrosswalkRED1;
+        public bool Crossroad1LeftCrosswalkRED2;
+        public bool Crossroad1LeftCrosswalkGREEN1;
+        public bool Crossroad1LeftCrosswalkGREEN2;
 
         #endregion
 
@@ -185,71 +185,71 @@ namespace Bc_prace
 
         int Crossroad2CrosswalkSQ;
 
-        bool Crossroad2TopRED;
-        bool Crossroad2TopGREEN;
-        bool Crossroad2TopYELLOW;
-        bool Crossroad2LeftRED;
-        bool Crossroad2LeftGREEN;
-        bool Crossroad2LeftYELLOW;
-        bool Crossroad2RightRED;
-        bool Crossroad2RightGREEN;
-        bool Crossroad2RightYELLOW;
-        bool Crossroad2BottomRED;
-        bool Crossroad2BottomGREEN;
-        bool Crossroad2BottomYELLOW;
+        public bool Crossroad2TopRED;
+        public bool Crossroad2TopGREEN;
+        public bool Crossroad2TopYELLOW;
+        public bool Crossroad2LeftRED;
+        public bool Crossroad2LeftGREEN;
+        public bool Crossroad2LeftYELLOW;
+        public bool Crossroad2RightRED;
+        public bool Crossroad2RightGREEN;
+        public bool Crossroad2RightYELLOW;
+        public bool Crossroad2BottomRED;
+        public bool Crossroad2BottomGREEN;
+        public bool Crossroad2BottomYELLOW;
 
-        bool Crossroad2LeftCrosswalkRED1;
-        bool Crossroad2LeftCrosswalkRED2;
-        bool Crossroad2LeftCrosswalkGREEN1;
-        bool Crossroad2LeftCrosswalkGREEN2;
-        bool Crossroad2RightCrosswalkRED1;
-        bool Crossroad2RightCrosswalkRED2;
-        bool Crossroad2RightCrosswalkGREEN1;
-        bool Crossroad2RightCrosswalkGREEN2;
+        public bool Crossroad2LeftCrosswalkRED1;
+        public bool Crossroad2LeftCrosswalkRED2;
+        public bool Crossroad2LeftCrosswalkGREEN1;
+        public bool Crossroad2LeftCrosswalkGREEN2;
+        public bool Crossroad2RightCrosswalkRED1;
+        public bool Crossroad2RightCrosswalkRED2;
+        public bool Crossroad2RightCrosswalkGREEN1;
+        public bool Crossroad2RightCrosswalkGREEN2;
 
         #endregion
 
         //Crossroad_LeftT_DB DB20
         #region Crossroad_LeftT_DB DB20
 
-        int CrossroadLeftTCrosswalkSQ;
+        public int CrossroadLeftTCrosswalkSQ;
 
-        bool CrossroadLeftTTopRED;
-        bool CrossroadLeftTTopGREEN;
-        bool CrossroadLeftTTopYELLOW;
-        bool CrossroadLeftTLeftRED;
-        bool CrossroadLeftTLeftGREEN;
-        bool CrossroadLeftTLeftYELLOW;
-        bool CrossroadLeftTRightRED;
-        bool CrossroadLeftTRightGREEN;
-        bool CrossroadLeftTRightYELLOW;
+        public bool CrossroadLeftTTopRED;
+        public bool CrossroadLeftTTopGREEN;
+        public bool CrossroadLeftTTopYELLOW;
+        public bool CrossroadLeftTLeftRED;
+        public bool CrossroadLeftTLeftGREEN;
+        public bool CrossroadLeftTLeftYELLOW;
+        public bool CrossroadLeftTRightRED;
+        public bool CrossroadLeftTRightGREEN;
+        public bool CrossroadLeftTRightYELLOW;
 
-        bool CrossroadLeftTLeftCrosswalkRED1;
-        bool CrossroadLeftTLeftCrosswalkRED2;
-        bool CrossroadLeftTLeftCrosswalkGREEN1;
-        bool CrossroadLeftTLeftCrosswalkGREEN2;
+        public bool CrossroadLeftTLeftCrosswalkRED1;
+        public bool CrossroadLeftTLeftCrosswalkRED2;
+        public bool CrossroadLeftTLeftCrosswalkGREEN1;
+        public bool CrossroadLeftTLeftCrosswalkGREEN2;
 
         #endregion
 
         //Crossroad_RightT_DB DB21
         #region Crossroad_RightT_DB DB21
 
-        int CrossroadRightTCrosswalkSQ;
+        public int CrossroadRightTCrosswalkSQ;
 
-        bool CrossroadRightTTopRED;
-        bool CrossroadRightTTopGREEN;
-        bool CrossroadRightTTopYELLOW;
-        bool CrossroadRightTLeftRED;
-        bool CrossroadRightTLeftGREEN;
-        bool CrossroadRightTLeftYELLOW;
-        bool CrossroadRightTRightRED;
-        bool CrossroadRightTRightGREEN;
-        bool CrossroadRightTRightYELLOW;
+        public bool CrossroadRightTTopRED;
+        public bool CrossroadRightTTopGREEN;
+        public bool CrossroadRightTTopYELLOW;
+        public bool CrossroadRightTLeftRED;
+        public bool CrossroadRightTLeftGREEN;
+        public bool CrossroadRightTLeftYELLOW;
+        public bool CrossroadRightTRightRED;
+        public bool CrossroadRightTRightGREEN;
+        public bool CrossroadRightTRightYELLOW;
 
-        bool CrossroadRightTTopCrosswalkRED1;
-        bool CrossroadRightTTopCrosswalkRED2;
-        bool CrossroadRightTTopCrosswalkGREEN1;
-        bool CrossroadRightTTopCrosswalkGREEN2;
+        public bool CrossroadRightTTopCrosswalkRED1;
+        public bool CrossroadRightTTopCrosswalkRED2;
+        public bool CrossroadRightTTopCrosswalkGREEN1;
+        public bool CrossroadRightTTopCrosswalkGREEN2;
 
         #endregion
 
@@ -1387,8 +1387,9 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-
+            
             //Action on variable change
+            /*
             #region Action on variable change
             
             if (rBtnCrossroadBasic.Checked)
@@ -1537,6 +1538,8 @@ namespace Bc_prace
             }
 
             #endregion
+            */
+
         }
 
         #endregion
