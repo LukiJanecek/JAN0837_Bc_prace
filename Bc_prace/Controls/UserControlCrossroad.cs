@@ -27,58 +27,58 @@ namespace Bc_prace.Controls
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
-        private byte[] read_buffer_DB14_Input;
-        public byte[] previous_buffer_DB14_Input;
-        public byte[] PreviousBufferHash_DB14_Input;
-        private byte[] send_buffer_DB14_Input;
+        private byte[] read_buffer_DB14;
+        public byte[] previous_buffer_DB14;
+        public byte[] PreviousBufferHash_DB14;
+        private byte[] send_buffer_DB14;
         //second struct -> Output -> 1 variable -> size 2.0
-        private byte[] read_buffer_DB14_Output;
-        private byte[] send_buffer_DB14_Output;
+        //private byte[] read_buffer_DB14_Output;
+        //private byte[] send_buffer_DB14_Output;
         //other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB1_Input;
-        public byte[] previous_buffer_DB1_Input;
-        public byte[] PreviousBufferHash_DB1_Input;
-        private byte[] send_buffer_DB1_Input;
+        private byte[] read_buffer_DB1;
+        public byte[] previous_buffer_DB1;
+        public byte[] PreviousBufferHash_DB1;
+        private byte[] send_buffer_DB1;
         //second struct -> Output -> 21 variables -> size 6.3 
-        private byte[] read_buffer_DB1_Output;
-        private byte[] send_buffer_DB1_Output;
+        //private byte[] read_buffer_DB1_Output;
+        //private byte[] send_buffer_DB1_Output;
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
-        private byte[] read_buffer_DB19_Input;
-        public byte[] previous_buffer_DB19_Input;
-        public byte[] PreviousBufferHash_DB19_Input;
-        private byte[] send_buffer_DB19_Input;
+        private byte[] read_buffer_DB19;
+        public byte[] previous_buffer_DB19;
+        public byte[] PreviousBufferHash_DB19;
+        private byte[] send_buffer_DB19;
         //second struct -> Output -> 21 variables -> size 6.3  
-        private byte[] read_buffer_DB19_Output;
-        private byte[] send_buffer_DB19_Output;
+        //private byte[] read_buffer_DB19_Output;
+        //private byte[] send_buffer_DB19_Output;
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB20_Input;
-        public byte[] previous_buffer_DB20_Input;
-        public byte[] PreviousBufferHash_DB20_Input;
-        private byte[] send_buffer_DB20_Input;
+        private byte[] read_buffer_DB20;
+        public byte[] previous_buffer_DB20;
+        public byte[] PreviousBufferHash_DB20;
+        private byte[] send_buffer_DB20;
         //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB20_Output;
-        private byte[] send_buffer_DB20_Output;
+        //private byte[] read_buffer_DB20_Output;
+        //private byte[] send_buffer_DB20_Output;
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
-        private byte[] read_buffer_DB21_Input;
-        public byte[] previous_buffer_DB21_Input;
-        public byte[] PreviousBufferHash_DB21_Input;
-        private byte[] send_buffer_DB21_Input;
+        private byte[] read_buffer_DB21;
+        public byte[] previous_buffer_DB21;
+        public byte[] PreviousBufferHash_DB21;
+        private byte[] send_buffer_DB21;
         //second struct -> Output -> 14 variables -> size 5.4
-        private byte[] read_buffer_DB21_Output;
-        private byte[] send_buffer_DB21_Output;
+        //private byte[] read_buffer_DB21_Output;
+        //private byte[] send_buffer_DB21_Output;
 
         //Input variables
         #region Input variables 
@@ -307,30 +307,30 @@ namespace Bc_prace.Controls
 
             //buffers 
             //DB14 => Crossroad_DB
-            read_buffer_DB14_Input = program3FormInstance.read_buffer_DB14_Input;
-            send_buffer_DB14_Input = program3FormInstance.send_buffer_DB14_Input;
-            read_buffer_DB14_Output = program3FormInstance.read_buffer_DB14_Output;
-            send_buffer_DB14_Output = program3FormInstance.send_buffer_DB14_Output;
+            read_buffer_DB14 = program3FormInstance.read_buffer_DB14;
+            send_buffer_DB14 = program3FormInstance.send_buffer_DB14;
+            //read_buffer_DB14_Output = program3FormInstance.read_buffer_DB14_Output;
+            //send_buffer_DB14_Output = program3FormInstance.send_buffer_DB14_Output;
             //DB1 => Crossroad_1_DB
-            read_buffer_DB1_Input = program3FormInstance.read_buffer_DB1_Input;
-            send_buffer_DB1_Input = program3FormInstance.send_buffer_DB1_Input;
-            read_buffer_DB1_Output = program3FormInstance.read_buffer_DB1_Output;
-            send_buffer_DB1_Output = program3FormInstance.send_buffer_DB1_Output;
+            read_buffer_DB1 = program3FormInstance.read_buffer_DB1;
+            send_buffer_DB1 = program3FormInstance.send_buffer_DB1;
+            //read_buffer_DB1_Output = program3FormInstance.read_buffer_DB1_Output;
+            //send_buffer_DB1_Output = program3FormInstance.send_buffer_DB1_Output;
             //DB19 => Crossroad_2_DB
-            read_buffer_DB19_Input = program3FormInstance.read_buffer_DB19_Input;
-            send_buffer_DB19_Input = program3FormInstance.send_buffer_DB19_Input;
-            read_buffer_DB19_Output = program3FormInstance.read_buffer_DB19_Output;
-            send_buffer_DB19_Output = program3FormInstance.send_buffer_DB19_Output;
+            read_buffer_DB19 = program3FormInstance.read_buffer_DB19;
+            send_buffer_DB19 = program3FormInstance.send_buffer_DB19;
+            //read_buffer_DB19_Output = program3FormInstance.read_buffer_DB19_Output;
+            //send_buffer_DB19_Output = program3FormInstance.send_buffer_DB19_Output;
             //DB20 => Crossroad_LeftT_DB
-            read_buffer_DB20_Input = program3FormInstance.read_buffer_DB20_Input;
-            send_buffer_DB20_Input = program3FormInstance.send_buffer_DB20_Input;
-            read_buffer_DB20_Output = program3FormInstance.read_buffer_DB20_Output;
-            send_buffer_DB20_Output = program3FormInstance.send_buffer_DB20_Output;
+            read_buffer_DB20 = program3FormInstance.read_buffer_DB20;
+            send_buffer_DB20 = program3FormInstance.send_buffer_DB20;
+            //read_buffer_DB20_Output = program3FormInstance.read_buffer_DB20_Output;
+            //send_buffer_DB20_Output = program3FormInstance.send_buffer_DB20_Output;
             //DB21 => Crossroad_RightT_DB
-            read_buffer_DB21_Input = program3FormInstance.read_buffer_DB21_Input;
-            send_buffer_DB21_Input = program3FormInstance.send_buffer_DB21_Input;
-            read_buffer_DB21_Output = program3FormInstance.read_buffer_DB21_Output;
-            send_buffer_DB21_Output = program3FormInstance.send_buffer_DB21_Output;
+            read_buffer_DB21 = program3FormInstance.read_buffer_DB21;
+            send_buffer_DB21 = program3FormInstance.send_buffer_DB21;
+            //read_buffer_DB21_Output = program3FormInstance.read_buffer_DB21_Output;
+            //send_buffer_DB21_Output = program3FormInstance.send_buffer_DB21_Output;
 
         }
 

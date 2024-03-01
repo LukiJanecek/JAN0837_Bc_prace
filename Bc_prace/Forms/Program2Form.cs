@@ -97,10 +97,10 @@ namespace Bc_prace
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB5 => CarWash_DB
-            read_buffer_DB5_Input = chooseOptionFormInstance.read_buffer_DB5_Input;
-            send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5_Input;
-            read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
-            send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
+            read_buffer_DB5_Input = chooseOptionFormInstance.read_buffer_DB5;
+            send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5;
+            //read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
+            //send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
 
             if (client.Connected)
             {

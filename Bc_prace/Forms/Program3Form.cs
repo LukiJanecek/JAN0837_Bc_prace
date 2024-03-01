@@ -36,10 +36,10 @@ namespace Bc_prace
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
         //first struct -> Input -> 5 variables -> size 0.4
-        public byte[] read_buffer_DB14_Input;
-        public byte[] previous_buffer_DB14_Input;
-        public byte[] PreviousBufferHash_DB14_Input;
-        public byte[] send_buffer_DB14_Input;
+        public byte[] read_buffer_DB14;
+        public byte[] previous_buffer_DB14;
+        public byte[] PreviousBufferHash_DB14;
+        public byte[] send_buffer_DB14;
         //second struct -> Output -> 1 variable -> size 2.0
         public byte[] read_buffer_DB14_Output;
         public byte[] send_buffer_DB14_Output;
@@ -48,46 +48,46 @@ namespace Bc_prace
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
         //first struct -> Input -> 4 variables -> size 0.3
-        public byte[] read_buffer_DB1_Input;
-        public byte[] previous_buffer_DB1_Input;
-        public byte[] PreviousBufferHash_DB1_Input;
-        public byte[] send_buffer_DB1_Input;
+        public byte[] read_buffer_DB1;
+        public byte[] previous_buffer_DB1;
+        public byte[] PreviousBufferHash_DB1;
+        public byte[] send_buffer_DB1;
         //second struct -> Output -> 21 variables -> size 6.3 
-        public byte[] read_buffer_DB1_Output;
-        public byte[] send_buffer_DB1_Output;
+        //public byte[] read_buffer_DB1_Output;
+        //public byte[] send_buffer_DB1_Output;
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
         //first struct -> Input -> 4 variables -> size 0.3
-        public byte[] read_buffer_DB19_Input;
-        public byte[] previous_buffer_DB19_Input;
-        public byte[] PreviousBufferHash_DB19_Input;
-        public byte[] send_buffer_DB19_Input;
+        public byte[] read_buffer_DB19;
+        public byte[] previous_buffer_DB19;
+        public byte[] PreviousBufferHash_DB19;
+        public byte[] send_buffer_DB19;
         //second struct -> Output -> 21 variables -> size 6.3  
-        public byte[] read_buffer_DB19_Output;
-        public byte[] send_buffer_DB19_Output;
+        //public byte[] read_buffer_DB19_Output;
+        //public byte[] send_buffer_DB19_Output;
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
         //first struct -> Input -> 2 variables -> size 0.1
-        public byte[] read_buffer_DB20_Input;
-        public byte[] previous_buffer_DB20_Input;
-        public byte[] PreviousBufferHash_DB20_Input;
-        public byte[] send_buffer_DB20_Input;
+        public byte[] read_buffer_DB20;
+        public byte[] previous_buffer_DB20t;
+        public byte[] PreviousBufferHash_DB20;
+        public byte[] send_buffer_DB20;
         //second struct -> Output -> 14 variables -> size 5.4
-        public byte[] read_buffer_DB20_Output;
-        public byte[] send_buffer_DB20_Output;
+        //public byte[] read_buffer_DB20_Output;
+        //public byte[] send_buffer_DB20_Output;
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
         //first struct -> Input -> 2 variables -> size 0.1
-        public byte[] read_buffer_DB21_Input;
-        public byte[] previous_buffer_DB21_Input;
-        public byte[] PreviousBufferHash_DB21_Input;
-        public byte[] send_buffer_DB21_Input;
+        public byte[] read_buffer_DB21;
+        public byte[] previous_buffer_DB21;
+        public byte[] PreviousBufferHash_DB21;
+        public byte[] send_buffer_DB21;
         //second struct -> Output -> 14 variables -> size 5.4
-        public byte[] read_buffer_DB21_Output;
-        public byte[] send_buffer_DB21_Output;
+        //public byte[] read_buffer_DB21_Output;
+        //public byte[] send_buffer_DB21_Output;
 
         //Input variables
         #region Input variables 
@@ -273,30 +273,30 @@ namespace Bc_prace
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB14 => Crossroad_DB
-            read_buffer_DB14_Input = chooseOptionFormInstance.read_buffer_DB14_Input;
-            send_buffer_DB14_Input = chooseOptionFormInstance.send_buffer_DB14_Input;
-            read_buffer_DB14_Output = chooseOptionFormInstance.read_buffer_DB14_Output;
-            send_buffer_DB14_Output = chooseOptionFormInstance.send_buffer_DB14_Output;
+            read_buffer_DB14 = chooseOptionFormInstance.read_buffer_DB14;
+            send_buffer_DB14 = chooseOptionFormInstance.send_buffer_DB14;
+            //read_buffer_DB14_Output = chooseOptionFormInstance.read_buffer_DB14_Output;
+            //send_buffer_DB14_Output = chooseOptionFormInstance.send_buffer_DB14_Output;
             //DB1 => Crossroad_1_DB
-            read_buffer_DB1_Input = chooseOptionFormInstance.read_buffer_DB1_Input;
-            send_buffer_DB1_Input = chooseOptionFormInstance.send_buffer_DB1_Input;
-            read_buffer_DB1_Output = chooseOptionFormInstance.read_buffer_DB1_Output;
-            send_buffer_DB1_Output = chooseOptionFormInstance.send_buffer_DB1_Output;
+            read_buffer_DB1 = chooseOptionFormInstance.read_buffer_DB1;
+            send_buffer_DB1 = chooseOptionFormInstance.send_buffer_DB1;
+            //read_buffer_DB1_Output = chooseOptionFormInstance.read_buffer_DB1_Output;
+            //send_buffer_DB1_Output = chooseOptionFormInstance.send_buffer_DB1_Output;
             //DB19 => Crossroad_2_DB
-            read_buffer_DB19_Input = chooseOptionFormInstance.read_buffer_DB19_Input;
-            send_buffer_DB19_Input = chooseOptionFormInstance.send_buffer_DB19_Input;
-            read_buffer_DB19_Output = chooseOptionFormInstance.read_buffer_DB19_Output;
-            send_buffer_DB19_Output = chooseOptionFormInstance.send_buffer_DB19_Output;
+            read_buffer_DB19 = chooseOptionFormInstance.read_buffer_DB19;
+            send_buffer_DB19 = chooseOptionFormInstance.send_buffer_DB19;
+            //read_buffer_DB19_Output = chooseOptionFormInstance.read_buffer_DB19_Output;
+            //send_buffer_DB19_Output = chooseOptionFormInstance.send_buffer_DB19_Output;
             //DB20 => Crossroad_LeftT_DB
-            read_buffer_DB20_Input = chooseOptionFormInstance.read_buffer_DB20_Input;
-            send_buffer_DB20_Input = chooseOptionFormInstance.send_buffer_DB20_Input;
-            read_buffer_DB20_Output = chooseOptionFormInstance.read_buffer_DB20_Output;
-            send_buffer_DB20_Output = chooseOptionFormInstance.send_buffer_DB20_Output;
+            read_buffer_DB20 = chooseOptionFormInstance.read_buffer_DB20;
+            send_buffer_DB20 = chooseOptionFormInstance.send_buffer_DB20;
+            //read_buffer_DB20_Output = chooseOptionFormInstance.read_buffer_DB20_Output;
+            //send_buffer_DB20_Output = chooseOptionFormInstance.send_buffer_DB20_Output;
             //DB21 => Crossroad_RightT_DB
-            read_buffer_DB21_Input = chooseOptionFormInstance.read_buffer_DB21_Input;
-            send_buffer_DB21_Input = chooseOptionFormInstance.send_buffer_DB21_Input;
-            read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
-            send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
+            read_buffer_DB21 = chooseOptionFormInstance.read_buffer_DB21;
+            send_buffer_DB21 = chooseOptionFormInstance.send_buffer_DB21;
+            //read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
+            //send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
 
             if (client.Connected)
             {
@@ -1389,7 +1389,6 @@ namespace Bc_prace
             }
 
             //Action on variable change
-            /*
             #region Action on variable change
             
             if (rBtnCrossroadBasic.Checked)
@@ -1538,7 +1537,6 @@ namespace Bc_prace
             }
 
             #endregion
-            */
 
         }
 
@@ -1635,10 +1633,10 @@ namespace Bc_prace
                 {
                     case "btnCrossroad1TopCrosswalkLEFT":
                         Crossroad1TopCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB1_Input, 0, 0, Crossroad1TopCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB1, 0, 0, Crossroad1TopCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB1_Crossroad1TopCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1_Input.Length, send_buffer_DB1_Input);
+                        int writeResultDB1_Crossroad1TopCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
                         if (writeResultDB1_Crossroad1TopCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1660,10 +1658,10 @@ namespace Bc_prace
 
                     case "btnCrossroad1TopCrosswalkRIGHT":
                         Crossroad1TopCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB1_Input, 0, 1, Crossroad1TopCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB1, 0, 1, Crossroad1TopCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB1_Crossroad1TopCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1_Input.Length, send_buffer_DB1_Input);
+                        int writeResultDB1_Crossroad1TopCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
                         if (writeResultDB1_Crossroad1TopCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1685,10 +1683,10 @@ namespace Bc_prace
 
                     case "btnCrossroad1LeftCrosswalkTOP":
                         Crossroad1LeftCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB1_Input, 0, 2, Crossroad1LeftCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB1, 0, 2, Crossroad1LeftCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB1_Crossroad1LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1_Input.Length, send_buffer_DB1_Input);
+                        int writeResultDB1_Crossroad1LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
                         if (writeResultDB1_Crossroad1LeftCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1710,10 +1708,10 @@ namespace Bc_prace
 
                     case "btnCrossroad1LeftCrosswalkBOTTOM":
                         Crossroad1LeftCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB1_Input, 0, 3, Crossroad1LeftCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB1, 0, 3, Crossroad1LeftCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB1_Crossroad1LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1_Input.Length, send_buffer_DB1_Input);
+                        int writeResultDB1_Crossroad1LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
                         if (writeResultDB1_Crossroad1LeftCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1735,10 +1733,10 @@ namespace Bc_prace
 
                     case "btnCrossroad2LeftCrosswalkTOP":
                         Crossroad2LeftCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB19_Input, 0, 0, Crossroad2LeftCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB19, 0, 0, Crossroad2LeftCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB19_Crossroad2LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19_Input.Length, send_buffer_DB19_Input);
+                        int writeResultDB19_Crossroad2LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
                         if (writeResultDB19_Crossroad2LeftCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1760,10 +1758,10 @@ namespace Bc_prace
 
                     case "btnCrossroad2LeftCrosswalkBOTTOM":
                         Crossroad2LeftCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB19_Input, 0, 1, Crossroad2LeftCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB19, 0, 1, Crossroad2LeftCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB19_Crossroad2LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19_Input.Length, send_buffer_DB19_Input);
+                        int writeResultDB19_Crossroad2LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
                         if (writeResultDB19_Crossroad2LeftCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1785,10 +1783,10 @@ namespace Bc_prace
 
                     case "btnCrossroad2RightCrosswalkTOP":
                         Crossroad2RightCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB19_Input, 0, 2, Crossroad2RightCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB19, 0, 2, Crossroad2RightCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB19_Crossroad2RightCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19_Input.Length, send_buffer_DB19_Input);
+                        int writeResultDB19_Crossroad2RightCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
                         if (writeResultDB19_Crossroad2RightCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1810,10 +1808,10 @@ namespace Bc_prace
 
                     case "btnCrossroad2RightCrosswalkBOTTOM":
                         Crossroad2RightCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB19_Input, 0, 3, Crossroad2RightCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB19, 0, 3, Crossroad2RightCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB19_Crossroad2RightCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19_Input.Length, send_buffer_DB19_Input);
+                        int writeResultDB19_Crossroad2RightCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
                         if (writeResultDB19_Crossroad2RightCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1835,10 +1833,10 @@ namespace Bc_prace
 
                     case "btnLeftTLeftCrosswalkTOP":
                         CrossroadLeftTLeftCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB20_Input, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB20, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB20_CrossroadLeftTLeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20_Input.Length, send_buffer_DB20_Input);
+                        int writeResultDB20_CrossroadLeftTLeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20.Length, send_buffer_DB20);
                         if (writeResultDB20_CrossroadLeftTLeftCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1860,10 +1858,10 @@ namespace Bc_prace
 
                     case "btnLeftTLeftCrosswalkBOTTOM":
                         CrossroadLeftTLeftCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB20_Input, 0, 1, Crossroad2RightCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB20, 0, 1, Crossroad2RightCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB20_CrossroadLeftTLeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20_Input.Length, send_buffer_DB20_Input);
+                        int writeResultDB20_CrossroadLeftTLeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20.Length, send_buffer_DB20);
                         if (writeResultDB20_CrossroadLeftTLeftCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1885,10 +1883,10 @@ namespace Bc_prace
 
                     case "btnRightTTopCrosswalkLEFT":
                         CrossroadRightTTopCrosswalkBTN1 = true;
-                        S7.SetBitAt(send_buffer_DB21_Input, 0, 0, CrossroadRightTTopCrosswalkBTN1);
+                        S7.SetBitAt(send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN1);
 
                         //write to PLC
-                        int writeResultDB21_CrossroadRightTTopCrosswalkBTN1 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21_Input.Length, send_buffer_DB21_Input);
+                        int writeResultDB21_CrossroadRightTTopCrosswalkBTN1 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21.Length, send_buffer_DB21);
                         if (writeResultDB21_CrossroadRightTTopCrosswalkBTN1 != 0)
                         {
                             //write error
@@ -1910,10 +1908,10 @@ namespace Bc_prace
 
                     case "btnRightTTopCrosswalkRIGHT":
                         CrossroadRightTTopCrosswalkBTN2 = true;
-                        S7.SetBitAt(send_buffer_DB21_Input, 0, 0, CrossroadRightTTopCrosswalkBTN2);
+                        S7.SetBitAt(send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN2);
 
                         //write to PLC
-                        int writeResultDB21_CrossroadRightTTopCrosswalkBTN2 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21_Input.Length, send_buffer_DB21_Input);
+                        int writeResultDB21_CrossroadRightTTopCrosswalkBTN2 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21.Length, send_buffer_DB21);
                         if (writeResultDB21_CrossroadRightTTopCrosswalkBTN2 != 0)
                         {
                             //write error
@@ -1967,10 +1965,10 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             CrossroadEmergencySTOP = true;
-            S7.SetBitAt(send_buffer_DB14_Input, 0, 3, CrossroadEmergencySTOP);
+            S7.SetBitAt(send_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
 
             //write to PLC
-            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14_Input.Length, send_buffer_DB14_Input);
+            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
             if (writeResultDB14_Input != 0)
             {
                 //write error
@@ -1997,10 +1995,10 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             CrossroadErrorSystem = true;
-            S7.SetBitAt(send_buffer_DB14_Input, 0, 4, CrossroadErrorSystem);
+            S7.SetBitAt(send_buffer_DB14, 0, 4, CrossroadErrorSystem);
 
             //write to PLC
-            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14_Input.Length, send_buffer_DB14_Input);
+            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
             if (writeResultDB14_Input != 0)
             {
                 //write error
