@@ -379,7 +379,6 @@ namespace Bc_prace.Controls
                 picture = 1;
             }
 
-
             pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
             pictureBoxCar.Size = new Size(64, 64); //all pictures are for 64 px 
             Controls.Add(pictureBoxCar);
