@@ -65,7 +65,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB5 = new byte[4]; //3
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
-        public byte[] send_buffer_DB5 = new byte[1024]; //3
+        public byte[] send_buffer_DB5 = new byte[4]; //3
         //second struct -> Output -> 16 variables -> 3.7 size
         //public byte[] read_buffer_DB5_Output = new byte[1024]; //3
         //public byte[] send_buffer_DB5_Output = new byte[1024]; //3
@@ -76,7 +76,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB14 = new byte[4]; //110 
         public byte[] previous_buffer_DB14;
         public byte[] PreviousBufferHash_DB14;
-        public byte[] send_buffer_DB14 = new byte[1024]; //110
+        public byte[] send_buffer_DB14 = new byte[4]; //110
         //second struct -> Output -> 1 variable -> size 2.0
         //public byte[] read_buffer_DB14_Output = new byte[1024]; //110 
         //public byte[] send_buffer_DB14_Output = new byte[1024]; //110
@@ -88,7 +88,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB1 = new byte[7]; //6 
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
-        public byte[] send_buffer_DB1 = new byte[1024]; //6
+        public byte[] send_buffer_DB1 = new byte[7]; //6
         //second struct -> Output -> 21 variables -> size 6.3 
         //public byte[] read_buffer_DB1_Output = new byte[1024]; //6 
         //public byte[] send_buffer_DB1_Output = new byte[1024]; //6
@@ -99,7 +99,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB19 = new byte[7]; //6 
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
-        public byte[] send_buffer_DB19 = new byte[1024]; //6
+        public byte[] send_buffer_DB19 = new byte[7]; //6
         //second struct -> Output -> 21 variables -> size 6.3  
         //public byte[] read_buffer_DB19_Output = new byte[1024]; //6 
         //public byte[] send_buffer_DB19_Output = new byte[1024]; //6
@@ -110,7 +110,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB20 = new byte[6]; //5
         public byte[] previous_buffer_DB20;
         public byte[] PreviousBufferHash_DB20;
-        public byte[] send_buffer_DB20 = new byte[1024]; //5
+        public byte[] send_buffer_DB20 = new byte[6]; //5
         //second struct -> Output -> 14 variables -> size 5.4
         //public byte[] read_buffer_DB20_Output = new byte[1024]; //5
         //public byte[] send_buffer_DB20_Output = new byte[1024]; //5
@@ -121,7 +121,7 @@ namespace Bc_prace
         public byte[] read_buffer_DB21 = new byte[6]; //5
         public byte[] previous_buffer_DB21;
         public byte[] PreviousBufferHash_DB21;
-        public byte[] send_buffer_DB21 = new byte[1024]; //5
+        public byte[] send_buffer_DB21 = new byte[6]; //5
         //second struct -> Output -> 14 variables -> size 5.4
         //public byte[] read_buffer_DB21_Output = new byte[1024]; //5
         //public byte[] send_buffer_DB21_Output = new byte[1024]; //5
