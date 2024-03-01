@@ -1387,7 +1387,7 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-            
+
             //Action on variable change
             /*
             #region Action on variable change
@@ -2058,7 +2058,7 @@ namespace Bc_prace
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

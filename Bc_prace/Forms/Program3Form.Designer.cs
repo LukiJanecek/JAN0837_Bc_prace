@@ -28,21 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             statusStripCrossroad = new StatusStrip();
             btnEmergency = new Button();
             btnEnd = new Button();
             rBtnCrossroadBasic = new RadioButton();
             panel1 = new Panel();
+            btnTest = new Button();
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
-            userControlCrossroad1 = new Controls.UserControlCrossroad(this);
             panel2 = new Panel();
-            btnTest = new Button();
-            components = new System.ComponentModel.Container();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripCrossroad
@@ -56,7 +54,8 @@
             // 
             // btnEmergency
             // 
-            btnEmergency.Location = new Point(3, 66);
+            btnEmergency.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnEmergency.Location = new Point(5, 2);
             btnEmergency.Margin = new Padding(3, 2, 3, 2);
             btnEmergency.Name = "btnEmergency";
             btnEmergency.Size = new Size(155, 59);
@@ -106,6 +105,16 @@
             panel1.Size = new Size(165, 753);
             panel1.TabIndex = 29;
             // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(34, 391);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(75, 23);
+            btnTest.TabIndex = 35;
+            btnTest.Text = "Test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
             // rBtnCrossroadExtension3
             // 
             rBtnCrossroadExtension3.AutoSize = true;
@@ -145,36 +154,16 @@
             rBtnCrossroadExtension1.UseVisualStyleBackColor = true;
             rBtnCrossroadExtension1.CheckedChanged += rBtnCrossroadExtension1_CheckedChanged;
             // 
-            // userControlCrossroad1
-            // 
-            userControlCrossroad1.Dock = DockStyle.Fill;
-            userControlCrossroad1.Location = new Point(0, 0);
-            userControlCrossroad1.Margin = new Padding(3, 2, 3, 2);
-            userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1499, 753);
-            userControlCrossroad1.TabIndex = 32;
-            // 
             // panel2
             // 
-            panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1499, 753);
             panel2.TabIndex = 33;
             // 
-            // btnTest
+            // Timer_read_actual
             // 
-            btnTest.Location = new Point(34, 391);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(75, 23);
-            btnTest.TabIndex = 35;
-            btnTest.Text = "Test";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
-            //
-            //Timer_read_actual
-            //
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program3Form
@@ -190,7 +179,6 @@
             Load += Program3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
