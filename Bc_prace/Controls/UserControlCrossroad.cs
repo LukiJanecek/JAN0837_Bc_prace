@@ -265,7 +265,7 @@ namespace Bc_prace.Controls
         private Button btnRightTTopCrosswalkLEFT;
         private Button btnRightTTopCrosswalkRIGHT;
 
-        public event EventHandler<string>? ButtonClicked;
+        public event EventHandler<string> ButtonClicked;
 
         //beggining points of drawing
         private float x = 15;
@@ -297,6 +297,8 @@ namespace Bc_prace.Controls
         {
             InitializeComponent();
             InitializeButtons();
+
+            ButtonClicked += (sender, identifier) => {};
 
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
