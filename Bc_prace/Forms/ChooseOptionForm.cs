@@ -1392,6 +1392,8 @@ namespace Bc_prace
                 //set time interval (ms)
                 Timer_read_from_PLC.Interval = 100;
 
+
+                lblChooseSIM.Visible = true;
                 btnProgram1.Visible = true;
                 btnProgram2.Visible = true;
                 btnProgram3.Visible = true;
@@ -1419,6 +1421,7 @@ namespace Bc_prace
 
         private void ChooseOption_Load(object sender, EventArgs e)
         {
+            lblChooseSIM.Visible = false;
             btnProgram1.Visible = false;
             btnProgram2.Visible = false;
             btnProgram3.Visible = false;
