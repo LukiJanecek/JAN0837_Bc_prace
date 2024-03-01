@@ -29,13 +29,13 @@ namespace Bc_prace
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
-        byte[] read_buffer_DB5_Input;
-        public byte[] previous_buffer_DB5_Input;
-        public byte[] PreviousBufferHash_DB5_Input;
-        byte[] send_buffer_DB5_Input;
+        byte[] read_buffer_DB5;
+        public byte[] previous_buffer_DB5;
+        public byte[] PreviousBufferHash_DB;
+        byte[] send_buffer_DB5;
         //second struct -> Output -> 16 variables -> 3.7 size
-        byte[] read_buffer_DB5_Output;
-        byte[] send_buffer_DB5_Output;
+        //byte[] read_buffer_DB5_Output;
+        //byte[] send_buffer_DB5_Output;
 
         //Input variables
         #region Input variables
@@ -88,8 +88,8 @@ namespace Bc_prace
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB5 => CarWash_DB
-            read_buffer_DB5_Input = chooseOptionFormInstance.read_buffer_DB5;
-            send_buffer_DB5_Input = chooseOptionFormInstance.send_buffer_DB5;
+            read_buffer_DB5 = chooseOptionFormInstance.read_buffer_DB5;
+            send_buffer_DB5 = chooseOptionFormInstance.send_buffer_DB5;
             //read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
             //send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
 
@@ -360,10 +360,10 @@ namespace Bc_prace
         private void btnPerfectPolish_Click(object sender, EventArgs e)
         {
             CarWashPerfectPolish = true;
-            S7.SetBitAt(send_buffer_DB5_Input, 0, 6, CarWashPerfectPolish);
+            S7.SetBitAt(send_buffer_DB5, 0, 6, CarWashPerfectPolish);
 
             //write to PLC
-            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
             if (writeResultDB5_Input != 0)
             {
                 //write error
@@ -388,10 +388,10 @@ namespace Bc_prace
         private void btnPerfectWash_Click(object sender, EventArgs e)
         {
             CarWashPerfetWash = true;
-            S7.SetBitAt(send_buffer_DB5_Input, 0, 5, CarWashPerfetWash);
+            S7.SetBitAt(send_buffer_DB5, 0, 5, CarWashPerfetWash);
 
             //write to PLC
-            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5_Input.Length, send_buffer_DB5_Input);
+            int writeResultDB5_Input = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
             if (writeResultDB5_Input != 0)
             {
                 //write error

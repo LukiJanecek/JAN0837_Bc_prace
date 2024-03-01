@@ -36,14 +36,13 @@ namespace Bc_prace
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
-        byte[] read_buffer_DB4_Input;
-        public byte[] previous_buffer_DB4_Input; 
-        public byte[] PreviousBufferHash_DB4_Input;
-        byte[] send_buffer_DB4_Input;
+        byte[] read_buffer_DB4;
+        public byte[] previous_buffer_DB4; 
+        public byte[] PreviousBufferHash_DB4;
+        byte[] send_buffer_DB4;
         //second struct -> Output -> 32 variables -> size 26
-        byte[] read_buffer_DB4_Output;
-        public byte[] PreviousBufferHash_DB4_Output;
-        byte[] send_buffer_DB4_Output;
+        //byte[] read_buffer_DB4_Output;
+        //byte[] send_buffer_DB4_Output;
 
         //Input variables
         #region Input variables 
@@ -116,10 +115,10 @@ namespace Bc_prace
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB4 => Elevator_DB
-            read_buffer_DB4_Input = chooseOptionFormInstance.read_buffer_DB4_Input;
-            send_buffer_DB4_Input = chooseOptionFormInstance.send_buffer_DB4_Input;
-            read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
-            send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
+            read_buffer_DB4 = chooseOptionFormInstance.read_buffer_DB4_Input;
+            send_buffer_DB4 = chooseOptionFormInstance.send_buffer_DB4_Input;
+            //read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
+            //send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
 
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
@@ -942,10 +941,10 @@ namespace Bc_prace
             statusStripElevator.Items.Add(lblStatus);
 
             ElevatorEmergencySTOP = true;
-            S7.SetBitAt(send_buffer_DB4_Input, 1, 4, ElevatorEmergencySTOP);
+            S7.SetBitAt(send_buffer_DB4, 1, 4, ElevatorEmergencySTOP);
 
             //write to PLC
-            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4_Input.Length, send_buffer_DB4_Input);
+            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
             if (writeResultDB4_Input != 0)
             {
                 //write error
@@ -972,10 +971,10 @@ namespace Bc_prace
             statusStripElevator.Items.Add(lblStatus);
 
             ElevatorErrorSystem = true;
-            S7.SetBitAt(send_buffer_DB4_Input, 1, 5, ElevatorErrorSystem);
+            S7.SetBitAt(send_buffer_DB4, 1, 5, ElevatorErrorSystem);
 
             //write to PLC
-            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4_Input.Length, send_buffer_DB4_Input);
+            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
             if (writeResultDB4_Input != 0)
             {
                 //write error

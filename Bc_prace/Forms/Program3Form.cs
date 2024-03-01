@@ -41,8 +41,8 @@ namespace Bc_prace
         public byte[] PreviousBufferHash_DB14;
         public byte[] send_buffer_DB14;
         //second struct -> Output -> 1 variable -> size 2.0
-        public byte[] read_buffer_DB14_Output;
-        public byte[] send_buffer_DB14_Output;
+        //public byte[] read_buffer_DB14_Output;
+        //public byte[] send_buffer_DB14_Output;
         //other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
