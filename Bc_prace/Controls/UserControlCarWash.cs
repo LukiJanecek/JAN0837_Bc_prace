@@ -148,7 +148,7 @@ namespace Bc_prace.Controls
             SolidBrush labelBrush = new SolidBrush(Color.Black);
             
             //car position
-            g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
+            //g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //position line  
             g.DrawLine(BlackPen, x + length * 3, y + length * 2, x + length * 7, y + length * 2);
@@ -163,7 +163,7 @@ namespace Bc_prace.Controls
 
             //Wax
             string labelWax = "Wax";
-            WaxX = x + length * 2 + 20;
+            WaxX = x + length * 6 + 20;
             WaxY = y + length + 10;
             g.DrawString(labelWax, labelFont, labelBrush, WaxX, WaxY);
             g.DrawEllipse(BlackPen, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
@@ -171,21 +171,21 @@ namespace Bc_prace.Controls
             //Water
             string labelWater = "Water";
             WaterX = x + length * 2 + 20;
-            WaterY = y + length + 30;
+            WaterY = y + length + 10;
             g.DrawString(labelWater, labelFont, labelBrush, WaterX, WaterY);
             g.DrawEllipse(BlackPen, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //ActiveFoam
             string labelActiveFoam = "ActiveFoam";
-            ActiveFoamX = x + length * 2 + 20;
-            ActiveFoamY = y + length + 50;
+            ActiveFoamX = x + length * 5 + 20;
+            ActiveFoamY = y + length + 10;
             g.DrawString(labelActiveFoam, labelFont, labelBrush, ActiveFoamX, ActiveFoamY);
             g.DrawEllipse(BlackPen, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //Soap
             string labelSoap = "Soap";
-            SoapX = x + length * 2 + 20;
-            SoapY = y + length + 70;
+            SoapX = x + length * 4 + 20;
+            SoapY = y + length + 10;
             g.DrawString(labelSoap, labelFont, labelBrush, SoapX, SoapY);
             g.DrawEllipse(BlackPen, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
 
@@ -198,8 +198,8 @@ namespace Bc_prace.Controls
 
             //Brushes 
             string labelBrushes = "Brushes";
-            BrushesX = x + length * 3 + 20;
-            BrushesY = y + length + 30;
+            BrushesX = x + length * 7 + 20;
+            BrushesY = y + length + 10;
             g.DrawString(labelBrushes, labelFont, labelBrush, BrushesX, BrushesY);
             g.DrawEllipse(BlackPen, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
 
