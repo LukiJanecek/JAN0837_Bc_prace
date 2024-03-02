@@ -260,36 +260,48 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void WaterSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void WaxSignalizationON()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void WaxSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void SoapSignalizationON()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void SoapSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
 
         public void ActiveFoamSignalizationON()
@@ -297,12 +309,16 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void ActiveFoamSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
 
         public void BrushesSignalizationON()
@@ -310,12 +326,16 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
         public void BrushesSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
 
         public void DryingSignalizationON()
@@ -323,12 +343,16 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
+            
+            this.Refresh();
         }
         public void DryingSignalizationOFF()
         {
             var g = this.CreateGraphics();
 
             g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
         }
 
         #endregion
