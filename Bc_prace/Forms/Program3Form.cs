@@ -13,6 +13,7 @@ using Bc_prace.Settings;
 using Sharp7;
 using static System.Windows.Forms.Design.AxImporter;
 using System.Security.Cryptography;
+using Newtonsoft.Json.Bson;
 
 namespace Bc_prace
 {
@@ -258,6 +259,7 @@ namespace Bc_prace
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
+            InitializeComponents();
 
             //Adding UserControlCrossroad
             userControlCrossroad = new UserControlCrossroad(this);
@@ -305,6 +307,12 @@ namespace Bc_prace
                 //set time interval (ms)
                 Timer_read_actual.Interval = 100;
             }
+        }
+
+        private void InitializeComponents()
+        {
+            UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
+            Controls.Add(crossroadUserControl);
         }
 
         //Tia connection
