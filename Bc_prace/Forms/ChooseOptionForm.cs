@@ -1294,7 +1294,7 @@ namespace Bc_prace
                 Program2.Show();
                 program2Opened = true;
 
-                Program2.FormClosed += (sender, e) => { program1Opened = false; };
+                Program2.FormClosed += (sender, e) => { program2Opened = false; };
             }
             else
             {
@@ -1347,7 +1347,7 @@ namespace Bc_prace
                 Program3.Show();
                 program3Opened = true;
 
-                Program3.FormClosed += (sender, e) => { program1Opened = false; };
+                Program3.FormClosed += (sender, e) => { program3Opened = false; };
             }
             else
             {

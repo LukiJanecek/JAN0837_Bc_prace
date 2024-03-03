@@ -248,22 +248,27 @@ namespace Bc_prace.Controls
 
         //Variables
         #region Variables
+
+        //MessageBox control
+        private bool errorMessageBoxShown;
+
+        //Button 
         //Crossroad1
-        private Button btnCrossroad1TopCrosswalkLEFT;
-        private Button btnCrossroad1TopCrosswalkRIGHT;
-        private Button btnCrossroad1LeftCrosswalkTOP;
-        private Button btnCrossroad1LeftCrosswalkBOTTOM;
+        private Button btnCrossroad1TopCrosswalkLEFT = new Button();
+        private Button btnCrossroad1TopCrosswalkRIGHT = new Button();
+        private Button btnCrossroad1LeftCrosswalkTOP = new Button();
+        private Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
         //Crossroad2
-        private Button btnCrossroad2LeftCrosswalkTOP;
-        private Button btnCrossroad2LeftCrosswalkBOTTOM;
-        private Button btnCrossroad2RightCrosswalkTOP;
-        private Button btnCrossroad2RightCrosswalkBOTTOM;
+        private Button btnCrossroad2LeftCrosswalkTOP = new Button();
+        private Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
+        private Button btnCrossroad2RightCrosswalkTOP = new Button();
+        private Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
         //Left T
-        private Button btnLeftTLeftCrosswalkTOP;
-        private Button btnLeftTLeftCrosswalkBOTTOM;
+        private Button btnLeftTLeftCrosswalkTOP = new Button();
+        private Button btnLeftTLeftCrosswalkBOTTOM = new Button();
         //Right T
-        private Button btnRightTTopCrosswalkLEFT;
-        private Button btnRightTTopCrosswalkRIGHT;
+        private Button btnRightTTopCrosswalkLEFT = new Button();
+        private Button btnRightTTopCrosswalkRIGHT = new Button();
 
         public event EventHandler<string> ButtonClicked;
 
@@ -1174,7 +1179,7 @@ namespace Bc_prace.Controls
             //Crossroad1 - top crosswalk
             #region Crossroad1 - top crosswalk
             //left  
-            Button btnCrossroad1TopCrosswalkLEFT = new Button();
+            //Button btnCrossroad1TopCrosswalkLEFT = new Button();
             btnCrossroad1TopCrosswalkLEFT.Text = "Crossroad1 Top crosswalk";
             btnCrossroad1TopCrosswalkLEFT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkLEFT.Visible = false;
@@ -1182,10 +1187,11 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkLEFT.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkLEFT.Click += btnCrossroad1TopCrosswalkLEFT_Click;
-            btnCrossroad1TopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkLEFT");
-            
+            //btnCrossroad1TopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkLEFT");
+            Controls.Add(btnCrossroad1TopCrosswalkLEFT);
+
             //right
-            Button btnCrossroad1TopCrosswalkRIGHT = new Button();
+            //Button btnCrossroad1TopCrosswalkRIGHT = new Button();
             btnCrossroad1TopCrosswalkRIGHT.Text = "Crossroad1 Top crosswalk";
             btnCrossroad1TopCrosswalkRIGHT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkRIGHT.Visible = false;
@@ -1193,15 +1199,15 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkRIGHT.Location = new System.Drawing.Point(Convert.ToInt32(length * 6), Convert.ToInt32(length)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
-            btnCrossroad1TopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkRIGHT");
-
+            //btnCrossroad1TopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkRIGHT");
+            Controls.Add(btnCrossroad1TopCrosswalkRIGHT);
 
             #endregion
 
             //Crossroad1 - left crosswalk
             #region Crossroad1 - left crosswalk
             //top 
-            Button btnCrossroad1LeftCrosswalkTOP = new Button();
+            //Button btnCrossroad1LeftCrosswalkTOP = new Button();
             btnCrossroad1LeftCrosswalkTOP.Text = "Crossroad1 Left crosswalk";
             btnCrossroad1LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkTOP.Visible = false;
@@ -1214,7 +1220,7 @@ namespace Bc_prace.Controls
 
 
             //bottom
-            Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
+            //Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
             btnCrossroad1LeftCrosswalkBOTTOM.Text = "Crossroad1 Left crosswalk";
             btnCrossroad1LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkBOTTOM.Visible = false;
@@ -1235,7 +1241,7 @@ namespace Bc_prace.Controls
             //Crossroad2 - left crosswalk 
             #region Crossroad2 - left crosswalk 
             //top 
-            Button btnCrossroad2LeftCrosswalkTOP = new Button();
+            //Button btnCrossroad2LeftCrosswalkTOP = new Button();
             btnCrossroad2LeftCrosswalkTOP.Text = "Crossroad2 Left crosswalk";
             btnCrossroad2LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkTOP.Visible = false;
@@ -1243,11 +1249,11 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 2)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkTOP.Click += btnCrossroad2LeftCrosswalkTOP_Click;
-            btnCrossroad2LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkTOP");
+            //btnCrossroad2LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkTOP");
             Controls.Add(btnCrossroad2LeftCrosswalkTOP);
 
             //bottom
-            Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
+            //Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
             btnCrossroad2LeftCrosswalkBOTTOM.Text = "Crossroad2 Left crosswalk";
             btnCrossroad2LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkBOTTOM.Visible = false;
@@ -1255,7 +1261,7 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 6)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkBOTTOM.Click += btnCrossroad2LeftCrosswalkBOTTOM_Click;
-            btnCrossroad2LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkBOTTOM");
+            //btnCrossroad2LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkBOTTOM");
             Controls.Add(btnCrossroad2LeftCrosswalkBOTTOM);
 
             #endregion
@@ -1263,7 +1269,7 @@ namespace Bc_prace.Controls
             //Crossroad2 - right crosswalk
             #region Crossroad2 - right crosswalk
             //top 
-            btnCrossroad2RightCrosswalkTOP = new Button();
+            //Button btnCrossroad2RightCrosswalkTOP = new Button();
             btnCrossroad2RightCrosswalkTOP.Text = "Crossroad2 Right crosswalk";
             btnCrossroad2RightCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2RightCrosswalkTOP.Visible = false;
@@ -1271,10 +1277,11 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length * 13), Convert.ToInt32(length * 2)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkTOP.Click += btnCrossroad2RightCrosswalkTOP_Click;
-            btnCrossroad2RightCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkTOP");
+            //btnCrossroad2RightCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkTOP");
+            Controls.Add(btnCrossroad2RightCrosswalkTOP);
 
             //bottom
-            btnCrossroad2RightCrosswalkBOTTOM = new Button();
+            //Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
             btnCrossroad2RightCrosswalkBOTTOM.Text = "Crossroad2 Right crosswalk";
             btnCrossroad2RightCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2RightCrosswalkBOTTOM.Visible = false;
@@ -1282,7 +1289,8 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length * 13), Convert.ToInt32(length * 6)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkBOTTOM.Click += btnCrossroad2RightCrosswalkBOTTOM_Click;
-            btnCrossroad2RightCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkBOTTOM");
+            //btnCrossroad2RightCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkBOTTOM");
+            Controls.Add(btnCrossroad2RightCrosswalkBOTTOM);
 
             #endregion
 
@@ -1293,7 +1301,7 @@ namespace Bc_prace.Controls
 
             #region LeftT - left crosswalk
             //top 
-            btnLeftTLeftCrosswalkTOP = new Button();
+            //Button btnLeftTLeftCrosswalkTOP = new Button();
             btnLeftTLeftCrosswalkTOP.Text = "LeftT\nLeft crosswalk";
             btnLeftTLeftCrosswalkTOP.BackColor = Color.White;
             btnLeftTLeftCrosswalkTOP.Visible = false;
@@ -1301,10 +1309,11 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkTOP.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnLeftTLeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkTOP.Click += btnLeftTLeftCrosswalkTOP_CLick;
-            btnLeftTLeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkTOP");
+            //btnLeftTLeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkTOP");
+            Controls.Add(btnLeftTLeftCrosswalkTOP);
 
             //bottom
-            btnLeftTLeftCrosswalkBOTTOM = new Button();
+            //Button btnLeftTLeftCrosswalkBOTTOM = new Button();
             btnLeftTLeftCrosswalkBOTTOM.Text = "LeftT\nLeft crosswalk";
             btnLeftTLeftCrosswalkBOTTOM.BackColor = Color.White;
             btnLeftTLeftCrosswalkBOTTOM.Visible = false;
@@ -1312,7 +1321,8 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkBOTTOM.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length * 12)); //cannot invert float to int 
             btnLeftTLeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkBOTTOM.Click += btnLeftTLeftCrosswalkBOTTOM_CLick;
-            btnLeftTLeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkBOTTOM");
+            //btnLeftTLeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkBOTTOM");
+            Controls.Add(btnLeftTLeftCrosswalkBOTTOM);
 
             #endregion
 
@@ -1323,64 +1333,65 @@ namespace Bc_prace.Controls
 
             #region RightT - top crosswalk
             //left  
-            btnRightTTopCrosswalkLEFT = new Button();
+            //Button btnRightTTopCrosswalkLEFT = new Button();
             btnRightTTopCrosswalkLEFT.Text = "RightT\nTop crosswalk";
             btnRightTTopCrosswalkLEFT.BackColor = Color.White;
             btnRightTTopCrosswalkLEFT.Visible = false;
             btnRightTTopCrosswalkLEFT.Enabled = false;
             btnRightTTopCrosswalkLEFT.Location = new System.Drawing.Point(Convert.ToInt32(length * 7), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnRightTTopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
-            btnRightTTopCrosswalkLEFT.Click += btnCrossroad1TopCrosswalkLEFT_Click;
-            btnRightTTopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkLEFT");
+            btnRightTTopCrosswalkLEFT.Click += btnRightTTopCrosswalkLEFT_Click;
+            //btnRightTTopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkLEFT");
+            Controls.Add(btnRightTTopCrosswalkLEFT);
 
             //right
-            btnRightTTopCrosswalkRIGHT = new Button();
+            //Button btnRightTTopCrosswalkRIGHT = new Button();
             btnRightTTopCrosswalkRIGHT.Text = "RightT\nTop crosswalk";
             btnRightTTopCrosswalkRIGHT.BackColor = Color.White;
             btnRightTTopCrosswalkRIGHT.Visible = false;
             btnRightTTopCrosswalkRIGHT.Enabled = false;
             btnRightTTopCrosswalkRIGHT.Location = new System.Drawing.Point(Convert.ToInt32(length * 12), Convert.ToInt32(length * 8)); //cannot invert float to int 
             btnRightTTopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
-            btnRightTTopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
-            btnRightTTopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkRIGHT");
+            btnRightTTopCrosswalkRIGHT.Click += btnRightTTopCrosswalkRIGHT_Click;
+            //btnRightTTopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkRIGHT");
+            Controls.Add(btnRightTTopCrosswalkRIGHT);
 
             #endregion
 
             #endregion
-
-
-            //final add to UserControl
-            //Crossroad1
-            this.Controls.Add(btnCrossroad1TopCrosswalkLEFT);
-            this.Controls.Add(btnCrossroad1TopCrosswalkRIGHT);
-            this.Controls.Add(btnCrossroad1LeftCrosswalkTOP);
-            this.Controls.Add(btnCrossroad1LeftCrosswalkBOTTOM);
-            //Crossroad2
-            this.Controls.Add(btnCrossroad2LeftCrosswalkTOP);
-            this.Controls.Add(btnCrossroad2LeftCrosswalkBOTTOM);
-            this.Controls.Add(btnCrossroad2RightCrosswalkTOP);
-            this.Controls.Add(btnCrossroad2RightCrosswalkBOTTOM);
-            //LeftT
-            this.Controls.Add(btnLeftTLeftCrosswalkTOP);
-            this.Controls.Add(btnLeftTLeftCrosswalkBOTTOM);
-            //Right T
-            this.Controls.Add(btnRightTTopCrosswalkLEFT);
-            this.Controls.Add(btnRightTTopCrosswalkRIGHT);
         
         }
         #endregion
 
         //Methods for BTN_CLick action
         #region Methods for BTN_CLick action
-
-        private void OnButtonClicked(string buttonIdentifier)
-        {
-            ButtonClicked?.Invoke(this, buttonIdentifier);
-        }
-
+                
         private void btnCrossroad1TopCrosswalkLEFT_Click(object sender, EventArgs e)
         {
             ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
+
+            Crossroad1TopCrosswalkBTN1 = true;
+            S7.SetBitAt(send_buffer_DB1, 0, 0, Crossroad1TopCrosswalkBTN1);
+
+            //write to PLC
+            int writeResultDB1_Crossroad1TopCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+            if (writeResultDB1_Crossroad1TopCrosswalkBTN1 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
+                        $"Error message: {writeResultDB1_Crossroad1TopCrosswalkBTN1} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnCrossroad1TopCrosswalkRIGHT_Click(object sender, EventArgs e)

@@ -309,7 +309,7 @@ namespace Bc_prace
             UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
             Controls.Add(crossroadUserControl);
 
-            userControlCrossroad.ButtonClicked += UserControlCrossroad_ButtonClicked;
+            crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
         }
 
         //Tia connection
