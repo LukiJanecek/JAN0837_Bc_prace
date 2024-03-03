@@ -260,12 +260,7 @@ namespace Bc_prace
         {
             InitializeComponent();
             InitializeComponents();
-
-            //Adding UserControlCrossroad
-            userControlCrossroad = new UserControlCrossroad(this);
-            Controls.Add(userControlCrossroad);
-            userControlCrossroad.ButtonClicked += UserControlCrossroad_ButtonClicked;
-
+                        
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
@@ -313,6 +308,8 @@ namespace Bc_prace
         {
             UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
             Controls.Add(crossroadUserControl);
+
+            userControlCrossroad.ButtonClicked += UserControlCrossroad_ButtonClicked;
         }
 
         //Tia connection
