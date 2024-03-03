@@ -259,8 +259,11 @@ namespace Bc_prace
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            InitializeComponents();
-                        
+
+            UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
+            Controls.Add(crossroadUserControl);
+            crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
+
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
@@ -303,14 +306,7 @@ namespace Bc_prace
                 Timer_read_actual.Interval = 100;
             }
         }
-
-        private void InitializeComponents()
-        {
-            UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
-            Controls.Add(crossroadUserControl);
-
-            crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
-        }
+                
 
         //Tia connection
         #region Tia connection
