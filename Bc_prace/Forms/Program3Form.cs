@@ -262,7 +262,7 @@ namespace Bc_prace
 
             UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
             Controls.Add(crossroadUserControl);
-            crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
+            //crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -1551,38 +1551,8 @@ namespace Bc_prace
             rBtnCrossroadExtension1.Checked = false;
             rBtnCrossroadExtension2.Checked = false;
             rBtnCrossroadExtension3.Checked = false;
-
-            //Draw();
-
-        }
-
-        private void Draw()
-        {
-            if (rBtnCrossroadBasic.Checked)
-            {
-                // Vykreslete čáry pro křižovatku
-                userControlCrossroad1.BasicCrossroad();
-            }
-            else if (rBtnCrossroadExtension1.Checked)
-            {
-                // Vykreslete čáry pro volbu 1
-                userControlCrossroad1.CrossroadExtension1();
-            }
-            else if (rBtnCrossroadExtension2.Checked)
-            {
-                // Vykreslete čáry pro volbu 2
-                userControlCrossroad1.CrossroadExtension2();
-            }
-            else if (rBtnCrossroadExtension3.Checked)
-            {
-                // Vykreslete čáry pro volbu 3
-                userControlCrossroad1.CrossroadExtension3();
-            }
-            else
-            {
-
-            }
-        }
+                       
+        }   
 
         //Radiobutton clicked
         #region Radiobutton clicked
@@ -1592,7 +1562,11 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            userControlCrossroad1.BasicCrossroad();
+            //userControlCrossroad1.BasicCrossroad();
+            userControlCrossroad1.DrawBasicCrossroad = true;
+            userControlCrossroad1.DrawCrossroadExtension1 = false;
+            userControlCrossroad1.DrawCrossroadExtension2 = false;
+            userControlCrossroad1.DrawCrossroadExtension3 = false;
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -1601,7 +1575,11 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 1");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            userControlCrossroad1.CrossroadExtension1();
+            //userControlCrossroad1.CrossroadExtension1();
+            userControlCrossroad1.DrawBasicCrossroad = false;
+            userControlCrossroad1.DrawCrossroadExtension1 = true;
+            userControlCrossroad1.DrawCrossroadExtension2 = false;
+            userControlCrossroad1.DrawCrossroadExtension3 = false;
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -1610,7 +1588,11 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 2");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            userControlCrossroad1.CrossroadExtension2();
+            //userControlCrossroad1.CrossroadExtension2();
+            userControlCrossroad1.DrawBasicCrossroad = false;
+            userControlCrossroad1.DrawCrossroadExtension1 = false;
+            userControlCrossroad1.DrawCrossroadExtension2 = true;
+            userControlCrossroad1.DrawCrossroadExtension3 = false;
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -1619,12 +1601,17 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Crossroad extension 3");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            userControlCrossroad1.CrossroadExtension3();
+            //userControlCrossroad1.CrossroadExtension3();
+            userControlCrossroad1.DrawBasicCrossroad = false;
+            userControlCrossroad1.DrawCrossroadExtension1 = false;
+            userControlCrossroad1.DrawCrossroadExtension2 = false;
+            userControlCrossroad1.DrawCrossroadExtension3 = true;
         }
 
         #endregion
 
         //Buttons in UserControlCrossroad clicked event
+        /*
         #region Buttons in UserControlCrossroad clicked event
         private void UserControlCrossroad_ButtonClicked(object? sender, string buttonIdentifier)
         {
@@ -1945,17 +1932,11 @@ namespace Bc_prace
 
                     errorMessageBoxShown = true;
                 }
-            }
-
-            /*
-            if (sender is UserControlCrossroad userControl)
-            {
-                //something
-            }
-            */
+            }           
         }
 
         #endregion
+        */
 
         //Emergency + system error 
         #region Emergency + system error 
