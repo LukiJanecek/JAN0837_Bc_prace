@@ -370,6 +370,8 @@ namespace Bc_prace.Controls
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
                 //GreenLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                
+                Invalidate();
             }
             else if (program3FormInstance.Crossroad1TopYELLOW)
             {
@@ -379,6 +381,8 @@ namespace Bc_prace.Controls
                 g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
                 //GreenLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                
+                Invalidate();
             }
             else if (program3FormInstance.Crossroad1TopGREEN)
             {
@@ -388,6 +392,8 @@ namespace Bc_prace.Controls
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
                 //GreenLight => ON
                 g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                
+                Invalidate();
             }
             else
             {
@@ -397,6 +403,8 @@ namespace Bc_prace.Controls
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
                 //GreenLight => OFF
                 g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                
+                Invalidate();
             }
             #endregion
 
@@ -1371,10 +1379,10 @@ namespace Bc_prace.Controls
             ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
 
             Crossroad1TopCrosswalkBTN1 = true;
-            S7.SetBitAt(send_buffer_DB1, 0, 0, Crossroad1TopCrosswalkBTN1);
+            S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 0, Crossroad1TopCrosswalkBTN1);
 
             //write to PLC
-            int writeResultDB1_Crossroad1TopCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+            int writeResultDB1_Crossroad1TopCrosswalkBTN1 = program3FormInstance.client.DBWrite(DBNumber_DB1, 0, program3FormInstance.send_buffer_DB1.Length, program3FormInstance.send_buffer_DB1);
             if (writeResultDB1_Crossroad1TopCrosswalkBTN1 != 0)
             {
                 //write error
