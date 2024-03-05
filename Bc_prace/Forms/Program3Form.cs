@@ -2070,6 +2070,10 @@ namespace Bc_prace
             else
             {
                 //write was successful
+
+                btnDayMode.BackColor = Color.DarkGray;
+                btnDayMode.BackColor = SystemColors.ControlDark;
+                btnDayMode.Enabled = false;
             }
         }
 
@@ -2100,6 +2104,10 @@ namespace Bc_prace
             else
             {
                 //write was successful
+
+                btnNightMode.BackColor = Color.DarkGray;
+                btnNightMode.BackColor = SystemColors.ControlDark;
+                btnNightMode.Enabled = false;
             }
         }
 
@@ -2130,6 +2138,10 @@ namespace Bc_prace
             else
             {
                 //write was successful
+
+                btnOffMode.BackColor = Color.DarkGray;
+                btnOffMode.BackColor = SystemColors.ControlDark;
+                btnOffMode.Enabled = false;
             }
         }
 
