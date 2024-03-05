@@ -2878,6 +2878,548 @@ namespace Bc_prace.Controls
                 #endregion
             }
 
+            //Lights change
+            #region Lights change 
+
+            //Crossroad1
+            #region Crossroad1
+
+            //Top
+            #region Top
+
+            if (crossroad1TopRED)
+            {
+
+            }
+            else if (crossroad1TopYELLOW)
+            {
+
+            }
+            else if (crossroad1TopGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Left 
+            #region Left 
+
+            if (crossroad1LeftRED)
+            {
+
+            }
+            else if (crossroad1LeftYELLOW)
+            {
+
+            }
+            else if (crossroad1LeftGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Right
+            #region Right
+
+            if (crossroad1RightRED)
+            {
+
+            }
+            else if (crossroad1RightYELLOW)
+            {
+
+            }
+            else if (crossroad1RightGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Bottom 
+            #region Bottom 
+
+            if (crossroad1BottomRED)
+            {
+
+            }
+            else if (crossroad1BottomYELLOW)
+            {
+
+            }
+            else if (crossroad1BottomGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk
+            #region Crosswalk 
+
+            //Crosswalk Left 
+            #region Crosswalk Left
+
+            if (crossroad1LeftCrosswalkRED1)
+            {
+
+            }
+            else if (crossroad1LeftCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroad1LeftCrosswalkRED2)
+            {
+
+            }
+            else if (crossroad1LeftCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk Top
+            #region Crosswalk Top
+
+            if (crossroad1TopCrosswalkRED1)
+            {
+
+            }
+            else if (crossroad1TopCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroad1TopCrosswalkRED2)
+            {
+
+            }
+            else if (crossroad1TopCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //Crossroad2
+            #region Crossroad2
+
+            //Top
+            #region Top
+
+            if (crossroad2TopRED)
+            {
+
+            }
+            else if (crossroad2TopYELLOW)
+            {
+
+            }
+            else if (crossroad2TopGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Left 
+            #region Left 
+
+            if (crossroad2LeftRED)
+            {
+
+            }
+            else if (crossroad2LeftYELLOW)
+            {
+
+            }
+            else if (crossroad2LeftGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Right
+            #region Right
+
+            if (crossroad2RightRED)
+            {
+
+            }
+            else if (crossroad2RightYELLOW)
+            {
+
+            }
+            else if (crossroad2RightGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Bottom 
+            #region Bottom 
+
+            if (crossroad2BottomRED)
+            {
+
+            }
+            else if (crossroad2BottomYELLOW)
+            {
+
+            }
+            else if (crossroad2BottomGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk
+            #region Crosswalk 
+
+            //Crosswalk Left 
+            #region Crosswalk Left
+
+            if (crossroad2LeftCrosswalkRED1)
+            {
+
+            }
+            else if (crossroad2LeftCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroad2LeftCrosswalkRED2)
+            {
+
+            }
+            else if (crossroad2LeftCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk Top
+            #region Crosswalk Right
+
+            if (crossroad2RightCrosswalkRED1)
+            {
+
+            }
+            else if (crossroad2RightCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroad2RightCrosswalkRED2)
+            {
+
+            }
+            else if (crossroad2RightCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //LeftT
+            #region LeftT
+
+            //Top
+            #region Top
+
+            if (crossroadLeftTTopRED)
+            {
+
+            }
+            else if (crossroadLeftTTopYELLOW)
+            {
+
+            }
+            else if (crossroadLeftTTopGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Left 
+            #region Left 
+
+            if (crossroadLeftTLeftRED)
+            {
+
+            }
+            else if (crossroadLeftTLeftYELLOW)
+            {
+
+            }
+            else if (crossroadLeftTLeftGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Right
+            #region Right
+
+            if (crossroadLeftTRightRED)
+            {
+
+            }
+            else if (crossroadLeftTRightYELLOW)
+            {
+
+            }
+            else if (crossroadLeftTRightGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk
+            #region Crosswalk 
+
+            //Crosswalk Left 
+            #region Crosswalk Left
+
+            if (crossroadLeftTLeftCrosswalkRED1)
+            {
+
+            }
+            else if (crossroadLeftTLeftCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroadLeftTLeftCrosswalkRED2)
+            {
+
+            }
+            else if (crossroadLeftTLeftCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            //RightT
+            #region RightT
+
+            //Top
+            #region Top
+
+            if (crossroadRightTTopRED)
+            {
+
+            }
+            else if (crossroadRightTTopYELLOW)
+            {
+
+            }
+            else if (crossroadRightTTopGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Left 
+            #region Left 
+
+            if (crossroadRightTLeftRED)
+            {
+
+            }
+            else if (crossroadRightTLeftYELLOW)
+            {
+
+            }
+            else if (crossroadRightTLeftGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Right
+            #region Right
+
+            if (crossroadRightTRightRED)
+            {
+
+            }
+            else if (crossroadRightTRightYELLOW)
+            {
+
+            }
+            else if (crossroadRightTRightGREEN)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+
+            //Crosswalk
+            #region Crosswalk 
+
+            //Crosswalk Left 
+            #region Crosswalk Top
+
+            if (crossroadRightTTopCrosswalkRED1)
+            {
+
+            }
+            else if (crossroadRightTTopCrosswalkGREEN1)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (crossroadRightTTopCrosswalkRED2)
+            {
+
+            }
+            else if (crossroadRightTTopCrosswalkGREEN2)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            #endregion
+                        
+            #endregion
+
+            #endregion
+
+            #endregion
+
+
+
+
             //Crossroad1
             #region Crossroad1 
 
