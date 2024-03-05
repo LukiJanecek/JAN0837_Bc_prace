@@ -2134,7 +2134,7 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             CrossroadModeOFF = true;
-            S7.SetBitAt(send_buffer_DB14, 0, 0, CrossroadEmergencySTOP);
+            S7.SetBitAt(send_buffer_DB14, 0, 0, CrossroadModeOFF);
 
             //write to PLC
             int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
