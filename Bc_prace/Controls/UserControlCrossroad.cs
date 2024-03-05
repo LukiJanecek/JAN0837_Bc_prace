@@ -148,27 +148,27 @@ namespace Bc_prace.Controls
 
         int Crossroad1CrosswalkSQ;
 
-        bool Crossroad1TopRED;
-        bool Crossroad1TopGREEN;
-        bool Crossroad1TopYELLOW;
-        bool Crossroad1LeftRED;
-        bool Crossroad1LeftGREEN;
-        bool Crossroad1LeftYELLOW;
-        bool Crossroad1RightRED;
-        bool Crossroad1RightGREEN;
-        bool Crossroad1RightYELLOW;
-        bool Crossroad1BottomRED;
-        bool Crossroad1BottomGREEN;
-        bool Crossroad1BottomYELLOW;
+        bool crossroad1TopRED;
+        bool crossroad1TopGREEN;
+        bool crossroad1TopYELLOW;
+        bool crossroad1LeftRED;
+        bool crossroad1LeftGREEN;
+        bool crossroad1LeftYELLOW;
+        bool crossroad1RightRED;
+        bool crossroad1RightGREEN;
+        bool crossroad1RightYELLOW;
+        bool crossroad1BottomRED;
+        bool crossroad1BottomGREEN;
+        bool crossroad1BottomYELLOW;
 
-        bool Crossroad1TopCrosswalkRED1;
-        bool Crossroad1TopCrosswalkRED2;
-        bool Crossroad1TopCrosswalkGREEN1;
-        bool Crossroad1TopCrosswalkGREEN2;
-        bool Crossroad1LeftCrosswalkRED1;
-        bool Crossroad1LeftCrosswalkRED2;
-        bool Crossroad1LeftCrosswalkGREEN1;
-        bool Crossroad1LeftCrosswalkGREEN2;
+        bool crossroad1TopCrosswalkRED1;
+        bool crossroad1TopCrosswalkRED2;
+        bool crossroad1TopCrosswalkGREEN1;
+        bool crossroad1TopCrosswalkGREEN2;
+        bool crossroad1LeftCrosswalkRED1;
+        bool crossroad1LeftCrosswalkRED2;
+        bool crossroad1LeftCrosswalkGREEN1;
+        bool crossroad1LeftCrosswalkGREEN2;
 
         #endregion
 
@@ -177,27 +177,27 @@ namespace Bc_prace.Controls
 
         int Crossroad2CrosswalkSQ;
 
-        bool Crossroad2TopRED;
-        bool Crossroad2TopGREEN;
-        bool Crossroad2TopYELLOW;
-        bool Crossroad2LeftRED;
-        bool Crossroad2LeftGREEN;
-        bool Crossroad2LeftYELLOW;
-        bool Crossroad2RightRED;
-        bool Crossroad2RightGREEN;
-        bool Crossroad2RightYELLOW;
-        bool Crossroad2BottomRED;
-        bool Crossroad2BottomGREEN;
-        bool Crossroad2BottomYELLOW;
+        bool crossroad2TopRED;
+        bool crossroad2TopGREEN;
+        bool crossroad2TopYELLOW;
+        bool crossroad2LeftRED;
+        bool crossroad2LeftGREEN;
+        bool crossroad2LeftYELLOW;
+        bool crossroad2RightRED;
+        bool crossroad2RightGREEN;
+        bool crossroad2RightYELLOW;
+        bool crossroad2BottomRED;
+        bool crossroad2BottomGREEN;
+        bool crossroad2BottomYELLOW;
 
-        bool Crossroad2LeftCrosswalkRED1;
-        bool Crossroad2LeftCrosswalkRED2;
-        bool Crossroad2LeftCrosswalkGREEN1;
-        bool Crossroad2LeftCrosswalkGREEN2;
-        bool Crossroad2RightCrosswalkRED1;
-        bool Crossroad2RightCrosswalkRED2;
-        bool Crossroad2RightCrosswalkGREEN1;
-        bool Crossroad2RightCrosswalkGREEN2;
+        bool crossroad2LeftCrosswalkRED1;
+        bool crossroad2LeftCrosswalkRED2;
+        bool crossroad2LeftCrosswalkGREEN1;
+        bool crossroad2LeftCrosswalkGREEN2;
+        bool crossroad2RightCrosswalkRED1;
+        bool crossroad2RightCrosswalkRED2;
+        bool crossroad2RightCrosswalkGREEN1;
+        bool crossroad2RightCrosswalkGREEN2;
 
         #endregion
 
@@ -206,20 +206,20 @@ namespace Bc_prace.Controls
 
         int CrossroadLeftTCrosswalkSQ;
 
-        bool CrossroadLeftTTopRED;
-        bool CrossroadLeftTTopGREEN;
-        bool CrossroadLeftTTopYELLOW;
-        bool CrossroadLeftTLeftRED;
-        bool CrossroadLeftTLeftGREEN;
-        bool CrossroadLeftTLeftYELLOW;
-        bool CrossroadLeftTRightRED;
-        bool CrossroadLeftTRightGREEN;
-        bool CrossroadLeftTRightYELLOW;
+        bool crossroadLeftTTopRED;
+        bool crossroadLeftTTopGREEN;
+        bool crossroadLeftTTopYELLOW;
+        bool crossroadLeftTLeftRED;
+        bool crossroadLeftTLeftGREEN;
+        bool crossroadLeftTLeftYELLOW;
+        bool crossroadLeftTRightRED;
+        bool crossroadLeftTRightGREEN;
+        bool crossroadLeftTRightYELLOW;
 
-        bool CrossroadLeftTLeftCrosswalkRED1;
-        bool CrossroadLeftTLeftCrosswalkRED2;
-        bool CrossroadLeftTLeftCrosswalkGREEN1;
-        bool CrossroadLeftTLeftCrosswalkGREEN2;
+        bool crossroadLeftTLeftCrosswalkRED1;
+        bool crossroadLeftTLeftCrosswalkRED2;
+        bool crossroadLeftTLeftCrosswalkGREEN1;
+        bool crossroadLeftTLeftCrosswalkGREEN2;
 
         #endregion
 
@@ -228,20 +228,20 @@ namespace Bc_prace.Controls
 
         int CrossroadRightTCrosswalkSQ;
 
-        bool CrossroadRightTTopRED;
-        bool CrossroadRightTTopGREEN;
-        bool CrossroadRightTTopYELLOW;
-        bool CrossroadRightTLeftRED;
-        bool CrossroadRightTLeftGREEN;
-        bool CrossroadRightTLeftYELLOW;
-        bool CrossroadRightTRightRED;
-        bool CrossroadRightTRightGREEN;
-        bool CrossroadRightTRightYELLOW;
+        bool crossroadRightTTopRED;
+        bool crossroadRightTTopGREEN;
+        bool crossroadRightTTopYELLOW;
+        bool crossroadRightTLeftRED;
+        bool crossroadRightTLeftGREEN;
+        bool crossroadRightTLeftYELLOW;
+        bool crossroadRightTRightRED;
+        bool crossroadRightTRightGREEN;
+        bool crossroadRightTRightYELLOW;
 
-        bool CrossroadRightTTopCrosswalkRED1;
-        bool CrossroadRightTTopCrosswalkRED2;
-        bool CrossroadRightTTopCrosswalkGREEN1;
-        bool CrossroadRightTTopCrosswalkGREEN2;
+        bool crossroadRightTTopCrosswalkRED1;
+        bool crossroadRightTTopCrosswalkRED2;
+        bool crossroadRightTTopCrosswalkGREEN1;
+        bool crossroadRightTTopCrosswalkGREEN2;
 
         #endregion
 
@@ -313,7 +313,7 @@ namespace Bc_prace.Controls
         public event EventHandler<bool> Crossroad1TopYELLOWChanged;
         public event EventHandler<bool> Crossroad1LeftREDChanged;
         public event EventHandler<bool> Crossroad1LeftGREENChanged;
-        public event EventHandler<bool> Crossroad1LeftYELLOWChaned;
+        public event EventHandler<bool> Crossroad1LeftYELLOWChanged;
         public event EventHandler<bool> Crossroad1RightREDChanged;
         public event EventHandler<bool> Crossroad1RightGREENChanged;
         public event EventHandler<bool> Crossroad1RightYELLOWChanged;
@@ -336,7 +336,7 @@ namespace Bc_prace.Controls
         public event EventHandler<bool> Crossroad2TopYELLOWChanged;
         public event EventHandler<bool> Crossroad2LeftREDChanged;
         public event EventHandler<bool> Crossroad2LeftGREENChanged;
-        public event EventHandler<bool> Crossroad2LeftYELLOWChaned;
+        public event EventHandler<bool> Crossroad2LeftYELLOWChanged;
         public event EventHandler<bool> Crossroad2RightREDChanged;
         public event EventHandler<bool> Crossroad2RightGREENChanged;
         public event EventHandler<bool> Crossroad2RightYELLOWChanged;
@@ -359,7 +359,7 @@ namespace Bc_prace.Controls
         public event EventHandler<bool> CrossroadLeftTTopYELLOWChanged;
         public event EventHandler<bool> CrossroadLeftTLeftREDChanged;
         public event EventHandler<bool> CrossroadLeftTLeftGREENChanged;
-        public event EventHandler<bool> CrossroadLeftTLeftYELLOWChaned;
+        public event EventHandler<bool> CrossroadLeftTLeftYELLOWChanged;
         public event EventHandler<bool> CrossroadLeftTRightREDChanged;
         public event EventHandler<bool> CrossroadLeftTRightGREENChanged;
         public event EventHandler<bool> CrossroadLeftTRightYELLOWChanged;
@@ -370,12 +370,12 @@ namespace Bc_prace.Controls
         public event EventHandler<bool> CrossroadLeftTLeftCrosswalkGREEN2Changed;
 
         //Crossroad RightT => DB21
-        public event EventHandler<bool> CrossroadRightTTopREDhanged;
+        public event EventHandler<bool> CrossroadRightTTopREDChanged;
         public event EventHandler<bool> CrossroadRightTTopGREENChanged;
         public event EventHandler<bool> CrossroadRightTTopYELLOWChanged;
         public event EventHandler<bool> CrossroadRightTLeftREDChanged;
         public event EventHandler<bool> CrossroadRightTLeftGREENChanged;
-        public event EventHandler<bool> CrossroadRightTLeftYELLOWChaned;
+        public event EventHandler<bool> CrossroadRightTLeftYELLOWChanged;
         public event EventHandler<bool> CrossroadRightTRightREDChanged;
         public event EventHandler<bool> CrossroadRightTRightGREENChanged;
         public event EventHandler<bool> CrossroadRightTRightYELLOWChanged;
@@ -4239,6 +4239,8 @@ namespace Bc_prace.Controls
         //Methods for rendering crossroad
         #region Methods for rendering crossroad
 
+        //Draw crossroad 
+        #region Draw crossroad 
         public bool DrawBasicCrossroad
         {
             get { return drawBasicCrossroad; }
@@ -4290,6 +4292,1042 @@ namespace Bc_prace.Controls
                 }
             }
         }
+
+        #endregion
+
+        //Lights
+        #region Crossroad Lights 
+
+        //Crossroad1
+        #region Crossroad1
+
+        //Top
+        #region Top
+
+        public bool Crossroad1TopRED
+        {
+            get { return crossroad1TopRED; }
+            set
+            {
+                if (value != crossroad1TopRED)
+                {
+                    crossroad1TopRED = value;
+                    Crossroad1TopREDChanged?.Invoke(this, crossroad1TopRED);
+                    Invalidate(); 
+                }
+            }
+        }
+
+        public bool Crossroad1TopGREEN
+        {
+            get { return crossroad1TopGREEN; }
+            set
+            {
+                if (value != crossroad1TopGREEN)
+                {
+                    crossroad1TopGREEN = value;
+                    Crossroad1TopGREENChanged?.Invoke(this, crossroad1TopGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1TopYELLOW
+        {
+            get { return crossroad1TopYELLOW; }
+            set
+            {
+                if (value != crossroad1TopYELLOW)
+                {
+                    crossroad1TopYELLOW = value;
+                    Crossroad1TopYELLOWChanged?.Invoke(this, crossroad1TopYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Left 
+        #region Left
+        public bool Crossroad1LeftRED
+        {
+            get { return crossroad1LeftRED; }
+            set
+            {
+                if (value != crossroad1LeftRED)
+                {
+                    crossroad1LeftRED = value;
+                    Crossroad1LeftREDChanged?.Invoke(this, crossroad1LeftRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1LeftGREEN
+        {
+            get { return crossroad1LeftGREEN; }
+            set
+            {
+                if (value != crossroad1LeftGREEN)
+                {
+                    crossroad1LeftGREEN = value;
+                    Crossroad1LeftGREENChanged?.Invoke(this, crossroad1LeftGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1LeftYELLOW
+        {
+            get { return crossroad1LeftYELLOW; }
+            set
+            {
+                if (value != crossroad1LeftYELLOW)
+                {
+                    crossroad1LeftYELLOW = value;
+                    Crossroad1LeftYELLOWChanged?.Invoke(this, crossroad1LeftYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Right 
+        #region Right 
+        public bool Crossroad1RightRED
+        {
+            get { return crossroad1RightRED; }
+            set
+            {
+                if (value != crossroad1RightRED)
+                {
+                    crossroad1RightRED = value;
+                    Crossroad1RightREDChanged?.Invoke(this, crossroad1RightRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1RightGREEN
+        {
+            get { return crossroad1RightGREEN; }
+            set
+            {
+                if (value != crossroad1RightGREEN)
+                {
+                    crossroad1RightGREEN = value;
+                    Crossroad1RightGREENChanged?.Invoke(this, crossroad1RightGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1RightYELLOW
+        {
+            get { return crossroad1RightYELLOW; }
+            set
+            {
+                if (value != crossroad1RightYELLOW)
+                {
+                    crossroad1RightYELLOW = value;
+                    Crossroad1RightYELLOWChanged?.Invoke(this, crossroad1RightYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Bottom 
+        #region Bottom 
+        public bool Crossroad1BottomRED
+        {
+            get { return crossroad1BottomRED; }
+            set
+            {
+                if (value != crossroad1BottomRED)
+                {
+                    crossroad1BottomRED = value;
+                    Crossroad1BottomREDChanged?.Invoke(this, crossroad1BottomRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1BottomGREEN
+        {
+            get { return crossroad1BottomGREEN; }
+            set
+            {
+                if (value != crossroad1BottomGREEN)
+                {
+                    crossroad1BottomGREEN = value;
+                    Crossroad1BottomGREENChanged?.Invoke(this, crossroad1BottomGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1BottomYELLOW
+        {
+            get { return crossroad1BottomYELLOW; }
+            set
+            {
+                if (value != crossroad1BottomYELLOW)
+                {
+                    crossroad1BottomYELLOW = value;
+                    Crossroad1BottomYELLOWChanged?.Invoke(this, crossroad1BottomYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Top
+        #region Crosswalk Top
+        public bool Crossroad1TopCrosswalkRED1
+        {
+            get { return crossroad1TopCrosswalkRED1; }
+            set
+            {
+                if (value != crossroad1TopCrosswalkRED1)
+                {
+                    crossroad1TopCrosswalkRED1 = value;
+                    Crossroad1TopCrosswalkRED1Changed?.Invoke(this, crossroad1TopCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1TopCrosswalkRED2
+        {
+            get { return crossroad1TopCrosswalkRED2; }
+            set
+            {
+                if (value != crossroad1TopCrosswalkRED2)
+                {
+                    crossroad1TopCrosswalkRED2 = value;
+                    Crossroad1TopCrosswalkRED2Changed?.Invoke(this, crossroad1TopCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1TopCrosswalkGREEN1
+        {
+            get { return crossroad1TopCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroad1TopCrosswalkGREEN1)
+                {
+                    crossroad1TopCrosswalkGREEN1 = value;
+                    Crossroad1TopCrosswalkGREEN1Changed?.Invoke(this, crossroad1TopCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1TopCrosswalkGREEN2
+        {
+            get { return crossroad1TopCrosswalkGREEN2; }
+            set
+            {
+                if (value != crossroad1TopCrosswalkGREEN2)
+                {
+                    crossroad1TopCrosswalkGREEN2 = value;
+                    Crossroad1TopCrosswalkGREEN2Changed?.Invoke(this, crossroad1TopCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Left
+        #region Crosswalk Left 
+        public bool Crossroad1LeftCrosswalkRED1
+        {
+            get { return crossroad1LeftCrosswalkRED1; }
+            set
+            {
+                if (value != crossroad1LeftCrosswalkRED1)
+                {
+                    crossroad1LeftCrosswalkRED1 = value;
+                    Crossroad1LeftCrosswalkRED1Changed?.Invoke(this, crossroad1LeftCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1LeftCrosswalkRED2
+        {
+            get { return crossroad1LeftCrosswalkRED2; }
+            set
+            {
+                if (value != crossroad1LeftCrosswalkRED2)
+                {
+                    crossroad1LeftCrosswalkRED2 = value;
+                    Crossroad1LeftCrosswalkRED2Changed?.Invoke(this, crossroad1LeftCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1LeftCrosswalkGREEN1
+        {
+            get { return crossroad1LeftCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroad1LeftCrosswalkGREEN1)
+                {
+                    crossroad1LeftCrosswalkGREEN1 = value;
+                    Crossroad1LeftCrosswalkGREEN1Changed?.Invoke(this, crossroad1LeftCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad1LeftCrosswalkGREEN2
+        {
+            get { return crossroad1LeftCrosswalkGREEN2; }
+            set
+            {
+                if (value != crossroad1LeftCrosswalkGREEN2)
+                {
+                    crossroad1LeftCrosswalkGREEN2 = value;
+                    Crossroad1LeftCrosswalkGREEN2Changed?.Invoke(this, crossroad1LeftCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+
+        #endregion
+
+        //Crossroad2
+        #region Crossroad2
+
+        //Top
+        #region Top
+
+        public bool Crossroad2TopRED
+        {
+            get { return crossroad2TopRED; }
+            set
+            {
+                if (value != crossroad2TopRED)
+                {
+                    crossroad2TopRED = value;
+                    Crossroad2TopREDChanged?.Invoke(this, crossroad2TopRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2TopGREEN
+        {
+            get { return crossroad2TopGREEN; }
+            set
+            {
+                if (value != crossroad2TopGREEN)
+                {
+                    crossroad2TopGREEN = value;
+                    Crossroad2TopGREENChanged?.Invoke(this, crossroad2TopGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2TopYELLOW
+        {
+            get { return crossroad2TopYELLOW; }
+            set
+            {
+                if (value != crossroad2TopYELLOW)
+                {
+                    crossroad2TopYELLOW = value;
+                    Crossroad2TopYELLOWChanged?.Invoke(this, crossroad2TopYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Left 
+        #region Left
+        public bool Crossroad2LeftRED
+        {
+            get { return crossroad2LeftRED; }
+            set
+            {
+                if (value != crossroad2LeftRED)
+                {
+                    crossroad2LeftRED = value;
+                    Crossroad2LeftREDChanged?.Invoke(this, crossroad2LeftRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2LeftGREEN
+        {
+            get { return crossroad2LeftGREEN; }
+            set
+            {
+                if (value != crossroad2LeftGREEN)
+                {
+                    crossroad2LeftGREEN = value;
+                    Crossroad2LeftGREENChanged?.Invoke(this, crossroad2LeftGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2LeftYELLOW
+        {
+            get { return crossroad2LeftYELLOW; }
+            set
+            {
+                if (value != crossroad2LeftYELLOW)
+                {
+                    crossroad2LeftYELLOW = value;
+                    Crossroad2LeftYELLOWChanged?.Invoke(this, crossroad2LeftYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Right 
+        #region Right 
+        public bool Crossroad2RightRED
+        {
+            get { return crossroad2RightRED; }
+            set
+            {
+                if (value != crossroad2RightRED)
+                {
+                    crossroad2RightRED = value;
+                    Crossroad2RightREDChanged?.Invoke(this, crossroad2RightRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2RightGREEN
+        {
+            get { return crossroad2RightGREEN; }
+            set
+            {
+                if (value != crossroad2RightGREEN)
+                {
+                    crossroad2RightGREEN = value;
+                    Crossroad2RightGREENChanged?.Invoke(this, crossroad2RightGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2RightYELLOW
+        {
+            get { return crossroad2RightYELLOW; }
+            set
+            {
+                if (value != crossroad2RightYELLOW)
+                {
+                    crossroad2RightYELLOW = value;
+                    Crossroad2RightYELLOWChanged?.Invoke(this, crossroad2RightYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Bottom 
+        #region Bottom 
+        public bool Crossroad2BottomRED
+        {
+            get { return crossroad2BottomRED; }
+            set
+            {
+                if (value != crossroad2BottomRED)
+                {
+                    crossroad2BottomRED = value;
+                    Crossroad2BottomREDChanged?.Invoke(this, crossroad2BottomRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2BottomGREEN
+        {
+            get { return crossroad2BottomGREEN; }
+            set
+            {
+                if (value != crossroad2BottomGREEN)
+                {
+                    crossroad2BottomGREEN = value;
+                    Crossroad2BottomGREENChanged?.Invoke(this, crossroad2BottomGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2BottomYELLOW
+        {
+            get { return crossroad2BottomYELLOW; }
+            set
+            {
+                if (value != crossroad2BottomYELLOW)
+                {
+                    crossroad2BottomYELLOW = value;
+                    Crossroad2BottomYELLOWChanged?.Invoke(this, crossroad2BottomYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Left
+        #region Crosswalk Left
+        public bool Crossroad2LeftCrosswalkRED1
+        {
+            get { return crossroad2LeftCrosswalkRED1; }
+            set
+            {
+                if (value != crossroad2LeftCrosswalkRED1)
+                {
+                    crossroad2LeftCrosswalkRED1 = value;
+                    Crossroad2LeftCrosswalkRED1Changed?.Invoke(this, crossroad2LeftCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2LeftCrosswalkRED2
+        {
+            get { return crossroad2LeftCrosswalkRED2; }
+            set
+            {
+                if (value != crossroad2LeftCrosswalkRED2)
+                {
+                    crossroad2LeftCrosswalkRED2 = value;
+                    Crossroad2LeftCrosswalkRED2Changed?.Invoke(this, crossroad2LeftCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2LeftCrosswalkGREEN1
+        {
+            get { return crossroad2LeftCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroad2LeftCrosswalkGREEN1)
+                {
+                    crossroad2LeftCrosswalkGREEN1 = value;
+                    Crossroad2LeftCrosswalkGREEN1Changed?.Invoke(this, crossroad2LeftCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2LeftCrosswalkGREEN2
+        {
+            get { return crossroad2LeftCrosswalkGREEN2; }
+            set
+            {
+                if (value != crossroad2LeftCrosswalkGREEN2)
+                {
+                    crossroad2LeftCrosswalkGREEN2 = value;
+                    Crossroad2LeftCrosswalkGREEN2Changed?.Invoke(this, crossroad2LeftCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Right
+        #region Crosswalk Right 
+        public bool Crossroad2RightCrosswalkRED1
+        {
+            get { return crossroad2RightCrosswalkRED1; }
+            set
+            {
+                if (value != crossroad2RightCrosswalkRED1)
+                {
+                    crossroad2RightCrosswalkRED1 = value;
+                    Crossroad2RightCrosswalkRED1Changed?.Invoke(this, crossroad2RightCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2RightCrosswalkRED2
+        {
+            get { return crossroad2RightCrosswalkRED2; }
+            set
+            {
+                if (value != crossroad2RightCrosswalkRED2)
+                {
+                    crossroad2RightCrosswalkRED2 = value;
+                    Crossroad2RightCrosswalkRED2Changed?.Invoke(this, crossroad2RightCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2RightCrosswalkGREEN1
+        {
+            get { return crossroad2RightCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroad2RightCrosswalkGREEN1)
+                {
+                    crossroad2RightCrosswalkGREEN1 = value;
+                    Crossroad2RightCrosswalkGREEN1Changed?.Invoke(this, crossroad2RightCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool Crossroad2RightCrosswalkGREEN2
+        {
+            get { return crossroad2RightCrosswalkGREEN2; }
+            set
+            {
+                if (value != crossroad2RightCrosswalkGREEN2)
+                {
+                    crossroad2RightCrosswalkGREEN2 = value;
+                    Crossroad2RightCrosswalkGREEN2Changed?.Invoke(this, crossroad2RightCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        //Crossroad LeftT
+        #region Crossroad LeftT
+
+        //Top
+        #region Top
+
+        public bool CrossroadLeftTTopRED
+        {
+            get { return crossroadLeftTTopRED; }
+            set
+            {
+                if (value != crossroadLeftTTopRED)
+                {
+                    crossroadLeftTTopRED = value;
+                    CrossroadLeftTTopREDChanged?.Invoke(this, crossroadLeftTTopRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTTopGREEN
+        {
+            get { return crossroadLeftTTopGREEN; }
+            set
+            {
+                if (value != crossroadLeftTTopGREEN)
+                {
+                    crossroadLeftTTopGREEN = value;
+                    CrossroadLeftTTopGREENChanged?.Invoke(this, crossroadLeftTTopGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTTopYELLOW
+        {
+            get { return crossroadLeftTTopYELLOW; }
+            set
+            {
+                if (value != crossroadLeftTTopYELLOW)
+                {
+                    crossroadLeftTTopYELLOW = value;
+                    CrossroadLeftTTopYELLOWChanged?.Invoke(this, crossroadLeftTTopYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Left 
+        #region Left
+        public bool CrossroadLeftTLeftRED
+        {
+            get { return crossroadLeftTLeftRED; }
+            set
+            {
+                if (value != crossroadLeftTLeftRED)
+                {
+                    crossroadLeftTLeftRED = value;
+                    CrossroadLeftTLeftREDChanged?.Invoke(this, crossroadLeftTLeftRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTLeftGREEN
+        {
+            get { return crossroadLeftTLeftGREEN; }
+            set
+            {
+                if (value != crossroadLeftTLeftGREEN)
+                {
+                    crossroadLeftTLeftGREEN = value;
+                    CrossroadLeftTLeftGREENChanged?.Invoke(this, crossroadLeftTLeftGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTLeftYELLOW
+        {
+            get { return crossroadLeftTLeftYELLOW; }
+            set
+            {
+                if (value != crossroadLeftTLeftYELLOW)
+                {
+                    crossroadLeftTLeftYELLOW = value;
+                    CrossroadLeftTLeftYELLOWChanged?.Invoke(this, crossroadLeftTLeftYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Right 
+        #region Right 
+        public bool CrossroadLeftTRightRED
+        {
+            get { return crossroadLeftTRightRED; }
+            set
+            {
+                if (value != crossroadLeftTRightRED)
+                {
+                    crossroadLeftTRightRED = value;
+                    CrossroadLeftTRightREDChanged?.Invoke(this, crossroadLeftTRightRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTRightGREEN
+        {
+            get { return crossroadLeftTRightGREEN; }
+            set
+            {
+                if (value != crossroadLeftTRightGREEN)
+                {
+                    crossroadLeftTRightGREEN = value;
+                    CrossroadLeftTRightGREENChanged?.Invoke(this, crossroadLeftTRightGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTRightYELLOW
+        {
+            get { return crossroadLeftTRightYELLOW; }
+            set
+            {
+                if (value != crossroadLeftTRightYELLOW)
+                {
+                    crossroadLeftTRightYELLOW = value;
+                    CrossroadLeftTRightYELLOWChanged?.Invoke(this, crossroadLeftTRightYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Left
+        #region Crosswalk Left 
+        public bool CrossroadLeftTLeftCrosswalkRED1
+        {
+            get { return crossroadLeftTLeftCrosswalkRED1; }
+            set
+            {
+                if (value != crossroadLeftTLeftCrosswalkRED1)
+                {
+                    crossroadLeftTLeftCrosswalkRED1 = value;
+                    CrossroadLeftTLeftCrosswalkRED1Changed?.Invoke(this, crossroadLeftTLeftCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTLeftCrosswalkRED2
+        {
+            get { return crossroadLeftTLeftCrosswalkRED2; }
+            set
+            {
+                if (value != crossroadLeftTLeftCrosswalkRED2)
+                {
+                    crossroadLeftTLeftCrosswalkRED2 = value;
+                    CrossroadLeftTLeftCrosswalkRED2Changed?.Invoke(this, crossroadLeftTLeftCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTLeftCrosswalkGREEN1
+        {
+            get { return crossroadLeftTLeftCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroadLeftTLeftCrosswalkGREEN1)
+                {
+                    crossroadLeftTLeftCrosswalkGREEN1 = value;
+                    CrossroadLeftTLeftCrosswalkGREEN1Changed?.Invoke(this, crossroadLeftTLeftCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadLeftTLeftCrosswalkGREEN2
+        {
+            get { return crossroadLeftTLeftCrosswalkGREEN2; }
+            set
+            {
+                if (value != crossroadLeftTLeftCrosswalkGREEN2)
+                {
+                    crossroadLeftTLeftCrosswalkGREEN2 = value;
+                    CrossroadLeftTLeftCrosswalkGREEN2Changed?.Invoke(this, crossroadLeftTLeftCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        //Crossroad RightT 
+        #region Crossroad RightT
+
+        //Top
+        #region Top
+
+        public bool CrossroadRightTTopRED
+        {
+            get { return crossroadRightTTopRED; }
+            set
+            {
+                if (value != crossroadRightTTopRED)
+                {
+                    crossroadRightTTopRED = value;
+                    CrossroadRightTTopREDChanged?.Invoke(this, crossroadRightTTopRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTTopGREEN
+        {
+            get { return crossroadRightTTopGREEN; }
+            set
+            {
+                if (value != crossroadRightTTopGREEN)
+                {
+                    crossroadRightTTopGREEN = value;
+                    CrossroadRightTTopGREENChanged?.Invoke(this, crossroadRightTTopGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTTopYELLOW
+        {
+            get { return crossroadRightTTopYELLOW; }
+            set
+            {
+                if (value != crossroadRightTTopYELLOW)
+                {
+                    crossroadRightTTopYELLOW = value;
+                    CrossroadRightTTopYELLOWChanged?.Invoke(this, crossroadRightTTopYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Left 
+        #region Left
+        public bool CrossroadRightTLeftRED
+        {
+            get { return crossroadRightTLeftRED; }
+            set
+            {
+                if (value != crossroadRightTLeftRED)
+                {
+                    crossroadRightTLeftRED = value;
+                    CrossroadRightTLeftREDChanged?.Invoke(this, crossroadRightTLeftRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTLeftGREEN
+        {
+            get { return crossroadRightTLeftGREEN; }
+            set
+            {
+                if (value != crossroadRightTLeftGREEN)
+                {
+                    crossroadRightTLeftGREEN = value;
+                    CrossroadRightTLeftGREENChanged?.Invoke(this, crossroadRightTLeftGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTLeftYELLOW
+        {
+            get { return crossroadRightTLeftYELLOW; }
+            set
+            {
+                if (value != crossroadRightTLeftYELLOW)
+                {
+                    crossroadRightTLeftYELLOW = value;
+                    CrossroadRightTLeftYELLOWChanged?.Invoke(this, crossroadRightTLeftYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Right 
+        #region Right 
+        public bool CrossroadRightTRightRED
+        {
+            get { return crossroadRightTRightRED; }
+            set
+            {
+                if (value != crossroadRightTRightRED)
+                {
+                    crossroadRightTRightRED = value;
+                    CrossroadRightTRightREDChanged?.Invoke(this, crossroadRightTRightRED);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTRightGREEN
+        {
+            get { return crossroadRightTRightGREEN; }
+            set
+            {
+                if (value != crossroadRightTRightGREEN)
+                {
+                    crossroadRightTRightGREEN = value;
+                    CrossroadRightTRightGREENChanged?.Invoke(this, crossroadRightTRightGREEN);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTRightYELLOW
+        {
+            get { return crossroadRightTRightYELLOW; }
+            set
+            {
+                if (value != crossroadRightTRightYELLOW)
+                {
+                    crossroadRightTRightYELLOW = value;
+                    CrossroadRightTRightYELLOWChanged?.Invoke(this, crossroadRightTRightYELLOW);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        //Crosswalk Top
+        #region Crosswalk Top 
+        public bool CrossroadRightTTopCrosswalkRED1
+        {
+            get { return crossroadRightTTopCrosswalkRED1; }
+            set
+            {
+                if (value != crossroadRightTTopCrosswalkRED1)
+                {
+                    crossroadRightTTopCrosswalkRED1 = value;
+                    CrossroadRightTTopCrosswalkRED1Changed?.Invoke(this, crossroadRightTTopCrosswalkRED1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTTopCrosswalkRED2
+        {
+            get { return crossroadRightTTopCrosswalkRED2; }
+            set
+            {
+                if (value != crossroadRightTTopCrosswalkRED2)
+                {
+                    crossroadRightTTopCrosswalkRED2 = value;
+                    CrossroadRightTTopCrosswalkRED2Changed?.Invoke(this, crossroadRightTTopCrosswalkRED2);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTTopCrosswalkGREEN1
+        {
+            get { return crossroadRightTTopCrosswalkGREEN1; }
+            set
+            {
+                if (value != crossroadRightTTopCrosswalkGREEN1)
+                {
+                    crossroadRightTTopCrosswalkGREEN1 = value;
+                    CrossroadRightTTopCrosswalkGREEN1Changed?.Invoke(this, crossroadRightTTopCrosswalkGREEN1);
+                    Invalidate();
+                }
+            }
+        }
+
+        public bool CrossroadRightTTopCrosswalkGREEN2
+        {
+            get { return crossroadRightTTopCrosswalkGREEN2; }
+            set 
+            {
+                if (value != crossroadRightTTopCrosswalkGREEN2)
+                {
+                    crossroadRightTTopCrosswalkGREEN2 = value;
+                    CrossroadRightTTopCrosswalkGREEN2Changed?.Invoke(this, crossroadRightTTopCrosswalkGREEN2);
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+        #endregion
 
         //Crossroad1
         public void BasicCrossroad()
