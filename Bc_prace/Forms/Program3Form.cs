@@ -2071,9 +2071,17 @@ namespace Bc_prace
             {
                 //write was successful
 
-                btnDayMode.BackColor = Color.DarkGray;
+                //btnDayMode.BackColor = Color.LightGray;
                 btnDayMode.BackColor = SystemColors.ControlDark;
                 btnDayMode.Enabled = false;
+
+                //btnNightMode.BackColor = Color.LightGray;
+                btnNightMode.BackColor = SystemColors.Control;
+                btnNightMode.Enabled = true;
+
+                //btnOffMode.BackColor = Color.DarkGray;
+                btnOffMode.BackColor = SystemColors.Control;
+                btnOffMode.Enabled = true;
             }
         }
 
@@ -2105,9 +2113,17 @@ namespace Bc_prace
             {
                 //write was successful
 
-                btnNightMode.BackColor = Color.DarkGray;
+                //btnDayMode.BackColor = Color.LightGray;
+                btnDayMode.BackColor = SystemColors.Control;
+                btnDayMode.Enabled = true;
+
+                //btnNightMode.BackColor = Color.LightGray;
                 btnNightMode.BackColor = SystemColors.ControlDark;
                 btnNightMode.Enabled = false;
+
+                //btnOffMode.BackColor = Color.DarkGray;
+                btnOffMode.BackColor = SystemColors.Control;
+                btnOffMode.Enabled = true;
             }
         }
 
@@ -2139,9 +2155,18 @@ namespace Bc_prace
             {
                 //write was successful
 
-                btnOffMode.BackColor = Color.DarkGray;
+                //btnDayMode.BackColor = Color.LightGray;
+                btnDayMode.BackColor = SystemColors.Control;
+                btnDayMode.Enabled = true;
+
+                //btnNightMode.BackColor = Color.LightGray;
+                btnNightMode.BackColor = SystemColors.Control;
+                btnNightMode.Enabled = true;
+
+                //btnOffMode.BackColor = Color.DarkGray;
                 btnOffMode.BackColor = SystemColors.ControlDark;
                 btnOffMode.Enabled = false;
+
             }
         }
 
