@@ -306,7 +306,7 @@ namespace Bc_prace
                 Timer_read_actual.Interval = 100;
             }
         }
-                
+
 
         //Tia connection
         #region Tia connection
@@ -1391,7 +1391,7 @@ namespace Bc_prace
 
             //Action on variable change
             #region Action on variable change
-            
+
             if (rBtnCrossroadBasic.Checked)
             {
                 //Crossroad1
@@ -1551,8 +1551,8 @@ namespace Bc_prace
             rBtnCrossroadExtension1.Checked = false;
             rBtnCrossroadExtension2.Checked = false;
             rBtnCrossroadExtension3.Checked = false;
-                       
-        }   
+
+        }
 
         //Radiobutton clicked
         #region Radiobutton clicked
@@ -1950,15 +1950,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
 
             //write to PLC
-            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14_Input != 0)
+            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14 != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14_Input} \n", "Error",
+                        $"Error message: {writeResultDB14} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1980,15 +1980,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 4, CrossroadErrorSystem);
 
             //write to PLC
-            int writeResultDB14_Input = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14_Input != 0)
+            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14 != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14_Input} \n", "Error",
+                        $"Error message: {writeResultDB14} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2040,5 +2040,99 @@ namespace Bc_prace
         {
 
         }
+
+        //BTN mode click
+        #region BTN mode click
+        private void btnDayMode_Click(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Day mode");
+            statusStripCrossroad.Items.Add(lblStatus);
+
+            CrossroadModeDAY = true;
+            S7.SetBitAt(send_buffer_DB14, 0, 2, CrossroadModeDAY);
+
+            //write to PLC
+            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
+                        $"Error message: {writeResultDB14} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
+        private void btnNightMode_Click(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Night mode");
+            statusStripCrossroad.Items.Add(lblStatus);
+
+            CrossroadModeNIGHT = true;
+            S7.SetBitAt(send_buffer_DB14, 0, 1, CrossroadModeNIGHT);
+
+            //write to PLC
+            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
+                        $"Error message: {writeResultDB14} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
+        private void btnOffMode_Click(object sender, EventArgs e)
+        {
+            statusStripCrossroad.Items.Clear();
+            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Off mode");
+            statusStripCrossroad.Items.Add(lblStatus);
+
+            CrossroadModeOFF = true;
+            S7.SetBitAt(send_buffer_DB14, 0, 0, CrossroadEmergencySTOP);
+
+            //write to PLC
+            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
+                        $"Error message: {writeResultDB14} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
+        #endregion
     }
 }

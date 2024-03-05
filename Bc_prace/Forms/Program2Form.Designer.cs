@@ -42,9 +42,6 @@
             btnCarMoveLEFT = new Button();
             userControlCarWash1 = new Controls.UserControlCarWash();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
-            btnDayMode = new Button();
-            btnNightMode = new Button();
-            btnOffMode = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -92,9 +89,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnOffMode);
-            panel1.Controls.Add(btnNightMode);
-            panel1.Controls.Add(btnDayMode);
             panel1.Controls.Add(btnTest2);
             panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnEnd);
@@ -183,33 +177,6 @@
             // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
-            // btnDayMode
-            // 
-            btnDayMode.Location = new Point(6, 88);
-            btnDayMode.Name = "btnDayMode";
-            btnDayMode.Size = new Size(177, 79);
-            btnDayMode.TabIndex = 41;
-            btnDayMode.Text = "Day mode ";
-            btnDayMode.UseVisualStyleBackColor = true;
-            // 
-            // btnNightMode
-            // 
-            btnNightMode.Location = new Point(6, 173);
-            btnNightMode.Name = "btnNightMode";
-            btnNightMode.Size = new Size(177, 79);
-            btnNightMode.TabIndex = 42;
-            btnNightMode.Text = "Night mode ";
-            btnNightMode.UseVisualStyleBackColor = true;
-            // 
-            // btnOffMode
-            // 
-            btnOffMode.Location = new Point(6, 258);
-            btnOffMode.Name = "btnOffMode";
-            btnOffMode.Size = new Size(177, 79);
-            btnOffMode.TabIndex = 43;
-            btnOffMode.Text = "Off mode";
-            btnOffMode.UseVisualStyleBackColor = true;
-            // 
             // Program2Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -244,8 +211,5 @@
         private Button btnTest2;
         private Button btnCarMoveLEFT;
         private Button btnCarMoveRIGHT;
-        private Button btnOffMode;
-        private Button btnNightMode;
-        private Button btnDayMode;
     }
 }
