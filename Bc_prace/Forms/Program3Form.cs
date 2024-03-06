@@ -20,7 +20,7 @@ namespace Bc_prace
     public partial class Program3Form : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
-        private UserControlCrossroad userControlCrossroad;
+        //private UserControlCrossroad userControlCrossroad1;
 
         public S7Client client;
 
@@ -260,8 +260,8 @@ namespace Bc_prace
         {
             InitializeComponent();
 
-            UserControlCrossroad crossroadUserControl = new UserControlCrossroad(this);
-            Controls.Add(crossroadUserControl);
+            UserControlCrossroad userControlCrossroad1 = new UserControlCrossroad(this);
+            Controls.Add(userControlCrossroad1);
             //crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
@@ -1419,9 +1419,9 @@ namespace Bc_prace
                 userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
                 userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
                 userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2; 
+                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
                 //Left
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1; 
+                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
                 userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
                 userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
                 userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
@@ -1769,7 +1769,7 @@ namespace Bc_prace
 
                 //RightT
                 #region RightT
-                
+
                 //Top
                 userControlCrossroad1.CrossroadRightTTopRED = CrossroadRightTTopRED;
                 userControlCrossroad1.CrossroadRightTTopYELLOW = CrossroadRightTTopYELLOW;
@@ -1865,7 +1865,7 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            //userControlCrossroad1.BasicCrossroad();
+            userControlCrossroad1.BasicCrossroad();
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
