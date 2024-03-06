@@ -703,14 +703,18 @@ namespace Bc_prace
 
         }
 
+        //Manual car movement
+        #region Manual Car movement
         private void btnCarMoveLEFT_Click(object sender, EventArgs e)
         {
-
+            userControlCarWash1.ManualMovePictureLEFT();
         }
 
         private void btnCarMoveRIGHT_Click(object sender, EventArgs e)
         {
-
+            userControlCarWash1.ManualMovePictureRIGHT();
         }
+        
+        #endregion
     }
 }

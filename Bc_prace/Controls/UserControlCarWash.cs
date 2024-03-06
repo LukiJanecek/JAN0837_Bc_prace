@@ -422,6 +422,22 @@ namespace Bc_prace.Controls
             InitializeCarImage();
         }
 
+        public void ManualMovePictureLEFT()
+        {
+            pictureX -= 10;
+            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            this.Refresh();
+            InitializeCarImage();
+        }
+
+        public void ManualMovePictureRIGHT()
+        {
+            pictureX += 10;
+            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            this.Refresh();
+            InitializeCarImage();
+        } 
+
         #endregion
 
         #endregion
