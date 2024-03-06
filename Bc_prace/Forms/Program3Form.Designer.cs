@@ -47,6 +47,7 @@ namespace Bc_prace
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripCrossroad
@@ -198,8 +199,12 @@ namespace Bc_prace
             //
             // userControlCrossroad1
             //
-            userControlCrossroad1.Name = "userControlCarWash1";
             userControlCrossroad1.Dock = DockStyle.Fill;
+            userControlCrossroad1.Location = new Point(0, 0);
+            userControlCrossroad1.Margin = new Padding(3, 2, 3, 2);
+            userControlCrossroad1.Name = "userControlCrossroad1";
+            userControlCrossroad1.Size = new Size(1499, 753);
+            userControlCrossroad1.TabIndex = 32;
             // 
             // Timer_read_actual
             // 
@@ -207,11 +212,12 @@ namespace Bc_prace
             // 
             // panel2
             // 
+            panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1183, 612);
-            panel2.TabIndex = 33;
+            panel2.TabIndex = 39;
             // 
             // Program3Form
             // 
@@ -227,6 +233,7 @@ namespace Bc_prace
             Load += Program3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
