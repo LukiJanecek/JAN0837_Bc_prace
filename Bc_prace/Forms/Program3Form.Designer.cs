@@ -1,4 +1,6 @@
-﻿namespace Bc_prace
+﻿using Bc_prace.Controls;
+
+namespace Bc_prace
 {
     partial class Program3Form
     {
@@ -41,9 +43,9 @@
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
+            userControlCrossroad1 = new Controls.UserControlCrossroad(this);
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
-            //userControlCrossroad1 = new Controls.UserControlCrossroad(this);
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -193,6 +195,11 @@
             rBtnCrossroadExtension1.Text = "Crossroad extension 1";
             rBtnCrossroadExtension1.UseVisualStyleBackColor = true;
             rBtnCrossroadExtension1.CheckedChanged += rBtnCrossroadExtension1_CheckedChanged;
+            //
+            // userControlCrossroad1
+            //
+            userControlCrossroad1.Name = "userControlCarWash1";
+            userControlCrossroad1.Dock = DockStyle.Fill;
             // 
             // Timer_read_actual
             // 
@@ -214,12 +221,12 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCrossroad);
+            Controls.Add(userControlCrossroad1);
             Name = "Program3Form";
             Text = "Program3";
             Load += Program3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            //Controls.Add(this.userControlCrossroad1);
             ResumeLayout(false);
             PerformLayout();
         }

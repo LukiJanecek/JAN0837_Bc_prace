@@ -260,8 +260,8 @@ namespace Bc_prace
         {
             InitializeComponent();
 
-            UserControlCrossroad userControlCrossroad1 = new UserControlCrossroad(this);
-            Controls.Add(userControlCrossroad1);
+            //UserControlCrossroad userControlCrossroad1 = new UserControlCrossroad(this);
+            //Controls.Add(userControlCrossroad1);
             //crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
@@ -1865,7 +1865,7 @@ namespace Bc_prace
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
             statusStripCrossroad.Items.Add(lblStatus);
 
-            userControlCrossroad1.BasicCrossroad();
+            //userControlCrossroad1.BasicCrossroad();
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
