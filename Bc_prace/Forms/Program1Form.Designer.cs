@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             statusStripElevator = new StatusStrip();
             btnCabinFloor5 = new Button();
             btnCabinFloor4 = new Button();
@@ -52,8 +53,6 @@
             btnFloor3 = new Button();
             btnFloor2 = new Button();
             btnFloor1 = new Button();
-            btnneco1 = new Button();
-            btnneco2 = new Button();
             panelDoorLeft = new Panel();
             panelDoorRight = new Panel();
             panelDoorTOP = new Panel();
@@ -63,7 +62,6 @@
             panelCabinBtn = new Panel();
             userControlElevatorCabin1 = new Controls.UserControlElevatorCabin();
             panel1 = new Panel();
-            btnTest = new Button();
             btnCabinLengthBigger = new Button();
             btnCabinLengthSmaller = new Button();
             btnCabinWidthBigger = new Button();
@@ -72,7 +70,6 @@
             btnCabinMoveToUp = new Button();
             btnCabinMoveToLeft = new Button();
             btnCabinMoveToRight = new Button();
-            components = new System.ComponentModel.Container();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)panelCabin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor1).BeginInit();
@@ -314,26 +311,6 @@
             btnFloor1.UseVisualStyleBackColor = true;
             btnFloor1.Click += btnFloor1_Click;
             // 
-            // btnneco1
-            // 
-            btnneco1.Location = new Point(3, 481);
-            btnneco1.Name = "btnneco1";
-            btnneco1.Size = new Size(81, 73);
-            btnneco1.TabIndex = 30;
-            btnneco1.Text = "Nacti data z PLC ";
-            btnneco1.UseVisualStyleBackColor = true;
-            btnneco1.Click += btnneco1_Click;
-            // 
-            // btnneco2
-            // 
-            btnneco2.Location = new Point(99, 480);
-            btnneco2.Name = "btnneco2";
-            btnneco2.Size = new Size(81, 75);
-            btnneco2.TabIndex = 31;
-            btnneco2.Text = "Nacti data do PLC ";
-            btnneco2.UseVisualStyleBackColor = true;
-            btnneco2.Click += btnneco2_Click;
-            // 
             // panelDoorLeft
             // 
             panelDoorLeft.BackColor = SystemColors.ControlDark;
@@ -419,7 +396,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnCabinLengthBigger);
             panel1.Controls.Add(btnCabinLengthSmaller);
             panel1.Controls.Add(btnCabinWidthBigger);
@@ -429,24 +405,12 @@
             panel1.Controls.Add(btnCabinMoveToLeft);
             panel1.Controls.Add(btnCabinMoveToRight);
             panel1.Controls.Add(btnEnd);
-            panel1.Controls.Add(btnneco1);
-            panel1.Controls.Add(btnneco2);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1003, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 722);
             panel1.TabIndex = 42;
             panel1.Paint += panel1_Paint;
-            // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(39, 136);
-            btnTest.Margin = new Padding(3, 4, 3, 4);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(86, 31);
-            btnTest.TabIndex = 47;
-            btnTest.Text = "Test";
-            btnTest.UseVisualStyleBackColor = true;
             // 
             // btnCabinLengthBigger
             // 
@@ -527,9 +491,9 @@
             btnCabinMoveToRight.Text = "Right";
             btnCabinMoveToRight.UseVisualStyleBackColor = true;
             btnCabinMoveToRight.Click += btnCabinMoveToRight_Click;
-            //
-            //Timer_read_actual
-            //
+            // 
+            // Timer_read_actual
+            // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // Program1Form
@@ -604,8 +568,6 @@
         private Button btnFloor3;
         private Button btnFloor2;
         private Button btnFloor1;
-        private Button btnneco1;
-        private Button btnneco2;
         private Panel panelDoorLeft;
         private Panel panelDoorRight;
         private Panel panelDoorTOP;
@@ -624,6 +586,5 @@
         private Button btnCabinLengthSmaller;
         private Button btnCabinWidthBigger;
         private System.Windows.Forms.Timer Timer_read_actual;
-        private Button btnTest;
     }
 }

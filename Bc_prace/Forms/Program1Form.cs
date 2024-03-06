@@ -37,7 +37,7 @@ namespace Bc_prace
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
         byte[] read_buffer_DB4;
-        public byte[] previous_buffer_DB4; 
+        public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
         byte[] send_buffer_DB4;
         //second struct -> Output -> 32 variables -> size 26
@@ -156,7 +156,7 @@ namespace Bc_prace
             lblElevatorFloorX = 40;
             lblElevatorFloorY = 53;
         }
-                
+
         //Variables
         #region Variables
 
@@ -538,20 +538,12 @@ namespace Bc_prace
                 }
             }
         }
-               
+
         #endregion
 
         //Work with Tia variables
         #region Work with Tia variables
-        private void btnneco1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnneco2_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         #endregion
 
@@ -999,11 +991,11 @@ namespace Bc_prace
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
-        {            
+        {
             //Option1 = false
             Option1 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
-            
+
             //write to PLC
             int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
             if (writeResultDB11 != 0)
@@ -1038,7 +1030,8 @@ namespace Bc_prace
         //ElevatorCabin - parametets and position
         #region ElevatorCabin - parameters and position
 
-        #region Movemnent
+        //Movement
+        #region Movement
         private void btnCabinMoveToRight_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.MoveRight();
@@ -1060,6 +1053,7 @@ namespace Bc_prace
         }
         #endregion
 
+        //Cabin parameters
         #region Parameters
         private void btnCabinWidthSmaller_Click(object sender, EventArgs e)
         {
@@ -1089,5 +1083,7 @@ namespace Bc_prace
         {
 
         }
+
+        
     }
 }
