@@ -51,14 +51,14 @@ namespace Bc_prace
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
         //first struct -> Input -> 14 variables -> size 1.5 
-        public byte[] read_buffer_DB4_Input = new byte[1024]; //26 
-        public byte[] previous_buffer_DB4_Input;
-        public byte[] PreviousBufferHash_DB4_Input;
-        public byte[] send_buffer_DB4_Input = new byte[1024]; //26
+        public byte[] read_buffer_DB4 = new byte[30]; 
+        public byte[] previous_buffer_DB4;
+        public byte[] PreviousBufferHash_DB4;
+        public byte[] send_buffer_DB4 = new byte[30]; 
         //second struct -> Output -> 32 variables -> size 26
-        public byte[] read_buffer_DB4_Output = new byte[1024]; //26
-        public byte[] send_buffer_DB4_Output = new byte[1024]; //26
-        
+        //public byte[] read_buffer_DB4_Output = new byte[1024]; //26
+        //public byte[] send_buffer_DB4_Output = new byte[1024]; //26
+
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
         //first struct -> Input -> 7 variables -> 0.6 size 
@@ -484,92 +484,90 @@ namespace Bc_prace
                 //DB4 => Elevator_DB
                 #region Reading from DB4 Elevator_DB
                 //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
-                if (previous_buffer_DB4_Input == null)
+                if (previous_buffer_DB4 == null)
                 {
-                    previous_buffer_DB4_Input = new byte[read_buffer_DB4_Input.Length];
-                    Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
+                    previous_buffer_DB4 = new byte[read_buffer_DB4.Length];
+                    Array.Copy(read_buffer_DB4, previous_buffer_DB4, read_buffer_DB4.Length);
 
                     // Inicializace hashe při prvním spuštění
-                    PreviousBufferHash_DB4_Input = ComputeHash(read_buffer_DB4_Input);
+                    PreviousBufferHash_DB4 = ComputeHash(read_buffer_DB4);
                 }
                                 
                 //first struct -> Input -> 14 variables -> size 1.5 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, 16, ref read_buffer_DB4_Input);
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4.Length, ref read_buffer_DB4);
                 //second struct -> Output -> 32 variables -> size 26
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 2, 32, ref read_buffer_DB4_Output); 
+                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 16, read_buffer_DB4_2.Length, ref read_buffer_DB4_2); 
 
                 int readResultDB4 = reader.Read();
 
                 if (readResultDB4 == 0)
                 {
-                    byte[] currentHashDB4_Input = ComputeHash(read_buffer_DB4_Input);
+                    byte[] currentHashDB4_Input = ComputeHash(read_buffer_DB4);
 
                     // Porovnání hashe s předchozím hashem
-                    if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB4_Input))
+                    if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB4))
                     {
                         // Aktualizace předchozího bufferu a hashe
-                        Array.Copy(read_buffer_DB4_Input, previous_buffer_DB4_Input, read_buffer_DB4_Input.Length);
-                        PreviousBufferHash_DB4_Input = currentHashDB4_Input;
+                        Array.Copy(read_buffer_DB4, previous_buffer_DB4, read_buffer_DB4.Length);
+                        PreviousBufferHash_DB4 = currentHashDB4_Input;
 
                         // Aktualizace proměnných na základě nových dat
                         
                         //Input variables
                         #region Input variables
 
-                        ElevatorBTNCabin1 = S7.GetBitAt(read_buffer_DB4_Input, 0, 0);
-                        ElevatorBTNCabin2 = S7.GetBitAt(read_buffer_DB4_Input, 0, 1);
-                        ElevatorBTNCabin3 = S7.GetBitAt(read_buffer_DB4_Input, 0, 2);
-                        ElevatorBTNCabin4 = S7.GetBitAt(read_buffer_DB4_Input, 0, 3);
-                        ElevatorBTNCabin5 = S7.GetBitAt(read_buffer_DB4_Input, 0, 4);
-                        ElevatorBTNFloor1 = S7.GetBitAt(read_buffer_DB4_Input, 0, 5);
-                        ElevatorBTNFloor2 = S7.GetBitAt(read_buffer_DB4_Input, 0, 6);
-                        ElevatorBTNFloor3 = S7.GetBitAt(read_buffer_DB4_Input, 0, 7);
-                        ElevatorBTNFloor4 = S7.GetBitAt(read_buffer_DB4_Input, 1, 0);
-                        ElevatorBTNFloor5 = S7.GetBitAt(read_buffer_DB4_Input, 1, 1);
-                        ElevatorDoorSEQ = S7.GetBitAt(read_buffer_DB4_Input, 1, 2);
-                        ElevatorBTNOPENCLOSE = S7.GetBitAt(read_buffer_DB4_Input, 1, 3);
-                        ElevatorEmergencySTOP = S7.GetBitAt(read_buffer_DB4_Input, 1, 4);
-                        ElevatorErrorSystem = S7.GetBitAt(read_buffer_DB4_Input, 1, 5);
+                        ElevatorBTNCabin1 = S7.GetBitAt(read_buffer_DB4, 0, 0);
+                        ElevatorBTNCabin2 = S7.GetBitAt(read_buffer_DB4, 0, 1);
+                        ElevatorBTNCabin3 = S7.GetBitAt(read_buffer_DB4, 0, 2);
+                        ElevatorBTNCabin4 = S7.GetBitAt(read_buffer_DB4, 0, 3);
+                        ElevatorBTNCabin5 = S7.GetBitAt(read_buffer_DB4, 0, 4);
+                        ElevatorBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 0, 5);
+                        ElevatorBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 0, 6);
+                        ElevatorBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 0, 7);
+                        ElevatorBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 1, 0);
+                        ElevatorBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 1, 1);
+                        ElevatorDoorSEQ = S7.GetBitAt(read_buffer_DB4, 1, 2);
+                        ElevatorBTNOPENCLOSE = S7.GetBitAt(read_buffer_DB4, 1, 3);
+                        ElevatorEmergencySTOP = S7.GetBitAt(read_buffer_DB4, 1, 4);
+                        ElevatorErrorSystem = S7.GetBitAt(read_buffer_DB4, 1, 5);
 
                         #endregion
 
                         //Output variables
                         #region Output variables
 
-                        ElevatorMotorON = S7.GetBitAt(read_buffer_DB4_Input, 2, 0);
-
-                        ElevatorMotorON = S7.GetBitAt(read_buffer_DB4_Output, 2, 0); 
-                        ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4_Output, 2, 1);
-                        ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4_Output, 2, 2);
-                        ElevatroHoming = S7.GetBitAt(read_buffer_DB4_Output, 2, 3);
-                        ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4_Output, 2, 4);
-                        ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4_Output, 4);
-                        ElevatorMoving = S7.GetBitAt(read_buffer_DB4_Output, 6, 0);
-                        ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4_Output, 6, 1);
-                        ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4_Output, 8);
-                        ElevatorDirection = S7.GetBitAt(read_buffer_DB4_Output, 10, 0);
-                        ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4_Output, 10, 1);
-                        ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4_Output, 10, 2);
-                        ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4_Output, 10, 3);
-                        ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4_Output, 10, 4);
-                        ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4_Output, 10, 5);
-                        ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4_Output, 10, 6);
-                        ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4_Output, 10, 7);
-                        ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4_Output, 11, 0);
-                        ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4_Output, 11, 1);
-                        ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4_Output, 11, 2);
-                        ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4_Output, 11, 3);
-                        ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4_Output, 11, 4);
-                        ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4_Output, 11, 5);
-                        ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4_Output, 11, 6);
-                        ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4_Output, 11, 7);
-                        ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4_Output, 12); //Time
-                        ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4_Output, 12); //Time
-                        ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4_Output, 20, 0);
-                        ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4_Output, 20, 1);
-                        ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4_Output, 22);
-                        ElevatorInactivity = S7.GetBitAt(read_buffer_DB4_Output, 24, 0);
-                        ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4_Output, 26); //Time
+                        ElevatorMotorON = S7.GetBitAt(read_buffer_DB4, 2, 0);
+                        ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4, 2, 1);
+                        ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4, 2, 2);
+                        ElevatroHoming = S7.GetBitAt(read_buffer_DB4, 2, 3);
+                        ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4, 2, 4);
+                        ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4, 4);
+                        ElevatorMoving = S7.GetBitAt(read_buffer_DB4, 6, 0);
+                        ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4, 6, 1);
+                        ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4, 8);
+                        ElevatorDirection = S7.GetBitAt(read_buffer_DB4, 10, 0);
+                        ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4, 10, 1);
+                        ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4, 10, 2);
+                        ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4, 10, 3);
+                        ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4, 10, 4);
+                        ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4, 10, 5);
+                        ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4, 10, 6);
+                        ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4, 10, 7);
+                        ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4, 11, 0);
+                        ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4, 11, 1);
+                        ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4, 11, 2);
+                        ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4, 11, 3);
+                        ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4, 11, 4);
+                        ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4, 11, 5);
+                        ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4, 11, 6);
+                        ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4, 11, 7);
+                        ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 12); //Time
+                        ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 16); //Time
+                        ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4, 20, 0);
+                        ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4, 20, 1);
+                        ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4, 22);
+                        ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 24, 0);
+                        ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26); //Time
 
                         #endregion
 

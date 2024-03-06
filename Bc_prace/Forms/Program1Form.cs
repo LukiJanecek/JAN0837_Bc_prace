@@ -115,8 +115,8 @@ namespace Bc_prace
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB4 => Elevator_DB
-            read_buffer_DB4 = chooseOptionFormInstance.read_buffer_DB4_Input;
-            send_buffer_DB4 = chooseOptionFormInstance.send_buffer_DB4_Input;
+            read_buffer_DB4 = chooseOptionFormInstance.read_buffer_DB4;
+            send_buffer_DB4 = chooseOptionFormInstance.send_buffer_DB4;
             //read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
             //send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
 
