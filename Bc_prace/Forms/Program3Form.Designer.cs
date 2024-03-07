@@ -43,7 +43,6 @@ namespace Bc_prace
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
-            userControlCrossroad1 = new Controls.UserControlCrossroad(this);
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             panel1.SuspendLayout();
@@ -189,22 +188,12 @@ namespace Bc_prace
             rBtnCrossroadExtension1.UseVisualStyleBackColor = true;
             rBtnCrossroadExtension1.CheckedChanged += rBtnCrossroadExtension1_CheckedChanged;
             // 
-            // userControlCrossroad1
-            //
-            userControlCrossroad1.Dock = DockStyle.Fill;
-            userControlCrossroad1.Location = new Point(0, 0);
-            userControlCrossroad1.Margin = new Padding(3, 2, 3, 2);
-            userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1499, 753);
-            userControlCrossroad1.TabIndex = 32;
-            // 
             // Timer_read_actual
             // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
             // panel2
             // 
-            panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -219,7 +208,6 @@ namespace Bc_prace
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCrossroad);
-            Controls.Add(userControlCrossroad1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program3Form";
             Text = "Program3";
@@ -238,7 +226,6 @@ namespace Bc_prace
         private Button btnEnd;
         private RadioButton rBtnCrossroadBasic;
         private Panel panel1;
-        private Controls.UserControlCrossroad userControlCrossroad1;
         private RadioButton rBtnCrossroadExtension3;
         private RadioButton rBtnCrossroadExtension2;
         private RadioButton rBtnCrossroadExtension1;
