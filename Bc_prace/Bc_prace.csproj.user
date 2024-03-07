@@ -5,6 +5,9 @@
     <Compile Update="Controls\UserControlCarWash.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\UserControlCrossroad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Controls\UserControlElevatorCabin.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -1393,9 +1393,7 @@ namespace Bc_prace
             #region Action on variable change
 
             if (rBtnCrossroadBasic.Checked)
-            {
-                /*
-                
+            {               
                 //Crossroad1
                 #region Crossroad1
 
@@ -1430,8 +1428,6 @@ namespace Bc_prace
 
                 #endregion
 
-                */
-
                 //Testing 
                 /*
                 #region Testing
@@ -1449,9 +1445,7 @@ namespace Bc_prace
                 */
             }
             else if (rBtnCrossroadExtension1.Checked)
-            {
-                /*
-                
+            {                
                 //Crossroad1
                 #region Crossroad1
 
@@ -1519,9 +1513,7 @@ namespace Bc_prace
                 userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
 
                 #endregion
-
-                */
-
+                               
                 //Testing 
                 /*
                 #region Testing
@@ -1553,8 +1545,6 @@ namespace Bc_prace
             }
             else if (rBtnCrossroadExtension2.Checked)
             {
-                /*
-                
                 //Crossroad1
                 #region Crossroad1
 
@@ -1647,8 +1637,6 @@ namespace Bc_prace
 
                 #endregion
 
-                */
-
                 //Testing
                 /*
                 #region Testing
@@ -1686,9 +1674,7 @@ namespace Bc_prace
                 */
             }
             else if (rBtnCrossroadExtension3.Checked)
-            {
-                /*
-                
+            {                
                 //Crossroad1
                 #region Crossroad1
 
@@ -1806,8 +1792,6 @@ namespace Bc_prace
 
                 #endregion
 
-                */
-
                 //Testing 
                 /*
                 #region Testing 
@@ -1882,12 +1866,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.BasicCrossroad();
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+            
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -1897,12 +1881,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension1();
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+            
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -1912,12 +1896,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension2();
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = true;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+            
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -1927,12 +1911,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension3();
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = true;
-            */
+            
         }
 
         #endregion
