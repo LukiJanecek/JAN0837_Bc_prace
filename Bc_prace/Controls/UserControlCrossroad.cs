@@ -9488,11 +9488,7 @@ namespace Bc_prace.Controls
         #endregion
 
         #endregion
-
-        private void UserControlCrossroad_Load(object sender, EventArgs e)
-        {
-
-        }
+                
     }
 
 
