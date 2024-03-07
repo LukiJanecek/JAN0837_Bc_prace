@@ -204,7 +204,7 @@ namespace Bc_prace
             // 
             // panel2
             // 
-            panel2.Controls.Add(userControlCrossroad1);
+            //panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -219,12 +219,14 @@ namespace Bc_prace
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCrossroad);
+            //Controls.Add(userControlCrossroad1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program3Form";
             Text = "Program3";
             Load += Program3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
