@@ -225,7 +225,7 @@ namespace Bc_prace.Controls
         #endregion
 
         #endregion
-                
+
         //MessageBox control
         private bool errorMessageBoxShown;
 
