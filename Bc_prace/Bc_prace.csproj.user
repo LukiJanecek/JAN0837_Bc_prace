@@ -11,6 +11,9 @@
     <Compile Update="Controls\UserControlElevatorCabin.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Controls\UserControlElevatorDoor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\ChooseOptionForm.cs">
       <SubType>Form</SubType>
     </Compile>
