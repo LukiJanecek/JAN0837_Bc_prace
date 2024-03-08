@@ -543,27 +543,142 @@ namespace Bc_prace
         #region btn cabin
         private void btnCabinFloor1_Click(object sender, EventArgs e)
         {
-            Floor1movement();
+            Floor1movement(); //this must go => Tia needs to activate this 
+
+            ElevatorBTNCabin1 = true;
+            S7.SetBitAt(send_buffer_DB4, 0, 0, ElevatorBTNCabin1);
+
+            //write to PLC
+            int writeResultDB4_btnCabinFloor1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_btnCabinFloor1 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_btnCabinFloor1 = {writeResultDB4_btnCabinFloor1} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnCabinFloor2_Click(object sender, EventArgs e)
         {
-            Floor2movement();
+            Floor2movement(); //this must go => Tia needs to activate this 
+
+            ElevatorBTNCabin2 = true;
+            S7.SetBitAt(send_buffer_DB4, 0, 1, ElevatorBTNCabin2);
+
+            //write to PLC
+            int writeResultDB4_btnCabinFloor2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_btnCabinFloor2 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_btnCabinFloor2 = {writeResultDB4_btnCabinFloor2} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnCabinFloor3_Click(object sender, EventArgs e)
         {
-            Floor3movement();
+            Floor3movement(); //this must go => Tia needs to activate this 
+
+            ElevatorBTNCabin3 = true;
+            S7.SetBitAt(send_buffer_DB4, 0, 2, ElevatorBTNCabin3);
+
+            //write to PLC
+            int writeResultDB4_btnCabinFloor3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_btnCabinFloor3 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_btnCabinFloor3 = {writeResultDB4_btnCabinFloor3} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnCabinFloor4_Click(object sender, EventArgs e)
         {
-            Floor4movement();
+            Floor4movement(); //this must go => Tia needs to activate this 
+
+            ElevatorBTNCabin4 = true;
+            S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin4);
+
+            //write to PLC
+            int writeResultDB4_btnCabinFloor4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_btnCabinFloor4 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_btnCabinFloor4 = {writeResultDB4_btnCabinFloor4} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnCabinFloor5_Click(object sender, EventArgs e)
         {
-            Floor5movement();
+            Floor5movement(); //this must go => Tia needs to activate this 
+
+            ElevatorBTNCabin5 = true;
+            S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin5);
+
+            //write to PLC
+            int writeResultDB4_btnCabinFloor5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_btnCabinFloor5 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_btnCabinFloor5 = {writeResultDB4_btnCabinFloor5} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
         #endregion
 
@@ -643,6 +758,10 @@ namespace Bc_prace
                     await Task.Delay(500);
                 }
             }
+            else
+            {
+                ErrorSystem();
+            }
         }
 
         #endregion
@@ -690,6 +809,10 @@ namespace Bc_prace
                     await Task.Delay(500);
                 }
             }
+            else
+            {
+                ErrorSystem();
+            }
         }
         #endregion
 
@@ -736,6 +859,11 @@ namespace Bc_prace
                     await Task.Delay(500);
                 }
             }
+            else
+            {
+                ErrorSystem();
+            }
+
         }
         #endregion
 
@@ -782,6 +910,10 @@ namespace Bc_prace
                     await Task.Delay(500);
                 }
             }
+            else
+            {
+                ErrorSystem();
+            }
         }
         #endregion
 
@@ -827,6 +959,10 @@ namespace Bc_prace
                     userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+            }
+            else
+            {
+                ErrorSystem();
             }
         }
         #endregion
