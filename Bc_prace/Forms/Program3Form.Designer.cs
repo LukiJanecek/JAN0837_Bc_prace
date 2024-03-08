@@ -45,7 +45,6 @@ namespace Bc_prace
             rBtnCrossroadExtension1 = new RadioButton();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
-            userControlCrossroad1 = new Controls.UserControlCrossroad();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -203,21 +202,12 @@ namespace Bc_prace
             // 
             // panel2
             // 
-            panel2.Controls.Add(userControlCrossroad1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(1183, 612);
             panel2.TabIndex = 30;
-            // 
-            // userControlCrossroad1
-            // 
-            userControlCrossroad1.Dock = DockStyle.Fill;
-            userControlCrossroad1.Location = new Point(0, 0);
-            userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1183, 612);
-            userControlCrossroad1.TabIndex = 0;
             // 
             // Program3Form
             // 
@@ -253,6 +243,5 @@ namespace Bc_prace
         private Button btnNightMode;
         private Button btnDayMode;
         private Panel panel2;
-        private UserControlCrossroad userControlCrossroad1;
     }
 }
