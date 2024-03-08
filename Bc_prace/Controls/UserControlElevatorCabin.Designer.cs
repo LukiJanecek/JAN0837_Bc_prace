@@ -35,7 +35,6 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Name = "UserControlElevatorCabin";
-            Load += UserControl1_Load;
             ResumeLayout(false);
         }
 

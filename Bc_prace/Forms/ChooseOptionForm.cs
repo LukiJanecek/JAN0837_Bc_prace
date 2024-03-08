@@ -18,28 +18,21 @@ namespace Bc_prace
 {
     public partial class ChooseOptionForm : Form
     {
-        //Variables
-        #region Variables 
-                
-        //C# variables
-        #region C# variables
+        public S7Client client = new S7Client();
 
-        private static bool program1Opened = false;
-        private static bool program2Opened = false;
-        private static bool program3Opened = false;
-
+        //MessageBox control
         private bool errorMessageBoxShown;
 
         Program1Form Program1 = null;
         Program2Form Program2 = null;
         Program3Form Program3 = null;
 
-        #endregion
-
-        //Tia variables
-        #region Tia variables
-
-        public S7Client client = new S7Client();
+        private static bool program1Opened = false;
+        private static bool program2Opened = false;
+        private static bool program3Opened = false;
+                       
+        //Buffers variables 
+        #region Buffers variables
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
@@ -50,81 +43,55 @@ namespace Bc_prace
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
-        //first struct -> Input -> 14 variables -> size 1.5 
         public byte[] read_buffer_DB4 = new byte[30]; 
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
         public byte[] send_buffer_DB4 = new byte[30]; 
-        //second struct -> Output -> 32 variables -> size 26
-        //public byte[] read_buffer_DB4_Output = new byte[1024]; //26
-        //public byte[] send_buffer_DB4_Output = new byte[1024]; //26
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
-        private int DBNumber_DB5 = 5;
-        //first struct -> Input -> 7 variables -> 0.6 size 
+        private int DBNumber_DB5 = 5; 
         public byte[] read_buffer_DB5 = new byte[4]; //3
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
         public byte[] send_buffer_DB5 = new byte[4]; //3
-        //second struct -> Output -> 16 variables -> 3.7 size
-        //public byte[] read_buffer_DB5_Output = new byte[1024]; //3
-        //public byte[] send_buffer_DB5_Output = new byte[1024]; //3
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
-        //first struct -> Input -> 5 variables -> size 0.4
         public byte[] read_buffer_DB14 = new byte[4]; //110 
         public byte[] previous_buffer_DB14;
         public byte[] PreviousBufferHash_DB14;
         public byte[] send_buffer_DB14 = new byte[4]; //110
-        //second struct -> Output -> 1 variable -> size 2.0
-        //public byte[] read_buffer_DB14_Output = new byte[1024]; //110 
-        //public byte[] send_buffer_DB14_Output = new byte[1024]; //110
-        //other structs are Timers 
+        //+ other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
-        //first struct -> Input -> 4 variables -> size 0.3
         public byte[] read_buffer_DB1 = new byte[7]; //6 
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
         public byte[] send_buffer_DB1 = new byte[7]; //6
-        //second struct -> Output -> 21 variables -> size 6.3 
-        //public byte[] read_buffer_DB1_Output = new byte[1024]; //6 
-        //public byte[] send_buffer_DB1_Output = new byte[1024]; //6
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
-        //first struct -> Input -> 4 variables -> size 0.3
         public byte[] read_buffer_DB19 = new byte[7]; //6 
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
         public byte[] send_buffer_DB19 = new byte[7]; //6
-        //second struct -> Output -> 21 variables -> size 6.3  
-        //public byte[] read_buffer_DB19_Output = new byte[1024]; //6 
-        //public byte[] send_buffer_DB19_Output = new byte[1024]; //6
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
-        //first struct -> Input -> 2 variables -> size 0.1
         public byte[] read_buffer_DB20 = new byte[6]; //5
         public byte[] previous_buffer_DB20;
         public byte[] PreviousBufferHash_DB20;
         public byte[] send_buffer_DB20 = new byte[6]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        //public byte[] read_buffer_DB20_Output = new byte[1024]; //5
-        //public byte[] send_buffer_DB20_Output = new byte[1024]; //5
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
-        //first struct -> Input -> 2 variables -> size 0.1
         public byte[] read_buffer_DB21 = new byte[6]; //5
         public byte[] previous_buffer_DB21;
         public byte[] PreviousBufferHash_DB21;
         public byte[] send_buffer_DB21 = new byte[6]; //5
-        //second struct -> Output -> 14 variables -> size 5.4
-        //public byte[] read_buffer_DB21_Output = new byte[1024]; //5
-        //public byte[] send_buffer_DB21_Output = new byte[1024]; //5
+
+        #endregion
 
         //MaintainDB variables
         public bool Option1 = false;
@@ -401,10 +368,6 @@ namespace Bc_prace
         public bool CrossroadRightTTopCrosswalkRED2;
         public bool CrossroadRightTTopCrosswalkGREEN1;
         public bool CrossroadRightTTopCrosswalkGREEN2;
-
-        #endregion
-
-        #endregion
 
         #endregion
 
@@ -1199,6 +1162,14 @@ namespace Bc_prace
             InitializeComponent();
         }
 
+        private void ChooseOption_Load(object sender, EventArgs e)
+        {
+            lblChooseSIM.Visible = false;
+            btnProgram1.Visible = false;
+            btnProgram2.Visible = false;
+            btnProgram3.Visible = false;
+        }
+
         //Choices and messages 
         #region Choose your simulation
         private void btnProgram1_Click(object sender, EventArgs e)
@@ -1231,9 +1202,6 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
                     }
                 }
-
-                //stop timer
-                //Timer_read_from_PLC.Stop();
 
                 Program1 = new Program1Form(this);
                 Program1.Show();
@@ -1285,9 +1253,6 @@ namespace Bc_prace
                     }
                 }
 
-                //stop timer
-                //Timer_read_from_PLC.Stop();
-
                 Program2 = new Program2Form(this);
                 Program2.Show();
                 program2Opened = true;
@@ -1337,9 +1302,6 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
                     }
                 }
-
-                //stop timer
-                //Timer_read_from_PLC.Stop();
 
                 Program3 = new Program3Form(this);
                 Program3.Show();
@@ -1392,7 +1354,6 @@ namespace Bc_prace
                 //set time interval (ms)
                 Timer_read_from_PLC.Interval = 100;
 
-
                 lblChooseSIM.Visible = true;
                 btnProgram1.Visible = true;
                 btnProgram2.Visible = true;
@@ -1413,20 +1374,7 @@ namespace Bc_prace
             }
         }
         #endregion
-                
-        private void txtBoxPLCIP_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ChooseOption_Load(object sender, EventArgs e)
-        {
-            lblChooseSIM.Visible = false;
-            btnProgram1.Visible = false;
-            btnProgram2.Visible = false;
-            btnProgram3.Visible = false;
-        }
-
+         
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)

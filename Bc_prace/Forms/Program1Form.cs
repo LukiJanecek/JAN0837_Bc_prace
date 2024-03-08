@@ -20,29 +20,31 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
-        S7Client client;
+        public S7Client client;
 
+        //MessageBox control
         private bool errorMessageBoxShown = false;
+
+        //Buffers variables 
+        #region Buffers variables
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
-        byte[] send_buffer_DB11;
-
-        //MaintainDB variables
-        bool Option1 = false;
+        byte[] send_buffer_DB11;       
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
-        //first struct -> Input -> 14 variables -> size 1.5 
         byte[] read_buffer_DB4;
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
         byte[] send_buffer_DB4;
-        //second struct -> Output -> 32 variables -> size 26
-        //byte[] read_buffer_DB4_Output;
-        //byte[] send_buffer_DB4_Output;
+
+        #endregion
+
+        //MaintainDB variables
+        bool Option1 = false;
 
         //Input variables
         #region Input variables 
@@ -102,6 +104,31 @@ namespace Bc_prace
 
         #endregion
 
+        //Variables
+        #region Variables
+                
+        //Variables for panels (cabin door + cabin movement)
+        private int panelDoorLeftX, panelDoorLeftY;
+        private int panelDoorRightX, panelDoorRightY;
+        private int panelCabinX, panelCabinY;
+        private int lblElevatorFloorX, lblElevatorFloorY;
+
+        //Variables DoorSEQ time 
+        public int CabinDoorClosingTime = 500;
+        public int CabinDoorOpenningTime = 1000;
+
+        //Variables cabin movement step 
+        public int ElevatorStep = 10;
+        public int ElevatorMovementTime = 500;
+        private int currentFloor = 5;
+        private int floorHeight = 120;
+
+        public int ActualFloor;
+
+        int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
+
+        #endregion
+
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
@@ -110,15 +137,17 @@ namespace Bc_prace
 
             client = chooseOptionFormInstance.client;
 
-            //buffers
+            //Buffers initialize
+            #region Buffers initialize
+
             //DB11 => Maintain_DB
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB4 => Elevator_DB
             read_buffer_DB4 = chooseOptionFormInstance.read_buffer_DB4;
             send_buffer_DB4 = chooseOptionFormInstance.send_buffer_DB4;
-            //read_buffer_DB4_Output = chooseOptionFormInstance.read_buffer_DB4_Output;
-            //send_buffer_DB4_Output = chooseOptionFormInstance.send_buffer_DB4_Output;
+
+            #endregion
 
             //Cabin door position
             panelDoorLeftX = panelDoorLeft.Location.X;
@@ -156,40 +185,7 @@ namespace Bc_prace
             lblElevatorFloorX = 40;
             lblElevatorFloorY = 53;
         }
-
-        //Variables
-        #region Variables
-
-        //C# variables
-        #region C# variables
-
-        //private bool DoorOPEN = false;
-        //private bool DoorCLOSE = true;
-
-        //Variables for panels (cabin door + cabin movement)
-        private int panelDoorLeftX, panelDoorLeftY;
-        private int panelDoorRightX, panelDoorRightY;
-        private int panelCabinX, panelCabinY;
-        private int lblElevatorFloorX, lblElevatorFloorY;
-
-        //Variables DoorSEQ time 
-        public int CabinDoorClosingTime = 500;
-        public int CabinDoorOpenningTime = 1000;
-
-        //Variables cabin movement step 
-        public int ElevatorStep = 10;
-        public int ElevatorMovementTime = 500;
-        private int currentFloor = 5;
-        private int floorHeight = 120;
-
-        public int ActualFloor;
-
-        int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
-
-        #endregion
-
-        #endregion
-
+                
         //Tia connection
         #region Tia connection
 
@@ -540,14 +536,8 @@ namespace Bc_prace
         }
 
         #endregion
-
-        //Work with Tia variables
-        #region Work with Tia variables
-        
-
-        #endregion
-
-        //movement to specific floor 
+                
+        //Movement to specific floor 
         #region Movement to specific floor 
         //btn cabin 
         #region btn cabin
@@ -1015,17 +1005,9 @@ namespace Bc_prace
             {
                 //write was successful
                 this.Close();
-            }
-
-            //stop timer
-            //Timer_read_from_PLC.Stop();            
+            }           
         }
         #endregion
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         //ElevatorCabin - parametets and position
         #region ElevatorCabin - parameters and position
@@ -1077,13 +1059,6 @@ namespace Bc_prace
 
         #endregion
 
-        #endregion
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        
+        #endregion    
     }
 }

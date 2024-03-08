@@ -22,28 +22,30 @@ namespace Bc_prace
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
-        S7Client client;
+        public S7Client client;
 
-        private bool errorMessageBoxShown = false;
+        //MessageBox control
+        private bool errorMessageBoxShown = false;       
+
+        //Buffers variables 
+        #region Buffers variables
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
-
-        //MaintainDB variables
-        bool Option2 = false;
-
+                
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
-        //first struct -> Input -> 7 variables -> 0.6 size 
         byte[] read_buffer_DB5;
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
         byte[] send_buffer_DB5;
-        //second struct -> Output -> 16 variables -> 3.7 size
-        //byte[] read_buffer_DB5_Output;
-        //byte[] send_buffer_DB5_Output;
+
+        #endregion
+
+        //MaintainDB variables
+        bool Option2 = false;
 
         //Input variables
         #region Input variables
@@ -83,39 +85,8 @@ namespace Bc_prace
 
         #endregion
 
-        public Program2Form(ChooseOptionForm chooseOptionFormInstance)
-        {
-            InitializeComponent();
-            InitializeButton();
-
-            this.chooseOptionFormInstance = chooseOptionFormInstance;
-
-            client = chooseOptionFormInstance.client;
-
-            //buffers
-            //DB11 => Maintain_DB
-            read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
-            send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
-            //DB5 => CarWash_DB
-            read_buffer_DB5 = chooseOptionFormInstance.read_buffer_DB5;
-            send_buffer_DB5 = chooseOptionFormInstance.send_buffer_DB5;
-            //read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
-            //send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
-
-            if (client.Connected)
-            {
-                //start timer
-                Timer_read_actual.Start();
-                //set time interval (ms)
-                Timer_read_actual.Interval = 100;
-            }
-        }
-
         //Variables
         #region Variables
-
-        //C# variables
-        #region C# variables
 
         //Count
         int countWax = 0;
@@ -126,8 +97,36 @@ namespace Bc_prace
 
         #endregion
 
-        #endregion
+        public Program2Form(ChooseOptionForm chooseOptionFormInstance)
+        {
+            InitializeComponent();
+            InitializeButton();
 
+            this.chooseOptionFormInstance = chooseOptionFormInstance;
+
+            client = chooseOptionFormInstance.client;
+
+            //Buffers initialize
+            #region Buffers initialize
+
+            //DB11 => Maintain_DB
+            read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
+            send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
+            //DB5 => CarWash_DB
+            read_buffer_DB5 = chooseOptionFormInstance.read_buffer_DB5;
+            send_buffer_DB5 = chooseOptionFormInstance.send_buffer_DB5;
+
+            #endregion
+
+            if (client.Connected)
+            {
+                //start timer
+                Timer_read_actual.Start();
+                //set time interval (ms)
+                Timer_read_actual.Interval = 100;
+            }
+        }
+                
         //Tia connection
         #region Tia connection
 
@@ -516,7 +515,6 @@ namespace Bc_prace
             }
 
             #endregion
-
         }
 
         #endregion
@@ -552,11 +550,6 @@ namespace Bc_prace
             }
         }
         #endregion
-
-        private void Program2_Load(object sender, EventArgs e)
-        {
-
-        }
 
         //Emergency + system error 
         #region Emergency + system error 
@@ -649,10 +642,7 @@ namespace Bc_prace
             {
                 //write was successful
                 this.Close();
-            }
-
-            //stop timer
-            //Timer_read_from_PLC.Stop();            
+            }           
         }
         #endregion
 
@@ -668,6 +658,20 @@ namespace Bc_prace
             statusStripCarWash.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
             statusStripCarWash.Items.Add(lblStatus);
+        }
+
+        #endregion
+
+        //Manual car movement
+        #region Manual Car movement
+        private void btnCarMoveLEFT_Click(object sender, EventArgs e)
+        {
+            userControlCarWash1.ManualMovePictureLEFT();
+        }
+
+        private void btnCarMoveRIGHT_Click(object sender, EventArgs e)
+        {
+            userControlCarWash1.ManualMovePictureRIGHT();
         }
 
         #endregion
@@ -702,19 +706,5 @@ namespace Bc_prace
 
 
         }
-
-        //Manual car movement
-        #region Manual Car movement
-        private void btnCarMoveLEFT_Click(object sender, EventArgs e)
-        {
-            userControlCarWash1.ManualMovePictureLEFT();
-        }
-
-        private void btnCarMoveRIGHT_Click(object sender, EventArgs e)
-        {
-            userControlCarWash1.ManualMovePictureRIGHT();
-        }
-        
-        #endregion
     }
 }

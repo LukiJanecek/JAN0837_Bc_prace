@@ -410,7 +410,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 722);
             panel1.TabIndex = 42;
-            panel1.Paint += panel1_Paint;
             // 
             // btnCabinLengthBigger
             // 

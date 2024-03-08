@@ -189,7 +189,6 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Program2Form";
             Text = "Program2";
-            Load += Program2_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);

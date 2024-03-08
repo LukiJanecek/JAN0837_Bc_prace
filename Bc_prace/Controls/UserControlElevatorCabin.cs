@@ -12,11 +12,16 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlElevatorCabin : UserControl
     {
+        //Drawing variables
+        #region Drawing variables
+
         private float x; //x coordinate
         private float y; //width
         private float a; //y coordinate
         private float b; //length
         public float Step = 10;
+
+        #endregion
 
         public UserControlElevatorCabin()
         {
@@ -87,9 +92,5 @@ namespace Bc_prace.Controls
         }
         #endregion
 
-        private void UserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

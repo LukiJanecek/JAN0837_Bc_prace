@@ -16,8 +16,8 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlCarWash : UserControl
     {
-        //Variables 
-        #region Variables 
+        //Drawing variables
+        #region Drawing variables 
 
         private Label label;
 
@@ -79,6 +79,7 @@ namespace Bc_prace.Controls
         private SolidBrush purple = new SolidBrush(Color.Purple); //activefoam
 
         #endregion
+
         public UserControlCarWash()
         {
             InitializeComponent();

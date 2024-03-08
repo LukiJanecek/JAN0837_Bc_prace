@@ -99,7 +99,6 @@
             txtBoxPLCIP.Size = new Size(204, 23);
             txtBoxPLCIP.TabIndex = 4;
             txtBoxPLCIP.Text = "192.168.0.1";
-            txtBoxPLCIP.TextChanged += txtBoxPLCIP_TextChanged;
             // 
             // lblTypePLCIP
             // 

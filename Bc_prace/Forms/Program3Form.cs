@@ -23,71 +23,57 @@ namespace Bc_prace
 
         public S7Client client;
 
+        //MessageBox control
         private bool errorMessageBoxShown = false;
+
+        //Buffers variables 
+        #region Buffers variables
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
-
-        //MaintainDB variables
-        bool Option3 = false;
-
+                
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
-        //first struct -> Input -> 5 variables -> size 0.4
         public byte[] read_buffer_DB14;
         public byte[] previous_buffer_DB14;
         public byte[] PreviousBufferHash_DB14;
         public byte[] send_buffer_DB14;
-        //second struct -> Output -> 1 variable -> size 2.0
-        //public byte[] read_buffer_DB14_Output;
-        //public byte[] send_buffer_DB14_Output;
-        //other structs are Timers 
+        //+ other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
-        //first struct -> Input -> 4 variables -> size 0.3
         public byte[] read_buffer_DB1;
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
         public byte[] send_buffer_DB1;
-        //second struct -> Output -> 21 variables -> size 6.3 
-        //public byte[] read_buffer_DB1_Output;
-        //public byte[] send_buffer_DB1_Output;
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
-        //first struct -> Input -> 4 variables -> size 0.3
         public byte[] read_buffer_DB19;
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
         public byte[] send_buffer_DB19;
-        //second struct -> Output -> 21 variables -> size 6.3  
-        //public byte[] read_buffer_DB19_Output;
-        //public byte[] send_buffer_DB19_Output;
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
-        //first struct -> Input -> 2 variables -> size 0.1
         public byte[] read_buffer_DB20;
         public byte[] previous_buffer_DB20t;
         public byte[] PreviousBufferHash_DB20;
         public byte[] send_buffer_DB20;
-        //second struct -> Output -> 14 variables -> size 5.4
-        //public byte[] read_buffer_DB20_Output;
-        //public byte[] send_buffer_DB20_Output;
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
-        //first struct -> Input -> 2 variables -> size 0.1
         public byte[] read_buffer_DB21;
         public byte[] previous_buffer_DB21;
         public byte[] PreviousBufferHash_DB21;
         public byte[] send_buffer_DB21;
-        //second struct -> Output -> 14 variables -> size 5.4
-        //public byte[] read_buffer_DB21_Output;
-        //public byte[] send_buffer_DB21_Output;
+
+        #endregion
+
+        //MaintainDB variables
+        bool Option3 = false;
 
         //Input variables
         #region Input variables 
@@ -257,45 +243,35 @@ namespace Bc_prace
 
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
-            InitializeComponent();
-
-            //UserControlCrossroad userControlCrossroad1 = new UserControlCrossroad(this);
-            //Controls.Add(userControlCrossroad1);
-            //crossroadUserControl.ButtonClicked += UserControlCrossroad_ButtonClicked;
+            InitializeComponent();           
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
             client = chooseOptionFormInstance.client;
 
-            //buffers 
+            //Buffers initialize
+            #region Buffers initialize
+
             //DB11 => Maintain_DB
             read_buffer_DB11 = chooseOptionFormInstance.read_buffer_DB11;
             send_buffer_DB11 = chooseOptionFormInstance.send_buffer_DB11;
             //DB14 => Crossroad_DB
             read_buffer_DB14 = chooseOptionFormInstance.read_buffer_DB14;
             send_buffer_DB14 = chooseOptionFormInstance.send_buffer_DB14;
-            //read_buffer_DB14_Output = chooseOptionFormInstance.read_buffer_DB14_Output;
-            //send_buffer_DB14_Output = chooseOptionFormInstance.send_buffer_DB14_Output;
             //DB1 => Crossroad_1_DB
             read_buffer_DB1 = chooseOptionFormInstance.read_buffer_DB1;
             send_buffer_DB1 = chooseOptionFormInstance.send_buffer_DB1;
-            //read_buffer_DB1_Output = chooseOptionFormInstance.read_buffer_DB1_Output;
-            //send_buffer_DB1_Output = chooseOptionFormInstance.send_buffer_DB1_Output;
             //DB19 => Crossroad_2_DB
             read_buffer_DB19 = chooseOptionFormInstance.read_buffer_DB19;
             send_buffer_DB19 = chooseOptionFormInstance.send_buffer_DB19;
-            //read_buffer_DB19_Output = chooseOptionFormInstance.read_buffer_DB19_Output;
-            //send_buffer_DB19_Output = chooseOptionFormInstance.send_buffer_DB19_Output;
             //DB20 => Crossroad_LeftT_DB
             read_buffer_DB20 = chooseOptionFormInstance.read_buffer_DB20;
             send_buffer_DB20 = chooseOptionFormInstance.send_buffer_DB20;
-            //read_buffer_DB20_Output = chooseOptionFormInstance.read_buffer_DB20_Output;
-            //send_buffer_DB20_Output = chooseOptionFormInstance.send_buffer_DB20_Output;
             //DB21 => Crossroad_RightT_DB
             read_buffer_DB21 = chooseOptionFormInstance.read_buffer_DB21;
             send_buffer_DB21 = chooseOptionFormInstance.send_buffer_DB21;
-            //read_buffer_DB21_Output = chooseOptionFormInstance.read_buffer_DB21_Output;
-            //send_buffer_DB21_Output = chooseOptionFormInstance.send_buffer_DB21_Output;
+
+            #endregion
 
             if (client.Connected)
             {
@@ -306,6 +282,16 @@ namespace Bc_prace
             }
         }
 
+        private void Program3_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+            rBtnCrossroadBasic.Checked = false;
+            rBtnCrossroadExtension1.Checked = false;
+            rBtnCrossroadExtension2.Checked = false;
+            rBtnCrossroadExtension3.Checked = false;
+
+        }
 
         //Tia connection
         #region Tia connection
@@ -1387,19 +1373,7 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-
-            //Crossroad1
-            #region Crossroad1 
-
-            userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-            userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-            userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-            userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-            userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-            userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-
-            #endregion
-
+                        
             //Action on variable change
             #region Action on variable change
             //I never get into this condition!!!
@@ -1981,18 +1955,7 @@ namespace Bc_prace
         }
 
         #endregion
-
-        private void Program3_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-
-            rBtnCrossroadBasic.Checked = false;
-            rBtnCrossroadExtension1.Checked = false;
-            rBtnCrossroadExtension2.Checked = false;
-            rBtnCrossroadExtension3.Checked = false;
-
-        }
-
+                
         //Radiobutton clicked
         #region Radiobutton clicked
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -2003,10 +1966,10 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
-            //userControlCrossroad1.DrawBasicCrossroad = true;
-            //userControlCrossroad1.DrawCrossroadExtension1 = false;
-            //userControlCrossroad1.DrawCrossroadExtension2 = false;
-            //userControlCrossroad1.DrawCrossroadExtension3 = false;
+            userControlCrossroad1.DrawBasicCrossroad = true;
+            userControlCrossroad1.DrawCrossroadExtension1 = false;
+            userControlCrossroad1.DrawCrossroadExtension2 = false;
+            userControlCrossroad1.DrawCrossroadExtension3 = false;
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -2473,17 +2436,9 @@ namespace Bc_prace
                 //write was successful
                 this.Close();
             }
-
-            //stop timer
-            //Timer_read_from_PLC.Stop();
         }
         #endregion
-
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-
-        }
-
+                
         //BTN mode click
         #region BTN mode click
         private void btnDayMode_Click(object sender, EventArgs e)
@@ -2614,6 +2569,11 @@ namespace Bc_prace
         }
 
         #endregion
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
