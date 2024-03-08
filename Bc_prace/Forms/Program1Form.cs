@@ -29,17 +29,17 @@ namespace Bc_prace
         #region Buffers variables
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
-        private int DBNumber_DB11 = 11;
+        public int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
-        byte[] send_buffer_DB11;       
+        byte[] send_buffer_DB11;
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
-        private int DBNumber_DB4 = 4;
-        byte[] read_buffer_DB4;
+        public int DBNumber_DB4 = 4;
+        public byte[] read_buffer_DB4;
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
-        byte[] send_buffer_DB4;
+        public byte[] send_buffer_DB4;
 
         #endregion
 
@@ -49,64 +49,64 @@ namespace Bc_prace
         //Input variables
         #region Input variables 
 
-        bool ElevatorBTNCabin1;
-        bool ElevatorBTNCabin2;
-        bool ElevatorBTNCabin3;
-        bool ElevatorBTNCabin4;
-        bool ElevatorBTNCabin5;
-        bool ElevatorBTNFloor1;
-        bool ElevatorBTNFloor2;
-        bool ElevatorBTNFloor3;
-        bool ElevatorBTNFloor4;
-        bool ElevatorBTNFloor5;
-        bool ElevatorDoorSEQ;
-        bool ElevatorBTNOPENCLOSE;
-        bool ElevatorEmergencySTOP;
-        bool ElevatorErrorSystem;
+        public bool ElevatorBTNCabin1;
+        public bool ElevatorBTNCabin2;
+        public bool ElevatorBTNCabin3;
+        public bool ElevatorBTNCabin4;
+        public bool ElevatorBTNCabin5;
+        public bool ElevatorBTNFloor1;
+        public bool ElevatorBTNFloor2;
+        public bool ElevatorBTNFloor3;
+        public bool ElevatorBTNFloor4;
+        public bool ElevatorBTNFloor5;
+        public bool ElevatorDoorSEQ;
+        public bool ElevatorBTNOPENCLOSE;
+        public bool ElevatorEmergencySTOP;
+        public bool ElevatorErrorSystem;
 
         #endregion
 
         //Output variables
         #region Output variables
 
-        bool ElevatorMotorON;
-        bool ElevatorMotorDOWN;
-        bool ElevatorMotorUP;
-        bool ElevatroHoming;
-        bool ElevatorSystemReady;
-        int ElevatorActualFloor;
-        bool ElevatorMoving;
-        bool ElevatorSystemWorking;
-        int ElevatorGoToFloor;
-        bool ElevatorDirection;
-        bool ElevatorActualFloorLED1;
-        bool ElevatorActualFloorLED2;
-        bool ElevatorActualFloorLED3;
-        bool ElevatorActualFloorLED4;
-        bool ElevatorActualFloorLED5;
-        bool ElevatorActualFloorCabinLED1;
-        bool ElevatorActualFloorCabinLED2;
-        bool ElevatorActualFloorCabinLED3;
-        bool ElevatorActualFloorCabinLED4;
-        bool ElevatorActualFloorCabinLED5;
-        bool ElevatorActualFloorSENS1;
-        bool ElevatorActualFloorSENS2;
-        bool ElevatorActualFloorSENS3;
-        bool ElevatorActualFloorSENS4;
-        bool ElevatorActualFloorSENS5;
-        int ElevatorTimeDoorSQOPEN; //time
-        int ElevatroTimeDoorSQCLOSE; //time
-        bool ElevatorDoorClOSE;
-        bool ElevatorDoorOPEN;
-        int ElevatorCabinSpeed;
-        bool ElevatorInactivity;
-        int ElevatorTimeToGetDown; //time
+        public bool ElevatorMotorON;
+        public bool ElevatorMotorDOWN;
+        public bool ElevatorMotorUP;
+        public bool ElevatroHoming;
+        public bool ElevatorSystemReady;
+        public int ElevatorActualFloor;
+        public bool ElevatorMoving;
+        public bool ElevatorSystemWorking;
+        public int ElevatorGoToFloor;
+        public bool ElevatorDirection;
+        public bool ElevatorActualFloorLED1;
+        public bool ElevatorActualFloorLED2;
+        public bool ElevatorActualFloorLED3;
+        public bool ElevatorActualFloorLED4;
+        public bool ElevatorActualFloorLED5;
+        public bool ElevatorActualFloorCabinLED1;
+        public bool ElevatorActualFloorCabinLED2;
+        public bool ElevatorActualFloorCabinLED3;
+        public bool ElevatorActualFloorCabinLED4;
+        public bool ElevatorActualFloorCabinLED5;
+        public bool ElevatorActualFloorSENS1;
+        public bool ElevatorActualFloorSENS2;
+        public bool ElevatorActualFloorSENS3;
+        public bool ElevatorActualFloorSENS4;
+        public bool ElevatorActualFloorSENS5;
+        public int ElevatorTimeDoorSQOPEN; //time
+        public int ElevatroTimeDoorSQCLOSE; //time
+        public bool ElevatorDoorClOSE;
+        public bool ElevatorDoorOPEN;
+        public int ElevatorCabinSpeed;
+        public bool ElevatorInactivity;
+        public int ElevatorTimeToGetDown; //time
 
         #endregion
 
         //Variables
         #region Variables
-                
+
         //Variables for panels (cabin door + cabin movement)
         private int panelDoorLeftX, panelDoorLeftY;
         private int panelDoorRightX, panelDoorRightY;
@@ -185,7 +185,7 @@ namespace Bc_prace
             lblElevatorFloorX = 40;
             lblElevatorFloorY = 53;
         }
-                
+
         //Tia connection
         #region Tia connection
 
@@ -536,7 +536,7 @@ namespace Bc_prace
         }
 
         #endregion
-                
+
         //Movement to specific floor 
         #region Movement to specific floor 
         //btn cabin 
@@ -1005,7 +1005,7 @@ namespace Bc_prace
             {
                 //write was successful
                 this.Close();
-            }           
+            }
         }
         #endregion
 
@@ -1059,6 +1059,6 @@ namespace Bc_prace
 
         #endregion
 
-        #endregion    
+        #endregion
     }
 }

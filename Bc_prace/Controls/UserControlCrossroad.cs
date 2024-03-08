@@ -19,7 +19,7 @@ namespace Bc_prace.Controls
 
         private S7Client client;
 
-        //Buffers variables 
+        //Buffers variables => probably useless
         #region Buffers variables
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
@@ -60,7 +60,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Input variables
+        //Input variables => probably useless
         #region Input variables 
 
         //Crossroad_DB DB14
@@ -112,7 +112,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Output variables
+        //Output variables => probably useless
         #region Output variables 
 
         //Crossroad_DB DB14
@@ -1477,7 +1477,7 @@ namespace Bc_prace.Controls
 
             client = program3FormInstance.client;
 
-            //Buffers initialize
+            //Buffers initialize => totally useless
             #region Buffers initialize
 
             //DB14 => Crossroad_DB
@@ -5597,8 +5597,8 @@ namespace Bc_prace.Controls
             Invalidate();
         }
 
-        //BTNs in UserControl
-        #region BTNs in UserControl
+        //InitializeButtons
+        #region InitializeButtons
         private void InitializeButtons()
         {
             //Crossroad1 
