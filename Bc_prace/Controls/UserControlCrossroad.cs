@@ -15,7 +15,7 @@ namespace Bc_prace.Controls
     public partial class UserControlCrossroad : UserControl
     {
         private Program3Form program3FormInstance;
-        private ChooseOptionForm chooseOptionFormInstance;
+        //private ChooseOptionForm chooseOptionFormInstance;
 
         private S7Client client;
 
@@ -1463,7 +1463,7 @@ namespace Bc_prace.Controls
 
         */
 
-        public UserControlCrossroad(Program3Form program3FormInstance) //ChooseOptionForm chooseOptionFormInstance
+        public UserControlCrossroad() //ChooseOptionForm chooseOptionFormInstance x Program3Form program3FormInstance
         {
             InitializeComponent();
             InitializeButtons();
@@ -1473,7 +1473,7 @@ namespace Bc_prace.Controls
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
 
-            this.program3FormInstance = program3FormInstance;
+            //this.program3FormInstance = program3FormInstance;
 
             client = program3FormInstance.client;
 

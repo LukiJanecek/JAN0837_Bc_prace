@@ -45,7 +45,7 @@ namespace Bc_prace
             rBtnCrossroadExtension1 = new RadioButton();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
-            userControlCrossroad1 = new UserControlCrossroad(this);
+            userControlCrossroad1 = new Controls.UserControlCrossroad();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();

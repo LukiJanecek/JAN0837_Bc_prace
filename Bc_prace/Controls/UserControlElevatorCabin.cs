@@ -47,7 +47,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        public UserControlElevatorCabin(Program1Form program1FormInstance)
+        public UserControlElevatorCabin()
         {
             InitializeComponent();
             InitializeButtons();
@@ -55,7 +55,7 @@ namespace Bc_prace.Controls
             DoubleBuffered = true;
             Paint += UserControl1_Paint;
 
-            this.program1FormInstance = program1FormInstance;
+            //this.program1FormInstance = program1FormInstance;
 
             client = program1FormInstance.client;
         }
