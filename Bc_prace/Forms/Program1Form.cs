@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
-using static System.Windows.Forms.Design.AxImporter;
+//using static System.Windows.Forms.Design.AxImporter;
 using Sharp7;
 using System.Security.Cryptography;
 

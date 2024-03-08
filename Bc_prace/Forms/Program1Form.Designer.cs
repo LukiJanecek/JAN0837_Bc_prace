@@ -404,7 +404,7 @@
             panelCabinBtn.Controls.Add(btnCabinFloor3);
             panelCabinBtn.Controls.Add(btnCabinFloor4);
             panelCabinBtn.Controls.Add(btnCabinFloor5);
-            panelCabinBtn.Location = new Point(770, 282);
+            panelCabinBtn.Location = new Point(768, 276);
             panelCabinBtn.Margin = new Padding(3, 2, 3, 2);
             panelCabinBtn.Name = "panelCabinBtn";
             panelCabinBtn.Size = new Size(106, 260);
