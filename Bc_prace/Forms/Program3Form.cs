@@ -20,7 +20,6 @@ namespace Bc_prace
     public partial class Program3Form : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
-        //private UserControlCrossroad userControlCrossroad1;
 
         public S7Client client;
 
@@ -1389,14 +1388,37 @@ namespace Bc_prace
                 }
             }
 
+            //Crossroad1
+            #region Crossroad1 
+
+            userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+            userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+            userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+            userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+            userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+            userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+            #endregion
+
             //Action on variable change
             #region Action on variable change
-
-            if (rBtnCrossroadBasic.Checked)
-            {               
+            //I never get into this condition!!!
+            if (userControlCrossroad1.DrawBasicCrossroad == true) //rBtnBasicCrossroad.Checked
+            {
                 //Crossroad1
-                #region Crossroad1
+                #region Crossroad1 
 
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                #endregion
+
+                //Edit variables => didn't work properly
+                /*
                 //Top
                 userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
                 userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
@@ -1426,7 +1448,7 @@ namespace Bc_prace
                 userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
                 userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
 
-                #endregion
+                */
 
                 //Testing 
                 /*
@@ -1444,8 +1466,34 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (rBtnCrossroadExtension1.Checked)
-            {                
+            else if (userControlCrossroad1.DrawCrossroadExtension1 == true) //rBtnCrossroadExtension1.Checked
+            {
+                //Crossroad1
+                #region Crossroad1 
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                #endregion
+
+                //Edit variables => didn't work properly
+                /*
                 //Crossroad1
                 #region Crossroad1
 
@@ -1513,7 +1561,9 @@ namespace Bc_prace
                 userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
 
                 #endregion
-                               
+                
+                */
+
                 //Testing 
                 /*
                 #region Testing
@@ -1543,8 +1593,44 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (rBtnCrossroadExtension2.Checked)
+            else if (userControlCrossroad1.DrawCrossroadExtension2 == true) //rBtnCrossroadExtension2.Checked
             {
+                //Crossroad1
+                #region Crossroad1 
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                #endregion
+
+                //LeftT
+                #region LeftT
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+
+                #endregion
+
+                //Edit variables => didn't work properly
+                /*
                 //Crossroad1
                 #region Crossroad1
 
@@ -1637,6 +1723,8 @@ namespace Bc_prace
 
                 #endregion
 
+                */
+
                 //Testing
                 /*
                 #region Testing
@@ -1673,8 +1761,54 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (rBtnCrossroadExtension3.Checked)
-            {                
+            else if (userControlCrossroad1.DrawCrossroadExtension3 == true) //rBtnCrossroadExtension3.Checked
+            {
+                //Crossroad1
+                #region Crossroad1 
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                #endregion
+
+                //LeftT
+                #region LeftT
+
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+
+                #endregion
+
+                //RightT
+                #region RightT
+                
+                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTTOP(CrossroadRightTTopRED, CrossroadRightTTopYELLOW, CrossroadRightTTopGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTLEFT(CrossroadRightTLeftRED, CrossroadRightTLeftYELLOW, CrossroadRightTLeftGREEN);
+                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTRIGHT(CrossroadRightTRightRED, CrossroadRightTRightYELLOW, CrossroadRightTRightGREEN);
+                userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTTOP(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
+
+                #endregion
+
+                //Edit variables => didn't work properly
+                /*
                 //Crossroad1
                 #region Crossroad1
 
@@ -1792,6 +1926,8 @@ namespace Bc_prace
 
                 #endregion
 
+                */
+
                 //Testing 
                 /*
                 #region Testing 
@@ -1867,11 +2003,10 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
-            userControlCrossroad1.DrawBasicCrossroad = true;
-            userControlCrossroad1.DrawCrossroadExtension1 = false;
-            userControlCrossroad1.DrawCrossroadExtension2 = false;
-            userControlCrossroad1.DrawCrossroadExtension3 = false;
-            
+            //userControlCrossroad1.DrawBasicCrossroad = true;
+            //userControlCrossroad1.DrawCrossroadExtension1 = false;
+            //userControlCrossroad1.DrawCrossroadExtension2 = false;
+            //userControlCrossroad1.DrawCrossroadExtension3 = false;
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -1886,7 +2021,6 @@ namespace Bc_prace
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -1901,7 +2035,6 @@ namespace Bc_prace
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = true;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -1916,7 +2049,6 @@ namespace Bc_prace
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = true;
-            
         }
 
         #endregion

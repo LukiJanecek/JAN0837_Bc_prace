@@ -437,6 +437,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
+        ////Edit variables => didn't work properly
+        /*
         //Lights
         #region Crossroad Lights 
 
@@ -1470,6 +1472,8 @@ namespace Bc_prace.Controls
         #endregion
 
         #endregion
+
+        */
 
         #endregion
 
@@ -3961,7 +3965,8 @@ namespace Bc_prace.Controls
                 //???
             }
 
-            //Lights change
+            //Lights change on value change -> don't work
+            /*
             #region Lights change 
 
             //Crossroad1
@@ -4782,7 +4787,9 @@ namespace Bc_prace.Controls
 
             #endregion
 
+            */
 
+            //Reaction on variable change in Program3Form
             /*
 
             //Crossroad1
@@ -6145,8 +6152,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Methods for rendering crossroad
-        #region Methods for rendering crossroad
+        //Methods for rendering crossroad -> old
+        #region Methods for rendering crossroad -> old
 
         //Crossroad1
         public void BasicCrossroad()
@@ -8643,8 +8650,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Methods for UpdateTrafficLights
-        #region Methods for UpdateTrafficLights
+        //Methods for UpdateLights
+        #region Methods for UpdateLights
 
         //Crossroad1
         #region Crosroad1
@@ -8681,7 +8688,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -8720,7 +8732,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -8759,7 +8776,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -8798,7 +8820,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -8824,7 +8851,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -8843,7 +8873,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -8869,7 +8902,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -8888,7 +8924,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -8919,7 +8958,6 @@ namespace Bc_prace.Controls
                 g.FillEllipse(yellow, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
                 //GreenLight => OFF
                 g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
-
             }
             else if (GreenLight)
             {
@@ -8932,7 +8970,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -8971,7 +9014,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9010,7 +9058,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9049,7 +9102,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9065,7 +9123,6 @@ namespace Bc_prace.Controls
                 g.FillEllipse(red, x + length * 8 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 //GreenLight => OFF
                 g.FillEllipse(black, x + length * 8 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
-
             }
             else if (GreenLight1)
             {
@@ -9076,7 +9133,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 8 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 8 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -9095,7 +9155,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 8 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => ON
+                g.FillEllipse(green, x + length * 8 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -9121,7 +9184,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -9140,7 +9206,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -9183,7 +9252,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9222,7 +9296,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length + 3 * FreeSpace, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9261,7 +9340,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9287,7 +9371,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 8 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 8 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -9306,7 +9393,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 11 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 2 + FreeSpace, y + length * 11 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -9349,7 +9439,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9388,7 +9483,12 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace + TrafficLights_width, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 7 + 3 * FreeSpace, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
@@ -9427,13 +9527,18 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //YellowLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace + TrafficLights_width, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 12 + FreeSpace + TrafficLights_width * 2, y + length * 8 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
             }
 
             Invalidate();
         }
 
-        public void UpdateCrosswalkLightsCrossroadRightTLEFT(bool RedLight1, bool GreenLight1, bool RedLight2, bool GreenLight2)
+        public void UpdateCrosswalkLightsCrossroadRightTTOP(bool RedLight1, bool GreenLight1, bool RedLight2, bool GreenLight2)
         {
             var g = this.CreateGraphics();
 
@@ -9453,7 +9558,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 8 + crosswalk_width + 3 * FreeSpace, y + length * 8 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 8 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 8 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             if (RedLight2)
@@ -9472,7 +9580,10 @@ namespace Bc_prace.Controls
             }
             else
             {
-
+                //RedLight => OFF
+                g.FillEllipse(black, x + length * 11 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 8 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                //GreenLight => OFF
+                g.FillEllipse(black, x + length * 11 + FreeSpace, y + length * 8 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
             }
 
             Invalidate();
@@ -9483,8 +9594,5 @@ namespace Bc_prace.Controls
         #endregion
 
     }
-
-
-
 }
 
