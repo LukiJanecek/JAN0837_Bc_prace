@@ -93,7 +93,7 @@ namespace Bc_prace
             rBtnCrossroadBasic.TabStop = true;
             rBtnCrossroadBasic.Text = "Basic crossroad";
             rBtnCrossroadBasic.UseVisualStyleBackColor = true;
-            rBtnCrossroadBasic.CheckedChanged += radioButton1_CheckedChanged;
+            rBtnCrossroadBasic.CheckedChanged += rBtnCrossroadBasic_CheckedChanged;
             // 
             // panel1
             // 

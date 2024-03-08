@@ -727,7 +727,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -736,7 +736,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -745,7 +745,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -754,7 +754,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -778,7 +778,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -787,7 +787,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -796,7 +796,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -805,7 +805,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -828,7 +828,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -837,7 +837,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -846,7 +846,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -855,7 +855,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -879,7 +879,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -888,7 +888,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -897,7 +897,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -906,7 +906,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -929,7 +929,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -938,7 +938,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -947,7 +947,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -956,7 +956,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 6; i++)
                 {
-                    userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
             }
@@ -1152,22 +1152,22 @@ namespace Bc_prace
         #region Movement
         private void btnCabinMoveToRight_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.MoveRight();
+            //userControlElevatorCabin1.MoveRight();
         }
 
         private void btnCabinMoveToLeft_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.MoveLeft();
+            //userControlElevatorCabin1.MoveLeft();
         }
 
         private void btnCabinMoveToUp_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.MoveUp();
+            //userControlElevatorCabin1.MoveUp();
         }
 
         private void btnCabinMoveToDown_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.MoveDown();
+            //userControlElevatorCabin1.MoveDown();
         }
         #endregion
 
@@ -1175,22 +1175,22 @@ namespace Bc_prace
         #region Parameters
         private void btnCabinWidthSmaller_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.WidthSmaller();
+            //userControlElevatorCabin1.WidthSmaller();
         }
 
         private void btnCabinWidthBigger_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.WidthBigger();
+            //userControlElevatorCabin1.WidthBigger();
         }
 
         private void btnCabinLengthSmaller_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.LengthSmaller();
+            //userControlElevatorCabin1.LengthSmaller();
         }
 
         private void btnCabinLengthBigger_Click(object sender, EventArgs e)
         {
-            userControlElevatorCabin1.LengthBigger();
+            //userControlElevatorCabin1.LengthBigger();
         }
 
         #endregion

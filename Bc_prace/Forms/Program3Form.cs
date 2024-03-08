@@ -1373,12 +1373,16 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-                        
+            
+
+            
             //Action on variable change
             #region Action on variable change
             //I never get into this condition!!!
-            if (userControlCrossroad1.DrawBasicCrossroad == true) //rBtnBasicCrossroad.Checked
+            if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
             {
+                /*
+
                 //Crossroad1
                 #region Crossroad1 
 
@@ -1390,6 +1394,8 @@ namespace Bc_prace
                 userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
 
                 #endregion
+
+                */
 
                 //Edit variables => didn't work properly
                 /*
@@ -1440,8 +1446,10 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (userControlCrossroad1.DrawCrossroadExtension1 == true) //rBtnCrossroadExtension1.Checked
+            else if (rBtnCrossroadExtension1.Checked) // userControlCrossroad1.DrawCrossroadExtension1 == true
             {
+                /*
+                
                 //Crossroad1
                 #region Crossroad1 
 
@@ -1465,6 +1473,8 @@ namespace Bc_prace
                 userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
 
                 #endregion
+
+                */
 
                 //Edit variables => didn't work properly
                 /*
@@ -1567,8 +1577,10 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (userControlCrossroad1.DrawCrossroadExtension2 == true) //rBtnCrossroadExtension2.Checked
+            else if (rBtnCrossroadExtension2.Checked) // userControlCrossroad1.DrawCrossroadExtension2 == true
             {
+                /*
+                
                 //Crossroad1
                 #region Crossroad1 
 
@@ -1602,6 +1614,8 @@ namespace Bc_prace
                 userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
 
                 #endregion
+
+                */
 
                 //Edit variables => didn't work properly
                 /*
@@ -1735,8 +1749,10 @@ namespace Bc_prace
                 #endregion
                 */
             }
-            else if (userControlCrossroad1.DrawCrossroadExtension3 == true) //rBtnCrossroadExtension3.Checked
+            else if (rBtnCrossroadExtension3.Checked) // userControlCrossroad1.DrawCrossroadExtension3 == true
             {
+                /*
+
                 //Crossroad1
                 #region Crossroad1 
 
@@ -1780,6 +1796,8 @@ namespace Bc_prace
                 userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTTOP(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
 
                 #endregion
+
+                */
 
                 //Edit variables => didn't work properly
                 /*
@@ -1949,16 +1967,22 @@ namespace Bc_prace
             else
             {
                 //nothing
+                statusStripCrossroad.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
+                statusStripCrossroad.Items.Add(lblStatus);
             }
 
             #endregion
+
+
+
         }
 
         #endregion
                 
         //Radiobutton clicked
         #region Radiobutton clicked
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void rBtnCrossroadBasic_CheckedChanged(object sender, EventArgs e)
         {
             statusStripCrossroad.Items.Clear();
             ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Basic crossroad");
@@ -1966,10 +1990,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
+            /*
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
+            */
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -1980,10 +2006,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension1();
             
+            /*
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
+            */
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -1994,10 +2022,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension2();
             
+            /*
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = true;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
+            */
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -2008,10 +2038,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension3();
             
+            /*
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = true;
+            */
         }
 
         #endregion
