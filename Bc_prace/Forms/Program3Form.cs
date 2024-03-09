@@ -243,7 +243,8 @@ namespace Bc_prace
 
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
-            InitializeComponent();           
+            InitializeComponent();
+            //this.MinimumSize = new Size();
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -308,9 +309,9 @@ namespace Bc_prace
                 //Crossroad_DB DB14
                 #region Crossroad_DB DB14
 
-                CrossroadModeOFF = chooseOptionFormInstance.CrossroadModeOFF;
-                CrossroadModeNIGHT = chooseOptionFormInstance.CrossroadModeNIGHT;
-                CrossroadModeDAY = chooseOptionFormInstance.CrossroadModeDAY;
+                CrossroadModeOFF = chooseOptionFormInstance.CrossroadModeOFF; //no need to make a condition if true
+                CrossroadModeNIGHT = chooseOptionFormInstance.CrossroadModeNIGHT; //no need to make a condition if true
+                CrossroadModeDAY = chooseOptionFormInstance.CrossroadModeDAY; //no need to make a condition if true
                 CrossroadEmergencySTOP = chooseOptionFormInstance.CrossroadEmergencySTOP;
                 CrossroadErrorSystem = chooseOptionFormInstance.CrossroadErrorSystem;
 
@@ -319,36 +320,36 @@ namespace Bc_prace
                 //Crossroad_1_DB DB1
                 #region Crossroad_1_DB DB1
 
-                Crossroad1LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN1;
-                Crossroad1LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN2;
-                Crossroad1TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN1;
-                Crossroad1TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN2;
+                Crossroad1LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN1; //no need to make a condition if true
+                Crossroad1LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1LeftCrosswalkBTN2; //no need to make a condition if true
+                Crossroad1TopCrosswalkBTN1 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN1; //no need to make a condition if true
+                Crossroad1TopCrosswalkBTN2 = chooseOptionFormInstance.Crossroad1TopCrosswalkBTN2; //no need to make a condition if true
 
                 #endregion
 
                 //Crossroad_2_DB DB19
                 #region Crossroad_2_DB DB19
 
-                Crossroad2LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN1;
-                Crossroad2LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN2;
-                Crossroad2RightCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2RightCrosswalkBTN1;
-                Crossroad2RightCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2RightCrosswalkBTN2;
+                Crossroad2LeftCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN1; //no need to make a condition if true
+                Crossroad2LeftCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkBTN2; //no need to make a condition if true
+                Crossroad2RightCrosswalkBTN1 = chooseOptionFormInstance.Crossroad2RightCrosswalkBTN1; //no need to make a condition if true
+                Crossroad2RightCrosswalkBTN2 = chooseOptionFormInstance.Crossroad2RightCrosswalkBTN2; //no need to make a condition if true
 
                 #endregion
 
                 //Crossroad_LeftT_DB DB20
                 #region Crossroad_LeftT_DB DB20
 
-                CrossroadLeftTLeftCrosswalkBTN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN1;
-                CrossroadLeftTLeftCrosswalkBTN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN2;
+                CrossroadLeftTLeftCrosswalkBTN1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN1; //no need to make a condition if true
+                CrossroadLeftTLeftCrosswalkBTN2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkBTN2; //no need to make a condition if true
 
                 #endregion
 
                 //Crossroad_RightT_DB DB21
                 #region Crossroad_RightT_DB DB21
 
-                CrossroadRightTTopCrosswalkBTN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN1;
-                CrossroadRightTTopCrosswalkBTN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN2;
+                CrossroadRightTTopCrosswalkBTN1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN1; //no need to make a condition if true
+                CrossroadRightTTopCrosswalkBTN2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkBTN2; //no need to make a condition if true
 
                 #endregion
 
@@ -360,14 +361,14 @@ namespace Bc_prace
                 //Crossroad_DB DB14
                 #region Crossroad_DB DB14
 
-                TrafficLightsSQ = chooseOptionFormInstance.TrafficLightsSQ;
+                TrafficLightsSQ = chooseOptionFormInstance.TrafficLightsSQ; //no need to make a condition if true
 
                 #endregion
 
                 //Crossroad_1_DB DB1
                 #region Crossroad_1_DB DB1
 
-                Crossroad1CrosswalkSQ = chooseOptionFormInstance.Crossroad1CrosswalkSQ;
+                Crossroad1CrosswalkSQ = chooseOptionFormInstance.Crossroad1CrosswalkSQ; //no need to make a condition if true
 
                 Crossroad1TopRED = chooseOptionFormInstance.Crossroad1TopRED;
                 Crossroad1TopGREEN = chooseOptionFormInstance.Crossroad1TopGREEN;
@@ -396,7 +397,7 @@ namespace Bc_prace
                 //Crossroad_2_DB DB19
                 #region Crossroad_2_DB DB19
 
-                Crossroad2CrosswalkSQ = chooseOptionFormInstance.Crossroad2CrosswalkSQ;
+                Crossroad2CrosswalkSQ = chooseOptionFormInstance.Crossroad2CrosswalkSQ; //no need to make a condition if true
 
                 Crossroad2TopRED = chooseOptionFormInstance.Crossroad2TopRED;
                 Crossroad2TopGREEN = chooseOptionFormInstance.Crossroad2TopGREEN;
@@ -425,7 +426,7 @@ namespace Bc_prace
                 //Crossroad_LeftT_DB DB20
                 #region Crossroad_LeftT_DB DB20
 
-                CrossroadLeftTCrosswalkSQ = chooseOptionFormInstance.CrossroadLeftTCrosswalkSQ;
+                CrossroadLeftTCrosswalkSQ = chooseOptionFormInstance.CrossroadLeftTCrosswalkSQ; //no need to make a condition if true
 
                 CrossroadLeftTTopRED = chooseOptionFormInstance.CrossroadLeftTTopRED;
                 CrossroadLeftTTopGREEN = chooseOptionFormInstance.CrossroadLeftTTopGREEN;
@@ -447,7 +448,7 @@ namespace Bc_prace
                 //Crossroad_RightT_DB DB21
                 #region Crossroad_RightT_DB DB21
 
-                CrossroadRightTCrosswalkSQ = chooseOptionFormInstance.CrossroadRightTCrosswalkSQ;
+                CrossroadRightTCrosswalkSQ = chooseOptionFormInstance.CrossroadRightTCrosswalkSQ; //no need to make a condition if true
 
                 CrossroadRightTTopRED = chooseOptionFormInstance.CrossroadRightTTopRED;
                 CrossroadRightTTopGREEN = chooseOptionFormInstance.CrossroadRightTTopGREEN;
@@ -1360,10 +1361,22 @@ namespace Bc_prace
                 #endregion
 
                 */
-                                
-                //Action on variable change
-                #region Action on variable change
+
+                //Action on variable change (if == true) + lights change
+                #region Action on variable change (if == true) + lights change
+
+                if (CrossroadEmergencySTOP)
+                {
+                    btnEmergency_Click(this, EventArgs.Empty);
+                }
+
+                if (CrossroadErrorSystem)
+                {
+                    ErrorSystem();
+                }
+
                 //I never get into this condition!!!
+                //Lights change
                 if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
                 {
                     /*
@@ -1951,7 +1964,6 @@ namespace Bc_prace
                 }
                 else
                 {
-                    //nothing
                     statusStripCrossroad.Items.Clear();
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
                     statusStripCrossroad.Items.Add(lblStatus);

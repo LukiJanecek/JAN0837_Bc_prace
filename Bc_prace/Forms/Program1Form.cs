@@ -132,6 +132,7 @@ namespace Bc_prace
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
+            //this.MinimumSize = new Size();
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -198,16 +199,16 @@ namespace Bc_prace
                 //Input variables
                 #region Input variables 
 
-                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
-                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
-                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
-                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
-                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
-                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
-                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
-                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
-                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
-                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
+                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1; //no need to make a condition if true
+                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2; //no need to make a condition if true
+                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3; //no need to make a condition if true
+                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4; //no need to make a condition if true
+                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5; //no need to make a condition if true
+                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1; //no need to make a condition if true
+                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2; //no need to make a condition if true
+                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3; //no need to make a condition if true
+                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4; //no need to make a condition if true
+                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; //no need to make a condition if true
                 ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
                 ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
                 ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
@@ -218,16 +219,16 @@ namespace Bc_prace
                 //Output variables
                 #region Output variables 
 
-                ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON;
-                ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN;
-                ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP;
-                ElevatroHoming = chooseOptionFormInstance.ElevatroHoming;
-                ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady;
-                ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor;
-                ElevatorMoving = chooseOptionFormInstance.ElevatorMoving;
-                ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking;
-                ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor;
-                ElevatorDirection = chooseOptionFormInstance.ElevatorDirection;
+                ElevatorMotorON = chooseOptionFormInstance.ElevatorMotorON; //no need to make a condition if true
+                ElevatorMotorDOWN = chooseOptionFormInstance.ElevatorMotorDOWN; //no need to make a condition if true
+                ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP; //no need to make a condition if true
+                ElevatroHoming = chooseOptionFormInstance.ElevatroHoming; //no need to make a condition if true
+                ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady; //no need to make a condition if true
+                ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor; //no need to make a condition if true
+                ElevatorMoving = chooseOptionFormInstance.ElevatorMoving; //no need to make a condition if true
+                ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking; //no need to make a condition if true
+                ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor; //no need to make a condition if true
+                ElevatorDirection = chooseOptionFormInstance.ElevatorDirection; //no need to make a condition if true
                 ElevatorActualFloorLED1 = chooseOptionFormInstance.ElevatorActualFloorLED1;
                 ElevatorActualFloorLED2 = chooseOptionFormInstance.ElevatorActualFloorLED2;
                 ElevatorActualFloorLED3 = chooseOptionFormInstance.ElevatorActualFloorLED3;
@@ -243,13 +244,13 @@ namespace Bc_prace
                 ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
                 ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
                 ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
-                ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN;
-                ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE;
+                ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN; // time
+                ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; //time
                 ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
                 ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
-                ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
-                ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity;
-                ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown;
+                ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed; 
+                ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity; //no need to make a condition if true
+                ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown; //time
 
                 #endregion
 
@@ -521,8 +522,128 @@ namespace Bc_prace
 
                 */
 
-                //Action on variable change
-                #region Action on variable change
+                //Action on variable change (if == true)
+                #region Action on variable change (if == true)
+
+                if (ElevatorDoorSEQ)
+                {
+
+                }
+
+                if (ElevatorBTNOPENCLOSE)
+                {
+
+                }
+
+                if (ElevatorEmergencySTOP)
+                {
+                    btnCabinEmergency_Click(this, EventArgs.Empty);
+                }
+
+                if (ElevatorErrorSystem)
+                {
+                    ErrorSystem();
+                }
+
+                //ElevatorActualFloorLED
+                #region ElevatorActualFloorLED
+
+                if (ElevatorActualFloorLED1)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED1Sig();
+                }
+
+                if (ElevatorActualFloorLED2)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED2Sig();
+                }
+
+                if (ElevatorActualFloorLED3)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED3Sig();
+                }
+
+                if (ElevatorActualFloorLED4)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED4Sig();
+                }
+
+                if (ElevatorActualFloorLED5)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED5Sig();
+                }
+
+                #endregion
+
+                //ElevatorActualFloorCabinLED
+                #region ElevatorActualFloorCabinLED
+
+                if (ElevatorActualFloorCabinLED1)
+                {
+                    btnCabinFloor1.FlatAppearance.BorderColor = Color.Blue;
+                }
+
+                if (ElevatorActualFloorCabinLED2)
+                {
+                    btnCabinFloor2.FlatAppearance.BorderColor = Color.Blue;
+                }
+
+                if (ElevatorActualFloorCabinLED3)
+                {
+                    btnCabinFloor3.FlatAppearance.BorderColor = Color.Blue;
+                }
+
+                if (ElevatorActualFloorCabinLED4)
+                {
+                    btnCabinFloor4.FlatAppearance.BorderColor = Color.Blue;
+                }
+
+                if (ElevatorActualFloorCabinLED5)
+                {
+                    btnCabinFloor5.FlatAppearance.BorderColor = Color.Blue;
+                }
+
+                #endregion
+
+                //ElevatorActualFloorSENS => not needed => realized in Tia
+                #region ElevatorActualFloorSENS
+
+                if (ElevatorActualFloorSENS1)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED1Sig();
+                }
+
+                if (ElevatorActualFloorSENS2)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED2Sig();
+                }
+
+                if (ElevatorActualFloorSENS3)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED3Sig();
+                }
+
+                if (ElevatorActualFloorSENS4)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED4Sig();
+                }
+
+                if (ElevatorActualFloorSENS5)
+                {
+                    //userControlElevatorCabin1.ActualFloorLED5Sig();
+                }
+
+                #endregion
+
+                if (ElevatorDoorClOSE)
+                {
+
+                }
+
+                if (ElevatorDoorOPEN)
+                {
+
+                }
 
                 #endregion
 

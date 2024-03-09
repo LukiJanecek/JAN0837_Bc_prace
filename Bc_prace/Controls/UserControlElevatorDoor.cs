@@ -20,7 +20,7 @@ namespace Bc_prace.Controls
         private float x = 0; //x coordinate
         private float y = 0; //y coordinate
         private float length = 100;
-        public float Step = 10;
+        private float Step = 10;
         //LeftDoor 
         private float xLeftDoor = 0;
         private float yLeftDoor = 0;
@@ -37,6 +37,7 @@ namespace Bc_prace.Controls
         private float widthDoor = 0;
         private float heightDoor = 0;
 
+        private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush yellow = new SolidBrush(Color.Yellow); //DoorBackground color
 
         #endregion
@@ -74,6 +75,9 @@ namespace Bc_prace.Controls
             g.FillRectangle(yellow, xDoor + 10, yDoor + 200, widthDoor + 160, heightDoor + 100);
         }
 
+        //Methods for door movement
+        #region Methods for door movement
+
         private void LeftDoorMoveLeft()
         {
             widthLeftDoor -= Step;
@@ -86,5 +90,7 @@ namespace Bc_prace.Controls
             widthRightDoor -= Step;
             this.Refresh();
         }
+
+        #endregion
     }
 }

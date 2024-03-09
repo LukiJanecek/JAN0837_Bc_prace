@@ -80,6 +80,7 @@ namespace Bc_prace
             ((System.ComponentModel.ISupportInitialize)pBFloor3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor5).BeginInit();
+            panelDoorRight.SuspendLayout();
             panelDoorTOP.SuspendLayout();
             panelCabinBtn.SuspendLayout();
             panel1.SuspendLayout();
@@ -347,6 +348,7 @@ namespace Bc_prace
             // 
             panelDoorRight.BackColor = SystemColors.ControlDark;
             panelDoorRight.BorderStyle = BorderStyle.FixedSingle;
+            panelDoorRight.Controls.Add(panelElevatorDoor);
             panelDoorRight.Location = new Point(495, 90);
             panelDoorRight.Margin = new Padding(3, 2, 3, 2);
             panelDoorRight.Name = "panelDoorRight";
@@ -533,7 +535,7 @@ namespace Bc_prace
             // 
             // panelElevatorDoor
             // 
-            panelElevatorDoor.Location = new Point(658, 304);
+            panelElevatorDoor.Location = new Point(19, 221);
             panelElevatorDoor.Name = "panelElevatorDoor";
             panelElevatorDoor.Size = new Size(200, 174);
             panelElevatorDoor.TabIndex = 44;
@@ -543,7 +545,6 @@ namespace Bc_prace
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1041, 558);
-            Controls.Add(panelElevatorDoor);
             Controls.Add(panelElevatorCabin);
             Controls.Add(panel1);
             Controls.Add(lblElevatorFloor);
@@ -578,6 +579,7 @@ namespace Bc_prace
             ((System.ComponentModel.ISupportInitialize)pBFloor3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor5).EndInit();
+            panelDoorRight.ResumeLayout(false);
             panelDoorTOP.ResumeLayout(false);
             panelDoorTOP.PerformLayout();
             panelCabinBtn.ResumeLayout(false);

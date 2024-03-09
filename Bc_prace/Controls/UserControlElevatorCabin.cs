@@ -31,8 +31,12 @@ namespace Bc_prace.Controls
         private float lengthCabin = 0; //cabin length 
         private float widthButton = 50; //button width
         private float heightButton = 28; //button height
-        public float Step = 10;
+        private float Step = 10;
         private float length = 100;
+        private float signalizationCircle_diameter = 10;
+
+        private SolidBrush white = new SolidBrush(Color.White); //default
+        private SolidBrush green = new SolidBrush(Color.Green); //ActualFloorLED color
 
         #endregion
 
@@ -82,27 +86,95 @@ namespace Bc_prace.Controls
             g.DrawLine(BlackPen, x, y + length, x + length * 3, y + length);
             string lblFirstFloor = "1st floor";
             g.DrawString(lblFirstFloor, labelFont, labelBrush, x, y + length - length / 2);
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+
 
             //2nd floor
             g.DrawLine(BlackPen, x, y + length * 2, x + length * 3, y + length * 2);
             string lblSecondFloor = "2nd floor";
             g.DrawString(lblSecondFloor, labelFont, labelBrush, x, y + length * 2 - length / 2);
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+
 
             //3rd floor
             g.DrawLine(BlackPen, x, y + length * 3, x + length * 3, y + length * 3);
             string lblThirdFloor = "3rd floor";
             g.DrawString(lblThirdFloor, labelFont, labelBrush, x, y + length * 3 - length / 2);
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+
 
             //4th floor
             g.DrawLine(BlackPen, x, y + length * 4, x + length * 3, y + length * 4);
             string lblFourthFloor = "4th floor";
             g.DrawString(lblFourthFloor, labelFont, labelBrush, x, y + length * 4 - length / 2);
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+
 
             //5th floor
             g.DrawLine(BlackPen, x, y + length * 5, x + length * 3, y + length * 5);
             string lblFifthFloor = "5th floor";
             g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length * 5 - length / 2);
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
+            //Conditions based ond object position
+            #region Conditions based ond object position
+
+            //Cabin is on 1st floor
+            if (yCabin == y + length)
+            {
+                //ElevatorActualFloorSENS1 == true
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            //Cabin is on 2st floor
+            if (yCabin == y + length * 2)
+            {
+                //ElevatorActualFloorSENS2 == true
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            //Cabin is on 3rd floor
+            if (yCabin == y + length * 3)
+            {
+                //ElevatorActualFloorSENS3 == true
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            //Cabin is on 4th floor
+            if (yCabin == y + length * 4)
+            {
+                //ElevatorActualFloorSENS4 == true
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            //Cabin is on 5th floor
+            if (yCabin == y + length * 5)
+            {
+                //ElevatorActualFloorSENS5 == true
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            #endregion
         }
 
         //InitializeButtons
@@ -343,6 +415,57 @@ namespace Bc_prace.Controls
             lengthCabin -= Step;
             this.Refresh();
         }
+        #endregion
+
+        //ActualFloorSig
+        #region ActualFloorSig
+
+        public void ActualFloorLED1Sig()
+        {
+            //var g = _;
+
+            //g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
+
+            this.Refresh();
+        }
+        public void ActualFloorLED2Sig()
+        {
+            //var g = _;
+
+            //g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+
+            this.Refresh();
+        }
+        public void ActualFloorLED3Sig()
+        {
+            //var g = _;
+
+            //g.FillEllipse(green, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;
+
+            this.Refresh();
+        }
+        public void ActualFloorLED4Sig()
+        {
+            //var g = _;
+
+            //g.FillEllipse(green, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
+
+            this.Refresh();
+        }
+        public void ActualFloorLED5Sig()
+        {
+            //var g = _;
+
+            //g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            btnElevatorFloor5.FlatAppearance.BorderColor = Color.Blue;
+
+            this.Refresh();
+        }
+
         #endregion
 
     }

@@ -101,6 +101,7 @@ namespace Bc_prace
         {
             InitializeComponent();
             InitializeButton();
+            //this.MinimumSize = new Size();
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -141,19 +142,19 @@ namespace Bc_prace
 
                 CarWashEmergencySTOP = chooseOptionFormInstance.CarWashEmergencySTOP;
                 CarWashErrorSystem = chooseOptionFormInstance.CarWashErrorSystem;
-                CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash;
-                CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar;
-                CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar;
-                CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash;
-                CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish;
+                CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash; //no need to make a condition if true
+                CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar; //? 
+                CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar; //?
+                CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash; //no need to make a condition if true
+                CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish; //no need to make a condition if true
 
                 #endregion
 
                 //Output variables
                 #region Output variables 
 
-                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
-                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
+                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower; //?
+                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar; //?
                 CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
                 CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
                 CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;
@@ -373,8 +374,18 @@ namespace Bc_prace
 
                 */
 
-                //Action on variable change
-                #region Action on variable change 
+                //Action on variable change (if == true)
+                #region Action on variable change (if == true)
+
+                if (CarWashEmergencySTOP)
+                {
+                    btnEmergency_Click(this, EventArgs.Empty);
+                }
+
+                if (CarWashErrorSystem)
+                {
+                    ErrorSystem();
+                }
 
                 //toto asi nebude fungvat 
                 if (CarWashGreenLight) //Green light
