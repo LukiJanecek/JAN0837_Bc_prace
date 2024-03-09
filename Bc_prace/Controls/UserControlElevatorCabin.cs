@@ -27,8 +27,8 @@ namespace Bc_prace.Controls
         private float y = 0; //y coordinate
         private float xCabin = 0; //x cabin coordinate
         private float yCabin = 0; //y cabin coordinate
-        private float widthCabin; //cabin width 
-        private float lengthCabin; //cabin length 
+        private float widthCabin = 0; //cabin width 
+        private float lengthCabin = 0; //cabin length 
         private float widthButton = 50; //button width
         private float heightButton = 28; //button height
         public float Step = 10;
@@ -53,14 +53,14 @@ namespace Bc_prace.Controls
             InitializeButtons();
 
             DoubleBuffered = true;
-            Paint += UserControl1_Paint;
+            Paint += UserControlElevatorCabin_Paint;
 
             this.program1FormInstance = program1FormInstance;
 
-            client = program1FormInstance.client;
+            //client = program1FormInstance.client;
         }
 
-        private void UserControl1_Paint(object sender, PaintEventArgs e)
+        private void UserControlElevatorCabin_Paint(object sender, PaintEventArgs e)
         {
             var g = e.Graphics;
 

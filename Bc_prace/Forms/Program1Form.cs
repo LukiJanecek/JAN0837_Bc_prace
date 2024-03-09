@@ -521,6 +521,11 @@ namespace Bc_prace
 
                 */
 
+                //Action on variable change
+                #region Action on variable change
+
+                #endregion
+
                 errorMessageBoxShown = false;
             }
             catch (Exception ex)

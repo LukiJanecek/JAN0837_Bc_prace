@@ -84,11 +84,11 @@ namespace Bc_prace.Controls
         {
             InitializeComponent();
             DoubleBuffered = true;
-            Paint += UserControl1_Paint;
+            Paint += UserControlCarWash_Paint;
             InitializeCarImage();
         }
 
-        private void UserControl1_Paint(object? sender, PaintEventArgs e)
+        private void UserControlCarWash_Paint(object? sender, PaintEventArgs e)
         {
             var g = e.Graphics;
 

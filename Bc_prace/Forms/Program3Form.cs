@@ -1360,6 +1360,604 @@ namespace Bc_prace
                 #endregion
 
                 */
+                                
+                //Action on variable change
+                #region Action on variable change
+                //I never get into this condition!!!
+                if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
+                {
+                    /*
+
+                    //Crossroad1
+                    #region Crossroad1 
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    */
+
+                    //Edit variables => didn't work properly
+                    /*
+                    //Top
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
+                    userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
+                    userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
+                    userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
+                    userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
+                    userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
+                    userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
+
+                    //Crosswalk
+                    //Top
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
+
+                    */
+
+                    //Testing 
+                    /*
+                    #region Testing
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                    #endregion
+                    */
+                }
+                else if (rBtnCrossroadExtension1.Checked) // userControlCrossroad1.DrawCrossroadExtension1 == true
+                {
+                    /*
+
+                    //Crossroad1
+                    #region Crossroad1 
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                    #endregion
+
+                    */
+
+                    //Edit variables => didn't work properly
+                    /*
+                    //Crossroad1
+                    #region Crossroad1
+
+                    //Top
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
+                    userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
+                    userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
+                    userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
+                    userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
+                    userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
+                    userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
+
+                    //Crosswalk
+                    //Top
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    //Top
+                    userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
+                    userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
+                    userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
+                    userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
+                    userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
+                    userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
+                    userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
+                    userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
+                    userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
+
+                    //Crosswalk
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
+
+                    #endregion
+
+                    */
+
+                    //Testing 
+                    /*
+                    #region Testing
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+                    #endregion
+                    */
+                }
+                else if (rBtnCrossroadExtension2.Checked) // userControlCrossroad1.DrawCrossroadExtension2 == true
+                {
+                    /*
+
+                    //Crossroad1
+                    #region Crossroad1 
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                    #endregion
+
+                    //LeftT
+                    #region LeftT
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    */
+
+                    //Edit variables => didn't work properly
+                    /*
+                    //Crossroad1
+                    #region Crossroad1
+
+                    //Top
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
+                    userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
+                    userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
+                    userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
+                    userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
+                    userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
+                    userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
+
+                    //Crosswalk
+                    //Top
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    //Top
+                    userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
+                    userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
+                    userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
+                    userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
+                    userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
+                    userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
+                    userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
+                    userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
+                    userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
+
+                    //Crosswalk
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
+
+                    #endregion
+
+                    //LeftT
+                    #region LeftT
+                    //Top
+                    userControlCrossroad1.CrossroadLeftTTopRED = CrossroadLeftTTopRED;
+                    userControlCrossroad1.CrossroadLeftTTopYELLOW = CrossroadLeftTTopYELLOW;
+                    userControlCrossroad1.CrossroadLeftTTopGREEN = CrossroadLeftTTopGREEN;
+                    //Left
+                    userControlCrossroad1.CrossroadLeftTLeftRED = CrossroadLeftTLeftRED;
+                    userControlCrossroad1.CrossroadLeftTLeftYELLOW = CrossroadLeftTLeftYELLOW;
+                    userControlCrossroad1.CrossroadLeftTLeftGREEN = CrossroadLeftTLeftGREEN;
+                    //Right
+                    userControlCrossroad1.CrossroadLeftTRightRED = CrossroadLeftTRightRED;
+                    userControlCrossroad1.CrossroadLeftTRightYELLOW = CrossroadLeftTRightYELLOW;
+                    userControlCrossroad1.CrossroadLeftTRightGREEN = CrossroadLeftTRightGREEN;
+
+                    //Crosswalk
+                    //Left
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED1 = CrossroadLeftTLeftCrosswalkRED1;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED2 = CrossroadLeftTLeftCrosswalkRED2;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN1 = CrossroadLeftTLeftCrosswalkGREEN1;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN2 = CrossroadLeftTLeftCrosswalkGREEN2;
+
+                    #endregion
+
+                    */
+
+                    //Testing
+                    /*
+                    #region Testing
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+
+                    #endregion
+                    */
+                }
+                else if (rBtnCrossroadExtension3.Checked) // userControlCrossroad1.DrawCrossroadExtension3 == true
+                {
+                    /*
+
+                    //Crossroad1
+                    #region Crossroad1 
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
+
+                    #endregion
+
+                    //LeftT
+                    #region LeftT
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+
+                    #endregion
+
+                    //RightT
+                    #region RightT
+
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTTOP(CrossroadRightTTopRED, CrossroadRightTTopYELLOW, CrossroadRightTTopGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTLEFT(CrossroadRightTLeftRED, CrossroadRightTLeftYELLOW, CrossroadRightTLeftGREEN);
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTRIGHT(CrossroadRightTRightRED, CrossroadRightTRightYELLOW, CrossroadRightTRightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTTOP(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
+
+                    #endregion
+
+                    */
+
+                    //Edit variables => didn't work properly
+                    /*
+                    //Crossroad1
+                    #region Crossroad1
+
+                    //Top
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
+                    userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
+                    userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
+                    userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
+                    userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
+                    userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
+                    userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
+                    userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
+
+                    //Crosswalk
+                    //Top
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
+                    //Left
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
+
+                    #endregion
+
+                    //Crossroad2
+                    #region Crossroad2
+
+                    //Top
+                    userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
+                    userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
+                    userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
+                    userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
+                    userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
+                    userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
+                    userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
+                    //Bottom
+                    userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
+                    userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
+                    userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
+
+                    //Crosswalk
+                    //Left
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
+                    //Right
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
+                    userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
+
+                    #endregion
+
+                    //LeftT
+                    #region LeftT
+                    //Top
+                    userControlCrossroad1.CrossroadLeftTTopRED = CrossroadLeftTTopRED;
+                    userControlCrossroad1.CrossroadLeftTTopYELLOW = CrossroadLeftTTopYELLOW;
+                    userControlCrossroad1.CrossroadLeftTTopGREEN = CrossroadLeftTTopGREEN;
+                    //Left
+                    userControlCrossroad1.CrossroadLeftTLeftRED = CrossroadLeftTLeftRED;
+                    userControlCrossroad1.CrossroadLeftTLeftYELLOW = CrossroadLeftTLeftYELLOW;
+                    userControlCrossroad1.CrossroadLeftTLeftGREEN = CrossroadLeftTLeftGREEN;
+                    //Right
+                    userControlCrossroad1.CrossroadLeftTRightRED = CrossroadLeftTRightRED;
+                    userControlCrossroad1.CrossroadLeftTRightYELLOW = CrossroadLeftTRightYELLOW;
+                    userControlCrossroad1.CrossroadLeftTRightGREEN = CrossroadLeftTRightGREEN;
+
+                    //Crosswalk
+                    //Left
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED1 = CrossroadLeftTLeftCrosswalkRED1;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED2 = CrossroadLeftTLeftCrosswalkRED2;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN1 = CrossroadLeftTLeftCrosswalkGREEN1;
+                    userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN2 = CrossroadLeftTLeftCrosswalkGREEN2;
+
+                    #endregion
+
+                    //RightT
+                    #region RightT
+
+                    //Top
+                    userControlCrossroad1.CrossroadRightTTopRED = CrossroadRightTTopRED;
+                    userControlCrossroad1.CrossroadRightTTopYELLOW = CrossroadRightTTopYELLOW;
+                    userControlCrossroad1.CrossroadRightTTopGREEN = CrossroadRightTTopGREEN;
+                    //Left
+                    userControlCrossroad1.CrossroadRightTLeftRED = CrossroadRightTLeftRED;
+                    userControlCrossroad1.CrossroadRightTLeftYELLOW = CrossroadRightTLeftYELLOW;
+                    userControlCrossroad1.CrossroadRightTLeftGREEN = CrossroadRightTLeftGREEN;
+                    //Right
+                    userControlCrossroad1.CrossroadRightTRightRED = CrossroadRightTRightRED;
+                    userControlCrossroad1.CrossroadRightTRightYELLOW = CrossroadRightTRightYELLOW;
+                    userControlCrossroad1.CrossroadRightTRightGREEN = CrossroadRightTRightGREEN;
+
+                    //Crosswalk
+                    //Top
+                    userControlCrossroad1.CrossroadRightTTopCrosswalkRED1 = CrossroadRightTTopCrosswalkRED1;
+                    userControlCrossroad1.CrossroadRightTTopCrosswalkRED2 = CrossroadRightTTopCrosswalkRED2;
+                    userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN1 = CrossroadRightTTopCrosswalkRED2;
+                    userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN2 = CrossroadRightTTopCrosswalkRED2;
+
+                    #endregion
+
+                    */
+
+                    //Testing 
+                    /*
+                    #region Testing 
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
+                    //BOTTOM
+                    userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+
+                    //TOP
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
+                    userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTLEFT(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
+                    //LEFT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
+                    //RIGHT
+                    userControlCrossroad1.UpdateTrafficLightsCrossroadRightTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
+
+                    #endregion
+                    */
+                }
+                else
+                {
+                    //nothing
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
+                    statusStripCrossroad.Items.Add(lblStatus);
+                }
+
+                #endregion
 
                 errorMessageBoxShown = false;
             }
@@ -1373,609 +1971,6 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-            
-
-            
-            //Action on variable change
-            #region Action on variable change
-            //I never get into this condition!!!
-            if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
-            {
-                /*
-
-                //Crossroad1
-                #region Crossroad1 
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-
-                #endregion
-
-                */
-
-                //Edit variables => didn't work properly
-                /*
-                //Top
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                //Left
-                userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
-                userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
-                userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
-                userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
-                userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
-                userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
-                userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
-
-                //Crosswalk
-                //Top
-                userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
-                userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
-                //Left
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
-
-                */
-
-                //Testing 
-                /*
-                #region Testing
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                #endregion
-                */
-            }
-            else if (rBtnCrossroadExtension1.Checked) // userControlCrossroad1.DrawCrossroadExtension1 == true
-            {
-                /*
-                
-                //Crossroad1
-                #region Crossroad1 
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
-
-                #endregion
-
-                */
-
-                //Edit variables => didn't work properly
-                /*
-                //Crossroad1
-                #region Crossroad1
-
-                //Top
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                //Left
-                userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
-                userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
-                userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
-                userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
-                userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
-                userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
-                userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
-
-                //Crosswalk
-                //Top
-                userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
-                userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
-                //Left
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                //Top
-                userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
-                userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
-                userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
-                //Left
-                userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
-                userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
-                userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
-                userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
-                userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
-                userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
-                userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
-
-                //Crosswalk
-                //Left
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
-                //Right
-                userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
-                userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
-
-                #endregion
-                
-                */
-
-                //Testing 
-                /*
-                #region Testing
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                            
-                                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                
-                #endregion
-                */
-            }
-            else if (rBtnCrossroadExtension2.Checked) // userControlCrossroad1.DrawCrossroadExtension2 == true
-            {
-                /*
-                
-                //Crossroad1
-                #region Crossroad1 
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
-
-                #endregion
-
-                //LeftT
-                #region LeftT
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
-
-                #endregion
-
-                */
-
-                //Edit variables => didn't work properly
-                /*
-                //Crossroad1
-                #region Crossroad1
-
-                //Top
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                //Left
-                userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
-                userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
-                userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
-                userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
-                userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
-                userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
-                userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
-
-                //Crosswalk
-                //Top
-                userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
-                userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
-                //Left
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                //Top
-                userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
-                userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
-                userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
-                //Left
-                userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
-                userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
-                userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
-                userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
-                userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
-                userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
-                userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
-
-                //Crosswalk
-                //Left
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
-                //Right
-                userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
-                userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
-
-                #endregion
-
-                //LeftT
-                #region LeftT
-                //Top
-                userControlCrossroad1.CrossroadLeftTTopRED = CrossroadLeftTTopRED;
-                userControlCrossroad1.CrossroadLeftTTopYELLOW = CrossroadLeftTTopYELLOW;
-                userControlCrossroad1.CrossroadLeftTTopGREEN = CrossroadLeftTTopGREEN;
-                //Left
-                userControlCrossroad1.CrossroadLeftTLeftRED = CrossroadLeftTLeftRED;
-                userControlCrossroad1.CrossroadLeftTLeftYELLOW = CrossroadLeftTLeftYELLOW;
-                userControlCrossroad1.CrossroadLeftTLeftGREEN = CrossroadLeftTLeftGREEN;
-                //Right
-                userControlCrossroad1.CrossroadLeftTRightRED = CrossroadLeftTRightRED;
-                userControlCrossroad1.CrossroadLeftTRightYELLOW = CrossroadLeftTRightYELLOW;
-                userControlCrossroad1.CrossroadLeftTRightGREEN = CrossroadLeftTRightGREEN;
-
-                //Crosswalk
-                //Left
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED1 = CrossroadLeftTLeftCrosswalkRED1;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED2 = CrossroadLeftTLeftCrosswalkRED2;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN1 = CrossroadLeftTLeftCrosswalkGREEN1;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN2 = CrossroadLeftTLeftCrosswalkGREEN2;
-
-                #endregion
-
-                */
-
-                //Testing
-                /*
-                #region Testing
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
-                
-                #endregion
-                */
-            }
-            else if (rBtnCrossroadExtension3.Checked) // userControlCrossroad1.DrawCrossroadExtension3 == true
-            {
-                /*
-
-                //Crossroad1
-                #region Crossroad1 
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad2TopRED, Crossroad2TopYELLOW, Crossroad2TopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad2LeftRED, Crossroad2LeftYELLOW, Crossroad2LeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad2RightRED, Crossroad2RightYELLOW, Crossroad2RightGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad2BottomRED, Crossroad2BottomYELLOW, Crossroad2BottomGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad2LeftCrosswalkRED1, Crossroad2LeftCrosswalkGREEN1, Crossroad2LeftCrosswalkRED2, Crossroad2LeftCrosswalkGREEN2);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
-
-                #endregion
-
-                //LeftT
-                #region LeftT
-
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
-
-                #endregion
-
-                //RightT
-                #region RightT
-                
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTTOP(CrossroadRightTTopRED, CrossroadRightTTopYELLOW, CrossroadRightTTopGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTLEFT(CrossroadRightTLeftRED, CrossroadRightTLeftYELLOW, CrossroadRightTLeftGREEN);
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTRIGHT(CrossroadRightTRightRED, CrossroadRightTRightYELLOW, CrossroadRightTRightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTTOP(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
-
-                #endregion
-
-                */
-
-                //Edit variables => didn't work properly
-                /*
-                //Crossroad1
-                #region Crossroad1
-
-                //Top
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                userControlCrossroad1.Crossroad1TopYELLOW = Crossroad1TopYELLOW;
-                userControlCrossroad1.Crossroad1TopRED = Crossroad1TopRED;
-                //Left
-                userControlCrossroad1.Crossroad1LeftRED = Crossroad1LeftRED;
-                userControlCrossroad1.Crossroad1LeftYELLOW = Crossroad1LeftYELLOW;
-                userControlCrossroad1.Crossroad1LeftGREEN = Crossroad1LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad1RightRED = Crossroad1RightRED;
-                userControlCrossroad1.Crossroad1RightYELLOW = Crossroad1RightYELLOW;
-                userControlCrossroad1.Crossroad1RightGREEN = Crossroad1RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad1BottomRED = Crossroad1BottomRED;
-                userControlCrossroad1.Crossroad1BottomYELLOW = Crossroad1BottomYELLOW;
-                userControlCrossroad1.Crossroad1BottomGREEN = Crossroad1BottomGREEN;
-
-                //Crosswalk
-                //Top
-                userControlCrossroad1.Crossroad1TopCrosswalkRED1 = Crossroad1TopCrosswalkRED1;
-                userControlCrossroad1.Crossroad1TopCrosswalkRED2 = Crossroad1TopCrosswalkRED2;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN1 = Crossroad1TopCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1TopCrosswalkGREEN2 = Crossroad1TopCrosswalkGREEN2;
-                //Left
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkRED2 = Crossroad1LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad1LeftCrosswalkGREEN2 = Crossroad1LeftCrosswalkGREEN2;
-
-                #endregion
-
-                //Crossroad2
-                #region Crossroad2
-
-                //Top
-                userControlCrossroad1.Crossroad2TopRED = Crossroad2TopRED;
-                userControlCrossroad1.Crossroad2TopYELLOW = Crossroad2TopYELLOW;
-                userControlCrossroad1.Crossroad2TopGREEN = Crossroad2TopGREEN;
-                //Left
-                userControlCrossroad1.Crossroad2LeftRED = Crossroad2LeftRED;
-                userControlCrossroad1.Crossroad2LeftYELLOW = Crossroad2LeftYELLOW;
-                userControlCrossroad1.Crossroad2LeftGREEN = Crossroad2LeftGREEN;
-                //Right
-                userControlCrossroad1.Crossroad2RightRED = Crossroad2RightRED;
-                userControlCrossroad1.Crossroad2RightYELLOW = Crossroad2RightYELLOW;
-                userControlCrossroad1.Crossroad2RightGREEN = Crossroad2RightGREEN;
-                //Bottom
-                userControlCrossroad1.Crossroad2BottomRED = Crossroad2BottomRED;
-                userControlCrossroad1.Crossroad2BottomYELLOW = Crossroad2BottomYELLOW;
-                userControlCrossroad1.Crossroad2BottomGREEN = Crossroad2BottomGREEN;
-
-                //Crosswalk
-                //Left
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED1 = Crossroad1LeftCrosswalkRED1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkRED2 = Crossroad2LeftCrosswalkRED2;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2LeftCrosswalkGREEN2 = Crossroad2LeftCrosswalkGREEN2;
-                //Right
-                userControlCrossroad1.Crossroad2RightCrosswalkRED1 = Crossroad2RightCrosswalkRED1;
-                userControlCrossroad1.Crossroad2RightCrosswalkRED2 = Crossroad2RightCrosswalkRED2;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN1 = Crossroad1LeftCrosswalkGREEN1;
-                userControlCrossroad1.Crossroad2RightCrosswalkGREEN2 = Crossroad2RightCrosswalkGREEN2;
-
-                #endregion
-
-                //LeftT
-                #region LeftT
-                //Top
-                userControlCrossroad1.CrossroadLeftTTopRED = CrossroadLeftTTopRED;
-                userControlCrossroad1.CrossroadLeftTTopYELLOW = CrossroadLeftTTopYELLOW;
-                userControlCrossroad1.CrossroadLeftTTopGREEN = CrossroadLeftTTopGREEN;
-                //Left
-                userControlCrossroad1.CrossroadLeftTLeftRED = CrossroadLeftTLeftRED;
-                userControlCrossroad1.CrossroadLeftTLeftYELLOW = CrossroadLeftTLeftYELLOW;
-                userControlCrossroad1.CrossroadLeftTLeftGREEN = CrossroadLeftTLeftGREEN;
-                //Right
-                userControlCrossroad1.CrossroadLeftTRightRED = CrossroadLeftTRightRED;
-                userControlCrossroad1.CrossroadLeftTRightYELLOW = CrossroadLeftTRightYELLOW;
-                userControlCrossroad1.CrossroadLeftTRightGREEN = CrossroadLeftTRightGREEN;
-
-                //Crosswalk
-                //Left
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED1 = CrossroadLeftTLeftCrosswalkRED1;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED2 = CrossroadLeftTLeftCrosswalkRED2;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN1 = CrossroadLeftTLeftCrosswalkGREEN1;
-                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN2 = CrossroadLeftTLeftCrosswalkGREEN2;
-
-                #endregion
-
-                //RightT
-                #region RightT
-
-                //Top
-                userControlCrossroad1.CrossroadRightTTopRED = CrossroadRightTTopRED;
-                userControlCrossroad1.CrossroadRightTTopYELLOW = CrossroadRightTTopYELLOW;
-                userControlCrossroad1.CrossroadRightTTopGREEN = CrossroadRightTTopGREEN;
-                //Left
-                userControlCrossroad1.CrossroadRightTLeftRED = CrossroadRightTLeftRED;
-                userControlCrossroad1.CrossroadRightTLeftYELLOW = CrossroadRightTLeftYELLOW;
-                userControlCrossroad1.CrossroadRightTLeftGREEN = CrossroadRightTLeftGREEN;
-                //Right
-                userControlCrossroad1.CrossroadRightTRightRED = CrossroadRightTRightRED;
-                userControlCrossroad1.CrossroadRightTRightYELLOW = CrossroadRightTRightYELLOW;
-                userControlCrossroad1.CrossroadRightTRightGREEN = CrossroadRightTRightGREEN;
-
-                //Crosswalk
-                //Top
-                userControlCrossroad1.CrossroadRightTTopCrosswalkRED1 = CrossroadRightTTopCrosswalkRED1;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkRED2 = CrossroadRightTTopCrosswalkRED2;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN1 = CrossroadRightTTopCrosswalkRED2;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN2 = CrossroadRightTTopCrosswalkRED2;
-
-                #endregion
-
-                */
-
-                //Testing 
-                /*
-                #region Testing 
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2TOP(Crossroad1TopRED, Crossroad1TopYELLOW, Crossroad1TopGREEN);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2LEFT(Crossroad1LeftRED, Crossroad1LeftYELLOW, Crossroad1LeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2RIGHT(Crossroad1RightRED, Crossroad1RightYELLOW, Crossroad1RightGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
-                //BOTTOM
-                userControlCrossroad1.UpdateTrafficLightsCrossroad2BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
-                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadLeftTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
-                
-                //TOP
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTTOP(CrossroadLeftTTopRED, CrossroadLeftTTopYELLOW, CrossroadLeftTTopGREEN);
-                userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTLEFT(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
-                //LEFT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTLEFT(CrossroadLeftTLeftRED, CrossroadLeftTLeftYELLOW, CrossroadLeftTLeftGREEN);
-                //RIGHT
-                userControlCrossroad1.UpdateTrafficLightsCrossroadRightTRIGHT(CrossroadLeftTRightRED, CrossroadLeftTRightYELLOW, CrossroadLeftTRightGREEN);
-
-                #endregion
-                */
-            }
-            else
-            {
-                //nothing
-                statusStripCrossroad.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
-                statusStripCrossroad.Items.Add(lblStatus);
-            }
-
-            #endregion
-
-
-
         }
 
         #endregion

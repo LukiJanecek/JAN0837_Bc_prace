@@ -1,4 +1,6 @@
-﻿namespace Bc_prace
+﻿using Bc_prace.Controls;
+
+namespace Bc_prace
 {
     partial class Program1Form
     {
@@ -70,6 +72,8 @@
             btnCabinMoveToLeft = new Button();
             btnCabinMoveToRight = new Button();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
+            panelElevatorCabin = new Panel();
+            panelElevatorDoor = new Panel();
             ((System.ComponentModel.ISupportInitialize)panelCabin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor2).BeginInit();
@@ -520,11 +524,27 @@
             // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
+            // panelElevatorCabin
+            // 
+            panelElevatorCabin.Location = new Point(647, 40);
+            panelElevatorCabin.Name = "panelElevatorCabin";
+            panelElevatorCabin.Size = new Size(200, 190);
+            panelElevatorCabin.TabIndex = 43;
+            // 
+            // panelElevatorDoor
+            // 
+            panelElevatorDoor.Location = new Point(658, 304);
+            panelElevatorDoor.Name = "panelElevatorDoor";
+            panelElevatorDoor.Size = new Size(200, 174);
+            panelElevatorDoor.TabIndex = 44;
+            // 
             // Program1Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1041, 558);
+            Controls.Add(panelElevatorDoor);
+            Controls.Add(panelElevatorCabin);
             Controls.Add(panel1);
             Controls.Add(lblElevatorFloor);
             Controls.Add(panelDoorTOP);
@@ -609,5 +629,7 @@
         private Button btnCabinLengthSmaller;
         private Button btnCabinWidthBigger;
         private System.Windows.Forms.Timer Timer_read_actual;
+        private Panel panelElevatorCabin;
+        private Panel panelElevatorDoor;
     }
 }
