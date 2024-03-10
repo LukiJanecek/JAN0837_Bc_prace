@@ -38,6 +38,7 @@
             btnTest = new Button();
             btnSignalization = new Button();
             panel2 = new Panel();
+            btnMoveCarToNextPoint = new Button();
             btnCarMoveRIGHT = new Button();
             btnCarMoveLEFT = new Button();
             userControlCarWash1 = new Controls.UserControlCarWash();
@@ -51,7 +52,7 @@
             statusStripCarWash.ImageScalingSize = new Size(20, 20);
             statusStripCarWash.Location = new Point(0, 439);
             statusStripCarWash.Name = "statusStripCarWash";
-            statusStripCarWash.Size = new Size(1334, 22);
+            statusStripCarWash.Size = new Size(1518, 22);
             statusStripCarWash.TabIndex = 0;
             statusStripCarWash.Text = "statusStrip1";
             // 
@@ -96,7 +97,7 @@
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1170, 0);
+            panel1.Location = new Point(1354, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(164, 439);
@@ -125,16 +126,18 @@
             // btnSignalization
             // 
             btnSignalization.Enabled = false;
-            btnSignalization.Location = new Point(10, 80);
+            btnSignalization.Location = new Point(12, 330);
             btnSignalization.Margin = new Padding(3, 2, 3, 2);
             btnSignalization.Name = "btnSignalization";
             btnSignalization.Size = new Size(114, 68);
             btnSignalization.TabIndex = 41;
             btnSignalization.Text = "Signalization";
             btnSignalization.UseVisualStyleBackColor = true;
+            btnSignalization.Click += btnSignalization_Click;
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnMoveCarToNextPoint);
             panel2.Controls.Add(btnCarMoveRIGHT);
             panel2.Controls.Add(btnCarMoveLEFT);
             panel2.Controls.Add(btnSignalization);
@@ -145,6 +148,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(136, 439);
             panel2.TabIndex = 42;
+            // 
+            // btnMoveCarToNextPoint
+            // 
+            btnMoveCarToNextPoint.Location = new Point(10, 82);
+            btnMoveCarToNextPoint.Name = "btnMoveCarToNextPoint";
+            btnMoveCarToNextPoint.Size = new Size(114, 68);
+            btnMoveCarToNextPoint.TabIndex = 44;
+            btnMoveCarToNextPoint.Text = "Move car to next point";
+            btnMoveCarToNextPoint.UseVisualStyleBackColor = true;
+            btnMoveCarToNextPoint.Click += btnMoveCarToNextPoint_Click;
             // 
             // btnCarMoveRIGHT
             // 
@@ -176,7 +189,7 @@
             userControlCarWash1.Location = new Point(136, 0);
             userControlCarWash1.Margin = new Padding(3, 2, 3, 2);
             userControlCarWash1.Name = "userControlCarWash1";
-            userControlCarWash1.Size = new Size(1034, 439);
+            userControlCarWash1.Size = new Size(1218, 439);
             userControlCarWash1.TabIndex = 43;
             // 
             // Timer_read_actual
@@ -187,7 +200,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1334, 461);
+            ClientSize = new Size(1518, 461);
             Controls.Add(userControlCarWash1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -215,5 +228,6 @@
         private Button btnTest2;
         private Button btnCarMoveLEFT;
         private Button btnCarMoveRIGHT;
+        private Button btnMoveCarToNextPoint;
     }
 }

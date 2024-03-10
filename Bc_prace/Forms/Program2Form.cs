@@ -85,23 +85,12 @@ namespace Bc_prace
 
         #endregion
 
-        //Variables
-        #region Variables
-
-        //Count
-        int countWax = 0;
-        int countSoap = 0;
-        int countActiveFoam = 0;
-
-        int SignalizationCount = 0;
-
-        #endregion
-
         public Program2Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            InitializeButton();
-            this.MinimumSize = new Size(1350, 500);
+            InitializeButton(); // there is probably no need for this function
+            btnSignalization.Enabled = false;
+            this.MinimumSize = new Size(1530, 500);
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -564,6 +553,16 @@ namespace Bc_prace
         }
         #endregion
 
+        //MoveCarToNextPoint
+        #region
+
+        private void btnMoveCarToNextPoint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
         //Emergency + system error 
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
@@ -715,9 +714,13 @@ namespace Bc_prace
             userControlCarWash1.door1DOWN();
             userControlCarWash1.door2DOWN();
 
-            userControlCarWash1.MovePictureRight();
+        }
 
+        private void btnSignalization_Click(object sender, EventArgs e)
+        {
 
         }
+
+
     }
 }

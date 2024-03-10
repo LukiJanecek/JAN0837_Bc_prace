@@ -53,6 +53,11 @@ namespace Bc_prace.Controls
         private float BrushesY;
         private float CarSignalizationX;
         private float CarSignalizationY;
+        private float PreWashX;
+        private float PreWashY;
+
+        private float ShowerX;
+        private float ShowerY;
 
         private float timeDoor = 200;
 
@@ -62,13 +67,21 @@ namespace Bc_prace.Controls
         private float pictureX;
         private float pictureY;
 
+        private float leftArrowX;
+        private float leftArrowY;
+        private float rightArrowX;
+        private float rightArrowY;
+
         private int picture = 1;
 
         //basic parametres
+        private float arrowLength = 20;
         private float length = 100;
         private float door_width = 20;
         private float door_height = 100; //should be equal to length
         private float signalizationCircle_diameter = 10;
+        private float shower_width = 20;
+        private float shower_height = 100;
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush green = new SolidBrush(Color.Green); //soap
@@ -102,118 +115,167 @@ namespace Bc_prace.Controls
             Pen GreenPen = new Pen(Color.Green, 2);
             Pen YellowPen = new Pen(Color.Yellow, 2);
 
+            //label in UserControl
+            Font labelFont = new Font("Arial", 9);
+            SolidBrush labelBrush = new SolidBrush(Color.Black);
+
             //CarWash constructon
             #region CarWash construction
 
             //basic line => floor
-            g.DrawLine(BlackPen, x, y + length * 4, x + length * 10, y + length * 4);
+            g.DrawLine(BlackPen, x, y + length * 4, x + length * 12, y + length * 4);
 
-            //doors
+            //ChooseVariant
+            g.DrawLine(BlackPen, x + length * 2, y + length * 4, x + length * 2, y + length * 4 - length / 2);
+            g.DrawLine(BlackPen, x + length * 2, y + length * 4 - length / 2, x + length * 2 + 20, y + length * 4 - length / 2);
+            g.DrawLine(BlackPen, x + length * 2 + 20, y + length * 4, x + length * 2 + 20, y + length * 4 - length / 2);
+            g.DrawRectangle(BlackPen, x + length * 2 + 5, y + length * 4 - length / 2 + 10, 10, 5);
+
+            //PreWash
+            #region PreWash
+
+            string lblPreWash = "PreWash";
+            PreWashX = x + length * 3;
+            PreWashY = y + length * 3;
+            g.DrawString(lblPreWash, labelFont, labelBrush, PreWashX, PreWashY);
+            g.DrawEllipse(BlackPen, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.DrawLine(BlackPen, x + length * 3 + length / 2, y + length * 4, x + length * 3 + length / 2, y + length * 4 - length / 2);
+            g.DrawLine(BlackPen, x + length * 3 + length / 2, y + length * 4 - length / 2, x + length * 3 + length / 2 + 20, y + length * 4 - length / 2);
+            g.DrawLine(BlackPen, x + length * 3 + length / 2 + 20, y + length * 4, x + length * 3 + length / 2 + 20, y + length * 4 - length / 2);
+            //side
+            g.DrawLine(BlackPen, x + length * 3 + length / 2 + 20, y + length * 4 - length / 2 + length / 4, x + length * 3 + length / 2 + 30, y + length * 4 - length / 2 + length / 4);
+            g.DrawLine(BlackPen, x + length * 3 + length / 2 + 30, y + length * 4 - 10, x + length * 3 + length / 2 + 30, y + length * 4 - length / 2 + 10);
+
+            #endregion
+
+            //Doors
             #region Doors
 
-            door1X = x + length * 2;
+            door1X = x + length * 4;
             door1Y = y + length * 3;
-            door2X = x + length * 8 - door_width;
+            door2X = x + length * 10 - door_width;
             door2Y = y + length * 3;
 
             //front door
-            #region Front door 
             g.DrawRectangle(BlackPen, door1X + aDoor1, door1Y + bDoor1, door_width + cDoor1, door_height + dDoor1);
-            #endregion
 
             //back door 
-            #region Back door 
             g.DrawRectangle(BlackPen, door2X + aDoor2, door2Y + bDoor2, door_width + cDoor2, door_height + dDoor2);
-            #endregion
 
             #endregion
 
-            //edges 
-            #region Edges 
+            //CarWash edges 
+            #region CarWash edges 
             //left wall 
-            g.DrawLine(BlackPen, x + length * 2, y + length * 3, x + length * 2, y + length);
+            g.DrawLine(BlackPen, x + length * 4, y + length * 3, x + length * 4, y + length);
 
             //roof 
-            g.DrawLine(BlackPen, x + length * 2, y + length, x + length * 8, y + length);
+            g.DrawLine(BlackPen, x + length * 4, y + length, x + length * 10, y + length);
 
             //right wall 
-            g.DrawLine(BlackPen, x + length * 8, y + length, x + length * 8, y + length * 3);
+            g.DrawLine(BlackPen, x + length * 10, y + length, x + length * 10, y + length * 3);
 
             #endregion
+
+            //Shower
+            g.DrawRectangle(BlackPen, x + ShowerX + length * 7 - (shower_width / 2), y + ShowerY + length * 3, shower_width, shower_height);
 
             #endregion
 
             //Inner signalization 
             #region Inner cyclus signalization 
 
-            //label in UserControl
-            Font labelFont = new Font("Arial", 9);
-            SolidBrush labelBrush = new SolidBrush(Color.Black);
-            
             //car position
             //g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //position line  
-            g.DrawLine(BlackPen, x + length * 3, y + length * 2, x + length * 7, y + length * 2);
-            g.DrawEllipse(BlackPen, x + length * 3 - (signalizationCircle_diameter / 2), y + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
+            g.DrawLine(BlackPen, x + length * 5, y +length * 2, x + length * 9, y + length * 2);
+            g.DrawEllipse(BlackPen, x + ShowerX + length * 7 - (signalizationCircle_diameter / 2), y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
 
-            //car signalization 
-            string labelCarSignalization = "GO!";
-            CarSignalizationX = x + length * 5 + 20;
+            //car signalization => // this doesnt make sense anymore
+            string labelCarSignalization = "GO!"; //this doesnt make sense anymore
+            CarSignalizationX = x + length * 7 + 20;
             CarSignalizationY = y + length * 2 + length / 2;
-            g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
-            g.DrawEllipse(BlackPen, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            //Wax
-            string labelWax = "Wax";
-            WaxX = x + length * 6 + 20;
-            WaxY = y + length + 10;
-            g.DrawString(labelWax, labelFont, labelBrush, WaxX, WaxY);
-            g.DrawEllipse(BlackPen, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); // this doesnt make sense anymore
+            g.DrawEllipse(BlackPen, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); // this doesnt make sense anymore
 
             //Water
             string labelWater = "Water";
-            WaterX = x + length * 2 + 20;
+            WaterX = x + length * 4 + 20;
             WaterY = y + length + 10;
             g.DrawString(labelWater, labelFont, labelBrush, WaterX, WaterY);
             g.DrawEllipse(BlackPen, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
 
-            //ActiveFoam
-            string labelActiveFoam = "ActiveFoam";
-            ActiveFoamX = x + length * 5 + 20;
-            ActiveFoamY = y + length + 10;
-            g.DrawString(labelActiveFoam, labelFont, labelBrush, ActiveFoamX, ActiveFoamY);
-            g.DrawEllipse(BlackPen, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            //Soap
-            string labelSoap = "Soap";
-            SoapX = x + length * 4 + 20;
-            SoapY = y + length + 10;
-            g.DrawString(labelSoap, labelFont, labelBrush, SoapX, SoapY);
-            g.DrawEllipse(BlackPen, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
-
             //Drying
             string labelDrying = "Drying";
-            DryingX = x + length * 3 + 20;
+            DryingX = x + length * 5 + 20;
             DryingY = y + length + 10;
             g.DrawString(labelDrying, labelFont, labelBrush, DryingX, DryingY);
             g.DrawEllipse(BlackPen, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
 
+            //Soap
+            string labelSoap = "Soap";
+            SoapX = x + length * 6 + 20;
+            SoapY = y + length + 10;
+            g.DrawString(labelSoap, labelFont, labelBrush, SoapX, SoapY);
+            g.DrawEllipse(BlackPen, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            //ActiveFoam
+            string labelActiveFoam = "ActiveFoam";
+            ActiveFoamX = x + length * 7 + 20;
+            ActiveFoamY = y + length + 10;
+            g.DrawString(labelActiveFoam, labelFont, labelBrush, ActiveFoamX, ActiveFoamY);
+            g.DrawEllipse(BlackPen, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            //Wax
+            string labelWax = "Wax";
+            WaxX = x + length * 8 + 20;
+            WaxY = y + length + 10;
+            g.DrawString(labelWax, labelFont, labelBrush, WaxX, WaxY);
+            g.DrawEllipse(BlackPen, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+
             //Brushes 
             string labelBrushes = "Brushes";
-            BrushesX = x + length * 7 + 20;
+            BrushesX = x + length * 9 + 20;
             BrushesY = y + length + 10;
             g.DrawString(labelBrushes, labelFont, labelBrush, BrushesX, BrushesY);
             g.DrawEllipse(BlackPen, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
 
             #endregion
 
+            //Arrows
+            #region Arrows
+
+            leftArrowX = x + length;
+            leftArrowY = y + length * 2;
+            rightArrowX = x + length * 11;
+            rightArrowY = y + length * 2;
+
+            //LeftArrow
+            g.DrawLine(BlackPen, leftArrowX + arrowLength, leftArrowY + arrowLength, leftArrowX + arrowLength, leftArrowY + arrowLength * 2);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength, leftArrowY + arrowLength, leftArrowX + arrowLength * 2, leftArrowY + arrowLength);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength, leftArrowY + arrowLength * 2, leftArrowX + arrowLength * 2, leftArrowY + arrowLength * 2);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength * 2, leftArrowY + arrowLength, leftArrowX + arrowLength * 2, leftArrowY + arrowLength - arrowLength / 2);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength * 2, leftArrowY + arrowLength * 2, leftArrowX + arrowLength * 2, leftArrowY + arrowLength * 2 + arrowLength / 2);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength * 2, leftArrowY + arrowLength - arrowLength / 2, leftArrowX + arrowLength * 3, leftArrowY + arrowLength + arrowLength / 2);
+            g.DrawLine(BlackPen, leftArrowX + arrowLength * 2, leftArrowY + arrowLength * 2 + arrowLength / 2, leftArrowX + arrowLength * 3, leftArrowY + arrowLength + arrowLength / 2);
+
+            //RightArrow
+            g.DrawLine(BlackPen, rightArrowX + arrowLength, rightArrowY + arrowLength, rightArrowX + arrowLength, rightArrowY + arrowLength * 2);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength, rightArrowY + arrowLength, rightArrowX + arrowLength * 2, rightArrowY + arrowLength);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength, rightArrowY + arrowLength * 2, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength, rightArrowX + arrowLength * 2, rightArrowY + arrowLength - arrowLength / 2);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2 + arrowLength / 2);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength - arrowLength / 2, rightArrowX + arrowLength * 3, rightArrowY + arrowLength + arrowLength / 2);
+            g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2 + arrowLength / 2, rightArrowX + arrowLength * 3, rightArrowY + arrowLength + arrowLength / 2);
+
+            #endregion
         }
 
         //Methods for reaction on Tia variable change 
         #region Methods for reaction on Tia variable change 
 
-        //door movement
+        //Door movement
         #region Door movement
         public async void door1UP()
         {
@@ -254,10 +316,53 @@ namespace Bc_prace.Controls
                 await Task.Delay(Convert.ToInt32(timeDoor));
             }
         }
+
+        #endregion
+
+        //Shower movement
+        #region Shower movement
+
+        public async void ShowerMoveLeft()
+        {
+            for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
+            {
+                ShowerX -= 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
+        public async void ShowerMoveRight()
+        {
+            for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
+            {
+                ShowerX += 10;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+        }
+
         #endregion
 
         //Inner situation signalization
         #region Inner situation signalization
+        public void PreWashON()
+        {
+            var g = this.CreateGraphics();
+
+            g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
+        }
+        public void PreWashOFF()
+        {
+            var g = this.CreateGraphics();
+
+            g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            this.Refresh();
+        }
+
         public void WaterSignalizationON()
         {
             var g = this.CreateGraphics();
@@ -360,8 +465,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Car pictures 
-        #region Car pictures 
+        //Car picture
+        #region Car picture
 
         public void InitializeCarImage()
         {            
@@ -406,19 +511,38 @@ namespace Bc_prace.Controls
                 picture = 1;
             }
 
-            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
+            pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
             pictureBoxCar.Size = new Size(64, 64); //all pictures are for 64 px 
             Controls.Add(pictureBoxCar);
         }
 
-        public async void MovePictureRight() //možná budu muset přidat krok o kolik se má posunout
+        public async void MoveCarToNextPoint(int point) //možná budu muset přidat krok o kolik se má posunout
         {
             for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
             {
                 pictureX += 10;
-                pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                 this.Refresh();
                 await Task.Delay(Convert.ToInt32(timeDoor));
+            }
+
+            switch (point)
+            {
+                case 1: // move to select washing method
+
+                    break;
+                case 2: // move to PreWash
+
+                    break;
+                case 3: // move to CarPosition from selection
+
+                    break;
+                case 4: // move to CarPosition from PreWash
+
+                    break;
+                case 5: // move out 
+
+                    break;
             }
 
             picture++;
@@ -428,7 +552,7 @@ namespace Bc_prace.Controls
         public void ManualMovePictureLEFT()
         {
             pictureX -= 10;
-            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
             InitializeCarImage();
         }
@@ -436,7 +560,7 @@ namespace Bc_prace.Controls
         public void ManualMovePictureRIGHT()
         {
             pictureX += 10;
-            pictureBoxCar.Location = new Point(Convert.ToInt32(length + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
             InitializeCarImage();
         } 
