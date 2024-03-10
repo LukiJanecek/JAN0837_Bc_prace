@@ -30,7 +30,7 @@ namespace Bc_prace
         private static bool program1Opened = false;
         private static bool program2Opened = false;
         private static bool program3Opened = false;
-                       
+
         //Buffers variables 
         #region Buffers variables
 
@@ -43,13 +43,13 @@ namespace Bc_prace
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
-        public byte[] read_buffer_DB4 = new byte[30]; 
+        public byte[] read_buffer_DB4 = new byte[30];
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
-        public byte[] send_buffer_DB4 = new byte[30]; 
+        public byte[] send_buffer_DB4 = new byte[30];
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
-        private int DBNumber_DB5 = 5; 
+        private int DBNumber_DB5 = 5;
         public byte[] read_buffer_DB5 = new byte[4]; //3
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
@@ -399,7 +399,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB11 = ComputeHash(read_buffer_DB11);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, read_buffer_DB11.Length, ref read_buffer_DB11);
 
                 int readResultDB11 = reader.Read();
 
@@ -455,7 +455,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB4 = ComputeHash(read_buffer_DB4);
                 }
-                                
+
                 //first struct -> Input -> 14 variables -> size 1.5 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4.Length, ref read_buffer_DB4);
                 //second struct -> Output -> 32 variables -> size 26
@@ -475,7 +475,7 @@ namespace Bc_prace
                         PreviousBufferHash_DB4 = currentHashDB4_Input;
 
                         // Aktualizace proměnných na základě nových dat
-                        
+
                         //Input variables
                         #region Input variables
 
@@ -536,7 +536,7 @@ namespace Bc_prace
 
                         errorMessageBoxShown = false;
                     }
-                                       
+
                     errorMessageBoxShown = false;
                 }
                 else
@@ -570,9 +570,9 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB5 = ComputeHash(read_buffer_DB5);
                 }
-                                
+
                 //first struct -> Input -> 7 variables -> 0.6 size 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, read_buffer_DB5.Length, ref read_buffer_DB5); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, read_buffer_DB5.Length, ref read_buffer_DB5);
                 //second struct -> Output -> 16 variables -> 3.7 size
                 //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 2, 0, ref read_buffer_DB5_Output); //read_buffer_DB5_Output.Length
 
@@ -606,7 +606,7 @@ namespace Bc_prace
 
                         //Output variables
                         #region Output variables 
-                                                
+
                         CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 2, 0);
                         CarWashPositionCar = S7.GetBitAt(read_buffer_DB5, 2, 1);
                         CarWashGreenLight = S7.GetBitAt(read_buffer_DB5, 2, 2);
@@ -628,7 +628,7 @@ namespace Bc_prace
 
                         errorMessageBoxShown = false;
                     }
-                                        
+
                     errorMessageBoxShown = false;
                 }
                 else
@@ -662,7 +662,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB14 = ComputeHash(read_buffer_DB14);
                 }
-                                
+
                 //first struct -> Input -> 5 variables -> size 0.4
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14.Length, ref read_buffer_DB14); //read_buffer_DB14_Input.Length
                 //second struct -> Output -> 1 variable -> size 2.0
@@ -699,12 +699,12 @@ namespace Bc_prace
                         #region Output variables 
 
                         TrafficLightsSQ = S7.GetIntAt(read_buffer_DB14, 2);
-                        
+
                         #endregion
 
                         errorMessageBoxShown = false;
                     }
-                                       
+
                     //other structs are Timers
                 }
                 else
@@ -738,7 +738,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB1 = ComputeHash(read_buffer_DB1);
                 }
-                                
+
                 //first struct -> Input -> 4 variables -> size 0.3
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1.Length, ref read_buffer_DB1); //read_buffer_DB1_Input.Length
                 //second struct -> Output -> 21 variables -> size 6.3 
@@ -830,7 +830,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB19 = ComputeHash(read_buffer_DB19);
                 }
-                                  
+
                 //first struct -> Input -> 4 variables -> size 0.3
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19.Length, ref read_buffer_DB19); //read_buffer_DB19_Input.Length
                 //second struct -> Output -> 21 variables -> size 6.3
@@ -889,7 +889,7 @@ namespace Bc_prace
                         #endregion
 
                         errorMessageBoxShown = false;
-                    }                    
+                    }
                 }
                 else
                 {
@@ -922,7 +922,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB20 = ComputeHash(read_buffer_DB20);
                 }
-                                
+
                 //first struct -> Input -> 2 variables -> size 0.1
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20.Length, ref read_buffer_DB20); //read_buffer_DB20_Input.Length
                 //second struct -> Output -> 14 variables -> size 5.
@@ -972,7 +972,7 @@ namespace Bc_prace
                         #endregion
 
                         errorMessageBoxShown = false;
-                    }                    
+                    }
                 }
                 else
                 {
@@ -1005,7 +1005,7 @@ namespace Bc_prace
                     // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB21 = ComputeHash(read_buffer_DB21);
                 }
-                                
+
                 //first struct -> Input -> 2 variables -> size 0.1
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21.Length, ref read_buffer_DB21); //read_buffer_DB21_Input.Length
                 //second struct -> Output -> 14 variables -> size 5.4
@@ -1055,7 +1055,7 @@ namespace Bc_prace
                         #endregion
 
                         errorMessageBoxShown = false;
-                    }                   
+                    }
                 }
                 else
                 {
@@ -1160,6 +1160,7 @@ namespace Bc_prace
         public ChooseOptionForm()
         {
             InitializeComponent();
+            this.MinimumSize = new Size(450, 300);
         }
 
         private void ChooseOption_Load(object sender, EventArgs e)
@@ -1182,9 +1183,9 @@ namespace Bc_prace
 
                 Option1 = true;
                 S7.SetBitAt(send_buffer_DB11, 0, 0, true);
-                                
+
                 //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11); 
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResultDB11 == 0)
                 {
                     //write was successful
@@ -1234,7 +1235,7 @@ namespace Bc_prace
                 S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
 
                 //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);            
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResultDB11 == 0)
                 {
                     //write was successful
@@ -1284,7 +1285,7 @@ namespace Bc_prace
                 S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
                 //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);             
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResultDB11 == 0)
                 {
                     //write was successful
@@ -1348,7 +1349,7 @@ namespace Bc_prace
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
-                                
+
                 //start timer
                 Timer_read_from_PLC.Start();
                 //set time interval (ms)
@@ -1374,7 +1375,7 @@ namespace Bc_prace
             }
         }
         #endregion
-         
+
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
@@ -1413,7 +1414,7 @@ namespace Bc_prace
 
                 //Tia disconnect
                 client.Disconnect();
-            }          
+            }
 
             //close program
             this.Close();

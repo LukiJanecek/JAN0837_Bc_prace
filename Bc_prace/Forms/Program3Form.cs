@@ -244,7 +244,7 @@ namespace Bc_prace
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            //this.MinimumSize = new Size();
+            //this.MinimumSize = new Size(); //crossroad1 + btns
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 

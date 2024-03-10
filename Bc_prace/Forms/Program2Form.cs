@@ -25,7 +25,7 @@ namespace Bc_prace
         public S7Client client;
 
         //MessageBox control
-        private bool errorMessageBoxShown = false;       
+        private bool errorMessageBoxShown = false;
 
         //Buffers variables 
         #region Buffers variables
@@ -34,7 +34,7 @@ namespace Bc_prace
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
-                
+
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
         byte[] read_buffer_DB5;
@@ -101,7 +101,7 @@ namespace Bc_prace
         {
             InitializeComponent();
             InitializeButton();
-            //this.MinimumSize = new Size();
+            this.MinimumSize = new Size(1350, 500);
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -127,7 +127,7 @@ namespace Bc_prace
                 Timer_read_actual.Interval = 100;
             }
         }
-                
+
         //Tia connection
         #region Tia connection
 
@@ -527,7 +527,7 @@ namespace Bc_prace
                 }
             }
 
-            
+
         }
 
         #endregion
@@ -655,7 +655,7 @@ namespace Bc_prace
             {
                 //write was successful
                 this.Close();
-            }           
+            }
         }
         #endregion
 

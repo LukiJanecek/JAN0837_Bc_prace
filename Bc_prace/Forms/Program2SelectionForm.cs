@@ -78,6 +78,7 @@ namespace Bc_prace
         public Program2SelectionForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
+            this.MinimumSize = new Size(700, 260);
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 

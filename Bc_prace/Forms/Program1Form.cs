@@ -132,7 +132,7 @@ namespace Bc_prace
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            //this.MinimumSize = new Size();
+            this.MinimumSize = new Size(1060, 600); //toto bude mensi
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -248,7 +248,7 @@ namespace Bc_prace
                 ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; //time
                 ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
                 ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
-                ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed; 
+                ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
                 ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity; //no need to make a condition if true
                 ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown; //time
 
@@ -813,7 +813,7 @@ namespace Bc_prace
 
         private void btnFloor1_Click(object sender, EventArgs e)
         {
-            Floor1movement();            
+            Floor1movement();
         }
 
         private void btnFloor2_Click(object sender, EventArgs e)

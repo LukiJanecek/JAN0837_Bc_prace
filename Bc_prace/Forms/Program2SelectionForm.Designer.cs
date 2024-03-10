@@ -102,7 +102,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnEnd.Location = new Point(610, 10);
+            btnEnd.Location = new Point(599, 10);
             btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(82, 46);
@@ -114,9 +114,9 @@
             // statusStripCarWashSelection
             // 
             statusStripCarWashSelection.ImageScalingSize = new Size(20, 20);
-            statusStripCarWashSelection.Location = new Point(0, 229);
+            statusStripCarWashSelection.Location = new Point(0, 199);
             statusStripCarWashSelection.Name = "statusStripCarWashSelection";
-            statusStripCarWashSelection.Size = new Size(695, 22);
+            statusStripCarWashSelection.Size = new Size(684, 22);
             statusStripCarWashSelection.TabIndex = 6;
             statusStripCarWashSelection.Text = "statusStrip1";
             // 
@@ -142,10 +142,10 @@
             // 
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 171);
+            panel1.Location = new Point(0, 141);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(695, 58);
+            panel1.Size = new Size(684, 58);
             panel1.TabIndex = 9;
             // 
             // panel2
@@ -155,7 +155,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(695, 34);
+            panel2.Size = new Size(684, 34);
             panel2.TabIndex = 10;
             // 
             // panel3
@@ -170,7 +170,7 @@
             panel3.Location = new Point(0, 34);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(695, 137);
+            panel3.Size = new Size(684, 107);
             panel3.TabIndex = 11;
             // 
             // Timer_read_actual
@@ -181,7 +181,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(695, 251);
+            ClientSize = new Size(684, 221);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

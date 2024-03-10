@@ -64,4 +64,3 @@ C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_Bc_prace\Bc_p
 C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_Bc_prace\Bc_prace\bin\Debug\net6.0-windows\Sharp7.dll
 C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_Bc_prace\Bc_prace\obj\Debug\net6.0-windows\Bc_prace.Controls.UserControlCrossroad.resources
 C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_Bc_prace\Bc_prace\obj\Debug\net6.0-windows\Bc_prace.Controls.UserControlElevatorDoor.resources
-C:\Users\lukas\OneDrive\Dokumenty\VŠ\Bc_prace\Bc\C#\final\JAN0837_Bc_prace\Bc_prace\obj\Debug\net6.0-windows\Bc_prace.Controls.UserControl1.resources

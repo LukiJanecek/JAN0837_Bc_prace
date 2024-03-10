@@ -57,6 +57,7 @@ namespace Bc_prace
             btnFloor1 = new Button();
             panelDoorLeft = new Panel();
             panelDoorRight = new Panel();
+            panelElevatorDoor = new Panel();
             panelDoorTOP = new Panel();
             lblElevatorCabin = new Label();
             lblElevatorFloor = new Label();
@@ -73,7 +74,6 @@ namespace Bc_prace
             btnCabinMoveToRight = new Button();
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panelElevatorCabin = new Panel();
-            panelElevatorDoor = new Panel();
             ((System.ComponentModel.ISupportInitialize)panelCabin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBFloor2).BeginInit();
@@ -89,10 +89,10 @@ namespace Bc_prace
             // statusStripElevator
             // 
             statusStripElevator.ImageScalingSize = new Size(20, 20);
-            statusStripElevator.Location = new Point(0, 536);
+            statusStripElevator.Location = new Point(0, 539);
             statusStripElevator.Name = "statusStripElevator";
             statusStripElevator.Padding = new Padding(1, 0, 12, 0);
-            statusStripElevator.Size = new Size(1041, 22);
+            statusStripElevator.Size = new Size(1044, 22);
             statusStripElevator.TabIndex = 0;
             statusStripElevator.Text = "statusStrip1";
             // 
@@ -355,6 +355,13 @@ namespace Bc_prace
             panelDoorRight.Size = new Size(132, 368);
             panelDoorRight.TabIndex = 35;
             // 
+            // panelElevatorDoor
+            // 
+            panelElevatorDoor.Location = new Point(19, 221);
+            panelElevatorDoor.Name = "panelElevatorDoor";
+            panelElevatorDoor.Size = new Size(200, 174);
+            panelElevatorDoor.TabIndex = 44;
+            // 
             // panelDoorTOP
             // 
             panelDoorTOP.BackColor = SystemColors.ControlDark;
@@ -389,7 +396,7 @@ namespace Bc_prace
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 474);
+            btnEnd.Location = new Point(3, 477);
             btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(155, 59);
@@ -410,7 +417,7 @@ namespace Bc_prace
             panelCabinBtn.Controls.Add(btnCabinFloor3);
             panelCabinBtn.Controls.Add(btnCabinFloor4);
             panelCabinBtn.Controls.Add(btnCabinFloor5);
-            panelCabinBtn.Location = new Point(768, 276);
+            panelCabinBtn.Location = new Point(771, 279);
             panelCabinBtn.Margin = new Padding(3, 2, 3, 2);
             panelCabinBtn.Name = "panelCabinBtn";
             panelCabinBtn.Size = new Size(106, 260);
@@ -428,10 +435,10 @@ namespace Bc_prace
             panel1.Controls.Add(btnCabinMoveToRight);
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(877, 0);
+            panel1.Location = new Point(880, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(164, 536);
+            panel1.Size = new Size(164, 539);
             panel1.TabIndex = 42;
             // 
             // btnCabinLengthBigger
@@ -533,18 +540,11 @@ namespace Bc_prace
             panelElevatorCabin.Size = new Size(200, 190);
             panelElevatorCabin.TabIndex = 43;
             // 
-            // panelElevatorDoor
-            // 
-            panelElevatorDoor.Location = new Point(19, 221);
-            panelElevatorDoor.Name = "panelElevatorDoor";
-            panelElevatorDoor.Size = new Size(200, 174);
-            panelElevatorDoor.TabIndex = 44;
-            // 
             // Program1Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1041, 558);
+            ClientSize = new Size(1044, 561);
             Controls.Add(panelElevatorCabin);
             Controls.Add(panel1);
             Controls.Add(lblElevatorFloor);

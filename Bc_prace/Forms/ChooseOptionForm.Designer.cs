@@ -82,10 +82,10 @@
             // 
             // btnConnect
             // 
-            btnConnect.Location = new Point(10, 50);
+            btnConnect.Location = new Point(10, 53);
             btnConnect.Margin = new Padding(3, 2, 3, 2);
             btnConnect.Name = "btnConnect";
-            btnConnect.Size = new Size(203, 37);
+            btnConnect.Size = new Size(204, 37);
             btnConnect.TabIndex = 3;
             btnConnect.Text = "Connect";
             btnConnect.UseVisualStyleBackColor = true;
@@ -121,17 +121,17 @@
             // statusStripChooseOption
             // 
             statusStripChooseOption.ImageScalingSize = new Size(20, 20);
-            statusStripChooseOption.Location = new Point(0, 273);
+            statusStripChooseOption.Location = new Point(0, 239);
             statusStripChooseOption.Name = "statusStripChooseOption";
             statusStripChooseOption.Padding = new Padding(1, 0, 12, 0);
-            statusStripChooseOption.Size = new Size(610, 22);
+            statusStripChooseOption.Size = new Size(434, 22);
             statusStripChooseOption.TabIndex = 8;
             statusStripChooseOption.Text = "statusStrip1";
             // 
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(11, 117);
+            btnEnd.Location = new Point(11, 83);
             btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(124, 53);
@@ -149,7 +149,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(610, 101);
+            panel2.Size = new Size(434, 101);
             panel2.TabIndex = 11;
             // 
             // panel3
@@ -162,17 +162,17 @@
             panel3.Location = new Point(0, 101);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(610, 172);
+            panel3.Size = new Size(434, 138);
             panel3.TabIndex = 12;
             // 
             // panel1
             // 
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(469, 101);
+            panel1.Location = new Point(293, 101);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 172);
+            panel1.Size = new Size(141, 138);
             panel1.TabIndex = 13;
             // 
             // Timer_read_from_PLC
@@ -183,7 +183,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(610, 295);
+            ClientSize = new Size(434, 261);
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(panel2);
