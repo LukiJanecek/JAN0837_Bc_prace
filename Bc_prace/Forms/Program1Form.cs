@@ -114,13 +114,13 @@ namespace Bc_prace
         private int lblElevatorFloorX, lblElevatorFloorY;
 
         //Variables DoorSEQ time 
-        public int CabinDoorClosingTime = 500;
-        public int CabinDoorOpenningTime = 1000;
+        //public int CabinDoorClosingTime = 500;
+        //public int CabinDoorOpenningTime = 1000;
 
         //Variables cabin movement step 
         public int ElevatorStep = 10;
-        public int ElevatorMovementTime = 500;
-        private int currentFloor = 5;
+        //public int ElevatorMovementTime = 500;
+        //private int currentFloor = 5;
         private int floorHeight = 120;
 
         public int ActualFloor;
@@ -813,7 +813,7 @@ namespace Bc_prace
 
         private void btnFloor1_Click(object sender, EventArgs e)
         {
-            Floor1movement();
+            Floor1movement();            
         }
 
         private void btnFloor2_Click(object sender, EventArgs e)
@@ -839,50 +839,55 @@ namespace Bc_prace
         #endregion
 
         //Move to Floor 
-        #region Move to floor
+        #region Move to floor 
 
         #region Move to floor 1
         private async void Floor1movement()
         {
             if (ActualFloor == 1)
             {
-                //Opendoor;
+                //Opendoor; => dela Tia
+                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 30; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 40; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
             else
             {
@@ -898,42 +903,48 @@ namespace Bc_prace
             if (ActualFloor == 1)
             {
                 //Opendoor;
+                //posun o určitý počet pixelů 
+                for (int i = 0; i < 10; i++)
+                {
+                    //userControlElevatorCabin1.MoveUp();
+                    await Task.Delay(500);
+                }
+                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 2)
             {
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
-                {
-                    //userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
+                //Opendoor; => dela Tia
+                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControl
             }
             else if (ActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 30; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
             else
             {
@@ -947,43 +958,48 @@ namespace Bc_prace
         {
             if (ActualFloor == 1)
             {
-                //Opendoor;
+                //posun o určitý počet pixelů 
+                for (int i = 0; i < 20; i++)
+                {
+                    //userControlElevatorCabin1.MoveUp();
+                    await Task.Delay(500);
+                }
+                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 3)
             {
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
-                {
-                    //userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
+                //Opendoor; => dela Tia
+                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
             else
             {
@@ -998,43 +1014,48 @@ namespace Bc_prace
         {
             if (ActualFloor == 1)
             {
-                //Opendoor;
+                //posun o určitý počet pixelů 
+                for (int i = 0; i < 30; i++)
+                {
+                    //userControlElevatorCabin1.MoveUp();
+                    await Task.Delay(500);
+                }
+                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 4)
             {
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
-                {
-                    //userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
+                //Opendoor; => dela Tia
+                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 30; i++)
                 {
                     //userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
             else
             {
@@ -1048,43 +1069,48 @@ namespace Bc_prace
         {
             if (ActualFloor == 1)
             {
-                //Opendoor;
+                //posun o určitý počet pixelů 
+                for (int i = 0; i < 40; i++)
+                {
+                    //userControlElevatorCabin1.MoveUp();
+                    await Task.Delay(500);
+                }
+                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    //userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
+                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
             else if (ActualFloor == 5)
             {
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 6; i++)
-                {
-                    //userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
+                //Opendoor; => dela Tia
+                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
             else
             {
@@ -1116,23 +1142,22 @@ namespace Bc_prace
             //panelDoorLeft.Left = panelDoorLeft.Width;
             //panelDoorRight.Right = panelDoorRight.Width;
 
-            await Task.Delay(CabinDoorClosingTime);
+            await Task.Delay(ElevatroTimeDoorSQCLOSE);
             panelDoorLeftX += 50;
             panelDoorRightX -= 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorClosingTime);
+            await Task.Delay(ElevatroTimeDoorSQCLOSE);
             panelDoorLeftX += 50;
             panelDoorRightX -= 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorClosingTime);
+            await Task.Delay(ElevatroTimeDoorSQCLOSE);
             panelDoorLeftX += 50;
             panelDoorRightX -= 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorClosingTime);
-
+            await Task.Delay(ElevatroTimeDoorSQCLOSE);
 
             //DoorOPEN = false;
             lblElevatorCabin.Text = "Door closed";
@@ -1151,22 +1176,22 @@ namespace Bc_prace
             //panelDoorLeft.Left = 0;
             //panelDoorRight.Right = 0;
 
-            await Task.Delay(CabinDoorOpenningTime);
+            await Task.Delay(ElevatorTimeDoorSQOPEN);
             panelDoorLeftX -= 50;
             panelDoorRightX += 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorOpenningTime);
+            await Task.Delay(ElevatorTimeDoorSQOPEN);
             panelDoorLeftX -= 50;
             panelDoorRightX += 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorOpenningTime);
+            await Task.Delay(ElevatorTimeDoorSQOPEN);
             panelDoorLeftX -= 50;
             panelDoorRightX += 50;
             panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
             panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(CabinDoorOpenningTime);
+            await Task.Delay(ElevatorTimeDoorSQOPEN);
 
             //DoorOPEN = true;
             lblElevatorCabin.Text = "Door open";
@@ -1188,15 +1213,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB4, 1, 4, ElevatorEmergencySTOP);
 
             //write to PLC
-            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
-            if (writeResultDB4_Input != 0)
+            int writeResultDB4_Emergency = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_Emergency != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: {writeResultDB4_Input} \n", "Error",
+                        $"Error message: writeResultDB4_Emergency = {writeResultDB4_Emergency} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1218,15 +1243,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB4, 1, 5, ElevatorErrorSystem);
 
             //write to PLC
-            int writeResultDB4_Input = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
-            if (writeResultDB4_Input != 0)
+            int writeResultDB4_ErrorSystem = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_ErrorSystem != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: {writeResultDB4_Input} \n", "Error",
+                        $"Error message: writeResultDB4_ErrorSystem = {writeResultDB4_ErrorSystem} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1249,15 +1274,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
 
             //write to PLC
-            int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-            if (writeResultDB11 != 0)
+            int writeResultDB11_btnEnd = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            if (writeResultDB11_btnEnd != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                        $"Error message: {writeResultDB11} \n", "Error",
+                        $"Error message: writeResultDB11_btnEnd = {writeResultDB11_btnEnd} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;

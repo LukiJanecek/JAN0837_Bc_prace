@@ -2395,15 +2395,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
 
             //write to PLC
-            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14 != 0)
+            int writeResultDB14_Emergency = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14_Emergency != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14} \n", "Error",
+                        $"Error message: writeResultDB14_Emergency = {writeResultDB14_Emergency} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2425,15 +2425,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 4, CrossroadErrorSystem);
 
             //write to PLC
-            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14 != 0)
+            int writeResultDB14_ErrorSystem = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14_ErrorSystem != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14} \n", "Error",
+                        $"Error message: writeResultDB14_ErrorSystem = {writeResultDB14_ErrorSystem} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2456,15 +2456,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
             //write to PLC
-            int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-            if (writeResultDB11 != 0)
+            int writeResultDB11_btnEnd = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+            if (writeResultDB11_btnEnd != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                        $"Error message: {writeResultDB11} \n", "Error",
+                        $"Error message: writeResultDB11_btnEnd = {writeResultDB11_btnEnd} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2490,15 +2490,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 2, CrossroadModeDAY);
 
             //write to PLC
-            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14 != 0)
+            int writeResultDB14_DayMode = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14_DayMode != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14} \n", "Error",
+                        $"Error message: writeResultDB14_DayMode = {writeResultDB14_DayMode} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2532,15 +2532,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 1, CrossroadModeNIGHT);
 
             //write to PLC
-            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14 != 0)
+            int writeResultDB14_NightMode = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14_NightMode != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14} \n", "Error",
+                        $"Error message: writeResultDB14_NightMode = {writeResultDB14_NightMode} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -2574,15 +2574,15 @@ namespace Bc_prace
             S7.SetBitAt(send_buffer_DB14, 0, 0, CrossroadModeOFF);
 
             //write to PLC
-            int writeResultDB14 = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
-            if (writeResultDB14 != 0)
+            int writeResultDB14_OffMode = client.DBWrite(DBNumber_DB14, 0, send_buffer_DB14.Length, send_buffer_DB14);
+            if (writeResultDB14_OffMode != 0)
             {
                 //write error
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
-                        $"Error message: {writeResultDB14} \n", "Error",
+                        $"Error message: writeResultDB14_OffMode = {writeResultDB14_OffMode} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
