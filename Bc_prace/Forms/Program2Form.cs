@@ -594,7 +594,7 @@ namespace Bc_prace
                 case 4:
 
                     statusStripCarWash.Items.Clear();
-                    lblStatus = new ToolStripStatusLabel("Car is leaving CarWash");
+                    lblStatus = new ToolStripStatusLabel("Car is leaving CarWash. This is end of the program.");
                     statusStripCarWash.Items.Add(lblStatus);
 
                     break;
