@@ -104,9 +104,6 @@ namespace Bc_prace
 
         #endregion
 
-        //Variables
-        #region Variables
-
         //Variables for panels (cabin door + cabin movement)
         private int panelDoorLeftX, panelDoorLeftY;
         private int panelDoorRightX, panelDoorRightY;
@@ -121,13 +118,11 @@ namespace Bc_prace
         public int ElevatorStep = 10;
         //public int ElevatorMovementTime = 500;
         //private int currentFloor = 5;
-        private int floorHeight = 120;
+        //private int floorHeight = 120;
 
         public int ActualFloor;
 
-        int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
-
-        #endregion
+        //int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
 
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
@@ -150,7 +145,7 @@ namespace Bc_prace
 
             #endregion
 
-            //Cabin door position
+            //Cabin door position -> toto půjde pryč 
             panelDoorLeftX = panelDoorLeft.Location.X;
             panelDoorLeftY = panelDoorLeft.Location.Y;
             panelDoorRightX = panelDoorRight.Location.X;
@@ -171,7 +166,7 @@ namespace Bc_prace
 
         private void Program1_Load(object sender, EventArgs e)
         {
-            //Set start position for cabin doors (CLOSE) 
+            //Set start position for cabin doors (CLOSE) -> toto půjde pryč
             //Left door
             panelDoorLeftX = 410;
             panelDoorLeftY = 120;

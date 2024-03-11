@@ -518,41 +518,70 @@ namespace Bc_prace.Controls
 
         public async void MoveCarToNextPoint(int point) //možná budu muset přidat krok o kolik se má posunout
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
-            {
-                pictureX += 10;
-                pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
-                this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
-            }
+            float targetX;
 
             switch (point)
             {
                 case 1: // move to select washing method
-
+                    
+                    targetX = length * 2 - 64;
+                    
+                    while (pictureBoxCar.Location.X < targetX)
+                    {
+                        pictureX += 10;
+                        pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                        this.Refresh();
+                        await Task.Delay(Convert.ToInt32(timeDoor));
+                    }
+                    
                     break;
                 case 2: // move to PreWash
+                    
+                    targetX = length * 3 - 10;
+
+                    while (pictureBoxCar.Location.X < targetX)
+                    {
+                        pictureX += 10;
+                        pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                        this.Refresh();
+                        await Task.Delay(Convert.ToInt32(timeDoor));
+                    }
 
                     break;
-                case 3: // move to CarPosition from selection
+                
+                case 3: // move to CarPosition from PreWash
+
+                    targetX = length * 7 - 64;
+
+                    while (pictureBoxCar.Location.X < targetX)
+                    {
+                        pictureX += 10;
+                        pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                        this.Refresh();
+                        await Task.Delay(Convert.ToInt32(timeDoor));
+                    }
 
                     break;
-                case 4: // move to CarPosition from PreWash
+                case 4: // move out 
+
+                    targetX = length * 12 - 64;
+
+                    while (pictureBoxCar.Location.X < targetX)
+                    {
+                        pictureX += 10;
+                        pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+                        this.Refresh();
+                        await Task.Delay(Convert.ToInt32(timeDoor));
+                    }
 
                     break;
-                case 5: // move out 
-
-                    break;
-            }
-
-            picture++;
-            InitializeCarImage();
+            }            
         }
 
         public void ManualMovePictureLEFT()
         {
             pictureX -= 10;
-            pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
             InitializeCarImage();
         }
@@ -560,7 +589,7 @@ namespace Bc_prace.Controls
         public void ManualMovePictureRIGHT()
         {
             pictureX += 10;
-            pictureBoxCar.Location = new Point(Convert.ToInt32(pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
+            pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
             InitializeCarImage();
         } 

@@ -27,6 +27,8 @@ namespace Bc_prace
         //MessageBox control
         private bool errorMessageBoxShown = false;
 
+        private int carCurrentPoint = 1;
+
         //Buffers variables 
         #region Buffers variables
 
@@ -558,7 +560,47 @@ namespace Bc_prace
 
         private void btnMoveCarToNextPoint_Click(object sender, EventArgs e)
         {
+            ToolStripStatusLabel lblStatus;
 
+            userControlCarWash1.MoveCarToNextPoint(carCurrentPoint);
+
+            switch (carCurrentPoint)
+            {
+                case 1:
+
+                    statusStripCarWash.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Start CarWash by click on button Start washing.");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    break;
+                case 2:
+
+                    //zavolat PreWash
+                    statusStripCarWash.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("PreWash free to use.");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    break;
+
+                case 3:
+
+                    //set true CarPosition
+                    statusStripCarWash.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Car is on CarPosition point.");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    break;
+
+                case 4:
+
+                    statusStripCarWash.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Car is leaving CarWash");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    break;
+            }
+
+            carCurrentPoint++;
         }
 
         #endregion
