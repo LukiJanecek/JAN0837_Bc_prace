@@ -194,16 +194,16 @@ namespace Bc_prace
                 //Input variables
                 #region Input variables 
 
-                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1; //no need to make a condition if true
-                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2; //no need to make a condition if true
-                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3; //no need to make a condition if true
-                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4; //no need to make a condition if true
-                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5; //no need to make a condition if true
-                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1; //no need to make a condition if true
-                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2; //no need to make a condition if true
-                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3; //no need to make a condition if true
-                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4; //no need to make a condition if true
-                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; //no need to make a condition if true
+                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1; 
+                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2; 
+                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3; 
+                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4; 
+                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5; 
+                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1; 
+                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2; 
+                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3; 
+                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4; 
+                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; 
                 ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
                 ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
                 ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
@@ -541,7 +541,7 @@ namespace Bc_prace
                 }
 
                 //ElevatorCabinBTN
-                #region
+                #region ElevatorCabinBTN
                 if (ElevatorBTNCabin1)
                 {
                     Floor1movement();
@@ -569,7 +569,7 @@ namespace Bc_prace
                 #endregion
 
                 //ElevatorFloorBTN
-                #region
+                #region ElevatorFloorBTN
                 if (ElevatorBTNFloor1)
                 {
                     Floor1movement();
