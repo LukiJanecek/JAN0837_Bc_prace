@@ -13,7 +13,7 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlElevatorCabin : UserControl
     {
-        private Program1Form program1FormInstance;
+        private Program1Form program1FormInstance = null;
 
         private S7Client client;
 
@@ -43,29 +43,37 @@ namespace Bc_prace.Controls
         //BTNs define 
         #region BTNs define 
 
-        private Button btnElevatorFloor1;
-        private Button btnElevatorFloor2;
-        private Button btnElevatorFloor3;
-        private Button btnElevatorFloor4;
-        private Button btnElevatorFloor5;
+        private Button btnElevatorFloor1 = new Button();
+        private Button btnElevatorFloor2 = new Button();
+        private Button btnElevatorFloor3 = new Button();
+        private Button btnElevatorFloor4 = new Button();
+        private Button btnElevatorFloor5 = new Button();
 
         #endregion
 
-        public UserControlElevatorCabin(Program1Form program1FormInstance) // Program1Form program1FormInstance
+        public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
-            InitializeButtons();
-
+         
             DoubleBuffered = true;
             Paint += UserControlElevatorCabin_Paint;
 
-            this.program1FormInstance = program1FormInstance;
+            // if (DesignMode == true ) { }
 
             //client = program1FormInstance.client;
         }
 
+        public void SetControl(Program1Form program1FormInstance)
+        {
+            this.program1FormInstance = program1FormInstance;
+            InitializeButtons();
+        }
+
+
         private void UserControlElevatorCabin_Paint(object sender, PaintEventArgs e)
         {
+            if (program1FormInstance == null)
+                return;
             var g = e.Graphics;
 
             //backgroud

@@ -189,7 +189,7 @@ namespace Bc_prace.Controls
             //g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //position line  
-            g.DrawLine(BlackPen, x + length * 5, y +length * 2, x + length * 9, y + length * 2);
+            g.DrawLine(BlackPen, x + length * 5, y + length * 2, x + length * 9, y + length * 2);
             g.DrawEllipse(BlackPen, x + ShowerX + length * 7 - (signalizationCircle_diameter / 2), y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
 
             //car signalization => // this doesnt make sense anymore
@@ -451,7 +451,7 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
-            
+
             this.Refresh();
         }
         public void DryingSignalizationOFF()
@@ -469,7 +469,7 @@ namespace Bc_prace.Controls
         #region Car picture
 
         public void InitializeCarImage()
-        {            
+        {
             if (pictureBoxCar != null && !pictureBoxCar.IsDisposed)
             {
                 Controls.Remove(pictureBoxCar);
@@ -511,7 +511,7 @@ namespace Bc_prace.Controls
                 picture = 1;
             }
 
-            pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY)); 
+            pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             pictureBoxCar.Size = new Size(64, 64); //all pictures are for 64 px 
             Controls.Add(pictureBoxCar);
         }
@@ -523,9 +523,9 @@ namespace Bc_prace.Controls
             switch (point)
             {
                 case 1: // move to select washing method
-                    
+
                     targetX = length * 2 - 64;
-                    
+
                     while (pictureBoxCar.Location.X < targetX)
                     {
                         pictureX += 10;
@@ -533,10 +533,10 @@ namespace Bc_prace.Controls
                         this.Refresh();
                         await Task.Delay(Convert.ToInt32(timeDoor));
                     }
-                    
+
                     break;
                 case 2: // move to PreWash
-                    
+
                     targetX = length * 3 - 10;
 
                     while (pictureBoxCar.Location.X < targetX)
@@ -548,7 +548,7 @@ namespace Bc_prace.Controls
                     }
 
                     break;
-                
+
                 case 3: // move to CarPosition from PreWash
 
                     targetX = length * 7 - 64;
@@ -575,7 +575,7 @@ namespace Bc_prace.Controls
                     }
 
                     break;
-            }            
+            }
         }
 
         public void ManualMovePictureLEFT()
@@ -592,7 +592,7 @@ namespace Bc_prace.Controls
             pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
             InitializeCarImage();
-        } 
+        }
 
         #endregion
 

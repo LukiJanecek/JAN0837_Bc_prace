@@ -127,7 +127,7 @@ namespace Bc_prace
         public Program1Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            this.MinimumSize = new Size(1060, 600); //toto bude mensi
+            this.MinimumSize = new Size(1150, 650); 
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -145,16 +145,6 @@ namespace Bc_prace
 
             #endregion
 
-            //Cabin door position -> toto půjde pryč 
-            panelDoorLeftX = panelDoorLeft.Location.X;
-            panelDoorLeftY = panelDoorLeft.Location.Y;
-            panelDoorRightX = panelDoorRight.Location.X;
-            panelDoorRightY = panelDoorRight.Location.Y;
-            panelCabinX = panelCabin.Location.X;
-            panelCabinY = panelCabin.Location.Y;
-            lblElevatorFloorX = lblElevatorFloor.Location.X;
-            lblElevatorFloorY = lblElevatorFloor.Location.Y;
-
             if (client.Connected)
             {
                 //start timer
@@ -166,20 +156,7 @@ namespace Bc_prace
 
         private void Program1_Load(object sender, EventArgs e)
         {
-            //Set start position for cabin doors (CLOSE) -> toto půjde pryč
-            //Left door
-            panelDoorLeftX = 410;
-            panelDoorLeftY = 120;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            //Right door 
-            panelDoorRightX = 560;
-            panelDoorRightY = 120;
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            //Cabin
-            panelCabinX = 35;
-            panelCabinY = 15;
-            lblElevatorFloorX = 40;
-            lblElevatorFloorY = 53;
+            userControlElevatorCabin1.SetControl(this);
         }
 
         //Tia connection
@@ -194,16 +171,16 @@ namespace Bc_prace
                 //Input variables
                 #region Input variables 
 
-                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1; 
-                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2; 
-                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3; 
-                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4; 
-                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5; 
-                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1; 
-                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2; 
-                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3; 
-                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4; 
-                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; 
+                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
+                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
+                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
+                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
+                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
+                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
+                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
+                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
+                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
+                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
                 ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
                 ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
                 ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
@@ -1185,33 +1162,12 @@ namespace Bc_prace
 
         private async void CloseDOOR()
         {
-            lblElevatorCabin.Text = "Closing door";
+            ToolStripStatusLabel lblStatus;
+
             statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Closing door");
+            lblStatus = new ToolStripStatusLabel("Closing door");
             statusStripElevator.Items.Add(lblStatus);
 
-            //panelDoorLeft.Left = panelDoorLeft.Width;
-            //panelDoorRight.Right = panelDoorRight.Width;
-
-            await Task.Delay(ElevatroTimeDoorSQCLOSE);
-            panelDoorLeftX += 50;
-            panelDoorRightX -= 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatroTimeDoorSQCLOSE);
-            panelDoorLeftX += 50;
-            panelDoorRightX -= 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatroTimeDoorSQCLOSE);
-            panelDoorLeftX += 50;
-            panelDoorRightX -= 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatroTimeDoorSQCLOSE);
-
-            //DoorOPEN = false;
-            lblElevatorCabin.Text = "Door closed";
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door closed");
             statusStripElevator.Items.Add(lblStatus);
@@ -1219,33 +1175,13 @@ namespace Bc_prace
 
         private async void OpenDOOR()
         {
+            ToolStripStatusLabel lblStatus;
+
+
             statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Openning door");
+            lblStatus = new ToolStripStatusLabel("Openning door");
             statusStripElevator.Items.Add(lblStatus);
-            lblElevatorCabin.Text = "Openning door";
 
-            //panelDoorLeft.Left = 0;
-            //panelDoorRight.Right = 0;
-
-            await Task.Delay(ElevatorTimeDoorSQOPEN);
-            panelDoorLeftX -= 50;
-            panelDoorRightX += 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatorTimeDoorSQOPEN);
-            panelDoorLeftX -= 50;
-            panelDoorRightX += 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatorTimeDoorSQOPEN);
-            panelDoorLeftX -= 50;
-            panelDoorRightX += 50;
-            panelDoorLeft.Location = new System.Drawing.Point(panelDoorLeftX, panelDoorLeftY);
-            panelDoorRight.Location = new System.Drawing.Point(panelDoorRightX, panelDoorRightY);
-            await Task.Delay(ElevatorTimeDoorSQOPEN);
-
-            //DoorOPEN = true;
-            lblElevatorCabin.Text = "Door open";
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door open");
             statusStripElevator.Items.Add(lblStatus);
@@ -1398,5 +1334,6 @@ namespace Bc_prace
         #endregion
 
         #endregion
+
     }
 }

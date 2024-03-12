@@ -14,6 +14,9 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlElevatorDoor : UserControl
     {
+        //MessageBox control
+        private bool errorMessageBoxShown;
+
         //Drawing variables
         #region Drawing variables
 
