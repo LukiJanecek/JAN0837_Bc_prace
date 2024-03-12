@@ -540,6 +540,62 @@ namespace Bc_prace
                     ErrorSystem();
                 }
 
+                //ElevatorCabinBTN
+                #region
+                if (ElevatorBTNCabin1)
+                {
+                    Floor1movement();
+                }
+                else if (ElevatorBTNCabin2)
+                {
+                    Floor2movement();
+                }
+                else if (ElevatorBTNCabin3)
+                {
+                    Floor3movement();
+                }
+                else if (ElevatorBTNCabin4)
+                {
+                    Floor4movement();
+                }
+                else if (ElevatorBTNCabin5)
+                {
+                    Floor5movement();
+                }
+                else
+                {
+                    //waiting for BTN push
+                }
+                #endregion
+
+                //ElevatorFloorBTN
+                #region
+                if (ElevatorBTNFloor1)
+                {
+                    Floor1movement();
+                }
+                else if (ElevatorBTNFloor2)
+                {
+                    Floor2movement();
+                }
+                else if (ElevatorBTNFloor3)
+                {
+                    Floor3movement();
+                }
+                else if (ElevatorBTNFloor4)
+                {
+                    Floor4movement();
+                }
+                else if (ElevatorBTNFloor5)
+                {
+                    Floor5movement();
+                }
+                else
+                {
+                    //waiting for BTN push
+                }
+                #endregion
+
                 //ElevatorActualFloorLED
                 #region ElevatorActualFloorLED
 
@@ -660,11 +716,11 @@ namespace Bc_prace
 
         //Movement to specific floor 
         #region Movement to specific floor 
-        //btn cabin 
-        #region btn cabin
+        //BTN cabin 
+        #region BTN cabin
         private void btnCabinFloor1_Click(object sender, EventArgs e)
         {
-            Floor1movement(); //this must go => Tia needs to activate this 
+            //Floor1movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin1 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 0, ElevatorBTNCabin1);
@@ -692,7 +748,7 @@ namespace Bc_prace
 
         private void btnCabinFloor2_Click(object sender, EventArgs e)
         {
-            Floor2movement(); //this must go => Tia needs to activate this 
+            //Floor2movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin2 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 1, ElevatorBTNCabin2);
@@ -720,7 +776,7 @@ namespace Bc_prace
 
         private void btnCabinFloor3_Click(object sender, EventArgs e)
         {
-            Floor3movement(); //this must go => Tia needs to activate this 
+            //Floor3movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin3 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 2, ElevatorBTNCabin3);
@@ -748,7 +804,7 @@ namespace Bc_prace
 
         private void btnCabinFloor4_Click(object sender, EventArgs e)
         {
-            Floor4movement(); //this must go => Tia needs to activate this 
+            //Floor4movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin4 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin4);
@@ -776,7 +832,7 @@ namespace Bc_prace
 
         private void btnCabinFloor5_Click(object sender, EventArgs e)
         {
-            Floor5movement(); //this must go => Tia needs to activate this 
+            //Floor5movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin5 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin5);
