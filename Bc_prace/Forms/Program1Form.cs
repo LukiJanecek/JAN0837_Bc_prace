@@ -500,6 +500,16 @@ namespace Bc_prace
                 if (ElevatorErrorSystem)
                 {
                     ErrorSystem();
+
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Error system is true. \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 //ElevatorCabinBTN
@@ -670,7 +680,10 @@ namespace Bc_prace
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
                 }
+
             }
         }
 
@@ -864,6 +877,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 2)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -874,6 +888,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 3)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -884,6 +899,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 4)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
@@ -894,6 +910,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 5)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
                 {
@@ -905,6 +922,16 @@ namespace Bc_prace
             else
             {
                 ErrorSystem();
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("Floor1Movemnt is not possible. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
         }
 
@@ -915,7 +942,7 @@ namespace Bc_prace
         {
             if (ElevatorActualFloor == 1)
             {
-                //Opendoor;
+                userControlElevatorCabin1.CabinMoveToFloorUP(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -931,6 +958,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 3)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -941,6 +969,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 4)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -951,6 +980,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 5)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
@@ -962,6 +992,16 @@ namespace Bc_prace
             else
             {
                 ErrorSystem();
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("Floor2Movemnt is not possible. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
         }
         #endregion
@@ -971,6 +1011,7 @@ namespace Bc_prace
         {
             if (ElevatorActualFloor == 1)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -981,6 +1022,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 2)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -996,6 +1038,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 4)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -1006,6 +1049,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 5)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -1017,6 +1061,16 @@ namespace Bc_prace
             else
             {
                 ErrorSystem();
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("Floor3Movemnt is not possible. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
 
         }
@@ -1027,6 +1081,7 @@ namespace Bc_prace
         {
             if (ElevatorActualFloor == 1)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(3);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
@@ -1037,6 +1092,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 2)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -1047,6 +1103,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 3)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -1062,6 +1119,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 5)
             {
+                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
@@ -1073,6 +1131,16 @@ namespace Bc_prace
             else
             {
                 ErrorSystem();
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("Floor4Movemnt is not possible. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
         }
         #endregion
@@ -1082,6 +1150,7 @@ namespace Bc_prace
         {
             if (ElevatorActualFloor == 1)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(4);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
                 {
@@ -1092,6 +1161,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 2)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(3);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
@@ -1102,6 +1172,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 3)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(2);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
@@ -1112,6 +1183,7 @@ namespace Bc_prace
             }
             else if (ElevatorActualFloor == 4)
             {
+                userControlElevatorCabin1.CabinMoveToFloorUP(1);
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
@@ -1128,6 +1200,16 @@ namespace Bc_prace
             else
             {
                 ErrorSystem();
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("Floor5Movemnt is not possible. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
             }
         }
         #endregion

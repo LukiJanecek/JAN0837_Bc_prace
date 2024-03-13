@@ -378,6 +378,31 @@ namespace Bc_prace.Controls
 
         //Cabin movement + parameters
         #region Cabin movement + parameters
+        
+        public async void CabinMoveToFloorUP(float targetY)
+        {
+            targetY = targetY * length;
+            
+            while (yCabin > targetY)
+            {
+                yCabin -= Step;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(program1FormInstance.ElevatorCabinSpeed));
+            }
+        }
+
+        public async void CabinMoveToFloorDOWN(float targetY)
+        {
+            targetY = targetY * length;
+
+            while (yCabin < targetY)
+            {
+                yCabin -= Step;
+                this.Refresh();
+                await Task.Delay(Convert.ToInt32(program1FormInstance.ElevatorCabinSpeed));
+            }
+        }
+        
         public void MoveRight()
         {
             xCabin += Step;
