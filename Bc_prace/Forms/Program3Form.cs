@@ -26,6 +26,9 @@ namespace Bc_prace
         //MessageBox control
         private bool errorMessageBoxShown = false;
 
+        //MaintainDB variables
+        bool Option3 = false;
+
         //Buffers variables 
         #region Buffers variables
 
@@ -71,10 +74,7 @@ namespace Bc_prace
         public byte[] send_buffer_DB21;
 
         #endregion
-
-        //MaintainDB variables
-        bool Option3 = false;
-
+              
         //Input variables
         #region Input variables 
 

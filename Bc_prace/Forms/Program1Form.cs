@@ -25,6 +25,9 @@ namespace Bc_prace
         //MessageBox control
         private bool errorMessageBoxShown = false;
 
+        //MaintainDB variables
+        bool Option1 = false;
+
         //Buffers variables 
         #region Buffers variables
 
@@ -42,9 +45,6 @@ namespace Bc_prace
         public byte[] send_buffer_DB4;
 
         #endregion
-
-        //MaintainDB variables
-        bool Option1 = false;
 
         //Input variables
         #region Input variables 
@@ -103,24 +103,9 @@ namespace Bc_prace
         public int ElevatorTimeToGetDown; //time
 
         #endregion
-
-        //Variables for panels (cabin door + cabin movement)
-        private int panelDoorLeftX, panelDoorLeftY;
-        private int panelDoorRightX, panelDoorRightY;
-        private int panelCabinX, panelCabinY;
-        private int lblElevatorFloorX, lblElevatorFloorY;
-
-        //Variables DoorSEQ time 
-        //public int CabinDoorClosingTime = 500;
-        //public int CabinDoorOpenningTime = 1000;
-
+                
         //Variables cabin movement step 
         public int ElevatorStep = 10;
-        //public int ElevatorMovementTime = 500;
-        //private int currentFloor = 5;
-        //private int floorHeight = 120;
-
-        public int ActualFloor;
 
         //int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
 
@@ -872,12 +857,12 @@ namespace Bc_prace
         #region Move to floor 1
         private async void Floor1movement()
         {
-            if (ActualFloor == 1)
+            if (ElevatorActualFloor == 1)
             {
                 //Opendoor; => dela Tia
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 2)
+            else if (ElevatorActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -887,7 +872,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 3)
+            else if (ElevatorActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -897,7 +882,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 4)
+            else if (ElevatorActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
@@ -907,7 +892,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 5)
+            else if (ElevatorActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
@@ -928,7 +913,7 @@ namespace Bc_prace
         #region Move to floor 2
         private async void Floor2movement()
         {
-            if (ActualFloor == 1)
+            if (ElevatorActualFloor == 1)
             {
                 //Opendoor;
                 //posun o určitý počet pixelů 
@@ -939,12 +924,12 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 2)
+            else if (ElevatorActualFloor == 2)
             {
                 //Opendoor; => dela Tia
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControl
             }
-            else if (ActualFloor == 3)
+            else if (ElevatorActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -954,7 +939,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 4)
+            else if (ElevatorActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -964,7 +949,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 5)
+            else if (ElevatorActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
@@ -984,7 +969,7 @@ namespace Bc_prace
         #region Move to floor 3
         private async void Floor3movement()
         {
-            if (ActualFloor == 1)
+            if (ElevatorActualFloor == 1)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -994,7 +979,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 2)
+            else if (ElevatorActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -1004,12 +989,12 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 3)
+            else if (ElevatorActualFloor == 3)
             {
                 //Opendoor; => dela Tia
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 4)
+            else if (ElevatorActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -1019,7 +1004,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 5)
+            else if (ElevatorActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -1040,7 +1025,7 @@ namespace Bc_prace
         #region Move to floor 4
         private async void Floor4movement()
         {
-            if (ActualFloor == 1)
+            if (ElevatorActualFloor == 1)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
@@ -1050,7 +1035,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 2)
+            else if (ElevatorActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -1060,7 +1045,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 3)
+            else if (ElevatorActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -1070,12 +1055,12 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 4)
+            else if (ElevatorActualFloor == 4)
             {
                 //Opendoor; => dela Tia
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 5)
+            else if (ElevatorActualFloor == 5)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
@@ -1095,7 +1080,7 @@ namespace Bc_prace
         #region Move to floor 5
         private async void Floor5movement()
         {
-            if (ActualFloor == 1)
+            if (ElevatorActualFloor == 1)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
@@ -1105,7 +1090,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 2)
+            else if (ElevatorActualFloor == 2)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
@@ -1115,7 +1100,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 3)
+            else if (ElevatorActualFloor == 3)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
@@ -1125,7 +1110,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 4)
+            else if (ElevatorActualFloor == 4)
             {
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
@@ -1135,7 +1120,7 @@ namespace Bc_prace
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
             }
-            else if (ActualFloor == 5)
+            else if (ElevatorActualFloor == 5)
             {
                 //Opendoor; => dela Tia
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu

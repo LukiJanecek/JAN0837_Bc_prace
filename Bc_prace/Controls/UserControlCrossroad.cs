@@ -14,10 +14,13 @@ namespace Bc_prace.Controls
 {
     public partial class UserControlCrossroad : UserControl
     {
-        private Program3Form program3FormInstance;
+        private Program3Form program3FormInstance = null;
         //private ChooseOptionForm chooseOptionFormInstance;
 
         private S7Client client;
+
+        //MessageBox control
+        private bool errorMessageBoxShown;
 
         //Buffers variables => probably useless
         #region Buffers variables
@@ -226,9 +229,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //MessageBox control
-        private bool errorMessageBoxShown;
-
+        //Selection posibilities of crossroad variant
         private bool drawBasicCrossroad;
         private bool drawCrossroadExtension1;
         private bool drawCrossroadExtension2;
@@ -1463,15 +1464,19 @@ namespace Bc_prace.Controls
 
         */
 
-        public UserControlCrossroad(Program3Form program3FormInstance) //ChooseOptionForm chooseOptionFormInstance x Program3Form program3FormInstance
+        public UserControlCrossroad() //ChooseOptionForm chooseOptionFormInstance x Program3Form program3FormInstance
         {
             InitializeComponent();
-            InitializeButtons();
-
+            
             //ButtonClicked += (sender, identifier) => {};
 
             DoubleBuffered = true;
-            Paint += UserControl1_Paint;
+            Paint += UserControlCrossroad_Paint;
+        }
+
+        public void SetControl(Program3Form program3FormInstance)
+        {
+            InitializeButtons();
 
             this.program3FormInstance = program3FormInstance;
 
@@ -1499,8 +1504,11 @@ namespace Bc_prace.Controls
             #endregion
         }
 
-        private void UserControl1_Paint(object? sender, PaintEventArgs e)
+        private void UserControlCrossroad_Paint(object? sender, PaintEventArgs e)
         {
+            if (program3FormInstance == null)
+                return;
+            
             var g = e.Graphics;
 
             //background

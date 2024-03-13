@@ -43,11 +43,11 @@ namespace Bc_prace.Controls
         //BTNs define 
         #region BTNs define 
 
-        private Button btnElevatorFloor1 = new Button();
-        private Button btnElevatorFloor2 = new Button();
-        private Button btnElevatorFloor3 = new Button();
-        private Button btnElevatorFloor4 = new Button();
-        private Button btnElevatorFloor5 = new Button();
+        private Button btnElevatorFloor1;
+        private Button btnElevatorFloor2;
+        private Button btnElevatorFloor3;
+        private Button btnElevatorFloor4;
+        private Button btnElevatorFloor5;
 
         #endregion
 
@@ -59,14 +59,15 @@ namespace Bc_prace.Controls
             Paint += UserControlElevatorCabin_Paint;
 
             // if (DesignMode == true ) { }
-
-            //client = program1FormInstance.client;
         }
 
         public void SetControl(Program1Form program1FormInstance)
         {
-            this.program1FormInstance = program1FormInstance;
             InitializeButtons();
+
+            this.program1FormInstance = program1FormInstance;
+            
+            client = program1FormInstance.client;
         }
 
 
@@ -74,6 +75,7 @@ namespace Bc_prace.Controls
         {
             if (program1FormInstance == null)
                 return;
+
             var g = e.Graphics;
 
             //backgroud
