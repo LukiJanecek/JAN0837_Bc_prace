@@ -64,9 +64,9 @@ namespace Bc_prace
             // statusStripElevator
             // 
             statusStripElevator.ImageScalingSize = new Size(20, 20);
-            statusStripElevator.Location = new Point(0, 572);
+            statusStripElevator.Location = new Point(0, 590);
             statusStripElevator.Name = "statusStripElevator";
-            statusStripElevator.Size = new Size(1118, 22);
+            statusStripElevator.Size = new Size(1200, 22);
             statusStripElevator.TabIndex = 0;
             statusStripElevator.Text = "statusStrip1";
             // 
@@ -122,9 +122,9 @@ namespace Bc_prace
             // 
             // btnCabinEmergency
             // 
-            btnCabinEmergency.Location = new Point(3, 275);
+            btnCabinEmergency.Location = new Point(3, 12);
             btnCabinEmergency.Name = "btnCabinEmergency";
-            btnCabinEmergency.Size = new Size(112, 68);
+            btnCabinEmergency.Size = new Size(177, 79);
             btnCabinEmergency.TabIndex = 7;
             btnCabinEmergency.Text = "Emergency button";
             btnCabinEmergency.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@ namespace Bc_prace
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 489);
+            btnEnd.Location = new Point(3, 507);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 38;
@@ -157,19 +157,19 @@ namespace Bc_prace
             panelCabinBtn.BackColor = Color.White;
             panelCabinBtn.BorderStyle = BorderStyle.FixedSingle;
             panelCabinBtn.Controls.Add(btnCabinDoorOPENCLOSE);
-            panelCabinBtn.Controls.Add(btnCabinEmergency);
             panelCabinBtn.Controls.Add(btnCabinFloor1);
             panelCabinBtn.Controls.Add(btnCabinFloor2);
             panelCabinBtn.Controls.Add(btnCabinFloor3);
             panelCabinBtn.Controls.Add(btnCabinFloor4);
             panelCabinBtn.Controls.Add(btnCabinFloor5);
-            panelCabinBtn.Location = new Point(806, 218);
+            panelCabinBtn.Location = new Point(888, 236);
             panelCabinBtn.Name = "panelCabinBtn";
             panelCabinBtn.Size = new Size(121, 346);
             panelCabinBtn.TabIndex = 39;
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnCabinEmergency);
             panel1.Controls.Add(btnCabinLengthBigger);
             panel1.Controls.Add(btnCabinLengthSmaller);
             panel1.Controls.Add(btnCabinWidthBigger);
@@ -180,9 +180,9 @@ namespace Bc_prace
             panel1.Controls.Add(btnCabinMoveToRight);
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(931, 0);
+            panel1.Location = new Point(1015, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(187, 572);
+            panel1.Size = new Size(185, 590);
             panel1.TabIndex = 42;
             // 
             // btnCabinLengthBigger
@@ -276,7 +276,7 @@ namespace Bc_prace
             panelElevatorCabin.Location = new Point(0, 0);
             panelElevatorCabin.Margin = new Padding(3, 4, 3, 4);
             panelElevatorCabin.Name = "panelElevatorCabin";
-            panelElevatorCabin.Size = new Size(449, 572);
+            panelElevatorCabin.Size = new Size(449, 590);
             panelElevatorCabin.TabIndex = 43;
             // 
             // userControlElevatorCabin1
@@ -284,7 +284,7 @@ namespace Bc_prace
             userControlElevatorCabin1.Dock = DockStyle.Fill;
             userControlElevatorCabin1.Location = new Point(0, 0);
             userControlElevatorCabin1.Name = "userControlElevatorCabin1";
-            userControlElevatorCabin1.Size = new Size(449, 572);
+            userControlElevatorCabin1.Size = new Size(449, 590);
             userControlElevatorCabin1.TabIndex = 45;
             // 
             // panelElevatorDoor
@@ -294,7 +294,7 @@ namespace Bc_prace
             panelElevatorDoor.Location = new Point(449, 0);
             panelElevatorDoor.Margin = new Padding(3, 4, 3, 4);
             panelElevatorDoor.Name = "panelElevatorDoor";
-            panelElevatorDoor.Size = new Size(340, 572);
+            panelElevatorDoor.Size = new Size(340, 590);
             panelElevatorDoor.TabIndex = 44;
             // 
             // userControlElevatorDoor1
@@ -302,14 +302,14 @@ namespace Bc_prace
             userControlElevatorDoor1.Dock = DockStyle.Fill;
             userControlElevatorDoor1.Location = new Point(0, 0);
             userControlElevatorDoor1.Name = "userControlElevatorDoor1";
-            userControlElevatorDoor1.Size = new Size(340, 572);
+            userControlElevatorDoor1.Size = new Size(340, 590);
             userControlElevatorDoor1.TabIndex = 0;
             // 
             // Program1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1118, 594);
+            ClientSize = new Size(1200, 612);
             Controls.Add(panelElevatorDoor);
             Controls.Add(panelElevatorCabin);
             Controls.Add(panel1);

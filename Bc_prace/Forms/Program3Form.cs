@@ -244,7 +244,7 @@ namespace Bc_prace
         public Program3Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            //this.MinimumSize = new Size(); //crossroad1 + btns
+            this.MinimumSize = new Size(1000, 700); //crossroad1 + btns
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -1379,7 +1379,7 @@ namespace Bc_prace
                 //Lights change
                 if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
                 {
-                    /*
+                    userControlCrossroad1.BasicCrossroad();
 
                     //Crossroad1
                     #region Crossroad1 
@@ -1391,9 +1391,7 @@ namespace Bc_prace
                     userControlCrossroad1.UpdateCrosswalkLightsCrossroad1TOP(Crossroad1TopCrosswalkRED1, Crossroad1TopCrosswalkGREEN1, Crossroad1TopCrosswalkRED2, Crossroad1TopCrosswalkGREEN2);
                     userControlCrossroad1.UpdateCrosswalkLightsCrossroad1LEFT(Crossroad1LeftCrosswalkRED1, Crossroad1LeftCrosswalkGREEN1, Crossroad1LeftCrosswalkRED2, Crossroad1LeftCrosswalkGREEN2);
 
-                    #endregion
-
-                    */
+                    #endregion                  
 
                     //Edit variables => didn't work properly
                     /*
@@ -1446,8 +1444,8 @@ namespace Bc_prace
                 }
                 else if (rBtnCrossroadExtension1.Checked) // userControlCrossroad1.DrawCrossroadExtension1 == true
                 {
-                    /*
-
+                    userControlCrossroad1.CrossroadExtension1();
+                    
                     //Crossroad1
                     #region Crossroad1 
 
@@ -1471,9 +1469,7 @@ namespace Bc_prace
                     userControlCrossroad1.UpdateCrosswalkLightsCrossroad2RIGHT(Crossroad2RightCrosswalkRED1, Crossroad2RightCrosswalkGREEN1, Crossroad2RightCrosswalkRED2, Crossroad2RightCrosswalkGREEN2);
 
                     #endregion
-
-                    */
-
+                                        
                     //Edit variables => didn't work properly
                     /*
                     //Crossroad1
@@ -1577,8 +1573,8 @@ namespace Bc_prace
                 }
                 else if (rBtnCrossroadExtension2.Checked) // userControlCrossroad1.DrawCrossroadExtension2 == true
                 {
-                    /*
-
+                    userControlCrossroad1.CrossroadExtension2();
+                    
                     //Crossroad1
                     #region Crossroad1 
 
@@ -1612,9 +1608,7 @@ namespace Bc_prace
                     userControlCrossroad1.UpdateCrosswalkLightsCrossroadLeftTLEFT(CrossroadLeftTLeftCrosswalkRED1, CrossroadLeftTLeftCrosswalkGREEN1, CrossroadLeftTLeftCrosswalkRED2, CrossroadLeftTLeftCrosswalkGREEN2);
 
                     #endregion
-
-                    */
-
+                                        
                     //Edit variables => didn't work properly
                     /*
                     //Crossroad1
@@ -1749,8 +1743,8 @@ namespace Bc_prace
                 }
                 else if (rBtnCrossroadExtension3.Checked) // userControlCrossroad1.DrawCrossroadExtension3 == true
                 {
-                    /*
-
+                    userControlCrossroad1.CrossroadExtension3();
+                    
                     //Crossroad1
                     #region Crossroad1 
 
@@ -1794,9 +1788,7 @@ namespace Bc_prace
                     userControlCrossroad1.UpdateCrosswalkLightsCrossroadRightTTOP(CrossroadRightTTopCrosswalkRED1, CrossroadRightTTopCrosswalkGREEN1, CrossroadRightTTopCrosswalkRED2, CrossroadRightTTopCrosswalkGREEN2);
 
                     #endregion
-
-                    */
-
+                                        
                     //Edit variables => didn't work properly
                     /*
                     //Crossroad1
@@ -2013,12 +2005,11 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension1();
             
-            /*
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+            
         }
 
         private void rBtnCrossroadExtension2_CheckedChanged(object sender, EventArgs e)
@@ -2029,12 +2020,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension2();
             
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = true;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+            
         }
 
         private void rBtnCrossroadExtension3_CheckedChanged(object sender, EventArgs e)
@@ -2045,12 +2036,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension3();
             
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = true;
-            */
+            
         }
 
         #endregion

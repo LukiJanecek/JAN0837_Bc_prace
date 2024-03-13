@@ -43,11 +43,11 @@ namespace Bc_prace.Controls
         //BTNs define 
         #region BTNs define 
 
-        private Button btnElevatorFloor1;
-        private Button btnElevatorFloor2;
-        private Button btnElevatorFloor3;
-        private Button btnElevatorFloor4;
-        private Button btnElevatorFloor5;
+        private Button btnElevatorFloor1 = new Button();
+        private Button btnElevatorFloor2 = new Button();
+        private Button btnElevatorFloor3 = new Button();
+        private Button btnElevatorFloor4 = new Button();
+        private Button btnElevatorFloor5 = new Button();
 
         #endregion
 
@@ -195,45 +195,45 @@ namespace Bc_prace.Controls
             //btnElevatorFloor1
             btnElevatorFloor1.Text = "1";
             btnElevatorFloor1.BackColor = Color.White;
-            btnElevatorFloor1.Visible = false;
-            btnElevatorFloor1.Enabled = false;
-            btnElevatorFloor1.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnElevatorFloor1.Visible = true;
+            btnElevatorFloor1.Enabled = true;
+            btnElevatorFloor1.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2)); //cannot invert float to int 
             btnElevatorFloor1.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor1.Click += btnElevatorFloor1_Click;
             Controls.Add(btnElevatorFloor1);
             //btnElevatorFloor2
             btnElevatorFloor2.Text = "2";
             btnElevatorFloor2.BackColor = Color.White;
-            btnElevatorFloor2.Visible = false;
-            btnElevatorFloor2.Enabled = false;
-            btnElevatorFloor2.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnElevatorFloor2.Visible = true;
+            btnElevatorFloor2.Enabled = true;
+            btnElevatorFloor2.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length)); //cannot invert float to int 
             btnElevatorFloor2.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor2.Click += btnElevatorFloor2_Click;
             Controls.Add(btnElevatorFloor2);
             //btnElevatorFloor3
             btnElevatorFloor3.Text = "3";
             btnElevatorFloor3.BackColor = Color.White;
-            btnElevatorFloor3.Visible = false;
-            btnElevatorFloor3.Enabled = false;
-            btnElevatorFloor3.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnElevatorFloor3.Visible = true;
+            btnElevatorFloor3.Enabled = true;
+            btnElevatorFloor3.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 2)); //cannot invert float to int 
             btnElevatorFloor3.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor3.Click += btnElevatorFloor3_Click;
             Controls.Add(btnElevatorFloor3);
             //btnElevatorFloor4
             btnElevatorFloor4.Text = "4";
             btnElevatorFloor4.BackColor = Color.White;
-            btnElevatorFloor4.Visible = false;
-            btnElevatorFloor4.Enabled = false;
-            btnElevatorFloor4.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnElevatorFloor4.Visible = true;
+            btnElevatorFloor4.Enabled = true;
+            btnElevatorFloor4.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 3)); //cannot invert float to int 
             btnElevatorFloor4.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor4.Click += btnElevatorFloor4_Click;
             Controls.Add(btnElevatorFloor4);
             //btnElevatorFloor¨5
             btnElevatorFloor5.Text = "5";
             btnElevatorFloor5.BackColor = Color.White;
-            btnElevatorFloor5.Visible = false;
-            btnElevatorFloor5.Enabled = false;
-            btnElevatorFloor5.Location = new System.Drawing.Point(Convert.ToInt32(length), Convert.ToInt32(length)); //cannot invert float to int 
+            btnElevatorFloor5.Visible = true;
+            btnElevatorFloor5.Enabled = true;
+            btnElevatorFloor5.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 4)); //cannot invert float to int 
             btnElevatorFloor5.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor5.Click += btnElevatorFloor5_Click;
             Controls.Add(btnElevatorFloor5);

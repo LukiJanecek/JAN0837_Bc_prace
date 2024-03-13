@@ -42,6 +42,7 @@ namespace Bc_prace.Controls
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush yellow = new SolidBrush(Color.Yellow); //DoorBackground color
+        private SolidBrush gray = new SolidBrush(Color.Gray); //Door color
 
         #endregion
 
@@ -67,15 +68,17 @@ namespace Bc_prace.Controls
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
 
-            //LeftDoor
-            g.DrawRectangle(BlackPen, xLeftDoor + 10, yLeftDoor + 200, widthLeftDoor + 80, heightLeftDoor + 100);
-
-            //RightDoor
-            g.DrawRectangle(BlackPen, xRightDoor + 80, yRightDoor + 200, widthRightDoor + 80, heightRightDoor + 100);
-
             //DoorBackground
             g.DrawRectangle(BlackPen, xDoor + 10, yDoor + 200, widthDoor + 160, heightDoor + 100);
             g.FillRectangle(yellow, xDoor + 10, yDoor + 200, widthDoor + 160, heightDoor + 100);
+
+            //LeftDoor
+            g.DrawRectangle(BlackPen, xLeftDoor + 10, yLeftDoor + 200, widthLeftDoor + 80, heightLeftDoor + 100);
+            g.FillRectangle(gray, xLeftDoor + 10, yLeftDoor + 200, widthLeftDoor + 80, heightLeftDoor + 100);
+
+            //RightDoor
+            g.DrawRectangle(BlackPen, xRightDoor + 90, yRightDoor + 200, widthRightDoor + 80, heightRightDoor + 100);
+            g.FillRectangle(gray, xRightDoor + 90, yRightDoor + 200, widthRightDoor + 80, heightRightDoor + 100);
         }
 
         //Methods for door movement

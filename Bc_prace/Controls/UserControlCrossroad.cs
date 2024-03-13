@@ -1509,6 +1509,7 @@ namespace Bc_prace.Controls
             if (program3FormInstance == null)
                 return;
             
+
             var g = e.Graphics;
 
             //background

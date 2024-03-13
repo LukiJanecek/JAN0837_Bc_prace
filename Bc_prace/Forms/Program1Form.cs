@@ -563,27 +563,27 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorLED1)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED1Sig();
+                    userControlElevatorCabin1.ActualFloorLED1Sig();
                 }
 
                 if (ElevatorActualFloorLED2)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED2Sig();
+                    userControlElevatorCabin1.ActualFloorLED2Sig();
                 }
 
                 if (ElevatorActualFloorLED3)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED3Sig();
+                    userControlElevatorCabin1.ActualFloorLED3Sig();
                 }
 
                 if (ElevatorActualFloorLED4)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED4Sig();
+                    userControlElevatorCabin1.ActualFloorLED4Sig();
                 }
 
                 if (ElevatorActualFloorLED5)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED5Sig();
+                    userControlElevatorCabin1.ActualFloorLED5Sig();
                 }
 
                 #endregion
@@ -623,27 +623,27 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorSENS1)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED1Sig();
+                    userControlElevatorCabin1.ActualFloorLED1Sig();
                 }
 
                 if (ElevatorActualFloorSENS2)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED2Sig();
+                    userControlElevatorCabin1.ActualFloorLED2Sig();
                 }
 
                 if (ElevatorActualFloorSENS3)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED3Sig();
+                    userControlElevatorCabin1.ActualFloorLED3Sig();
                 }
 
                 if (ElevatorActualFloorSENS4)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED4Sig();
+                    userControlElevatorCabin1.ActualFloorLED4Sig();
                 }
 
                 if (ElevatorActualFloorSENS5)
                 {
-                    //userControlElevatorCabin1.ActualFloorLED5Sig();
+                    userControlElevatorCabin1.ActualFloorLED5Sig();
                 }
 
                 #endregion
@@ -867,7 +867,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
@@ -877,7 +877,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
@@ -887,7 +887,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
@@ -897,7 +897,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
@@ -919,7 +919,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
@@ -934,7 +934,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
@@ -944,7 +944,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
@@ -954,7 +954,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
@@ -974,7 +974,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
@@ -984,7 +984,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
@@ -999,7 +999,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
@@ -1009,7 +1009,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
@@ -1030,7 +1030,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
@@ -1040,7 +1040,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
@@ -1050,7 +1050,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
@@ -1065,7 +1065,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveDown();
+                    userControlElevatorCabin1.MoveDown();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
@@ -1085,7 +1085,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 40; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
@@ -1095,7 +1095,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 30; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
@@ -1105,7 +1105,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 20; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
@@ -1115,7 +1115,7 @@ namespace Bc_prace
                 //posun o určitý počet pixelů 
                 for (int i = 0; i < 10; i++)
                 {
-                    //userControlElevatorCabin1.MoveUp();
+                    userControlElevatorCabin1.MoveUp();
                     await Task.Delay(500);
                 }
                 //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
@@ -1161,7 +1161,6 @@ namespace Bc_prace
         private async void OpenDOOR()
         {
             ToolStripStatusLabel lblStatus;
-
 
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Openning door");
@@ -1275,22 +1274,22 @@ namespace Bc_prace
         #region Movement
         private void btnCabinMoveToRight_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.MoveRight();
+            userControlElevatorCabin1.MoveRight();
         }
 
         private void btnCabinMoveToLeft_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.MoveLeft();
+            userControlElevatorCabin1.MoveLeft();
         }
 
         private void btnCabinMoveToUp_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.MoveUp();
+            userControlElevatorCabin1.MoveUp();
         }
 
         private void btnCabinMoveToDown_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.MoveDown();
+            userControlElevatorCabin1.MoveDown();
         }
         #endregion
 
@@ -1298,22 +1297,22 @@ namespace Bc_prace
         #region Parameters
         private void btnCabinWidthSmaller_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.WidthSmaller();
+            userControlElevatorCabin1.WidthSmaller();
         }
 
         private void btnCabinWidthBigger_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.WidthBigger();
+            userControlElevatorCabin1.WidthBigger();
         }
 
         private void btnCabinLengthSmaller_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.LengthSmaller();
+            userControlElevatorCabin1.LengthSmaller();
         }
 
         private void btnCabinLengthBigger_Click(object sender, EventArgs e)
         {
-            //userControlElevatorCabin1.LengthBigger();
+            userControlElevatorCabin1.LengthBigger();
         }
 
         #endregion
