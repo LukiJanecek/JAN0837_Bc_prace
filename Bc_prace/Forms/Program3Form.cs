@@ -1973,6 +1973,8 @@ namespace Bc_prace
                 {
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
                 }
             }
         }
