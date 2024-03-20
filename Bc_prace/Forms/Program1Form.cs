@@ -499,6 +499,8 @@ namespace Bc_prace
 
                 if (ElevatorErrorSystem)
                 {
+                    //toto je blbě, musí tady být řádná chybová hláška 
+                    
                     ErrorSystem();
 
                     //write error
@@ -511,6 +513,8 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
                     }
                 }
+
+                //pohyb výtahu musí být postaven na ElevatorGoToFloor a ElevatorActualFloor
 
                 //ElevatorCabinBTN
                 #region ElevatorCabinBTN
@@ -927,7 +931,7 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("Floor1Movemnt is not possible. \n\n", "Error",
+                    MessageBox.Show("Floor1Movement is not possible. \n\n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -997,7 +1001,7 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("Floor2Movemnt is not possible. \n\n", "Error",
+                    MessageBox.Show("Floor2Movement is not possible. \n\n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1066,7 +1070,7 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("Floor3Movemnt is not possible. \n\n", "Error",
+                    MessageBox.Show("Floor3Movement is not possible. \n\n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1136,7 +1140,7 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("Floor4Movemnt is not possible. \n\n", "Error",
+                    MessageBox.Show("Floor4Movement is not possible. \n\n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
@@ -1205,7 +1209,7 @@ namespace Bc_prace
                 if (!errorMessageBoxShown)
                 {
                     //MessageBox
-                    MessageBox.Show("Floor5Movemnt is not possible. \n\n", "Error",
+                    MessageBox.Show("Floor5Movement is not possible. \n\n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                     errorMessageBoxShown = true;
