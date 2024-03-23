@@ -36,7 +36,7 @@ namespace Bc_prace
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
-                
+
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
         public byte[] read_buffer_DB14;
@@ -74,7 +74,7 @@ namespace Bc_prace
         public byte[] send_buffer_DB21;
 
         #endregion
-              
+
         //Input variables
         #region Input variables 
 
@@ -245,6 +245,7 @@ namespace Bc_prace
         {
             InitializeComponent();
             this.MinimumSize = new Size(1000, 700); //crossroad1 + btns
+            userControlCrossroad1.OnCrossroadBTNClick += UserControlCrossroad1_OnCrossroadBTNClick;
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -291,7 +292,32 @@ namespace Bc_prace
             rBtnCrossroadExtension1.Checked = false;
             rBtnCrossroadExtension2.Checked = false;
             rBtnCrossroadExtension3.Checked = false;
+        }
 
+        private void UserControlCrossroad1_OnCrossroadBTNClick(object sender, string id)
+        {
+            switch(id)
+            {
+                case "Crossroad1 Top crosswalk":
+
+                    break;
+                case "Crossroad1 Left crosswalk":
+
+                    break;
+                case "Crossroad2 Left crosswalk":
+
+                    break;
+                case "Crossroad1 Right crosswalk":
+
+                    break;
+                case "LeftT\nLeft crosswalk":
+
+                    break;
+                case "RightT\nTop crosswalk":
+
+                    break;
+
+            }
         }
 
         //Tia connection
@@ -1991,12 +2017,12 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
-            /*
+            
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-            */
+     
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)

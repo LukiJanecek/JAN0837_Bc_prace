@@ -12,6 +12,8 @@ using Sharp7;
 
 namespace Bc_prace.Controls
 {
+    public delegate void CrossroadBTNClick(object sender, string id);
+
     public partial class UserControlCrossroad : UserControl
     {
         private Program3Form program3FormInstance = null;
@@ -21,6 +23,29 @@ namespace Bc_prace.Controls
 
         //MessageBox control
         private bool errorMessageBoxShown;
+
+        public event CrossroadBTNClick OnCrossroadBTNClick;
+
+        //BTNS define
+        #region BTNS define
+        //Crossroad1
+        private Button btnCrossroad1TopCrosswalkLEFT = new Button();
+        private Button btnCrossroad1TopCrosswalkRIGHT = new Button();
+        private Button btnCrossroad1LeftCrosswalkTOP = new Button();
+        private Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
+        //Crossroad2
+        private Button btnCrossroad2LeftCrosswalkTOP = new Button();
+        private Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
+        private Button btnCrossroad2RightCrosswalkTOP = new Button();
+        private Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
+        //Left T
+        private Button btnLeftTLeftCrosswalkTOP = new Button();
+        private Button btnLeftTLeftCrosswalkBOTTOM = new Button();
+        //Right T
+        private Button btnRightTTopCrosswalkLEFT = new Button();
+        private Button btnRightTTopCrosswalkRIGHT = new Button();
+
+        #endregion
 
         //Buffers variables => probably useless
         #region Buffers variables
@@ -234,27 +259,6 @@ namespace Bc_prace.Controls
         private bool drawCrossroadExtension1;
         private bool drawCrossroadExtension2;
         private bool drawCrossroadExtension3;
-
-        //BTNS define
-        #region BTNS define
-        //Crossroad1
-        private Button btnCrossroad1TopCrosswalkLEFT = new Button();
-        private Button btnCrossroad1TopCrosswalkRIGHT = new Button();
-        private Button btnCrossroad1LeftCrosswalkTOP = new Button();
-        private Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
-        //Crossroad2
-        private Button btnCrossroad2LeftCrosswalkTOP = new Button();
-        private Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
-        private Button btnCrossroad2RightCrosswalkTOP = new Button();
-        private Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
-        //Left T
-        private Button btnLeftTLeftCrosswalkTOP = new Button();
-        private Button btnLeftTLeftCrosswalkBOTTOM = new Button();
-        //Right T
-        private Button btnRightTTopCrosswalkLEFT = new Button();
-        private Button btnRightTTopCrosswalkRIGHT = new Button();
-
-        #endregion
 
         //Drawing variables 
         #region Drawing variables 
@@ -1508,7 +1512,6 @@ namespace Bc_prace.Controls
         {
             if (program3FormInstance == null)
                 return;
-            
 
             var g = e.Graphics;
 
@@ -5807,6 +5810,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad1TopCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 2, Crossroad1TopCrosswalkBTN1);
 
@@ -5835,6 +5842,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkRIGHT");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad1TopCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 3, Crossroad1TopCrosswalkBTN2);
 
@@ -5863,6 +5874,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkTOP");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad1LeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 0, Crossroad1LeftCrosswalkBTN1);
 
@@ -5891,6 +5906,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkBOTTOM");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad1LeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 1, Crossroad1LeftCrosswalkBTN2);
 
@@ -5919,6 +5938,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkTOP");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad2LeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 0, Crossroad2LeftCrosswalkBTN1);
 
@@ -5947,6 +5970,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkBOTTOM");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad2LeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 1, Crossroad2LeftCrosswalkBTN2);
 
@@ -5975,6 +6002,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkTOP");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad2RightCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 2, Crossroad2RightCrosswalkBTN1);
 
@@ -6003,6 +6034,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkBOTTOM");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             Crossroad2RightCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 3, Crossroad2RightCrosswalkBTN2);
 
@@ -6031,6 +6066,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkTOP");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             CrossroadLeftTLeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB20, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
 
@@ -6059,6 +6098,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkBOTTOM");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             CrossroadLeftTLeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB20, 0, 1, CrossroadLeftTLeftCrosswalkBTN2);
 
@@ -6087,6 +6130,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnRightTTopCrosswalkLEFT");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             CrossroadRightTTopCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN1);
 
@@ -6114,6 +6161,10 @@ namespace Bc_prace.Controls
         {
             //ButtonClicked.Invoke(this, "btnRightTTopCrosswalkRIGHT");
 
+            if (OnCrossroadBTNClick != null)
+                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program3Form
             CrossroadRightTTopCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB21, 0, 1, CrossroadRightTTopCrosswalkBTN2);
 

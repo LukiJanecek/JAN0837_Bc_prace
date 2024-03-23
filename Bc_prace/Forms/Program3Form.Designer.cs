@@ -205,10 +205,10 @@ namespace Bc_prace
             // userControlCrossroad1
             // 
             userControlCrossroad1.Dock = DockStyle.Fill;
-            userControlCrossroad1.DrawBasicCrossroad = false;
-            userControlCrossroad1.DrawCrossroadExtension1 = false;
-            userControlCrossroad1.DrawCrossroadExtension2 = false;
-            userControlCrossroad1.DrawCrossroadExtension3 = false;
+            //userControlCrossroad1.DrawBasicCrossroad = false;
+            //userControlCrossroad1.DrawCrossroadExtension1 = false;
+            //userControlCrossroad1.DrawCrossroadExtension2 = false;
+            //userControlCrossroad1.DrawCrossroadExtension3 = false;
             userControlCrossroad1.Location = new Point(0, 0);
             userControlCrossroad1.Name = "userControlCrossroad1";
             userControlCrossroad1.Size = new Size(1352, 823);
