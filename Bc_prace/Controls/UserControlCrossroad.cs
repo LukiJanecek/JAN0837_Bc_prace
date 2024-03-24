@@ -1850,6 +1850,21 @@ namespace Bc_prace.Controls
                 #endregion
 
                 #endregion
+
+                //Changing lights color
+                #region Changing lights color
+
+                //Crossroad1
+                #region Crossroad1
+                UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
+                UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
+                UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
+                UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
+                UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                #endregion
+                
+                #endregion
             }
             else if (drawCrossroadExtension1) //Crossroad1 + Crossorad2
             {
@@ -2406,6 +2421,31 @@ namespace Bc_prace.Controls
                 g.FillEllipse(red, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 g.FillEllipse(green, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
 
+                #endregion
+
+                #endregion
+
+                //Changing lights color
+                #region Changing lights color
+
+                //Crossroad1
+                #region Crossroad1
+                UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
+                UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
+                UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
+                UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
+                UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+                UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
+                UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
+                UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
+                UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
+                UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
                 #endregion
 
                 #endregion
@@ -3112,6 +3152,39 @@ namespace Bc_prace.Controls
                 g.FillEllipse(green, x + length * 5 + 2 * crosswalk_width + FreeSpace, y + length * 11 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 */
 
+                #endregion
+
+                #endregion
+
+                //Changing lights color
+                #region Changing lights color
+
+                //Crossroad1
+                #region Crossroad1
+                UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
+                UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
+                UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
+                UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
+                UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+                UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
+                UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
+                UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
+                UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
+                UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
+                #endregion
+
+                //LeftT
+                #region 
+                UpdateTrafficLightsCrossroadLeftTTOP(program3FormInstance.CrossroadLeftTTopRED, program3FormInstance.CrossroadLeftTTopYELLOW, program3FormInstance.CrossroadLeftTTopGREEN);
+                UpdateTrafficLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftRED, program3FormInstance.CrossroadLeftTLeftYELLOW, program3FormInstance.CrossroadLeftTLeftGREEN);
+                UpdateTrafficLightsCrossroadLeftTRIGHT(program3FormInstance.CrossroadLeftTRightRED, program3FormInstance.CrossroadLeftTRightYELLOW, program3FormInstance.CrossroadLeftTRightGREEN);
+                UpdateCrosswalkLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftCrosswalkRED1, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN1, program3FormInstance.CrossroadLeftTLeftCrosswalkRED2, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN2);
                 #endregion
 
                 #endregion
@@ -3947,6 +4020,47 @@ namespace Bc_prace.Controls
                 g.FillEllipse(green, x + length * 11 + 2 * crosswalk_width + FreeSpace, y + length * 11 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 */
 
+                #endregion
+
+                #endregion
+
+                //Changing lights color
+                #region Changing lights color
+
+                //Crossroad1
+                #region Crossroad1
+                UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
+                UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
+                UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
+                UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
+                UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                #endregion
+
+                //Crossroad2
+                #region Crossroad2
+                UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
+                UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
+                UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
+                UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
+                UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
+                UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
+                #endregion
+
+                //LeftT
+                #region LeftT
+                UpdateTrafficLightsCrossroadLeftTTOP(program3FormInstance.CrossroadLeftTTopRED, program3FormInstance.CrossroadLeftTTopYELLOW, program3FormInstance.CrossroadLeftTTopGREEN);
+                UpdateTrafficLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftRED, program3FormInstance.CrossroadLeftTLeftYELLOW, program3FormInstance.CrossroadLeftTLeftGREEN);
+                UpdateTrafficLightsCrossroadLeftTRIGHT(program3FormInstance.CrossroadLeftTRightRED, program3FormInstance.CrossroadLeftTRightYELLOW, program3FormInstance.CrossroadLeftTRightGREEN);
+                UpdateCrosswalkLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftCrosswalkRED1, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN1, program3FormInstance.CrossroadLeftTLeftCrosswalkRED2, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN2);
+                #endregion
+
+                //RightT
+                #region RightT
+                UpdateTrafficLightsCrossroadRightTTOP(program3FormInstance.CrossroadRightTTopRED, program3FormInstance.CrossroadRightTTopYELLOW, program3FormInstance.CrossroadRightTTopGREEN);
+                UpdateTrafficLightsCrossroadRightTLEFT(program3FormInstance.CrossroadRightTLeftRED, program3FormInstance.CrossroadRightTLeftYELLOW, program3FormInstance.CrossroadRightTLeftGREEN);
+                UpdateTrafficLightsCrossroadRightTRIGHT(program3FormInstance.CrossroadRightTRightRED, program3FormInstance.CrossroadRightTRightYELLOW, program3FormInstance.CrossroadRightTRightGREEN);
+                UpdateCrosswalkLightsCrossroadRightTTOP(program3FormInstance.CrossroadRightTTopCrosswalkRED1, program3FormInstance.CrossroadRightTTopCrosswalkGREEN1, program3FormInstance.CrossroadRightTTopCrosswalkRED2, program3FormInstance.CrossroadRightTTopCrosswalkGREEN2);
                 #endregion
 
                 #endregion
@@ -6224,7 +6338,7 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             //background
-            //g.Clear(Color.Black);
+            g.Clear(Color.Black);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
@@ -6566,7 +6680,7 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             //background
-            //g.Clear(Color.Black);
+            g.Clear(Color.Black);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
@@ -7142,7 +7256,7 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             //background
-            //g.Clear(Color.Black);
+            g.Clear(Color.Black);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
@@ -7865,7 +7979,7 @@ namespace Bc_prace.Controls
             var g = this.CreateGraphics();
 
             //background
-            //g.Clear(Color.Black);
+            g.Clear(Color.Black);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);

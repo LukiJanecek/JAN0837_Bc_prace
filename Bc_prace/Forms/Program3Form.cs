@@ -29,6 +29,11 @@ namespace Bc_prace
         //MaintainDB variables
         bool Option3 = false;
 
+        public bool crossroadBasic;
+        public bool crossroadExtension1;
+        public bool crossroadExtension2;
+        public bool crossroadExtension3;
+
         //Buffers variables 
         #region Buffers variables
 
@@ -1699,9 +1704,9 @@ namespace Bc_prace
 
                 //I never get into this condition!!!
                 //Lights change
-                if (rBtnCrossroadBasic.Checked) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
+                if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
                 {
-                    userControlCrossroad1.BasicCrossroad();
+                    //userControlCrossroad1.BasicCrossroad();
 
                     //Crossroad1
                     #region Crossroad1 
@@ -1764,9 +1769,9 @@ namespace Bc_prace
                     #endregion
                     */
                 }
-                else if (rBtnCrossroadExtension1.Checked) // userControlCrossroad1.DrawCrossroadExtension1 == true
+                else if (crossroadExtension1) //rBtnCrossroadExtension1.Checked userControlCrossroad1.DrawCrossroadExtension1 == true
                 {
-                    userControlCrossroad1.CrossroadExtension1();
+                    //userControlCrossroad1.CrossroadExtension1();
                     
                     //Crossroad1
                     #region Crossroad1 
@@ -1893,9 +1898,9 @@ namespace Bc_prace
                     #endregion
                     */
                 }
-                else if (rBtnCrossroadExtension2.Checked) // userControlCrossroad1.DrawCrossroadExtension2 == true
+                else if (crossroadExtension2) //rBtnCrossroadExtension2.Checked userControlCrossroad1.DrawCrossroadExtension2 == true
                 {
-                    userControlCrossroad1.CrossroadExtension2();
+                    //userControlCrossroad1.CrossroadExtension2();
                     
                     //Crossroad1
                     #region Crossroad1 
@@ -2063,9 +2068,9 @@ namespace Bc_prace
                     #endregion
                     */
                 }
-                else if (rBtnCrossroadExtension3.Checked) // userControlCrossroad1.DrawCrossroadExtension3 == true
+                else if (crossroadExtension3) //rBtnCrossroadExtension3.Checked userControlCrossroad1.DrawCrossroadExtension3 == true
                 {
-                    userControlCrossroad1.CrossroadExtension3();
+                    //userControlCrossroad1.CrossroadExtension3();
                     
                     //Crossroad1
                     #region Crossroad1 
@@ -2313,12 +2318,16 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
+            crossroadBasic = true;
+            crossroadExtension1 = false;
+            crossroadExtension2 = false;
+            crossroadExtension3 = false;
             
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
             userControlCrossroad1.DrawCrossroadExtension3 = false;
-     
+            
         }
 
         private void rBtnCrossroadExtension1_CheckedChanged(object sender, EventArgs e)
@@ -2328,7 +2337,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension1();
-            
+
+            crossroadBasic = false;
+            crossroadExtension1 = true;
+            crossroadExtension2 = false;
+            crossroadExtension3 = false;
+
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
@@ -2343,7 +2357,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension2();
-            
+
+            crossroadBasic = false;
+            crossroadExtension1 = false;
+            crossroadExtension2 = true;
+            crossroadExtension3 = false;
+
             
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
@@ -2359,8 +2378,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension3();
-            
-            
+       
+            crossroadBasic = false;
+            crossroadExtension1 = false;
+            crossroadExtension2 = false;
+            crossroadExtension3 = true;
+
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;

@@ -654,6 +654,161 @@ namespace Bc_prace
 
                 //pohyb výtahu musí být postaven na ElevatorGoToFloor a ElevatorActualFloor
 
+                //Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
+                #region Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
+
+                //All combinations for 1st floor 
+                #region all combinations for 1st floor 
+
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 2)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 3)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 4)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 5)
+                {
+
+                }
+
+                #endregion
+
+                //All combinations for 2md floor 
+                #region all combinations for 1st floor 
+
+                if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 1)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 3)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 4)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 5)
+                {
+
+                }
+
+                #endregion
+
+                //All combinations for 3rd floor
+                #region all combinations for 1st floor 
+
+                if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 1)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 2)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 4)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 5)
+                {
+
+                }
+
+                #endregion
+
+                //All combinations for 4th floor 
+                #region all combinations for 1st floor 
+
+                if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 1)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 2)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 3)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 5)
+                {
+
+                }
+
+                #endregion
+
+                //All combinations for 5th floor 
+                #region all combinations for 1st floor 
+
+                if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 1)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 2)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 3)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 4)
+                {
+
+                }
+
+                if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
+                {
+
+                }
+
+                #endregion
+
+                #endregion
+
                 //ElevatorCabinBTN
                 #region ElevatorCabinBTN
                 if (ElevatorBTNCabin1)
@@ -833,6 +988,7 @@ namespace Bc_prace
 
         //Movement to specific floor 
         #region Movement to specific floor 
+        
         //BTN cabin 
         #region BTN cabin
         private void btnCabinFloor1_Click(object sender, EventArgs e)
