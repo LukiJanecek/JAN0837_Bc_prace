@@ -662,147 +662,172 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
-
+                    //DoorSQ => TIA do automatically 
+                    ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 2)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 3)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 4)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
+                    ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 5)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
+                    ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 #endregion
 
                 //All combinations for 2md floor 
-                #region all combinations for 1st floor 
+                #region all combinations for 2nd floor 
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 1)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
                 {
-
+                    //DoorSQ => TIA do automatically 
+                    ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 3)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 4)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 5)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
+                    ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 #endregion
 
                 //All combinations for 3rd floor
-                #region all combinations for 1st floor 
+                #region all combinations for 3rd floor 
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 1)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 2)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
                 {
-
+                    //DoorSQ => TIA do automatically 
+                    ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 4)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 5)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 #endregion
 
                 //All combinations for 4th floor 
-                #region all combinations for 1st floor 
+                #region all combinations for 4th floor 
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 1)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3);
+                    ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 2)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 3)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
                 {
-
+                    //DoorSQ => TIA do automatically 
+                    ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 5)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 #endregion
 
                 //All combinations for 5th floor 
-                #region all combinations for 1st floor 
+                #region all combinations for 5th floor 
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 1)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(4);
+                    ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 2)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3);
+                    ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 3)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 4)
                 {
-
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
                 {
-
+                    //DoorSQ => TIA do automatically 
+                    ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
                 #endregion
