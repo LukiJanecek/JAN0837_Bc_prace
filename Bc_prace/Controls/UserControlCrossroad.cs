@@ -5620,7 +5620,7 @@ namespace Bc_prace.Controls
             #region Crossroad1 - top crosswalk
             //left  
             //Button btnCrossroad1TopCrosswalkLEFT = new Button();
-            btnCrossroad1TopCrosswalkLEFT.Text = "Crossroad1 Top crosswalk";
+            btnCrossroad1TopCrosswalkLEFT.Text = "Crossroad1 Top crosswalk BTN1";
             btnCrossroad1TopCrosswalkLEFT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkLEFT.Visible = false;
             btnCrossroad1TopCrosswalkLEFT.Enabled = false;
@@ -5632,7 +5632,7 @@ namespace Bc_prace.Controls
 
             //right
             //Button btnCrossroad1TopCrosswalkRIGHT = new Button();
-            btnCrossroad1TopCrosswalkRIGHT.Text = "Crossroad1 Top crosswalk";
+            btnCrossroad1TopCrosswalkRIGHT.Text = "Crossroad1 Top crosswalk BTN2";
             btnCrossroad1TopCrosswalkRIGHT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkRIGHT.Visible = false;
             btnCrossroad1TopCrosswalkRIGHT.Enabled = false;
@@ -5648,7 +5648,7 @@ namespace Bc_prace.Controls
             #region Crossroad1 - left crosswalk
             //top 
             //Button btnCrossroad1LeftCrosswalkTOP = new Button();
-            btnCrossroad1LeftCrosswalkTOP.Text = "Crossroad1 Left crosswalk";
+            btnCrossroad1LeftCrosswalkTOP.Text = "Crossroad1 Left crosswalk BTN1";
             btnCrossroad1LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkTOP.Visible = false;
             btnCrossroad1LeftCrosswalkTOP.Enabled = false;
@@ -5661,7 +5661,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
-            btnCrossroad1LeftCrosswalkBOTTOM.Text = "Crossroad1 Left crosswalk";
+            btnCrossroad1LeftCrosswalkBOTTOM.Text = "Crossroad1 Left crosswalk BTN2";
             btnCrossroad1LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkBOTTOM.Visible = false;
             btnCrossroad1LeftCrosswalkBOTTOM.Enabled = false;
@@ -5682,7 +5682,7 @@ namespace Bc_prace.Controls
             #region Crossroad2 - left crosswalk 
             //top 
             //Button btnCrossroad2LeftCrosswalkTOP = new Button();
-            btnCrossroad2LeftCrosswalkTOP.Text = "Crossroad2 Left crosswalk";
+            btnCrossroad2LeftCrosswalkTOP.Text = "Crossroad2 Left crosswalk BTN1";
             btnCrossroad2LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkTOP.Visible = false;
             btnCrossroad2LeftCrosswalkTOP.Enabled = false;
@@ -5694,7 +5694,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
-            btnCrossroad2LeftCrosswalkBOTTOM.Text = "Crossroad2 Left crosswalk";
+            btnCrossroad2LeftCrosswalkBOTTOM.Text = "Crossroad2 Left crosswalk BTN2";
             btnCrossroad2LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkBOTTOM.Visible = false;
             btnCrossroad2LeftCrosswalkBOTTOM.Enabled = false;
@@ -5710,7 +5710,7 @@ namespace Bc_prace.Controls
             #region Crossroad2 - right crosswalk
             //top 
             //Button btnCrossroad2RightCrosswalkTOP = new Button();
-            btnCrossroad2RightCrosswalkTOP.Text = "Crossroad2 Right crosswalk";
+            btnCrossroad2RightCrosswalkTOP.Text = "Crossroad2 Right crosswalk BTN1";
             btnCrossroad2RightCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2RightCrosswalkTOP.Visible = false;
             btnCrossroad2RightCrosswalkTOP.Enabled = false;
@@ -5722,7 +5722,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
-            btnCrossroad2RightCrosswalkBOTTOM.Text = "Crossroad2 Right crosswalk";
+            btnCrossroad2RightCrosswalkBOTTOM.Text = "Crossroad2 Right crosswalk BTN2";
             btnCrossroad2RightCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2RightCrosswalkBOTTOM.Visible = false;
             btnCrossroad2RightCrosswalkBOTTOM.Enabled = false;
@@ -5742,7 +5742,7 @@ namespace Bc_prace.Controls
             #region LeftT - left crosswalk
             //top 
             //Button btnLeftTLeftCrosswalkTOP = new Button();
-            btnLeftTLeftCrosswalkTOP.Text = "LeftT\nLeft crosswalk";
+            btnLeftTLeftCrosswalkTOP.Text = "LeftT\nLeft crosswalk BTN1";
             btnLeftTLeftCrosswalkTOP.BackColor = Color.White;
             btnLeftTLeftCrosswalkTOP.Visible = false;
             btnLeftTLeftCrosswalkTOP.Enabled = false;
@@ -5754,7 +5754,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnLeftTLeftCrosswalkBOTTOM = new Button();
-            btnLeftTLeftCrosswalkBOTTOM.Text = "LeftT\nLeft crosswalk";
+            btnLeftTLeftCrosswalkBOTTOM.Text = "LeftT\nLeft crosswalk BTN2";
             btnLeftTLeftCrosswalkBOTTOM.BackColor = Color.White;
             btnLeftTLeftCrosswalkBOTTOM.Visible = false;
             btnLeftTLeftCrosswalkBOTTOM.Enabled = false;
@@ -5774,7 +5774,7 @@ namespace Bc_prace.Controls
             #region RightT - top crosswalk
             //left  
             //Button btnRightTTopCrosswalkLEFT = new Button();
-            btnRightTTopCrosswalkLEFT.Text = "RightT\nTop crosswalk";
+            btnRightTTopCrosswalkLEFT.Text = "RightT\nTop crosswalk BTN1";
             btnRightTTopCrosswalkLEFT.BackColor = Color.White;
             btnRightTTopCrosswalkLEFT.Visible = false;
             btnRightTTopCrosswalkLEFT.Enabled = false;
@@ -5786,7 +5786,7 @@ namespace Bc_prace.Controls
 
             //right
             //Button btnRightTTopCrosswalkRIGHT = new Button();
-            btnRightTTopCrosswalkRIGHT.Text = "RightT\nTop crosswalk";
+            btnRightTTopCrosswalkRIGHT.Text = "RightT\nTop crosswalk BTN2";
             btnRightTTopCrosswalkRIGHT.BackColor = Color.White;
             btnRightTTopCrosswalkRIGHT.Visible = false;
             btnRightTTopCrosswalkRIGHT.Enabled = false;
@@ -5814,6 +5814,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad1TopCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 2, Crossroad1TopCrosswalkBTN1);
 
@@ -5836,6 +5837,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad1TopCrosswalkRIGHT_Click(object sender, EventArgs e)
@@ -5846,6 +5848,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad1TopCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 3, Crossroad1TopCrosswalkBTN2);
 
@@ -5868,6 +5871,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad1LeftCrosswalkTOP_Click(object sender, EventArgs e)
@@ -5878,6 +5882,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad1LeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 0, Crossroad1LeftCrosswalkBTN1);
 
@@ -5900,6 +5905,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad1LeftCrosswalkBOTTOM_Click(object sender, EventArgs e)
@@ -5910,6 +5916,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad1LeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB1, 0, 1, Crossroad1LeftCrosswalkBTN2);
 
@@ -5932,6 +5939,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad2LeftCrosswalkTOP_Click(object sender, EventArgs e)
@@ -5942,6 +5950,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad2LeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 0, Crossroad2LeftCrosswalkBTN1);
 
@@ -5964,6 +5973,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad2LeftCrosswalkBOTTOM_Click(object sender, EventArgs e)
@@ -5974,6 +5984,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad2LeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 1, Crossroad2LeftCrosswalkBTN2);
 
@@ -5996,6 +6007,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad2RightCrosswalkTOP_Click(object sender, EventArgs e)
@@ -6006,6 +6018,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad2RightCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 2, Crossroad2RightCrosswalkBTN1);
 
@@ -6028,6 +6041,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnCrossroad2RightCrosswalkBOTTOM_Click(object sender, EventArgs e)
@@ -6038,6 +6052,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             Crossroad2RightCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB19, 0, 3, Crossroad2RightCrosswalkBTN2);
 
@@ -6060,6 +6075,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnLeftTLeftCrosswalkTOP_CLick(object sender, EventArgs e)
@@ -6070,6 +6086,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             CrossroadLeftTLeftCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB20, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
 
@@ -6092,6 +6109,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnLeftTLeftCrosswalkBOTTOM_CLick(object sender, EventArgs e)
@@ -6102,6 +6120,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             CrossroadLeftTLeftCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB20, 0, 1, CrossroadLeftTLeftCrosswalkBTN2);
 
@@ -6124,6 +6143,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnRightTTopCrosswalkLEFT_Click(object sender, EventArgs e)
@@ -6134,6 +6154,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             CrossroadRightTTopCrosswalkBTN1 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN1);
 
@@ -6156,6 +6177,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
         private void btnRightTTopCrosswalkRIGHT_Click(object sender, EventArgs e)
         {
@@ -6165,6 +6187,7 @@ namespace Bc_prace.Controls
                 OnCrossroadBTNClick(sender, ((Button)sender).Text);
 
             //toto se bude dít v Program3Form
+            /*
             CrossroadRightTTopCrosswalkBTN2 = true;
             S7.SetBitAt(program3FormInstance.send_buffer_DB21, 0, 1, CrossroadRightTTopCrosswalkBTN2);
 
@@ -6187,6 +6210,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         #endregion

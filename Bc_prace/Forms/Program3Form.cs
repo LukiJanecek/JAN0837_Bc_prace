@@ -286,6 +286,8 @@ namespace Bc_prace
 
         private void Program3_Load(object sender, EventArgs e)
         {
+            userControlCrossroad1.SetControl(this);
+
             this.WindowState = FormWindowState.Maximized;
 
             rBtnCrossroadBasic.Checked = false;
@@ -298,22 +300,316 @@ namespace Bc_prace
         {
             switch(id)
             {
-                case "Crossroad1 Top crosswalk":
+                case "Crossroad1 Top crosswalk BTN1":
+
+                    Crossroad1TopCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB1, 0, 2, Crossroad1TopCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad1TopCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+                    if (writeResultDB1_Crossroad1TopCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad1TopCrosswalkBTN1 = {writeResultDB1_Crossroad1TopCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
-                case "Crossroad1 Left crosswalk":
+                case "Crossroad1 Top crosswalk BTN2":
+
+                    Crossroad1TopCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB1, 0, 3, Crossroad1TopCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad1TopCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+                    if (writeResultDB1_Crossroad1TopCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad1TopCrosswalkBTN2 = {writeResultDB1_Crossroad1TopCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
-                case "Crossroad2 Left crosswalk":
+                case "Crossroad1 Left crosswalk BTN1":
+
+                    Crossroad1LeftCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB1, 0, 0, Crossroad1LeftCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad1LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+                    if (writeResultDB1_Crossroad1LeftCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad1LeftCrosswalkBTN1 = {writeResultDB1_Crossroad1LeftCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
-                case "Crossroad1 Right crosswalk":
+                case "Crossroad1 Left crosswalk BTN2":
+
+                    Crossroad1LeftCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB1, 0, 1, Crossroad1LeftCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad1LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB1, 0, send_buffer_DB1.Length, send_buffer_DB1);
+                    if (writeResultDB1_Crossroad1LeftCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad1LeftCrosswalkBTN2 = {writeResultDB1_Crossroad1LeftCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
-                case "LeftT\nLeft crosswalk":
+                case "Crossroad2 Left crosswalk BTN1":
+
+                    Crossroad2LeftCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB19, 0, 0, Crossroad2LeftCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad2LeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
+                    if (writeResultDB1_Crossroad2LeftCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad2LeftCrosswalkBTN1 = {writeResultDB1_Crossroad2LeftCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
-                case "RightT\nTop crosswalk":
+                case "Crossroad2 Left crosswalk BTN2":
+
+                    Crossroad2LeftCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB19, 0, 1, Crossroad2LeftCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad2LeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
+                    if (writeResultDB1_Crossroad2LeftCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad2LeftCrosswalkBTN2 = {writeResultDB1_Crossroad2LeftCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "Crossroad2 Right crosswalk BTN1":
+
+                    Crossroad2RightCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB19, 0, 2, Crossroad2RightCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad2RightCrosswalkBTN1 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
+                    if (writeResultDB1_Crossroad2RightCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad2RightCrosswalkBTN1 = {writeResultDB1_Crossroad2RightCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "Crossroad2 Right crosswalk BTN2":
+
+                    Crossroad2RightCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB19, 0, 3, Crossroad2RightCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_Crossroad2RightCrosswalkBTN2 = client.DBWrite(DBNumber_DB19, 0, send_buffer_DB19.Length, send_buffer_DB19);
+                    if (writeResultDB1_Crossroad2RightCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
+                                $"Error message: writeResultDB1_Crossroad2RightCrosswalkBTN2 = {writeResultDB1_Crossroad2RightCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "LeftT\nLeft crosswalk BTN1":
+
+                    CrossroadLeftTLeftCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB20, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20.Length, send_buffer_DB20);
+                    if (writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB20!!! \n\n" +
+                                $"Error message: writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1 = {writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "LeftT\nLeft crosswalk BTN2":
+
+                    CrossroadLeftTLeftCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB20, 0, 1, CrossroadLeftTLeftCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2 = client.DBWrite(DBNumber_DB20, 0, send_buffer_DB20.Length, send_buffer_DB20);
+                    if (writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB20!!! \n\n" +
+                                $"Error message: writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2 = {writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "RightT\nTop crosswalk BTN1":
+
+                    CrossroadRightTTopCrosswalkBTN1 = true;
+                    S7.SetBitAt(send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN1);
+
+                    //write to PLC
+                    int writeResultDB1_CrossroadRightTTopCrosswalkBTN1 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21.Length, send_buffer_DB21);
+                    if (writeResultDB1_CrossroadRightTTopCrosswalkBTN1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB21!!! \n\n" +
+                                $"Error message: writeResultDB1_CrossroadRightTTopCrosswalkBTN1 = {writeResultDB1_CrossroadRightTTopCrosswalkBTN1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case "RightT\nTop crosswalk BTN2":
+
+                    CrossroadRightTTopCrosswalkBTN2 = true;
+                    S7.SetBitAt(send_buffer_DB21, 0, 1, CrossroadRightTTopCrosswalkBTN2);
+
+                    //write to PLC
+                    int writeResultDB1_CrossroadRightTTopCrosswalkBTN2 = client.DBWrite(DBNumber_DB21, 0, send_buffer_DB21.Length, send_buffer_DB21);
+                    if (writeResultDB1_CrossroadRightTTopCrosswalkBTN2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB21!!! \n\n" +
+                                $"Error message: writeResultDB1_CrossroadRightTTopCrosswalkBTN2 = {writeResultDB1_CrossroadRightTTopCrosswalkBTN2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
 
                     break;
 

@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace Bc_prace.Controls
 {
+    public delegate void ElevatorFloorBTNClick(object sender, string id);
+
     public partial class UserControlElevatorCabin : UserControl
     {
         private Program1Form program1FormInstance = null;
@@ -19,6 +21,19 @@ namespace Bc_prace.Controls
 
         //MessageBox control
         private bool errorMessageBoxShown;
+
+        public event ElevatorFloorBTNClick OnElevatorFloorBTNClick;
+
+        //BTNs define 
+        #region BTNs define 
+
+        private Button btnElevatorFloor1 = new Button();
+        private Button btnElevatorFloor2 = new Button();
+        private Button btnElevatorFloor3 = new Button();
+        private Button btnElevatorFloor4 = new Button();
+        private Button btnElevatorFloor5 = new Button();
+
+        #endregion
 
         //Drawing variables
         #region Drawing variables
@@ -37,17 +52,6 @@ namespace Bc_prace.Controls
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush green = new SolidBrush(Color.Green); //ActualFloorLED color
-
-        #endregion
-
-        //BTNs define 
-        #region BTNs define 
-
-        private Button btnElevatorFloor1 = new Button();
-        private Button btnElevatorFloor2 = new Button();
-        private Button btnElevatorFloor3 = new Button();
-        private Button btnElevatorFloor4 = new Button();
-        private Button btnElevatorFloor5 = new Button();
 
         #endregion
 
@@ -246,6 +250,11 @@ namespace Bc_prace.Controls
 
         private void btnElevatorFloor1_Click(object sender, EventArgs e)
         {
+            if (OnElevatorFloorBTNClick != null)
+                OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program1Form
+            /*
             program1FormInstance.ElevatorBTNFloor1 = true;
             S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 5, program1FormInstance.ElevatorBTNFloor1);
 
@@ -268,10 +277,16 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnElevatorFloor2_Click(object sender, EventArgs e)
         {
+            if (OnElevatorFloorBTNClick != null)
+                OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program1Form
+            /*
             program1FormInstance.ElevatorBTNFloor2 = true;
             S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 6, program1FormInstance.ElevatorBTNFloor2);
 
@@ -294,10 +309,16 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnElevatorFloor3_Click(object sender, EventArgs e)
         {
+            if (OnElevatorFloorBTNClick != null)
+                OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program1Form
+            /*
             program1FormInstance.ElevatorBTNFloor3 = true;
             S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 7, program1FormInstance.ElevatorBTNFloor3);
 
@@ -320,10 +341,16 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnElevatorFloor4_Click(object sender, EventArgs e)
         {
+            if (OnElevatorFloorBTNClick != null)
+                OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program1Form
+            /*
             program1FormInstance.ElevatorBTNFloor4 = true;
             S7.SetBitAt(program1FormInstance.send_buffer_DB4, 1, 0, program1FormInstance.ElevatorBTNFloor4);
 
@@ -346,10 +373,16 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         private void btnElevatorFloor5_Click(object sender, EventArgs e)
         {
+            if (OnElevatorFloorBTNClick != null)
+                OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
+
+            //toto se bude dít v Program1Form
+            /*
             program1FormInstance.ElevatorBTNFloor5 = true;
             S7.SetBitAt(program1FormInstance.send_buffer_DB4, 1, 1, program1FormInstance.ElevatorBTNFloor5);
 
@@ -372,6 +405,7 @@ namespace Bc_prace.Controls
             {
                 //write was successful
             }
+            */
         }
 
         #endregion
