@@ -67,33 +67,74 @@ namespace Bc_prace.Controls
             //text parameters
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
+            string lblElevatorDoorState = "Elevator state";
+            g.DrawString(lblElevatorDoorState, labelFont, labelBrush, x + 10, y + length);
 
             //DoorBackground
-            g.DrawRectangle(BlackPen, xDoor + 10, yDoor + 200, widthDoor + 160, heightDoor + 100);
-            g.FillRectangle(yellow, xDoor + 10, yDoor + 200, widthDoor + 160, heightDoor + 100);
+            g.DrawRectangle(BlackPen, xDoor + 10, yDoor + length * 2, widthDoor + 160, heightDoor + 100);
+            g.FillRectangle(yellow, xDoor + 10, yDoor + length * 2, widthDoor + 160, heightDoor + 100);
 
             //LeftDoor
-            g.DrawRectangle(BlackPen, xLeftDoor + 10, yLeftDoor + 200, widthLeftDoor + 80, heightLeftDoor + 100);
-            g.FillRectangle(gray, xLeftDoor + 10, yLeftDoor + 200, widthLeftDoor + 80, heightLeftDoor + 100);
+            g.DrawRectangle(BlackPen, xLeftDoor + 10, yLeftDoor + length * 2, widthLeftDoor + 80, heightLeftDoor + 100);
+            g.FillRectangle(gray, xLeftDoor + 10, yLeftDoor + length * 2, widthLeftDoor + 80, heightLeftDoor + 100);
 
             //RightDoor
-            g.DrawRectangle(BlackPen, xRightDoor + 90, yRightDoor + 200, widthRightDoor + 80, heightRightDoor + 100);
-            g.FillRectangle(gray, xRightDoor + 90, yRightDoor + 200, widthRightDoor + 80, heightRightDoor + 100);
+            g.DrawRectangle(BlackPen, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
+            g.FillRectangle(gray, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
         }
 
         //Methods for door movement
         #region Methods for door movement
 
-        private void LeftDoorMoveLeft()
+        public void OpenningDoor(int time)
         {
-            widthLeftDoor -= Step;
+            int totalSteps = time / Convert.ToInt32(Step);
+
+            for (int i = 0; i < totalSteps; i++)
+            {
+                LeftDoorMoveLeft();
+                RightDoorMoveRight();
+            }
+
+            this.Refresh(); //mozna
+        }
+
+        public void ClosingDoor(int time)
+        {
+            int totalSteps = time / Convert.ToInt32(Step);
+
+            for (int i = 0; i < totalSteps; i++)
+            {
+                LeftDoorMoveRight();
+                RightDoorMoveLeft();
+            }
+
+            this.Refresh(); //mozna
+        }
+
+        public void LeftDoorMoveLeft()
+        {
+            xLeftDoor -= Step;
+            //widthLeftDoor -= Step; //asi mi jeblo nebo tak něco
             this.Refresh();
         }
 
-        private void RightDoorMoveRight()
+        public void LeftDoorMoveRight()
+        {
+            xLeftDoor += Step;
+            this.Refresh();
+        }
+
+        public void RightDoorMoveLeft()
+        {
+            xRightDoor -= Step;
+            this.Refresh();
+        }
+
+        public void RightDoorMoveRight()
         {
             xRightDoor += Step;
-            widthRightDoor -= Step;
+            //widthRightDoor -= Step; //asi mi jeblo nebo tak něco
             this.Refresh();
         }
 

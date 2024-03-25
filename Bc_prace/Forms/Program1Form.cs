@@ -95,7 +95,7 @@ namespace Bc_prace
         public bool ElevatorActualFloorSENS4;
         public bool ElevatorActualFloorSENS5;
         public int ElevatorTimeDoorSQOPEN; //time
-        public int ElevatroTimeDoorSQCLOSE; //time
+        public int ElevatorTimeDoorSQCLOSE; //time
         public bool ElevatorDoorClOSE;
         public bool ElevatorDoorOPEN;
         public int ElevatorCabinSpeed;
@@ -294,20 +294,20 @@ namespace Bc_prace
                 //Input variables
                 #region Input variables 
 
-                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1;
-                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2;
-                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3;
-                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4;
-                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5;
-                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1;
-                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2;
-                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3;
-                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4;
-                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5;
-                ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ;
-                ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE;
-                ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
-                ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
+                ElevatorBTNCabin1 = chooseOptionFormInstance.ElevatorBTNCabin1; //no need to make a condition if true
+                ElevatorBTNCabin2 = chooseOptionFormInstance.ElevatorBTNCabin2; //no need to make a condition if true
+                ElevatorBTNCabin3 = chooseOptionFormInstance.ElevatorBTNCabin3; //no need to make a condition if true
+                ElevatorBTNCabin4 = chooseOptionFormInstance.ElevatorBTNCabin4; //no need to make a condition if true
+                ElevatorBTNCabin5 = chooseOptionFormInstance.ElevatorBTNCabin5; //no need to make a condition if true
+                ElevatorBTNFloor1 = chooseOptionFormInstance.ElevatorBTNFloor1; //no need to make a condition if true
+                ElevatorBTNFloor2 = chooseOptionFormInstance.ElevatorBTNFloor2; //no need to make a condition if true
+                ElevatorBTNFloor3 = chooseOptionFormInstance.ElevatorBTNFloor3; //no need to make a condition if true
+                ElevatorBTNFloor4 = chooseOptionFormInstance.ElevatorBTNFloor4; //no need to make a condition if true
+                ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; //no need to make a condition if true
+                ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ; //no need to make a condition if true
+                ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE; //no need to make a condition if true
+                ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP; 
+                ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem; 
 
                 #endregion
 
@@ -340,7 +340,7 @@ namespace Bc_prace
                 ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
                 ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
                 ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN; // time
-                ElevatroTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; //time
+                ElevatorTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; //time
                 ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
                 ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
                 ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
@@ -620,14 +620,24 @@ namespace Bc_prace
                 //Action on variable change (if == true)
                 #region Action on variable change (if == true)
 
-                if (ElevatorDoorSEQ)
+                if (ElevatorDoorSEQ) //toto podle me neni potreba
                 {
 
                 }
 
-                if (ElevatorBTNOPENCLOSE)
+                if (ElevatorBTNOPENCLOSE) //toto podle me neni potreba
                 {
 
+                }
+
+                if (ElevatorDoorClOSE)
+                {
+                    CloseDOOR(ElevatorTimeDoorSQCLOSE); 
+                } 
+
+                if (ElevatorDoorOPEN)
+                {
+                    OpenDOOR(ElevatorTimeDoorSQOPEN);
                 }
 
                 if (ElevatorEmergencySTOP)
@@ -662,7 +672,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
-                    //DoorSQ => TIA do automatically 
+                    //DoorSQ => TIA activates automatically
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                 }
 
@@ -703,7 +713,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
                 {
-                    //DoorSQ => TIA do automatically 
+                    //DoorSQ => TIA activates automatically
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                 }
 
@@ -744,7 +754,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
                 {
-                    //DoorSQ => TIA do automatically 
+                    //DoorSQ => TIA activates automatically
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                 }
 
@@ -785,7 +795,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
                 {
-                    //DoorSQ => TIA do automatically 
+                    //DoorSQ => TIA activates automatically
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                 }
 
@@ -826,7 +836,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
                 {
-                    //DoorSQ => TIA do automatically 
+                    //DoorSQ => TIA activates automatically
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                 }
 
@@ -1044,12 +1054,9 @@ namespace Bc_prace
         }
 
         #endregion
-
-        //Movement to specific floor 
-        #region Movement to specific floor 
         
         //BTN cabin 
-        #region BTN cabin
+        #region BTN cabin Click
         private void btnCabinFloor1_Click(object sender, EventArgs e)
         {
             //Floor1movement(); //this must go => Tia needs to activate this 
@@ -1191,404 +1198,35 @@ namespace Bc_prace
         }
         #endregion
 
-        //btn Floor
-        #region btn floor => cabin movement 
-        /*
-        private void btnFloor1_Click(object sender, EventArgs e)
-        {
-            Floor1movement();
-        }
-
-        private void btnFloor2_Click(object sender, EventArgs e)
-        {
-            Floor2movement();
-        }
-
-        private void btnFloor3_Click(object sender, EventArgs e)
-        {
-            Floor3movement();
-        }
-
-        private void btnFloor4_Click(object sender, EventArgs e)
-        {
-            Floor4movement();
-        }
-
-        private void btnFloor5_Click(object sender, EventArgs e)
-        {
-            Floor5movement();
-        }
-        */
-        #endregion
-
-        //Move to Floor 
-        #region Move to floor 
-
-        /*
-
-        #region Move to floor 1
-        private async void Floor1movement()
-        {
-            if (ElevatorActualFloor == 1)
-            {
-                //Opendoor; => dela Tia
-                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 2)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 3)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 4)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 30; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 5)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 40; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS1 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else
-            {
-                ErrorSystem();
-
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("Floor1Movement is not possible. \n\n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-        }
-
-        #endregion
-
-        #region Move to floor 2
-        private async void Floor2movement()
-        {
-            if (ElevatorActualFloor == 1)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 2)
-            {
-                //Opendoor; => dela Tia
-                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControl
-            }
-            else if (ElevatorActualFloor == 3)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 4)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 5)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 30; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS2 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else
-            {
-                ErrorSystem();
-
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("Floor2Movement is not possible. \n\n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-        }
-        #endregion
-
-        #region Move to floor 3
-        private async void Floor3movement()
-        {
-            if (ElevatorActualFloor == 1)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 2)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 3)
-            {
-                //Opendoor; => dela Tia
-                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 4)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 5)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS3 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else
-            {
-                ErrorSystem();
-
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("Floor3Movement is not possible. \n\n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-
-        }
-        #endregion
-
-        #region Move to floor 4
-        private async void Floor4movement()
-        {
-            if (ElevatorActualFloor == 1)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(3);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 30; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 2)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 3)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 4)
-            {
-                //Opendoor; => dela Tia
-                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 5)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 30; i++)
-                {
-                    userControlElevatorCabin1.MoveDown();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS4 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else
-            {
-                ErrorSystem();
-
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("Floor4Movement is not possible. \n\n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-        }
-        #endregion
-
-        #region Move to floor 5
-        private async void Floor5movement()
-        {
-            if (ElevatorActualFloor == 1)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(4);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 40; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 2)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(3);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 30; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 3)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(2);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 20; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 4)
-            {
-                userControlElevatorCabin1.CabinMoveToFloorUP(1);
-                //posun o určitý počet pixelů 
-                for (int i = 0; i < 10; i++)
-                {
-                    userControlElevatorCabin1.MoveUp();
-                    await Task.Delay(500);
-                }
-                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else if (ElevatorActualFloor == 5)
-            {
-                //Opendoor; => dela Tia
-                //mozna ElevatorActualFloorSENS5 = true; => mozno resit v ramci pozice v userControlu
-            }
-            else
-            {
-                ErrorSystem();
-
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("Floor5Movement is not possible. \n\n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-        }
-        #endregion
-
-        */
-
-        #endregion
-
-        #endregion
-
         //Cabin door movement 
         #region Cabin doors movement
         private async void btnCabinDoorOPENCLOSE_Click(object sender, EventArgs e)
         {
-            OpenDOOR();
-            await Task.Delay(5000);
-            CloseDOOR();
+            ElevatorBTNOPENCLOSE = true;
+            S7.SetBitAt(send_buffer_DB4, 1, 3, ElevatorBTNOPENCLOSE);
+
+            //write to PLC
+            int writeResultDB4_BTNOPENCLOSE = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_BTNOPENCLOSE != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_BTNOPENCLOSE = {writeResultDB4_BTNOPENCLOSE} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
-        private async void CloseDOOR()
+        private async void CloseDOOR(int time)
         {
             ToolStripStatusLabel lblStatus;
 
@@ -1596,12 +1234,14 @@ namespace Bc_prace
             lblStatus = new ToolStripStatusLabel("Closing door");
             statusStripElevator.Items.Add(lblStatus);
 
+            userControlElevatorDoor1.ClosingDoor(time);
+
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door closed");
             statusStripElevator.Items.Add(lblStatus);
         }
 
-        private async void OpenDOOR()
+        private async void OpenDOOR(int time)
         {
             ToolStripStatusLabel lblStatus;
 
@@ -1609,10 +1249,13 @@ namespace Bc_prace
             lblStatus = new ToolStripStatusLabel("Openning door");
             statusStripElevator.Items.Add(lblStatus);
 
+            userControlElevatorDoor1.OpenningDoor(time);
+
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door open");
             statusStripElevator.Items.Add(lblStatus);
         }
+
         #endregion
 
         //Emergency + system error 
