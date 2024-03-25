@@ -43,10 +43,10 @@ namespace Bc_prace
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
-        public byte[] read_buffer_DB4 = new byte[30];
+        public byte[] read_buffer_DB4 = new byte[32];
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
-        public byte[] send_buffer_DB4 = new byte[30];
+        public byte[] send_buffer_DB4 = new byte[32];
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
@@ -101,7 +101,7 @@ namespace Bc_prace
         //ElevatorDB variables 
         #region ElevatorDB variables 
 
-        //inputs
+        //Input variables 
         #region Input variables 
 
         public bool ElevatorBTNCabin1;
@@ -121,7 +121,7 @@ namespace Bc_prace
 
         #endregion
 
-        //outputs
+        //Output variables
         #region Output variables
 
         public bool ElevatorMotorON;
@@ -159,12 +159,28 @@ namespace Bc_prace
 
         #endregion
 
+        //MEM variables 
+        #region MEM variables
+
+        public bool ElevatorMEMDoor;
+        public bool ElevatorMEMDoorTrig;
+        public bool ElevatorMEMDoorCloseTrig;
+        public bool ElevatorMEMMovingtrig;
+        public bool ElevatorMEMEndMovingTrig;
+        public bool ElevatorMEMBTNFloor1;
+        public bool ElevatorMEMBTNFloor2;
+        public bool ElevatorMEMBTNFloor3;
+        public bool ElevatorMEMBTNFloor4;
+        public bool ElevatorMEMBTNFloor5;
+
+        #endregion
+
         #endregion
 
         //CarWashDB variables 
         #region CarWashDB variables
 
-        //input
+        //Input variables
         #region Input variables
 
         public bool CarWashEmergencySTOP;
@@ -177,7 +193,7 @@ namespace Bc_prace
 
         #endregion
 
-        //output
+        //Output variables
         #region Output variables 
 
         public bool CarWashPositionShower;
@@ -207,7 +223,7 @@ namespace Bc_prace
         //Crossroad variables 
         #region Crossroad variables
 
-        //input 
+        //Input variables 
         #region Input variables 
 
         //Crossroad_DB DB14
@@ -259,7 +275,7 @@ namespace Bc_prace
 
         #endregion
 
-        //output
+        //Output variables 
         #region Output variables 
 
         //Crossroad_DB DB14
@@ -531,6 +547,22 @@ namespace Bc_prace
                         ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4, 22);
                         ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 24, 0);
                         ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26); //Time
+
+                        #endregion
+
+                        //MEM variables 
+                        #region MEM varialbes 
+
+                        ElevatorMEMDoor = S7.GetBitAt(read_buffer_DB4, 30, 0); 
+                        ElevatorMEMDoorTrig = S7.GetBitAt(read_buffer_DB4, 30, 1); 
+                        ElevatorMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB4, 30, 2); 
+                        ElevatorMEMMovingtrig = S7.GetBitAt(read_buffer_DB4, 30, 3); 
+                        ElevatorMEMEndMovingTrig = S7.GetBitAt(read_buffer_DB4, 30, 4); 
+                        ElevatorMEMBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 30, 5); 
+                        ElevatorMEMBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 30, 6); 
+                        ElevatorMEMBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 30, 7); 
+                        ElevatorMEMBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 31, 0); 
+                        ElevatorMEMBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 31, 1); 
 
                         #endregion
 

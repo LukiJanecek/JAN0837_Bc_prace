@@ -104,6 +104,22 @@ namespace Bc_prace
 
         #endregion
 
+        //MEM variables 
+        #region MEM variables
+
+        public bool ElevatorMEMDoor;
+        public bool ElevatorMEMDoorTrig;
+        public bool ElevatorMEMDoorCloseTrig;
+        public bool ElevatorMEMMovingtrig;
+        public bool ElevatorMEMEndMovingTrig;
+        public bool ElevatorMEMBTNFloor1;
+        public bool ElevatorMEMBTNFloor2;
+        public bool ElevatorMEMBTNFloor3;
+        public bool ElevatorMEMBTNFloor4;
+        public bool ElevatorMEMBTNFloor5;
+
+        #endregion
+
         //Variables cabin movement step 
         public int ElevatorStep = 10;
 
@@ -346,6 +362,22 @@ namespace Bc_prace
                 ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
                 ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity; //no need to make a condition if true
                 ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown; //time
+
+                #endregion
+
+                //MEM variables 
+                #region MEM varialbes 
+
+                ElevatorMEMDoor = chooseOptionFormInstance.ElevatorMEMDoor;
+                ElevatorMEMDoorTrig = chooseOptionFormInstance.ElevatorMEMDoorTrig;
+                ElevatorMEMDoorCloseTrig = chooseOptionFormInstance.ElevatorMEMDoorCloseTrig;
+                ElevatorMEMMovingtrig = chooseOptionFormInstance.ElevatorMEMMovingtrig;
+                ElevatorMEMEndMovingTrig = chooseOptionFormInstance.ElevatorMEMEndMovingTrig;
+                ElevatorMEMBTNFloor1 = chooseOptionFormInstance.ElevatorMEMBTNFloor1;
+                ElevatorMEMBTNFloor2 = chooseOptionFormInstance.ElevatorMEMBTNFloor2;
+                ElevatorMEMBTNFloor3 = chooseOptionFormInstance.ElevatorMEMBTNFloor3;
+                ElevatorMEMBTNFloor4 = chooseOptionFormInstance.ElevatorMEMBTNFloor4;
+                ElevatorMEMBTNFloor5 = chooseOptionFormInstance.ElevatorMEMBTNFloor5;
 
                 #endregion
 
