@@ -467,76 +467,75 @@ namespace Bc_prace
                 //Water
                 if (CarWashWater)
                 {
-                    userControlCarWash1.WaterSignalizationON();
+                    userControlCarWash1.WaterSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.WaterSignalizationOFF();
-
+                    userControlCarWash1.WaterSignalization(false);
                 }
 
                 //Wax
                 if (CarWashWax)
                 {
-                    userControlCarWash1.WaxSignalizationON();
+                    userControlCarWash1.WaxSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.WaxSignalizationOFF();
+                    userControlCarWash1.WaxSignalization(false);
                 }
 
                 //ActiveFoam
                 if (CarWashActiveFoam)
                 {
-                    userControlCarWash1.DryingSignalizationON();
+                    userControlCarWash1.ActiveFoamSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.DryingSignalizationOFF();
+                    userControlCarWash1.ActiveFoamSignalization(true);
 
                 }
 
                 //Soap 
                 if (CarWashSoap)
                 {
-                    userControlCarWash1.SoapSignalizationON();
+                    userControlCarWash1.SoapSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.SoapSignalizationOFF();
+                    userControlCarWash1.SoapSignalization(false);
 
                 }
 
                 //Brushes
                 if (CarWashBrushes)
                 {
-                    userControlCarWash1.BrushesSignalizationON();
+                    userControlCarWash1.BrushesSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.BrushesSignalizationOFF();
+                    userControlCarWash1.BrushesSignalization(false);
 
                 }
 
                 //Drying
                 if (CarWashDry)
                 {
-                    userControlCarWash1.DryingSignalizationON();
+                    userControlCarWash1.DryingSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.DryingSignalizationOFF();
+                    userControlCarWash1.DryingSignalization(false);
 
                 }
 
                 //PreWash
                 if (CarwashPrewash)
                 {
-                    userControlCarWash1.PreWashON();
+                    userControlCarWash1.PreWashSignalization(true);
                 }
                 else
                 {
-                    userControlCarWash1.PreWashOFF();
+                    userControlCarWash1.PreWashSignalization(false);
                 }
 
                 #endregion
@@ -760,29 +759,11 @@ namespace Bc_prace
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            userControlCarWash1.WaxSignalizationON();
-            userControlCarWash1.WaterSignalizationON();
-            userControlCarWash1.DryingSignalizationON();
-            userControlCarWash1.BrushesSignalizationON();
-            userControlCarWash1.SoapSignalizationON();
-            userControlCarWash1.ActiveFoamSignalizationON();
-
-            userControlCarWash1.door1UP();
-            userControlCarWash1.door2UP();
-
+           
         }
 
         private void btnTest2_Click(object sender, EventArgs e)
         {
-            userControlCarWash1.WaxSignalizationOFF();
-            userControlCarWash1.WaterSignalizationOFF();
-            userControlCarWash1.DryingSignalizationOFF();
-            userControlCarWash1.BrushesSignalizationOFF();
-            userControlCarWash1.SoapSignalizationOFF();
-            userControlCarWash1.ActiveFoamSignalizationOFF();
-
-            userControlCarWash1.door1DOWN();
-            userControlCarWash1.door2DOWN();
 
         }
 

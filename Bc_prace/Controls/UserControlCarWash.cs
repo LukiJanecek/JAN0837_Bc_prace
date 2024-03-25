@@ -346,123 +346,120 @@ namespace Bc_prace.Controls
 
         //Inner cycle signalization
         #region Inner cycle signalization
-        public void PreWashON()
+        public void PreWashSignalization(bool state)
         {
-            var g = this.CreateGraphics();
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-            g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
-        public void PreWashOFF()
+        
+        public void WaterSignalization(bool state)
         {
-            var g = this.CreateGraphics();
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-            g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
+        
+        public void WaxSignalization(bool state)
+        { 
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-        public void WaterSignalizationON()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-        public void WaterSignalizationOFF()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-        public void WaxSignalizationON()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
-        public void WaxSignalizationOFF()
+        
+        public void SoapSignalization(bool state)
         {
-            var g = this.CreateGraphics();
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-            g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
-        public void SoapSignalizationON()
-        {
-            var g = this.CreateGraphics();
+        
 
-            g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+        public void ActiveFoamSignalization(bool state)
+        {
+            var g = this.CreateGraphics(); //this doesnt work properly
+
+            if (state)
+            {
+                g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else 
+            {
+                g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
-        public void SoapSignalizationOFF()
+        
+        public void BrushesSignalization(bool state)
         {
-            var g = this.CreateGraphics();
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-            g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
+        
 
-        public void ActiveFoamSignalizationON()
+        public void DryingSignalization(bool state)
         {
-            var g = this.CreateGraphics();
+            var g = this.CreateGraphics(); //this doesnt work properly
 
-            g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+            if (state)
+            {
+                g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
 
             this.Refresh();
         }
-        public void ActiveFoamSignalizationOFF()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-
-        public void BrushesSignalizationON()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-        public void BrushesSignalizationOFF()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-
-        public void DryingSignalizationON()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-        public void DryingSignalizationOFF()
-        {
-            var g = this.CreateGraphics();
-
-            g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
-
-            this.Refresh();
-        }
-
+        
         #endregion
 
         //Car picture
