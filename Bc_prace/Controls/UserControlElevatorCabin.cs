@@ -131,20 +131,66 @@ namespace Bc_prace.Controls
             string lblFifthFloor = "5th floor";
             g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length - length / 2); 
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
+            g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             #endregion
 
-            //Conditions based ond object position
-            #region Conditions based ond object position
+            //Conditions based ond object position -> ElevatorActualFloorSENS
+            #region Conditions based ond object position -> ElevatorActualFloorSENS
 
             //Cabin is on 1st floor
             if (yCabin == y + length * 5)
             {
                 //ElevatorActualFloorSENS1 == true //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS1 = true;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 3, program1FormInstance.ElevatorActualFloorSENS1);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS1 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
             }
             else
             {
+                //ElevatorActualFloorSENS1 == false //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS1 = false;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 3, program1FormInstance.ElevatorActualFloorSENS1);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS1 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
+
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
@@ -153,9 +199,55 @@ namespace Bc_prace.Controls
             if (yCabin == y + length * 4)
             {
                 //ElevatorActualFloorSENS2 == true //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS2 = true;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 4, program1FormInstance.ElevatorActualFloorSENS2);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS2 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS2 = {writeResultDB4_ElevatorActualFloorSENS2} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
             }
             else
             {
+                //ElevatorActualFloorSENS2 == false //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS2 = false;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 4, program1FormInstance.ElevatorActualFloorSENS2);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS2 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS2 = {writeResultDB4_ElevatorActualFloorSENS2} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
+
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
@@ -164,9 +256,55 @@ namespace Bc_prace.Controls
             if (yCabin == y + length * 3)
             {
                 //ElevatorActualFloorSENS3 == true //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS3 = true;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 5, program1FormInstance.ElevatorActualFloorSENS3);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS3 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS3 = {writeResultDB4_ElevatorActualFloorSENS3} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
             }
             else
             {
+                //ElevatorActualFloorSENS3 == false //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS3 = false;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 5, program1FormInstance.ElevatorActualFloorSENS3);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS3 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS3 = {writeResultDB4_ElevatorActualFloorSENS3} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
+
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
@@ -175,9 +313,55 @@ namespace Bc_prace.Controls
             if (yCabin == y + length * 2)
             {
                 //ElevatorActualFloorSENS4 == true //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS4 = true;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 6, program1FormInstance.ElevatorActualFloorSENS4);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS4 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
             }
             else
             {
+                //ElevatorActualFloorSENS4 == false //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS4 = false;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 6, program1FormInstance.ElevatorActualFloorSENS4);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS4 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
+
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
@@ -186,9 +370,55 @@ namespace Bc_prace.Controls
             if (yCabin == y + length * 1)
             {
                 //ElevatorActualFloorSENS5 == true //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS5 = true;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 7, program1FormInstance.ElevatorActualFloorSENS5);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS5 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS5 = {writeResultDB4_ElevatorActualFloorSENS5} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
             }
             else
             {
+                //ElevatorActualFloorSENS5 == false //zde toto nejspis ANO
+                program1FormInstance.ElevatorActualFloorSENS5 = false;
+                S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 7, program1FormInstance.ElevatorActualFloorSENS5);
+
+                //write to PLC
+                int writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
+                if (writeResultDB4_ElevatorActualFloorSENS5 != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                            $"Error message: writeResultDB4_ElevatorActualFloorSENS5 = {writeResultDB4_ElevatorActualFloorSENS5} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                }
+
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
@@ -258,160 +488,30 @@ namespace Bc_prace.Controls
         {
             if (OnElevatorFloorBTNClick != null)
                 OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
-
-            //toto se bude dít v Program1Form
-            /*
-            program1FormInstance.ElevatorBTNFloor1 = true;
-            S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 5, program1FormInstance.ElevatorBTNFloor1);
-
-            //write to PLC
-            int writeResultDB4_btnElevatorFloor1 = program1FormInstance.client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
-            if (writeResultDB4_btnElevatorFloor1 != 0)
-            {
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: writeResultDB4_btnElevatorFloor1 = {writeResultDB4_btnElevatorFloor1} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-            else
-            {
-                //write was successful
-            }
-            */
         }
 
         private void btnElevatorFloor2_Click(object sender, EventArgs e)
         {
             if (OnElevatorFloorBTNClick != null)
                 OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
-
-            //toto se bude dít v Program1Form
-            /*
-            program1FormInstance.ElevatorBTNFloor2 = true;
-            S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 6, program1FormInstance.ElevatorBTNFloor2);
-
-            //write to PLC
-            int writeResultDB4_btnElevatorFloor2 = program1FormInstance.client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
-            if (writeResultDB4_btnElevatorFloor2 != 0)
-            {
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: writeResultDB4_btnElevatorFloor2 = {writeResultDB4_btnElevatorFloor2} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-            else
-            {
-                //write was successful
-            }
-            */
         }
 
         private void btnElevatorFloor3_Click(object sender, EventArgs e)
         {
             if (OnElevatorFloorBTNClick != null)
                 OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
-
-            //toto se bude dít v Program1Form
-            /*
-            program1FormInstance.ElevatorBTNFloor3 = true;
-            S7.SetBitAt(program1FormInstance.send_buffer_DB4, 0, 7, program1FormInstance.ElevatorBTNFloor3);
-
-            //write to PLC
-            int writeResultDB4_btnElevatorFloor3 = program1FormInstance.client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
-            if (writeResultDB4_btnElevatorFloor3 != 0)
-            {
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: writeResultDB4_btnElevatorFloor3 = {writeResultDB4_btnElevatorFloor3} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-            else
-            {
-                //write was successful
-            }
-            */
         }
 
         private void btnElevatorFloor4_Click(object sender, EventArgs e)
         {
             if (OnElevatorFloorBTNClick != null)
                 OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
-
-            //toto se bude dít v Program1Form
-            /*
-            program1FormInstance.ElevatorBTNFloor4 = true;
-            S7.SetBitAt(program1FormInstance.send_buffer_DB4, 1, 0, program1FormInstance.ElevatorBTNFloor4);
-
-            //write to PLC
-            int writeResultDB4_btnElevatorFloor4 = program1FormInstance.client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
-            if (writeResultDB4_btnElevatorFloor4 != 0)
-            {
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
-                        $"Error message: writeResultDB4_btnElevatorFloor4 = {writeResultDB4_btnElevatorFloor4} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-            else
-            {
-                //write was successful
-            }
-            */
         }
 
         private void btnElevatorFloor5_Click(object sender, EventArgs e)
         {
             if (OnElevatorFloorBTNClick != null)
                 OnElevatorFloorBTNClick(sender, ((Button)sender).Text);
-
-            //toto se bude dít v Program1Form
-            /*
-            program1FormInstance.ElevatorBTNFloor5 = true;
-            S7.SetBitAt(program1FormInstance.send_buffer_DB4, 1, 1, program1FormInstance.ElevatorBTNFloor5);
-
-            //write to PLC
-            int writeResultDB4_btnElevatorFloor5 = program1FormInstance.client.DBWrite(program1FormInstance.DBNumber_DB4, 0, program1FormInstance.send_buffer_DB4.Length, program1FormInstance.send_buffer_DB4);
-            if (writeResultDB4_btnElevatorFloor5 != 0)
-            {
-                //write error
-                if (!errorMessageBoxShown)
-                {
-                    //MessageBox
-                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
-                        $"Error message: writeResultDB4_btnElevatorFloor5 = {writeResultDB4_btnElevatorFloor5} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
-                }
-            }
-            else
-            {
-                //write was successful
-            }
-            */
         }
 
         #endregion
@@ -497,17 +597,19 @@ namespace Bc_prace.Controls
 
         public void ElevatorActualFloorLED1Signalization(bool state) //LED and BTN light ON
         {
+            //var g = e.Graphics;
+
             if (state)
             {
                 //zapnout
-                //var g = e.Graphics;
-
                 //g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
             }
             else
             {
                 //vypnout
+                //g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Gray;
             }
 
 
@@ -520,14 +622,12 @@ namespace Bc_prace.Controls
             if (state)
             {
                 //zapnout
-                                
                 //g.FillEllipse(green, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
             }
             else
             {
                 //vypnout
-
                 //g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
             }
@@ -541,14 +641,12 @@ namespace Bc_prace.Controls
             if (state)
             {
                 //zapnout
-                
                 //g.FillEllipse(green, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;    
             }
             else
             {
                 //vypnout
-              
                 //g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor3.FlatAppearance.BorderColor = Color.Gray;
             }
@@ -562,14 +660,12 @@ namespace Bc_prace.Controls
             if (state)
             {
                 //zapnout
-                               
                 //g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
             }
             else
             {
                 //vypnout 
-
                 //g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray;
             }
@@ -583,14 +679,12 @@ namespace Bc_prace.Controls
             if (state)
             {
                 //zapnout
-                                
                 //g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
             }
             else
             {
                 //vypnout
-
                 //g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
             }
