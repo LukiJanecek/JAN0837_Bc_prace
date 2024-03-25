@@ -103,7 +103,7 @@ namespace Bc_prace
         public int ElevatorTimeToGetDown; //time
 
         #endregion
-                
+
         //Variables cabin movement step 
         public int ElevatorStep = 10;
 
@@ -306,8 +306,8 @@ namespace Bc_prace
                 ElevatorBTNFloor5 = chooseOptionFormInstance.ElevatorBTNFloor5; //no need to make a condition if true
                 ElevatorDoorSEQ = chooseOptionFormInstance.ElevatorDoorSEQ; //no need to make a condition if true
                 ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE; //no need to make a condition if true
-                ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP; 
-                ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem; 
+                ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
+                ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
 
                 #endregion
 
@@ -632,8 +632,8 @@ namespace Bc_prace
 
                 if (ElevatorDoorClOSE)
                 {
-                    CloseDOOR(ElevatorTimeDoorSQCLOSE); 
-                } 
+                    CloseDOOR(ElevatorTimeDoorSQCLOSE);
+                }
 
                 if (ElevatorDoorOPEN)
                 {
@@ -642,20 +642,32 @@ namespace Bc_prace
 
                 if (ElevatorEmergencySTOP)
                 {
-                    btnCabinEmergency_Click(this, EventArgs.Empty);
+                    statusStripElevator.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
+                    statusStripElevator.Items.Add(lblStatus);
+
+                    //write emergency status 
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Emergency mode activated. \r\n \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 if (ElevatorErrorSystem)
                 {
-                    //toto je blbě, musí tady být řádná chybová hláška 
-                    
-                    ErrorSystem();
+                    statusStripElevator.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+                    statusStripElevator.Items.Add(lblStatus);
 
                     //write error
                     if (!errorMessageBoxShown)
                     {
                         //MessageBox
-                        MessageBox.Show("Error system is true. \n\n", "Error",
+                        MessageBox.Show("Error system is true. There is an error in the process. \r\n \n\n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
                         errorMessageBoxShown = true;
@@ -1054,7 +1066,7 @@ namespace Bc_prace
         }
 
         #endregion
-        
+
         //BTN cabin 
         #region BTN cabin Click
         private void btnCabinFloor1_Click(object sender, EventArgs e)
@@ -1262,10 +1274,32 @@ namespace Bc_prace
         #region Emergency + system error
         private void btnCabinEmergency_Click(object sender, EventArgs e)
         {
-            statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
-            statusStripElevator.Items.Add(lblStatus);
+            ElevatorEmergencySTOP = true;
+            S7.SetBitAt(send_buffer_DB4, 1, 4, ElevatorEmergencySTOP);
 
+            //write to PLC
+            int writeResultDB4_Emergency = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_Emergency != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_Emergency = {writeResultDB4_Emergency} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+            }
+        }
+
+        private void btnGlobalEmergency_Click(object sender, EventArgs e)
+        {
             ElevatorEmergencySTOP = true;
             S7.SetBitAt(send_buffer_DB4, 1, 4, ElevatorEmergencySTOP);
 
@@ -1292,10 +1326,6 @@ namespace Bc_prace
 
         private void ErrorSystem()
         {
-            statusStripElevator.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
-            statusStripElevator.Items.Add(lblStatus);
-
             ElevatorErrorSystem = true;
             S7.SetBitAt(send_buffer_DB4, 1, 5, ElevatorErrorSystem);
 
@@ -1405,5 +1435,6 @@ namespace Bc_prace
 
         #endregion
 
+        
     }
 }

@@ -370,12 +370,36 @@ namespace Bc_prace
 
                 if (CarWashEmergencySTOP)
                 {
-                    btnEmergency_Click(this, EventArgs.Empty);
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    //write emergency status 
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Emergency mode activated. \r\n \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 if (CarWashErrorSystem)
                 {
-                    ErrorSystem();
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Error system is true. There is an error in the process. \r\n \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 //toto asi nebude fungvat 
@@ -558,7 +582,7 @@ namespace Bc_prace
         #endregion
 
         //MoveCarToNextPoint
-        #region
+        #region MoveCarToNextPoint
 
         private void btnMoveCarToNextPoint_Click(object sender, EventArgs e)
         {
@@ -611,10 +635,6 @@ namespace Bc_prace
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
         {
-            statusStripCarWash.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
-            statusStripCarWash.Items.Add(lblStatus);
-
             CarWashEmergencySTOP = true;
             S7.SetBitAt(send_buffer_DB5, 0, 0, CarWashEmergencySTOP);
 
@@ -641,10 +661,6 @@ namespace Bc_prace
 
         private void ErrorSystem()
         {
-            statusStripCarWash.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
-            statusStripCarWash.Items.Add(lblStatus);
-
             CarWashErrorSystem = true;
             S7.SetBitAt(send_buffer_DB5, 0, 1, CarWashErrorSystem);
 

@@ -1694,12 +1694,36 @@ namespace Bc_prace
 
                 if (CrossroadEmergencySTOP)
                 {
-                    btnEmergency_Click(this, EventArgs.Empty);
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency mode activated");
+                    statusStripCrossroad.Items.Add(lblStatus);
+
+                    //write emergency status 
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Emergency mode activated. \r\n \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 if (CrossroadErrorSystem)
                 {
-                    ErrorSystem();
+                    statusStripCrossroad.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
+                    statusStripCrossroad.Items.Add(lblStatus);
+
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("Error system is true. There is an error in the process. \r\n \n\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
                 }
 
                 //I never get into this condition!!!
@@ -2725,10 +2749,6 @@ namespace Bc_prace
         #region Emergency + system error 
         private void btnEmergency_Click(object sender, EventArgs e)
         {
-            statusStripCrossroad.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Emergency error");
-            statusStripCrossroad.Items.Add(lblStatus);
-
             CrossroadEmergencySTOP = true;
             S7.SetBitAt(send_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
 
@@ -2755,10 +2775,6 @@ namespace Bc_prace
 
         private void ErrorSystem()
         {
-            statusStripCrossroad.Items.Clear();
-            ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error system");
-            statusStripCrossroad.Items.Add(lblStatus);
-
             CrossroadErrorSystem = true;
             S7.SetBitAt(send_buffer_DB14, 0, 4, CrossroadErrorSystem);
 
