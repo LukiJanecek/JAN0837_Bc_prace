@@ -344,8 +344,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Inner situation signalization
-        #region Inner situation signalization
+        //Inner cycle signalization
+        #region Inner cycle signalization
         public void PreWashON()
         {
             var g = this.CreateGraphics();

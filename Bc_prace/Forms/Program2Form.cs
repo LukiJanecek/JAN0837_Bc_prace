@@ -436,7 +436,7 @@ namespace Bc_prace
                 else
                 {
                     statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Error! Car should move.");
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car should move.");
                     statusStripCarWash.Items.Add(lblStatus);
                 }
 
@@ -483,7 +483,6 @@ namespace Bc_prace
                 else
                 {
                     userControlCarWash1.WaxSignalizationOFF();
-
                 }
 
                 //ActiveFoam
