@@ -47,43 +47,45 @@ namespace Bc_prace
         #endregion
 
         //MaintainDB variables
-        bool Option2 = false;
+        public bool Option2 = false;
 
         //Input variables
         #region Input variables
 
-        bool CarWashEmergencySTOP;
-        bool CarWashErrorSystem;
-        bool CarWashStartCarWash;
-        bool CarWashWaitingForIncomingCar;
-        bool CarWashWaitingForOutgoingCar;
-        bool CarWashPerfetWash;
-        bool CarWashPerfectPolish;
+        public bool CarWashEmergencySTOP;
+        public bool CarWashErrorSystem;
+        public bool CarWashStartCarWash;
+        public bool CarWashWaitingForIncomingCar;
+        public bool CarWashWaitingForOutgoingCar;
+        public bool CarWashPerfectWash;
+        public bool CarWashPerfectPolish;
 
         #endregion
 
         //Output variables 
         #region Output variables 
 
-        bool CarWashPositionShower;
-        bool CarWashPositionCar;
-        bool CarWashGreenLight;
-        bool CarWashRedLight;
-        bool CarWashYellowLight;
-        bool CarWashDoor1UP;
-        bool CarWashDoor1DOWN;
-        bool CarWashDoor2UP;
-        bool CarWashDoor2DOWN;
-        bool CarWashWater;
-        bool CarWashWashingChemicalsFRONT;
-        bool CarWashWashingChemicalsSIDES;
-        bool CarWashWashingChemicalsBACK;
-        bool CarWashWax;
-        bool CarWashVarnishProtection;
-        bool CarWashDry;
-        bool CarWashSoap;
-        bool CarWashActiveFoam;
-        bool CarWashBrushes;
+        public bool CarWashPositionShower;
+        public bool CarWashPositionCar;
+        public bool CarWashGreenLight;
+        public bool CarWashRedLight;
+        public bool CarWashYellowLight;
+        public bool CarWashDoor1UP;
+        public bool CarWashDoor1DOWN;
+        public bool CarWashDoor2UP;
+        public bool CarWashDoor2DOWN;
+        public bool CarWashWater;
+        public bool CarWashWashingChemicalsFRONT;
+        public bool CarWashWashingChemicalsSIDES;
+        public bool CarWashWashingChemicalsBACK;
+        public bool CarWashWax;
+        public bool CarWashVarnishProtection;
+        public bool CarWashDry;
+        public bool CarWashSoap;
+        public bool CarWashActiveFoam;
+        public bool CarWashBrushes;
+        public bool CarwashPrewash;
+
 
         #endregion
 
@@ -136,7 +138,7 @@ namespace Bc_prace
                 CarWashStartCarWash = chooseOptionFormInstance.CarWashStartCarWash; //no need to make a condition if true
                 CarWashWaitingForIncomingCar = chooseOptionFormInstance.CarWashWaitingForIncomingCar; //? 
                 CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar; //?
-                CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash; //no need to make a condition if true
+                CarWashPerfectWash = chooseOptionFormInstance.CarWashPerfetWash; //no need to make a condition if true
                 CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish; //no need to make a condition if true
 
                 #endregion
@@ -163,6 +165,7 @@ namespace Bc_prace
                 CarWashSoap = chooseOptionFormInstance.CarWashSoap;
                 CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
                 CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
+                CarwashPrewash = chooseOptionFormInstance.CarWashPreWash;
 
                 #endregion
 
@@ -525,6 +528,16 @@ namespace Bc_prace
                 {
                     userControlCarWash1.DryingSignalizationOFF();
 
+                }
+
+                //PreWash
+                if (CarwashPrewash)
+                {
+                    userControlCarWash1.PreWashON();
+                }
+                else
+                {
+                    userControlCarWash1.PreWashOFF();
                 }
 
                 #endregion

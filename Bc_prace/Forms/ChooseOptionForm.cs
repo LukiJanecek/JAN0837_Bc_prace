@@ -50,10 +50,10 @@ namespace Bc_prace
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
-        public byte[] read_buffer_DB5 = new byte[4]; //3
+        public byte[] read_buffer_DB5 = new byte[5]; //3
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
-        public byte[] send_buffer_DB5 = new byte[4]; //3
+        public byte[] send_buffer_DB5 = new byte[5]; //3
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
@@ -215,6 +215,7 @@ namespace Bc_prace
         public bool CarWashSoap;
         public bool CarWashActiveFoam;
         public bool CarWashBrushes;
+        public bool CarWashPreWash;
 
         #endregion
 
@@ -655,6 +656,7 @@ namespace Bc_prace
                         CarWashWax = S7.GetBitAt(read_buffer_DB5, 3, 5);
                         CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 6);
                         CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 7);
+                        CarWashPreWash = S7.GetBitAt(read_buffer_DB5, 4, 0);
 
                         #endregion
 
