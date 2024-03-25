@@ -119,8 +119,8 @@ namespace Bc_prace
             }
         }
 
-        //Tia connection
-        #region Tia connection
+        //Reading variables + actions on variable value
+        #region Reading variables + actions on variable value
 
         private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
@@ -365,8 +365,8 @@ namespace Bc_prace
 
                 */
 
-                //Action on variable change (if == true)
-                #region Action on variable change (if == true)
+                //Action on variable value
+                #region Action on variable value
 
                 if (CarWashEmergencySTOP)
                 {
@@ -543,8 +543,6 @@ namespace Bc_prace
                     errorMessageBoxShown = true;
                 }
             }
-
-
         }
 
         #endregion
@@ -687,7 +685,7 @@ namespace Bc_prace
 
         #endregion
 
-        //btn End 
+        //BTN End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {

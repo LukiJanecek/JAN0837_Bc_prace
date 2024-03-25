@@ -282,8 +282,8 @@ namespace Bc_prace
             }
         }
 
-        //Tia connection
-        #region Tia connection
+        //Reading variables + actions on variable value
+        #region Reading variables + actions on variable value
 
         private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
@@ -617,18 +617,8 @@ namespace Bc_prace
 
                 */
 
-                //Action on variable change (if == true)
-                #region Action on variable change (if == true)
-
-                if (ElevatorDoorSEQ) //toto podle me neni potreba
-                {
-
-                }
-
-                if (ElevatorBTNOPENCLOSE) //toto podle me neni potreba
-                {
-
-                }
+                //Action on variable value
+                #region Action on variable value           
 
                 if (ElevatorDoorClOSE)
                 {
@@ -673,8 +663,6 @@ namespace Bc_prace
                         errorMessageBoxShown = true;
                     }
                 }
-
-                //pohyb výtahu musí být postaven na ElevatorGoToFloor a ElevatorActualFloor
 
                 //Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
                 #region Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
@@ -856,66 +844,6 @@ namespace Bc_prace
 
                 #endregion
 
-                //ElevatorCabinBTN
-                #region ElevatorCabinBTN
-                /*
-                if (ElevatorBTNCabin1)
-                {
-                    Floor1movement();
-                }
-                else if (ElevatorBTNCabin2)
-                {
-                    Floor2movement();
-                }
-                else if (ElevatorBTNCabin3)
-                {
-                    Floor3movement();
-                }
-                else if (ElevatorBTNCabin4)
-                {
-                    Floor4movement();
-                }
-                else if (ElevatorBTNCabin5)
-                {
-                    Floor5movement();
-                }
-                else
-                {
-                    //waiting for BTN push
-                }
-                */
-                #endregion
-
-                //ElevatorFloorBTN
-                #region ElevatorFloorBTN
-                /*
-                if (ElevatorBTNFloor1)
-                {
-                    Floor1movement();
-                }
-                else if (ElevatorBTNFloor2)
-                {
-                    Floor2movement();
-                }
-                else if (ElevatorBTNFloor3)
-                {
-                    Floor3movement();
-                }
-                else if (ElevatorBTNFloor4)
-                {
-                    Floor4movement();
-                }
-                else if (ElevatorBTNFloor5)
-                {
-                    Floor5movement();
-                }
-                else
-                {
-                    //waiting for BTN push
-                }
-                */
-                #endregion
-
                 //ElevatorActualFloorLED
                 #region ElevatorActualFloorLED
 
@@ -1035,16 +963,6 @@ namespace Bc_prace
                 }
 
                 #endregion
-
-                if (ElevatorDoorClOSE)
-                {
-
-                }
-
-                if (ElevatorDoorOPEN)
-                {
-
-                }
 
                 #endregion
 
@@ -1212,7 +1130,7 @@ namespace Bc_prace
 
         //Cabin door movement 
         #region Cabin doors movement
-        private async void btnCabinDoorOPENCLOSE_Click(object sender, EventArgs e)
+        private void btnCabinDoorOPENCLOSE_Click(object sender, EventArgs e)
         {
             ElevatorBTNOPENCLOSE = true;
             S7.SetBitAt(send_buffer_DB4, 1, 3, ElevatorBTNOPENCLOSE);
@@ -1238,7 +1156,7 @@ namespace Bc_prace
             }
         }
 
-        private async void CloseDOOR(int time)
+        private void CloseDOOR(int time)
         {
             ToolStripStatusLabel lblStatus;
 
@@ -1253,7 +1171,7 @@ namespace Bc_prace
             statusStripElevator.Items.Add(lblStatus);
         }
 
-        private async void OpenDOOR(int time)
+        private void OpenDOOR(int time)
         {
             ToolStripStatusLabel lblStatus;
 
@@ -1352,7 +1270,7 @@ namespace Bc_prace
 
         #endregion
 
-        //btn End 
+        //BTN End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {
@@ -1435,6 +1353,5 @@ namespace Bc_prace
 
         #endregion
 
-        
     }
 }

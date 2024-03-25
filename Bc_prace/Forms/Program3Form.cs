@@ -621,8 +621,8 @@ namespace Bc_prace
             }
         }
 
-        //Tia connection
-        #region Tia connection
+        //Reading variables + actions on variable value
+        #region Reading variables + actions on variable value
 
         private void Timer_read_actual_Tick(object sender, EventArgs e)
         {
@@ -1689,8 +1689,8 @@ namespace Bc_prace
 
                 */
 
-                //Action on variable change (if == true) + lights change
-                #region Action on variable change (if == true) + lights change
+                //Action on variable value
+                #region Action on variable value
 
                 if (CrossroadEmergencySTOP)
                 {
@@ -1726,7 +1726,7 @@ namespace Bc_prace
                     }
                 }
 
-                //I never get into this condition!!!
+                //I never get into this condition!!! -> test me pls
                 //Lights change
                 if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
                 {
@@ -2801,7 +2801,7 @@ namespace Bc_prace
 
         #endregion
 
-        //btn End 
+        //BTN End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {
