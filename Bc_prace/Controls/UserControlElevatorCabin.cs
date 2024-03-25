@@ -92,100 +92,105 @@ namespace Bc_prace.Controls
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
 
-            //ElevatorCabin
+            //ElevatorCabin -> starts on the top floor
             g.DrawRectangle(BlackPen, xCabin + 50, yCabin + 20, widthCabin + 50, lengthCabin + 80);
 
             //Floors and labels
-            //1st floor
-            g.DrawLine(BlackPen, x, y + length, x + length * 3, y + length);
-            string lblFirstFloor = "1st floor";
-            g.DrawString(lblFirstFloor, labelFont, labelBrush, x, y + length - length / 2);
-            //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            #region Floors and labels
 
+            //1st floor
+            g.DrawLine(BlackPen, x, y + length * 5, x + length * 3, y + length * 5); 
+            string lblFirstFloor = "1st floor";
+            g.DrawString(lblFirstFloor, labelFont, labelBrush, x, y + length * 5 - length / 2); 
+            //ActualFloorLEDSig
+            g.DrawEllipse(BlackPen, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
 
             //2nd floor
-            g.DrawLine(BlackPen, x, y + length * 2, x + length * 3, y + length * 2);
+            g.DrawLine(BlackPen, x, y + length * 4, x + length * 3, y + length * 4); 
             string lblSecondFloor = "2nd floor";
-            g.DrawString(lblSecondFloor, labelFont, labelBrush, x, y + length * 2 - length / 2);
+            g.DrawString(lblSecondFloor, labelFont, labelBrush, x, y + length * 4 - length / 2); 
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-
+            g.DrawEllipse(BlackPen, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
 
             //3rd floor
             g.DrawLine(BlackPen, x, y + length * 3, x + length * 3, y + length * 3);
             string lblThirdFloor = "3rd floor";
             g.DrawString(lblThirdFloor, labelFont, labelBrush, x, y + length * 3 - length / 2);
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-
+            g.DrawEllipse(BlackPen, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //4th floor
-            g.DrawLine(BlackPen, x, y + length * 4, x + length * 3, y + length * 4);
+            g.DrawLine(BlackPen, x, y + length * 2, x + length * 3, y + length * 2); 
             string lblFourthFloor = "4th floor";
-            g.DrawString(lblFourthFloor, labelFont, labelBrush, x, y + length * 4 - length / 2);
+            g.DrawString(lblFourthFloor, labelFont, labelBrush, x, y + length * 2 - length / 2); 
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-
+            g.DrawEllipse(BlackPen, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
 
             //5th floor
-            g.DrawLine(BlackPen, x, y + length * 5, x + length * 3, y + length * 5);
+            g.DrawLine(BlackPen, x, y + length, x + length * 3, y + length); 
             string lblFifthFloor = "5th floor";
-            g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length * 5 - length / 2);
+            g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length - length / 2); 
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
+
+            #endregion
 
             //Conditions based ond object position
             #region Conditions based ond object position
 
             //Cabin is on 1st floor
-            if (yCabin == y + length)
+            if (yCabin == y + length * 5)
             {
-                //ElevatorActualFloorSENS1 == true
+                //ElevatorActualFloorSENS1 == true //zde toto nejspis ANO
             }
             else
             {
-                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //LED off je řešen i v rámci ošetření všech stavů
+                g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 2st floor
-            if (yCabin == y + length * 2)
+            if (yCabin == y + length * 4)
             {
-                //ElevatorActualFloorSENS2 == true
+                //ElevatorActualFloorSENS2 == true //zde toto nejspis ANO
             }
             else
             {
-                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //LED off je řešen i v rámci ošetření všech stavů
+                g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 3rd floor
             if (yCabin == y + length * 3)
             {
-                //ElevatorActualFloorSENS3 == true
+                //ElevatorActualFloorSENS3 == true //zde toto nejspis ANO
             }
             else
             {
-                g.FillEllipse(white, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //LED off je řešen i v rámci ošetření všech stavů
+                g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 4th floor
-            if (yCabin == y + length * 4)
+            if (yCabin == y + length * 2)
             {
-                //ElevatorActualFloorSENS4 == true
+                //ElevatorActualFloorSENS4 == true //zde toto nejspis ANO
             }
             else
             {
-                g.FillEllipse(white, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //LED off je řešen i v rámci ošetření všech stavů
+                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 5th floor
-            if (yCabin == y + length * 5)
+            if (yCabin == y + length * 1)
             {
-                //ElevatorActualFloorSENS5 == true
+                //ElevatorActualFloorSENS5 == true //zde toto nejspis ANO
             }
             else
             {
-                g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //LED off je řešen i v rámci ošetření všech stavů
+                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion
@@ -201,7 +206,7 @@ namespace Bc_prace.Controls
             btnElevatorFloor1.BackColor = Color.White;
             btnElevatorFloor1.Visible = true;
             btnElevatorFloor1.Enabled = true;
-            btnElevatorFloor1.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2)); //cannot invert float to int 
+            btnElevatorFloor1.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 4)); //cannot invert float to int 
             btnElevatorFloor1.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor1.Click += btnElevatorFloor1_Click;
             Controls.Add(btnElevatorFloor1);
@@ -210,7 +215,7 @@ namespace Bc_prace.Controls
             btnElevatorFloor2.BackColor = Color.White;
             btnElevatorFloor2.Visible = true;
             btnElevatorFloor2.Enabled = true;
-            btnElevatorFloor2.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length)); //cannot invert float to int 
+            btnElevatorFloor2.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 3)); //cannot invert float to int 
             btnElevatorFloor2.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor2.Click += btnElevatorFloor2_Click;
             Controls.Add(btnElevatorFloor2);
@@ -228,7 +233,8 @@ namespace Bc_prace.Controls
             btnElevatorFloor4.BackColor = Color.White;
             btnElevatorFloor4.Visible = true;
             btnElevatorFloor4.Enabled = true;
-            btnElevatorFloor4.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 3)); //cannot invert float to int 
+
+            btnElevatorFloor4.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length)); //cannot invert float to int 
             btnElevatorFloor4.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor4.Click += btnElevatorFloor4_Click;
             Controls.Add(btnElevatorFloor4);
@@ -237,7 +243,7 @@ namespace Bc_prace.Controls
             btnElevatorFloor5.BackColor = Color.White;
             btnElevatorFloor5.Visible = true;
             btnElevatorFloor5.Enabled = true;
-            btnElevatorFloor5.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2 + length * 4)); //cannot invert float to int 
+            btnElevatorFloor5.Location = new System.Drawing.Point(Convert.ToInt32(length + length / 2), Convert.ToInt32(length / 2)); //cannot invert float to int 
             btnElevatorFloor5.Size = new Size(Convert.ToInt32(widthButton), Convert.ToInt32(heightButton)); //cannot invert float to int 
             btnElevatorFloor5.Click += btnElevatorFloor5_Click;
             Controls.Add(btnElevatorFloor5);
@@ -246,7 +252,7 @@ namespace Bc_prace.Controls
         #endregion
 
         //Methods for Cabin and Floor BTN action
-        #region Methods for Cabin and Floor BTN action
+        #region Methods for Floor BTN action
 
         private void btnElevatorFloor1_Click(object sender, EventArgs e)
         {
@@ -487,51 +493,108 @@ namespace Bc_prace.Controls
         #endregion
 
         //ActualFloorSig
-        #region ActualFloorSig
+        #region ActualFloorSignalization
 
-        public void ActualFloorLED1Sig()
+        public void ElevatorActualFloorLED1Signalization(bool state) //LED and BTN light ON
         {
-            //var g = _;
+            if (state)
+            {
+                //zapnout
+                //var g = e.Graphics;
 
-            //g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-            btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
+                //g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                //vypnout
+            }
+
 
             this.Refresh();
         }
-        public void ActualFloorLED2Sig()
+        public void ElevatorActualFloorLED2Signalization(bool state) //LED and BTN light ON
         {
-            //var g = _;
+            //var g = e.Graphics;
 
-            //g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-            btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+            if (state)
+            {
+                //zapnout
+                                
+                //g.FillEllipse(green, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                //vypnout
+
+                //g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
+            }
 
             this.Refresh();
         }
-        public void ActualFloorLED3Sig()
+        public void ElevatorActualFloorLED3Signalization(bool state) //LED and BTN light ON
         {
-            //var g = _;
+            //var g = e.Graphics;
 
-            //g.FillEllipse(green, x + 5 - 15, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-            btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;
+            if (state)
+            {
+                //zapnout
+                
+                //g.FillEllipse(green, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;    
+            }
+            else
+            {
+                //vypnout
+              
+                //g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Gray;
+            }
 
             this.Refresh();
         }
-        public void ActualFloorLED4Sig()
+        public void ElevatorActualFloorLED4Signalization(bool state) //LED and BTN light ON
         {
-            //var g = _;
+            //var g = e.Graphics;
 
-            //g.FillEllipse(green, x + 5 - 15, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-            btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
+            if (state)
+            {
+                //zapnout
+                               
+                //g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                //vypnout 
+
+                //g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray;
+            }
 
             this.Refresh();
         }
-        public void ActualFloorLED5Sig()
+        public void ElevatorActualFloorLED5Signalization(bool state) //LED and BTN light ON
         {
-            //var g = _;
+            //var g = e.Graphics;
 
-            //g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-            btnElevatorFloor5.FlatAppearance.BorderColor = Color.Blue;
+            if (state)
+            {
+                //zapnout
+                                
+                //g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                //vypnout
 
+                //g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
+            }
+            
             this.Refresh();
         }
 

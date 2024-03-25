@@ -836,6 +836,7 @@ namespace Bc_prace
 
                 //ElevatorCabinBTN
                 #region ElevatorCabinBTN
+                /*
                 if (ElevatorBTNCabin1)
                 {
                     Floor1movement();
@@ -860,10 +861,12 @@ namespace Bc_prace
                 {
                     //waiting for BTN push
                 }
+                */
                 #endregion
 
                 //ElevatorFloorBTN
                 #region ElevatorFloorBTN
+                /*
                 if (ElevatorBTNFloor1)
                 {
                     Floor1movement();
@@ -888,6 +891,7 @@ namespace Bc_prace
                 {
                     //waiting for BTN push
                 }
+                */
                 #endregion
 
                 //ElevatorActualFloorLED
@@ -895,27 +899,57 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorLED1)
                 {
-                    userControlElevatorCabin1.ActualFloorLED1Sig();
+                    //zapnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(true);
+                }
+                else
+                {
+                    //vypnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(false);
                 }
 
                 if (ElevatorActualFloorLED2)
                 {
-                    userControlElevatorCabin1.ActualFloorLED2Sig();
+                    //zapnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(true);
+                }
+                else
+                {
+                    //vypnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(false);
                 }
 
                 if (ElevatorActualFloorLED3)
                 {
-                    userControlElevatorCabin1.ActualFloorLED3Sig();
+                    //zapnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(true);
+                }
+                else
+                {
+                    //vypnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(false);
                 }
 
                 if (ElevatorActualFloorLED4)
                 {
-                    userControlElevatorCabin1.ActualFloorLED4Sig();
+                    //zapnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(true);
+                }
+                else
+                {
+                    //vypnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(false);
                 }
 
                 if (ElevatorActualFloorLED5)
                 {
-                    userControlElevatorCabin1.ActualFloorLED5Sig();
+                    //zapnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(true);
+                }
+                else
+                {
+                    //vypnout
+                    userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(false);
                 }
 
                 #endregion
@@ -925,57 +959,57 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorCabinLED1)
                 {
+                    //zapnout
                     btnCabinFloor1.FlatAppearance.BorderColor = Color.Blue;
+                }
+                else
+                {
+                    //vypnout
+                    btnCabinFloor1.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED2)
                 {
+                    //zapnout
                     btnCabinFloor2.FlatAppearance.BorderColor = Color.Blue;
+                }
+                else
+                {
+                    //vypnout
+                    btnCabinFloor2.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED3)
                 {
+                    //zapnout
                     btnCabinFloor3.FlatAppearance.BorderColor = Color.Blue;
+                }
+                else
+                {
+                    //vypnout
+                    btnCabinFloor3.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED4)
                 {
+                    //zapnout
                     btnCabinFloor4.FlatAppearance.BorderColor = Color.Blue;
+                }
+                else
+                {
+                    //vypnout
+                    btnCabinFloor4.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED5)
                 {
+                    //zapnout
                     btnCabinFloor5.FlatAppearance.BorderColor = Color.Blue;
                 }
-
-                #endregion
-
-                //ElevatorActualFloorSENS => not needed => realized in Tia
-                #region ElevatorActualFloorSENS
-
-                if (ElevatorActualFloorSENS1)
+                else
                 {
-                    userControlElevatorCabin1.ActualFloorLED1Sig();
-                }
-
-                if (ElevatorActualFloorSENS2)
-                {
-                    userControlElevatorCabin1.ActualFloorLED2Sig();
-                }
-
-                if (ElevatorActualFloorSENS3)
-                {
-                    userControlElevatorCabin1.ActualFloorLED3Sig();
-                }
-
-                if (ElevatorActualFloorSENS4)
-                {
-                    userControlElevatorCabin1.ActualFloorLED4Sig();
-                }
-
-                if (ElevatorActualFloorSENS5)
-                {
-                    userControlElevatorCabin1.ActualFloorLED5Sig();
+                    //vypnout
+                    btnCabinFloor5.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 #endregion
@@ -1159,7 +1193,7 @@ namespace Bc_prace
 
         //btn Floor
         #region btn floor => cabin movement 
-
+        /*
         private void btnFloor1_Click(object sender, EventArgs e)
         {
             Floor1movement();
@@ -1184,11 +1218,13 @@ namespace Bc_prace
         {
             Floor5movement();
         }
-
+        */
         #endregion
 
         //Move to Floor 
         #region Move to floor 
+
+        /*
 
         #region Move to floor 1
         private async void Floor1movement()
@@ -1537,6 +1573,8 @@ namespace Bc_prace
         }
         #endregion
 
+        */
+
         #endregion
 
         #endregion
@@ -1672,8 +1710,8 @@ namespace Bc_prace
         }
         #endregion
 
-        //ElevatorCabin - parametets and position
-        #region ElevatorCabin - parameters and position
+        //ElevatorCabin - cabin size parameters and position
+        #region ElevatorCabin - cabin size parameters and position
 
         //Movement
         #region Movement
@@ -1698,8 +1736,8 @@ namespace Bc_prace
         }
         #endregion
 
-        //Cabin parameters
-        #region Parameters
+        //Cabin size parameters
+        #region Cabin size parameters
         private void btnCabinWidthSmaller_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.WidthSmaller();
