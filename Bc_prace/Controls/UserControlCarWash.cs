@@ -103,10 +103,16 @@ namespace Bc_prace.Controls
 
         private void UserControlCarWash_Paint(object? sender, PaintEventArgs e)
         {
+            /*
+            if (program2FormInstance == null)
+                return;
+            */
             var g = e.Graphics;
 
             //background
             g.Clear(Color.White);
+
+            Draw(g);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
@@ -270,6 +276,18 @@ namespace Bc_prace.Controls
             g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2 + arrowLength / 2, rightArrowX + arrowLength * 3, rightArrowY + arrowLength + arrowLength / 2);
 
             #endregion
+        }
+
+        private void Draw(Graphics g)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
         }
 
         //Methods for reaction on Tia variable change 

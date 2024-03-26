@@ -85,6 +85,8 @@ namespace Bc_prace.Controls
             //backgroud
             g.Clear(Color.White);
 
+            Draw(g);
+
             //pen color
             Pen BlackPen = new Pen(Color.Black);
 
@@ -424,6 +426,18 @@ namespace Bc_prace.Controls
             }
 
             #endregion
+        }
+
+        private void Draw(Graphics g)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
         }
 
         //InitializeButtons

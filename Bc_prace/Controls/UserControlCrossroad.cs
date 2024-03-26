@@ -1518,6 +1518,8 @@ namespace Bc_prace.Controls
             //background
             g.Clear(Color.Black);
 
+            Draw(g);
+
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
             Pen WhitePen = new Pen(Color.White, 2);
@@ -5721,6 +5723,18 @@ namespace Bc_prace.Controls
             #endregion
 
             Invalidate();
+        }
+
+        private void Draw(Graphics g)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
         }
 
         //InitializeButtons

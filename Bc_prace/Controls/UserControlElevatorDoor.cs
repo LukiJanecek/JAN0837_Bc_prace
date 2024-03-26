@@ -56,10 +56,16 @@ namespace Bc_prace.Controls
 
         private void UserControlElevatorDoor_Paint(object sender, PaintEventArgs e)
         {
+            /*
+            if (program1FormInstance == null)
+                return;
+            */
             var g = e.Graphics;
 
             //backgroud
             g.Clear(Color.White);
+
+            Draw(g);
 
             //pen color
             Pen BlackPen = new Pen(Color.Black);
@@ -81,6 +87,18 @@ namespace Bc_prace.Controls
             //RightDoor
             g.DrawRectangle(BlackPen, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
             g.FillRectangle(gray, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
+        }
+
+        private void Draw(Graphics g)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+
+            }
         }
 
         //Methods for door movement
