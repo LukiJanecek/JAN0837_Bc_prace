@@ -531,11 +531,13 @@ namespace Bc_prace
                 //PreWash
                 if (CarwashPrewash)
                 {
-                    userControlCarWash1.PreWashSignalization(true);
+                    //userControlCarWash1.PreWashSignalization(true);
+                    userControlCarWash1.PreWash = true;
                 }
                 else
                 {
-                    userControlCarWash1.PreWashSignalization(false);
+                    //userControlCarWash1.PreWashSignalization(false);
+                    userControlCarWash1.PreWash = false;
                 }
 
                 #endregion

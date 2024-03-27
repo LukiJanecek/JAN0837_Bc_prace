@@ -25,11 +25,13 @@ namespace Bc_prace.Controls
         private float x = 15;
         private float y = 15;
 
+        //door coordinates
         private float door1X;
         private float door1Y;
         private float door2X;
         private float door2Y;
 
+        //door parameters 
         private float aDoor1;
         private float bDoor1;
         private float cDoor1;
@@ -39,40 +41,25 @@ namespace Bc_prace.Controls
         private float cDoor2;
         private float dDoor2;
 
-        private float WaxX;
-        private float WaxY;
-        private float WaterX;
-        private float WaterY;
-        private float ActiveFoamX;
-        private float ActiveFoamY;
-        private float SoapX;
-        private float SoapY;
-        private float DryingX;
-        private float DryingY;
-        private float BrushesX;
-        private float BrushesY;
-        private float CarSignalizationX;
-        private float CarSignalizationY;
-        private float PreWashX;
-        private float PreWashY;
-
+        //Shower coordinates 
         private float ShowerX;
         private float ShowerY;
 
+        //toto tady asi nebude 
         private float timeDoor = 200;
 
         //images of car
         private PictureBox pictureBoxCar;
-
+        private int picture = 1;
+        //image coordinates 
         private float pictureX;
         private float pictureY;
 
+        //Arrows coordinates 
         private float leftArrowX;
         private float leftArrowY;
         private float rightArrowX;
         private float rightArrowY;
-
-        private int picture = 1;
 
         //basic parametres
         private float arrowLength = 20;
@@ -90,6 +77,134 @@ namespace Bc_prace.Controls
         private SolidBrush blue = new SolidBrush(Color.Blue); //water
         private SolidBrush brown = new SolidBrush(Color.Brown); //drying
         private SolidBrush purple = new SolidBrush(Color.Purple); //activefoam
+
+        #endregion
+
+        //CarWash function variables 
+        #region CarWash function variables 
+
+        //Functions coordinates 
+        private float WaxX;
+        private float WaxY;
+        private float WaterX;
+        private float WaterY;
+        private float ActiveFoamX;
+        private float ActiveFoamY;
+        private float SoapX;
+        private float SoapY;
+        private float DryingX;
+        private float DryingY;
+        private float BrushesX;
+        private float BrushesY;
+        private float CarSignalizationX;
+        private float CarSignalizationY;
+        private float PreWashX;
+        private float PreWashY;
+
+        //PreWash
+        private bool preWash;
+
+        public bool PreWash
+        {
+            get { return preWash; } 
+            
+            set
+            {
+                preWash = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Water
+        private bool water;
+
+        public bool Water
+        {
+            get { return water; }
+
+            set
+            {
+                water = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //Wax
+        private bool wax;
+
+        public bool Wax
+        {
+            get { return wax; }
+
+            set
+            {
+                wax = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //ActiveFoam
+        private bool activeFoam;
+
+        public bool ActiveFoam
+        {
+            get { return activeFoam; }
+
+            set
+            {
+                activeFoam = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //Soap 
+        private bool soap;
+
+        public bool Soap
+        {
+            get { return soap; }
+
+            set
+            {
+                soap = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //Drying 
+        private bool drying;
+
+        public bool Drying
+        {
+            get { return drying; }
+
+            set
+            {
+                drying = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //Brushes 
+        private bool brushes;
+
+        public bool Brushes
+        {
+            get { return brushes; }
+
+            set
+            {
+                brushes = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
 
         #endregion
 
@@ -276,6 +391,70 @@ namespace Bc_prace.Controls
             g.DrawLine(BlackPen, rightArrowX + arrowLength * 2, rightArrowY + arrowLength * 2 + arrowLength / 2, rightArrowX + arrowLength * 3, rightArrowY + arrowLength + arrowLength / 2);
 
             #endregion
+
+            //
+            if (PreWash)
+            {
+                g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            if (Water)
+            {
+                g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+            else
+            {
+                g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            if (Wax)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (ActiveFoam)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (Soap)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (Drying)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            if (Brushes)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         private void Draw(Graphics g)
@@ -374,7 +553,7 @@ namespace Bc_prace.Controls
             }
             else
             {
-                g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             this.Refresh();
