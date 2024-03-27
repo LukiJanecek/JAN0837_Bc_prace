@@ -227,7 +227,7 @@ namespace Bc_prace.Controls
             //background
             g.Clear(Color.White);
 
-            Draw(g);
+            Draw(g); //tak toto nakonec možná nebude potřeba 
 
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
@@ -392,7 +392,10 @@ namespace Bc_prace.Controls
 
             #endregion
 
-            //
+            //Draw signalization based on value
+            #region Draw signalization based on value
+
+            //draw PreWash signalization
             if (PreWash)
             {
                 g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
@@ -402,6 +405,7 @@ namespace Bc_prace.Controls
                 g.FillEllipse(white, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw Water signalization
             if (Water)
             {
                 g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
@@ -411,50 +415,56 @@ namespace Bc_prace.Controls
                 g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw Wax signalization
             if (Wax)
             {
-
+                g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-
+                g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw ActiveFoam signalization
             if (ActiveFoam)
             {
-
+                g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-
+                g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw Soap signalization
             if (Soap)
             {
-
+                g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-
+                g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw Drying signalization
             if (Drying)
             {
-
+                g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-
+                g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
+            //draw Brushes signalization
             if (Brushes)
             {
-
+                g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-
+                g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
+            #endregion
         }
 
         private void Draw(Graphics g)

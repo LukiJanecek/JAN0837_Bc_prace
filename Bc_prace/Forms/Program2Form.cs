@@ -15,6 +15,7 @@ using Microsoft.VisualBasic.ApplicationServices;
 using System.Reflection.Metadata;
 using static System.Windows.Forms.Design.AxImporter;
 using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
 
 namespace Bc_prace
 {
@@ -467,65 +468,73 @@ namespace Bc_prace
                 //Water
                 if (CarWashWater)
                 {
-                    userControlCarWash1.WaterSignalization(true);
+                    //userControlCarWash1.WaterSignalization(true);
+                    userControlCarWash1.Water = true;
                 }
                 else
                 {
-                    userControlCarWash1.WaterSignalization(false);
+                    //userControlCarWash1.WaterSignalization(false);
+                    userControlCarWash1.Water = false;
                 }
 
                 //Wax
                 if (CarWashWax)
                 {
-                    userControlCarWash1.WaxSignalization(true);
+                    //userControlCarWash1.WaxSignalization(true);
+                    userControlCarWash1.Wax = true;
                 }
                 else
                 {
-                    userControlCarWash1.WaxSignalization(false);
+                    //userControlCarWash1.WaxSignalization(false);
+                    userControlCarWash1.Wax = false;
                 }
 
                 //ActiveFoam
                 if (CarWashActiveFoam)
                 {
-                    userControlCarWash1.ActiveFoamSignalization(true);
+                    //userControlCarWash1.ActiveFoamSignalization(true);
+                    userControlCarWash1.ActiveFoam = true;
                 }
                 else
                 {
-                    userControlCarWash1.ActiveFoamSignalization(true);
-
+                    //userControlCarWash1.ActiveFoamSignalization(true);
+                    userControlCarWash1.ActiveFoam = false;
                 }
 
                 //Soap 
                 if (CarWashSoap)
                 {
-                    userControlCarWash1.SoapSignalization(true);
+                    //userControlCarWash1.SoapSignalization(true);
+                    userControlCarWash1.Soap = true;
                 }
                 else
                 {
-                    userControlCarWash1.SoapSignalization(false);
-
+                    //userControlCarWash1.SoapSignalization(false);
+                    userControlCarWash1.Soap = false;
                 }
 
                 //Brushes
                 if (CarWashBrushes)
                 {
-                    userControlCarWash1.BrushesSignalization(true);
+                    //userControlCarWash1.BrushesSignalization(true);
+                    userControlCarWash1.Brushes = true;
                 }
                 else
                 {
-                    userControlCarWash1.BrushesSignalization(false);
-
+                    //userControlCarWash1.BrushesSignalization(false);
+                    userControlCarWash1.Brushes = false;
                 }
 
                 //Drying
                 if (CarWashDry)
                 {
-                    userControlCarWash1.DryingSignalization(true);
+                    //userControlCarWash1.DryingSignalization(true);
+                    userControlCarWash1.Drying = true;
                 }
                 else
                 {
-                    userControlCarWash1.DryingSignalization(false);
-
+                    //userControlCarWash1.DryingSignalization(false);
+                    userControlCarWash1.Drying = false;
                 }
 
                 //PreWash
