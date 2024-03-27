@@ -13,6 +13,7 @@ using Bc_prace.Settings;
 //using static System.Windows.Forms.Design.AxImporter;
 using Sharp7;
 using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
 
 namespace Bc_prace
 {
@@ -882,56 +883,66 @@ namespace Bc_prace
                 if (ElevatorActualFloorLED1)
                 {
                     //zapnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(true);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(true);
+                    userControlElevatorCabin1.ElevatorActualFloorLED1 = true;
                 }
                 else
                 {
                     //vypnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(false);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(false);
+                    userControlElevatorCabin1.ElevatorActualFloorLED1 = false;
                 }
 
                 if (ElevatorActualFloorLED2)
                 {
                     //zapnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(true);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(true);
+                    userControlElevatorCabin1.ElevatorActualFloorLED2 = true;
                 }
                 else
                 {
                     //vypnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(false);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(false);
+                    userControlElevatorCabin1.ElevatorActualFloorLED2 = false;
                 }
 
                 if (ElevatorActualFloorLED3)
                 {
                     //zapnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(true);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(true);
+                    userControlElevatorCabin1.ElevatorActualFloorLED3 = true;
                 }
                 else
                 {
                     //vypnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(false);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(false);
+                    userControlElevatorCabin1.ElevatorActualFloorLED3 = false;
                 }
 
                 if (ElevatorActualFloorLED4)
                 {
                     //zapnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(true);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(true);
+                    userControlElevatorCabin1.ElevatorActualFloorLED4 = true;
                 }
                 else
                 {
                     //vypnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(false);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(false);
+                    userControlElevatorCabin1.ElevatorActualFloorLED4 = false;
                 }
 
                 if (ElevatorActualFloorLED5)
                 {
                     //zapnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(true);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(true);
+                    userControlElevatorCabin1.ElevatorActualFloorLED5 = true;
                 }
                 else
                 {
                     //vypnout
-                    userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(false);
+                    //userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(false);
+                    userControlElevatorCabin1.ElevatorActualFloorLED5 = false;
                 }
 
                 #endregion

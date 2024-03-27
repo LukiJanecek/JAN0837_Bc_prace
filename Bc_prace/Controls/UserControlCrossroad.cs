@@ -374,8 +374,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Draw crossroad 
-        #region Draw crossroad 
+        //Variables for crossroad versions  
+        #region Variables for crossroad versions   
         public bool DrawBasicCrossroad
         {
             get { return drawBasicCrossroad; }
@@ -427,6 +427,11 @@ namespace Bc_prace.Controls
                 }
             }
         }
+
+        #endregion
+
+        //Variables for crossroad lights
+        #region Variables for crossroad lights
 
         #endregion
 

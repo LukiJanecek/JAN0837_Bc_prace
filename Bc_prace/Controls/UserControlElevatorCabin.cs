@@ -55,6 +55,86 @@ namespace Bc_prace.Controls
 
         #endregion
 
+        //Elevator Actual Floor LED signalization
+        #region Elevator Actual Floor LED signalization
+
+        //ElevatorActualFloorLED1
+        private bool elevatorActualFloorLED1;
+
+        public bool ElevatorActualFloorLED1
+        {
+            get { return elevatorActualFloorLED1; }
+
+            set
+            {
+                elevatorActualFloorLED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //ElevatorActualFloorLED2
+        private bool elevatorActualFloorLED2;
+
+        public bool ElevatorActualFloorLED2
+        {
+            get { return elevatorActualFloorLED2; }
+
+            set
+            {
+                elevatorActualFloorLED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //ElevatorActualFloorLED3
+        private bool elevatorActualFloorLED3;
+
+        public bool ElevatorActualFloorLED3
+        {
+            get { return elevatorActualFloorLED3; }
+
+            set
+            {
+                elevatorActualFloorLED3 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //ElevatorActualFloorLED4
+        private bool elevatorActualFloorLED4;
+
+        public bool ElevatorActualFloorLED4
+        {
+            get { return elevatorActualFloorLED4; }
+
+            set
+            {
+                elevatorActualFloorLED4 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //ElevatorActualFloorLED5
+        private bool elevatorActualFloorLED5;
+
+        public bool ElevatorActualFloorLED5
+        {
+            get { return elevatorActualFloorLED5; }
+
+            set
+            {
+                elevatorActualFloorLED5 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        #endregion
+
         public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
@@ -423,6 +503,71 @@ namespace Bc_prace.Controls
 
                 //LED off je řešen i v rámci ošetření všech stavů
                 g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+            }
+
+            #endregion
+
+            //ActualFloorLED signalization based on value
+            #region ActualFloorLED signalization based on value
+
+            //ElevatorActualFloorLED1
+            if (ElevatorActualFloorLED1)
+            {
+                g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Gray;
+            }
+
+            //ElevatorActualFloorLED2
+            if (ElevatorActualFloorLED2)
+            {
+                g.FillEllipse(green, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
+            }
+
+            //ElevatorActualFloorLED3
+            if (ElevatorActualFloorLED3)
+            {
+                g.FillEllipse(green, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Gray;
+            }
+
+            //ElevatorActualFloorLED4
+            if (ElevatorActualFloorLED4)
+            {
+                g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray;
+            }
+
+            //ElevatorActualFloorLED5
+            if (ElevatorActualFloorLED5)
+            {
+                g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
+            }
+            else
+            {
+                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
             }
 
             #endregion
