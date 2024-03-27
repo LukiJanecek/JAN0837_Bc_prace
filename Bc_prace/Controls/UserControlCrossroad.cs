@@ -1365,7 +1365,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        ////Edit variables => didn't work properly
+        //Edit variables => didn't work properly
         /*
         //Lights
         #region Crossroad Lights 
@@ -2806,6 +2806,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad1TopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -2837,6 +2838,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad1LeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -2868,6 +2870,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad1RightRED)
                 {
                     g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -2892,12 +2895,14 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
                 }
+
                 #endregion
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad1BottomRED)
                 {
                     g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -2922,7 +2927,7 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
                 }
 
                 #endregion
@@ -3589,6 +3594,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad1TopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -3620,6 +3626,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad1LeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -3651,6 +3658,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad1RightRED)
                 {
                     g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -3675,12 +3683,14 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
                 }
+
                 #endregion
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad1BottomRED)
                 {
                     g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -3705,7 +3715,7 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
                 }
 
                 #endregion
@@ -3807,6 +3817,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad2TopRED)
                 {
                     g.FillEllipse(red, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -3838,6 +3849,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad2LeftRED)
                 {
                     g.FillEllipse(red, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -3869,6 +3881,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad2RightRED)
                 {
                     g.FillEllipse(red, x + length * 12 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -3900,6 +3913,7 @@ namespace Bc_prace.Controls
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad2BottomRED)
                 {
                     g.FillEllipse(red, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -4737,6 +4751,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad1TopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -4768,6 +4783,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad1LeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -4799,6 +4815,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad1RightRED)
                 {
                     g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -4823,12 +4840,14 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
                 }
+
                 #endregion
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad1BottomRED)
                 {
                     g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -4853,7 +4872,7 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
                 }
 
                 #endregion
@@ -4955,6 +4974,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad2TopRED)
                 {
                     g.FillEllipse(red, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -4986,6 +5006,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad2LeftRED)
                 {
                     g.FillEllipse(red, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -5017,6 +5038,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad2RightRED)
                 {
                     g.FillEllipse(red, x + length * 12 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -5048,6 +5070,7 @@ namespace Bc_prace.Controls
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad2BottomRED)
                 {
                     g.FillEllipse(red, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -5162,7 +5185,7 @@ namespace Bc_prace.Controls
                 #endregion
 
                 //LeftT
-                #region 
+                #region LeftT
                 /*
                 UpdateTrafficLightsCrossroadLeftTTOP(program3FormInstance.CrossroadLeftTTopRED, program3FormInstance.CrossroadLeftTTopYELLOW, program3FormInstance.CrossroadLeftTTopGREEN);
                 UpdateTrafficLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftRED, program3FormInstance.CrossroadLeftTLeftYELLOW, program3FormInstance.CrossroadLeftTLeftGREEN);
@@ -5172,6 +5195,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (CrossroadLeftTTopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -5203,6 +5227,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (CrossroadLeftTLeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6160,6 +6185,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad1TopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -6191,6 +6217,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad1LeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6222,6 +6249,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad1RightRED)
                 {
                     g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6246,12 +6274,13 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
                 }
                 #endregion
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad1BottomRED)
                 {
                     g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6276,7 +6305,7 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
-                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
                 }
 
                 #endregion
@@ -6378,6 +6407,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (Crossroad2TopRED)
                 {
                     g.FillEllipse(red, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -6409,6 +6439,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (Crossroad2LeftRED)
                 {
                     g.FillEllipse(red, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6440,6 +6471,7 @@ namespace Bc_prace.Controls
 
                 //Right
                 #region Right
+
                 if (Crossroad2RightRED)
                 {
                     g.FillEllipse(red, x + length * 12 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6471,6 +6503,7 @@ namespace Bc_prace.Controls
 
                 //Bottom
                 #region Bottom
+
                 if (Crossroad2BottomRED)
                 {
                     g.FillEllipse(red, x + length * 11 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6593,9 +6626,9 @@ namespace Bc_prace.Controls
                 UpdateCrosswalkLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftCrosswalkRED1, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN1, program3FormInstance.CrossroadLeftTLeftCrosswalkRED2, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN2);
                 */
 
-
                 //Top
                 #region Top
+
                 if (CrossroadLeftTTopRED)
                 {
                     g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -6627,6 +6660,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (CrossroadLeftTLeftRED)
                 {
                     g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6742,6 +6776,7 @@ namespace Bc_prace.Controls
 
                 //Top
                 #region Top
+
                 if (CrossroadRightTTopRED)
                 {
                     g.FillEllipse(red, x + length * 8 + 3 * FreeSpace + 2 * crosswalk_width, y + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
@@ -6773,6 +6808,7 @@ namespace Bc_prace.Controls
 
                 //Left
                 #region Left
+
                 if (CrossroadRightTLeftRED)
                 {
                     g.FillEllipse(red, x + length * 7 + 3 * FreeSpace + TrafficLights_width * 2, y + length * 11 + FreeSpace, TrafficLights_width, TrafficLights_width);
@@ -6885,8 +6921,6 @@ namespace Bc_prace.Controls
             }
 
             #endregion
-
-            
 
             //Lights change on value change -> don't work
             /*
