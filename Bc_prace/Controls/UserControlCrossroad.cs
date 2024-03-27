@@ -289,9 +289,9 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //EventHandler
-        #region EventHandler
-
+        //EventHandler -> doesnt work properly
+        #region EventHandler -> doesnt work properly 
+        /*
         //public event EventHandler<string> ButtonClicked;
 
         //Crossroad1 => DB1
@@ -372,6 +372,8 @@ namespace Bc_prace.Controls
         public event EventHandler<bool> CrossroadRightTTopCrosswalkGREEN1Changed;
         public event EventHandler<bool> CrossroadRightTTopCrosswalkGREEN2Changed;
 
+        */
+
         #endregion
 
         //Variables for crossroad versions  
@@ -433,7 +435,933 @@ namespace Bc_prace.Controls
         //Variables for crossroad lights
         #region Variables for crossroad lights
 
-        //
+        //Crossroad1TopGREEN 
+        //private bool crossroad1TopGREEN;
+        public bool Crossroad1TopGREEN
+        {
+            get { return crossroad1TopGREEN; }
+
+            set
+            {
+                crossroad1TopGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopYELLOW 
+        //private bool crossroad1TopYELLOW;
+        public bool Crossroad1TopYELLOW
+        {
+            get { return crossroad1TopYELLOW; }
+
+            set
+            {
+                crossroad1TopYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopRED 
+        //private bool crossroad1TopRED;
+        public bool Crossroad1TopRED
+        {
+            get { return crossroad1TopRED; }
+
+            set
+            {
+                crossroad1TopRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1BottomGREEN 
+        //private bool crossroad1BottomGREEN;
+        public bool Crossroad1BottomGREEN
+        {
+            get { return crossroad1BottomGREEN; }
+
+            set
+            {
+                crossroad1BottomGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1BottomYELLOW 
+        //private bool crossroad1BottomYELLOW;
+        public bool Crossroad1BottomYELLOW
+        {
+            get { return crossroad1BottomYELLOW; }
+
+            set
+            {
+                crossroad1BottomYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1BottomRED 
+        //private bool crossroad1BottomRED;
+        public bool Crossroad1BottomRED
+        {
+            get { return crossroad1BottomRED; }
+
+            set
+            {
+                crossroad1BottomRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftGREEN 
+        //private bool crossroad1LeftGREEN;
+        public bool Crossroad1LeftGREEN
+        {
+            get { return crossroad1LeftGREEN; }
+
+            set
+            {
+                crossroad1LeftGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftYELLOW 
+        //private bool crossroad1LeftYELLOW;
+        public bool Crossroad1LeftYELLOW
+        {
+            get { return crossroad1LeftYELLOW; }
+
+            set
+            {
+                crossroad1LeftYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftRED
+        //private bool crossroad1LeftRED;
+        public bool Crossroad1LeftRED
+        {
+            get { return crossroad1LeftRED; }
+
+            set
+            {
+                crossroad1LeftRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1RightGREEN 
+        //private bool crossroad1RightGREEN;
+        public bool Crossroad1RightGREEN
+        {
+            get { return crossroad1RightGREEN; }
+
+            set
+            {
+                crossroad1RightGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1RightYELLOW 
+        //private bool crossroad1RightYELLOW;
+        public bool Crossroad1RightYELLOW
+        {
+            get { return crossroad1RightYELLOW; }
+
+            set
+            {
+                crossroad1RightYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1RightRED
+        //private bool crossroad1RightRED;
+        public bool Crossroad1RightRED
+        {
+            get { return crossroad1RightRED; }
+
+            set
+            {
+                crossroad1RightRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopCrosswalkRED1
+        //private bool crossroad1TopCrosswalkRED1;
+        public bool Crossroad1TopCrosswalkRED1
+        {
+            get { return crossroad1TopCrosswalkRED1; }
+
+            set
+            {
+                crossroad1TopCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopCrosswalkGREEN1
+        //private bool crossroad1TopCrosswalkGREEN1;
+        public bool Crossroad1TopCrosswalkGREEN1
+        {
+            get { return crossroad1TopCrosswalkGREEN1; }
+
+            set
+            {
+                crossroad1TopCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopCrosswalkRED2
+        //private bool crossroad1TopCrosswalkRED2;
+        public bool Crossroad1TopCrosswalkRED2
+        {
+            get { return crossroad1TopCrosswalkRED2; }
+
+            set
+            {
+                crossroad1TopCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1TopCrosswalkGREEN2
+        //private bool crossroad1TopCrosswalkGREEN2;
+        public bool Crossroad1TopCrosswalkGREEN2
+        {
+            get { return crossroad1TopCrosswalkGREEN2; }
+
+            set
+            {
+                crossroad1TopCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftCrosswalkRED1
+        //private bool crossroad1LeftCrosswalkRED1;
+        public bool Crossroad1LeftCrosswalkRED1
+        {
+            get { return crossroad1LeftCrosswalkRED1; }
+
+            set
+            {
+                crossroad1LeftCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftCrosswalkGREEN1
+        //private bool crossroad1LeftCrosswalkGREEN1;
+        public bool Crossroad1LeftCrosswalkGREEN1
+        {
+            get { return crossroad1LeftCrosswalkGREEN1; }
+
+            set
+            {
+                crossroad1LeftCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftCrosswalkRED2
+        //private bool crossroad1LeftCrosswalkRED2;
+        public bool Crossroad1LeftCrosswalkRED2
+        {
+            get { return crossroad1LeftCrosswalkRED2; }
+
+            set
+            {
+                crossroad1LeftCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad1LeftCrosswalkGREEN2
+        //private bool crossroad1LeftCrosswalkGREEN2;
+        public bool Crossroad1LeftCrosswalkGREEN2
+        {
+            get { return crossroad1LeftCrosswalkGREEN2; }
+
+            set
+            {
+                crossroad1LeftCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+
+        //Crossroad2TopGREEN 
+        //private bool crossroad2TopGREEN;
+        public bool Crossroad2TopGREEN
+        {
+            get { return crossroad2TopGREEN; }
+
+            set
+            {
+                crossroad2TopGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2TopYELLOW 
+        //private bool crossroad2TopYELLOW;
+        public bool Crossroad2TopYELLOW
+        {
+            get { return crossroad2TopYELLOW; }
+
+            set
+            {
+                crossroad2TopYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2TopRED
+        //private bool crossroad2TopRED;
+        public bool Crossroad2TopRED
+        {
+            get { return crossroad2TopRED; }
+
+            set
+            {
+                crossroad2TopRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2BottomGREEN 
+        //private bool crossroad2BottomGREEN;
+        public bool Crossroad2BottomGREEN
+        {
+            get { return crossroad2BottomGREEN; }
+
+            set
+            {
+                crossroad2BottomGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2BottomYELLOW 
+        //private bool crossroad2BottomYELLOW;
+        public bool Crossroad2BottomYELLOW
+        {
+            get { return crossroad2BottomYELLOW; }
+
+            set
+            {
+                crossroad2BottomYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2BottomRED 
+        //private bool crossroad2BottomRED;
+        public bool Crossroad2BottomRED
+        {
+            get { return crossroad2BottomRED; }
+
+            set
+            {
+                crossroad2BottomRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftGREEN 
+        //private bool crossroad2LeftGREEN;
+        public bool Crossroad2LeftGREEN
+        {
+            get { return crossroad2LeftGREEN; }
+
+            set
+            {
+                crossroad2LeftGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftYELLOW
+        //private bool crossroad2LeftYELLOW;
+        public bool Crossroad2LeftYELLOW
+        {
+            get { return crossroad2LeftYELLOW; }
+
+            set
+            {
+                crossroad2LeftYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftRED
+        //private bool crossroad2LeftRED;
+        public bool Crossroad2LeftRED
+        {
+            get { return crossroad2LeftRED; }
+
+            set
+            {
+                crossroad2LeftRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightGREEN 
+        //private bool crossroad1BottomGREEN;
+        public bool Crossroad2RightGREEN
+        {
+            get { return crossroad2RightGREEN; }
+
+            set
+            {
+                crossroad2RightGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightYELLOW 
+        //private bool crossroad2RightYELLOW;
+        public bool Crossroad2RightYELLOW
+        {
+            get { return crossroad2RightYELLOW; }
+
+            set
+            {
+                crossroad2RightYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightRED 
+        //private bool crossroad2RightRED;
+        public bool Crossroad2RightRED
+        {
+            get { return crossroad2RightRED; }
+
+            set
+            {
+                crossroad2RightRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftCrosswalkRED1
+        //private bool crossroad2LeftCrosswalkRED1;
+        public bool Crossroad2LeftCrosswalkRED1
+        {
+            get { return crossroad2LeftCrosswalkRED1; }
+
+            set
+            {
+                crossroad2LeftCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftCrosswalkGREEN1
+        //private bool crossroad2LeftCrosswalkGREEN1;
+        public bool Crossroad2LeftCrosswalkGREEN1
+        {
+            get { return crossroad2LeftCrosswalkGREEN1; }
+
+            set
+            {
+                crossroad2LeftCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftCrosswalkRED2
+        //private bool crossroad2LeftCrosswalkRED2;
+        public bool Crossroad2LeftCrosswalkRED2
+        {
+            get { return crossroad2LeftCrosswalkRED2; }
+
+            set
+            {
+                crossroad2LeftCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2LeftCrosswalkGREEN2
+        //private bool crossroad2LeftCrosswalkGREEN2;
+        public bool Crossroad2LeftCrosswalkGREEN2
+        {
+            get { return crossroad2LeftCrosswalkGREEN2; }
+
+            set
+            {
+                crossroad2LeftCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightCrosswalkRED1
+        //private bool crossroad2RightCrosswalkRED1;
+        public bool Crossroad2RightCrosswalkRED1
+        {
+            get { return crossroad2RightCrosswalkRED1; }
+
+            set
+            {
+                crossroad2RightCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightCrosswalkGREEN1
+        //private bool crossroad2RightCrosswalkGREEN1;
+        public bool Crossroad2RightCrosswalkGREEN1
+        {
+            get { return crossroad2RightCrosswalkGREEN1; }
+
+            set
+            {
+                crossroad2RightCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightCrosswalkRED2
+        //private bool crossroad2RightCrosswalkRED2;
+        public bool Crossroad2RightCrosswalkRED2
+        {
+            get { return crossroad2RightCrosswalkRED2; }
+
+            set
+            {
+                crossroad2RightCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //Crossroad2RightCrosswalkGREEN2
+        //private bool crossroad2RightCrosswalkGREEN2;
+        public bool Crossroad2RightCrosswalkGREEN2
+        {
+            get { return crossroad2RightCrosswalkGREEN2; }
+
+            set
+            {
+                crossroad2RightCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+
+        //CrossroadLeftTTopGREEN 
+        //private bool crossroadLeftTTopGREEN;
+        public bool CrossroadLeftTTopGREEN
+        {
+            get { return crossroadLeftTTopGREEN; }
+
+            set
+            {
+                crossroadLeftTTopGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTTopYELLOW 
+        //private bool crossroadLeftTTopYELLOW;
+        public bool CrossroadLeftTTopYELLOW
+        {
+            get { return crossroadLeftTTopYELLOW; }
+
+            set
+            {
+                crossroadLeftTTopYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTTopRED 
+        //private bool crossroadLeftTTopRED;
+        public bool CrossroadLeftTTopRED
+        {
+            get { return crossroadLeftTTopRED; }
+
+            set
+            {
+                crossroadLeftTTopRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftGREEN 
+        //private bool crossroadLeftTLeftGREEN;
+        public bool CrossroadLeftTLeftGREEN
+        {
+            get { return crossroadLeftTLeftGREEN; }
+
+            set
+            {
+                crossroadLeftTLeftGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftYELLOW 
+        //private bool crossroadLeftTLeftYELLOW;
+        public bool CrossroadLeftTLeftYELLOW
+        {
+            get { return crossroadLeftTLeftYELLOW; }
+
+            set
+            {
+                crossroadLeftTLeftYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftRED 
+        //private bool crossroadLeftTLeftRED;
+        public bool CrossroadLeftTLeftRED
+        {
+            get { return crossroadLeftTLeftRED; }
+
+            set
+            {
+                crossroadLeftTLeftRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTRightGREEN 
+        //private bool crossroadLeftTRightGREEN;
+        public bool CrossroadLeftTRightGREEN
+        {
+            get { return crossroadLeftTRightGREEN; }
+
+            set
+            {
+                crossroadLeftTRightGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTRightYELLOW 
+        //private bool crossroadLeftTRightYELLOW;
+        public bool CrossroadLeftTRightYELLOW
+        {
+            get { return crossroadLeftTRightYELLOW; }
+
+            set
+            {
+                crossroadLeftTRightYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTRightRED 
+        //private bool crossroadLeftTRightRED;
+        public bool CrossroadLeftTRightRED
+        {
+            get { return crossroadLeftTRightRED; }
+
+            set
+            {
+                crossroadLeftTRightRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftCrosswalkRED1
+        //private bool crossroadLeftTLeftCrosswalkRED1;
+        public bool CrossroadLeftTLeftCrosswalkRED1
+        {
+            get { return crossroadLeftTLeftCrosswalkRED1; }
+
+            set
+            {
+                crossroadLeftTLeftCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftCrosswalkGREEN1
+        //private bool crossroadLeftTLeftCrosswalkGREEN1;
+        public bool CrossroadLeftTLeftCrosswalkGREEN1
+        {
+            get { return crossroadLeftTLeftCrosswalkGREEN1; }
+
+            set
+            {
+                crossroadLeftTLeftCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftCrosswalkRED2
+        //private bool crossroadLeftTLeftCrosswalkRED2;
+        public bool CrossroadLeftTLeftCrosswalkRED2
+        {
+            get { return crossroadLeftTLeftCrosswalkRED2; }
+
+            set
+            {
+                crossroadLeftTLeftCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadLeftTLeftCrosswalkGREEN2
+        //private bool crossroadLeftTLeftCrosswalkGREEN2;
+        public bool CrossroadLeftTLeftCrosswalkGREEN2
+        {
+            get { return crossroadLeftTLeftCrosswalkGREEN2; }
+
+            set
+            {
+                crossroadLeftTLeftCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+
+        //CrossroadRightTTopGREEN 
+        //private bool crossroadRightTTopGREEN;
+        public bool CrossroadRightTTopGREEN
+        {
+            get { return crossroadRightTTopGREEN; }
+
+            set
+            {
+                crossroadRightTTopGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopYELLOW
+        //private bool crossroadRightTTopYELLOW;
+        public bool CrossroadRightTTopYELLOW
+        {
+            get { return crossroadRightTTopYELLOW; }
+
+            set
+            {
+                crossroadRightTTopYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopRED
+        //private bool crossroadRightTTopRED;
+        public bool CrossroadRightTTopRED
+        {
+            get { return crossroadRightTTopRED; }
+
+            set
+            {
+                crossroadRightTTopRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTLeftGREEN 
+        //private bool crossroadRightTLeftGREEN;
+        public bool CrossroadRightTLeftGREEN
+        {
+            get { return crossroadRightTLeftGREEN; }
+
+            set
+            {
+                crossroadRightTLeftGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTLeftYELLOW 
+        //private bool crossroadRightTLeftYELLOW;
+        public bool CrossroadRightTLeftYELLOW
+        {
+            get { return crossroadRightTLeftYELLOW; }
+
+            set
+            {
+                crossroadRightTLeftYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTLeftRED 
+        //private bool crossroadRightTLeftRED;
+        public bool CrossroadRightTLeftRED
+        {
+            get { return crossroadRightTLeftRED; }
+
+            set
+            {
+                crossroadRightTLeftRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTRightGREEN 
+        //private bool crossroadRightTRightGREEN;
+        public bool CrossroadRightTRightGREEN
+        {
+            get { return crossroadRightTRightGREEN; }
+
+            set
+            {
+                crossroadRightTRightGREEN = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTRightYELLOW 
+        //private bool crossroadRightTRightYELLOW;
+        public bool CrossroadRightTRightYELLOW
+        {
+            get { return crossroadRightTRightYELLOW; }
+
+            set
+            {
+                crossroadRightTRightYELLOW = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTRightRED 
+        //private bool crossroadRightTRightRED;
+        public bool CrossroadRightTRightRED
+        {
+            get { return crossroadRightTRightRED; }
+
+            set
+            {
+                crossroadRightTRightRED = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopCrosswalkRED1
+        //private bool crossroadRightTTopCrosswalkRED1;
+        public bool CrossroadRightTTopCrosswalkRED1
+        {
+            get { return crossroadRightTTopCrosswalkRED1; }
+
+            set
+            {
+                crossroadRightTTopCrosswalkRED1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopCrosswalkGREEN1
+        //private bool crossroadRightTTopCrosswalkGREEN1;
+        public bool CrossroadRightTTopCrosswalkGREEN1
+        {
+            get { return crossroadRightTTopCrosswalkGREEN1; }
+
+            set
+            {
+                crossroadRightTTopCrosswalkGREEN1 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopCrosswalkRED2
+        //private bool crossroadRightTTopCrosswalkRED2;
+        public bool CrossroadRightTTopCrosswalkRED2
+        {
+            get { return crossroadRightTTopCrosswalkRED2; }
+
+            set
+            {
+                crossroadRightTTopCrosswalkRED2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
+        //CrossroadRightTTopCrosswalkGREEN2
+        //private bool crossroadRightTTopCrosswalkGREEN2;
+        public bool CrossroadRightTTopCrosswalkGREEN2
+        {
+            get { return crossroadRightTTopCrosswalkGREEN2; }
+
+            set
+            {
+                crossroadRightTTopCrosswalkGREEN2 = value;
+
+                Invalidate(); //toto tu asi být nemusí 
+            }
+        }
+
 
         #endregion
 
@@ -1535,6 +2463,8 @@ namespace Bc_prace.Controls
             Pen YellowPen = new Pen(Color.Yellow, 2);
 
             //Drawing the selected variant of crossroad
+            #region Drawing the selected variant of crossroad
+
             if (drawBasicCrossroad) //Crossroad1
             {
                 //BTN allow
@@ -1860,20 +2790,229 @@ namespace Bc_prace.Controls
 
                 #endregion
 
-                //Changing lights color
-                #region Changing lights color
+                //Conditions for lights based on value
+                #region Conditions for lights based on value 
 
                 //Crossroad1
                 #region Crossroad1
+                /*
                 UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
                 UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
                 UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
                 UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
                 UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                */
+
+                //Top
+                #region Top
+                if (Crossroad1TopRED)
+                {
+                    g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopGREEN)
+                {
+                    g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
                 #endregion
-                
+
+                //Left
+                #region Left
+                if (Crossroad1LeftRED)
+                {
+                    g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftGREEN)
+                {
+                    g.FillEllipse(green, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
                 #endregion
+
+                //Right
+                #region Right
+                if (Crossroad1RightRED)
+                {
+                    g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightGREEN)
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                #endregion
+
+                //Bottom
+                #region Bottom
+                if (Crossroad1BottomRED)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomGREEN)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Top Crosswalk
+                #region Crossroad1 Top Crosswalk
+
+                if (Crossroad1TopCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Left Crosswalk
+                #region Crossroad1 Left Crosswalk
+
+                if (Crossroad1LeftCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                #endregion
+
+                #endregion
+
             }
             else if (drawCrossroadExtension1) //Crossroad1 + Crossorad2
             {
@@ -2434,27 +3573,238 @@ namespace Bc_prace.Controls
 
                 #endregion
 
-                //Changing lights color
-                #region Changing lights color
+                //Conditions for lights based on value
+                #region Conditions for lights based on value
 
                 //Crossroad1
                 #region Crossroad1
+                /*
                 UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
                 UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
                 UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
                 UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
                 UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                */
+
+                //Top
+                #region Top
+                if (Crossroad1TopRED)
+                {
+                    g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopGREEN)
+                {
+                    g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Left
+                #region Left
+                if (Crossroad1LeftRED)
+                {
+                    g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftGREEN)
+                {
+                    g.FillEllipse(green, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Right
+                #region Right
+                if (Crossroad1RightRED)
+                {
+                    g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightGREEN)
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                #endregion
+
+                //Bottom
+                #region Bottom
+                if (Crossroad1BottomRED)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomGREEN)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Top Crosswalk
+                #region Crossroad1 Top Crosswalk
+
+                if (Crossroad1TopCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Left Crosswalk
+                #region Crossroad1 Left Crosswalk
+
+                if (Crossroad1LeftCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
                 #endregion
 
                 //Crossroad2
                 #region Crossroad2
+                /*
                 UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
                 UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
                 UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
                 UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
                 UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
+                */
+
                 #endregion
 
                 #endregion
@@ -3165,35 +4515,456 @@ namespace Bc_prace.Controls
 
                 #endregion
 
-                //Changing lights color
-                #region Changing lights color
+                //Conditions for lights based on value
+                #region Conditions for lights based on value 
 
                 //Crossroad1
                 #region Crossroad1
+                /*
                 UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
                 UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
                 UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
                 UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
                 UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                */
+
+                //Top
+                #region Top
+                if (Crossroad1TopRED)
+                {
+                    g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopGREEN)
+                {
+                    g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Left
+                #region Left
+                if (Crossroad1LeftRED)
+                {
+                    g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftGREEN)
+                {
+                    g.FillEllipse(green, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Right
+                #region Right
+                if (Crossroad1RightRED)
+                {
+                    g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightGREEN)
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                #endregion
+
+                //Bottom
+                #region Bottom
+                if (Crossroad1BottomRED)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomGREEN)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Top Crosswalk
+                #region Crossroad1 Top Crosswalk
+
+                if (Crossroad1TopCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Left Crosswalk
+                #region Crossroad1 Left Crosswalk
+
+                if (Crossroad1LeftCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
                 #endregion
 
                 //Crossroad2
                 #region Crossroad2
+                /*
                 UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
                 UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
                 UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
                 UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
                 UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
+                */
+
+                //Top
+                #region Top
+                if (Crossroad2TopRED)
+                {
+                    g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2TopYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2TopGREEN)
+                {
+                    g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Left
+                #region Left
+                if (Crossroad2LeftRED)
+                {
+                    g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2LeftYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2LeftGREEN)
+                {
+                    g.FillEllipse(green, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Right
+                #region Right
+                if (Crossroad2RightRED)
+                {
+                    g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2RightYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2RightGREEN)
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                #endregion
+
+                //Bottom
+                #region Bottom
+                if (Crossroad2BottomRED)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2BottomYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad2BottomGREEN)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Left Crosswalk
+                #region Crossroad1 Left Crosswalk
+
+                if (Crossroad2LeftCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad2LeftCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad2LeftCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad2LeftCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Top Crosswalk
+                #region Crossroad1 Top Crosswalk
+
+                if (Crossroad2TopCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad2TopCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad2TopCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
                 #endregion
 
                 //LeftT
                 #region 
+                /*
                 UpdateTrafficLightsCrossroadLeftTTOP(program3FormInstance.CrossroadLeftTTopRED, program3FormInstance.CrossroadLeftTTopYELLOW, program3FormInstance.CrossroadLeftTTopGREEN);
                 UpdateTrafficLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftRED, program3FormInstance.CrossroadLeftTLeftYELLOW, program3FormInstance.CrossroadLeftTLeftGREEN);
                 UpdateTrafficLightsCrossroadLeftTRIGHT(program3FormInstance.CrossroadLeftTRightRED, program3FormInstance.CrossroadLeftTRightYELLOW, program3FormInstance.CrossroadLeftTRightGREEN);
                 UpdateCrosswalkLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftCrosswalkRED1, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN1, program3FormInstance.CrossroadLeftTLeftCrosswalkRED2, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN2);
+                */
+
+
+
                 #endregion
 
                 #endregion
@@ -4033,43 +5804,266 @@ namespace Bc_prace.Controls
 
                 #endregion
 
-                //Changing lights color
-                #region Changing lights color
+                //Conditions for lights based on value
+                #region Conditions for lights based on value 
 
                 //Crossroad1
                 #region Crossroad1
+                /*
                 UpdateTrafficLightsCrossroad1TOP(program3FormInstance.Crossroad1TopRED, program3FormInstance.Crossroad1TopYELLOW, program3FormInstance.Crossroad1TopGREEN);
                 UpdateTrafficLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftRED, program3FormInstance.Crossroad1LeftYELLOW, program3FormInstance.Crossroad1LeftGREEN);
                 UpdateTrafficLightsCrossroad1RIGHT(program3FormInstance.Crossroad1RightRED, program3FormInstance.Crossroad1RightYELLOW, program3FormInstance.Crossroad1RightGREEN);
                 UpdateTrafficLightsCrossroad1BOTTOM(program3FormInstance.Crossroad1BottomRED, program3FormInstance.Crossroad1BottomYELLOW, program3FormInstance.Crossroad1BottomGREEN);
                 UpdateCrosswalkLightsCrossroad1TOP(program3FormInstance.Crossroad1TopCrosswalkRED1, program3FormInstance.Crossroad1TopCrosswalkGREEN1, program3FormInstance.Crossroad1TopCrosswalkRED2, program3FormInstance.Crossroad1TopCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad1LEFT(program3FormInstance.Crossroad1LeftCrosswalkRED1, program3FormInstance.Crossroad1LeftCrosswalkGREEN1, program3FormInstance.Crossroad1LeftCrosswalkRED2, program3FormInstance.Crossroad1LeftCrosswalkGREEN2);
+                */
+
+                //Top
+                #region Top
+                if (Crossroad1TopRED)
+                {
+                    g.FillEllipse(red, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1TopGREEN)
+                {
+                    g.FillEllipse(green, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + 3 * FreeSpace + 2 * crosswalk_width, y + length + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Left
+                #region Left
+                if (Crossroad1LeftRED)
+                {
+                    g.FillEllipse(red, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width * 2, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace + TrafficLights_width, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1LeftGREEN)
+                {
+                    g.FillEllipse(green, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length + 3 * FreeSpace, y + length * 5 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Right
+                #region Right
+                if (Crossroad1RightRED)
+                {
+                    g.FillEllipse(red, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 6 + FreeSpace + TrafficLights_width, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1RightGREEN)
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 6 + FreeSpace + TrafficLights_width * 2, y + length * 2 + 2 * crosswalk_width + 3 * FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                #endregion
+
+                //Bottom
+                #region Bottom
+                if (Crossroad1BottomRED)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomYELLOW)
+                {
+                    g.FillEllipse(yellow, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width, TrafficLights_width, TrafficLights_width);
+                }
+
+                if (Crossroad1BottomGREEN)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+                else
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 6 + FreeSpace + TrafficLights_width * 2, TrafficLights_width, TrafficLights_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Top Crosswalk
+                #region Crossroad1 Top Crosswalk
+
+                if (Crossroad1TopCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1TopCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
+                //Crossroad1 Left Crosswalk
+                #region Crossroad1 Left Crosswalk
+
+                if (Crossroad1LeftCrosswalkRED1)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkRED2)
+                {
+                    g.FillEllipse(red, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN1)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                if (Crossroad1LeftCrosswalkGREEN2)
+                {
+                    g.FillEllipse(green, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+                else
+                {
+                    g.FillEllipse(white, x + length * 2 + FreeSpace, y + length * 5 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
+                }
+
+                #endregion
+
                 #endregion
 
                 //Crossroad2
                 #region Crossroad2
+                /*
                 UpdateTrafficLightsCrossroad2TOP(program3FormInstance.Crossroad2TopRED, program3FormInstance.Crossroad2TopYELLOW, program3FormInstance.Crossroad2TopGREEN);
                 UpdateTrafficLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftRED, program3FormInstance.Crossroad2LeftYELLOW, program3FormInstance.Crossroad2LeftGREEN);
                 UpdateTrafficLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightRED, program3FormInstance.Crossroad2RightYELLOW, program3FormInstance.Crossroad2RightGREEN);
                 UpdateTrafficLightsCrossroad2BOTTOM(program3FormInstance.Crossroad2BottomRED, program3FormInstance.Crossroad2BottomYELLOW, program3FormInstance.Crossroad2BottomGREEN);
                 UpdateCrosswalkLightsCrossroad2LEFT(program3FormInstance.Crossroad2LeftCrosswalkRED1, program3FormInstance.Crossroad2LeftCrosswalkGREEN1, program3FormInstance.Crossroad2LeftCrosswalkRED2, program3FormInstance.Crossroad2LeftCrosswalkGREEN2);
                 UpdateCrosswalkLightsCrossroad2RIGHT(program3FormInstance.Crossroad2RightCrosswalkRED1, program3FormInstance.Crossroad2RightCrosswalkGREEN1, program3FormInstance.Crossroad2RightCrosswalkRED2, program3FormInstance.Crossroad2RightCrosswalkGREEN2);
+                */
+
+
+
                 #endregion
 
                 //LeftT
                 #region LeftT
+                /*
                 UpdateTrafficLightsCrossroadLeftTTOP(program3FormInstance.CrossroadLeftTTopRED, program3FormInstance.CrossroadLeftTTopYELLOW, program3FormInstance.CrossroadLeftTTopGREEN);
                 UpdateTrafficLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftRED, program3FormInstance.CrossroadLeftTLeftYELLOW, program3FormInstance.CrossroadLeftTLeftGREEN);
                 UpdateTrafficLightsCrossroadLeftTRIGHT(program3FormInstance.CrossroadLeftTRightRED, program3FormInstance.CrossroadLeftTRightYELLOW, program3FormInstance.CrossroadLeftTRightGREEN);
                 UpdateCrosswalkLightsCrossroadLeftTLEFT(program3FormInstance.CrossroadLeftTLeftCrosswalkRED1, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN1, program3FormInstance.CrossroadLeftTLeftCrosswalkRED2, program3FormInstance.CrossroadLeftTLeftCrosswalkGREEN2);
+                */
+
+
+
                 #endregion
 
                 //RightT
                 #region RightT
+                /*
                 UpdateTrafficLightsCrossroadRightTTOP(program3FormInstance.CrossroadRightTTopRED, program3FormInstance.CrossroadRightTTopYELLOW, program3FormInstance.CrossroadRightTTopGREEN);
                 UpdateTrafficLightsCrossroadRightTLEFT(program3FormInstance.CrossroadRightTLeftRED, program3FormInstance.CrossroadRightTLeftYELLOW, program3FormInstance.CrossroadRightTLeftGREEN);
                 UpdateTrafficLightsCrossroadRightTRIGHT(program3FormInstance.CrossroadRightTRightRED, program3FormInstance.CrossroadRightTRightYELLOW, program3FormInstance.CrossroadRightTRightGREEN);
                 UpdateCrosswalkLightsCrossroadRightTTOP(program3FormInstance.CrossroadRightTTopCrosswalkRED1, program3FormInstance.CrossroadRightTTopCrosswalkGREEN1, program3FormInstance.CrossroadRightTTopCrosswalkRED2, program3FormInstance.CrossroadRightTTopCrosswalkGREEN2);
+                */
+
+
+
                 #endregion
 
                 #endregion
@@ -4078,6 +6072,10 @@ namespace Bc_prace.Controls
             {
                 //???
             }
+
+            #endregion
+
+            
 
             //Lights change on value change -> don't work
             /*
