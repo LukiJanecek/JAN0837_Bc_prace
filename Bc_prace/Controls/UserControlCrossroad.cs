@@ -4911,10 +4911,10 @@ namespace Bc_prace.Controls
 
                 #endregion
 
-                //Crossroad1 Top Crosswalk
-                #region Crossroad1 Top Crosswalk
+                //Crossroad1 Right Crosswalk
+                #region Crossroad1 Right Crosswalk
 
-                if (Crossroad2TopCrosswalkRED1)
+                if (Crossroad2RightCrosswalkRED1)
                 {
                     g.FillEllipse(red, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
@@ -4923,7 +4923,7 @@ namespace Bc_prace.Controls
                     g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
 
-                if (Crossroad1TopCrosswalkRED2)
+                if (Crossroad2RightCrosswalkRED2)
                 {
                     g.FillEllipse(red, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
@@ -4932,7 +4932,7 @@ namespace Bc_prace.Controls
                     g.FillEllipse(white, x + length * 5 + FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
 
-                if (Crossroad2TopCrosswalkGREEN1)
+                if (Crossroad2RightCrosswalkGREEN1)
                 {
                     g.FillEllipse(green, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
@@ -4941,7 +4941,7 @@ namespace Bc_prace.Controls
                     g.FillEllipse(white, x + length * 2 + crosswalk_width + 3 * FreeSpace + TrafficLightsCrosswalk_width, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
 
-                if (Crossroad2TopCrosswalkGREEN2)
+                if (Crossroad2RightCrosswalkGREEN2)
                 {
                     g.FillEllipse(green, x + length * 5 + FreeSpace, y + length * 2 + FreeSpace, TrafficLightsCrosswalk_width, TrafficLightsCrosswalk_width);
                 }
