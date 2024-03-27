@@ -433,6 +433,8 @@ namespace Bc_prace.Controls
         //Variables for crossroad lights
         #region Variables for crossroad lights
 
+
+
         #endregion
 
         ////Edit variables => didn't work properly

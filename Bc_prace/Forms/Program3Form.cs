@@ -2341,12 +2341,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.BasicCrossroad();
-            
+            /*
             crossroadBasic = true;
             crossroadExtension1 = false;
             crossroadExtension2 = false;
             crossroadExtension3 = false;
-            
+            */
             userControlCrossroad1.DrawBasicCrossroad = true;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
@@ -2361,12 +2361,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension1();
-
+            /*
             crossroadBasic = false;
             crossroadExtension1 = true;
             crossroadExtension2 = false;
             crossroadExtension3 = false;
-
+            */
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = true;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
@@ -2381,13 +2381,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension2();
-
+            /*
             crossroadBasic = false;
             crossroadExtension1 = false;
             crossroadExtension2 = true;
             crossroadExtension3 = false;
-
-            
+            */
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = true;
@@ -2402,12 +2401,12 @@ namespace Bc_prace
             statusStripCrossroad.Items.Add(lblStatus);
 
             //userControlCrossroad1.CrossroadExtension3();
-       
+            /*
             crossroadBasic = false;
             crossroadExtension1 = false;
             crossroadExtension2 = false;
             crossroadExtension3 = true;
-
+            */
             userControlCrossroad1.DrawBasicCrossroad = false;
             userControlCrossroad1.DrawCrossroadExtension1 = false;
             userControlCrossroad1.DrawCrossroadExtension2 = false;
