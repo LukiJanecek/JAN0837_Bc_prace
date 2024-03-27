@@ -19,7 +19,7 @@ namespace Bc_prace.Controls
         //Drawing variables
         #region Drawing variables 
 
-        private Label label;
+        //private Label label;
 
         //beggining points of drawing
         private float x = 15;
