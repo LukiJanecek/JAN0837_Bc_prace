@@ -23,6 +23,7 @@ namespace Bc_prace.Controls
         private bool errorMessageBoxShown;
 
         public event ElevatorFloorBTNClick OnElevatorFloorBTNClick;
+        public event EventHandler<Point> CoordinatesReached;
 
         //BTNs define 
         #region BTNs define 
