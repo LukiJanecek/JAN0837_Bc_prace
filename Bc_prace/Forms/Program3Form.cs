@@ -1728,8 +1728,8 @@ namespace Bc_prace
 
                 //I never get into this condition!!! -> maybe u can make it happen just like that 
                 //Lights change
-                if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
-                {
+                //if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
+                //{
                     //userControlCrossroad1.BasicCrossroad();
 
                     //Crossroad1
@@ -1817,9 +1817,9 @@ namespace Bc_prace
                     userControlCrossroad1.UpdateTrafficLightsCrossroad1BOTTOM(Crossroad1BottomRED, Crossroad1BottomYELLOW, Crossroad1BottomGREEN);
                     #endregion
                     */
-                }
-                else if (crossroadExtension1) //rBtnCrossroadExtension1.Checked userControlCrossroad1.DrawCrossroadExtension1 == true
-                {
+                //}
+                //else if (crossroadExtension1) //rBtnCrossroadExtension1.Checked userControlCrossroad1.DrawCrossroadExtension1 == true
+                //{
                     //userControlCrossroad1.CrossroadExtension1();
 
                     //Crossroad1
@@ -1996,9 +1996,9 @@ namespace Bc_prace
 
                     #endregion
                     */
-                }
-                else if (crossroadExtension2) //rBtnCrossroadExtension2.Checked userControlCrossroad1.DrawCrossroadExtension2 == true
-                {
+                //}
+                //else if (crossroadExtension2) //rBtnCrossroadExtension2.Checked userControlCrossroad1.DrawCrossroadExtension2 == true
+                //{
                     //userControlCrossroad1.CrossroadExtension2();
 
                     //Crossroad1
@@ -2233,9 +2233,9 @@ namespace Bc_prace
 
                     #endregion
                     */
-                }
-                else if (crossroadExtension3) //rBtnCrossroadExtension3.Checked userControlCrossroad1.DrawCrossroadExtension3 == true
-                {
+                //}
+                //else if (crossroadExtension3) //rBtnCrossroadExtension3.Checked userControlCrossroad1.DrawCrossroadExtension3 == true
+                //{
                     //userControlCrossroad1.CrossroadExtension3();
 
                     //Crossroad1
@@ -2530,13 +2530,13 @@ namespace Bc_prace
 
                     #endregion
                     */
-                }
-                else
-                {
-                    statusStripCrossroad.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
-                    statusStripCrossroad.Items.Add(lblStatus);
-                }
+                //}
+                //else
+                //{
+                    //statusStripCrossroad.Items.Clear();
+                    //ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Click some radio button to choose your variand of crossroad.");
+                    //statusStripCrossroad.Items.Add(lblStatus);
+                //}
 
                 #endregion
 
@@ -2568,7 +2568,7 @@ namespace Bc_prace
 
             //userControlCrossroad1.BasicCrossroad();
             
-            //this is for _Tick function 
+            //this is for _Tick function -> doesnt work properly 
             crossroadBasic = true;
             crossroadExtension1 = false;
             crossroadExtension2 = false;
@@ -2589,7 +2589,7 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension1();
 
-            //this is for _Tick function 
+            //this is for _Tick function -> doesnt work properly 
             crossroadBasic = false;
             crossroadExtension1 = true;
             crossroadExtension2 = false;
@@ -2610,7 +2610,7 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension2();
 
-            //this is for _Tick function 
+            //this is for _Tick function -> doesnt work properly 
             crossroadBasic = false;
             crossroadExtension1 = false;
             crossroadExtension2 = true;
@@ -2631,7 +2631,7 @@ namespace Bc_prace
 
             //userControlCrossroad1.CrossroadExtension3();
 
-            //this is for _Tick function 
+            //this is for _Tick function -> doesnt work properly 
             crossroadBasic = false;
             crossroadExtension1 = false;
             crossroadExtension2 = false;
