@@ -1726,7 +1726,7 @@ namespace Bc_prace
                     }
                 }
 
-                //I never get into this condition!!! -> test me pls
+                //I never get into this condition!!! -> maybe u can make it happen just like that 
                 //Lights change
                 if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true
                 {

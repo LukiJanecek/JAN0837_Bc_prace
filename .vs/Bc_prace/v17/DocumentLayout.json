@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\program3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\program3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\controls\\usercontrolcrossroad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\controls\\usercontrolcrossroad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\program3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\program3form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\controls\\usercontrolcarwash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\controls\\usercontrolcarwash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\program1form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\program1form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\program1form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\program1form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\program1form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\program1form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -60,7 +68,7 @@
         },
         {
           "DockedHeight": 105,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -68,20 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserControlCrossroad.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCrossroad.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlCrossroad.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCrossroad.cs",
-              "RelativeToolTip": "Bc_prace\\Controls\\UserControlCrossroad.cs",
-              "ViewState": "AQIAAIohAAAAAAAAAAAkwM8hAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-27T15:26:00.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Program1Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program1Form.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program1Form.cs",
@@ -92,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Program3Form.Designer.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program3Form.Designer.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program3Form.Designer.cs",
@@ -100,11 +95,12 @@
               "RelativeToolTip": "Bc_prace\\Forms\\Program3Form.Designer.cs",
               "ViewState": "AQIAADIAAAAAAAAAAAASwEcAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T22:22:43.866Z"
+              "WhenOpened": "2024-03-23T22:22:43.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Program2SelectionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program2SelectionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program2SelectionForm.cs",
@@ -116,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ChooseOptionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
@@ -128,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Program1Form.Designer.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program1Form.Designer.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program1Form.Designer.cs",
@@ -140,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Program3Form.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program3Form.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program3Form.cs",
@@ -152,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program1Form.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program1Form.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program1Form.cs",
@@ -164,20 +160,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program3Form.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program3Form.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program3Form.cs",
               "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program3Form.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\Program3Form.cs",
-              "ViewState": "AQIAAD8JAAAAAAAAAAAAAD4JAAAeAAAA",
+              "ViewState": "AQIAAAMKAAAAAAAAAAAowAwKAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-12T13:55:54.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Program2Form.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\Program2Form.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\Program2Form.cs",
@@ -186,6 +182,66 @@
               "ViewState": "AQIAABACAAAAAAAAAAAgwCUCAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T22:35:11.6Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "e98e140e-5428-4449-998d-1d10a7c5f341",
+        "Display": 0,
+        "X": 844,
+        "Y": 557,
+        "Width": 1041,
+        "Height": 638,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserControlElevatorCabin.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlElevatorCabin.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlElevatorCabin.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlElevatorCabin.cs",
+              "RelativeToolTip": "Bc_prace\\Controls\\UserControlElevatorCabin.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAmwFYAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T15:42:48.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserControlCarWash.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCarWash.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlCarWash.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCarWash.cs",
+              "RelativeToolTip": "Bc_prace\\Controls\\UserControlCarWash.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T07:29:04.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserControlCrossroad.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCrossroad.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlCrossroad.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCrossroad.cs",
+              "RelativeToolTip": "Bc_prace\\Controls\\UserControlCrossroad.cs",
+              "ViewState": "AQIAAJgJAAAAAAAAAAAAwIEhAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T07:29:15.104Z",
+              "EditorCaption": ""
             }
           ]
         }
