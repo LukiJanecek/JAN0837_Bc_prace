@@ -16,7 +16,7 @@ namespace Bc_prace.Controls
 
     public partial class UserControlCrossroad : UserControl
     {
-        private Program3Form program3FormInstance = null;
+        //private Program3Form program3FormInstance = null;
         //private ChooseOptionForm chooseOptionFormInstance;
 
         private S7Client client;
@@ -2445,8 +2445,10 @@ namespace Bc_prace.Controls
 
         private void UserControlCrossroad_Paint(object? sender, PaintEventArgs e)
         {
+            /*
             if (program3FormInstance == null)
                 return;
+            */
 
             var g = e.Graphics;
 

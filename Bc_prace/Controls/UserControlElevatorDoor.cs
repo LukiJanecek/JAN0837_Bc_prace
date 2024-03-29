@@ -107,12 +107,13 @@ namespace Bc_prace.Controls
         public async void OpenningDoor(int time)
         {
             int totalSteps = time / Convert.ToInt32(Step);
+            int delayBetweenSteps = time / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
                 LeftDoorMoveLeft();
                 RightDoorMoveRight();
-                await Task.Delay(100);
+                await Task.Delay(delayBetweenSteps);
             }
 
             this.Refresh(); //mozna
@@ -121,12 +122,13 @@ namespace Bc_prace.Controls
         public async void ClosingDoor(int time)
         {
             int totalSteps = time / Convert.ToInt32(Step);
+            int delayBetweenSteps = time / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
                 LeftDoorMoveRight();
                 RightDoorMoveLeft();
-                await Task.Delay(100);
+                await Task.Delay(delayBetweenSteps);
             }
 
             this.Refresh(); //mozna
