@@ -653,7 +653,8 @@ namespace Bc_prace
                 //Action on variable value
                 #region Action on variable value           
 
-                userControlElevatorCabin1.Step = ElevatorCabinSpeed;
+                //toto je cool, ale musí to být něco jako 1,2,5,10
+                //userControlElevatorCabin1.Step = ElevatorCabinSpeed;
 
                 if (ElevatorDoorClOSE)
                 {
@@ -702,13 +703,21 @@ namespace Bc_prace
                 //Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
                 #region Elevator cabin movemnt based on ElevatorActualFloor and ElevatorGotToFloor
 
+                //Elevator first stage -> system initialising
+                if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 0)
+                {
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
+                }
+
                 //All combinations for 1st floor 
-                #region all combinations for 1st floor 
+                    #region all combinations for 1st floor 
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
+                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
                     //mozna to nebude potreba -> optional
+                    /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -731,11 +740,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 2)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -758,11 +769,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 3)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -785,11 +798,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 4)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -812,11 +827,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 5)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(4); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -839,6 +856,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 #endregion
@@ -849,6 +867,7 @@ namespace Bc_prace
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 1)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
 
@@ -871,12 +890,15 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
                 {
+                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
                     //mozna to nebude potreba -> optional
+                    /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
 
@@ -899,11 +921,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 3)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
 
@@ -926,11 +950,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 4)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
 
@@ -953,11 +979,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 5)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
 
@@ -980,6 +1008,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 #endregion
@@ -990,6 +1019,7 @@ namespace Bc_prace
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 1)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
 
@@ -1012,11 +1042,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 2)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
 
@@ -1039,12 +1071,15 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
                 {
+                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
                     //mozna to nebude potreba -> optional
+                    /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
 
@@ -1067,11 +1102,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 4)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
 
@@ -1094,11 +1131,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 5)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
 
@@ -1121,6 +1160,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 #endregion
@@ -1131,6 +1171,7 @@ namespace Bc_prace
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 1)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
@@ -1153,11 +1194,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 2)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
@@ -1180,11 +1223,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 3)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
@@ -1207,12 +1252,15 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
                 {
+                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
                     //mozna to nebude potreba -> optional
+                    /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
@@ -1235,11 +1283,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 5)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
@@ -1262,6 +1312,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 #endregion
@@ -1272,6 +1323,7 @@ namespace Bc_prace
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 1)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(4); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
 
@@ -1294,11 +1346,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 2)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
 
@@ -1321,11 +1375,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 3)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
 
@@ -1348,11 +1404,13 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 4)
                 {
                     userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
 
@@ -1375,11 +1433,14 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
                 {
+                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
+                    /*
                     //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
@@ -1403,6 +1464,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
+                    */
                 }
 
                 #endregion

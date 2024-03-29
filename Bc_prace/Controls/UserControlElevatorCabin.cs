@@ -47,7 +47,7 @@ namespace Bc_prace.Controls
         private float lengthCabin = 0; //cabin length 
         private float widthButton = 50; //button width
         private float heightButton = 28; //button height
-        public float Step;
+        public float Step = 10;
         private float length = 100;
         private float signalizationCircle_diameter = 10;
 
@@ -222,9 +222,8 @@ namespace Bc_prace.Controls
             #region Conditions based ond object position -> ElevatorActualFloorSENS
 
             //Cabin is on 1st floor
-            if (yCabin == y + length * 5)
+            if (yCabin == y + length * 5 + 20)
             {
-                //ElevatorActualFloorSENS1 == true //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS1 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 3, program1FormInstance.ElevatorActualFloorSENS1);
 
@@ -250,7 +249,6 @@ namespace Bc_prace.Controls
             }
             else
             {
-                //ElevatorActualFloorSENS1 == false //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS1 = false;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 3, program1FormInstance.ElevatorActualFloorSENS1);
 
@@ -275,13 +273,12 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 2st floor
-            if (yCabin == y + length * 4)
+            if (yCabin == y + length * 4 + 20)
             {
-                //ElevatorActualFloorSENS2 == true //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS2 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 4, program1FormInstance.ElevatorActualFloorSENS2);
 
@@ -307,7 +304,6 @@ namespace Bc_prace.Controls
             }
             else
             {
-                //ElevatorActualFloorSENS2 == false //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS2 = false;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 4, program1FormInstance.ElevatorActualFloorSENS2);
 
@@ -332,13 +328,12 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 3rd floor
-            if (yCabin == y + length * 3)
+            if (yCabin == y + length * 3 + 20)
             {
-                //ElevatorActualFloorSENS3 == true //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS3 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 5, program1FormInstance.ElevatorActualFloorSENS3);
 
@@ -364,7 +359,6 @@ namespace Bc_prace.Controls
             }
             else
             {
-                //ElevatorActualFloorSENS3 == false //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS3 = false;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 5, program1FormInstance.ElevatorActualFloorSENS3);
 
@@ -389,13 +383,12 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 4th floor
-            if (yCabin == y + length * 2)
+            if (yCabin == y + length * 2 + 20)
             {
-                //ElevatorActualFloorSENS4 == true //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS4 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 6, program1FormInstance.ElevatorActualFloorSENS4);
 
@@ -421,7 +414,6 @@ namespace Bc_prace.Controls
             }
             else
             {
-                //ElevatorActualFloorSENS4 == false //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS4 = false;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 6, program1FormInstance.ElevatorActualFloorSENS4);
 
@@ -446,13 +438,12 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 5th floor
-            if (yCabin == y + length * 1)
+            if (yCabin == y + length + 20)
             {
-                //ElevatorActualFloorSENS5 == true //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS5 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 7, program1FormInstance.ElevatorActualFloorSENS5);
 
@@ -478,7 +469,6 @@ namespace Bc_prace.Controls
             }
             else
             {
-                //ElevatorActualFloorSENS5 == false //zde toto nejspis ANO
                 program1FormInstance.ElevatorActualFloorSENS5 = false;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 7, program1FormInstance.ElevatorActualFloorSENS5);
 
@@ -503,7 +493,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                //g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion
