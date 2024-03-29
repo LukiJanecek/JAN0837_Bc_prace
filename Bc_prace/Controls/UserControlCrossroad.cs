@@ -2413,17 +2413,17 @@ namespace Bc_prace.Controls
             Paint += UserControlCrossroad_Paint;
         }
 
-        public void SetControl(Program3Form program3FormInstance)
+        public void SetControl(/*Program3Form program3FormInstance*/)
         {
             InitializeButtons();
 
-            this.program3FormInstance = program3FormInstance;
+            //this.program3FormInstance = program3FormInstance;
 
-            client = program3FormInstance.client;
+            //client = program3FormInstance.client;
 
             //Buffers initialize => totally useless
             #region Buffers initialize
-
+            /*
             //DB14 => Crossroad_DB
             read_buffer_DB14 = program3FormInstance.read_buffer_DB14; //read_buffer is not needed
             send_buffer_DB14 = program3FormInstance.send_buffer_DB14;
@@ -2439,7 +2439,7 @@ namespace Bc_prace.Controls
             //DB21 => Crossroad_RightT_DB
             read_buffer_DB21 = program3FormInstance.read_buffer_DB21; //read_buffer is not needed
             send_buffer_DB21 = program3FormInstance.send_buffer_DB21;
-
+            */
             #endregion
         }
 
@@ -9193,7 +9193,7 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Methods for rendering crossroad -> old
+        //Methods for rendering crossroad -> old -> this can go delete
         #region Methods for rendering crossroad -> old
 
         //Crossroad1
@@ -11691,9 +11691,9 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Methods for UpdateLights
+        //Methods for UpdateLights -> this can go delete
         #region Methods for UpdateLights
-            
+
         //Crossroad1
         #region Crosroad1
         public void UpdateTrafficLightsCrossroad1TOP(bool RedLight, bool YellowLight, bool GreenLight)
