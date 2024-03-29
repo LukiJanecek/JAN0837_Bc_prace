@@ -41,10 +41,10 @@ namespace Bc_prace.Controls
 
         private float x = 0; //x coordinate
         private float y = 0; //y coordinate
-        private float xCabin = 0; //x cabin coordinate
-        private float yCabin = 0; //y cabin coordinate
-        private float widthCabin = 0; //cabin width 
-        private float lengthCabin = 0; //cabin length 
+        private float xCabin = 50; //x cabin coordinate
+        private float yCabin = 20; //y cabin coordinate
+        private float widthCabin = 50; //cabin width 
+        private float heightCabin = 80; //cabin length 
         private float widthButton = 50; //button width
         private float heightButton = 28; //button height
         public float Step = 10;
@@ -139,7 +139,7 @@ namespace Bc_prace.Controls
         public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
-         
+
             DoubleBuffered = true;
             Paint += UserControlElevatorCabin_Paint;
 
@@ -151,7 +151,7 @@ namespace Bc_prace.Controls
             InitializeButtons();
 
             this.program1FormInstance = program1FormInstance;
-            
+
             client = program1FormInstance.client;
         }
 
@@ -176,24 +176,24 @@ namespace Bc_prace.Controls
             SolidBrush labelBrush = new SolidBrush(Color.Black);
 
             //ElevatorCabin -> starts on the top floor
-            g.DrawRectangle(BlackPen, xCabin + 50, yCabin + 20, widthCabin + 50, lengthCabin + 80);
+            g.DrawRectangle(BlackPen, x + xCabin, y + yCabin, widthCabin, heightCabin);
 
             //Floors and labels
             #region Floors and labels
 
             //1st floor
-            g.DrawLine(BlackPen, x, y + length * 5, x + length * 3, y + length * 5); 
+            g.DrawLine(BlackPen, x, y + length * 5, x + length * 3, y + length * 5);
             string lblFirstFloor = "1st floor";
-            g.DrawString(lblFirstFloor, labelFont, labelBrush, x, y + length * 5 - length / 2); 
+            g.DrawString(lblFirstFloor, labelFont, labelBrush, x, y + length * 5 - length / 2);
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
+            g.DrawEllipse(BlackPen, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //2nd floor
-            g.DrawLine(BlackPen, x, y + length * 4, x + length * 3, y + length * 4); 
+            g.DrawLine(BlackPen, x, y + length * 4, x + length * 3, y + length * 4);
             string lblSecondFloor = "2nd floor";
-            g.DrawString(lblSecondFloor, labelFont, labelBrush, x, y + length * 4 - length / 2); 
+            g.DrawString(lblSecondFloor, labelFont, labelBrush, x, y + length * 4 - length / 2);
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
+            g.DrawEllipse(BlackPen, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //3rd floor
             g.DrawLine(BlackPen, x, y + length * 3, x + length * 3, y + length * 3);
@@ -203,16 +203,16 @@ namespace Bc_prace.Controls
             g.DrawEllipse(BlackPen, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //4th floor
-            g.DrawLine(BlackPen, x, y + length * 2, x + length * 3, y + length * 2); 
+            g.DrawLine(BlackPen, x, y + length * 2, x + length * 3, y + length * 2);
             string lblFourthFloor = "4th floor";
-            g.DrawString(lblFourthFloor, labelFont, labelBrush, x, y + length * 2 - length / 2); 
+            g.DrawString(lblFourthFloor, labelFont, labelBrush, x, y + length * 2 - length / 2);
             //ActualFloorLEDSig
-            g.DrawEllipse(BlackPen, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter); 
+            g.DrawEllipse(BlackPen, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
             //5th floor
-            g.DrawLine(BlackPen, x, y + length, x + length * 3, y + length); 
+            g.DrawLine(BlackPen, x, y + length, x + length * 3, y + length);
             string lblFifthFloor = "5th floor";
-            g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length - length / 2); 
+            g.DrawString(lblFifthFloor, labelFont, labelBrush, x, y + length - length / 2);
             //ActualFloorLEDSig
             g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
@@ -222,7 +222,7 @@ namespace Bc_prace.Controls
             #region Conditions based ond object position -> ElevatorActualFloorSENS
 
             //Cabin is on 1st floor
-            if (yCabin == y + length * 5 + 20)
+            if (yCabin == (y + length * 5 - heightCabin))
             {
                 program1FormInstance.ElevatorActualFloorSENS1 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 3, program1FormInstance.ElevatorActualFloorSENS1);
@@ -277,7 +277,7 @@ namespace Bc_prace.Controls
             }
 
             //Cabin is on 2st floor
-            if (yCabin == y + length * 4 + 20)
+            if (yCabin == (y + length * 4 - heightCabin))
             {
                 program1FormInstance.ElevatorActualFloorSENS2 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 4, program1FormInstance.ElevatorActualFloorSENS2);
@@ -332,7 +332,7 @@ namespace Bc_prace.Controls
             }
 
             //Cabin is on 3rd floor
-            if (yCabin == y + length * 3 + 20)
+            if (yCabin == (y + length * 3 - heightCabin))
             {
                 program1FormInstance.ElevatorActualFloorSENS3 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 5, program1FormInstance.ElevatorActualFloorSENS3);
@@ -387,7 +387,7 @@ namespace Bc_prace.Controls
             }
 
             //Cabin is on 4th floor
-            if (yCabin == y + length * 2 + 20)
+            if (yCabin == (y + length * 2 - heightCabin))
             {
                 program1FormInstance.ElevatorActualFloorSENS4 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 6, program1FormInstance.ElevatorActualFloorSENS4);
@@ -442,7 +442,7 @@ namespace Bc_prace.Controls
             }
 
             //Cabin is on 5th floor
-            if (yCabin == y + length + 20)
+            if (yCabin == (y + length - heightCabin))
             {
                 program1FormInstance.ElevatorActualFloorSENS5 = true;
                 S7.SetBitAt(program1FormInstance.send_buffer_DB4, 11, 7, program1FormInstance.ElevatorActualFloorSENS5);
@@ -668,7 +668,19 @@ namespace Bc_prace.Controls
 
         //Cabin movement + parameters
         #region Cabin movement + parameters
-        
+
+        public async void CabinMoveOnSystemInitialising(float targetY)
+        {
+            targetY = targetY * length - heightCabin;
+
+            while (yCabin < targetY)
+            {
+                yCabin += Step;
+                this.Refresh();
+                await Task.Delay(program1FormInstance.ElevatorCabinSpeed * 10);
+            }
+        }
+
         public async void CabinMoveToFloorUP(float targetY)
         {
             targetY = targetY * length;
@@ -677,7 +689,7 @@ namespace Bc_prace.Controls
             {
                 yCabin -= Step;
                 this.Refresh();
-                await Task.Delay(100);
+                await Task.Delay(program1FormInstance.ElevatorCabinSpeed * 10);
             }
         }
 
@@ -689,7 +701,7 @@ namespace Bc_prace.Controls
             {
                 yCabin += Step;
                 this.Refresh();
-                await Task.Delay(100);
+                await Task.Delay(program1FormInstance.ElevatorCabinSpeed * 10);
             }
         }
         
@@ -731,13 +743,13 @@ namespace Bc_prace.Controls
 
         public void LengthBigger()
         {
-            lengthCabin += Step;
+            heightCabin += Step;
             this.Refresh();
         }
 
         public void LengthSmaller()
         {
-            lengthCabin -= Step;
+            heightCabin -= Step;
             this.Refresh();
         }
         #endregion

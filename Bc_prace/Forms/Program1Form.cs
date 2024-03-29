@@ -706,7 +706,7 @@ namespace Bc_prace
                 //Elevator first stage -> system initialising
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 0)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
+                    userControlElevatorCabin1.CabinMoveOnSystemInitialising(5);
                 }
 
                 //All combinations for 1st floor 
