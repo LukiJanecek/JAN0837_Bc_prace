@@ -12,10 +12,14 @@ using Bc_prace.Controls.MyGraphControl.Entities;
 using System.Windows.Forms;
 using Sharp7;
 
+public delegate void CarWashPositionCar(bool state);
+
 namespace Bc_prace.Controls
 {
     public partial class UserControlCarWash : UserControl
     {
+        public event CarWashPositionCar OnCarWashPositionCar;
+
         //Drawing variables
         #region Drawing variables 
 
@@ -206,6 +210,51 @@ namespace Bc_prace.Controls
             }
         }
 
+        //CarWash Red Light
+        private bool carWashRedLight;
+
+        public bool CarWashRedLight
+        {
+            get { return carWashRedLight; }
+
+            set
+            {
+                carWashRedLight = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //CarWash Yellow light
+        private bool carWashYellowLight;
+
+        public bool CarWashYellowLight
+        {
+            get { return carWashYellowLight; }
+
+            set
+            {
+                carWashYellowLight = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
+        //CarWash Green light 
+        private bool carWashGreenLight;
+
+        public bool CarWashGreenLight
+        {
+            get { return carWashGreenLight; }
+
+            set
+            {
+                carWashGreenLight = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
         #endregion
 
         public UserControlCarWash()
@@ -314,7 +363,7 @@ namespace Bc_prace.Controls
             g.DrawEllipse(BlackPen, x + ShowerX + length * 7 - (signalizationCircle_diameter / 2), y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
 
             //car signalization => // this doesnt make sense anymore
-            string labelCarSignalization = "GO!"; //this doesnt make sense anymore
+            string labelCarSignalization = ""; //this doesnt make sense anymore
             CarSignalizationX = x + length * 7 + 20;
             CarSignalizationY = y + length * 2 + length / 2;
             g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); // this doesnt make sense anymore
@@ -394,6 +443,49 @@ namespace Bc_prace.Controls
 
             //Draw signalization based on value
             #region Draw signalization based on value
+
+            //Car Signalization Lights and texts 
+            #region Car Signalization Lights and texts 
+            if (CarWashRedLight)
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                labelCarSignalization = "STOP!";
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
+                g.FillEllipse(red, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+            else 
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+
+            if (CarWashYellowLight)
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                labelCarSignalization = "ERROR!";
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
+                g.FillEllipse(yellow, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+            else
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+
+            if (CarWashGreenLight)
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                labelCarSignalization = "GO!";
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
+                g.FillEllipse(green, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+            else
+            {
+                g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+            }
+
+            #endregion
 
             //draw PreWash signalization
             if (PreWash)
@@ -551,8 +643,8 @@ namespace Bc_prace.Controls
 
         #endregion
 
-        //Inner cycle signalization
-        #region Inner cycle signalization
+        //Inner cycle signalization -> old 
+        #region Inner cycle signalization -> old
         public void PreWashSignalization(bool state)
         {
             var g = this.CreateGraphics(); //this doesnt work properly
@@ -763,6 +855,11 @@ namespace Bc_prace.Controls
                         pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                         this.Refresh();
                         await Task.Delay(Convert.ToInt32(timeDoor));
+                    }
+
+                    if (OnCarWashPositionCar != null)
+                    {
+                        OnCarWashPositionCar(true);
                     }
 
                     break;

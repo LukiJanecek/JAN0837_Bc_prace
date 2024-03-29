@@ -23,7 +23,6 @@ namespace Bc_prace.Controls
         private bool errorMessageBoxShown;
 
         public event ElevatorFloorBTNClick OnElevatorFloorBTNClick;
-        public event EventHandler<Point> CoordinatesReached;
 
         //BTNs define 
         #region BTNs define 
@@ -273,7 +272,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                //g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 2st floor
@@ -328,7 +327,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                //g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 3rd floor
@@ -383,7 +382,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                //g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 4th floor
@@ -438,7 +437,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                //g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             //Cabin is on 5th floor
@@ -493,7 +492,7 @@ namespace Bc_prace.Controls
                 }
 
                 //LED off je řešen i v rámci ošetření všech stavů
-                //g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion

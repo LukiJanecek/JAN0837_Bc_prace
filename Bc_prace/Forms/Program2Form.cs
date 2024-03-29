@@ -85,7 +85,7 @@ namespace Bc_prace
         public bool CarWashSoap;
         public bool CarWashActiveFoam;
         public bool CarWashBrushes;
-        public bool CarwashPrewash;
+        public bool CarWashPrewash;
 
 
         #endregion
@@ -96,6 +96,7 @@ namespace Bc_prace
             InitializeButton(); // there is probably no need for this function
             btnSignalization.Enabled = false;
             this.MinimumSize = new Size(1530, 500);
+            userControlCarWash1.OnCarWashPositionCar += UserControlCarWash1_OnCarWashPositionCar;
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 
@@ -119,6 +120,97 @@ namespace Bc_prace
                 Timer_read_actual.Start();
                 //set time interval (ms)
                 Timer_read_actual.Interval = 100;
+            }
+
+            CarWashWaitingForIncomingCar = true;
+            S7.SetBitAt(send_buffer_DB5, 0, 3, CarWashWaitingForIncomingCar);
+
+            //write to PLC
+            int writeResultDB5_CarWashWaitingForIncomingCar = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+            if (writeResultDB5_CarWashWaitingForIncomingCar != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                        $"Error message: writeResultDB5_CarWashWaitingForIncomingCar = {writeResultDB5_CarWashWaitingForIncomingCar} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                    errorMessageBoxShown = true;
+                }
+            }
+            else
+            {
+                //write was successful
+                statusStripCarWash.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Waiting for incoming car. Press button: Move car to next point");
+                statusStripCarWash.Items.Add(lblStatus);
+            }
+
+        }
+
+        private void UserControlCarWash1_OnCarWashPositionCar(bool state)
+        {
+            if (state)
+            {
+                CarWashPositionCar = true;
+                S7.SetBitAt(send_buffer_DB5, 2, 1, CarWashPositionCar);
+
+                //write to PLC
+                int writeResultDB5_PositionCar = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                if (writeResultDB5_PositionCar != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                            $"Error message: writeResultDB5_PositionCar = {writeResultDB5_PositionCar} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                    /*
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel(" Press this button to continue: Move car to next point");
+                    statusStripCarWash.Items.Add(lblStatus);
+                    */
+                }
+            }
+            else
+            {
+                CarWashPositionCar = false;
+                S7.SetBitAt(send_buffer_DB5, 2, 1, CarWashPositionCar);
+
+                //write to PLC
+                int writeResultDB5_PositionCar = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                if (writeResultDB5_PositionCar != 0)
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                            $"Error message: writeResultDB5_PositionCar = {writeResultDB5_PositionCar} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                        errorMessageBoxShown = true;
+                    }
+                }
+                else
+                {
+                    //write was successful
+                    /*
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel(" Press this button to continue: Move car to next point");
+                    statusStripCarWash.Items.Add(lblStatus);
+                    */
+                }
             }
         }
 
@@ -166,7 +258,7 @@ namespace Bc_prace
                 CarWashSoap = chooseOptionFormInstance.CarWashSoap;
                 CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
                 CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
-                CarwashPrewash = chooseOptionFormInstance.CarWashPreWash;
+                CarWashPrewash = chooseOptionFormInstance.CarWashPreWash;
 
                 #endregion
 
@@ -406,41 +498,46 @@ namespace Bc_prace
                     }
                 }
 
-                //toto asi nebude fungvat 
-                if (CarWashGreenLight) //Green light
+                if (CarWashWaitingForOutgoingCar)
                 {
                     statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: GO!");
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Waiting for outgoing car.");
                     statusStripCarWash.Items.Add(lblStatus);
-
-                    btnSignalization.BackColor = System.Drawing.Color.Green;
-                    btnSignalization.Text = "Go";
                 }
-                else if (CarWashYellowLight) //Yellow light
-                {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: Error!");
-                    statusStripCarWash.Items.Add(lblStatus);
 
-                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
-                    btnSignalization.Text = "Error";
-                }
-                else if (CarWashRedLight) //Red light
+                //Red light
+                if (CarWashRedLight)
                 {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car signalization: STOP!");
-                    statusStripCarWash.Items.Add(lblStatus);
+                    userControlCarWash1.CarWashRedLight = true;
+                    userControlCarWash1.CarWashYellowLight = false;
+                    userControlCarWash1.CarWashGreenLight = false;
 
                     btnSignalization.BackColor = System.Drawing.Color.Red;
                     btnSignalization.Text = "Stop";
                 }
-                else
+
+                //Yellow light
+                if (CarWashYellowLight)
                 {
-                    statusStripCarWash.Items.Clear();
-                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car should move.");
-                    statusStripCarWash.Items.Add(lblStatus);
+                    userControlCarWash1.CarWashRedLight = false;
+                    userControlCarWash1.CarWashYellowLight = true;
+                    userControlCarWash1.CarWashGreenLight = false;
+
+                    btnSignalization.BackColor = System.Drawing.Color.Yellow;
+                    btnSignalization.Text = "Error";
                 }
 
+                //Green light
+                if (CarWashGreenLight) 
+                {
+                    userControlCarWash1.CarWashRedLight = false;
+                    userControlCarWash1.CarWashYellowLight = false;
+                    userControlCarWash1.CarWashGreenLight = true;
+
+                    btnSignalization.BackColor = System.Drawing.Color.Green;
+                    btnSignalization.Text = "Go";
+                }
+                
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
@@ -538,7 +635,7 @@ namespace Bc_prace
                 }
 
                 //PreWash
-                if (CarwashPrewash)
+                if (CarWashPrewash)
                 {
                     //userControlCarWash1.PreWashSignalization(true);
                     userControlCarWash1.PreWash = true;
@@ -597,6 +694,10 @@ namespace Bc_prace
                 //Selection form activated
                 Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
                 Selection.ShowDialog(this);
+
+                statusStripCarWash.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel(" Press this button to continue: Move car to next point");
+                statusStripCarWash.Items.Add(lblStatus);
             }
         }
         #endregion
@@ -623,7 +724,7 @@ namespace Bc_prace
 
                     //zavolat PreWash
                     statusStripCarWash.Items.Clear();
-                    lblStatus = new ToolStripStatusLabel("PreWash free to use.");
+                    lblStatus = new ToolStripStatusLabel("PreWash is free to use. When are you ready press button to continue.");
                     statusStripCarWash.Items.Add(lblStatus);
 
                     break;
@@ -642,6 +743,12 @@ namespace Bc_prace
                     statusStripCarWash.Items.Clear();
                     lblStatus = new ToolStripStatusLabel("Car is leaving CarWash. This is end of the program.");
                     statusStripCarWash.Items.Add(lblStatus);
+
+                    break;
+
+                case 5:
+
+                    //reset obrázku na pozici 1 + waiting oc incoming car = true
 
                     break;
             }
