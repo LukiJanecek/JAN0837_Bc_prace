@@ -653,6 +653,8 @@ namespace Bc_prace
                 //Action on variable value
                 #region Action on variable value           
 
+                userControlElevatorCabin1.Step = ElevatorCabinSpeed;
+
                 if (ElevatorDoorClOSE)
                 {
                     CloseDOOR(ElevatorTimeDoorSQCLOSE);
@@ -706,31 +708,137 @@ namespace Bc_prace
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS1 = {writeResultDB4_ElevatorActualFlooorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 2)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS1 = {writeResultDB4_ElevatorActualFlooorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 3)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS1 = {writeResultDB4_ElevatorActualFlooorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 4)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS1 = {writeResultDB4_ElevatorActualFlooorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 5)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); //toto cislo neni dobre
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS1 = {writeResultDB4_ElevatorActualFlooorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 #endregion
@@ -740,32 +848,138 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 1)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS2 = {writeResultDB4_ElevatorActualFlooorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
                 {
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS2 = {writeResultDB4_ElevatorActualFlooorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 3)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS2 = {writeResultDB4_ElevatorActualFlooorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 4)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS2 = {writeResultDB4_ElevatorActualFlooorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 5)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS2 = {writeResultDB4_ElevatorActualFlooorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 #endregion
@@ -775,32 +989,138 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 1)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS3 = {writeResultDB4_ElevatorActualFlooorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 2)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS3 = {writeResultDB4_ElevatorActualFlooorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
                 {
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS3 = {writeResultDB4_ElevatorActualFlooorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 4)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS3 = {writeResultDB4_ElevatorActualFlooorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 5)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS3 = {writeResultDB4_ElevatorActualFlooorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 #endregion
@@ -810,32 +1130,138 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 1)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(3);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS4 = {writeResultDB4_ElevatorActualFlooorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 2)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS4 = {writeResultDB4_ElevatorActualFlooorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 3)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS4 = {writeResultDB4_ElevatorActualFlooorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
                 {
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS4 = {writeResultDB4_ElevatorActualFlooorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 5)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1);
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS4 = {writeResultDB4_ElevatorActualFlooorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 #endregion
@@ -845,32 +1271,138 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 1)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(4);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(4); //toto cislo neni dobre
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS5 = {writeResultDB4_ElevatorActualFlooorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 2)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(3);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS5 = {writeResultDB4_ElevatorActualFlooorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 3)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS5 = {writeResultDB4_ElevatorActualFlooorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 4)
                 {
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1);
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS5 = {writeResultDB4_ElevatorActualFlooorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
                 {
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    int writeResultDB4_ElevatorActualFlooorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFlooorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFlooorSENS5 = {writeResultDB4_ElevatorActualFlooorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
 
                 #endregion
@@ -1147,7 +1679,7 @@ namespace Bc_prace
             //Floor5movement(); //this must go => Tia needs to activate this 
 
             ElevatorBTNCabin5 = true;
-            S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin5);
+            S7.SetBitAt(send_buffer_DB4, 0, 4, ElevatorBTNCabin5);
 
             //write to PLC
             int writeResultDB4_btnCabinFloor5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1347,24 +1879,24 @@ namespace Bc_prace
         //ElevatorCabin - cabin size parameters and position
         #region ElevatorCabin - cabin size parameters and position
 
-        //Movement
-        #region Movement
-        private void btnCabinMoveToRight_Click(object sender, EventArgs e)
+        //Cabin Movement on BTN Click
+        #region Movement Movement on BTN Click
+        private void btnCabinMoveRight_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.MoveRight();
         }
 
-        private void btnCabinMoveToLeft_Click(object sender, EventArgs e)
+        private void btnCabinMoveLeft_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.MoveLeft();
         }
 
-        private void btnCabinMoveToUp_Click(object sender, EventArgs e)
+        private void btnCabinMoveUp_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.MoveUp();
         }
 
-        private void btnCabinMoveToDown_Click(object sender, EventArgs e)
+        private void btnCabinMoveDown_Click(object sender, EventArgs e)
         {
             userControlElevatorCabin1.MoveDown();
         }

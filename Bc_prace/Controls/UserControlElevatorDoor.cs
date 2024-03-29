@@ -104,7 +104,7 @@ namespace Bc_prace.Controls
         //Methods for door movement
         #region Methods for door movement
 
-        public void OpenningDoor(int time)
+        public async void OpenningDoor(int time)
         {
             int totalSteps = time / Convert.ToInt32(Step);
 
@@ -112,12 +112,13 @@ namespace Bc_prace.Controls
             {
                 LeftDoorMoveLeft();
                 RightDoorMoveRight();
+                await Task.Delay(100);
             }
 
             this.Refresh(); //mozna
         }
 
-        public void ClosingDoor(int time)
+        public async void ClosingDoor(int time)
         {
             int totalSteps = time / Convert.ToInt32(Step);
 
@@ -125,6 +126,7 @@ namespace Bc_prace.Controls
             {
                 LeftDoorMoveRight();
                 RightDoorMoveLeft();
+                await Task.Delay(100);
             }
 
             this.Refresh(); //mozna

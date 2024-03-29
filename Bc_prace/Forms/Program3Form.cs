@@ -291,7 +291,7 @@ namespace Bc_prace
 
         private void Program3_Load(object sender, EventArgs e)
         {
-            userControlCrossroad1.SetControl(this);
+            userControlCrossroad1.SetControl(/*this*/);
 
             this.WindowState = FormWindowState.Maximized;
 

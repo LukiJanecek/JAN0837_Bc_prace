@@ -47,7 +47,7 @@ namespace Bc_prace.Controls
         private float lengthCabin = 0; //cabin length 
         private float widthButton = 50; //button width
         private float heightButton = 28; //button height
-        private float Step = 10;
+        public float Step;
         private float length = 100;
         private float signalizationCircle_diameter = 10;
 
@@ -687,7 +687,7 @@ namespace Bc_prace.Controls
             {
                 yCabin -= Step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(program1FormInstance.ElevatorCabinSpeed));
+                await Task.Delay(100);
             }
         }
 
@@ -697,9 +697,9 @@ namespace Bc_prace.Controls
 
             while (yCabin < targetY)
             {
-                yCabin -= Step;
+                yCabin += Step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(program1FormInstance.ElevatorCabinSpeed));
+                await Task.Delay(100);
             }
         }
         
