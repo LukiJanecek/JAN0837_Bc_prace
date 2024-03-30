@@ -56,6 +56,8 @@ namespace Bc_prace
             userControlElevatorCabin1 = new UserControlElevatorCabin();
             panelElevatorDoor = new Panel();
             userControlElevatorDoor1 = new UserControlElevatorDoor();
+            btnTest = new Button();
+            btnTest2 = new Button();
             panelCabinBtn.SuspendLayout();
             panel1.SuspendLayout();
             panelElevatorCabin.SuspendLayout();
@@ -65,19 +67,17 @@ namespace Bc_prace
             // statusStripElevator
             // 
             statusStripElevator.ImageScalingSize = new Size(20, 20);
-            statusStripElevator.Location = new Point(0, 437);
+            statusStripElevator.Location = new Point(0, 590);
             statusStripElevator.Name = "statusStripElevator";
-            statusStripElevator.Padding = new Padding(1, 0, 12, 0);
-            statusStripElevator.Size = new Size(1050, 22);
+            statusStripElevator.Size = new Size(1200, 22);
             statusStripElevator.TabIndex = 0;
             statusStripElevator.Text = "statusStrip1";
             // 
             // btnCabinFloor5
             // 
-            btnCabinFloor5.Location = new Point(28, 15);
-            btnCabinFloor5.Margin = new Padding(3, 2, 3, 2);
+            btnCabinFloor5.Location = new Point(32, 20);
             btnCabinFloor5.Name = "btnCabinFloor5";
-            btnCabinFloor5.Size = new Size(50, 26);
+            btnCabinFloor5.Size = new Size(57, 35);
             btnCabinFloor5.TabIndex = 1;
             btnCabinFloor5.Text = "5";
             btnCabinFloor5.UseVisualStyleBackColor = true;
@@ -85,10 +85,9 @@ namespace Bc_prace
             // 
             // btnCabinFloor4
             // 
-            btnCabinFloor4.Location = new Point(28, 45);
-            btnCabinFloor4.Margin = new Padding(3, 2, 3, 2);
+            btnCabinFloor4.Location = new Point(32, 60);
             btnCabinFloor4.Name = "btnCabinFloor4";
-            btnCabinFloor4.Size = new Size(50, 26);
+            btnCabinFloor4.Size = new Size(57, 35);
             btnCabinFloor4.TabIndex = 2;
             btnCabinFloor4.Text = "4";
             btnCabinFloor4.UseVisualStyleBackColor = true;
@@ -96,10 +95,9 @@ namespace Bc_prace
             // 
             // btnCabinFloor3
             // 
-            btnCabinFloor3.Location = new Point(28, 75);
-            btnCabinFloor3.Margin = new Padding(3, 2, 3, 2);
+            btnCabinFloor3.Location = new Point(32, 100);
             btnCabinFloor3.Name = "btnCabinFloor3";
-            btnCabinFloor3.Size = new Size(50, 26);
+            btnCabinFloor3.Size = new Size(57, 35);
             btnCabinFloor3.TabIndex = 3;
             btnCabinFloor3.Text = "3";
             btnCabinFloor3.UseVisualStyleBackColor = true;
@@ -107,10 +105,9 @@ namespace Bc_prace
             // 
             // btnCabinFloor2
             // 
-            btnCabinFloor2.Location = new Point(28, 105);
-            btnCabinFloor2.Margin = new Padding(3, 2, 3, 2);
+            btnCabinFloor2.Location = new Point(32, 140);
             btnCabinFloor2.Name = "btnCabinFloor2";
-            btnCabinFloor2.Size = new Size(50, 26);
+            btnCabinFloor2.Size = new Size(57, 35);
             btnCabinFloor2.TabIndex = 4;
             btnCabinFloor2.Text = "2";
             btnCabinFloor2.UseVisualStyleBackColor = true;
@@ -118,10 +115,9 @@ namespace Bc_prace
             // 
             // btnCabinFloor1
             // 
-            btnCabinFloor1.Location = new Point(28, 135);
-            btnCabinFloor1.Margin = new Padding(3, 2, 3, 2);
+            btnCabinFloor1.Location = new Point(32, 180);
             btnCabinFloor1.Name = "btnCabinFloor1";
-            btnCabinFloor1.Size = new Size(50, 26);
+            btnCabinFloor1.Size = new Size(57, 35);
             btnCabinFloor1.TabIndex = 5;
             btnCabinFloor1.Text = "1";
             btnCabinFloor1.UseVisualStyleBackColor = true;
@@ -129,10 +125,9 @@ namespace Bc_prace
             // 
             // btnCabinEmergency
             // 
-            btnCabinEmergency.Location = new Point(4, 212);
-            btnCabinEmergency.Margin = new Padding(3, 2, 3, 2);
+            btnCabinEmergency.Location = new Point(5, 283);
             btnCabinEmergency.Name = "btnCabinEmergency";
-            btnCabinEmergency.Size = new Size(98, 39);
+            btnCabinEmergency.Size = new Size(112, 52);
             btnCabinEmergency.TabIndex = 7;
             btnCabinEmergency.Text = "Emergency BTN";
             btnCabinEmergency.UseVisualStyleBackColor = true;
@@ -140,10 +135,9 @@ namespace Bc_prace
             // 
             // btnCabinDoorOPENCLOSE
             // 
-            btnCabinDoorOPENCLOSE.Location = new Point(4, 166);
-            btnCabinDoorOPENCLOSE.Margin = new Padding(3, 2, 3, 2);
+            btnCabinDoorOPENCLOSE.Location = new Point(5, 221);
             btnCabinDoorOPENCLOSE.Name = "btnCabinDoorOPENCLOSE";
-            btnCabinDoorOPENCLOSE.Size = new Size(98, 39);
+            btnCabinDoorOPENCLOSE.Size = new Size(112, 52);
             btnCabinDoorOPENCLOSE.TabIndex = 8;
             btnCabinDoorOPENCLOSE.Text = "Open/Close door ";
             btnCabinDoorOPENCLOSE.UseVisualStyleBackColor = true;
@@ -152,10 +146,9 @@ namespace Bc_prace
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 375);
-            btnEnd.Margin = new Padding(3, 2, 3, 2);
+            btnEnd.Location = new Point(3, 507);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(155, 59);
+            btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 38;
             btnEnd.Text = "End/Close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -173,14 +166,15 @@ namespace Bc_prace
             panelCabinBtn.Controls.Add(btnCabinFloor3);
             panelCabinBtn.Controls.Add(btnCabinFloor4);
             panelCabinBtn.Controls.Add(btnCabinFloor5);
-            panelCabinBtn.Location = new Point(777, 177);
-            panelCabinBtn.Margin = new Padding(3, 2, 3, 2);
+            panelCabinBtn.Location = new Point(888, 236);
             panelCabinBtn.Name = "panelCabinBtn";
-            panelCabinBtn.Size = new Size(106, 260);
+            panelCabinBtn.Size = new Size(121, 346);
             panelCabinBtn.TabIndex = 39;
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTest2);
+            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnGlobalEmergency);
             panel1.Controls.Add(btnCabinLengthBigger);
             panel1.Controls.Add(btnCabinLengthSmaller);
@@ -192,18 +186,16 @@ namespace Bc_prace
             panel1.Controls.Add(btnCabinMoveRight);
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(888, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(1015, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(162, 437);
+            panel1.Size = new Size(185, 590);
             panel1.TabIndex = 42;
             // 
             // btnGlobalEmergency
             // 
-            btnGlobalEmergency.Location = new Point(3, 9);
-            btnGlobalEmergency.Margin = new Padding(3, 2, 3, 2);
+            btnGlobalEmergency.Location = new Point(3, 12);
             btnGlobalEmergency.Name = "btnGlobalEmergency";
-            btnGlobalEmergency.Size = new Size(155, 59);
+            btnGlobalEmergency.Size = new Size(177, 79);
             btnGlobalEmergency.TabIndex = 47;
             btnGlobalEmergency.Text = "Emergency BTN";
             btnGlobalEmergency.UseVisualStyleBackColor = true;
@@ -211,10 +203,9 @@ namespace Bc_prace
             // 
             // btnCabinLengthBigger
             // 
-            btnCabinLengthBigger.Location = new Point(87, 266);
-            btnCabinLengthBigger.Margin = new Padding(3, 2, 3, 2);
+            btnCabinLengthBigger.Location = new Point(99, 355);
             btnCabinLengthBigger.Name = "btnCabinLengthBigger";
-            btnCabinLengthBigger.Size = new Size(71, 22);
+            btnCabinLengthBigger.Size = new Size(81, 29);
             btnCabinLengthBigger.TabIndex = 46;
             btnCabinLengthBigger.Text = "Length bigger";
             btnCabinLengthBigger.UseVisualStyleBackColor = true;
@@ -222,10 +213,9 @@ namespace Bc_prace
             // 
             // btnCabinLengthSmaller
             // 
-            btnCabinLengthSmaller.Location = new Point(87, 240);
-            btnCabinLengthSmaller.Margin = new Padding(3, 2, 3, 2);
+            btnCabinLengthSmaller.Location = new Point(99, 320);
             btnCabinLengthSmaller.Name = "btnCabinLengthSmaller";
-            btnCabinLengthSmaller.Size = new Size(71, 22);
+            btnCabinLengthSmaller.Size = new Size(81, 29);
             btnCabinLengthSmaller.TabIndex = 45;
             btnCabinLengthSmaller.Text = "Length smaller";
             btnCabinLengthSmaller.UseVisualStyleBackColor = true;
@@ -233,10 +223,9 @@ namespace Bc_prace
             // 
             // btnCabinWidthBigger
             // 
-            btnCabinWidthBigger.Location = new Point(87, 214);
-            btnCabinWidthBigger.Margin = new Padding(3, 2, 3, 2);
+            btnCabinWidthBigger.Location = new Point(99, 285);
             btnCabinWidthBigger.Name = "btnCabinWidthBigger";
-            btnCabinWidthBigger.Size = new Size(71, 22);
+            btnCabinWidthBigger.Size = new Size(81, 29);
             btnCabinWidthBigger.TabIndex = 44;
             btnCabinWidthBigger.Text = "Width bigger";
             btnCabinWidthBigger.UseVisualStyleBackColor = true;
@@ -244,10 +233,9 @@ namespace Bc_prace
             // 
             // btnCabinWidthSmaller
             // 
-            btnCabinWidthSmaller.Location = new Point(87, 188);
-            btnCabinWidthSmaller.Margin = new Padding(3, 2, 3, 2);
+            btnCabinWidthSmaller.Location = new Point(99, 251);
             btnCabinWidthSmaller.Name = "btnCabinWidthSmaller";
-            btnCabinWidthSmaller.Size = new Size(71, 22);
+            btnCabinWidthSmaller.Size = new Size(81, 29);
             btnCabinWidthSmaller.TabIndex = 43;
             btnCabinWidthSmaller.Text = "Width smaller";
             btnCabinWidthSmaller.UseVisualStyleBackColor = true;
@@ -255,10 +243,9 @@ namespace Bc_prace
             // 
             // btnCabinMoveToDown
             // 
-            btnCabinMoveToDown.Location = new Point(3, 266);
-            btnCabinMoveToDown.Margin = new Padding(3, 2, 3, 2);
+            btnCabinMoveToDown.Location = new Point(3, 355);
             btnCabinMoveToDown.Name = "btnCabinMoveToDown";
-            btnCabinMoveToDown.Size = new Size(71, 22);
+            btnCabinMoveToDown.Size = new Size(81, 29);
             btnCabinMoveToDown.TabIndex = 42;
             btnCabinMoveToDown.Text = "Down";
             btnCabinMoveToDown.UseVisualStyleBackColor = true;
@@ -266,10 +253,9 @@ namespace Bc_prace
             // 
             // btnCabinMoveUp
             // 
-            btnCabinMoveUp.Location = new Point(3, 240);
-            btnCabinMoveUp.Margin = new Padding(3, 2, 3, 2);
+            btnCabinMoveUp.Location = new Point(3, 320);
             btnCabinMoveUp.Name = "btnCabinMoveUp";
-            btnCabinMoveUp.Size = new Size(71, 22);
+            btnCabinMoveUp.Size = new Size(81, 29);
             btnCabinMoveUp.TabIndex = 41;
             btnCabinMoveUp.Text = "Up";
             btnCabinMoveUp.UseVisualStyleBackColor = true;
@@ -277,10 +263,9 @@ namespace Bc_prace
             // 
             // btnCabinMoveLeft
             // 
-            btnCabinMoveLeft.Location = new Point(3, 214);
-            btnCabinMoveLeft.Margin = new Padding(3, 2, 3, 2);
+            btnCabinMoveLeft.Location = new Point(3, 285);
             btnCabinMoveLeft.Name = "btnCabinMoveLeft";
-            btnCabinMoveLeft.Size = new Size(71, 22);
+            btnCabinMoveLeft.Size = new Size(81, 29);
             btnCabinMoveLeft.TabIndex = 40;
             btnCabinMoveLeft.Text = "Left";
             btnCabinMoveLeft.UseVisualStyleBackColor = true;
@@ -288,10 +273,9 @@ namespace Bc_prace
             // 
             // btnCabinMoveRight
             // 
-            btnCabinMoveRight.Location = new Point(3, 188);
-            btnCabinMoveRight.Margin = new Padding(3, 2, 3, 2);
+            btnCabinMoveRight.Location = new Point(3, 251);
             btnCabinMoveRight.Name = "btnCabinMoveRight";
-            btnCabinMoveRight.Size = new Size(71, 22);
+            btnCabinMoveRight.Size = new Size(81, 29);
             btnCabinMoveRight.TabIndex = 39;
             btnCabinMoveRight.Text = "Right";
             btnCabinMoveRight.UseVisualStyleBackColor = true;
@@ -306,8 +290,9 @@ namespace Bc_prace
             panelElevatorCabin.Controls.Add(userControlElevatorCabin1);
             panelElevatorCabin.Dock = DockStyle.Left;
             panelElevatorCabin.Location = new Point(0, 0);
+            panelElevatorCabin.Margin = new Padding(3, 4, 3, 4);
             panelElevatorCabin.Name = "panelElevatorCabin";
-            panelElevatorCabin.Size = new Size(393, 437);
+            panelElevatorCabin.Size = new Size(449, 590);
             panelElevatorCabin.TabIndex = 43;
             // 
             // userControlElevatorCabin1
@@ -319,40 +304,58 @@ namespace Bc_prace
             userControlElevatorCabin1.ElevatorActualFloorLED4 = false;
             userControlElevatorCabin1.ElevatorActualFloorLED5 = false;
             userControlElevatorCabin1.Location = new Point(0, 0);
-            userControlElevatorCabin1.Margin = new Padding(3, 2, 3, 2);
             userControlElevatorCabin1.Name = "userControlElevatorCabin1";
-            userControlElevatorCabin1.Size = new Size(393, 437);
+            userControlElevatorCabin1.Size = new Size(449, 590);
             userControlElevatorCabin1.TabIndex = 45;
             // 
             // panelElevatorDoor
             // 
             panelElevatorDoor.Controls.Add(userControlElevatorDoor1);
             panelElevatorDoor.Dock = DockStyle.Left;
-            panelElevatorDoor.Location = new Point(393, 0);
+            panelElevatorDoor.Location = new Point(449, 0);
+            panelElevatorDoor.Margin = new Padding(3, 4, 3, 4);
             panelElevatorDoor.Name = "panelElevatorDoor";
-            panelElevatorDoor.Size = new Size(298, 437);
+            panelElevatorDoor.Size = new Size(341, 590);
             panelElevatorDoor.TabIndex = 44;
             // 
             // userControlElevatorDoor1
             // 
             userControlElevatorDoor1.Dock = DockStyle.Fill;
             userControlElevatorDoor1.Location = new Point(0, 0);
-            userControlElevatorDoor1.Margin = new Padding(3, 2, 3, 2);
             userControlElevatorDoor1.Name = "userControlElevatorDoor1";
-            userControlElevatorDoor1.Size = new Size(298, 437);
+            userControlElevatorDoor1.Size = new Size(341, 590);
             userControlElevatorDoor1.TabIndex = 0;
+            // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(3, 472);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(81, 29);
+            btnTest.TabIndex = 48;
+            btnTest.Text = "test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
+            // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(99, 472);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(83, 29);
+            btnTest2.TabIndex = 49;
+            btnTest2.Text = "test2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click;
             // 
             // Program1Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1050, 459);
+            ClientSize = new Size(1200, 612);
             Controls.Add(panelElevatorDoor);
             Controls.Add(panelElevatorCabin);
             Controls.Add(panel1);
             Controls.Add(statusStripElevator);
             Controls.Add(panelCabinBtn);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Program1Form";
             Text = "Program1";
             Load += Program1_Load;
@@ -391,5 +394,7 @@ namespace Bc_prace
         private Panel panelElevatorDoor;
         private UserControlElevatorDoor userControlElevatorDoor1;
         private Button btnGlobalEmergency;
+        private Button btnTest;
+        private Button btnTest2;
     }
 }

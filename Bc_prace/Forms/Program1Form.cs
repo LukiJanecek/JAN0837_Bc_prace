@@ -710,7 +710,7 @@ namespace Bc_prace
                 }
 
                 //All combinations for 1st floor 
-                    #region all combinations for 1st floor 
+                #region all combinations for 1st floor 
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
@@ -1990,5 +1990,14 @@ namespace Bc_prace
 
         #endregion
 
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            userControlElevatorDoor1.OpenningDoor(ElevatorTimeDoorSQOPEN);
+        }
+
+        private void btnTest2_Click(object sender, EventArgs e)
+        {
+            userControlElevatorDoor1.ClosingDoor(ElevatorTimeDoorSQCLOSE);
+        }
     }
 }

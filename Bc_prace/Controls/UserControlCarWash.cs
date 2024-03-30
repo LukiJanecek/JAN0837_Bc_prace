@@ -581,7 +581,7 @@ namespace Bc_prace.Controls
             int totalSteps = Convert.ToInt32(length / step);
             int delayBetweenSteps = time / totalSteps;
 
-            for (int i = 0; i <= totalSteps; i++)
+            for (int i = 0; i < totalSteps; i++)
             {
                 bDoor1 -= step;
                 this.Refresh();
@@ -594,7 +594,7 @@ namespace Bc_prace.Controls
             int totalSteps = Convert.ToInt32(length / step);
             int delayBetweenSteps = time / totalSteps;
 
-            for (int i = 0; i <= totalSteps; i++)
+            for (int i = 0; i < totalSteps; i++)
             {
                 bDoor1 += step;
                 this.Refresh();
@@ -607,7 +607,7 @@ namespace Bc_prace.Controls
             int totalSteps = Convert.ToInt32(length / step);
             int delayBetweenSteps = time / totalSteps;
 
-            for (int i = 0; i <= totalSteps; i++)
+            for (int i = 0; i < totalSteps; i++)
             {
                 bDoor2 -= step;
                 this.Refresh();
@@ -620,7 +620,7 @@ namespace Bc_prace.Controls
             int totalSteps = Convert.ToInt32(length / step);
             int delayBetweenSteps = time / totalSteps;
 
-            for (int i = 0; i <= totalSteps; i++)
+            for (int i = 0; i < totalSteps; i++)
             {
                 bDoor2 += step;
                 this.Refresh();

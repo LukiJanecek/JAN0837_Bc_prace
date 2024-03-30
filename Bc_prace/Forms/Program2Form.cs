@@ -86,7 +86,7 @@ namespace Bc_prace
         public bool CarWashActiveFoam;
         public bool CarWashBrushes;
         public bool CarWashPrewash;
-        public int CarWashTimerDoorMovement; //tim
+        public int CarWashTimeDoorMovement; //time
 
         #endregion
 
@@ -259,7 +259,7 @@ namespace Bc_prace
                 CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
                 CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
                 CarWashPrewash = chooseOptionFormInstance.CarWashPreWash;
-                CarWashTimerDoorMovement = chooseOptionFormInstance.CarWashTimerDoorMovement;
+                CarWashTimeDoorMovement = chooseOptionFormInstance.CarWashTimeDoorMovement;
 
                 #endregion
 
@@ -542,25 +542,25 @@ namespace Bc_prace
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
-                    userControlCarWash1.door1UP(CarWashTimerDoorMovement);
+                    userControlCarWash1.door1UP(CarWashTimeDoorMovement);
                 }
 
                 //Door1 DOWN
                 if (CarWashDoor1DOWN)
                 {
-                    userControlCarWash1.door1DOWN(CarWashTimerDoorMovement);
+                    userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
                 }
 
                 //Door2 UP
                 if (CarWashDoor2UP)
                 {
-                    userControlCarWash1.door2UP(CarWashTimerDoorMovement);
+                    userControlCarWash1.door2UP(CarWashTimeDoorMovement);
                 }
 
                 //door2 DOWN
                 if (CarWashDoor2DOWN)
                 {
-                    userControlCarWash1.door2DOWN(CarWashTimerDoorMovement);
+                    userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
                 }
 
                 //Water
@@ -878,12 +878,14 @@ namespace Bc_prace
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-           
+            userControlCarWash1.door1UP(CarWashTimeDoorMovement);
+            userControlCarWash1.door2UP(CarWashTimeDoorMovement);
         }
 
         private void btnTest2_Click(object sender, EventArgs e)
         {
-
+            userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
+            userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
         }
 
         private void btnSignalization_Click(object sender, EventArgs e)

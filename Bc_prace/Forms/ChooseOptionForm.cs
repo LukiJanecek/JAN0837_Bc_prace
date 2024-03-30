@@ -216,7 +216,7 @@ namespace Bc_prace
         public bool CarWashBrushes;
         public bool CarWashSoap;
         public bool CarWashActiveFoam;
-        public int CarWashTimerDoorMovement; //time
+        public int CarWashTimeDoorMovement; //time
 
         #endregion
 
@@ -661,7 +661,7 @@ namespace Bc_prace
                         CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 4, 1); ;
                         CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 2); ;
                         CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 3); ;
-                        CarWashTimerDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
+                        CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
 
                         #endregion
 
