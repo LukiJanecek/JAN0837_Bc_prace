@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using System.Windows.Forms;
 using Sharp7;
+using System.Diagnostics.Eventing.Reader;
 
 public delegate void CarWashPositionCar(bool state);
 
@@ -49,9 +50,6 @@ namespace Bc_prace.Controls
         private float ShowerX;
         private float ShowerY;
 
-        //toto tady asi nebude 
-        private float timeDoor = 200;
-
         //images of car
         private PictureBox pictureBoxCar;
         private int picture = 1;
@@ -73,6 +71,8 @@ namespace Bc_prace.Controls
         private float signalizationCircle_diameter = 10;
         private float shower_width = 20;
         private float shower_height = 100;
+        private float step = 10;
+        private float TimeMovement = 200;
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush green = new SolidBrush(Color.Green); //soap
@@ -576,43 +576,55 @@ namespace Bc_prace.Controls
 
         //Door movement
         #region Door movement
-        public async void door1UP()
+        public async void door1UP(int time)
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            int totalSteps = Convert.ToInt32(length / step);
+            int delayBetweenSteps = time / totalSteps;
+
+            for (int i = 0; i <= totalSteps; i++)
             {
-                bDoor1 -= 10;
+                bDoor1 -= step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(delayBetweenSteps);
             }
         }
 
-        public async void door1DOWN()
+        public async void door1DOWN(int time)
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            int totalSteps = Convert.ToInt32(length / step);
+            int delayBetweenSteps = time / totalSteps;
+
+            for (int i = 0; i <= totalSteps; i++)
             {
-                bDoor1 += 10;
+                bDoor1 += step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(delayBetweenSteps);
             }
         }
 
-        public async void door2UP()
+        public async void door2UP(int time)
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            int totalSteps = Convert.ToInt32(length / step);
+            int delayBetweenSteps = time / totalSteps;
+
+            for (int i = 0; i <= totalSteps; i++)
             {
-                bDoor2 -= 10;
+                bDoor2 -= step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(delayBetweenSteps);
             }
         }
 
-        public async void door2DOWN()
+        public async void door2DOWN(int time)
         {
-            for (int i = 0; i <= Convert.ToInt32(length); i += Convert.ToInt32(length) / 10)
+            int totalSteps = Convert.ToInt32(length / step);
+            int delayBetweenSteps = time / totalSteps;
+
+            for (int i = 0; i <= totalSteps; i++)
             {
-                bDoor2 += 10;
+                bDoor2 += step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(delayBetweenSteps);
             }
         }
 
@@ -625,9 +637,9 @@ namespace Bc_prace.Controls
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
             {
-                ShowerX -= 10;
+                ShowerX -= step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(Convert.ToInt32(TimeMovement));
             }
         }
 
@@ -635,9 +647,9 @@ namespace Bc_prace.Controls
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
             {
-                ShowerX += 10;
+                ShowerX += step;
                 this.Refresh();
-                await Task.Delay(Convert.ToInt32(timeDoor));
+                await Task.Delay(Convert.ToInt32(TimeMovement));
             }
         }
 
@@ -827,7 +839,7 @@ namespace Bc_prace.Controls
                         pictureX += 10;
                         pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                         this.Refresh();
-                        await Task.Delay(Convert.ToInt32(timeDoor));
+                        await Task.Delay(Convert.ToInt32(TimeMovement));
                     }
 
                     break;
@@ -840,7 +852,7 @@ namespace Bc_prace.Controls
                         pictureX += 10;
                         pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                         this.Refresh();
-                        await Task.Delay(Convert.ToInt32(timeDoor));
+                        await Task.Delay(Convert.ToInt32(TimeMovement));
                     }
 
                     break;
@@ -854,7 +866,7 @@ namespace Bc_prace.Controls
                         pictureX += 10;
                         pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                         this.Refresh();
-                        await Task.Delay(Convert.ToInt32(timeDoor));
+                        await Task.Delay(Convert.ToInt32(TimeMovement));
                     }
 
                     if (OnCarWashPositionCar != null)
@@ -872,7 +884,7 @@ namespace Bc_prace.Controls
                         pictureX += 10;
                         pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
                         this.Refresh();
-                        await Task.Delay(Convert.ToInt32(timeDoor));
+                        await Task.Delay(Convert.ToInt32(TimeMovement));
                     }
 
                     break;

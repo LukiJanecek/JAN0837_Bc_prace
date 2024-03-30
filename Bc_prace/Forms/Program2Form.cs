@@ -86,7 +86,7 @@ namespace Bc_prace
         public bool CarWashActiveFoam;
         public bool CarWashBrushes;
         public bool CarWashPrewash;
-
+        public int CarWashTimerDoorMovement; //tim
 
         #endregion
 
@@ -259,6 +259,7 @@ namespace Bc_prace
                 CarWashActiveFoam = chooseOptionFormInstance.CarWashActiveFoam;
                 CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
                 CarWashPrewash = chooseOptionFormInstance.CarWashPreWash;
+                CarWashTimerDoorMovement = chooseOptionFormInstance.CarWashTimerDoorMovement;
 
                 #endregion
 
@@ -541,25 +542,25 @@ namespace Bc_prace
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
-                    userControlCarWash1.door1UP();
+                    userControlCarWash1.door1UP(CarWashTimerDoorMovement);
                 }
 
                 //Door1 DOWN
                 if (CarWashDoor1DOWN)
                 {
-                    userControlCarWash1.door1DOWN();
+                    userControlCarWash1.door1DOWN(CarWashTimerDoorMovement);
                 }
 
                 //Door2 UP
                 if (CarWashDoor2UP)
                 {
-                    userControlCarWash1.door2UP();
+                    userControlCarWash1.door2UP(CarWashTimerDoorMovement);
                 }
 
                 //door2 DOWN
                 if (CarWashDoor2DOWN)
                 {
-                    userControlCarWash1.door2DOWN();
+                    userControlCarWash1.door2DOWN(CarWashTimerDoorMovement);
                 }
 
                 //Water
