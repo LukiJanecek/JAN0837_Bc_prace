@@ -36,10 +36,10 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
         private int DBNumber_DB11 = 11;
-        public byte[] read_buffer_DB11 = new byte[1]; //1
+        public byte[] read_buffer_DB11 = new byte[1]; 
         public byte[] previous_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
-        public byte[] send_buffer_DB11 = new byte[1]; //1
+        public byte[] send_buffer_DB11 = new byte[1]; 
 
         //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
         private int DBNumber_DB4 = 4;
@@ -50,46 +50,46 @@ namespace Bc_prace
 
         //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
         private int DBNumber_DB5 = 5;
-        public byte[] read_buffer_DB5 = new byte[10]; //3
+        public byte[] read_buffer_DB5 = new byte[11]; 
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
-        public byte[] send_buffer_DB5 = new byte[10]; //3
+        public byte[] send_buffer_DB5 = new byte[11]; 
 
         //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
         private int DBNumber_DB14 = 14;
-        public byte[] read_buffer_DB14 = new byte[4]; //110 
+        public byte[] read_buffer_DB14 = new byte[4]; 
         public byte[] previous_buffer_DB14;
         public byte[] PreviousBufferHash_DB14;
-        public byte[] send_buffer_DB14 = new byte[4]; //110
+        public byte[] send_buffer_DB14 = new byte[4]; 
         //+ other structs are Timers 
 
         //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
         private int DBNumber_DB1 = 1;
-        public byte[] read_buffer_DB1 = new byte[7]; //6 
+        public byte[] read_buffer_DB1 = new byte[7]; 
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
-        public byte[] send_buffer_DB1 = new byte[7]; //6
+        public byte[] send_buffer_DB1 = new byte[7]; 
 
         //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
         private int DBNumber_DB19 = 19;
-        public byte[] read_buffer_DB19 = new byte[7]; //6 
+        public byte[] read_buffer_DB19 = new byte[7]; 
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
-        public byte[] send_buffer_DB19 = new byte[7]; //6
+        public byte[] send_buffer_DB19 = new byte[7]; 
 
         //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB20 = 20;
-        public byte[] read_buffer_DB20 = new byte[6]; //5
+        public byte[] read_buffer_DB20 = new byte[6]; 
         public byte[] previous_buffer_DB20;
         public byte[] PreviousBufferHash_DB20;
-        public byte[] send_buffer_DB20 = new byte[6]; //5
+        public byte[] send_buffer_DB20 = new byte[6]; 
 
         //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
         private int DBNumber_DB21 = 21;
-        public byte[] read_buffer_DB21 = new byte[6]; //5
+        public byte[] read_buffer_DB21 = new byte[6]; 
         public byte[] previous_buffer_DB21;
         public byte[] PreviousBufferHash_DB21;
-        public byte[] send_buffer_DB21 = new byte[6]; //5
+        public byte[] send_buffer_DB21 = new byte[6]; 
 
         #endregion
 
@@ -217,6 +217,15 @@ namespace Bc_prace
         public bool CarWashSoap;
         public bool CarWashActiveFoam;
         public int CarWashTimeDoorMovement; //time
+
+        #endregion
+
+        //MEM variables 
+        #region MEM variables 
+
+        public bool CarWashMEMDoor;
+        public bool CarWashMEMDoorTrig;
+        public bool CarWashMEMDoorCloseTrig;
 
         #endregion
 
@@ -658,10 +667,13 @@ namespace Bc_prace
                         CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 6);
                         CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 7);
                         CarWashPreWash = S7.GetBitAt(read_buffer_DB5, 4, 0);
-                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 4, 1); ;
+                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 4, 1); 
                         CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 2); ;
-                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 3); ;
+                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 3); 
                         CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
+                        CarWashMEMDoor = S7.GetBitAt(read_buffer_DB5, 10, 0); 
+                        CarWashMEMDoorTrig = S7.GetBitAt(read_buffer_DB5, 10, 1);
+                        CarWashMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB5, 10, 2);
 
                         #endregion
 

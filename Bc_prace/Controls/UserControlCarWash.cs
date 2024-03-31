@@ -326,10 +326,10 @@ namespace Bc_prace.Controls
             door2X = x + length * 10 - door_width;
             door2Y = y + length * 3;
 
-            //front door
+            //front door -> Door1
             g.DrawRectangle(BlackPen, door1X + aDoor1, door1Y + bDoor1, door_width + cDoor1, door_height + dDoor1);
 
-            //back door 
+            //back door -> Door2
             g.DrawRectangle(BlackPen, door2X + aDoor2, door2Y + bDoor2, door_width + cDoor2, door_height + dDoor2);
 
             #endregion
@@ -578,8 +578,10 @@ namespace Bc_prace.Controls
         #region Door movement
         public async void door1UP(int time)
         {
-            int totalSteps = time / Convert.ToInt32(step);
-            int delayBetweenSteps = time / totalSteps;
+            int realTime = 4000;
+            
+            int totalSteps = Convert.ToInt32(length / step);
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
@@ -591,8 +593,10 @@ namespace Bc_prace.Controls
 
         public async void door1DOWN(int time)
         {
+            int realTime = 4000;
+
             int totalSteps = Convert.ToInt32(length / step);
-            int delayBetweenSteps = time / totalSteps;
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
@@ -604,8 +608,10 @@ namespace Bc_prace.Controls
 
         public async void door2UP(int time)
         {
+            int realTime = 4000;
+
             int totalSteps = Convert.ToInt32(length / step);
-            int delayBetweenSteps = time / totalSteps;
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
@@ -617,8 +623,10 @@ namespace Bc_prace.Controls
 
         public async void door2DOWN(int time)
         {
+            int realTime = 4000;
+
             int totalSteps = Convert.ToInt32(length / step);
-            int delayBetweenSteps = time / totalSteps;
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {

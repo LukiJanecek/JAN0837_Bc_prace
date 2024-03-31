@@ -90,6 +90,15 @@ namespace Bc_prace
 
         #endregion
 
+        //MEM variables 
+        #region MEM variables 
+
+        public bool CarWashMEMDoor;
+        public bool CarWashMEMDoorTrig;
+        public bool CarWashMEMDoorCloseTrig;
+
+        #endregion
+
         public Program2Form(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
@@ -260,6 +269,15 @@ namespace Bc_prace
                 CarWashBrushes = chooseOptionFormInstance.CarWashBrushes;
                 CarWashPrewash = chooseOptionFormInstance.CarWashPreWash;
                 CarWashTimeDoorMovement = chooseOptionFormInstance.CarWashTimeDoorMovement;
+
+                #endregion
+
+                //MEM variables 
+                #region 
+
+                CarWashMEMDoor = chooseOptionFormInstance.CarWashMEMDoor;
+                CarWashMEMDoorTrig = chooseOptionFormInstance.CarWashMEMDoorTrig;
+                CarWashMEMDoorCloseTrig = chooseOptionFormInstance.CarWashMEMDoorCloseTrig;
 
                 #endregion
 

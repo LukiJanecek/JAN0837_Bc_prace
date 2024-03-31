@@ -106,8 +106,10 @@ namespace Bc_prace.Controls
 
         public async void OpenningDoor(int time)
         {
-            int totalSteps = time / Convert.ToInt32(Step);
-            int delayBetweenSteps = time / totalSteps;
+            int realTime = 2000;
+
+            int totalSteps = realTime / Convert.ToInt32(Step);
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
@@ -121,8 +123,10 @@ namespace Bc_prace.Controls
 
         public async void ClosingDoor(int time)
         {
-            int totalSteps = time / Convert.ToInt32(Step);
-            int delayBetweenSteps = time / totalSteps;
+            int realTime = 2000;
+
+            int totalSteps = realTime / Convert.ToInt32(Step);
+            int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
             {
