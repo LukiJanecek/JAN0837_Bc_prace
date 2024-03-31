@@ -300,7 +300,7 @@ namespace Bc_prace
             }
         }
 
-        private void UserControlElevatorCabin1_OnElevatorFloorSENS(object sender, int floor)
+        private void UserControlElevatorCabin1_OnElevatorFloorSENS(int floor)
         {
             int writeResultDB4_ElevatorActualFloorSENS1;
             int writeResultDB4_ElevatorActualFloorSENS2;
@@ -311,6 +311,12 @@ namespace Bc_prace
             switch (floor)
             {
                 case 1:
+
+                    //Elevator Floor SENS 1 = true 
+                    //Elevator Floor SENS 2 = false 
+                    //Elevator Floor SENS 3 = false 
+                    //Elevator Floor SENS 4 = false 
+                    //Elevator Floor SENS 5 = false
 
                     //Elevator Floor SENS 1 = true 
                     ElevatorActualFloorSENS1 = true;
@@ -926,6 +932,135 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = true 
                     ElevatorActualFloorSENS5 = true;
+                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+
+                    //write to PLC
+                    writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFloorSENS5 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFloorSENS5 = {writeResultDB4_ElevatorActualFloorSENS5} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    break;
+                case 6:
+
+                    //Elevator Floor SENS 1 = false 
+                    //Elevator Floor SENS 2 = false 
+                    //Elevator Floor SENS 3 = false 
+                    //Elevator Floor SENS 4 = false 
+                    //Elevator Floor SENS 5 = false
+
+                    //Elevator Floor SENS 1 = false 
+                    ElevatorActualFloorSENS1 = false;
+                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+
+                    //write to PLC
+                    writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFloorSENS1 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    //Elevator Floor SENS 2 = false 
+                    ElevatorActualFloorSENS2 = false;
+                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+
+                    //write to PLC
+                    writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFloorSENS2 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFloorSENS2 = {writeResultDB4_ElevatorActualFloorSENS2} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    //Elevator Floor SENS 3 = false 
+                    ElevatorActualFloorSENS3 = false;
+                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+
+                    //write to PLC
+                    writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFloorSENS3 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFloorSENS3 = {writeResultDB4_ElevatorActualFloorSENS3} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    //Elevator Floor SENS 4 = false 
+                    ElevatorActualFloorSENS4 = false;
+                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+
+                    //write to PLC
+                    writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+                    if (writeResultDB4_ElevatorActualFloorSENS4 != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                                $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
+
+                    //Elevator Floor SENS 5 = false 
+                    ElevatorActualFloorSENS5 = false;
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
 
                     //write to PLC
@@ -2280,8 +2415,6 @@ namespace Bc_prace
         #region BTN cabin Click
         private void btnCabinFloor1_Click(object sender, EventArgs e)
         {
-            //Floor1movement(); //this must go => Tia needs to activate this 
-
             ElevatorBTNCabin1 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 0, ElevatorBTNCabin1);
 
@@ -2308,8 +2441,6 @@ namespace Bc_prace
 
         private void btnCabinFloor2_Click(object sender, EventArgs e)
         {
-            //Floor2movement(); //this must go => Tia needs to activate this 
-
             ElevatorBTNCabin2 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 1, ElevatorBTNCabin2);
 
@@ -2336,8 +2467,6 @@ namespace Bc_prace
 
         private void btnCabinFloor3_Click(object sender, EventArgs e)
         {
-            //Floor3movement(); //this must go => Tia needs to activate this 
-
             ElevatorBTNCabin3 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 2, ElevatorBTNCabin3);
 
@@ -2364,8 +2493,6 @@ namespace Bc_prace
 
         private void btnCabinFloor4_Click(object sender, EventArgs e)
         {
-            //Floor4movement(); //this must go => Tia needs to activate this 
-
             ElevatorBTNCabin4 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 3, ElevatorBTNCabin4);
 
@@ -2392,8 +2519,6 @@ namespace Bc_prace
 
         private void btnCabinFloor5_Click(object sender, EventArgs e)
         {
-            //Floor5movement(); //this must go => Tia needs to activate this 
-
             ElevatorBTNCabin5 = true;
             S7.SetBitAt(send_buffer_DB4, 0, 4, ElevatorBTNCabin5);
 

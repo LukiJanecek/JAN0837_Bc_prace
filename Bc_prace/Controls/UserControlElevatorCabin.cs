@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Bc_prace.Controls
 {
     public delegate void ElevatorFloorBTNClick(object sender, string id);
-    public delegate void ElevatorFloorSENS(object sender, int floor);
+    public delegate void ElevatorFloorSENS(int floor); //object sender
 
     public partial class UserControlElevatorCabin : UserControl
     {
@@ -227,35 +227,35 @@ namespace Bc_prace.Controls
             if (yCabin == (y + length * 5 - heightCabin))
             {
                 if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(sender, 1);   
+                    OnElevatorFloorSENS(1);   
             }
             
             //Cabin is on 2st floor
             if (yCabin == (y + length * 4 - heightCabin))
             {
                 if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(sender, 2);
-            }
+                    OnElevatorFloorSENS(2);
+            } 
             
             //Cabin is on 3rd floor
             if (yCabin == (y + length * 3 - heightCabin))
             {
                 if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(sender, 3);
+                    OnElevatorFloorSENS(3);
             }
             
             //Cabin is on 4th floor
             if (yCabin == (y + length * 2 - heightCabin))
             {
                 if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(sender, 4);  
+                    OnElevatorFloorSENS(4);  
             }
             
             //Cabin is on 5th floor
             if (yCabin == (y + length - heightCabin))
             {
                 if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(sender, 5);
+                    OnElevatorFloorSENS(5);
             }
             
             #endregion
@@ -268,8 +268,6 @@ namespace Bc_prace.Controls
             {
                 g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
-
-                //this.Refresh();
             }
             else
             {
@@ -310,7 +308,7 @@ namespace Bc_prace.Controls
             else
             {
                 g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray;
+                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray; 
             }
 
             //ElevatorActualFloorLED5
@@ -441,6 +439,45 @@ namespace Bc_prace.Controls
             {
                 yCabin += Step;
                 this.Refresh();
+
+                //zde mohu přidat podmínky pro zobrazení SENS
+
+                //Conditions based ond object position -> ElevatorActualFloorSENS
+                #region Conditions based ond object position -> ElevatorActualFloorSENS
+
+                if (yCabin == (y + length * 5 - heightCabin)) //Cabin is on 1st floor
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(1);
+                }
+                else if (yCabin == (y + length * 4 - heightCabin)) //Cabin is on 2st floor
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(2);
+                }
+                else if (yCabin == (y + length * 3 - heightCabin)) //Cabin is on 3rd floor
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(3);
+                }
+                else if (yCabin == (y + length * 2 - heightCabin)) //Cabin is on 4th floor
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(4);
+                }
+                else if (yCabin == (y + length - heightCabin)) //Cabin is on 5th floor
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(5);
+                }
+                else //no SENS active
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(6);
+                }
+
+                #endregion
+                                
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
         }
@@ -452,6 +489,47 @@ namespace Bc_prace.Controls
             while (yCabin > targetY)
             {
                 yCabin -= Step;
+
+                //Conditions based ond object position -> ElevatorActualFloorSENS
+                #region Conditions based ond object position -> ElevatorActualFloorSENS
+
+                //Cabin is on 1st floor
+                if (yCabin == (y + length * 5 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(1);
+                }
+
+                //Cabin is on 2st floor
+                if (yCabin == (y + length * 4 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(2);
+                }
+
+                //Cabin is on 3rd floor
+                if (yCabin == (y + length * 3 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(3);
+                }
+
+                //Cabin is on 4th floor
+                if (yCabin == (y + length * 2 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(4);
+                }
+
+                //Cabin is on 5th floor
+                if (yCabin == (y + length - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(5);
+                }
+
+                #endregion
+
                 this.Refresh();
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
@@ -464,6 +542,47 @@ namespace Bc_prace.Controls
             while (yCabin < targetY)
             {
                 yCabin += Step;
+
+                //Conditions based ond object position -> ElevatorActualFloorSENS
+                #region Conditions based ond object position -> ElevatorActualFloorSENS
+
+                //Cabin is on 1st floor
+                if (yCabin == (y + length * 5 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(1);
+                }
+
+                //Cabin is on 2st floor
+                if (yCabin == (y + length * 4 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(2);
+                }
+
+                //Cabin is on 3rd floor
+                if (yCabin == (y + length * 3 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(3);
+                }
+
+                //Cabin is on 4th floor
+                if (yCabin == (y + length * 2 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(4);
+                }
+
+                //Cabin is on 5th floor
+                if (yCabin == (y + length - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(5);
+                }
+
+                #endregion
+
                 this.Refresh();
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
