@@ -18,7 +18,7 @@ namespace Bc_prace.Controls
     {
         //private Program1Form program1FormInstance = null;
 
-        private S7Client client;
+        //private S7Client client;
 
         //MessageBox control
         private bool errorMessageBoxShown;
@@ -618,6 +618,5 @@ namespace Bc_prace.Controls
         }
 
         #endregion
-
     }
 }
