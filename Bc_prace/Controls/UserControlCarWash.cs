@@ -578,7 +578,7 @@ namespace Bc_prace.Controls
         #region Door movement
         public async void door1UP(int time)
         {
-            int totalSteps = Convert.ToInt32(length / step);
+            int totalSteps = time / Convert.ToInt32(step);
             int delayBetweenSteps = time / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
