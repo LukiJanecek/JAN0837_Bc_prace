@@ -140,7 +140,6 @@ namespace Bc_prace.Controls
         public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
-
             DoubleBuffered = true;
             Paint += UserControlElevatorCabin_Paint;
 

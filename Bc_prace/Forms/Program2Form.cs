@@ -560,25 +560,45 @@ namespace Bc_prace
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
+                    //true
                     userControlCarWash1.door1UP(CarWashTimeDoorMovement);
+                }
+                else
+                {
+                    //fasle
                 }
 
                 //Door1 DOWN
                 if (CarWashDoor1DOWN)
                 {
+                    //true
                     userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
+                }
+                else
+                {
+                    //fasle
                 }
 
                 //Door2 UP
                 if (CarWashDoor2UP)
                 {
+                    //true 
                     userControlCarWash1.door2UP(CarWashTimeDoorMovement);
+                }
+                else
+                {
+                    //fasle
                 }
 
                 //door2 DOWN
                 if (CarWashDoor2DOWN)
                 {
+                    //true
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
+                }
+                else
+                {
+                    //false
                 }
 
                 //Water

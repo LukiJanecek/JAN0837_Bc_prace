@@ -278,8 +278,8 @@ namespace Bc_prace.Controls
         private float TrafficLightsCrosswalk_height = 40;
         private float FreeSpace = 5;
 
-        private float Button_height = 80;
-        private float Button_width = 100;
+        private float Button_height = 70;
+        private float Button_width = 85;
 
         private SolidBrush green = new SolidBrush(Color.Green);
         private SolidBrush yellow = new SolidBrush(Color.Yellow);

@@ -1447,12 +1447,22 @@ namespace Bc_prace
 
                 if (ElevatorDoorClOSE)
                 {
+                    //true
                     CloseDOOR(ElevatorTimeDoorSQCLOSE);
+                }
+                else
+                {
+                    //fasle
                 }
 
                 if (ElevatorDoorOPEN)
                 {
+                    //true
                     OpenDOOR(ElevatorTimeDoorSQOPEN);
+                }
+                else
+                {
+                    //false
                 }
 
                 if (ElevatorEmergencySTOP)
