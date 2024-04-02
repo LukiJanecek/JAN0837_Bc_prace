@@ -547,7 +547,7 @@ namespace Bc_prace
                 }
 
                 //Green light
-                if (CarWashGreenLight) 
+                if (CarWashGreenLight)
                 {
                     userControlCarWash1.CarWashRedLight = false;
                     userControlCarWash1.CarWashYellowLight = false;
@@ -556,7 +556,7 @@ namespace Bc_prace
                     btnSignalization.BackColor = System.Drawing.Color.Green;
                     btnSignalization.Text = "Go";
                 }
-                
+
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
@@ -565,7 +565,7 @@ namespace Bc_prace
                 }
                 else
                 {
-                    //fasle
+                    //false
                 }
 
                 //Door1 DOWN
@@ -576,7 +576,7 @@ namespace Bc_prace
                 }
                 else
                 {
-                    //fasle
+                    //false
                 }
 
                 //Door2 UP
@@ -587,7 +587,7 @@ namespace Bc_prace
                 }
                 else
                 {
-                    //fasle
+                    //false
                 }
 
                 //door2 DOWN
@@ -606,6 +606,9 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
+                    //userControlCarWash1.ShowerMovement(705, 915, 2000);
+                    //userControlCarWash1.ShowerMovement(915, 515, 2000);
+                    //userControlCarWash1.ShowerMovement(515, 705, 2000);
                 }
                 else
                 {
@@ -916,21 +919,17 @@ namespace Bc_prace
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            userControlCarWash1.door1UP(CarWashTimeDoorMovement);
-            userControlCarWash1.door2UP(CarWashTimeDoorMovement);
+
         }
 
-        private void btnTest2_Click(object sender, EventArgs e)
+        private async void btnTest2_Click(object sender, EventArgs e)
         {
-            userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
-            userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
+
         }
 
         private void btnSignalization_Click(object sender, EventArgs e)
         {
 
         }
-
-
     }
 }

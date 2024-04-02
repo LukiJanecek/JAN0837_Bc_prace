@@ -1452,7 +1452,7 @@ namespace Bc_prace
                 }
                 else
                 {
-                    //fasle
+                    //false
                 }
 
                 if (ElevatorDoorOPEN)
@@ -2595,6 +2595,8 @@ namespace Bc_prace
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door closed");
             statusStripElevator.Items.Add(lblStatus);
+
+            userControlElevatorDoor1.ClosingDoor(time);
         }
 
         private void OpenDOOR(int time)
@@ -2610,6 +2612,8 @@ namespace Bc_prace
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door open");
             statusStripElevator.Items.Add(lblStatus);
+
+            userControlElevatorDoor1.OpenningDoor(time);
         }
 
         #endregion

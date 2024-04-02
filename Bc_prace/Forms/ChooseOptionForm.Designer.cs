@@ -49,10 +49,9 @@
             // 
             // btnProgram1
             // 
-            btnProgram1.Location = new Point(19, 50);
-            btnProgram1.Margin = new Padding(3, 2, 3, 2);
+            btnProgram1.Location = new Point(22, 67);
             btnProgram1.Name = "btnProgram1";
-            btnProgram1.Size = new Size(82, 39);
+            btnProgram1.Size = new Size(94, 52);
             btnProgram1.TabIndex = 0;
             btnProgram1.Text = "Program1";
             btnProgram1.UseVisualStyleBackColor = true;
@@ -60,10 +59,9 @@
             // 
             // btnProgram2
             // 
-            btnProgram2.Location = new Point(107, 50);
-            btnProgram2.Margin = new Padding(3, 2, 3, 2);
+            btnProgram2.Location = new Point(122, 67);
             btnProgram2.Name = "btnProgram2";
-            btnProgram2.Size = new Size(82, 39);
+            btnProgram2.Size = new Size(94, 52);
             btnProgram2.TabIndex = 1;
             btnProgram2.Text = "Program2";
             btnProgram2.UseVisualStyleBackColor = true;
@@ -71,10 +69,9 @@
             // 
             // btnProgram3
             // 
-            btnProgram3.Location = new Point(194, 50);
-            btnProgram3.Margin = new Padding(3, 2, 3, 2);
+            btnProgram3.Location = new Point(222, 67);
             btnProgram3.Name = "btnProgram3";
-            btnProgram3.Size = new Size(82, 39);
+            btnProgram3.Size = new Size(94, 52);
             btnProgram3.TabIndex = 2;
             btnProgram3.Text = "Program3";
             btnProgram3.UseVisualStyleBackColor = true;
@@ -82,10 +79,9 @@
             // 
             // btnConnect
             // 
-            btnConnect.Location = new Point(10, 53);
-            btnConnect.Margin = new Padding(3, 2, 3, 2);
+            btnConnect.Location = new Point(11, 71);
             btnConnect.Name = "btnConnect";
-            btnConnect.Size = new Size(204, 37);
+            btnConnect.Size = new Size(233, 49);
             btnConnect.TabIndex = 3;
             btnConnect.Text = "Connect";
             btnConnect.UseVisualStyleBackColor = true;
@@ -93,48 +89,45 @@
             // 
             // txtBoxPLCIP
             // 
-            txtBoxPLCIP.Location = new Point(10, 26);
-            txtBoxPLCIP.Margin = new Padding(3, 2, 3, 2);
+            txtBoxPLCIP.Location = new Point(11, 35);
             txtBoxPLCIP.Name = "txtBoxPLCIP";
-            txtBoxPLCIP.Size = new Size(204, 23);
+            txtBoxPLCIP.Size = new Size(233, 27);
             txtBoxPLCIP.TabIndex = 4;
             txtBoxPLCIP.Text = "192.168.0.1";
             // 
             // lblTypePLCIP
             // 
             lblTypePLCIP.AutoSize = true;
-            lblTypePLCIP.Location = new Point(10, 8);
+            lblTypePLCIP.Location = new Point(11, 11);
             lblTypePLCIP.Name = "lblTypePLCIP";
-            lblTypePLCIP.Size = new Size(144, 15);
+            lblTypePLCIP.Size = new Size(178, 20);
             lblTypePLCIP.TabIndex = 5;
             lblTypePLCIP.Text = "Type your PLC IP address: ";
             // 
             // lblChooseSIM
             // 
             lblChooseSIM.AutoSize = true;
-            lblChooseSIM.Location = new Point(78, 32);
+            lblChooseSIM.Location = new Point(89, 43);
             lblChooseSIM.Name = "lblChooseSIM";
-            lblChooseSIM.Size = new Size(136, 15);
+            lblChooseSIM.Size = new Size(167, 20);
             lblChooseSIM.TabIndex = 7;
             lblChooseSIM.Text = "Choose your simulation:";
             // 
             // statusStripChooseOption
             // 
             statusStripChooseOption.ImageScalingSize = new Size(20, 20);
-            statusStripChooseOption.Location = new Point(0, 239);
+            statusStripChooseOption.Location = new Point(0, 326);
             statusStripChooseOption.Name = "statusStripChooseOption";
-            statusStripChooseOption.Padding = new Padding(1, 0, 12, 0);
-            statusStripChooseOption.Size = new Size(434, 22);
+            statusStripChooseOption.Size = new Size(496, 22);
             statusStripChooseOption.TabIndex = 8;
             statusStripChooseOption.Text = "statusStrip1";
             // 
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(11, 83);
-            btnEnd.Margin = new Padding(3, 2, 3, 2);
+            btnEnd.Location = new Point(13, 118);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(124, 53);
+            btnEnd.Size = new Size(142, 71);
             btnEnd.TabIndex = 9;
             btnEnd.Text = "End/close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -147,9 +140,8 @@
             panel2.Controls.Add(lblTypePLCIP);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(434, 101);
+            panel2.Size = new Size(496, 135);
             panel2.TabIndex = 11;
             // 
             // panel3
@@ -159,20 +151,18 @@
             panel3.Controls.Add(btnProgram3);
             panel3.Controls.Add(lblChooseSIM);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 101);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(0, 135);
             panel3.Name = "panel3";
-            panel3.Size = new Size(434, 138);
+            panel3.Size = new Size(496, 191);
             panel3.TabIndex = 12;
             // 
             // panel1
             // 
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(293, 101);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(335, 135);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 138);
+            panel1.Size = new Size(161, 191);
             panel1.TabIndex = 13;
             // 
             // Timer_read_from_PLC
@@ -181,14 +171,14 @@
             // 
             // ChooseOptionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(434, 261);
+            ClientSize = new Size(496, 348);
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(statusStripChooseOption);
-            Margin = new Padding(3, 2, 3, 2);
+            DoubleBuffered = true;
             Name = "ChooseOptionForm";
             Text = "Connect your PLC and choose your simulation";
             Load += ChooseOption_Load;

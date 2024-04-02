@@ -25,20 +25,20 @@ namespace Bc_prace.Controls
         private float length = 100;
         private float Step = 10;
         //LeftDoor 
-        private float xLeftDoor = 0;
+        private float xLeftDoor = 70;
         private float yLeftDoor = 0;
-        private float widthLeftDoor = 0;
-        private float heightLeftDoor = 0;
+        private float widthLeftDoor = 80;
+        private float heightLeftDoor = 100;
         //RightDoor
-        private float xRightDoor = 0;
+        private float xRightDoor = 70;
         private float yRightDoor = 0;
-        private float widthRightDoor = 0;
-        private float heightRightDoor = 0;
+        private float widthRightDoor = 80;
+        private float heightRightDoor = 100;
         //DoorBackground
-        private float xDoor = 0;
+        private float xDoor = 70;
         private float yDoor = 0;
-        private float widthDoor = 0;
-        private float heightDoor = 0;
+        private float widthDoor = 160;
+        private float heightDoor = 100;
 
         public string lblElevatorDoorState;
 
@@ -52,7 +52,7 @@ namespace Bc_prace.Controls
         {
             InitializeComponent();
 
-            DoubleBuffered = true;
+            DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
             Paint += UserControlElevatorDoor_Paint;
         }
 
@@ -69,6 +69,11 @@ namespace Bc_prace.Controls
 
             Draw(g);
 
+            //Invalidate(); //toto by tady asi být nemělo
+        }
+
+        private void Draw(Graphics g)
+        {
             //pen color
             Pen BlackPen = new Pen(Color.Black);
 
@@ -76,23 +81,20 @@ namespace Bc_prace.Controls
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
             lblElevatorDoorState = "Elevator state";
-            g.DrawString(lblElevatorDoorState, labelFont, labelBrush, x + 10, y + length);
+            g.DrawString(lblElevatorDoorState, labelFont, labelBrush, x + 30, y + length);
 
             //DoorBackground
-            g.DrawRectangle(BlackPen, xDoor + 10, yDoor + length * 2, widthDoor + 160, heightDoor + 100);
-            g.FillRectangle(yellow, xDoor + 10, yDoor + length * 2, widthDoor + 160, heightDoor + 100);
+            g.DrawRectangle(BlackPen, xDoor, yDoor + length * 2, widthDoor, heightDoor);
+            g.FillRectangle(yellow, xDoor, yDoor + length * 2, widthDoor, heightDoor);
 
             //LeftDoor
-            g.DrawRectangle(BlackPen, xLeftDoor + 10, yLeftDoor + length * 2, widthLeftDoor + 80, heightLeftDoor + 100);
-            g.FillRectangle(gray, xLeftDoor + 10, yLeftDoor + length * 2, widthLeftDoor + 80, heightLeftDoor + 100);
+            g.DrawRectangle(BlackPen, xLeftDoor, yLeftDoor + length * 2, widthLeftDoor, heightLeftDoor);
+            g.FillRectangle(gray, xLeftDoor, yLeftDoor + length * 2, widthLeftDoor, heightLeftDoor);
 
             //RightDoor
-            g.DrawRectangle(BlackPen, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
-            g.FillRectangle(gray, xRightDoor + 90, yRightDoor + length * 2, widthRightDoor + 80, heightRightDoor + 100);
-        }
+            g.DrawRectangle(BlackPen, xRightDoor + 80, yRightDoor + length * 2, widthRightDoor, heightRightDoor);
+            g.FillRectangle(gray, xRightDoor + 80, yRightDoor + length * 2, widthRightDoor, heightRightDoor);
 
-        private void Draw(Graphics g)
-        {
             try
             {
 
@@ -106,64 +108,123 @@ namespace Bc_prace.Controls
         //Methods for door movement
         #region Methods for door movement
 
-        public async void OpenningDoor(int time)
+        public async void OpenningDoor(int time) //time is not needed probably
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 2000;
 
-            int totalSteps = realTime / Convert.ToInt32(Step);
+            int totalSteps = 80 / Convert.ToInt32(Step);
             int delayBetweenSteps = realTime / totalSteps;
+
 
             for (int i = 0; i < totalSteps; i++)
             {
-                LeftDoorMoveLeft();
-                RightDoorMoveRight();
-                await Task.Delay(delayBetweenSteps);
+                if (widthLeftDoor > 0 && widthRightDoor > 0)
+                {
+                    LeftDoorMoveLeft();
+                    RightDoorMoveRight();
+                    await Task.Delay(delayBetweenSteps);
+                }
+                else
+                {
+                    break;
+                }
             }
-
-            this.Refresh(); //mozna
+             
+            //this.Refresh(); //maybe yes maybe no, I dont know
         }
 
         public async void ClosingDoor(int time)
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 2000;
 
-            int totalSteps = realTime / Convert.ToInt32(Step);
+            int totalSteps = 80 / Convert.ToInt32(Step);
             int delayBetweenSteps = realTime / totalSteps;
 
             for (int i = 0; i < totalSteps; i++)
-            {
-                LeftDoorMoveRight();
-                RightDoorMoveLeft();
-                await Task.Delay(delayBetweenSteps);
+                {
+                if (widthLeftDoor < 80 && widthRightDoor < 80)
+                {
+                    LeftDoorMoveRight();
+                    RightDoorMoveLeft();
+                     await Task.Delay(delayBetweenSteps);
+                }
+                else
+                {
+                    break;
+                }
             }
 
-            this.Refresh(); //mozna
+            //this.Refresh(); //maybe yes maybe no, I dont know
         }
 
         public void LeftDoorMoveLeft()
         {
-            xLeftDoor -= Step;
-            //widthLeftDoor -= Step; //asi mi jeblo nebo tak něco
-            this.Refresh();
+            if (widthLeftDoor <= 0)
+            {
+                return;
+            }
+            else 
+            {
+                widthLeftDoor -= Step;
+                
+                this.Refresh();
+            }  
         }
 
         public void LeftDoorMoveRight()
         {
-            xLeftDoor += Step;
-            this.Refresh();
+            if (widthLeftDoor >= 80)
+            {
+                return;
+            }
+            else
+            {
+                widthLeftDoor += Step;
+                
+                this.Refresh();
+            }
         }
 
         public void RightDoorMoveLeft()
         {
-            xRightDoor -= Step;
-            this.Refresh();
+            if (xRightDoor >= 230)
+            {
+                return;
+            }
+            else
+            {
+                xRightDoor -= Step;
+                widthRightDoor += Step;
+
+                if (xRightDoor <= 70)
+                {
+                    xRightDoor = 70;
+                }
+
+                this.Refresh();
+            } 
         }
 
         public void RightDoorMoveRight()
         {
-            xRightDoor += Step;
-            //widthRightDoor -= Step; //asi mi jeblo nebo tak něco
-            this.Refresh();
+            if (widthRightDoor <= 0)
+            {
+                return;
+            }
+            else
+            {
+                xRightDoor += Step;
+                widthRightDoor -= Step;
+                
+                if (xRightDoor >= 230)
+                {
+                    xRightDoor = 230;
+                }
+
+                this.Refresh();
+            }   
         }
 
         #endregion

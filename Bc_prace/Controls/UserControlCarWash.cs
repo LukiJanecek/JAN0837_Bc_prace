@@ -12,6 +12,7 @@ using Bc_prace.Controls.MyGraphControl.Entities;
 using System.Windows.Forms;
 using Sharp7;
 using System.Diagnostics.Eventing.Reader;
+using OxyPlot.Series;
 
 public delegate void CarWashPositionCar(bool state);
 
@@ -47,8 +48,9 @@ namespace Bc_prace.Controls
         private float dDoor2;
 
         //Shower coordinates 
-        private float ShowerX;
+        private float ShowerX = 705;
         private float ShowerY;
+        //public float startShowerX = 705; //x + ShowerX + length * 7 - (shower_width / 2)
 
         //images of car
         private PictureBox pictureBoxCar;
@@ -260,7 +262,7 @@ namespace Bc_prace.Controls
         public UserControlCarWash()
         {
             InitializeComponent();
-            DoubleBuffered = true;
+            DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
             Paint += UserControlCarWash_Paint;
             InitializeCarImage();
         }
@@ -278,6 +280,11 @@ namespace Bc_prace.Controls
 
             Draw(g); //tak toto nakonec možná nebude potřeba 
 
+            //Invalidate(); //toto jsem tu předtím neměl -> ale možná to tady vůbec být nemá
+        }
+
+        private void Draw(Graphics g)
+        {
             //pen color
             Pen BlackPen = new Pen(Color.Black, 2);
             Pen WhitePen = new Pen(Color.White, 2);
@@ -348,7 +355,7 @@ namespace Bc_prace.Controls
             #endregion
 
             //Shower
-            g.DrawRectangle(BlackPen, x + ShowerX + length * 7 - (shower_width / 2), y + ShowerY + length * 3, shower_width, shower_height);
+            g.DrawRectangle(BlackPen, ShowerX, y + ShowerY + length * 3, shower_width, shower_height);
 
             #endregion
 
@@ -360,7 +367,7 @@ namespace Bc_prace.Controls
 
             //position line  
             g.DrawLine(BlackPen, x + length * 5, y + length * 2, x + length * 9, y + length * 2);
-            g.DrawEllipse(BlackPen, x + ShowerX + length * 7 - (signalizationCircle_diameter / 2), y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
+            g.DrawEllipse(BlackPen, ShowerX, y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
 
             //car signalization => // this doesnt make sense anymore
             string labelCarSignalization = ""; //this doesnt make sense anymore
@@ -441,7 +448,7 @@ namespace Bc_prace.Controls
 
             #endregion
 
-            //Draw signalization based on value
+            //Draw signalization based on value -> toto je špatně, toto nesmí být v _Paint fci
             #region Draw signalization based on value
 
             //Car Signalization Lights and texts 
@@ -450,39 +457,39 @@ namespace Bc_prace.Controls
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
                 labelCarSignalization = "STOP!";
-                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
-                g.FillEllipse(red, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(red, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
-            else 
+            else
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
-                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             if (CarWashYellowLight)
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
                 labelCarSignalization = "ERROR!";
-                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
-                g.FillEllipse(yellow, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(yellow, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
-                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             if (CarWashGreenLight)
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
                 labelCarSignalization = "GO!";
-                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
-                g.FillEllipse(green, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
+                g.FillEllipse(green, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
                 g.DrawString("", labelFont, labelBrush, CarSignalizationX, CarSignalizationY);
-                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
+                g.FillEllipse(white, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion
@@ -557,10 +564,7 @@ namespace Bc_prace.Controls
                 g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             #endregion
-        }
 
-        private void Draw(Graphics g)
-        {
             try
             {
 
@@ -576,8 +580,9 @@ namespace Bc_prace.Controls
 
         //Door movement
         #region Door movement
-        public async void door1UP(int time)
+        public async void door1UP(int time) //time is not needed probably 
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
             
             int totalSteps = Convert.ToInt32(length / step);
@@ -585,14 +590,24 @@ namespace Bc_prace.Controls
 
             for (int i = 0; i < totalSteps; i++)
             {
-                bDoor1 -= step;
-                this.Refresh();
-                await Task.Delay(delayBetweenSteps);
+                if (bDoor1 >= -90)
+                {
+                    bDoor1 -= step;
+                    this.Refresh();
+                    await Task.Delay(delayBetweenSteps);
+                }
+                else
+                {
+                    break;
+                }
             }
+
+            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door1DOWN(int time)
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
@@ -600,29 +615,50 @@ namespace Bc_prace.Controls
 
             for (int i = 0; i < totalSteps; i++)
             {
-                bDoor1 += step;
-                this.Refresh();
-                await Task.Delay(delayBetweenSteps);
+                if (bDoor1 <= -10)
+                {
+                    bDoor1 += step;
+                    await Task.Delay(delayBetweenSteps);
+                    this.Refresh();
+                }
+                else
+                {
+                    break;
+                }
             }
+
+            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door2UP(int time)
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
             int delayBetweenSteps = realTime / totalSteps;
-
+                        
             for (int i = 0; i < totalSteps; i++)
             {
-                bDoor2 -= step;
-                this.Refresh();
-                await Task.Delay(delayBetweenSteps);
-            }
+                
+                if (bDoor2 >= -90)
+                {
+                    bDoor2 -= step;
+                    this.Refresh();
+                    await Task.Delay(delayBetweenSteps);
+                }
+                else
+                {
+                    break;
+                }
+            }           
+
+            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door2DOWN(int time)
         {
+            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
@@ -630,16 +666,66 @@ namespace Bc_prace.Controls
 
             for (int i = 0; i < totalSteps; i++)
             {
-                bDoor2 += step;
-                this.Refresh();
-                await Task.Delay(delayBetweenSteps);
+                if (bDoor2 <= -10)
+                {
+                    bDoor2 += step;
+                    await Task.Delay(delayBetweenSteps);
+                    this.Refresh();
+                }
+                else
+                {
+                    break;
+                }
             }
+
+            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         #endregion
 
         //Shower movement
         #region Shower movement
+
+        //volá se nějak takto: toto přesně budu potřebovat
+        //await userControlCarWash1.ShowerMovement(705, 915, 2000);
+        //await userControlCarWash1.ShowerMovement(915, 515, 2000);
+        //await userControlCarWash1.ShowerMovement(515, 705, 2000);
+
+        public async Task ShowerMovement(int startX, int endX, int duration)
+        {
+            int distance = Math.Abs(startX - endX);
+
+            int stepSize = 5;
+
+            int steps = distance / stepSize;
+
+            int stepDelay = distance / steps; 
+
+            bool moveRight = endX > startX;
+
+            for (int i = 0; i < steps; i++)
+            {
+                if ((moveRight && ShowerX >= endX) || (!moveRight && ShowerX <= endX))
+                {
+                    break;
+                }
+                else
+                {
+                    if (moveRight)
+                    {
+                        ShowerX += stepSize;
+                        await Task.Delay(stepDelay);
+                        this.Refresh();
+                    }
+                    else
+                    {
+                        ShowerX -= stepSize;
+                        await Task.Delay(stepDelay);
+                        this.Refresh();
+                    }                   
+                }
+            }
+        }
 
         public async void ShowerMoveLeft()
         {
@@ -661,124 +747,6 @@ namespace Bc_prace.Controls
             }
         }
 
-        #endregion
-
-        //Inner cycle signalization -> old 
-        #region Inner cycle signalization -> old
-        public void PreWashSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(blue, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, PreWashX - 15, PreWashY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-        public void WaterSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(blue, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, WaterX - 15, WaterY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-        public void WaxSignalization(bool state)
-        { 
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(yellow, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, WaxX - 15, WaxY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-        public void SoapSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(green, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, SoapX - 15, SoapY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-
-        public void ActiveFoamSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else 
-            {
-                g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-        public void BrushesSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(red, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
-
-        public void DryingSignalization(bool state)
-        {
-            var g = this.CreateGraphics(); //this doesnt work properly
-
-            if (state)
-            {
-                g.FillEllipse(brown, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-            else
-            {
-                g.FillEllipse(white, DryingX - 15, DryingY, signalizationCircle_diameter, signalizationCircle_diameter);
-            }
-
-            this.Refresh();
-        }
-        
         #endregion
 
         //Car picture

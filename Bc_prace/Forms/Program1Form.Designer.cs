@@ -42,6 +42,8 @@ namespace Bc_prace
             btnEnd = new Button();
             panelCabinBtn = new Panel();
             panel1 = new Panel();
+            btnTest2 = new Button();
+            btnTest = new Button();
             btnGlobalEmergency = new Button();
             btnCabinLengthBigger = new Button();
             btnCabinLengthSmaller = new Button();
@@ -56,8 +58,6 @@ namespace Bc_prace
             userControlElevatorCabin1 = new UserControlElevatorCabin();
             panelElevatorDoor = new Panel();
             userControlElevatorDoor1 = new UserControlElevatorDoor();
-            btnTest = new Button();
-            btnTest2 = new Button();
             panelCabinBtn.SuspendLayout();
             panel1.SuspendLayout();
             panelElevatorCabin.SuspendLayout();
@@ -190,6 +190,26 @@ namespace Bc_prace
             panel1.Name = "panel1";
             panel1.Size = new Size(185, 590);
             panel1.TabIndex = 42;
+            // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(99, 472);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(83, 29);
+            btnTest2.TabIndex = 49;
+            btnTest2.Text = "test2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click;
+            // 
+            // btnTest
+            // 
+            btnTest.Location = new Point(3, 472);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(81, 29);
+            btnTest.TabIndex = 48;
+            btnTest.Text = "test";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
             // 
             // btnGlobalEmergency
             // 
@@ -326,26 +346,6 @@ namespace Bc_prace
             userControlElevatorDoor1.Size = new Size(341, 590);
             userControlElevatorDoor1.TabIndex = 0;
             // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(3, 472);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(81, 29);
-            btnTest.TabIndex = 48;
-            btnTest.Text = "test";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
-            // 
-            // btnTest2
-            // 
-            btnTest2.Location = new Point(99, 472);
-            btnTest2.Name = "btnTest2";
-            btnTest2.Size = new Size(83, 29);
-            btnTest2.TabIndex = 49;
-            btnTest2.Text = "test2";
-            btnTest2.UseVisualStyleBackColor = true;
-            btnTest2.Click += btnTest2_Click;
-            // 
             // Program1Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -356,6 +356,7 @@ namespace Bc_prace
             Controls.Add(panel1);
             Controls.Add(statusStripElevator);
             Controls.Add(panelCabinBtn);
+            DoubleBuffered = true;
             Name = "Program1Form";
             Text = "Program1";
             Load += Program1_Load;
