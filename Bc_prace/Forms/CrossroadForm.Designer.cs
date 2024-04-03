@@ -39,7 +39,6 @@ namespace Bc_prace
             btnOffMode = new Button();
             btnNightMode = new Button();
             btnDayMode = new Button();
-            btnTest = new Button();
             rBtnCrossroadExtension3 = new RadioButton();
             rBtnCrossroadExtension2 = new RadioButton();
             rBtnCrossroadExtension1 = new RadioButton();
@@ -99,7 +98,6 @@ namespace Bc_prace
             panel1.Controls.Add(btnOffMode);
             panel1.Controls.Add(btnNightMode);
             panel1.Controls.Add(btnDayMode);
-            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(rBtnCrossroadExtension3);
             panel1.Controls.Add(rBtnCrossroadExtension2);
             panel1.Controls.Add(rBtnCrossroadExtension1);
@@ -141,17 +139,6 @@ namespace Bc_prace
             btnDayMode.Text = "Day mode";
             btnDayMode.UseVisualStyleBackColor = true;
             btnDayMode.Click += btnDayMode_Click;
-            // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(39, 521);
-            btnTest.Margin = new Padding(3, 4, 3, 4);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(86, 31);
-            btnTest.TabIndex = 35;
-            btnTest.Text = "Test";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
             // 
             // rBtnCrossroadExtension3
             // 
@@ -311,7 +298,6 @@ namespace Bc_prace
         private RadioButton rBtnCrossroadExtension2;
         private RadioButton rBtnCrossroadExtension1;
         private System.Windows.Forms.Timer Timer_read_actual;
-        private Button btnTest;
         private Button btnOffMode;
         private Button btnNightMode;
         private Button btnDayMode;

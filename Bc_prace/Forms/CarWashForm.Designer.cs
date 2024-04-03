@@ -34,8 +34,6 @@
             btnEnd = new Button();
             btnStartCarWash = new Button();
             panel1 = new Panel();
-            btnTest2 = new Button();
-            btnTest = new Button();
             btnSignalization = new Button();
             panel2 = new Panel();
             btnMoveCarToNextPoint = new Button();
@@ -90,8 +88,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnTest2);
-            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
@@ -99,28 +95,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 593);
             panel1.TabIndex = 40;
-            // 
-            // btnTest2
-            // 
-            btnTest2.Location = new Point(6, 461);
-            btnTest2.Margin = new Padding(3, 4, 3, 4);
-            btnTest2.Name = "btnTest2";
-            btnTest2.Size = new Size(86, 31);
-            btnTest2.TabIndex = 40;
-            btnTest2.Text = "Test2";
-            btnTest2.UseVisualStyleBackColor = true;
-            btnTest2.Click += btnTest2_Click;
-            // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(94, 461);
-            btnTest.Margin = new Padding(3, 4, 3, 4);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(86, 31);
-            btnTest.TabIndex = 39;
-            btnTest.Text = "Test";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
             // 
             // btnSignalization
             // 
@@ -231,8 +205,6 @@
         private System.Windows.Forms.Timer Timer_read_actual;
         private Panel panel2;
         private Controls.UserControlCarWash userControlCarWash1;
-        private Button btnTest;
-        private Button btnTest2;
         private Button btnCarMoveLEFT;
         private Button btnCarMoveRIGHT;
         private Button btnMoveCarToNextPoint;

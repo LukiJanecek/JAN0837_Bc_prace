@@ -42,8 +42,6 @@ namespace Bc_prace
             btnEnd = new Button();
             panelCabinBtn = new Panel();
             panel1 = new Panel();
-            btnTest2 = new Button();
-            btnTest = new Button();
             btnGlobalEmergency = new Button();
             btnCabinLengthBigger = new Button();
             btnCabinLengthSmaller = new Button();
@@ -173,8 +171,6 @@ namespace Bc_prace
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnTest2);
-            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnGlobalEmergency);
             panel1.Controls.Add(btnCabinLengthBigger);
             panel1.Controls.Add(btnCabinLengthSmaller);
@@ -190,26 +186,6 @@ namespace Bc_prace
             panel1.Name = "panel1";
             panel1.Size = new Size(185, 590);
             panel1.TabIndex = 42;
-            // 
-            // btnTest2
-            // 
-            btnTest2.Location = new Point(99, 472);
-            btnTest2.Name = "btnTest2";
-            btnTest2.Size = new Size(83, 29);
-            btnTest2.TabIndex = 49;
-            btnTest2.Text = "test2";
-            btnTest2.UseVisualStyleBackColor = true;
-            btnTest2.Click += btnTest2_Click;
-            // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(3, 472);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(81, 29);
-            btnTest.TabIndex = 48;
-            btnTest.Text = "test";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
             // 
             // btnGlobalEmergency
             // 
@@ -395,7 +371,5 @@ namespace Bc_prace
         private Panel panelElevatorDoor;
         private UserControlElevatorDoor userControlElevatorDoor1;
         private Button btnGlobalEmergency;
-        private Button btnTest;
-        private Button btnTest2;
     }
 }
