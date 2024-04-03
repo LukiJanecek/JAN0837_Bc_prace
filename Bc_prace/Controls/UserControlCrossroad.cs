@@ -278,8 +278,8 @@ namespace Bc_prace.Controls
         private float TrafficLightsCrosswalk_height = 40;
         private float FreeSpace = 5;
 
-        private float Button_height = 70;
-        private float Button_width = 85;
+        private float Button_height = 40;
+        private float Button_width = 65;
 
         private SolidBrush green = new SolidBrush(Color.Green);
         private SolidBrush yellow = new SolidBrush(Color.Yellow);
@@ -6948,7 +6948,7 @@ namespace Bc_prace.Controls
             #region Crossroad1 - top crosswalk
             //left  
             //Button btnCrossroad1TopCrosswalkLEFT = new Button();
-            btnCrossroad1TopCrosswalkLEFT.Text = "Crossroad1 Top crosswalk BTN1";
+            btnCrossroad1TopCrosswalkLEFT.Text = "Top 1";
             btnCrossroad1TopCrosswalkLEFT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkLEFT.Visible = false;
             btnCrossroad1TopCrosswalkLEFT.Enabled = false;
@@ -6960,7 +6960,7 @@ namespace Bc_prace.Controls
 
             //right
             //Button btnCrossroad1TopCrosswalkRIGHT = new Button();
-            btnCrossroad1TopCrosswalkRIGHT.Text = "Crossroad1 Top crosswalk BTN2";
+            btnCrossroad1TopCrosswalkRIGHT.Text = "Top 2";
             btnCrossroad1TopCrosswalkRIGHT.BackColor = Color.White;
             btnCrossroad1TopCrosswalkRIGHT.Visible = false;
             btnCrossroad1TopCrosswalkRIGHT.Enabled = false;
@@ -6976,7 +6976,7 @@ namespace Bc_prace.Controls
             #region Crossroad1 - left crosswalk
             //top 
             //Button btnCrossroad1LeftCrosswalkTOP = new Button();
-            btnCrossroad1LeftCrosswalkTOP.Text = "Crossroad1 Left crosswalk BTN1";
+            btnCrossroad1LeftCrosswalkTOP.Text = "Left 1";
             btnCrossroad1LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkTOP.Visible = false;
             btnCrossroad1LeftCrosswalkTOP.Enabled = false;
@@ -6989,7 +6989,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad1LeftCrosswalkBOTTOM = new Button();
-            btnCrossroad1LeftCrosswalkBOTTOM.Text = "Crossroad1 Left crosswalk BTN2";
+            btnCrossroad1LeftCrosswalkBOTTOM.Text = "Left 2";
             btnCrossroad1LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad1LeftCrosswalkBOTTOM.Visible = false;
             btnCrossroad1LeftCrosswalkBOTTOM.Enabled = false;
@@ -7010,7 +7010,7 @@ namespace Bc_prace.Controls
             #region Crossroad2 - left crosswalk 
             //top 
             //Button btnCrossroad2LeftCrosswalkTOP = new Button();
-            btnCrossroad2LeftCrosswalkTOP.Text = "Crossroad2 Left crosswalk BTN1";
+            btnCrossroad2LeftCrosswalkTOP.Text = "Left 1";
             btnCrossroad2LeftCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkTOP.Visible = false;
             btnCrossroad2LeftCrosswalkTOP.Enabled = false;
@@ -7022,7 +7022,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad2LeftCrosswalkBOTTOM = new Button();
-            btnCrossroad2LeftCrosswalkBOTTOM.Text = "Crossroad2 Left crosswalk BTN2";
+            btnCrossroad2LeftCrosswalkBOTTOM.Text = "Left 2";
             btnCrossroad2LeftCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2LeftCrosswalkBOTTOM.Visible = false;
             btnCrossroad2LeftCrosswalkBOTTOM.Enabled = false;
@@ -7038,7 +7038,7 @@ namespace Bc_prace.Controls
             #region Crossroad2 - right crosswalk
             //top 
             //Button btnCrossroad2RightCrosswalkTOP = new Button();
-            btnCrossroad2RightCrosswalkTOP.Text = "Crossroad2 Right crosswalk BTN1";
+            btnCrossroad2RightCrosswalkTOP.Text = "Right 1";
             btnCrossroad2RightCrosswalkTOP.BackColor = Color.White;
             btnCrossroad2RightCrosswalkTOP.Visible = false;
             btnCrossroad2RightCrosswalkTOP.Enabled = false;
@@ -7050,7 +7050,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnCrossroad2RightCrosswalkBOTTOM = new Button();
-            btnCrossroad2RightCrosswalkBOTTOM.Text = "Crossroad2 Right crosswalk BTN2";
+            btnCrossroad2RightCrosswalkBOTTOM.Text = "Right 2";
             btnCrossroad2RightCrosswalkBOTTOM.BackColor = Color.White;
             btnCrossroad2RightCrosswalkBOTTOM.Visible = false;
             btnCrossroad2RightCrosswalkBOTTOM.Enabled = false;
@@ -7070,7 +7070,7 @@ namespace Bc_prace.Controls
             #region LeftT - left crosswalk
             //top 
             //Button btnLeftTLeftCrosswalkTOP = new Button();
-            btnLeftTLeftCrosswalkTOP.Text = "LeftT\nLeft crosswalk BTN1";
+            btnLeftTLeftCrosswalkTOP.Text = "Left 1";
             btnLeftTLeftCrosswalkTOP.BackColor = Color.White;
             btnLeftTLeftCrosswalkTOP.Visible = false;
             btnLeftTLeftCrosswalkTOP.Enabled = false;
@@ -7082,7 +7082,7 @@ namespace Bc_prace.Controls
 
             //bottom
             //Button btnLeftTLeftCrosswalkBOTTOM = new Button();
-            btnLeftTLeftCrosswalkBOTTOM.Text = "LeftT\nLeft crosswalk BTN2";
+            btnLeftTLeftCrosswalkBOTTOM.Text = "Left 2";
             btnLeftTLeftCrosswalkBOTTOM.BackColor = Color.White;
             btnLeftTLeftCrosswalkBOTTOM.Visible = false;
             btnLeftTLeftCrosswalkBOTTOM.Enabled = false;
@@ -7102,7 +7102,7 @@ namespace Bc_prace.Controls
             #region RightT - top crosswalk
             //left  
             //Button btnRightTTopCrosswalkLEFT = new Button();
-            btnRightTTopCrosswalkLEFT.Text = "RightT\nTop crosswalk BTN1";
+            btnRightTTopCrosswalkLEFT.Text = "Top 1";
             btnRightTTopCrosswalkLEFT.BackColor = Color.White;
             btnRightTTopCrosswalkLEFT.Visible = false;
             btnRightTTopCrosswalkLEFT.Enabled = false;
@@ -7114,7 +7114,7 @@ namespace Bc_prace.Controls
 
             //right
             //Button btnRightTTopCrosswalkRIGHT = new Button();
-            btnRightTTopCrosswalkRIGHT.Text = "RightT\nTop crosswalk BTN2";
+            btnRightTTopCrosswalkRIGHT.Text = "Top 2";
             btnRightTTopCrosswalkRIGHT.BackColor = Color.White;
             btnRightTTopCrosswalkRIGHT.Visible = false;
             btnRightTTopCrosswalkRIGHT.Enabled = false;
