@@ -698,6 +698,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
+                    userControlCarWash1.InitializeCarImage(3);
                     await ShowerMovemnet();
                 }
                 else
@@ -711,6 +712,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaxSignalization(true);
                     userControlCarWash1.Wax = true;
+                    userControlCarWash1.InitializeCarImage(3);
                     await ShowerMovemnet();
                 }
                 else
@@ -724,6 +726,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.ActiveFoamSignalization(true);
                     userControlCarWash1.ActiveFoam = true;
+                    userControlCarWash1.InitializeCarImage(3);
                     await ShowerMovemnet();
                 }
                 else
@@ -737,6 +740,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.SoapSignalization(true);
                     userControlCarWash1.Soap = true;
+                    userControlCarWash1.InitializeCarImage(3);
                     await ShowerMovemnet();
                 }
                 else
@@ -750,6 +754,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.BrushesSignalization(true);
                     userControlCarWash1.Brushes = true;
+                    userControlCarWash1.InitializeCarImage(2);
                     await ShowerMovemnet();
                 }
                 else
@@ -762,6 +767,7 @@ namespace Bc_prace
                 if (CarWashDry)
                 {
                     //userControlCarWash1.DryingSignalization(true);
+                    userControlCarWash1.InitializeCarImage(4);
                     userControlCarWash1.Drying = true;
                     await ShowerMovemnet();
                 }
