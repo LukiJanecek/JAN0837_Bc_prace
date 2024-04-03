@@ -148,7 +148,7 @@ namespace Bc_prace.Controls
                 {
                     LeftDoorMoveRight();
                     RightDoorMoveLeft();
-                     await Task.Delay(delayBetweenSteps);
+                    await Task.Delay(delayBetweenSteps);
                 }
                 else
                 {

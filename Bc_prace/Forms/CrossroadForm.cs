@@ -624,7 +624,7 @@ namespace Bc_prace
         //Reading variables + actions on variable value
         #region Reading variables + actions on variable value
 
-        private void Timer_read_actual_Tick(object sender, EventArgs e)
+        private async void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {

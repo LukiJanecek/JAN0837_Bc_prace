@@ -14,6 +14,7 @@ using Bc_prace.Settings;
 using Sharp7;
 using System.Security.Cryptography;
 using System.Runtime.CompilerServices;
+using Bc_prace.Controls;
 
 namespace Bc_prace
 {
@@ -470,7 +471,7 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
-                                                            
+
                     //Elevator Floor SENS 2 = true 
                     ElevatorActualFloorSENS2 = true;
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1091,7 +1092,7 @@ namespace Bc_prace
         //Reading variables + actions on variable value
         #region Reading variables + actions on variable value
 
-        private void Timer_read_actual_Tick(object sender, EventArgs e)
+        private async void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -2596,7 +2597,7 @@ namespace Bc_prace
             lblStatus = new ToolStripStatusLabel("Door closed");
             statusStripElevator.Items.Add(lblStatus);
 
-            userControlElevatorDoor1.ClosingDoor(time);
+            //userControlElevatorDoor1.ClosingDoor(time);
         }
 
         private void OpenDOOR(int time)
@@ -2613,11 +2614,11 @@ namespace Bc_prace
             lblStatus = new ToolStripStatusLabel("Door open");
             statusStripElevator.Items.Add(lblStatus);
 
-            userControlElevatorDoor1.OpenningDoor(time);
+            //userControlElevatorDoor1.OpenningDoor(time);
         }
 
         #endregion
-
+                
         //Emergency + system error 
         #region Emergency + system error
         private void btnCabinEmergency_Click(object sender, EventArgs e)

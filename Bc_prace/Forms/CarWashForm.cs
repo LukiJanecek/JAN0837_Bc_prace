@@ -226,7 +226,7 @@ namespace Bc_prace
         //Reading variables + actions on variable value
         #region Reading variables + actions on variable value
 
-        private void Timer_read_actual_Tick(object sender, EventArgs e)
+        private async void Timer_read_actual_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -562,6 +562,29 @@ namespace Bc_prace
                 {
                     //true
                     userControlCarWash1.door1UP(CarWashTimeDoorMovement);
+
+                    //toto možná nebude dělat dobrotu
+                    S7.SetBitAt(send_buffer_DB5, 2, 5, true);
+
+                    //write to PLC
+                    int writeResultDB5_Door1UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                    if (writeResultDB5_Door1UP != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                                $"Error message: writeResultDB5_Door1UP = {writeResultDB5_Door1UP} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
                 else
                 {
@@ -573,6 +596,29 @@ namespace Bc_prace
                 {
                     //true
                     userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
+
+                    //toto možná nebude dělat dobrotu
+                    S7.SetBitAt(send_buffer_DB5, 2, 6, true);
+
+                    //write to PLC
+                    int writeResultDB5_Door1DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                    if (writeResultDB5_Door1DOWN != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                                $"Error message: writeResultDB5_Door1DOWN = {writeResultDB5_Door1DOWN} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
                 else
                 {
@@ -584,6 +630,29 @@ namespace Bc_prace
                 {
                     //true 
                     userControlCarWash1.door2UP(CarWashTimeDoorMovement);
+
+                    //toto možná nebude dělat dobrotu
+                    S7.SetBitAt(send_buffer_DB5, 2, 7, true);
+
+                    //write to PLC
+                    int writeResultDB5_Door2UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                    if (writeResultDB5_Door2UP != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                                $"Error message: writeResultDB5_Door2UP = {writeResultDB5_Door2UP} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
                 else
                 {
@@ -595,6 +664,29 @@ namespace Bc_prace
                 {
                     //true
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
+                    
+                    //toto možná nebude dělat dobrotu
+                    S7.SetBitAt(send_buffer_DB5, 3, 0, true);
+
+                    //write to PLC
+                    int writeResultDB5_Door2DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
+                    if (writeResultDB5_Door2DOWN != 0)
+                    {
+                        //write error
+                        if (!errorMessageBoxShown)
+                        {
+                            //MessageBox
+                            MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
+                                $"Error message: writeResultDB5_Door2DOWN = {writeResultDB5_Door2DOWN} \n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+
+                            errorMessageBoxShown = true;
+                        }
+                    }
+                    else
+                    {
+                        //write was successful
+                    }
                 }
                 else
                 {
@@ -606,6 +698,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -618,6 +711,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaxSignalization(true);
                     userControlCarWash1.Wax = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -630,6 +724,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.ActiveFoamSignalization(true);
                     userControlCarWash1.ActiveFoam = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -642,6 +737,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.SoapSignalization(true);
                     userControlCarWash1.Soap = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -654,6 +750,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.BrushesSignalization(true);
                     userControlCarWash1.Brushes = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -666,6 +763,7 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.DryingSignalization(true);
                     userControlCarWash1.Drying = true;
+                    await ShowerMovemnet();
                 }
                 else
                 {
@@ -849,6 +947,18 @@ namespace Bc_prace
             {
                 //write was successful
             }
+        }
+
+        #endregion
+
+        //Shower movement
+        #region Shower movemnt 
+
+        public async Task ShowerMovemnet()
+        {
+            await userControlCarWash1.ShowerMovement(705, 915, 2000);
+            await userControlCarWash1.ShowerMovement(915, 515, 2000);
+            await userControlCarWash1.ShowerMovement(515, 705, 2000);
         }
 
         #endregion
