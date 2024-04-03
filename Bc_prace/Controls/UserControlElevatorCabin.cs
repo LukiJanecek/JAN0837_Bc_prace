@@ -224,32 +224,32 @@ namespace Bc_prace.Controls
 
             #endregion
 
-            //Conditions based ond object position -> ElevatorActualFloorSENS
-            #region Conditions based ond object position -> ElevatorActualFloorSENS
-
+            //Conditions based ond object position -> ElevatorActualFloorSENS -> nesmí být v _Paint 
+            #region Conditions based ond object position -> ElevatorActualFloorSENS -> nesmí být v _Paint 
+            /*
             //Cabin is on 1st floor
-            if (yCabin == (y + length * 5 - heightCabin))
+            if (yCabin == (y + length * 5 - heightCabin)) //nesmí být v paint 
             {
                 if (OnElevatorFloorSENS != null)
                     OnElevatorFloorSENS(1);
             }
 
             //Cabin is on 2st floor
-            if (yCabin == (y + length * 4 - heightCabin))
+            if (yCabin == (y + length * 4 - heightCabin)) //nesmí být v paint 
             {
                 if (OnElevatorFloorSENS != null)
                     OnElevatorFloorSENS(2);
             }
 
             //Cabin is on 3rd floor
-            if (yCabin == (y + length * 3 - heightCabin))
+            if (yCabin == (y + length * 3 - heightCabin)) //nesmí být v paint 
             {
                 if (OnElevatorFloorSENS != null)
                     OnElevatorFloorSENS(3);
             }
 
             //Cabin is on 4th floor
-            if (yCabin == (y + length * 2 - heightCabin))
+            if (yCabin == (y + length * 2 - heightCabin)) //nesmí být v paint 
             {
                 if (OnElevatorFloorSENS != null)
                     OnElevatorFloorSENS(4);
@@ -261,7 +261,7 @@ namespace Bc_prace.Controls
                 if (OnElevatorFloorSENS != null)
                     OnElevatorFloorSENS(5);
             }
-
+            */
             #endregion
 
             //ActualFloorLED signalization based on value
@@ -440,8 +440,6 @@ namespace Bc_prace.Controls
             {
                 yCabin += Step;
                 this.Refresh();
-
-                //zde mohu přidat podmínky pro zobrazení SENS
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
