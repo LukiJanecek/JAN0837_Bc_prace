@@ -17,7 +17,7 @@ using Newtonsoft.Json.Bson;
 
 namespace Bc_prace
 {
-    public partial class Program3Form : Form
+    public partial class CrossroadForm : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -246,7 +246,7 @@ namespace Bc_prace
 
         #endregion
 
-        public Program3Form(ChooseOptionForm chooseOptionFormInstance)
+        public CrossroadForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
             this.MinimumSize = new Size(1000, 700); //crossroad1 + btns

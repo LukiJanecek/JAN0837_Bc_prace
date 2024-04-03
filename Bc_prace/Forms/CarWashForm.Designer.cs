@@ -1,6 +1,6 @@
 ﻿namespace Bc_prace
 {
-    partial class Program2Form
+    partial class CarWashForm
     {
         /// <summary>
         /// Required designer variable.
@@ -201,7 +201,7 @@
             // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
-            // Program2Form
+            // CarWashForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -212,8 +212,8 @@
             Controls.Add(statusStripCarWash);
             DoubleBuffered = true;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Program2Form";
-            Text = "Program2";
+            Name = "CarWashForm";
+            Text = "CarWash";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);

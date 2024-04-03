@@ -1,6 +1,6 @@
 ﻿namespace Bc_prace
 {
-    partial class Program2SelectionForm
+    partial class CarWashSelectionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,12 +32,8 @@
             label1 = new Label();
             btnPerfectPolish = new Button();
             btnPerfectWash = new Button();
-            button3 = new Button();
-            button4 = new Button();
             btnEnd = new Button();
             statusStripCarWashSelection = new StatusStrip();
-            lblPerfectPolishDescription = new Label();
-            lblPerfectWashDescription = new Label();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -69,7 +65,7 @@
             // 
             // btnPerfectWash
             // 
-            btnPerfectWash.Location = new Point(11, 73);
+            btnPerfectWash.Location = new Point(111, 3);
             btnPerfectWash.Name = "btnPerfectWash";
             btnPerfectWash.Size = new Size(94, 61);
             btnPerfectWash.TabIndex = 2;
@@ -77,28 +73,10 @@
             btnPerfectWash.UseVisualStyleBackColor = true;
             btnPerfectWash.Click += btnPerfectWash_Click;
             // 
-            // button3
-            // 
-            button3.Location = new Point(342, 5);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 61);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(342, 73);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 61);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnEnd.Location = new Point(685, 13);
+            btnEnd.Location = new Point(249, 13);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(94, 61);
             btnEnd.TabIndex = 5;
@@ -109,38 +87,20 @@
             // statusStripCarWashSelection
             // 
             statusStripCarWashSelection.ImageScalingSize = new Size(20, 20);
-            statusStripCarWashSelection.Location = new Point(0, 273);
+            statusStripCarWashSelection.Location = new Point(0, 241);
             statusStripCarWashSelection.Name = "statusStripCarWashSelection";
             statusStripCarWashSelection.Padding = new Padding(1, 0, 16, 0);
-            statusStripCarWashSelection.Size = new Size(782, 22);
+            statusStripCarWashSelection.Size = new Size(346, 22);
             statusStripCarWashSelection.TabIndex = 6;
             statusStripCarWashSelection.Text = "statusStrip1";
-            // 
-            // lblPerfectPolishDescription
-            // 
-            lblPerfectPolishDescription.AutoSize = true;
-            lblPerfectPolishDescription.Location = new Point(112, 5);
-            lblPerfectPolishDescription.Name = "lblPerfectPolishDescription";
-            lblPerfectPolishDescription.Size = new Size(224, 40);
-            lblPerfectPolishDescription.TabIndex = 7;
-            lblPerfectPolishDescription.Text = "- foamy wax\r\n- washing with special chemicals\r\n";
-            // 
-            // lblPerfectWashDescription
-            // 
-            lblPerfectWashDescription.AutoSize = true;
-            lblPerfectWashDescription.Location = new Point(112, 73);
-            lblPerfectWashDescription.Name = "lblPerfectWashDescription";
-            lblPerfectWashDescription.Size = new Size(224, 40);
-            lblPerfectWashDescription.TabIndex = 8;
-            lblPerfectWashDescription.Text = "- varnish protection\r\n- washing with special chemicals\r\n";
             // 
             // panel1
             // 
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 196);
+            panel1.Location = new Point(0, 164);
             panel1.Name = "panel1";
-            panel1.Size = new Size(782, 77);
+            panel1.Size = new Size(346, 77);
             panel1.TabIndex = 9;
             // 
             // panel2
@@ -149,45 +109,40 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(782, 45);
+            panel2.Size = new Size(346, 45);
             panel2.TabIndex = 10;
             // 
             // panel3
             // 
             panel3.Controls.Add(btnPerfectWash);
             panel3.Controls.Add(btnPerfectPolish);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(lblPerfectWashDescription);
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(lblPerfectPolishDescription);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 45);
             panel3.Name = "panel3";
-            panel3.Size = new Size(782, 151);
+            panel3.Size = new Size(346, 119);
             panel3.TabIndex = 11;
             // 
             // Timer_read_actual
             // 
             Timer_read_actual.Tick += Timer_read_actual_Tick;
             // 
-            // Program2SelectionForm
+            // CarWashSelectionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 295);
+            ClientSize = new Size(346, 263);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCarWashSelection);
             DoubleBuffered = true;
-            Name = "Program2SelectionForm";
+            Name = "CarWashSelectionForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Program2 -> Select washing program";
+            Text = "Select washing program";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,12 +152,8 @@
         private Label label1;
         private Button btnPerfectPolish;
         private Button btnPerfectWash;
-        private Button button3;
-        private Button button4;
         private Button btnEnd;
         private StatusStrip statusStripCarWashSelection;
-        private Label lblPerfectPolishDescription;
-        private Label lblPerfectWashDescription;
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;

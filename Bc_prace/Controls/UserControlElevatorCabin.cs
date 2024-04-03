@@ -146,7 +146,7 @@ namespace Bc_prace.Controls
             // if (DesignMode == true ) { }
         }
 
-        public void SetControl(Program1Form program1FormInstance)
+        public void SetControl(ElevatorForm program1FormInstance)
         {
             InitializeButtons();
 

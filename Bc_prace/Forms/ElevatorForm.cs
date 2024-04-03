@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 
 namespace Bc_prace
 {
-    public partial class Program1Form : Form
+    public partial class ElevatorForm : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -126,7 +126,7 @@ namespace Bc_prace
 
         //int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
 
-        public Program1Form(ChooseOptionForm chooseOptionFormInstance)
+        public ElevatorForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
             this.MinimumSize = new Size(1150, 650);

@@ -19,7 +19,7 @@ using System.Runtime.CompilerServices;
 
 namespace Bc_prace
 {
-    public partial class Program2Form : Form
+    public partial class CarWashForm : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -99,7 +99,7 @@ namespace Bc_prace
 
         #endregion
 
-        public Program2Form(ChooseOptionForm chooseOptionFormInstance)
+        public CarWashForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
             InitializeButton(); // there is probably no need for this function
@@ -731,7 +731,7 @@ namespace Bc_prace
             {
                 //write was successful
                 //Selection form activated
-                Program2SelectionForm Selection = new Program2SelectionForm(chooseOptionFormInstance);
+                CarWashSelectionForm Selection = new CarWashSelectionForm(chooseOptionFormInstance);
                 Selection.ShowDialog(this);
 
                 statusStripCarWash.Items.Clear();

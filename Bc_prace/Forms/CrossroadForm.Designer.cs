@@ -2,7 +2,7 @@
 
 namespace Bc_prace
 {
-    partial class Program3Form
+    partial class CrossroadForm
     {
         /// <summary>
         /// Required designer variable.
@@ -280,7 +280,7 @@ namespace Bc_prace
             userControlCrossroad1.Size = new Size(1352, 823);
             userControlCrossroad1.TabIndex = 0;
             // 
-            // Program3Form
+            // CrossroadForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -290,8 +290,8 @@ namespace Bc_prace
             Controls.Add(statusStripCrossroad);
             DoubleBuffered = true;
             Margin = new Padding(3, 4, 3, 4);
-            Name = "Program3Form";
-            Text = "Program3";
+            Name = "CrossroadForm";
+            Text = "Crossroad";
             Load += Program3_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            btnProgram1 = new Button();
-            btnProgram2 = new Button();
-            btnProgram3 = new Button();
+            btnElevator = new Button();
+            btnCarWash = new Button();
+            btnCrossroad = new Button();
             btnConnect = new Button();
             txtBoxPLCIP = new TextBox();
             lblTypePLCIP = new Label();
@@ -47,35 +47,35 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnProgram1
+            // btnElevator
             // 
-            btnProgram1.Location = new Point(22, 67);
-            btnProgram1.Name = "btnProgram1";
-            btnProgram1.Size = new Size(94, 52);
-            btnProgram1.TabIndex = 0;
-            btnProgram1.Text = "Program1";
-            btnProgram1.UseVisualStyleBackColor = true;
-            btnProgram1.Click += btnProgram1_Click;
+            btnElevator.Location = new Point(22, 67);
+            btnElevator.Name = "btnElevator";
+            btnElevator.Size = new Size(94, 52);
+            btnElevator.TabIndex = 0;
+            btnElevator.Text = "Elevator";
+            btnElevator.UseVisualStyleBackColor = true;
+            btnElevator.Click += btnProgram1_Click;
             // 
-            // btnProgram2
+            // btnCarWash
             // 
-            btnProgram2.Location = new Point(122, 67);
-            btnProgram2.Name = "btnProgram2";
-            btnProgram2.Size = new Size(94, 52);
-            btnProgram2.TabIndex = 1;
-            btnProgram2.Text = "Program2";
-            btnProgram2.UseVisualStyleBackColor = true;
-            btnProgram2.Click += btnProgram2_Click;
+            btnCarWash.Location = new Point(122, 67);
+            btnCarWash.Name = "btnCarWash";
+            btnCarWash.Size = new Size(94, 52);
+            btnCarWash.TabIndex = 1;
+            btnCarWash.Text = "CarWash";
+            btnCarWash.UseVisualStyleBackColor = true;
+            btnCarWash.Click += btnProgram2_Click;
             // 
-            // btnProgram3
+            // btnCrossroad
             // 
-            btnProgram3.Location = new Point(222, 67);
-            btnProgram3.Name = "btnProgram3";
-            btnProgram3.Size = new Size(94, 52);
-            btnProgram3.TabIndex = 2;
-            btnProgram3.Text = "Program3";
-            btnProgram3.UseVisualStyleBackColor = true;
-            btnProgram3.Click += btnProgram3_Click;
+            btnCrossroad.Location = new Point(222, 67);
+            btnCrossroad.Name = "btnCrossroad";
+            btnCrossroad.Size = new Size(94, 52);
+            btnCrossroad.TabIndex = 2;
+            btnCrossroad.Text = "Crossroad";
+            btnCrossroad.UseVisualStyleBackColor = true;
+            btnCrossroad.Click += btnProgram3_Click;
             // 
             // btnConnect
             // 
@@ -146,9 +146,9 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btnProgram1);
-            panel3.Controls.Add(btnProgram2);
-            panel3.Controls.Add(btnProgram3);
+            panel3.Controls.Add(btnElevator);
+            panel3.Controls.Add(btnCarWash);
+            panel3.Controls.Add(btnCrossroad);
             panel3.Controls.Add(lblChooseSIM);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 135);
@@ -193,9 +193,9 @@
 
         #endregion
 
-        private Button btnProgram1;
-        private Button btnProgram2;
-        private Button btnProgram3;
+        private Button btnElevator;
+        private Button btnCarWash;
+        private Button btnCrossroad;
         private Button btnConnect;
         private TextBox txtBoxPLCIP;
         private Label lblTypePLCIP;

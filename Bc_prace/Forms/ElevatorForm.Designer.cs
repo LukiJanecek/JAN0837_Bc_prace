@@ -2,7 +2,7 @@
 
 namespace Bc_prace
 {
-    partial class Program1Form
+    partial class ElevatorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -346,7 +346,7 @@ namespace Bc_prace
             userControlElevatorDoor1.Size = new Size(341, 590);
             userControlElevatorDoor1.TabIndex = 0;
             // 
-            // Program1Form
+            // ElevatorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -357,8 +357,8 @@ namespace Bc_prace
             Controls.Add(statusStripElevator);
             Controls.Add(panelCabinBtn);
             DoubleBuffered = true;
-            Name = "Program1Form";
-            Text = "Program1";
+            Name = "ElevatorForm";
+            Text = "Elevator";
             Load += Program1_Load;
             panelCabinBtn.ResumeLayout(false);
             panel1.ResumeLayout(false);

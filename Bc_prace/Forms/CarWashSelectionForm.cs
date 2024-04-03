@@ -13,7 +13,7 @@ using System.Security.Cryptography;
 
 namespace Bc_prace
 {
-    public partial class Program2SelectionForm : Form
+    public partial class CarWashSelectionForm : Form
     {
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -75,10 +75,10 @@ namespace Bc_prace
 
         #endregion
 
-        public Program2SelectionForm(ChooseOptionForm chooseOptionFormInstance)
+        public CarWashSelectionForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
-            this.MinimumSize = new Size(700, 260);
+            this.MinimumSize = new Size(356, 310); 
 
             this.chooseOptionFormInstance = chooseOptionFormInstance;
 

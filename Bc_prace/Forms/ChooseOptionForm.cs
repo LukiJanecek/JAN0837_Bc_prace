@@ -23,9 +23,9 @@ namespace Bc_prace
         //MessageBox control
         private bool errorMessageBoxShown;
 
-        Program1Form Program1 = null;
-        Program2Form Program2 = null;
-        Program3Form Program3 = null;
+        ElevatorForm Program1 = null;
+        CarWashForm Program2 = null;
+        CrossroadForm Program3 = null;
 
         private static bool program1Opened = false;
         private static bool program2Opened = false;
@@ -1217,9 +1217,9 @@ namespace Bc_prace
         private void ChooseOption_Load(object sender, EventArgs e)
         {
             lblChooseSIM.Visible = false;
-            btnProgram1.Visible = false;
-            btnProgram2.Visible = false;
-            btnProgram3.Visible = false;
+            btnElevator.Visible = false;
+            btnCarWash.Visible = false;
+            btnCrossroad.Visible = false;
         }
 
         //Choices and messages 
@@ -1255,7 +1255,7 @@ namespace Bc_prace
                     }
                 }
 
-                Program1 = new Program1Form(this);
+                Program1 = new ElevatorForm(this);
                 Program1.Show();
                 program1Opened = true;
 
@@ -1305,7 +1305,7 @@ namespace Bc_prace
                     }
                 }
 
-                Program2 = new Program2Form(this);
+                Program2 = new CarWashForm(this);
                 Program2.Show();
                 program2Opened = true;
 
@@ -1355,7 +1355,7 @@ namespace Bc_prace
                     }
                 }
 
-                Program3 = new Program3Form(this);
+                Program3 = new CrossroadForm(this);
                 Program3.Show();
                 program3Opened = true;
 
@@ -1407,9 +1407,9 @@ namespace Bc_prace
                 Timer_read_from_PLC.Interval = 100;
 
                 lblChooseSIM.Visible = true;
-                btnProgram1.Visible = true;
-                btnProgram2.Visible = true;
-                btnProgram3.Visible = true;
+                btnElevator.Visible = true;
+                btnCarWash.Visible = true;
+                btnCrossroad.Visible = true;
             }
             else
             {
