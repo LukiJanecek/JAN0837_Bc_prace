@@ -264,7 +264,7 @@ namespace Bc_prace.Controls
             InitializeComponent();
             DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
             Paint += UserControlCarWash_Paint;
-            InitializeCarImage();
+            InitializeCarImage(1);
         }
 
         private void UserControlCarWash_Paint(object? sender, PaintEventArgs e)
@@ -727,7 +727,8 @@ namespace Bc_prace.Controls
             }
         }
 
-        public async void ShowerMoveLeft()
+        //this can go delete
+        public async void ShowerMoveLeft() 
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
             {
@@ -737,6 +738,7 @@ namespace Bc_prace.Controls
             }
         }
 
+        //this can go delete
         public async void ShowerMoveRight()
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
@@ -752,7 +754,7 @@ namespace Bc_prace.Controls
         //Car picture
         #region Car picture
 
-        public void InitializeCarImage()
+        public void InitializeCarImage(int index)
         {
             if (pictureBoxCar != null && !pictureBoxCar.IsDisposed)
             {
@@ -762,6 +764,7 @@ namespace Bc_prace.Controls
 
             pictureBoxCar = new PictureBox();
 
+            //moving car 
             if (picture == 1)
             {
                 //Controls.Remove(pictureBoxCar);
@@ -769,6 +772,7 @@ namespace Bc_prace.Controls
                 //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
             }
+            //brushes
             else if (picture == 2)
             {
                 //Controls.Remove(pictureBoxCar);
@@ -776,6 +780,7 @@ namespace Bc_prace.Controls
                 //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
             }
+            //washing
             else if (picture == 3)
             {
                 //Controls.Remove(pictureBoxCar);
@@ -783,6 +788,7 @@ namespace Bc_prace.Controls
                 //pictureBoxCar = new PictureBox();
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
             }
+            //shinny car 
             else if (picture == 4)
             {
                 //Controls.Remove(pictureBoxCar);
@@ -872,7 +878,7 @@ namespace Bc_prace.Controls
             pictureX -= 10;
             pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
-            InitializeCarImage();
+            InitializeCarImage(1);
         }
 
         public void ManualMovePictureRIGHT()
@@ -880,7 +886,7 @@ namespace Bc_prace.Controls
             pictureX += 10;
             pictureBoxCar.Location = new Point(Convert.ToInt32(x + pictureX), Convert.ToInt32(length * 3 + (length / 2) + pictureY));
             this.Refresh();
-            InitializeCarImage();
+            InitializeCarImage(1);
         }
 
         #endregion

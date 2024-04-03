@@ -606,9 +606,6 @@ namespace Bc_prace
                 {
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
-                    //userControlCarWash1.ShowerMovement(705, 915, 2000);
-                    //userControlCarWash1.ShowerMovement(915, 515, 2000);
-                    //userControlCarWash1.ShowerMovement(515, 705, 2000);
                 }
                 else
                 {
