@@ -61,7 +61,7 @@
             btnEmergency.Name = "btnEmergency";
             btnEmergency.Size = new Size(177, 79);
             btnEmergency.TabIndex = 37;
-            btnEmergency.Text = "Emergency button";
+            btnEmergency.Text = "Emergency BTN";
             btnEmergency.UseVisualStyleBackColor = true;
             btnEmergency.Click += btnEmergency_Click;
             // 

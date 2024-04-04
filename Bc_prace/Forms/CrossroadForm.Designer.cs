@@ -66,7 +66,7 @@ namespace Bc_prace
             btnEmergency.Name = "btnEmergency";
             btnEmergency.Size = new Size(177, 79);
             btnEmergency.TabIndex = 26;
-            btnEmergency.Text = "Emergency button ";
+            btnEmergency.Text = "Emergency BTN";
             btnEmergency.UseVisualStyleBackColor = true;
             btnEmergency.Click += btnEmergency_Click;
             // 

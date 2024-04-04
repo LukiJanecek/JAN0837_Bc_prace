@@ -1820,10 +1820,10 @@ namespace Bc_prace
                 userControlCrossroad1.CrossroadLeftTRightYELLOW = CrossroadLeftTRightYELLOW;
                 userControlCrossroad1.CrossroadLeftTRightGREEN = CrossroadLeftTRightGREEN;
 
-                userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN1 = CrossroadRightTTopCrosswalkGREEN1;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkGREEN2 = CrossroadRightTTopCrosswalkGREEN2;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkRED1 = CrossroadRightTTopCrosswalkRED1;
-                userControlCrossroad1.CrossroadRightTTopCrosswalkRED2 = CrossroadRightTTopCrosswalkRED2;
+                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN1 = CrossroadLeftTLeftCrosswalkGREEN1;
+                userControlCrossroad1.CrossroadLeftTLeftCrosswalkGREEN2 = CrossroadLeftTLeftCrosswalkGREEN2;
+                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED1 = CrossroadLeftTLeftCrosswalkRED1;
+                userControlCrossroad1.CrossroadLeftTLeftCrosswalkRED2 = CrossroadLeftTLeftCrosswalkRED2;
 
                 #endregion
 
