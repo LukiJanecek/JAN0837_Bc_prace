@@ -1854,6 +1854,7 @@ namespace Bc_prace
 
                 #endregion
 
+                //probably can delete this 
                 //I never get into this condition!!! -> maybe u can make it happen just like that 
                 //Lights change
                 if (crossroadBasic) //rBtnBasicCrossroad.Checked userControlCrossroad1.DrawBasicCrossroad == true

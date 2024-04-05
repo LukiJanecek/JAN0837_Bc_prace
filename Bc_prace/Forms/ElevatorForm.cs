@@ -2240,6 +2240,7 @@ namespace Bc_prace
                 {
                     //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
+                    //mozna to nebude potreba -> optional
                     /*
                     //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu

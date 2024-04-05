@@ -492,6 +492,8 @@ namespace Bc_prace.Controls
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
 
+                //mozna staci upravit podminky pro OnelevatorFloorSENS a targetY
+
                 //Cabin is on 1st floor
                 if (yCabin == (y + length * 5 - heightCabin))
                 {
