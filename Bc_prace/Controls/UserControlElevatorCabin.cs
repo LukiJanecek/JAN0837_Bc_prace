@@ -53,7 +53,7 @@ namespace Bc_prace.Controls
         private float length = 100;
         private float signalizationCircle_diameter = 10;
 
-        public string lblElevatorTestText;
+        public string lblElevatorTestText = "cabin testing";
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush green = new SolidBrush(Color.Green); //ActualFloorLED color
@@ -140,6 +140,10 @@ namespace Bc_prace.Controls
 
         #endregion
 
+        public int distance = 0;
+        public int countUp;
+        public int countDown;
+
         public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
@@ -185,8 +189,7 @@ namespace Bc_prace.Controls
             SolidBrush labelBrush = new SolidBrush(Color.Black);
 
             //test text parameters
-            lblElevatorTestText = "";
-            g.DrawString(lblElevatorTestText, labelFont, labelBrush, x + 30, y + length * 6);
+            g.DrawString(lblElevatorTestText, labelFont, labelBrush, x + length, y);
 
             //ElevatorCabin -> starts on the top floor
             g.DrawRectangle(BlackPen, x + xCabin, y + yCabin, widthCabin, heightCabin);
@@ -443,9 +446,11 @@ namespace Bc_prace.Controls
         {
             targetY = targetY * length - heightCabin;
 
-            while (yCabin < targetY)
+            while (yCabin <= targetY)
             {
                 yCabin += Step;
+                distance += Convert.ToInt32(Step);
+
                 this.Refresh();
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
@@ -483,6 +488,42 @@ namespace Bc_prace.Controls
                 }
 
                 #endregion
+
+                //testing
+                if (yCabin == length)
+                {
+                    countDown = 1;
+                    //testing
+                    lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
+                }
+
+                if (yCabin == length * 2)
+                {
+                    countDown = 2;
+                    //testing
+                    lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
+                }
+
+                if (yCabin == length * 3)
+                {
+                    countDown = 3;
+                    //testing
+                    lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
+                }
+
+                if (yCabin == length * 4)
+                {
+                    countDown = 4;
+                    //testing
+                    lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
+                }
+
+                if (yCabin == length * 5)
+                {
+                    countDown = 5;
+                    //testing
+                    lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
+                }
                                 
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
@@ -490,15 +531,14 @@ namespace Bc_prace.Controls
 
         public async void CabinMoveToFloorUP(float targetY)
         {
-            int countUp;
-            int distance = 0;
-            
             targetY = y + targetY * length;
             
             while (yCabin > targetY)
             {
                 yCabin -= Step;
                 distance -= Convert.ToInt32(Step);
+
+                this.Refresh();
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
@@ -578,22 +618,20 @@ namespace Bc_prace.Controls
                     lblElevatorTestText = $"Distance: {distance} + Count: {countUp}";
                 }
 
-                this.Refresh();
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
         }
 
         public async void CabinMoveToFloorDOWN(float targetY)
         {
-            int countDown;
-            int distance = 0;
-
             targetY = y + targetY * length;
 
             while (yCabin < targetY)
             {
                 yCabin += Step;
                 distance += Convert.ToInt32(Step);
+
+                this.Refresh();
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
@@ -671,7 +709,6 @@ namespace Bc_prace.Controls
                     lblElevatorTestText = $"Distance: {distance} + Count: {countDown}";
                 }
 
-                this.Refresh();
                 await Task.Delay(50); //program1FormInstance.ElevatorCabinSpeed * 10
             }
         }

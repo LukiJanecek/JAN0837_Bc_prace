@@ -40,7 +40,7 @@ namespace Bc_prace.Controls
         private float widthDoor = 160;
         private float heightDoor = 100;
 
-        public string lblElevatorDoorState;
+        public string lblElevatorDoorState = "Elevator state";
 
         private SolidBrush white = new SolidBrush(Color.White); //default
         private SolidBrush yellow = new SolidBrush(Color.Yellow); //DoorBackground color
@@ -80,7 +80,7 @@ namespace Bc_prace.Controls
             //text parameters
             Font labelFont = new Font("Arial", 9);
             SolidBrush labelBrush = new SolidBrush(Color.Black);
-            lblElevatorDoorState = "Elevator state";
+            //lblElevatorDoorState = "Elevator state";
             g.DrawString(lblElevatorDoorState, labelFont, labelBrush, x + 30, y + length);
 
             //DoorBackground
