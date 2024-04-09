@@ -163,6 +163,10 @@ namespace Bc_prace
         {
             if (state)
             {
+                statusStripCarWash.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Car is on position.");
+                statusStripCarWash.Items.Add(lblStatus);
+
                 CarWashPositionCar = true;
                 S7.SetBitAt(send_buffer_DB5, 2, 1, CarWashPositionCar);
 
@@ -560,6 +564,10 @@ namespace Bc_prace
                 //Door1 UP
                 if (CarWashDoor1UP)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Door1UP");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //true
                     userControlCarWash1.door1UP(CarWashTimeDoorMovement);
 
@@ -594,6 +602,10 @@ namespace Bc_prace
                 //Door1 DOWN
                 if (CarWashDoor1DOWN)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Door1DOWN");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //true
                     userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
 
@@ -628,6 +640,10 @@ namespace Bc_prace
                 //Door2 UP
                 if (CarWashDoor2UP)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Door2UP");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //true 
                     userControlCarWash1.door2UP(CarWashTimeDoorMovement);
 
@@ -662,6 +678,10 @@ namespace Bc_prace
                 //door2 DOWN
                 if (CarWashDoor2DOWN)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Door2DOWN");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //true
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
                     
@@ -696,6 +716,10 @@ namespace Bc_prace
                 //Water
                 if (CarWashWater)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Water ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
                     userControlCarWash1.InitializeCarImage(3);
@@ -703,6 +727,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Water OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.WaterSignalization(false);
                     userControlCarWash1.Water = false;
                 }
@@ -710,6 +738,10 @@ namespace Bc_prace
                 //Wax
                 if (CarWashWax)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Wax ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.WaxSignalization(true);
                     userControlCarWash1.Wax = true;
                     userControlCarWash1.InitializeCarImage(3);
@@ -717,6 +749,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Wax OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.WaxSignalization(false);
                     userControlCarWash1.Wax = false;
                 }
@@ -724,6 +760,10 @@ namespace Bc_prace
                 //ActiveFoam
                 if (CarWashActiveFoam)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("ActiveFoam ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.ActiveFoamSignalization(true);
                     userControlCarWash1.ActiveFoam = true;
                     userControlCarWash1.InitializeCarImage(3);
@@ -731,6 +771,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("ActiveFoam OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.ActiveFoamSignalization(true);
                     userControlCarWash1.ActiveFoam = false;
                 }
@@ -738,6 +782,10 @@ namespace Bc_prace
                 //Soap 
                 if (CarWashSoap)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Soap ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.SoapSignalization(true);
                     userControlCarWash1.Soap = true;
                     userControlCarWash1.InitializeCarImage(3);
@@ -745,6 +793,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Soap OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.SoapSignalization(false);
                     userControlCarWash1.Soap = false;
                 }
@@ -752,6 +804,10 @@ namespace Bc_prace
                 //Brushes
                 if (CarWashBrushes)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Brushes ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.BrushesSignalization(true);
                     userControlCarWash1.Brushes = true;
                     userControlCarWash1.InitializeCarImage(2);
@@ -759,6 +815,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Brushes OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.BrushesSignalization(false);
                     userControlCarWash1.Brushes = false;
                 }
@@ -766,6 +826,10 @@ namespace Bc_prace
                 //Drying
                 if (CarWashDry)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Drying ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.DryingSignalization(true);
                     userControlCarWash1.InitializeCarImage(4);
                     userControlCarWash1.Drying = true;
@@ -773,6 +837,10 @@ namespace Bc_prace
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Drying OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.DryingSignalization(false);
                     userControlCarWash1.Drying = false;
                 }
@@ -780,13 +848,40 @@ namespace Bc_prace
                 //PreWash
                 if (CarWashPrewash)
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("PreWash ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.PreWashSignalization(true);
                     userControlCarWash1.PreWash = true;
                 }
                 else
                 {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("PreWash OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
                     //userControlCarWash1.PreWashSignalization(false);
                     userControlCarWash1.PreWash = false;
+                }
+
+                if (CarWashVarnishProtection)
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Varnich protection ON");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    userControlCarWash1.VarnishProtection = true;
+
+                    await ShowerMovemnet();
+                }
+                else
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Varnish protection OFF");
+                    statusStripCarWash.Items.Add(lblStatus);
+
+                    userControlCarWash1.VarnishProtection = false;
                 }
 
                 #endregion

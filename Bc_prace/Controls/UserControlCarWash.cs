@@ -212,6 +212,21 @@ namespace Bc_prace.Controls
             }
         }
 
+        //Varnish protection 
+        private bool varnishProtection;
+
+        public bool VarnishProtection
+        {
+            get { return  varnishProtection; } 
+
+            set
+            {
+                varnishProtection = value;
+
+                Invalidate(); //toto tu asi být nemusí
+            }
+        }
+
         //CarWash Red Light
         private bool carWashRedLight;
 
@@ -369,8 +384,8 @@ namespace Bc_prace.Controls
             g.DrawLine(BlackPen, x + length * 5, y + length * 2, x + length * 9, y + length * 2);
             g.DrawEllipse(BlackPen, ShowerX, y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
 
-            //car signalization => // this doesnt make sense anymore
-            string labelCarSignalization = ""; //this doesnt make sense anymore
+            //car signalization 
+            string labelCarSignalization = ""; 
             CarSignalizationX = x + length * 7 + 20;
             CarSignalizationY = y + length * 2 + length / 2;
             g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); // this doesnt make sense anymore
@@ -417,6 +432,14 @@ namespace Bc_prace.Controls
             BrushesY = y + length + 10;
             g.DrawString(labelBrushes, labelFont, labelBrush, BrushesX, BrushesY);
             g.DrawEllipse(BlackPen, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+
+            //Varnish protection 
+            string labelVarnishProtection = "Varnish protection";
+            BrushesX = x + length * 9 + 20;
+            BrushesY = y + length + 30;
+            g.DrawString(labelBrushes, labelFont, labelBrush, BrushesX, BrushesY);
+            g.DrawEllipse(BlackPen, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+
 
             #endregion
 
@@ -563,16 +586,7 @@ namespace Bc_prace.Controls
             {
                 g.FillEllipse(white, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
-            #endregion
-
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
+            #endregion            
         }
 
         //Methods for reaction on Tia variable change 
