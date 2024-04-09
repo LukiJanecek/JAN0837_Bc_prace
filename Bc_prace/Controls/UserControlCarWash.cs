@@ -770,7 +770,12 @@ namespace Bc_prace.Controls
                 //Controls.Remove(pictureBoxCar);
                 //this.Refresh();
                 //pictureBoxCar = new PictureBox();
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
+                
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
+
+                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                string imagePath = Path.Combine(projectPath, "Resources", "car_64.png");
+                pictureBoxCar.Image = Image.FromFile(imagePath);
             }
             //brushes
             else if (picture == 2)
@@ -778,7 +783,12 @@ namespace Bc_prace.Controls
                 //Controls.Remove(pictureBoxCar);
                 //this.Refresh();
                 //pictureBoxCar = new PictureBox();
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
+                
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
+
+                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                string imagePath = Path.Combine(projectPath, "Resources", "car_brushes_64.png");
+                pictureBoxCar.Image = Image.FromFile(imagePath);
             }
             //washing
             else if (picture == 3)
@@ -786,7 +796,12 @@ namespace Bc_prace.Controls
                 //Controls.Remove(pictureBoxCar);
                 //this.Refresh();
                 //pictureBoxCar = new PictureBox();
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
+                
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
+
+                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                string imagePath = Path.Combine(projectPath, "Resources", "car_washing_64.png");
+                pictureBoxCar.Image = Image.FromFile(imagePath);
             }
             //shinny car 
             else if (picture == 4)
@@ -794,7 +809,12 @@ namespace Bc_prace.Controls
                 //Controls.Remove(pictureBoxCar);
                 //this.Refresh();
                 //pictureBoxCar = new PictureBox();
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+                
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+
+                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+                string imagePath = Path.Combine(projectPath, "Resources", "car_done_64.png");
+                pictureBoxCar.Image = Image.FromFile(imagePath);
             }
             else
             {
