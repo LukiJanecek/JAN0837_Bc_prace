@@ -521,6 +521,13 @@ namespace Bc_prace
                     }
                 }
 
+                if (CarWashWaitingForIncomingCar)
+                {
+                    statusStripCarWash.Items.Clear();
+                    ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Waiting for incoming car.");
+                    statusStripCarWash.Items.Add(lblStatus);
+                }
+
                 if (CarWashWaitingForOutgoingCar)
                 {
                     statusStripCarWash.Items.Clear();

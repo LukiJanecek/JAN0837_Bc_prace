@@ -303,9 +303,15 @@ namespace Bc_prace
 
         private void UserControlCrossroad1_OnCrossroadBTNClick(object sender, string id)
         {
-            switch(id)
+            ToolStripStatusLabel lblStatus;
+
+            switch (id)
             {
-                case "Crossroad1 Top crosswalk BTN1":
+                case "btnCrossroad1TopCrosswalkLEFT":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad1 Top Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad1TopCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB1, 0, 2, Crossroad1TopCrosswalkBTN1);
@@ -331,7 +337,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad1 Top crosswalk BTN2":
+                case "btnCrossroad1TopCrosswalkRIGHT":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad1 Top Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad1TopCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB1, 0, 3, Crossroad1TopCrosswalkBTN2);
@@ -357,7 +367,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad1 Left crosswalk BTN1":
+                case "btnCrossroad1LeftCrosswalkTOP":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad1 Left Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad1LeftCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB1, 0, 0, Crossroad1LeftCrosswalkBTN1);
@@ -383,7 +397,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad1 Left crosswalk BTN2":
+                case "btnCrossroad1LeftCrosswalkBOTTOM":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad1 Left Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad1LeftCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB1, 0, 1, Crossroad1LeftCrosswalkBTN2);
@@ -409,7 +427,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad2 Left crosswalk BTN1":
+                case "btnCrossroad2LeftCrosswalkTOP":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad2 Left Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad2LeftCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB19, 0, 0, Crossroad2LeftCrosswalkBTN1);
@@ -435,7 +457,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad2 Left crosswalk BTN2":
+                case "btnCrossroad2LeftCrosswalkBOTTOM":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad2 Left Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad2LeftCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB19, 0, 1, Crossroad2LeftCrosswalkBTN2);
@@ -461,7 +487,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad2 Right crosswalk BTN1":
+                case "btnCrossroad2RightCrosswalkTOP":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad2 Right Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad2RightCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB19, 0, 2, Crossroad2RightCrosswalkBTN1);
@@ -487,7 +517,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "Crossroad2 Right crosswalk BTN2":
+                case "btnCrossroad2RightCrosswalkBOTTOM":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("Crossroad2 Right Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     Crossroad2RightCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB19, 0, 3, Crossroad2RightCrosswalkBTN2);
@@ -513,7 +547,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "LeftT\nLeft crosswalk BTN1":
+                case "btnLeftTLeftCrosswalkTOP":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("LeftT Left Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     CrossroadLeftTLeftCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB20, 0, 0, CrossroadLeftTLeftCrosswalkBTN1);
@@ -539,7 +577,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "LeftT\nLeft crosswalk BTN2":
+                case "btnLeftTLeftCrosswalkBOTTOM":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("LeftT Left Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     CrossroadLeftTLeftCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB20, 0, 1, CrossroadLeftTLeftCrosswalkBTN2);
@@ -565,7 +607,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "RightT\nTop crosswalk BTN1":
+                case "btnRightTTopCrosswalkLEFT":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("RightT Top Crosswalk BTN1 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     CrossroadRightTTopCrosswalkBTN1 = true;
                     S7.SetBitAt(send_buffer_DB21, 0, 0, CrossroadRightTTopCrosswalkBTN1);
@@ -591,7 +637,11 @@ namespace Bc_prace
                     }
 
                     break;
-                case "RightT\nTop crosswalk BTN2":
+                case "btnRightTTopCrosswalkRIGHT":
+
+                    statusStripCrossroad.Items.Clear();
+                    lblStatus = new ToolStripStatusLabel("RightT Top Crosswalk BTN2 is true.");
+                    statusStripCrossroad.Items.Add(lblStatus);
 
                     CrossroadRightTTopCrosswalkBTN2 = true;
                     S7.SetBitAt(send_buffer_DB21, 0, 1, CrossroadRightTTopCrosswalkBTN2);

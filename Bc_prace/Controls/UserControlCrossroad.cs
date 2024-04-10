@@ -6956,6 +6956,7 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkLEFT.Click += btnCrossroad1TopCrosswalkLEFT_Click;
             //btnCrossroad1TopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkLEFT");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad1TopCrosswalkLEFT";
             Controls.Add(btnCrossroad1TopCrosswalkLEFT);
 
             //right
@@ -6968,6 +6969,7 @@ namespace Bc_prace.Controls
             btnCrossroad1TopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1TopCrosswalkRIGHT.Click += btnCrossroad1TopCrosswalkRIGHT_Click;
             //btnCrossroad1TopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnCrossroad1TopCrosswalkRIGHT");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad1TopCrosswalkRIGHT";
             Controls.Add(btnCrossroad1TopCrosswalkRIGHT);
 
             #endregion
@@ -6984,6 +6986,7 @@ namespace Bc_prace.Controls
             btnCrossroad1LeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkTOP.Click += btnCrossroad1LeftCrosswalkTOP_Click;
             //btnCrossroad1LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad1LeftCrosswalkTOP");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad1LeftCrosswalkTOP";
             Controls.Add(btnCrossroad1LeftCrosswalkTOP);
 
 
@@ -6997,6 +7000,7 @@ namespace Bc_prace.Controls
             btnCrossroad1LeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad1LeftCrosswalkBOTTOM.Click += btnCrossroad1LeftCrosswalkBOTTOM_Click;
             //btnCrossroad1LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad1LeftCrosswalkBOTTOM");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad1LeftCrosswalkBOTTOM";
             Controls.Add(btnCrossroad1LeftCrosswalkBOTTOM);
 
             #endregion
@@ -7018,6 +7022,7 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkTOP.Click += btnCrossroad2LeftCrosswalkTOP_Click;
             //btnCrossroad2LeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkTOP");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad2LeftCrosswalkTOP";
             Controls.Add(btnCrossroad2LeftCrosswalkTOP);
 
             //bottom
@@ -7030,6 +7035,7 @@ namespace Bc_prace.Controls
             btnCrossroad2LeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2LeftCrosswalkBOTTOM.Click += btnCrossroad2LeftCrosswalkBOTTOM_Click;
             //btnCrossroad2LeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2LeftCrosswalkBOTTOM");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad2LeftCrosswalkBOTTOM";
             Controls.Add(btnCrossroad2LeftCrosswalkBOTTOM);
 
             #endregion
@@ -7046,6 +7052,7 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkTOP.Click += btnCrossroad2RightCrosswalkTOP_Click;
             //btnCrossroad2RightCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkTOP");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad2RightCrosswalkTOP";
             Controls.Add(btnCrossroad2RightCrosswalkTOP);
 
             //bottom
@@ -7058,6 +7065,7 @@ namespace Bc_prace.Controls
             btnCrossroad2RightCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnCrossroad2RightCrosswalkBOTTOM.Click += btnCrossroad2RightCrosswalkBOTTOM_Click;
             //btnCrossroad2RightCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnCrossroad2RightCrosswalkBOTTOM");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnCrossroad2RightCrosswalkBOTTOM";
             Controls.Add(btnCrossroad2RightCrosswalkBOTTOM);
 
             #endregion
@@ -7078,6 +7086,7 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkTOP.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkTOP.Click += btnLeftTLeftCrosswalkTOP_CLick;
             //btnLeftTLeftCrosswalkTOP.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkTOP");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnLeftTLeftCrosswalkTOP";
             Controls.Add(btnLeftTLeftCrosswalkTOP);
 
             //bottom
@@ -7090,6 +7099,7 @@ namespace Bc_prace.Controls
             btnLeftTLeftCrosswalkBOTTOM.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnLeftTLeftCrosswalkBOTTOM.Click += btnLeftTLeftCrosswalkBOTTOM_CLick;
             //btnLeftTLeftCrosswalkBOTTOM.Click += (sender, e) => OnButtonClicked("btnLeftTLeftCrosswalkBOTTOM");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnLeftTLeftCrosswalkBOTTOM";
             Controls.Add(btnLeftTLeftCrosswalkBOTTOM);
 
             #endregion
@@ -7110,6 +7120,7 @@ namespace Bc_prace.Controls
             btnRightTTopCrosswalkLEFT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnRightTTopCrosswalkLEFT.Click += btnRightTTopCrosswalkLEFT_Click;
             //btnRightTTopCrosswalkLEFT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkLEFT");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnRightTTopCrosswalkLEFT";
             Controls.Add(btnRightTTopCrosswalkLEFT);
 
             //right
@@ -7122,6 +7133,7 @@ namespace Bc_prace.Controls
             btnRightTTopCrosswalkRIGHT.Size = new Size(Convert.ToInt32(Button_width), Convert.ToInt32(Button_height)); //cannot invert float to int 
             btnRightTTopCrosswalkRIGHT.Click += btnRightTTopCrosswalkRIGHT_Click;
             //btnRightTTopCrosswalkRIGHT.Click += (sender, e) => OnButtonClicked("btnRightTTopCrosswalkRIGHT");
+            btnLeftTLeftCrosswalkTOP.Tag = "btnRightTTopCrosswalkRIGHT";
             Controls.Add(btnRightTTopCrosswalkRIGHT);
 
             #endregion
@@ -7139,7 +7151,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkLEFT");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7173,7 +7192,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad1TopCrosswalkRIGHT");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7207,7 +7233,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkTOP");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7241,7 +7274,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad1LeftCrosswalkBOTTOM");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7275,7 +7315,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkTOP");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7309,7 +7356,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad2LeftCrosswalkBOTTOM");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7343,7 +7397,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkTOP");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7377,7 +7438,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnCrossroad2RightCrosswalkBOTTOM");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7411,7 +7479,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkTOP");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7445,7 +7520,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnLeftTLeftCrosswalkBOTTOM");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7479,7 +7561,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnRightTTopCrosswalkLEFT");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
@@ -7512,7 +7601,14 @@ namespace Bc_prace.Controls
             //ButtonClicked.Invoke(this, "btnRightTTopCrosswalkRIGHT");
 
             if (OnCrossroadBTNClick != null)
-                OnCrossroadBTNClick(sender, ((Button)sender).Text);
+            {
+                Button clickedButton = (Button)sender;
+                if (clickedButton != null)
+                {
+                    string tagValue = clickedButton.Tag as string;
+                    OnCrossroadBTNClick(sender, tagValue);
+                }
+            }
 
             //toto se bude dít v Program3Form
             /*
