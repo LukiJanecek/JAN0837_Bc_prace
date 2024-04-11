@@ -34,6 +34,8 @@
             btnEnd = new Button();
             btnStartCarWash = new Button();
             panel1 = new Panel();
+            btnTest2 = new Button();
+            btnTest1 = new Button();
             btnSignalization = new Button();
             panel2 = new Panel();
             btnMoveCarToNextPoint = new Button();
@@ -68,7 +70,7 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 511);
+            btnEnd.Location = new Point(7, 511);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 38;
@@ -88,6 +90,8 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTest2);
+            panel1.Controls.Add(btnTest1);
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
@@ -95,6 +99,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 593);
             panel1.TabIndex = 40;
+            // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(27, 321);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(94, 29);
+            btnTest2.TabIndex = 40;
+            btnTest2.Text = "BTN Test 2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click_1;
+            // 
+            // btnTest1
+            // 
+            btnTest1.Location = new Point(34, 272);
+            btnTest1.Name = "btnTest1";
+            btnTest1.Size = new Size(94, 29);
+            btnTest1.TabIndex = 39;
+            btnTest1.Text = "BTN test 1";
+            btnTest1.UseVisualStyleBackColor = true;
+            btnTest1.Click += btnTest1_Click;
             // 
             // btnSignalization
             // 
@@ -168,6 +192,7 @@
             userControlCarWash1.Size = new Size(1393, 593);
             userControlCarWash1.Soap = false;
             userControlCarWash1.TabIndex = 43;
+            userControlCarWash1.VarnishProtection = false;
             userControlCarWash1.Water = false;
             userControlCarWash1.Wax = false;
             // 
@@ -208,5 +233,7 @@
         private Button btnCarMoveLEFT;
         private Button btnCarMoveRIGHT;
         private Button btnMoveCarToNextPoint;
+        private Button btnTest2;
+        private Button btnTest1;
     }
 }

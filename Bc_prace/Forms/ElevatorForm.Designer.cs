@@ -56,6 +56,8 @@ namespace Bc_prace
             userControlElevatorCabin1 = new UserControlElevatorCabin();
             panelElevatorDoor = new Panel();
             userControlElevatorDoor1 = new UserControlElevatorDoor();
+            btnTest1 = new Button();
+            btnTest2 = new Button();
             panelCabinBtn.SuspendLayout();
             panel1.SuspendLayout();
             panelElevatorCabin.SuspendLayout();
@@ -171,6 +173,8 @@ namespace Bc_prace
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnTest2);
+            panel1.Controls.Add(btnTest1);
             panel1.Controls.Add(btnGlobalEmergency);
             panel1.Controls.Add(btnCabinLengthBigger);
             panel1.Controls.Add(btnCabinLengthSmaller);
@@ -322,6 +326,26 @@ namespace Bc_prace
             userControlElevatorDoor1.Size = new Size(341, 590);
             userControlElevatorDoor1.TabIndex = 0;
             // 
+            // btnTest1
+            // 
+            btnTest1.Location = new Point(33, 403);
+            btnTest1.Name = "btnTest1";
+            btnTest1.Size = new Size(94, 29);
+            btnTest1.TabIndex = 48;
+            btnTest1.Text = "BTN Test 1";
+            btnTest1.UseVisualStyleBackColor = true;
+            btnTest1.Click += btnTest1_Click;
+            // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(35, 449);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(94, 29);
+            btnTest2.TabIndex = 49;
+            btnTest2.Text = "BTN Test 2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click;
+            // 
             // ElevatorForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -371,5 +395,7 @@ namespace Bc_prace
         private Panel panelElevatorDoor;
         private UserControlElevatorDoor userControlElevatorDoor1;
         private Button btnGlobalEmergency;
+        private Button btnTest2;
+        private Button btnTest1;
     }
 }

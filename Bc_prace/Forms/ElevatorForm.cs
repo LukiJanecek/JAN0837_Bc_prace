@@ -186,7 +186,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_btnElevatorFloor1 = {writeResultDB4_btnElevatorFloor1} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -212,7 +212,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_btnElevatorFloor2 = {writeResultDB4_btnElevatorFloor2} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -238,7 +238,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_btnElevatorFloor3 = {writeResultDB4_btnElevatorFloor3} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -264,7 +264,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_btnElevatorFloor4 = {writeResultDB4_btnElevatorFloor4} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -342,7 +342,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                           
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -414,7 +414,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -438,7 +438,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS5 = {writeResultDB4_ElevatorActualFloorSENS5} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -475,7 +475,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -499,7 +499,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS2 = {writeResultDB4_ElevatorActualFloorSENS2} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -523,7 +523,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS3 = {writeResultDB4_ElevatorActualFloorSENS3} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -547,7 +547,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -571,7 +571,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS5 = {writeResultDB4_ElevatorActualFloorSENS5} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -608,7 +608,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                                 $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                            
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -2554,7 +2554,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_btnCabinFloor1 = {writeResultDB4_btnCabinFloor1} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2584,7 +2584,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_btnCabinFloor2 = {writeResultDB4_btnCabinFloor2} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2614,7 +2614,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_btnCabinFloor3 = {writeResultDB4_btnCabinFloor3} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2644,7 +2644,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_btnCabinFloor4 = {writeResultDB4_btnCabinFloor4} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2674,7 +2674,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_btnCabinFloor5 = {writeResultDB4_btnCabinFloor5} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2751,7 +2751,7 @@ namespace Bc_prace
         }
 
         #endregion
-                
+
         //Emergency + system error 
         #region Emergency + system error
         private void btnCabinEmergency_Click(object sender, EventArgs e)
@@ -2771,7 +2771,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_Emergency = {writeResultDB4_Emergency} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2797,7 +2797,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
                         $"Error message: writeResultDB4_Emergency = {writeResultDB4_Emergency} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2854,7 +2854,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                         $"Error message: writeResultDB11_btnEnd = {writeResultDB11_btnEnd} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -2917,14 +2917,15 @@ namespace Bc_prace
 
         #endregion
 
-        private void btnTest_Click(object sender, EventArgs e)
+
+        private void btnTest1_Click(object sender, EventArgs e)
         {
-            userControlElevatorDoor1.OpenningDoor(ElevatorTimeDoorSQOPEN);
+
         }
 
         private void btnTest2_Click(object sender, EventArgs e)
         {
-            userControlElevatorDoor1.ClosingDoor(ElevatorTimeDoorSQCLOSE);
+
         }
     }
 }

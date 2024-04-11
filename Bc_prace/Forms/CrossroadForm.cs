@@ -3372,10 +3372,7 @@ namespace Bc_prace
 
         #endregion
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
     }
 }

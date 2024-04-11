@@ -182,7 +182,7 @@ namespace Bc_prace
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
                             $"Error message: writeResultDB5_PositionCar = {writeResultDB5_PositionCar} \n", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                        
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
                 else
@@ -517,7 +517,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("Error system is true. There is an error in the process. \r\n \n\n", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);;
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1); ;
                     }
                 }
 
@@ -593,7 +593,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
                                 $"Error message: writeResultDB5_Door1UP = {writeResultDB5_Door1UP} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                           
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -631,7 +631,7 @@ namespace Bc_prace
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB5!!! \n\n" +
                                 $"Error message: writeResultDB5_Door1DOWN = {writeResultDB5_Door1DOWN} \n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);    
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         }
                     }
                     else
@@ -691,7 +691,7 @@ namespace Bc_prace
 
                     //true
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
-                    
+
                     //toto možná nebude dělat dobrotu
                     S7.SetBitAt(send_buffer_DB5, 3, 0, true);
 
@@ -872,6 +872,7 @@ namespace Bc_prace
                     userControlCarWash1.PreWash = false;
                 }
 
+                //Varnish protectin
                 if (CarWashVarnishProtection)
                 {
                     statusStripCarWash.Items.Clear();
@@ -879,7 +880,6 @@ namespace Bc_prace
                     statusStripCarWash.Items.Add(lblStatus);
 
                     userControlCarWash1.VarnishProtection = true;
-
                     await ShowerMovemnet();
                 }
                 else
@@ -1091,7 +1091,7 @@ namespace Bc_prace
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                         $"Error message: writeResultDB11_btnEnd = {writeResultDB11_btnEnd} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                   
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
             else
@@ -1132,19 +1132,22 @@ namespace Bc_prace
 
         #endregion
 
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private async void btnTest2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSignalization_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void btnTest1_Click(object sender, EventArgs e)
+        {
+            userControlCarWash1.VarnishProtection = true;
+            await ShowerMovemnet();
+        }
+
+        private async void btnTest2_Click_1(object sender, EventArgs e)
+        {
+            userControlCarWash1.ActiveFoam = true;
+            userControlCarWash1.InitializeCarImage(3);
+            await ShowerMovemnet();
         }
     }
 }
