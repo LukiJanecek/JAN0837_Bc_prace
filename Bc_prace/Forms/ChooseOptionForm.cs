@@ -1195,6 +1195,7 @@ namespace Bc_prace
             {
                 if (!errorMessageBoxShown)
                 {
+                    //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
@@ -1268,12 +1269,12 @@ namespace Bc_prace
                     //write error
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                             $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 
@@ -1318,12 +1319,12 @@ namespace Bc_prace
                     //write error
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                             $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 
@@ -1368,12 +1369,12 @@ namespace Bc_prace
                     //write error
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                             $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 
@@ -1476,12 +1477,12 @@ namespace Bc_prace
                     //write error
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                                 $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 

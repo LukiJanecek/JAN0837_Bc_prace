@@ -323,12 +323,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad1TopCrosswalkBTN1 = {writeResultDB1_Crossroad1TopCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -353,12 +353,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad1TopCrosswalkBTN2 = {writeResultDB1_Crossroad1TopCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -383,12 +383,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad1LeftCrosswalkBTN1 = {writeResultDB1_Crossroad1LeftCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -413,12 +413,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB1!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad1LeftCrosswalkBTN2 = {writeResultDB1_Crossroad1LeftCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -443,12 +443,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad2LeftCrosswalkBTN1 = {writeResultDB1_Crossroad2LeftCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -473,12 +473,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad2LeftCrosswalkBTN2 = {writeResultDB1_Crossroad2LeftCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -503,12 +503,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad2RightCrosswalkBTN1 = {writeResultDB1_Crossroad2RightCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -533,12 +533,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB19!!! \n\n" +
                                 $"Error message: writeResultDB1_Crossroad2RightCrosswalkBTN2 = {writeResultDB1_Crossroad2RightCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -563,12 +563,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB20!!! \n\n" +
                                 $"Error message: writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1 = {writeResultDB1_CrossroadLeftTLeftCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -593,12 +593,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB20!!! \n\n" +
                                 $"Error message: writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2 = {writeResultDB1_CrossroadLeftTLeftCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -623,12 +623,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB21!!! \n\n" +
                                 $"Error message: writeResultDB1_CrossroadRightTTopCrosswalkBTN1 = {writeResultDB1_CrossroadRightTTopCrosswalkBTN1} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -653,12 +653,12 @@ namespace Bc_prace
                         //write error
                         if (!errorMessageBoxShown)
                         {
+                            errorMessageBoxShown = true;
+
                             //MessageBox
                             MessageBox.Show("BE doesn't work properly. Data could´t be written to DB21!!! \n\n" +
                                 $"Error message: writeResultDB1_CrossroadRightTTopCrosswalkBTN2 = {writeResultDB1_CrossroadRightTTopCrosswalkBTN2} \n", "Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                            errorMessageBoxShown = true;
                         }
                     }
                     else
@@ -1751,11 +1751,11 @@ namespace Bc_prace
                     //write emergency status 
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Emergency mode activated. \r\n \n\n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 
@@ -1768,11 +1768,11 @@ namespace Bc_prace
                     //write error
                     if (!errorMessageBoxShown)
                     {
+                        errorMessageBoxShown = true;
+
                         //MessageBox
                         MessageBox.Show("Error system is true. There is an error in the process. \r\n \n\n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                        errorMessageBoxShown = true;
                     }
                 }
 
@@ -2727,10 +2727,11 @@ namespace Bc_prace
 
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
         }
@@ -3167,12 +3168,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
                         $"Error message: writeResultDB14_Emergency = {writeResultDB14_Emergency} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
             else
@@ -3193,12 +3194,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
                         $"Error message: writeResultDB14_ErrorSystem = {writeResultDB14_ErrorSystem} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
             else
@@ -3224,12 +3225,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
                         $"Error message: writeResultDB11_btnEnd = {writeResultDB11_btnEnd} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
             else
@@ -3258,12 +3259,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
-                    //MessageBox
+                    errorMessageBoxShown = true;
+
+                    // MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
                         $"Error message: writeResultDB14_DayMode = {writeResultDB14_DayMode} \n", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);                    
                 }
             }
             else
@@ -3300,12 +3301,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
                         $"Error message: writeResultDB14_NightMode = {writeResultDB14_NightMode} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
             else
@@ -3342,12 +3343,12 @@ namespace Bc_prace
                 //write error
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show("BE doesn't work properly. Data could´t be written to DB14!!! \n\n" +
                         $"Error message: writeResultDB14_OffMode = {writeResultDB14_OffMode} \n", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                    errorMessageBoxShown = true;
                 }
             }
             else
