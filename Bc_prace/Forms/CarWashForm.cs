@@ -730,7 +730,7 @@ namespace Bc_prace
                     //userControlCarWash1.WaterSignalization(true);
                     userControlCarWash1.Water = true;
                     userControlCarWash1.InitializeCarImage(3);
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -752,7 +752,7 @@ namespace Bc_prace
                     //userControlCarWash1.WaxSignalization(true);
                     userControlCarWash1.Wax = true;
                     userControlCarWash1.InitializeCarImage(3);
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -774,7 +774,7 @@ namespace Bc_prace
                     //userControlCarWash1.ActiveFoamSignalization(true);
                     userControlCarWash1.ActiveFoam = true;
                     userControlCarWash1.InitializeCarImage(3);
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -796,7 +796,7 @@ namespace Bc_prace
                     //userControlCarWash1.SoapSignalization(true);
                     userControlCarWash1.Soap = true;
                     userControlCarWash1.InitializeCarImage(3);
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -818,7 +818,7 @@ namespace Bc_prace
                     //userControlCarWash1.BrushesSignalization(true);
                     userControlCarWash1.Brushes = true;
                     userControlCarWash1.InitializeCarImage(2);
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -840,7 +840,7 @@ namespace Bc_prace
                     //userControlCarWash1.DryingSignalization(true);
                     userControlCarWash1.InitializeCarImage(4);
                     userControlCarWash1.Drying = true;
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -880,7 +880,7 @@ namespace Bc_prace
                     statusStripCarWash.Items.Add(lblStatus);
 
                     userControlCarWash1.VarnishProtection = true;
-                    await ShowerMovemnet();
+                    await ShowerMovemenet();
                 }
                 else
                 {
@@ -1062,7 +1062,7 @@ namespace Bc_prace
         //Shower movement
         #region Shower movemnt 
 
-        public async Task ShowerMovemnet()
+        public async Task ShowerMovemenet()
         {
             await userControlCarWash1.ShowerMovement(705, 915, 2000);
             await userControlCarWash1.ShowerMovement(915, 515, 2000);
@@ -1140,14 +1140,14 @@ namespace Bc_prace
         private async void btnTest1_Click(object sender, EventArgs e)
         {
             userControlCarWash1.VarnishProtection = true;
-            await ShowerMovemnet();
+            await ShowerMovemenet();
         }
 
         private async void btnTest2_Click_1(object sender, EventArgs e)
         {
             userControlCarWash1.ActiveFoam = true;
             userControlCarWash1.InitializeCarImage(3);
-            await ShowerMovemnet();
+            await ShowerMovemenet();
         }
     }
 }

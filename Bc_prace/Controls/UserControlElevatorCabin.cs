@@ -444,7 +444,7 @@ namespace Bc_prace.Controls
 
         public async void CabinMoveOnSystemInitialising(float targetY)
         {
-            targetY = targetY * length - heightCabin;
+            targetY = y + targetY * length - heightCabin;
 
             while (yCabin <= targetY)
             {
@@ -531,8 +531,8 @@ namespace Bc_prace.Controls
 
         public async void CabinMoveToFloorUP(float targetY)
         {
-            targetY = y + targetY * length;
-            
+            targetY = y + targetY * length - heightCabin;
+
             while (yCabin > targetY)
             {
                 yCabin -= Step;
@@ -624,7 +624,7 @@ namespace Bc_prace.Controls
 
         public async void CabinMoveToFloorDOWN(float targetY)
         {
-            targetY = y + targetY * length;
+            targetY = y + targetY * length - heightCabin;
 
             while (yCabin < targetY)
             {

@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Sharp7;
 using System.Diagnostics.Eventing.Reader;
 using OxyPlot.Series;
+using Microsoft.VisualBasic.FileIO;
 
 public delegate void CarWashPositionCar(bool state);
 
@@ -102,6 +103,8 @@ namespace Bc_prace.Controls
         private float DryingY;
         private float BrushesX;
         private float BrushesY;
+        private float VarnishProtectionX;
+        private float VarnishProtectionY;
         private float CarSignalizationX;
         private float CarSignalizationY;
         private float PreWashX;
@@ -435,10 +438,10 @@ namespace Bc_prace.Controls
 
             //Varnish protection 
             string labelVarnishProtection = "Varnish protection";
-            BrushesX = x + length * 9 + 20;
-            BrushesY = y + length + 30;
-            g.DrawString(labelBrushes, labelFont, labelBrush, BrushesX, BrushesY);
-            g.DrawEllipse(BlackPen, BrushesX - 15, BrushesY, signalizationCircle_diameter, signalizationCircle_diameter);
+            VarnishProtectionX = x + length * 9 + 20;
+            VarnishProtectionY = y + length + 30;
+            g.DrawString(labelVarnishProtection, labelFont, labelBrush, VarnishProtectionX, VarnishProtectionY);
+            g.DrawEllipse(BlackPen, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
 
 
             #endregion
@@ -590,11 +593,11 @@ namespace Bc_prace.Controls
             //draw VarnishProtection signalization
             if (VarnishProtection)
             {
-                g.FillEllipse(purple, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(purple, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
             else
             {
-                g.FillEllipse(white, ActiveFoamX - 15, ActiveFoamY, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(purple, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion            
