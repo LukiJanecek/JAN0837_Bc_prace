@@ -280,12 +280,12 @@ namespace Bc_prace.Controls
             //ElevatorActualFloorLED1
             if (ElevatorActualFloorLED1)
             {
-                g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(green, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 //btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue; //toto asi ne 
             }
             else
             {
-                g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, x + 5, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
                 //btnElevatorFloor1.FlatAppearance.BorderColor = Color.Gray; //toto asi ne 
             }
 
@@ -446,7 +446,7 @@ namespace Bc_prace.Controls
         {
             targetY = y + targetY * length - heightCabin;
 
-            while (yCabin <= targetY)
+            while (yCabin < targetY)
             {
                 yCabin += Step;
                 distance += Convert.ToInt32(Step);
