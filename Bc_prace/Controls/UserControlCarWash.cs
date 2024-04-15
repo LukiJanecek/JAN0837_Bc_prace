@@ -448,7 +448,6 @@ namespace Bc_prace.Controls
             g.DrawString(labelVarnishProtection, labelFont, labelBrush, VarnishProtectionX, VarnishProtectionY);
             g.DrawEllipse(BlackPen, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
 
-
             #endregion
 
             //Arrows
@@ -613,9 +612,8 @@ namespace Bc_prace.Controls
 
         //Door movement
         #region Door movement
-        public async void door1UP(int time) //time is not needed probably 
+        public async void door1UP(int time) 
         {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
             
             int totalSteps = Convert.ToInt32(length / step);
@@ -634,13 +632,10 @@ namespace Bc_prace.Controls
                     break;
                 }
             }
-
-            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door1DOWN(int time)
         {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
@@ -659,13 +654,10 @@ namespace Bc_prace.Controls
                     break;
                 }
             }
-
-            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door2UP(int time)
         {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
@@ -685,13 +677,10 @@ namespace Bc_prace.Controls
                     break;
                 }
             }           
-
-            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         public async void door2DOWN(int time)
-        {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
+        { 
             int realTime = 4000;
 
             int totalSteps = Convert.ToInt32(length / step);
@@ -710,8 +699,6 @@ namespace Bc_prace.Controls
                     break;
                 }
             }
-
-            //this.Refresh(); //toto jsem tady předtím neměl a bylo to cca v pohodě
         }
 
         #endregion
@@ -760,7 +747,8 @@ namespace Bc_prace.Controls
             }
         }
 
-        //this can go delete
+        //ready for manual control
+
         public async void ShowerMoveLeft() 
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)
@@ -771,7 +759,6 @@ namespace Bc_prace.Controls
             }
         }
 
-        //this can go delete
         public async void ShowerMoveRight()
         {
             for (int i = 0; i <= Convert.ToInt32(length * 2); i += Convert.ToInt32(length) / 10)

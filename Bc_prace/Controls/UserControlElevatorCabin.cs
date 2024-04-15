@@ -455,7 +455,7 @@ namespace Bc_prace.Controls
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
-
+                /*
                 if (yCabin == (y + length * 5 - heightCabin)) //Cabin is on 1st floor
                 {
                     if (OnElevatorFloorSENS != null)
@@ -485,6 +485,42 @@ namespace Bc_prace.Controls
                 {
                     if (OnElevatorFloorSENS != null)
                         OnElevatorFloorSENS(6);
+                }
+                */
+
+                //Cabin is on 1st floor
+                if (yCabin == (y + length * 5 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(1);
+                }
+
+                //Cabin is on 2st floor
+                if (yCabin == (y + length * 4 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(2);
+                }
+
+                //Cabin is on 3rd floor
+                if (yCabin == (y + length * 3 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(3);
+                }
+
+                //Cabin is on 4th floor
+                if (yCabin == (y + length * 2 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(4);
+                }
+
+                //Cabin is on 5th floor
+                if (yCabin == (y + length - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(5);
                 }
 
                 #endregion
@@ -546,14 +582,14 @@ namespace Bc_prace.Controls
                 //mozna staci upravit podminky pro OnelevatorFloorSENS a targetY
 
                 //Cabin is on 1st floor
-                if (yCabin == (y + length * 5 - heightCabin))
+                if (yCabin == (y + length * 5 - heightCabin)) 
                 {
                     if (OnElevatorFloorSENS != null)
                         OnElevatorFloorSENS(1);
                 }
 
                 //Cabin is on 2st floor
-                if (yCabin == (y + length * 4 - heightCabin))
+                if (yCabin == (y + length * 4 - heightCabin)) 
                 {
                     if (OnElevatorFloorSENS != null)
                         OnElevatorFloorSENS(2);
