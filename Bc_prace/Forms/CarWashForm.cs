@@ -578,8 +578,8 @@ namespace Bc_prace
                     //true
                     userControlCarWash1.door1UP(CarWashTimeDoorMovement);
 
-                    //toto možná nebude dělat dobrotu
-                    S7.SetBitAt(send_buffer_DB5, 2, 5, true);
+                    CarWashDoor1UP = true;
+                    S7.SetBitAt(send_buffer_DB5, 2, 5, CarWashDoor1UP);
 
                     //write to PLC
                     int writeResultDB5_Door1UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -616,8 +616,8 @@ namespace Bc_prace
                     //true
                     userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
 
-                    //toto možná nebude dělat dobrotu
-                    S7.SetBitAt(send_buffer_DB5, 2, 6, true);
+                    CarWashDoor1DOWN = true;
+                    S7.SetBitAt(send_buffer_DB5, 2, 6, CarWashDoor1DOWN);
 
                     //write to PLC
                     int writeResultDB5_Door1DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -654,8 +654,8 @@ namespace Bc_prace
                     //true 
                     userControlCarWash1.door2UP(CarWashTimeDoorMovement);
 
-                    //toto možná nebude dělat dobrotu
-                    S7.SetBitAt(send_buffer_DB5, 2, 7, true);
+                    CarWashDoor2UP = true;
+                    S7.SetBitAt(send_buffer_DB5, 2, 7, CarWashDoor2UP);
 
                     //write to PLC
                     int writeResultDB5_Door2UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -692,8 +692,8 @@ namespace Bc_prace
                     //true
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
 
-                    //toto možná nebude dělat dobrotu
-                    S7.SetBitAt(send_buffer_DB5, 3, 0, true);
+                    CarWashDoor2DOWN = true;
+                    S7.SetBitAt(send_buffer_DB5, 3, 0, CarWashDoor2DOWN);
 
                     //write to PLC
                     int writeResultDB5_Door2DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);

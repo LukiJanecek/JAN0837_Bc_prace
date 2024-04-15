@@ -110,6 +110,9 @@ namespace Bc_prace.Controls
         private float PreWashX;
         private float PreWashY;
 
+        //Inner cyklus signalization
+        #region Inner cyklus signalization
+                
         //PreWash
         private bool preWash;
 
@@ -274,6 +277,8 @@ namespace Bc_prace.Controls
                 Invalidate(); //toto tu asi být nemusí
             }
         }
+
+        #endregion
 
         #endregion
 
@@ -597,7 +602,7 @@ namespace Bc_prace.Controls
             }
             else
             {
-                g.FillEllipse(purple, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
+                g.FillEllipse(white, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
             }
 
             #endregion            
