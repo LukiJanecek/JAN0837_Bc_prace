@@ -29,6 +29,9 @@
     <Compile Update="Forms\CrossroadForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\SablonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Forms\ElevatorForm.resx">
