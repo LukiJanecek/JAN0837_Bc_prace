@@ -443,7 +443,7 @@ namespace Bc_prace.Controls
 
             //Varnish protection 
             string labelVarnishProtection = "Varnish protection";
-            VarnishProtectionX = x + length * 9 + 20;
+            VarnishProtectionX = x + length * 4 + 20;
             VarnishProtectionY = y + length + 30;
             g.DrawString(labelVarnishProtection, labelFont, labelBrush, VarnishProtectionX, VarnishProtectionY);
             g.DrawEllipse(BlackPen, VarnishProtectionX - 15, VarnishProtectionY, signalizationCircle_diameter, signalizationCircle_diameter);
