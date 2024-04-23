@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Szj3KKTRTLXZw8av7/VO+7q42GS4EL/3R1VM4Ql02OCx0irsVc6C50B4xqrLI2qGR6hnYueE1C0ZJgpWENQRkg==",
+  "dgSpecHash": "CDqW0cQ6catSpjurGdF4+XduG/CP7L5yUgGQ9N4HtqAHJqj9cb25GTTao5pInCfnjCz8oUCFBn1QKPvnhKHVwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Bc_prace.csproj",
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lukas\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
