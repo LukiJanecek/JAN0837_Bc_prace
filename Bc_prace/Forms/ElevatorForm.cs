@@ -1171,10 +1171,10 @@ namespace Bc_prace
                 ElevatorMotorUP = chooseOptionFormInstance.ElevatorMotorUP; //no need to make a condition if true
                 ElevatroHoming = chooseOptionFormInstance.ElevatroHoming; //no need to make a condition if true
                 ElevatorSystemReady = chooseOptionFormInstance.ElevatorSystemReady; //no need to make a condition if true
-                ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor; //no need to make a condition if true
+                ElevatorActualFloor = chooseOptionFormInstance.ElevatorActualFloor; 
                 ElevatorMoving = chooseOptionFormInstance.ElevatorMoving; //no need to make a condition if true
                 ElevatorSystemWorking = chooseOptionFormInstance.ElevatorSystemWorking; //no need to make a condition if true
-                ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor; //no need to make a condition if true
+                ElevatorGoToFloor = chooseOptionFormInstance.ElevatorGoToFloor; 
                 ElevatorDirection = chooseOptionFormInstance.ElevatorDirection; //no need to make a condition if true
                 ElevatorActualFloorLED1 = chooseOptionFormInstance.ElevatorActualFloorLED1;
                 ElevatorActualFloorLED2 = chooseOptionFormInstance.ElevatorActualFloorLED2;
@@ -1202,7 +1202,7 @@ namespace Bc_prace
                 #endregion
 
                 //MEM variables 
-                #region MEM varialbes 
+                #region MEM variables 
 
                 ElevatorMEMDoor = chooseOptionFormInstance.ElevatorMEMDoor;
                 ElevatorMEMDoorTrig = chooseOptionFormInstance.ElevatorMEMDoorTrig;
@@ -1598,7 +1598,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 1");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); 
                     /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
@@ -1631,7 +1631,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 1");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); 
                     /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
@@ -1664,7 +1664,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 1");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(5); 
                     /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
@@ -1735,7 +1735,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 2");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(4); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(4); 
                     /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1799,7 +1799,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 2");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); 
                     /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1832,7 +1832,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 2");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); 
                     /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1865,7 +1865,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 2");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(4); 
                     /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1903,7 +1903,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 3");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3); 
                     /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
@@ -1936,7 +1936,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 3");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(3); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(3); 
                     /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
@@ -2000,7 +2000,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 3");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); 
                     /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
@@ -2033,7 +2033,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 3");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(3); 
                     /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
@@ -2071,7 +2071,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 4");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); 
                     /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
@@ -2104,7 +2104,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 4");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); 
                     /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
@@ -2137,7 +2137,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 4");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(2); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(2); 
                     /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
@@ -2201,7 +2201,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 4");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorDOWN(2); 
                     /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
@@ -2239,7 +2239,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 5");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); 
                     /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
@@ -2272,7 +2272,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 5");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); 
                     /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
@@ -2305,7 +2305,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 5");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); 
                     /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
@@ -2338,7 +2338,7 @@ namespace Bc_prace
                     ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Movement to floor 5");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    userControlElevatorCabin1.CabinMoveToFloorUP(1); //toto cislo neni dobre
+                    userControlElevatorCabin1.CabinMoveToFloorUP(1); 
                     /*
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
@@ -2532,8 +2532,6 @@ namespace Bc_prace
                 #endregion
 
                 #endregion
-
-                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {

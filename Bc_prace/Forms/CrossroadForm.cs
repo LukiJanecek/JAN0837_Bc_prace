@@ -2718,8 +2718,6 @@ namespace Bc_prace
                 }
 
                 #endregion
-
-                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {
