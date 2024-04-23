@@ -2925,12 +2925,54 @@ namespace Bc_prace
 
         private void btnTest1_Click(object sender, EventArgs e)
         {
+            ElevatorActualFloorSENS1 = true;
+            S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
+            //write to PLC
+            int writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_ElevatorActualFloorSENS1 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_ElevatorActualFloorSENS1 = {writeResultDB4_ElevatorActualFloorSENS1} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
 
         private void btnTest2_Click(object sender, EventArgs e)
         {
+            ElevatorActualFloorSENS4 = true;
+            S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
 
+            //write to PLC
+            int writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
+            if (writeResultDB4_ElevatorActualFloorSENS4 != 0)
+            {
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly. Data could´t be written to DB4!!! \n\n" +
+                        $"Error message: writeResultDB4_ElevatorActualFloorSENS4 = {writeResultDB4_ElevatorActualFloorSENS4} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+            else
+            {
+                //write was successful
+            }
         }
     }
 }

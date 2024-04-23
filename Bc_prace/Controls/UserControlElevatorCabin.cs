@@ -338,15 +338,6 @@ namespace Bc_prace.Controls
             }
 
             #endregion
-
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
         }
 
         //InitializeButtons

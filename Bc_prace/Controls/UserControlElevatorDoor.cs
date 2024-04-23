@@ -94,15 +94,6 @@ namespace Bc_prace.Controls
             //RightDoor
             g.DrawRectangle(BlackPen, xRightDoor + 80, yRightDoor + length * 2, widthRightDoor, heightRightDoor);
             g.FillRectangle(gray, xRightDoor + 80, yRightDoor + length * 2, widthRightDoor, heightRightDoor);
-
-            try
-            {
-
-            }
-            catch
-            {
-
-            }
         }
 
         //Methods for door movement
@@ -116,6 +107,7 @@ namespace Bc_prace.Controls
             int totalSteps = 80 / Convert.ToInt32(Step);
             int delayBetweenSteps = realTime / totalSteps;
 
+            lblElevatorDoorState = "Door openning";
 
             for (int i = 0; i < totalSteps; i++)
             {
@@ -127,10 +119,11 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
+                    lblElevatorDoorState = "Door open";
+                    this.Refresh();
                     break;
                 }
             }
-             
             //this.Refresh(); //maybe yes maybe no, I dont know
         }
 
@@ -142,8 +135,10 @@ namespace Bc_prace.Controls
             int totalSteps = 80 / Convert.ToInt32(Step);
             int delayBetweenSteps = realTime / totalSteps;
 
+            lblElevatorDoorState = "Door closing";
+
             for (int i = 0; i < totalSteps; i++)
-                {
+            {
                 if (widthLeftDoor < 80 && widthRightDoor < 80)
                 {
                     LeftDoorMoveRight();
@@ -152,10 +147,11 @@ namespace Bc_prace.Controls
                 }
                 else
                 {
+                    lblElevatorDoorState = "Door close";
+                    this.Refresh();
                     break;
                 }
             }
-
             //this.Refresh(); //maybe yes maybe no, I dont know
         }
 
