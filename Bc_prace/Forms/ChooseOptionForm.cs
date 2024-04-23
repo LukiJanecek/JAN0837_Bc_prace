@@ -1188,8 +1188,6 @@ namespace Bc_prace
                 #endregion
 
                 */
-
-                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {
@@ -1256,7 +1254,7 @@ namespace Bc_prace
                 statusStripChooseOption.Items.Add(lblStatus);
 
                 Option1 = true;
-                S7.SetBitAt(send_buffer_DB11, 0, 0, true);
+                S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
 
                 //write to PLC
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);

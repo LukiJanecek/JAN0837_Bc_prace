@@ -164,7 +164,7 @@ namespace Bc_prace
             userControlElevatorCabin1.SetControl(this);
         }
 
-        //zde se přidá hláška k tomu co se odesílá 
+        
         private void UserControlElevatorCabin1_OnElevatorFloorBTNClick(object sender, string id)
         {
             ToolStripStatusLabel lblStatus;
@@ -747,7 +747,7 @@ namespace Bc_prace
                     lblStatus = new ToolStripStatusLabel("Cabin is on floor 4.");
                     statusStripElevator.Items.Add(lblStatus);
 
-                    //Elevator Floor SENS 1 = fasle 
+                    //Elevator Floor SENS 1 = false 
                     ElevatorActualFloorSENS1 = false;
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
 
@@ -1001,7 +1001,7 @@ namespace Bc_prace
                     }
 
                     break;
-                case 6:
+                case 6: //this is here for aditional development 
 
                     //Elevator Floor SENS 1 = false 
                     //Elevator Floor SENS 2 = false 
@@ -1488,9 +1488,6 @@ namespace Bc_prace
                 //Action on variable value
                 #region Action on variable value           
 
-                //toto je cool, ale musí to být něco jako 1,2,5,10
-                //userControlElevatorCabin1.Step = ElevatorCabinSpeed;
-
                 if (ElevatorDoorClOSE)
                 {
                     //true
@@ -1563,9 +1560,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 1 && ElevatorActualFloor == 1)
                 {
-                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
-                    //mozna to nebude potreba -> optional
                     /*
                     ElevatorActualFloorSENS1 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
@@ -1764,9 +1759,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 2 && ElevatorActualFloor == 2)
                 {
-                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
-                    //mozna to nebude potreba -> optional
                     /*
                     ElevatorActualFloorSENS2 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
@@ -1965,9 +1958,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 3 && ElevatorActualFloor == 3)
                 {
-                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
-                    //mozna to nebude potreba -> optional
                     /*
                     ElevatorActualFloorSENS3 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
@@ -2166,9 +2157,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 4 && ElevatorActualFloor == 4)
                 {
-                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
-                    //mozna to nebude potreba -> optional
                     /*
                     ElevatorActualFloorSENS4 = true; //mozno resit v ramci pozice v userControlu
                     S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
@@ -2367,9 +2356,7 @@ namespace Bc_prace
 
                 if (ElevatorGoToFloor == 5 && ElevatorActualFloor == 5)
                 {
-                    //asi se tady nestane nic
                     //DoorSQ => TIA activates automatically
-                    //mozna to nebude potreba -> optional
                     /*
                     //mozna to nebude potreba -> optional
                     ElevatorActualFloorSENS5 = true; //mozno resit v ramci pozice v userControlu
@@ -2545,7 +2532,6 @@ namespace Bc_prace
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
-
             }
         }
 
@@ -2936,7 +2922,6 @@ namespace Bc_prace
         #endregion
 
         #endregion
-
 
         private void btnTest1_Click(object sender, EventArgs e)
         {
