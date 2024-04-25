@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\controls\\usercontrolelevatordoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\controls\\usercontrolelevatordoor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\controls\\usercontrolelevatorcabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -35,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -92,7 +88,7 @@
         },
         {
           "DockedHeight": 105,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -108,38 +104,37 @@
               "RelativeToolTip": "Bc_prace\\Controls\\UserControlElevatorCabin.cs",
               "ViewState": "AQIAAOcAAAAAAAAAAAAYwBkCAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:23:08.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T12:23:08.338Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ChooseOptionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
               "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ViewState": "AQIAAAcCAAAAAAAAAAAkwBQCAAArAAAA",
+              "ViewState": "AQIAAPUBAAAAAAAAAAAAABUCAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T12:18:48.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ElevatorForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
               "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\ElevatorForm.cs",
-              "ViewState": "AQIAAIYLAAAAAAAAAAAYwIgLAAAJAAAA",
+              "ViewState": "AQIAAKUKAAAAAAAAAAAuwL0KAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T12:16:05.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "ElevatorForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
@@ -151,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "CarWashForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
@@ -159,12 +154,11 @@
               "RelativeToolTip": "Bc_prace\\Forms\\CarWashForm.cs",
               "ViewState": "AQIAAO8AAAAAAAAAAAAAAH0DAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:15:09.575Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T12:15:09.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "CarWashForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
@@ -176,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "CrossroadForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CrossroadForm.cs",
@@ -188,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "ChooseOptionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
@@ -200,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "CrossroadForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CrossroadForm.cs",
@@ -211,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ElevatorForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
@@ -223,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ElevatorForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
@@ -234,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "SablonaForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\SablonaForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\SablonaForm.cs",
@@ -245,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "CarWashForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
@@ -256,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "ChooseOptionForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
@@ -267,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "UserControlCrossroad.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlCrossroad.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlCrossroad.cs",
@@ -279,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "SablonaForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\SablonaForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\SablonaForm.cs",
@@ -291,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "CarWashSelectionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashSelectionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashSelectionForm.cs",
@@ -300,40 +294,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T22:35:15.169Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "e18c9100-51dd-4890-ae29-e084cd5c3554",
-        "Display": 0,
-        "X": 759,
-        "Y": 483,
-        "Width": 1139,
-        "Height": 821,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserControlElevatorDoor.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlElevatorDoor.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Controls\\UserControlElevatorDoor.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Controls\\UserControlElevatorDoor.cs*",
-              "RelativeToolTip": "Bc_prace\\Controls\\UserControlElevatorDoor.cs*",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAlwJYAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-23T12:22:14.338Z",
-              "EditorCaption": ""
             }
           ]
         }

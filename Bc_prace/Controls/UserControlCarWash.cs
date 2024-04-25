@@ -51,7 +51,6 @@ namespace Bc_prace.Controls
         //Shower coordinates 
         private float ShowerX = 705;
         private float ShowerY;
-        //public float startShowerX = 705; //x + ShowerX + length * 7 - (shower_width / 2)
 
         //images of car
         private PictureBox pictureBoxCar;
@@ -285,7 +284,7 @@ namespace Bc_prace.Controls
         public UserControlCarWash()
         {
             InitializeComponent();
-            DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
+            DoubleBuffered = true; 
             Paint += UserControlCarWash_Paint;
             InitializeCarImage(1);
         }
@@ -301,9 +300,9 @@ namespace Bc_prace.Controls
             //background
             g.Clear(Color.White);
 
-            Draw(g); //tak toto nakonec možná nebude potřeba 
+            Draw(g); 
 
-            //Invalidate(); //toto jsem tu předtím neměl -> ale možná to tady vůbec být nemá
+            //Invalidate(); 
         }
 
         private void Draw(Graphics g)
@@ -385,9 +384,6 @@ namespace Bc_prace.Controls
             //Inner signalization 
             #region Inner cyclus signalization 
 
-            //car position
-            //g.DrawEllipse(BlackPen, x, y + length * 3 + length / 2, signalizationCircle_diameter, signalizationCircle_diameter);
-
             //position line  
             g.DrawLine(BlackPen, x + length * 5, y + length * 2, x + length * 9, y + length * 2);
             g.DrawEllipse(BlackPen, ShowerX, y + ShowerY + length * 2 - (signalizationCircle_diameter / 2), signalizationCircle_diameter, signalizationCircle_diameter);
@@ -396,8 +392,8 @@ namespace Bc_prace.Controls
             string labelCarSignalization = ""; 
             CarSignalizationX = x + length * 7 + 20;
             CarSignalizationY = y + length * 2 + length / 2;
-            g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); // this doesnt make sense anymore
-            g.DrawEllipse(BlackPen, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); // this doesnt make sense anymore
+            g.DrawString(labelCarSignalization, labelFont, labelBrush, CarSignalizationX, CarSignalizationY); 
+            g.DrawEllipse(BlackPen, CarSignalizationX - 15, CarSignalizationY, signalizationCircle_diameter, signalizationCircle_diameter); 
 
             //Water
             string labelWater = "Water";
@@ -478,7 +474,7 @@ namespace Bc_prace.Controls
 
             #endregion
 
-            //Draw signalization based on value -> toto je špatně, toto nesmí být v _Paint fci
+            //Draw signalization based on value 
             #region Draw signalization based on value
 
             //Car Signalization Lights and texts 
@@ -706,7 +702,6 @@ namespace Bc_prace.Controls
         //Shower movement
         #region Shower movement
 
-        //volá se nějak takto: toto přesně budu potřebovat
         //await userControlCarWash1.ShowerMovement(705, 915, 2000);
         //await userControlCarWash1.ShowerMovement(915, 515, 2000);
         //await userControlCarWash1.ShowerMovement(515, 705, 2000);
@@ -787,58 +782,22 @@ namespace Bc_prace.Controls
             //moving car 
             if (picture == 1)
             {
-                //Controls.Remove(pictureBoxCar);
-                //this.Refresh();
-                //pictureBoxCar = new PictureBox();
-                
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
-                /*
-                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-                string imagePath = Path.Combine(projectPath, "Resources", "car_64.png");
-                pictureBoxCar.Image = Image.FromFile(imagePath);
-                */
             }
             //brushes
             else if (picture == 2)
             {
-                //Controls.Remove(pictureBoxCar);
-                //this.Refresh();
-                //pictureBoxCar = new PictureBox();
-                
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
-                /*
-                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-                string imagePath = Path.Combine(projectPath, "Resources", "car_brushes_64.png");
-                pictureBoxCar.Image = Image.FromFile(imagePath);
-                */
             }
             //washing
             else if (picture == 3)
             {
-                //Controls.Remove(pictureBoxCar);
-                //this.Refresh();
-                //pictureBoxCar = new PictureBox();
-                
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
-                /*
-                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-                string imagePath = Path.Combine(projectPath, "Resources", "car_washing_64.png");
-                pictureBoxCar.Image = Image.FromFile(imagePath);
-                */
             }
             //shinny car 
             else if (picture == 4)
-            {
-                //Controls.Remove(pictureBoxCar);
-                //this.Refresh();
-                //pictureBoxCar = new PictureBox();
-                
+            {  
                 pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
-                /*
-                string projectPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
-                string imagePath = Path.Combine(projectPath, "Resources", "car_done_64.png");
-                pictureBoxCar.Image = Image.FromFile(imagePath);
-                */
             }
             else
             {
@@ -850,7 +809,7 @@ namespace Bc_prace.Controls
             Controls.Add(pictureBoxCar);
         }
 
-        public async void MoveCarToNextPoint(int point) //možná budu muset přidat krok o kolik se má posunout
+        public async void MoveCarToNextPoint(int point) 
         {
             float targetX;
 

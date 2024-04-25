@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bc_prace.Controls.MyGraphControl.Entities;
 using Bc_prace.Settings;
-//using static System.Windows.Forms.Design.AxImporter;
 using Sharp7;
 using System.Security.Cryptography;
 using System.Runtime.CompilerServices;
@@ -33,13 +32,13 @@ namespace Bc_prace
         //Buffers variables 
         #region Buffers variables
 
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        //DB11 => Maintain_DB 
         public int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
         byte[] send_buffer_DB11;
 
-        //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
+        //DB4 => Elevator_DB 
         public int DBNumber_DB4 = 4;
         public byte[] read_buffer_DB4;
         public byte[] previous_buffer_DB4;
@@ -124,8 +123,6 @@ namespace Bc_prace
 
         //Variables cabin movement step 
         public int ElevatorStep = 10;
-
-        //int ElevatorSpeedValue, InactivityTimeValue, TimeDoorOPENValue, TimeDoorCLOSEValue;
 
         public ElevatorForm(ChooseOptionForm chooseOptionFormInstance)
         {
@@ -2393,65 +2390,65 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorLED1)
                 {
-                    //zapnout
+                    //on
                     //userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(true);
                     userControlElevatorCabin1.ElevatorActualFloorLED1 = true;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     //userControlElevatorCabin1.ElevatorActualFloorLED1Signalization(false);
                     userControlElevatorCabin1.ElevatorActualFloorLED1 = false;
                 }
 
                 if (ElevatorActualFloorLED2)
                 {
-                    //zapnout
+                    //on
                     //userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(true);
                     userControlElevatorCabin1.ElevatorActualFloorLED2 = true;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     //userControlElevatorCabin1.ElevatorActualFloorLED2Signalization(false);
                     userControlElevatorCabin1.ElevatorActualFloorLED2 = false;
                 }
 
                 if (ElevatorActualFloorLED3)
                 {
-                    //zapnout
+                    //on
                     //userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(true);
                     userControlElevatorCabin1.ElevatorActualFloorLED3 = true;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     //userControlElevatorCabin1.ElevatorActualFloorLED3Signalization(false);
                     userControlElevatorCabin1.ElevatorActualFloorLED3 = false;
                 }
 
                 if (ElevatorActualFloorLED4)
                 {
-                    //zapnout
+                    //on
                     //userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(true);
                     userControlElevatorCabin1.ElevatorActualFloorLED4 = true;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     //userControlElevatorCabin1.ElevatorActualFloorLED4Signalization(false);
                     userControlElevatorCabin1.ElevatorActualFloorLED4 = false;
                 }
 
                 if (ElevatorActualFloorLED5)
                 {
-                    //zapnout
+                    //on
                     //userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(true);
                     userControlElevatorCabin1.ElevatorActualFloorLED5 = true;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     //userControlElevatorCabin1.ElevatorActualFloorLED5Signalization(false);
                     userControlElevatorCabin1.ElevatorActualFloorLED5 = false;
                 }
@@ -2463,56 +2460,56 @@ namespace Bc_prace
 
                 if (ElevatorActualFloorCabinLED1)
                 {
-                    //zapnout
+                    //on
                     btnCabinFloor1.FlatAppearance.BorderColor = Color.Blue;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     btnCabinFloor1.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED2)
                 {
-                    //zapnout
+                    //on
                     btnCabinFloor2.FlatAppearance.BorderColor = Color.Blue;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     btnCabinFloor2.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED3)
                 {
-                    //zapnout
+                    //on
                     btnCabinFloor3.FlatAppearance.BorderColor = Color.Blue;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     btnCabinFloor3.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED4)
                 {
-                    //zapnout
+                    //on
                     btnCabinFloor4.FlatAppearance.BorderColor = Color.Blue;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     btnCabinFloor4.FlatAppearance.BorderColor = Color.Gray;
                 }
 
                 if (ElevatorActualFloorCabinLED5)
                 {
-                    //zapnout
+                    //on
                     btnCabinFloor5.FlatAppearance.BorderColor = Color.Blue;
                 }
                 else
                 {
-                    //vypnout
+                    //off
                     btnCabinFloor5.FlatAppearance.BorderColor = Color.Gray;
                 }
 
@@ -2735,8 +2732,6 @@ namespace Bc_prace
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door closed");
             statusStripElevator.Items.Add(lblStatus);
-
-            //userControlElevatorDoor1.ClosingDoor(time);
         }
 
         private void OpenDOOR(int time)
@@ -2752,8 +2747,6 @@ namespace Bc_prace
             statusStripElevator.Items.Clear();
             lblStatus = new ToolStripStatusLabel("Door open");
             statusStripElevator.Items.Add(lblStatus);
-
-            //userControlElevatorDoor1.OpenningDoor(time);
         }
 
         #endregion

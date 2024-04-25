@@ -52,7 +52,7 @@ namespace Bc_prace.Controls
         {
             InitializeComponent();
 
-            DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
+            DoubleBuffered = true;
             Paint += UserControlElevatorDoor_Paint;
         }
 
@@ -69,7 +69,7 @@ namespace Bc_prace.Controls
 
             Draw(g);
 
-            //Invalidate(); //toto by tady asi být nemělo
+            //Invalidate(); 
         }
 
         private void Draw(Graphics g)
@@ -99,9 +99,8 @@ namespace Bc_prace.Controls
         //Methods for door movement
         #region Methods for door movement
 
-        public async void OpenningDoor(int time) //time is not needed probably
+        public async void OpenningDoor(int time) 
         {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 2000;
 
             int totalSteps = 80 / Convert.ToInt32(Step);
@@ -129,7 +128,6 @@ namespace Bc_prace.Controls
 
         public async void ClosingDoor(int time)
         {
-            //taky tady muzu dat natvrdo muj cas a prozatim to tak nechat 
             int realTime = 2000;
 
             int totalSteps = 80 / Convert.ToInt32(Step);

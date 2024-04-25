@@ -901,6 +901,7 @@ namespace Bc_prace
                 {
                     errorMessageBoxShown = true;
 
+                    //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }

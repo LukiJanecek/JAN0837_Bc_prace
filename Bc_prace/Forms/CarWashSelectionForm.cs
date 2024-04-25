@@ -21,21 +21,18 @@ namespace Bc_prace
 
         private bool errorMessageBoxShown = false;
 
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        //DB11 => Maintain_DB 
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
 
-        //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+        //DB5 => CarWash_DB 
         private int DBNumber_DB5 = 5;
-        //first struct -> Input -> 7 variables -> 0.6 size 
         byte[] read_buffer_DB5;
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB;
         byte[] send_buffer_DB5;
-        //second struct -> Output -> 16 variables -> 3.7 size
-        //byte[] read_buffer_DB5_Output;
-        //byte[] send_buffer_DB5_Output;
+
 
         //Input variables
         #region Input variables
@@ -91,8 +88,6 @@ namespace Bc_prace
             //DB5 => CarWash_DB
             read_buffer_DB5 = chooseOptionFormInstance.read_buffer_DB5;
             send_buffer_DB5 = chooseOptionFormInstance.send_buffer_DB5;
-            //read_buffer_DB5_Output = chooseOptionFormInstance.read_buffer_DB5_Output;
-            //send_buffer_DB5_Output = chooseOptionFormInstance.send_buffer_DB5_Output;
 
             //start timer
             Timer_read_actual.Start();

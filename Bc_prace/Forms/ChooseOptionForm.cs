@@ -34,28 +34,28 @@ namespace Bc_prace
         //Buffers variables 
         #region Buffers variables
 
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        //DB11 => Maintain_DB 
         private int DBNumber_DB11 = 11;
         public byte[] read_buffer_DB11 = new byte[1]; 
         public byte[] previous_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
         public byte[] send_buffer_DB11 = new byte[1]; 
 
-        //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 26
+        //DB4 => Elevator_DB 
         private int DBNumber_DB4 = 4;
         public byte[] read_buffer_DB4 = new byte[32];
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
         public byte[] send_buffer_DB4 = new byte[32];
 
-        //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+        //DB5 => CarWash_DB 
         private int DBNumber_DB5 = 5;
         public byte[] read_buffer_DB5 = new byte[11]; 
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
         public byte[] send_buffer_DB5 = new byte[11]; 
 
-        //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0 
+        //DB14 => Crossroad_DB 
         private int DBNumber_DB14 = 14;
         public byte[] read_buffer_DB14 = new byte[4]; 
         public byte[] previous_buffer_DB14;
@@ -63,28 +63,28 @@ namespace Bc_prace
         public byte[] send_buffer_DB14 = new byte[4]; 
         //+ other structs are Timers 
 
-        //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+        //DB1 => Crossroad_1_DB 
         private int DBNumber_DB1 = 1;
         public byte[] read_buffer_DB1 = new byte[7]; 
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
         public byte[] send_buffer_DB1 = new byte[7]; 
 
-        //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3  
+        //DB19 => Crossroad_2_DB 
         private int DBNumber_DB19 = 19;
         public byte[] read_buffer_DB19 = new byte[7]; 
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
         public byte[] send_buffer_DB19 = new byte[7]; 
 
-        //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+        //DB20 => Crossroad_LeftT_DB 
         private int DBNumber_DB20 = 20;
         public byte[] read_buffer_DB20 = new byte[6]; 
         public byte[] previous_buffer_DB20;
         public byte[] PreviousBufferHash_DB20;
         public byte[] send_buffer_DB20 = new byte[6]; 
 
-        //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+        //DB21 => Crossroad_RightT_DB 
         private int DBNumber_DB21 = 21;
         public byte[] read_buffer_DB21 = new byte[6]; 
         public byte[] previous_buffer_DB21;
@@ -231,8 +231,8 @@ namespace Bc_prace
 
         #endregion
 
-        //Crossroad variables 
-        #region Crossroad variables
+        //CrossroadDB variables 
+        #region CrossroadDB variables
 
         //Input variables 
         #region Input variables 
@@ -702,7 +702,7 @@ namespace Bc_prace
 
                 #endregion
 
-                //DB14 => Crossroad_DB - modes and timers
+                //DB14 => Crossroad_DB 
                 #region Reading from DB14 Crossroad_DB
                 //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0
                 if (previous_buffer_DB14 == null)
@@ -1202,7 +1202,6 @@ namespace Bc_prace
 
         private bool ArraysAreEqual(byte[] array1, byte[] array2)
         {
-            // Porovnání dvou polí bytů
             if (array1.Length != array2.Length)
             {
                 return false;
@@ -1452,13 +1451,10 @@ namespace Bc_prace
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            //Option1 = false
             Option1 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
-            //Option2 = false
             Option2 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
-            //Option3 = false
             Option3 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 

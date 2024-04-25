@@ -74,7 +74,7 @@ namespace Bc_prace.Controls
             {
                 elevatorActualFloorLED1 = value;
 
-                Invalidate(); //toto tu asi být nemusí 
+                Invalidate(); 
             }
         }
 
@@ -89,7 +89,7 @@ namespace Bc_prace.Controls
             {
                 elevatorActualFloorLED2 = value;
 
-                Invalidate(); //toto tu asi být nemusí 
+                Invalidate(); 
             }
         }
 
@@ -104,7 +104,7 @@ namespace Bc_prace.Controls
             {
                 elevatorActualFloorLED3 = value;
 
-                Invalidate(); //toto tu asi být nemusí 
+                Invalidate(); 
             }
         }
 
@@ -119,7 +119,7 @@ namespace Bc_prace.Controls
             {
                 elevatorActualFloorLED4 = value;
 
-                Invalidate(); //toto tu asi být nemusí 
+                Invalidate(); 
             }
         }
 
@@ -134,7 +134,7 @@ namespace Bc_prace.Controls
             {
                 elevatorActualFloorLED5 = value;
 
-                Invalidate(); //toto tu asi být nemusí 
+                Invalidate();  
             }
         }
 
@@ -147,10 +147,8 @@ namespace Bc_prace.Controls
         public UserControlElevatorCabin() // Program1Form program1FormInstance
         {
             InitializeComponent();
-            DoubleBuffered = true; // toto by zde mělo být, formuláře to mají nastavené v Designer -> Properties
+            DoubleBuffered = true; 
             Paint += UserControlElevatorCabin_Paint;
-
-            // if (DesignMode == true ) { }
         }
 
         public void SetControl(ElevatorForm program1FormInstance)
@@ -176,7 +174,7 @@ namespace Bc_prace.Controls
 
             Draw(g);
 
-            //Invalidate(); //toto by tady asi být nemělo
+            //Invalidate(); 
         }
 
         private void Draw(Graphics g)
@@ -232,46 +230,6 @@ namespace Bc_prace.Controls
             //ActualFloorLEDSig
             g.DrawEllipse(BlackPen, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
 
-            #endregion
-
-            //Conditions based ond object position -> ElevatorActualFloorSENS -> nesmí být v _Paint 
-            #region Conditions based ond object position -> ElevatorActualFloorSENS -> nesmí být v _Paint 
-            /*
-            //Cabin is on 1st floor
-            if (yCabin == (y + length * 5 - heightCabin)) //nesmí být v paint 
-            {
-                if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(1);
-            }
-
-            //Cabin is on 2st floor
-            if (yCabin == (y + length * 4 - heightCabin)) //nesmí být v paint 
-            {
-                if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(2);
-            }
-
-            //Cabin is on 3rd floor
-            if (yCabin == (y + length * 3 - heightCabin)) //nesmí být v paint 
-            {
-                if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(3);
-            }
-
-            //Cabin is on 4th floor
-            if (yCabin == (y + length * 2 - heightCabin)) //nesmí být v paint 
-            {
-                if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(4);
-            }
-
-            //Cabin is on 5th floor
-            if (yCabin == (y + length - heightCabin)) //nesmí být v paint 
-            {
-                if (OnElevatorFloorSENS != null)
-                    OnElevatorFloorSENS(5);
-            }
-            */
             #endregion
 
             //ActualFloorLED signalization based on value
@@ -444,78 +402,6 @@ namespace Bc_prace.Controls
 
                 this.Refresh();
 
-                //Conditions based ond object position -> ElevatorActualFloorSENS
-                #region Conditions based ond object position -> ElevatorActualFloorSENS
-                /*
-                if (yCabin == (y + length * 5 - heightCabin)) //Cabin is on 1st floor
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(1);
-                }
-                else if (yCabin == (y + length * 4 - heightCabin)) //Cabin is on 2st floor
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(2);
-                }
-                else if (yCabin == (y + length * 3 - heightCabin)) //Cabin is on 3rd floor
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(3);
-                }
-                else if (yCabin == (y + length * 2 - heightCabin)) //Cabin is on 4th floor
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(4);
-                }
-                else if (yCabin == (y + length - heightCabin)) //Cabin is on 5th floor
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(5);
-                }
-                else //no SENS active
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(6);
-                }
-                */
-
-                //Cabin is on 1st floor
-                if (yCabin == (y + length * 5 - heightCabin))
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(1);
-                }
-
-                //Cabin is on 2st floor
-                if (yCabin == (y + length * 4 - heightCabin))
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(2);
-                }
-
-                //Cabin is on 3rd floor
-                if (yCabin == (y + length * 3 - heightCabin))
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(3);
-                }
-
-                //Cabin is on 4th floor
-                if (yCabin == (y + length * 2 - heightCabin))
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(4);
-                }
-
-                //Cabin is on 5th floor
-                if (yCabin == (y + length - heightCabin))
-                {
-                    if (OnElevatorFloorSENS != null)
-                        OnElevatorFloorSENS(5);
-                }
-
-                #endregion
-
                 //testing
                 if (yCabin == length)
                 {
@@ -569,8 +455,6 @@ namespace Bc_prace.Controls
 
                 //Conditions based ond object position -> ElevatorActualFloorSENS
                 #region Conditions based ond object position -> ElevatorActualFloorSENS
-
-                //mozna staci upravit podminky pro OnelevatorFloorSENS a targetY
 
                 //Cabin is on 1st floor
                 if (yCabin == (y + length * 5 - heightCabin)) 
@@ -787,107 +671,6 @@ namespace Bc_prace.Controls
             heightCabin -= Step;
             this.Refresh();
         }
-        #endregion
-
-        //ActualFloorSig -> old
-        #region ActualFloorSignalization -> old
-
-        public void ElevatorActualFloorLED1Signalization(bool state) //LED and BTN light ON
-        {
-            //var g = e.Graphics;
-
-            if (state)
-            {
-                //zapnout
-                //g.FillEllipse(green, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Blue;
-            }
-            else
-            {
-                //vypnout
-                //g.FillEllipse(white, x + 5 - 15, y + length * 5 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor1.FlatAppearance.BorderColor = Color.Gray;
-            }
-
-            this.Refresh();
-        }
-        public void ElevatorActualFloorLED2Signalization(bool state) //LED and BTN light ON
-        {
-            //var g = e.Graphics;
-
-            if (state)
-            {
-                //zapnout
-                //g.FillEllipse(green, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
-            }
-            else
-            {
-                //vypnout
-                //g.FillEllipse(white, x + 5, y + length * 4 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
-            }
-
-            this.Refresh();
-        }
-        public void ElevatorActualFloorLED3Signalization(bool state) //LED and BTN light ON
-        {
-            //var g = e.Graphics;
-
-            if (state)
-            {
-                //zapnout
-                //g.FillEllipse(green, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Blue;    
-            }
-            else
-            {
-                //vypnout
-                //g.FillEllipse(white, x + 5, y + length * 3 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor3.FlatAppearance.BorderColor = Color.Gray;
-            }
-
-            this.Refresh();
-        }
-        public void ElevatorActualFloorLED4Signalization(bool state) //LED and BTN light ON
-        {
-            //var g = e.Graphics;
-
-            if (state)
-            {
-                //zapnout
-                //g.FillEllipse(green, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Blue;
-            }
-            else
-            {
-                //vypnout 
-                //g.FillEllipse(white, x + 5, y + length * 2 - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor4.FlatAppearance.BorderColor = Color.Gray;
-            }
-
-            this.Refresh();
-        }
-        public void ElevatorActualFloorLED5Signalization(bool state) //LED and BTN light ON
-        {
-            //var g = e.Graphics;
-
-            if (state)
-            {
-                //zapnout
-                //g.FillEllipse(green, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Blue;
-            }
-            else
-            {
-                //vypnout
-                //g.FillEllipse(white, x + 5, y + length - length * 3 / 4, signalizationCircle_diameter, signalizationCircle_diameter);
-                btnElevatorFloor2.FlatAppearance.BorderColor = Color.Gray;
-            }
-            
-            this.Refresh();
-        }
-
         #endregion
     }
 }
