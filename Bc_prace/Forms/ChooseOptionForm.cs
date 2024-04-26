@@ -416,13 +416,12 @@ namespace Bc_prace
 
                 //DB11 => Maintain_DB
                 #region Reading from DB11 Maintain_DB
-                //DB11 => Maintain_DB - modes and timers
+                //DB11 => Maintain_DB 
                 if (previous_buffer_DB11 == null)
                 {
                     previous_buffer_DB11 = new byte[read_buffer_DB11.Length];
                     Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB11 = ComputeHash(read_buffer_DB11);
                 }
 
@@ -434,14 +433,11 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB11 = ComputeHash(read_buffer_DB11);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB11, PreviousBufferHash_DB11))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB11, previous_buffer_DB11, read_buffer_DB11.Length);
                         PreviousBufferHash_DB11 = currentHashDB11;
 
-                        // Aktualizace proměnných na základě nových dat
                         Option1 = S7.GetBitAt(read_buffer_DB11, 0, 0);
                         Option2 = S7.GetBitAt(read_buffer_DB11, 0, 1);
                         Option3 = S7.GetBitAt(read_buffer_DB11, 0, 2);
@@ -473,35 +469,27 @@ namespace Bc_prace
 
                 //DB4 => Elevator_DB
                 #region Reading from DB4 Elevator_DB
-                //DB4 => Elevator_DB -> 2 structs -> 46 variables -> size 2
+                //DB4 => Elevator_DB 
                 if (previous_buffer_DB4 == null)
                 {
                     previous_buffer_DB4 = new byte[read_buffer_DB4.Length];
                     Array.Copy(read_buffer_DB4, previous_buffer_DB4, read_buffer_DB4.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB4 = ComputeHash(read_buffer_DB4);
                 }
 
-                //first struct -> Input -> 14 variables -> size 1.5 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4.Length, ref read_buffer_DB4);
-                //second struct -> Output -> 32 variables -> size 26
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 16, read_buffer_DB4_2.Length, ref read_buffer_DB4_2); 
-
+                
                 int readResultDB4 = reader.Read();
 
                 if (readResultDB4 == 0)
                 {
                     byte[] currentHashDB4_Input = ComputeHash(read_buffer_DB4);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB4_Input, PreviousBufferHash_DB4))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB4, previous_buffer_DB4, read_buffer_DB4.Length);
                         PreviousBufferHash_DB4 = currentHashDB4_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variables
                         #region Input variables
@@ -604,20 +592,16 @@ namespace Bc_prace
 
                 //DB5 => CarWash_DB
                 #region Reading from DB5 CarWash_DB
-                //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+                //DB5 => CarWash_DB 
                 if (previous_buffer_DB5 == null)
                 {
                     previous_buffer_DB5 = new byte[read_buffer_DB5.Length];
                     Array.Copy(read_buffer_DB5, previous_buffer_DB5, read_buffer_DB5.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB5 = ComputeHash(read_buffer_DB5);
                 }
 
-                //first struct -> Input -> 7 variables -> 0.6 size 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, read_buffer_DB5.Length, ref read_buffer_DB5);
-                //second struct -> Output -> 16 variables -> 3.7 size
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 2, 0, ref read_buffer_DB5_Output); //read_buffer_DB5_Output.Length
 
                 int readResultDB5 = reader.Read();
 
@@ -625,14 +609,10 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB5_Input = ComputeHash(read_buffer_DB5);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB5_Input, PreviousBufferHash_DB5))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB5, previous_buffer_DB5, read_buffer_DB5.Length);
                         PreviousBufferHash_DB5 = currentHashDB5_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variables
                         #region Input variables
@@ -704,21 +684,16 @@ namespace Bc_prace
 
                 //DB14 => Crossroad_DB 
                 #region Reading from DB14 Crossroad_DB
-                //DB14 => Crossroad_DB -> 11 structs -> x variables -> size 110.0
+                //DB14 => Crossroad_DB 
                 if (previous_buffer_DB14 == null)
                 {
                     previous_buffer_DB14 = new byte[read_buffer_DB14.Length];
                     Array.Copy(read_buffer_DB14, previous_buffer_DB14, read_buffer_DB14.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB14 = ComputeHash(read_buffer_DB14);
                 }
 
-                //first struct -> Input -> 5 variables -> size 0.4
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14.Length, ref read_buffer_DB14); //read_buffer_DB14_Input.Length
-                //second struct -> Output -> 1 variable -> size 2.0
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, 0, ref read_buffer_DB14_Output); //read_buffer_DB14_Output.Length
-                //other structs are Timers 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14.Length, ref read_buffer_DB14); 
 
                 int readResultDB14 = reader.Read();
 
@@ -726,14 +701,10 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB14_Input = ComputeHash(read_buffer_DB14);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB14_Input, PreviousBufferHash_DB14))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB14, previous_buffer_DB14, read_buffer_DB14.Length);
                         PreviousBufferHash_DB14 = currentHashDB14_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variables
                         #region Input variables
@@ -755,8 +726,6 @@ namespace Bc_prace
 
                         errorMessageBoxShown = false;
                     }
-
-                    //other structs are Timers
                 }
                 else
                 {
@@ -780,20 +749,16 @@ namespace Bc_prace
 
                 //DB1 => Crossroad_1_DB - Crossroad 1
                 #region Reading from DB1 Crossroad_1_DB
-                //DB1 => Crossroad_1_DB -> Crossroad 1 -> 2 structs -> 25 variables -> size 6.3
+                //DB1 => Crossroad_1_DB -> Crossroad 1 
                 if (previous_buffer_DB1 == null)
                 {
                     previous_buffer_DB1 = new byte[read_buffer_DB1.Length];
                     Array.Copy(read_buffer_DB1, previous_buffer_DB1, read_buffer_DB1.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB1 = ComputeHash(read_buffer_DB1);
                 }
 
-                //first struct -> Input -> 4 variables -> size 0.3
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1.Length, ref read_buffer_DB1); //read_buffer_DB1_Input.Length
-                //second struct -> Output -> 21 variables -> size 6.3 
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, 0, ref read_buffer_DB1_Output); //read_buffer_DB1_Output.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1.Length, ref read_buffer_DB1); 
 
                 int readResultDB1 = reader.Read();
 
@@ -801,16 +766,12 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB1_Input = ComputeHash(read_buffer_DB1);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB1_Input, PreviousBufferHash_DB1))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB1, previous_buffer_DB1, read_buffer_DB1.Length);
                         PreviousBufferHash_DB1 = currentHashDB1_Input;
 
-                        // Aktualizace proměnných na základě nových dat
-
-                        //Input variable
+                        //Input variables
                         #region Input variables
 
                         Crossroad1LeftCrosswalkBTN1 = S7.GetBitAt(read_buffer_DB1, 0, 0);
@@ -878,20 +839,16 @@ namespace Bc_prace
 
                 //DB19 => Crossroad_2_DB - Crossroad 2 
                 #region Reading from DB19 Crossroad_2_DB
-                //DB19 => Crossroad_2_DB -> Crossroad 2 -> 2 structs -> 25 variables -> size 6.3
+                //DB19 => Crossroad_2_DB -> Crossroad 2
                 if (previous_buffer_DB19 == null)
                 {
                     previous_buffer_DB19 = new byte[read_buffer_DB19.Length];
                     Array.Copy(read_buffer_DB19, previous_buffer_DB19, read_buffer_DB19.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB19 = ComputeHash(read_buffer_DB19);
                 }
 
-                //first struct -> Input -> 4 variables -> size 0.3
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19.Length, ref read_buffer_DB19); //read_buffer_DB19_Input.Length
-                //second struct -> Output -> 21 variables -> size 6.3
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, 0, ref read_buffer_DB19_Output); //read_buffer_DB19_Input.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19.Length, ref read_buffer_DB19); 
 
                 int readResultDB19 = reader.Read();
 
@@ -899,14 +856,10 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB19_Input = ComputeHash(read_buffer_DB19);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB19_Input, PreviousBufferHash_DB19))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB19, previous_buffer_DB19, read_buffer_DB19.Length);
                         PreviousBufferHash_DB19 = currentHashDB19_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variable
                         #region Input variables
@@ -976,20 +929,16 @@ namespace Bc_prace
 
                 //DB20 => Crossroad_LeftT_DB - Left T 
                 #region Reading from DB20 Crossroad_LeftT_DB
-                //DB20 => Crossroad_LeftT_DB - Left T -> 2 structs -> 16 variables -> size 5.4 
+                //DB20 => Crossroad_LeftT_DB - Left T 
                 if (previous_buffer_DB20 == null)
                 {
                     previous_buffer_DB20 = new byte[read_buffer_DB20.Length];
                     Array.Copy(read_buffer_DB20, previous_buffer_DB20, read_buffer_DB20.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB20 = ComputeHash(read_buffer_DB20);
                 }
 
-                //first struct -> Input -> 2 variables -> size 0.1
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20.Length, ref read_buffer_DB20); //read_buffer_DB20_Input.Length
-                //second struct -> Output -> 14 variables -> size 5.
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, 0, ref read_buffer_DB20_Output); //read_buffer_DB20_Output.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20.Length, ref read_buffer_DB20); 
 
                 int readResultDB20 = reader.Read();
 
@@ -997,14 +946,10 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB20_Input = ComputeHash(read_buffer_DB20);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB20_Input, PreviousBufferHash_DB20))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB20, previous_buffer_DB20, read_buffer_DB20.Length);
                         PreviousBufferHash_DB20 = currentHashDB20_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variable
                         #region Input variables
@@ -1064,20 +1009,16 @@ namespace Bc_prace
 
                 //DB21 => Crossroad_RightT_DB - Right T
                 #region Reading from DB21 Crossroad_RightT_DB
-                //DB21 => Crossroad_RightT_DB - Right T -> 2 structs -> 16 variables -> size 5.4 
+                //DB21 => Crossroad_RightT_DB - Right T
                 if (previous_buffer_DB21 == null)
                 {
                     previous_buffer_DB21 = new byte[read_buffer_DB21.Length];
                     Array.Copy(read_buffer_DB21, previous_buffer_DB21, read_buffer_DB21.Length);
 
-                    // Inicializace hashe při prvním spuštění
                     PreviousBufferHash_DB21 = ComputeHash(read_buffer_DB21);
                 }
 
-                //first struct -> Input -> 2 variables -> size 0.1
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21.Length, ref read_buffer_DB21); //read_buffer_DB21_Input.Length
-                //second struct -> Output -> 14 variables -> size 5.4
-                //reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, 0, ref read_buffer_DB21_Output); //read_buffer_DB21_Output.Length
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21.Length, ref read_buffer_DB21); 
 
                 int readResultDB21 = reader.Read();
 
@@ -1085,14 +1026,10 @@ namespace Bc_prace
                 {
                     byte[] currentHashDB21_Input = ComputeHash(read_buffer_DB21);
 
-                    // Porovnání hashe s předchozím hashem
                     if (!ArraysAreEqual(currentHashDB21_Input, PreviousBufferHash_DB21))
                     {
-                        // Aktualizace předchozího bufferu a hashe
                         Array.Copy(read_buffer_DB21, previous_buffer_DB21, read_buffer_DB21.Length);
                         PreviousBufferHash_DB21 = currentHashDB21_Input;
-
-                        // Aktualizace proměnných na základě nových dat
 
                         //Input variable
                         #region Input variables
