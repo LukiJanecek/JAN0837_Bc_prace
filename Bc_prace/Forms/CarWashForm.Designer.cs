@@ -34,8 +34,6 @@
             btnEnd = new Button();
             btnStartCarWash = new Button();
             panel1 = new Panel();
-            btnTest2 = new Button();
-            btnTest1 = new Button();
             btnSignalization = new Button();
             panel2 = new Panel();
             btnMoveCarToNextPoint = new Button();
@@ -50,18 +48,18 @@
             // statusStripCarWash
             // 
             statusStripCarWash.ImageScalingSize = new Size(20, 20);
-            statusStripCarWash.Location = new Point(0, 593);
+            statusStripCarWash.Location = new Point(0, 439);
             statusStripCarWash.Name = "statusStripCarWash";
-            statusStripCarWash.Padding = new Padding(1, 0, 16, 0);
-            statusStripCarWash.Size = new Size(1735, 22);
+            statusStripCarWash.Size = new Size(1518, 22);
             statusStripCarWash.TabIndex = 0;
             statusStripCarWash.Text = "statusStrip1";
             // 
             // btnEmergency
             // 
-            btnEmergency.Location = new Point(6, 3);
+            btnEmergency.Location = new Point(5, 2);
+            btnEmergency.Margin = new Padding(3, 2, 3, 2);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(177, 79);
+            btnEmergency.Size = new Size(155, 59);
             btnEmergency.TabIndex = 37;
             btnEmergency.Text = "Emergency BTN";
             btnEmergency.UseVisualStyleBackColor = true;
@@ -70,9 +68,10 @@
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(7, 511);
+            btnEnd.Location = new Point(6, 377);
+            btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(177, 79);
+            btnEnd.Size = new Size(155, 59);
             btnEnd.TabIndex = 38;
             btnEnd.Text = "Close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -80,9 +79,10 @@
             // 
             // btnStartCarWash
             // 
-            btnStartCarWash.Location = new Point(11, 12);
+            btnStartCarWash.Location = new Point(10, 9);
+            btnStartCarWash.Margin = new Padding(3, 2, 3, 2);
             btnStartCarWash.Name = "btnStartCarWash";
-            btnStartCarWash.Size = new Size(130, 91);
+            btnStartCarWash.Size = new Size(114, 68);
             btnStartCarWash.TabIndex = 39;
             btnStartCarWash.Text = "Start washing";
             btnStartCarWash.UseVisualStyleBackColor = true;
@@ -90,42 +90,22 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnTest2);
-            panel1.Controls.Add(btnTest1);
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1548, 0);
+            panel1.Location = new Point(1354, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(187, 593);
+            panel1.Size = new Size(164, 439);
             panel1.TabIndex = 40;
-            // 
-            // btnTest2
-            // 
-            btnTest2.Location = new Point(27, 321);
-            btnTest2.Name = "btnTest2";
-            btnTest2.Size = new Size(94, 29);
-            btnTest2.TabIndex = 40;
-            btnTest2.Text = "BTN Test 2";
-            btnTest2.UseVisualStyleBackColor = true;
-            btnTest2.Click += btnTest2_Click_1;
-            // 
-            // btnTest1
-            // 
-            btnTest1.Location = new Point(34, 272);
-            btnTest1.Name = "btnTest1";
-            btnTest1.Size = new Size(94, 29);
-            btnTest1.TabIndex = 39;
-            btnTest1.Text = "BTN test 1";
-            btnTest1.UseVisualStyleBackColor = true;
-            btnTest1.Click += btnTest1_Click;
             // 
             // btnSignalization
             // 
             btnSignalization.Enabled = false;
-            btnSignalization.Location = new Point(14, 440);
+            btnSignalization.Location = new Point(12, 330);
+            btnSignalization.Margin = new Padding(3, 2, 3, 2);
             btnSignalization.Name = "btnSignalization";
-            btnSignalization.Size = new Size(130, 91);
+            btnSignalization.Size = new Size(114, 68);
             btnSignalization.TabIndex = 41;
             btnSignalization.Text = "Signalization";
             btnSignalization.UseVisualStyleBackColor = true;
@@ -140,16 +120,16 @@
             panel2.Controls.Add(btnStartCarWash);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(155, 593);
+            panel2.Size = new Size(136, 439);
             panel2.TabIndex = 42;
             // 
             // btnMoveCarToNextPoint
             // 
-            btnMoveCarToNextPoint.Location = new Point(11, 109);
-            btnMoveCarToNextPoint.Margin = new Padding(3, 4, 3, 4);
+            btnMoveCarToNextPoint.Location = new Point(10, 82);
             btnMoveCarToNextPoint.Name = "btnMoveCarToNextPoint";
-            btnMoveCarToNextPoint.Size = new Size(130, 91);
+            btnMoveCarToNextPoint.Size = new Size(114, 68);
             btnMoveCarToNextPoint.TabIndex = 44;
             btnMoveCarToNextPoint.Text = "Move car to next point";
             btnMoveCarToNextPoint.UseVisualStyleBackColor = true;
@@ -158,9 +138,10 @@
             // btnCarMoveRIGHT
             // 
             btnCarMoveRIGHT.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCarMoveRIGHT.Location = new Point(77, 544);
+            btnCarMoveRIGHT.Location = new Point(67, 402);
+            btnCarMoveRIGHT.Margin = new Padding(3, 2, 3, 2);
             btnCarMoveRIGHT.Name = "btnCarMoveRIGHT";
-            btnCarMoveRIGHT.Size = new Size(65, 45);
+            btnCarMoveRIGHT.Size = new Size(57, 34);
             btnCarMoveRIGHT.TabIndex = 43;
             btnCarMoveRIGHT.Text = ">";
             btnCarMoveRIGHT.UseVisualStyleBackColor = true;
@@ -169,9 +150,10 @@
             // btnCarMoveLEFT
             // 
             btnCarMoveLEFT.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnCarMoveLEFT.Location = new Point(11, 544);
+            btnCarMoveLEFT.Location = new Point(10, 402);
+            btnCarMoveLEFT.Margin = new Padding(3, 2, 3, 2);
             btnCarMoveLEFT.Name = "btnCarMoveLEFT";
-            btnCarMoveLEFT.Size = new Size(65, 45);
+            btnCarMoveLEFT.Size = new Size(57, 34);
             btnCarMoveLEFT.TabIndex = 42;
             btnCarMoveLEFT.Text = "<";
             btnCarMoveLEFT.UseVisualStyleBackColor = true;
@@ -186,10 +168,11 @@
             userControlCarWash1.CarWashYellowLight = false;
             userControlCarWash1.Dock = DockStyle.Fill;
             userControlCarWash1.Drying = false;
-            userControlCarWash1.Location = new Point(155, 0);
+            userControlCarWash1.Location = new Point(136, 0);
+            userControlCarWash1.Margin = new Padding(3, 2, 3, 2);
             userControlCarWash1.Name = "userControlCarWash1";
             userControlCarWash1.PreWash = false;
-            userControlCarWash1.Size = new Size(1393, 593);
+            userControlCarWash1.Size = new Size(1218, 439);
             userControlCarWash1.Soap = false;
             userControlCarWash1.TabIndex = 43;
             userControlCarWash1.VarnishProtection = false;
@@ -202,15 +185,14 @@
             // 
             // CarWashForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1735, 615);
+            ClientSize = new Size(1518, 461);
             Controls.Add(userControlCarWash1);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(statusStripCarWash);
             DoubleBuffered = true;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "CarWashForm";
             Text = "CarWash";
             panel1.ResumeLayout(false);
@@ -233,7 +215,5 @@
         private Button btnCarMoveLEFT;
         private Button btnCarMoveRIGHT;
         private Button btnMoveCarToNextPoint;
-        private Button btnTest2;
-        private Button btnTest1;
     }
 }
