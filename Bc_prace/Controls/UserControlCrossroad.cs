@@ -2449,7 +2449,7 @@ namespace Bc_prace.Controls
 
             var g = e.Graphics;
 
-            //background
+            //background color
             g.Clear(Color.Black);
 
             Draw(g);

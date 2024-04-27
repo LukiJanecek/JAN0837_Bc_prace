@@ -42,6 +42,8 @@ namespace Bc_prace
             btnEnd = new Button();
             panelCabinBtn = new Panel();
             panel1 = new Panel();
+            btnTest2 = new Button();
+            btnTest1 = new Button();
             btnGlobalEmergency = new Button();
             btnCabinLengthBigger = new Button();
             btnCabinLengthSmaller = new Button();
@@ -56,12 +58,12 @@ namespace Bc_prace
             userControlElevatorCabin1 = new UserControlElevatorCabin();
             panelElevatorDoor = new Panel();
             userControlElevatorDoor1 = new UserControlElevatorDoor();
-            btnTest1 = new Button();
-            btnTest2 = new Button();
+            groupBoxCabinPara = new GroupBox();
             panelCabinBtn.SuspendLayout();
             panel1.SuspendLayout();
             panelElevatorCabin.SuspendLayout();
             panelElevatorDoor.SuspendLayout();
+            groupBoxCabinPara.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripElevator
@@ -145,12 +147,12 @@ namespace Bc_prace
             // 
             // btnEnd
             // 
-            btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(3, 507);
+            btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnEnd.Location = new Point(3, 508);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 38;
-            btnEnd.Text = "End/Close";
+            btnEnd.Text = "Close";
             btnEnd.UseVisualStyleBackColor = true;
             btnEnd.Click += btnEnd_Click;
             // 
@@ -173,17 +175,10 @@ namespace Bc_prace
             // 
             // panel1
             // 
+            panel1.Controls.Add(groupBoxCabinPara);
             panel1.Controls.Add(btnTest2);
             panel1.Controls.Add(btnTest1);
             panel1.Controls.Add(btnGlobalEmergency);
-            panel1.Controls.Add(btnCabinLengthBigger);
-            panel1.Controls.Add(btnCabinLengthSmaller);
-            panel1.Controls.Add(btnCabinWidthBigger);
-            panel1.Controls.Add(btnCabinWidthSmaller);
-            panel1.Controls.Add(btnCabinMoveToDown);
-            panel1.Controls.Add(btnCabinMoveUp);
-            panel1.Controls.Add(btnCabinMoveLeft);
-            panel1.Controls.Add(btnCabinMoveRight);
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
             panel1.Location = new Point(1015, 0);
@@ -191,9 +186,30 @@ namespace Bc_prace
             panel1.Size = new Size(185, 590);
             panel1.TabIndex = 42;
             // 
+            // btnTest2
+            // 
+            btnTest2.Location = new Point(35, 449);
+            btnTest2.Name = "btnTest2";
+            btnTest2.Size = new Size(94, 29);
+            btnTest2.TabIndex = 49;
+            btnTest2.Text = "BTN Test 2";
+            btnTest2.UseVisualStyleBackColor = true;
+            btnTest2.Click += btnTest2_Click;
+            // 
+            // btnTest1
+            // 
+            btnTest1.Location = new Point(33, 403);
+            btnTest1.Name = "btnTest1";
+            btnTest1.Size = new Size(94, 29);
+            btnTest1.TabIndex = 48;
+            btnTest1.Text = "BTN Test 1";
+            btnTest1.UseVisualStyleBackColor = true;
+            btnTest1.Click += btnTest1_Click;
+            // 
             // btnGlobalEmergency
             // 
-            btnGlobalEmergency.Location = new Point(3, 12);
+            btnGlobalEmergency.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnGlobalEmergency.Location = new Point(3, 3);
             btnGlobalEmergency.Name = "btnGlobalEmergency";
             btnGlobalEmergency.Size = new Size(177, 79);
             btnGlobalEmergency.TabIndex = 47;
@@ -203,47 +219,47 @@ namespace Bc_prace
             // 
             // btnCabinLengthBigger
             // 
-            btnCabinLengthBigger.Location = new Point(99, 355);
+            btnCabinLengthBigger.Location = new Point(93, 131);
             btnCabinLengthBigger.Name = "btnCabinLengthBigger";
             btnCabinLengthBigger.Size = new Size(81, 29);
             btnCabinLengthBigger.TabIndex = 46;
-            btnCabinLengthBigger.Text = "Length bigger";
+            btnCabinLengthBigger.Text = "Length +";
             btnCabinLengthBigger.UseVisualStyleBackColor = true;
             btnCabinLengthBigger.Click += btnCabinLengthBigger_Click;
             // 
             // btnCabinLengthSmaller
             // 
-            btnCabinLengthSmaller.Location = new Point(99, 320);
+            btnCabinLengthSmaller.Location = new Point(93, 96);
             btnCabinLengthSmaller.Name = "btnCabinLengthSmaller";
             btnCabinLengthSmaller.Size = new Size(81, 29);
             btnCabinLengthSmaller.TabIndex = 45;
-            btnCabinLengthSmaller.Text = "Length smaller";
+            btnCabinLengthSmaller.Text = "Length -";
             btnCabinLengthSmaller.UseVisualStyleBackColor = true;
             btnCabinLengthSmaller.Click += btnCabinLengthSmaller_Click;
             // 
             // btnCabinWidthBigger
             // 
-            btnCabinWidthBigger.Location = new Point(99, 285);
+            btnCabinWidthBigger.Location = new Point(93, 61);
             btnCabinWidthBigger.Name = "btnCabinWidthBigger";
             btnCabinWidthBigger.Size = new Size(81, 29);
             btnCabinWidthBigger.TabIndex = 44;
-            btnCabinWidthBigger.Text = "Width bigger";
+            btnCabinWidthBigger.Text = "Width +";
             btnCabinWidthBigger.UseVisualStyleBackColor = true;
             btnCabinWidthBigger.Click += btnCabinWidthBigger_Click;
             // 
             // btnCabinWidthSmaller
             // 
-            btnCabinWidthSmaller.Location = new Point(99, 251);
+            btnCabinWidthSmaller.Location = new Point(93, 26);
             btnCabinWidthSmaller.Name = "btnCabinWidthSmaller";
             btnCabinWidthSmaller.Size = new Size(81, 29);
             btnCabinWidthSmaller.TabIndex = 43;
-            btnCabinWidthSmaller.Text = "Width smaller";
+            btnCabinWidthSmaller.Text = "Width -";
             btnCabinWidthSmaller.UseVisualStyleBackColor = true;
             btnCabinWidthSmaller.Click += btnCabinWidthSmaller_Click;
             // 
             // btnCabinMoveToDown
             // 
-            btnCabinMoveToDown.Location = new Point(3, 355);
+            btnCabinMoveToDown.Location = new Point(6, 131);
             btnCabinMoveToDown.Name = "btnCabinMoveToDown";
             btnCabinMoveToDown.Size = new Size(81, 29);
             btnCabinMoveToDown.TabIndex = 42;
@@ -253,7 +269,7 @@ namespace Bc_prace
             // 
             // btnCabinMoveUp
             // 
-            btnCabinMoveUp.Location = new Point(3, 320);
+            btnCabinMoveUp.Location = new Point(6, 96);
             btnCabinMoveUp.Name = "btnCabinMoveUp";
             btnCabinMoveUp.Size = new Size(81, 29);
             btnCabinMoveUp.TabIndex = 41;
@@ -263,7 +279,7 @@ namespace Bc_prace
             // 
             // btnCabinMoveLeft
             // 
-            btnCabinMoveLeft.Location = new Point(3, 285);
+            btnCabinMoveLeft.Location = new Point(6, 61);
             btnCabinMoveLeft.Name = "btnCabinMoveLeft";
             btnCabinMoveLeft.Size = new Size(81, 29);
             btnCabinMoveLeft.TabIndex = 40;
@@ -273,7 +289,7 @@ namespace Bc_prace
             // 
             // btnCabinMoveRight
             // 
-            btnCabinMoveRight.Location = new Point(3, 251);
+            btnCabinMoveRight.Location = new Point(6, 26);
             btnCabinMoveRight.Name = "btnCabinMoveRight";
             btnCabinMoveRight.Size = new Size(81, 29);
             btnCabinMoveRight.TabIndex = 39;
@@ -326,25 +342,23 @@ namespace Bc_prace
             userControlElevatorDoor1.Size = new Size(341, 590);
             userControlElevatorDoor1.TabIndex = 0;
             // 
-            // btnTest1
+            // groupBoxCabinPara
             // 
-            btnTest1.Location = new Point(33, 403);
-            btnTest1.Name = "btnTest1";
-            btnTest1.Size = new Size(94, 29);
-            btnTest1.TabIndex = 48;
-            btnTest1.Text = "BTN Test 1";
-            btnTest1.UseVisualStyleBackColor = true;
-            btnTest1.Click += btnTest1_Click;
-            // 
-            // btnTest2
-            // 
-            btnTest2.Location = new Point(35, 449);
-            btnTest2.Name = "btnTest2";
-            btnTest2.Size = new Size(94, 29);
-            btnTest2.TabIndex = 49;
-            btnTest2.Text = "BTN Test 2";
-            btnTest2.UseVisualStyleBackColor = true;
-            btnTest2.Click += btnTest2_Click;
+            groupBoxCabinPara.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxCabinPara.Controls.Add(btnCabinMoveRight);
+            groupBoxCabinPara.Controls.Add(btnCabinMoveLeft);
+            groupBoxCabinPara.Controls.Add(btnCabinMoveUp);
+            groupBoxCabinPara.Controls.Add(btnCabinMoveToDown);
+            groupBoxCabinPara.Controls.Add(btnCabinLengthBigger);
+            groupBoxCabinPara.Controls.Add(btnCabinWidthSmaller);
+            groupBoxCabinPara.Controls.Add(btnCabinLengthSmaller);
+            groupBoxCabinPara.Controls.Add(btnCabinWidthBigger);
+            groupBoxCabinPara.Location = new Point(3, 88);
+            groupBoxCabinPara.Name = "groupBoxCabinPara";
+            groupBoxCabinPara.Size = new Size(177, 170);
+            groupBoxCabinPara.TabIndex = 50;
+            groupBoxCabinPara.TabStop = false;
+            groupBoxCabinPara.Text = "Cabin parameters:";
             // 
             // ElevatorForm
             // 
@@ -364,6 +378,7 @@ namespace Bc_prace
             panel1.ResumeLayout(false);
             panelElevatorCabin.ResumeLayout(false);
             panelElevatorDoor.ResumeLayout(false);
+            groupBoxCabinPara.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -397,5 +412,6 @@ namespace Bc_prace
         private Button btnGlobalEmergency;
         private Button btnTest2;
         private Button btnTest1;
+        private GroupBox groupBoxCabinPara;
     }
 }

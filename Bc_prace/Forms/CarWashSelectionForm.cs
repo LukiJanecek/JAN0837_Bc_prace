@@ -44,14 +44,14 @@ namespace Bc_prace
         bool CarWashWaitingForOutgoingCar;
         bool CarWashPerfetWash;
         bool CarWashPerfectPolish;
+        bool CarWashPositionShower;
+        bool CarWashPositionCar;
 
         #endregion
 
         //Output variables 
         #region Output variables 
 
-        bool CarWashPositionShower;
-        bool CarWashPositionCar;
         bool CarWashGreenLight;
         bool CarWashRedLight;
         bool CarWashYellowLight;
@@ -112,14 +112,14 @@ namespace Bc_prace
                 CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar;
                 CarWashPerfetWash = chooseOptionFormInstance.CarWashPerfetWash;
                 CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish;
+                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
+                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
 
                 #endregion
 
                 //Output variables
                 #region Output variables
 
-                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
-                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
                 CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
                 CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
                 CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;

@@ -64,6 +64,14 @@ namespace Bc_prace
         public bool ElevatorBTNOPENCLOSE;
         public bool ElevatorEmergencySTOP;
         public bool ElevatorErrorSystem;
+        public bool ElevatorActualFloorSENS1;
+        public bool ElevatorActualFloorSENS2;
+        public bool ElevatorActualFloorSENS3;
+        public bool ElevatorActualFloorSENS4;
+        public bool ElevatorActualFloorSENS5;
+        public bool ElevatorDoorClOSE;
+        public bool ElevatorDoorOPEN;
+        public bool ElevatorInactivity;
 
         #endregion
 
@@ -90,17 +98,9 @@ namespace Bc_prace
         public bool ElevatorActualFloorCabinLED3;
         public bool ElevatorActualFloorCabinLED4;
         public bool ElevatorActualFloorCabinLED5;
-        public bool ElevatorActualFloorSENS1;
-        public bool ElevatorActualFloorSENS2;
-        public bool ElevatorActualFloorSENS3;
-        public bool ElevatorActualFloorSENS4;
-        public bool ElevatorActualFloorSENS5;
         public int ElevatorTimeDoorSQOPEN; //time
         public int ElevatorTimeDoorSQCLOSE; //time
-        public bool ElevatorDoorClOSE;
-        public bool ElevatorDoorOPEN;
         public int ElevatorCabinSpeed;
-        public bool ElevatorInactivity;
         public int ElevatorTimeToGetDown; //time
 
         #endregion
@@ -347,7 +347,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = true 
                     ElevatorActualFloorSENS1 = true;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -371,7 +371,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = false 
                     ElevatorActualFloorSENS2 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -395,7 +395,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = false 
                     ElevatorActualFloorSENS3 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -419,7 +419,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = false 
                     ElevatorActualFloorSENS4 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -443,7 +443,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = false 
                     ElevatorActualFloorSENS5 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -480,7 +480,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = false 
                     ElevatorActualFloorSENS1 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -504,7 +504,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = true 
                     ElevatorActualFloorSENS2 = true;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -528,7 +528,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = false 
                     ElevatorActualFloorSENS3 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -552,7 +552,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = false 
                     ElevatorActualFloorSENS4 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -576,7 +576,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = false 
                     ElevatorActualFloorSENS5 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -613,7 +613,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = fasle 
                     ElevatorActualFloorSENS1 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -637,7 +637,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = false 
                     ElevatorActualFloorSENS2 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -661,7 +661,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = true 
                     ElevatorActualFloorSENS3 = true;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -685,7 +685,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = false 
                     ElevatorActualFloorSENS4 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -709,7 +709,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = false 
                     ElevatorActualFloorSENS5 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -746,7 +746,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = false 
                     ElevatorActualFloorSENS1 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -770,7 +770,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = false 
                     ElevatorActualFloorSENS2 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -794,7 +794,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = false 
                     ElevatorActualFloorSENS3 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -818,7 +818,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = true 
                     ElevatorActualFloorSENS4 = true;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -842,7 +842,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = false 
                     ElevatorActualFloorSENS5 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -879,7 +879,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = fasle 
                     ElevatorActualFloorSENS1 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -903,7 +903,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = false 
                     ElevatorActualFloorSENS2 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -927,7 +927,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = false 
                     ElevatorActualFloorSENS3 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -951,7 +951,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = false 
                     ElevatorActualFloorSENS4 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -975,7 +975,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = true 
                     ElevatorActualFloorSENS5 = true;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1008,7 +1008,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 1 = false 
                     ElevatorActualFloorSENS1 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+                    S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1032,7 +1032,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 2 = false 
                     ElevatorActualFloorSENS2 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 4, ElevatorActualFloorSENS2);
+                    S7.SetBitAt(send_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS2 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1056,7 +1056,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 3 = false 
                     ElevatorActualFloorSENS3 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 5, ElevatorActualFloorSENS3);
+                    S7.SetBitAt(send_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS3 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1080,7 +1080,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 4 = false 
                     ElevatorActualFloorSENS4 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+                    S7.SetBitAt(send_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1104,7 +1104,7 @@ namespace Bc_prace
 
                     //Elevator Floor SENS 5 = false 
                     ElevatorActualFloorSENS5 = false;
-                    S7.SetBitAt(send_buffer_DB4, 11, 7, ElevatorActualFloorSENS5);
+                    S7.SetBitAt(send_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
 
                     //write to PLC
                     writeResultDB4_ElevatorActualFloorSENS5 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -1157,6 +1157,14 @@ namespace Bc_prace
                 ElevatorBTNOPENCLOSE = chooseOptionFormInstance.ElevatorBTNOPENCLOSE; //no need to make a condition if true
                 ElevatorEmergencySTOP = chooseOptionFormInstance.ElevatorEmergencySTOP;
                 ElevatorErrorSystem = chooseOptionFormInstance.ElevatorErrorSystem;
+                ElevatorActualFloorSENS1 = chooseOptionFormInstance.ElevatorActualFloorSENS1;
+                ElevatorActualFloorSENS2 = chooseOptionFormInstance.ElevatorActualFloorSENS2;
+                ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
+                ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
+                ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
+                ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
+                ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
+                ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity; //no need to make a condition if true
 
                 #endregion
 
@@ -1183,17 +1191,9 @@ namespace Bc_prace
                 ElevatorActualFloorCabinLED3 = chooseOptionFormInstance.ElevatorActualFloorCabinLED3;
                 ElevatorActualFloorCabinLED4 = chooseOptionFormInstance.ElevatorActualFloorCabinLED4;
                 ElevatorActualFloorCabinLED5 = chooseOptionFormInstance.ElevatorActualFloorCabinLED5;
-                ElevatorActualFloorSENS1 = chooseOptionFormInstance.ElevatorActualFloorSENS1;
-                ElevatorActualFloorSENS2 = chooseOptionFormInstance.ElevatorActualFloorSENS2;
-                ElevatorActualFloorSENS3 = chooseOptionFormInstance.ElevatorActualFloorSENS3;
-                ElevatorActualFloorSENS4 = chooseOptionFormInstance.ElevatorActualFloorSENS4;
-                ElevatorActualFloorSENS5 = chooseOptionFormInstance.ElevatorActualFloorSENS5;
                 ElevatorTimeDoorSQOPEN = chooseOptionFormInstance.ElevatorTimeDoorSQOPEN; // time
                 ElevatorTimeDoorSQCLOSE = chooseOptionFormInstance.ElevatroTimeDoorSQCLOSE; //time
-                ElevatorDoorClOSE = chooseOptionFormInstance.ElevatorDoorClOSE;
-                ElevatorDoorOPEN = chooseOptionFormInstance.ElevatorDoorOPEN;
                 ElevatorCabinSpeed = chooseOptionFormInstance.ElevatorCabinSpeed;
-                ElevatorInactivity = chooseOptionFormInstance.ElevatorInactivity; //no need to make a condition if true
                 ElevatorTimeToGetDown = chooseOptionFormInstance.ElevatorTimeToGetDown; //time
 
                 #endregion
@@ -2919,7 +2919,7 @@ namespace Bc_prace
         private void btnTest1_Click(object sender, EventArgs e)
         {
             ElevatorActualFloorSENS1 = true;
-            S7.SetBitAt(send_buffer_DB4, 11, 3, ElevatorActualFloorSENS1);
+            S7.SetBitAt(send_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
 
             //write to PLC
             int writeResultDB4_ElevatorActualFloorSENS1 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);
@@ -2945,7 +2945,7 @@ namespace Bc_prace
         private void btnTest2_Click(object sender, EventArgs e)
         {
             ElevatorActualFloorSENS4 = true;
-            S7.SetBitAt(send_buffer_DB4, 11, 6, ElevatorActualFloorSENS4);
+            S7.SetBitAt(send_buffer_DB4, 2, 4, ElevatorActualFloorSENS4);
 
             //write to PLC
             int writeResultDB4_ElevatorActualFloorSENS4 = client.DBWrite(DBNumber_DB4, 0, send_buffer_DB4.Length, send_buffer_DB4);

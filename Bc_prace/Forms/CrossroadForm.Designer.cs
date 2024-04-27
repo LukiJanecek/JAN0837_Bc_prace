@@ -45,8 +45,10 @@ namespace Bc_prace
             Timer_read_actual = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             userControlCrossroad1 = new UserControlCrossroad();
+            groupBoxCrossroadVariant = new GroupBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            groupBoxCrossroadVariant.SuspendLayout();
             SuspendLayout();
             // 
             // statusStripCrossroad
@@ -64,7 +66,7 @@ namespace Bc_prace
             btnEmergency.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnEmergency.Location = new Point(6, 3);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(177, 79);
+            btnEmergency.Size = new Size(202, 79);
             btnEmergency.TabIndex = 26;
             btnEmergency.Text = "Emergency BTN";
             btnEmergency.UseVisualStyleBackColor = true;
@@ -72,19 +74,19 @@ namespace Bc_prace
             // 
             // btnEnd
             // 
-            btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnEnd.Location = new Point(3, 743);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(177, 79);
+            btnEnd.Size = new Size(205, 79);
             btnEnd.TabIndex = 27;
-            btnEnd.Text = "End/close";
+            btnEnd.Text = "Close";
             btnEnd.UseVisualStyleBackColor = true;
             btnEnd.Click += btnEnd_Click;
             // 
             // rBtnCrossroadBasic
             // 
             rBtnCrossroadBasic.AutoSize = true;
-            rBtnCrossroadBasic.Location = new Point(6, 343);
+            rBtnCrossroadBasic.Location = new Point(26, 26);
             rBtnCrossroadBasic.Name = "rBtnCrossroadBasic";
             rBtnCrossroadBasic.Size = new Size(132, 24);
             rBtnCrossroadBasic.TabIndex = 28;
@@ -95,26 +97,24 @@ namespace Bc_prace
             // 
             // panel1
             // 
+            panel1.Controls.Add(groupBoxCrossroadVariant);
             panel1.Controls.Add(btnOffMode);
             panel1.Controls.Add(btnNightMode);
             panel1.Controls.Add(btnDayMode);
-            panel1.Controls.Add(rBtnCrossroadExtension3);
-            panel1.Controls.Add(rBtnCrossroadExtension2);
-            panel1.Controls.Add(rBtnCrossroadExtension1);
             panel1.Controls.Add(btnEnd);
-            panel1.Controls.Add(rBtnCrossroadBasic);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(1352, 0);
+            panel1.Location = new Point(1327, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(189, 823);
+            panel1.Size = new Size(214, 823);
             panel1.TabIndex = 29;
             // 
             // btnOffMode
             // 
+            btnOffMode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnOffMode.Location = new Point(6, 259);
             btnOffMode.Name = "btnOffMode";
-            btnOffMode.Size = new Size(177, 79);
+            btnOffMode.Size = new Size(201, 79);
             btnOffMode.TabIndex = 38;
             btnOffMode.Text = "Off mode";
             btnOffMode.UseVisualStyleBackColor = true;
@@ -122,9 +122,10 @@ namespace Bc_prace
             // 
             // btnNightMode
             // 
+            btnNightMode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnNightMode.Location = new Point(6, 173);
             btnNightMode.Name = "btnNightMode";
-            btnNightMode.Size = new Size(177, 79);
+            btnNightMode.Size = new Size(201, 79);
             btnNightMode.TabIndex = 37;
             btnNightMode.Text = "Night mode";
             btnNightMode.UseVisualStyleBackColor = true;
@@ -132,9 +133,10 @@ namespace Bc_prace
             // 
             // btnDayMode
             // 
+            btnDayMode.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnDayMode.Location = new Point(6, 88);
             btnDayMode.Name = "btnDayMode";
-            btnDayMode.Size = new Size(177, 79);
+            btnDayMode.Size = new Size(202, 79);
             btnDayMode.TabIndex = 36;
             btnDayMode.Text = "Day mode";
             btnDayMode.UseVisualStyleBackColor = true;
@@ -143,7 +145,7 @@ namespace Bc_prace
             // rBtnCrossroadExtension3
             // 
             rBtnCrossroadExtension3.AutoSize = true;
-            rBtnCrossroadExtension3.Location = new Point(6, 433);
+            rBtnCrossroadExtension3.Location = new Point(26, 113);
             rBtnCrossroadExtension3.Name = "rBtnCrossroadExtension3";
             rBtnCrossroadExtension3.Size = new Size(175, 24);
             rBtnCrossroadExtension3.TabIndex = 34;
@@ -155,7 +157,7 @@ namespace Bc_prace
             // rBtnCrossroadExtension2
             // 
             rBtnCrossroadExtension2.AutoSize = true;
-            rBtnCrossroadExtension2.Location = new Point(6, 403);
+            rBtnCrossroadExtension2.Location = new Point(26, 86);
             rBtnCrossroadExtension2.Name = "rBtnCrossroadExtension2";
             rBtnCrossroadExtension2.Size = new Size(175, 24);
             rBtnCrossroadExtension2.TabIndex = 33;
@@ -167,7 +169,7 @@ namespace Bc_prace
             // rBtnCrossroadExtension1
             // 
             rBtnCrossroadExtension1.AutoSize = true;
-            rBtnCrossroadExtension1.Location = new Point(6, 373);
+            rBtnCrossroadExtension1.Location = new Point(26, 56);
             rBtnCrossroadExtension1.Name = "rBtnCrossroadExtension1";
             rBtnCrossroadExtension1.Size = new Size(175, 24);
             rBtnCrossroadExtension1.TabIndex = 32;
@@ -186,7 +188,7 @@ namespace Bc_prace
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1352, 823);
+            panel2.Size = new Size(1327, 823);
             panel2.TabIndex = 30;
             // 
             // userControlCrossroad1
@@ -264,8 +266,22 @@ namespace Bc_prace
             userControlCrossroad1.DrawCrossroadExtension3 = false;
             userControlCrossroad1.Location = new Point(0, 0);
             userControlCrossroad1.Name = "userControlCrossroad1";
-            userControlCrossroad1.Size = new Size(1352, 823);
+            userControlCrossroad1.Size = new Size(1327, 823);
             userControlCrossroad1.TabIndex = 0;
+            // 
+            // groupBoxCrossroadVariant
+            // 
+            groupBoxCrossroadVariant.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxCrossroadVariant.Controls.Add(rBtnCrossroadBasic);
+            groupBoxCrossroadVariant.Controls.Add(rBtnCrossroadExtension1);
+            groupBoxCrossroadVariant.Controls.Add(rBtnCrossroadExtension2);
+            groupBoxCrossroadVariant.Controls.Add(rBtnCrossroadExtension3);
+            groupBoxCrossroadVariant.Location = new Point(6, 344);
+            groupBoxCrossroadVariant.Name = "groupBoxCrossroadVariant";
+            groupBoxCrossroadVariant.Size = new Size(250, 143);
+            groupBoxCrossroadVariant.TabIndex = 40;
+            groupBoxCrossroadVariant.TabStop = false;
+            groupBoxCrossroadVariant.Text = "Choose crossroad variant:";
             // 
             // CrossroadForm
             // 
@@ -281,8 +297,9 @@ namespace Bc_prace
             Text = "Crossroad";
             Load += Program3_Load;
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            groupBoxCrossroadVariant.ResumeLayout(false);
+            groupBoxCrossroadVariant.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,5 +320,6 @@ namespace Bc_prace
         private Button btnDayMode;
         private Panel panel2;
         private UserControlCrossroad userControlCrossroad1;
+        private GroupBox groupBoxCrossroadVariant;
     }
 }

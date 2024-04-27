@@ -64,7 +64,7 @@ namespace Bc_prace.Controls
             */
             var g = e.Graphics;
 
-            //backgroud
+            //backgroud color
             g.Clear(Color.White);
 
             Draw(g);

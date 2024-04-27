@@ -43,10 +43,10 @@ namespace Bc_prace
 
         //DB4 => Elevator_DB 
         private int DBNumber_DB4 = 4;
-        public byte[] read_buffer_DB4 = new byte[32];
+        public byte[] read_buffer_DB4 = new byte[30];
         public byte[] previous_buffer_DB4;
         public byte[] PreviousBufferHash_DB4;
-        public byte[] send_buffer_DB4 = new byte[32];
+        public byte[] send_buffer_DB4 = new byte[30];
 
         //DB5 => CarWash_DB 
         private int DBNumber_DB5 = 5;
@@ -118,6 +118,14 @@ namespace Bc_prace
         public bool ElevatorBTNOPENCLOSE;
         public bool ElevatorEmergencySTOP;
         public bool ElevatorErrorSystem;
+        public bool ElevatorActualFloorSENS1;
+        public bool ElevatorActualFloorSENS2;
+        public bool ElevatorActualFloorSENS3;
+        public bool ElevatorActualFloorSENS4;
+        public bool ElevatorActualFloorSENS5;
+        public bool ElevatorDoorClOSE;
+        public bool ElevatorDoorOPEN;
+        public bool ElevatorInactivity;
 
         #endregion
 
@@ -144,17 +152,9 @@ namespace Bc_prace
         public bool ElevatorActualFloorCabinLED3;
         public bool ElevatorActualFloorCabinLED4;
         public bool ElevatorActualFloorCabinLED5;
-        public bool ElevatorActualFloorSENS1;
-        public bool ElevatorActualFloorSENS2;
-        public bool ElevatorActualFloorSENS3;
-        public bool ElevatorActualFloorSENS4;
-        public bool ElevatorActualFloorSENS5;
         public int ElevatorTimeDoorSQOPEN; //time
         public int ElevatroTimeDoorSQCLOSE; //time
-        public bool ElevatorDoorClOSE;
-        public bool ElevatorDoorOPEN;
         public int ElevatorCabinSpeed;
-        public bool ElevatorInactivity;
         public int ElevatorTimeToGetDown; //time
 
         #endregion
@@ -190,14 +190,14 @@ namespace Bc_prace
         public bool CarWashWaitingForOutgoingCar;
         public bool CarWashPerfetWash;
         public bool CarWashPerfectPolish;
+        public bool CarWashPositionShower;
+        public bool CarWashPositionCar;
 
         #endregion
 
         //Output variables
         #region Output variables 
 
-        public bool CarWashPositionShower;
-        public bool CarWashPositionCar;
         public bool CarWashGreenLight;
         public bool CarWashRedLight;
         public bool CarWashYellowLight;
@@ -508,60 +508,60 @@ namespace Bc_prace
                         ElevatorBTNOPENCLOSE = S7.GetBitAt(read_buffer_DB4, 1, 3);
                         ElevatorEmergencySTOP = S7.GetBitAt(read_buffer_DB4, 1, 4);
                         ElevatorErrorSystem = S7.GetBitAt(read_buffer_DB4, 1, 5);
+                        ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4, 1, 6);
+                        ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4, 1, 7);
+                        ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4, 2, 0);
+                        ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4, 2, 1);
+                        ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4, 2, 2);
+                        ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4, 2, 3);
+                        ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4, 2, 4);
+                        ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 2, 5);
 
                         #endregion
 
                         //Output variables
                         #region Output variables
 
-                        ElevatorMotorON = S7.GetBitAt(read_buffer_DB4, 2, 0);
-                        ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4, 2, 1);
-                        ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4, 2, 2);
-                        ElevatroHoming = S7.GetBitAt(read_buffer_DB4, 2, 3);
-                        ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4, 2, 4);
-                        ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4, 4);
-                        ElevatorMoving = S7.GetBitAt(read_buffer_DB4, 6, 0);
-                        ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4, 6, 1);
-                        ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4, 8);
-                        ElevatorDirection = S7.GetBitAt(read_buffer_DB4, 10, 0);
-                        ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4, 10, 1);
-                        ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4, 10, 2);
-                        ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4, 10, 3);
-                        ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4, 10, 4);
-                        ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4, 10, 5);
-                        ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4, 10, 6);
-                        ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4, 10, 7);
-                        ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4, 11, 0);
-                        ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4, 11, 1);
-                        ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4, 11, 2);
-                        ElevatorActualFloorSENS1 = S7.GetBitAt(read_buffer_DB4, 11, 3);
-                        ElevatorActualFloorSENS2 = S7.GetBitAt(read_buffer_DB4, 11, 4);
-                        ElevatorActualFloorSENS3 = S7.GetBitAt(read_buffer_DB4, 11, 5);
-                        ElevatorActualFloorSENS4 = S7.GetBitAt(read_buffer_DB4, 11, 6);
-                        ElevatorActualFloorSENS5 = S7.GetBitAt(read_buffer_DB4, 11, 7);
-                        ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 12); //Time
-                        ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 16); //Time
-                        ElevatorDoorClOSE = S7.GetBitAt(read_buffer_DB4, 20, 0);
-                        ElevatorDoorOPEN = S7.GetBitAt(read_buffer_DB4, 20, 1);
+                        ElevatorMotorON = S7.GetBitAt(read_buffer_DB4, 4, 0);
+                        ElevatorMotorDOWN = S7.GetBitAt(read_buffer_DB4, 4, 1);
+                        ElevatorMotorUP = S7.GetBitAt(read_buffer_DB4, 4, 2);
+                        ElevatroHoming = S7.GetBitAt(read_buffer_DB4, 4, 3);
+                        ElevatorSystemReady = S7.GetBitAt(read_buffer_DB4, 4, 4);
+                        ElevatorActualFloor = S7.GetIntAt(read_buffer_DB4, 6);
+                        ElevatorMoving = S7.GetBitAt(read_buffer_DB4, 8, 0);
+                        ElevatorSystemWorking = S7.GetBitAt(read_buffer_DB4, 8, 1);
+                        ElevatorGoToFloor = S7.GetIntAt(read_buffer_DB4, 10);
+                        ElevatorDirection = S7.GetBitAt(read_buffer_DB4, 12, 0);
+                        ElevatorActualFloorLED1 = S7.GetBitAt(read_buffer_DB4, 12, 1);
+                        ElevatorActualFloorLED2 = S7.GetBitAt(read_buffer_DB4, 12, 2);
+                        ElevatorActualFloorLED3 = S7.GetBitAt(read_buffer_DB4, 12, 3);
+                        ElevatorActualFloorLED4 = S7.GetBitAt(read_buffer_DB4, 12, 4);
+                        ElevatorActualFloorLED5 = S7.GetBitAt(read_buffer_DB4, 12, 5);
+                        ElevatorActualFloorCabinLED1 = S7.GetBitAt(read_buffer_DB4, 12, 6);
+                        ElevatorActualFloorCabinLED2 = S7.GetBitAt(read_buffer_DB4, 12, 7);
+                        ElevatorActualFloorCabinLED3 = S7.GetBitAt(read_buffer_DB4, 13, 0);
+                        ElevatorActualFloorCabinLED4 = S7.GetBitAt(read_buffer_DB4, 13, 1);
+                        ElevatorActualFloorCabinLED5 = S7.GetBitAt(read_buffer_DB4, 13, 2);
+                        ElevatorTimeDoorSQOPEN = S7.GetDIntAt(read_buffer_DB4, 14); //Time
+                        ElevatroTimeDoorSQCLOSE = S7.GetDIntAt(read_buffer_DB4, 18); //Time
                         ElevatorCabinSpeed = S7.GetIntAt(read_buffer_DB4, 22);
-                        ElevatorInactivity = S7.GetBitAt(read_buffer_DB4, 24, 0);
-                        ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 26); //Time
+                        ElevatorTimeToGetDown = S7.GetDIntAt(read_buffer_DB4, 24); //Time
 
                         #endregion
 
                         //MEM variables 
                         #region MEM varialbes 
 
-                        ElevatorMEMDoor = S7.GetBitAt(read_buffer_DB4, 30, 0); 
-                        ElevatorMEMDoorTrig = S7.GetBitAt(read_buffer_DB4, 30, 1); 
-                        ElevatorMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB4, 30, 2); 
-                        ElevatorMEMMovingtrig = S7.GetBitAt(read_buffer_DB4, 30, 3); 
-                        ElevatorMEMEndMovingTrig = S7.GetBitAt(read_buffer_DB4, 30, 4); 
-                        ElevatorMEMBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 30, 5); 
-                        ElevatorMEMBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 30, 6); 
-                        ElevatorMEMBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 30, 7); 
-                        ElevatorMEMBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 31, 0); 
-                        ElevatorMEMBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 31, 1); 
+                        ElevatorMEMDoor = S7.GetBitAt(read_buffer_DB4, 28, 0); 
+                        ElevatorMEMDoorTrig = S7.GetBitAt(read_buffer_DB4, 28, 1); 
+                        ElevatorMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB4, 28, 2); 
+                        ElevatorMEMMovingtrig = S7.GetBitAt(read_buffer_DB4, 28, 3); 
+                        ElevatorMEMEndMovingTrig = S7.GetBitAt(read_buffer_DB4, 28, 4); 
+                        ElevatorMEMBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 28, 5); 
+                        ElevatorMEMBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 28, 6); 
+                        ElevatorMEMBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 28, 7); 
+                        ElevatorMEMBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 29, 0); 
+                        ElevatorMEMBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 29, 1); 
 
                         #endregion
 
@@ -624,32 +624,32 @@ namespace Bc_prace
                         CarWashWaitingForOutgoingCar = S7.GetBitAt(read_buffer_DB5, 0, 4);
                         CarWashPerfetWash = S7.GetBitAt(read_buffer_DB5, 0, 5);
                         CarWashPerfectPolish = S7.GetBitAt(read_buffer_DB5, 0, 6);
+                        CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 0, 7);
+                        CarWashPositionCar = S7.GetBitAt(read_buffer_DB5, 1, 0);
 
                         #endregion
 
                         //Output variables
                         #region Output variables 
 
-                        CarWashPositionShower = S7.GetBitAt(read_buffer_DB5, 2, 0);
-                        CarWashPositionCar = S7.GetBitAt(read_buffer_DB5, 2, 1);
-                        CarWashGreenLight = S7.GetBitAt(read_buffer_DB5, 2, 2);
-                        CarWashRedLight = S7.GetBitAt(read_buffer_DB5, 2, 3);
-                        CarWashYellowLight = S7.GetBitAt(read_buffer_DB5, 2, 4);
-                        CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5, 2, 5);
-                        CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5, 2, 6);
-                        CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5, 2, 7);
-                        CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5, 3, 0);
-                        CarWashWater = S7.GetBitAt(read_buffer_DB5, 3, 1);
-                        CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5, 3, 2);
-                        CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5, 3, 3);
-                        CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5, 3, 4);
-                        CarWashWax = S7.GetBitAt(read_buffer_DB5, 3, 5);
-                        CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 6);
-                        CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 7);
-                        CarWashPreWash = S7.GetBitAt(read_buffer_DB5, 4, 0);
-                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 4, 1); 
-                        CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 2); ;
-                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 3); 
+                        CarWashGreenLight = S7.GetBitAt(read_buffer_DB5, 2, 0);
+                        CarWashRedLight = S7.GetBitAt(read_buffer_DB5, 2, 1);
+                        CarWashYellowLight = S7.GetBitAt(read_buffer_DB5, 2, 2);
+                        CarWashDoor1UP = S7.GetBitAt(read_buffer_DB5, 2, 3);
+                        CarWashDoor1DOWN = S7.GetBitAt(read_buffer_DB5, 2, 4);
+                        CarWashDoor2UP = S7.GetBitAt(read_buffer_DB5, 2, 5);
+                        CarWashDoor2DOWN = S7.GetBitAt(read_buffer_DB5, 2, 6);
+                        CarWashWater = S7.GetBitAt(read_buffer_DB5, 2, 7);
+                        CarWashWashingChemicalsFRONT = S7.GetBitAt(read_buffer_DB5, 3, 0);
+                        CarWashWashingChemicalsSIDES = S7.GetBitAt(read_buffer_DB5, 3, 1);
+                        CarWashWashingChemicalsBACK = S7.GetBitAt(read_buffer_DB5, 3, 2);
+                        CarWashWax = S7.GetBitAt(read_buffer_DB5, 3, 3);
+                        CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 4);
+                        CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 5);
+                        CarWashPreWash = S7.GetBitAt(read_buffer_DB5, 3, 6);
+                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 3, 7); 
+                        CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 0); ;
+                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 1); 
                         CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
                         CarWashMEMDoor = S7.GetBitAt(read_buffer_DB5, 10, 0); 
                         CarWashMEMDoorTrig = S7.GetBitAt(read_buffer_DB5, 10, 1);

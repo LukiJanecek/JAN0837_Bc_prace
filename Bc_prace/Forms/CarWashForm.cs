@@ -33,12 +33,12 @@ namespace Bc_prace
         //Buffers variables 
         #region Buffers variables
 
-        //DB11 => Maintain_DB -> 1 struct -> 3 variables -> size 0.2
+        //DB11 => Maintain_DB 
         private int DBNumber_DB11 = 11;
         byte[] read_buffer_DB11;
         byte[] send_buffer_DB11;
 
-        //DB5 => CarWash_DB -> 2 structs -> 23 variables -> size 3.7
+        //DB5 => CarWash_DB 
         private int DBNumber_DB5 = 5;
         byte[] read_buffer_DB5;
         public byte[] previous_buffer_DB5;
@@ -60,14 +60,14 @@ namespace Bc_prace
         public bool CarWashWaitingForOutgoingCar;
         public bool CarWashPerfectWash;
         public bool CarWashPerfectPolish;
+        public bool CarWashPositionShower;
+        public bool CarWashPositionCar;
 
         #endregion
 
         //Output variables 
         #region Output variables 
 
-        public bool CarWashPositionShower;
-        public bool CarWashPositionCar;
         public bool CarWashGreenLight;
         public bool CarWashRedLight;
         public bool CarWashYellowLight;
@@ -168,7 +168,7 @@ namespace Bc_prace
                 statusStripCarWash.Items.Add(lblStatus);
 
                 CarWashPositionCar = true;
-                S7.SetBitAt(send_buffer_DB5, 2, 1, CarWashPositionCar);
+                S7.SetBitAt(send_buffer_DB5, 1, 0, CarWashPositionCar);
 
                 //write to PLC
                 int writeResultDB5_PositionCar = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -198,7 +198,7 @@ namespace Bc_prace
             else
             {
                 CarWashPositionCar = false;
-                S7.SetBitAt(send_buffer_DB5, 2, 1, CarWashPositionCar);
+                S7.SetBitAt(send_buffer_DB5, 1, 0, CarWashPositionCar);
 
                 //write to PLC
                 int writeResultDB5_PositionCar = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -246,14 +246,14 @@ namespace Bc_prace
                 CarWashWaitingForOutgoingCar = chooseOptionFormInstance.CarWashWaitingForOutgoingCar; //?
                 CarWashPerfectWash = chooseOptionFormInstance.CarWashPerfetWash; //no need to make a condition if true
                 CarWashPerfectPolish = chooseOptionFormInstance.CarWashPerfectPolish; //no need to make a condition if true
+                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower;
+                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar;
 
                 #endregion
 
                 //Output variables
                 #region Output variables 
 
-                CarWashPositionShower = chooseOptionFormInstance.CarWashPositionShower; //?
-                CarWashPositionCar = chooseOptionFormInstance.CarWashPositionCar; //?
                 CarWashGreenLight = chooseOptionFormInstance.CarWashGreenLight;
                 CarWashRedLight = chooseOptionFormInstance.CarWashRedLight;
                 CarWashYellowLight = chooseOptionFormInstance.CarWashYellowLight;
@@ -579,7 +579,7 @@ namespace Bc_prace
                     userControlCarWash1.door1UP(CarWashTimeDoorMovement);
 
                     CarWashDoor1UP = true;
-                    S7.SetBitAt(send_buffer_DB5, 2, 5, CarWashDoor1UP);
+                    S7.SetBitAt(send_buffer_DB5, 2, 3, CarWashDoor1UP);
 
                     //write to PLC
                     int writeResultDB5_Door1UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -617,7 +617,7 @@ namespace Bc_prace
                     userControlCarWash1.door1DOWN(CarWashTimeDoorMovement);
 
                     CarWashDoor1DOWN = true;
-                    S7.SetBitAt(send_buffer_DB5, 2, 6, CarWashDoor1DOWN);
+                    S7.SetBitAt(send_buffer_DB5, 2, 4, CarWashDoor1DOWN);
 
                     //write to PLC
                     int writeResultDB5_Door1DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -655,7 +655,7 @@ namespace Bc_prace
                     userControlCarWash1.door2UP(CarWashTimeDoorMovement);
 
                     CarWashDoor2UP = true;
-                    S7.SetBitAt(send_buffer_DB5, 2, 7, CarWashDoor2UP);
+                    S7.SetBitAt(send_buffer_DB5, 2, 5, CarWashDoor2UP);
 
                     //write to PLC
                     int writeResultDB5_Door2UP = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);
@@ -693,7 +693,7 @@ namespace Bc_prace
                     userControlCarWash1.door2DOWN(CarWashTimeDoorMovement);
 
                     CarWashDoor2DOWN = true;
-                    S7.SetBitAt(send_buffer_DB5, 3, 0, CarWashDoor2DOWN);
+                    S7.SetBitAt(send_buffer_DB5, 2, 6, CarWashDoor2DOWN);
 
                     //write to PLC
                     int writeResultDB5_Door2DOWN = client.DBWrite(DBNumber_DB5, 0, send_buffer_DB5.Length, send_buffer_DB5);

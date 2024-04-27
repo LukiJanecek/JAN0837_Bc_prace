@@ -169,7 +169,7 @@ namespace Bc_prace.Controls
             */
             var g = e.Graphics;
 
-            //backgroud
+            //backgroud color
             g.Clear(Color.White);
 
             Draw(g);
@@ -401,6 +401,46 @@ namespace Bc_prace.Controls
                 distance += Convert.ToInt32(Step);
 
                 this.Refresh();
+
+                //Conditions based ond object position -> ElevatorActualFloorSENS
+                #region Conditions based ond object position -> ElevatorActualFloorSENS
+
+                //Cabin is on 1st floor
+                if (yCabin == (y + length * 5 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(1);
+                }
+
+                //Cabin is on 2st floor
+                if (yCabin == (y + length * 4 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(2);
+                }
+
+                //Cabin is on 3rd floor
+                if (yCabin == (y + length * 3 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(3);
+                }
+
+                //Cabin is on 4th floor
+                if (yCabin == (y + length * 2 - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(4);
+                }
+
+                //Cabin is on 5th floor
+                if (yCabin == (y + length - heightCabin))
+                {
+                    if (OnElevatorFloorSENS != null)
+                        OnElevatorFloorSENS(5);
+                }
+
+                #endregion
 
                 //testing
                 if (yCabin == length)

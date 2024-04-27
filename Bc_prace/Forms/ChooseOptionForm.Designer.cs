@@ -129,7 +129,7 @@
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(142, 71);
             btnEnd.TabIndex = 9;
-            btnEnd.Text = "End/close";
+            btnEnd.Text = "End";
             btnEnd.UseVisualStyleBackColor = true;
             btnEnd.Click += btnEnd_Click;
             // 
