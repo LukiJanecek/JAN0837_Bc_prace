@@ -9,7 +9,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bc_prace
+namespace JAN0837_BP
 {
     internal static class Program
     {

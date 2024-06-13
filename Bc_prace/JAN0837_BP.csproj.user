@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Controls\UserControlCarWash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\UserControlCrossroad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\UserControlElevatorCabin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\UserControlElevatorDoor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\UserControlSablona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\ChooseOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ElevatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CarWashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CarWashSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\CrossroadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SablonaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Forms\ElevatorForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
