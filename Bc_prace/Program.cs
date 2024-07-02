@@ -58,12 +58,12 @@ namespace JAN0837_BP
 
                 Application.Run(new ChooseOptionForm());
             }
-#if !DEBUG
+            #if !DEBUG
             catch (Exception ex)
             {
                 ResolveException(ex);
             }
-#endif
+            #endif
             finally
             {
 
@@ -84,7 +84,6 @@ namespace JAN0837_BP
                         break;
                 }
             }
-
         }
 
         public static void UpdateSettings()
@@ -103,16 +102,14 @@ namespace JAN0837_BP
             }
             catch
             {
-
                 try
                 {
-                    // Pokusim se importovat preschozi nastaveni
+                    // Pokusim se importovat predchozi nastaveni
                     string parentFolder = Path.GetDirectoryName(appDataPath);
                     var dirs = Directory.GetDirectories(parentFolder);
                     Dictionary<Version, string> versions = new Dictionary<Version, string>();
                     foreach (var dir in dirs)
                     {
-
                         if (Version.TryParse(Path.GetFileName(dir), out Version version))
                         {
                             versions.Add(version, dir);
@@ -156,7 +153,10 @@ namespace JAN0837_BP
                         AppSettings = new AppSettingsJson<ElevatorSettingsData>(settingsFile);
                         AppSettings.LoadSettings();
                     }
-                    catch { }
+                    catch 
+                    { 
+                    
+                    }
                 }
             }
         }
@@ -170,7 +170,6 @@ namespace JAN0837_BP
             AppLog.GlobalAppPath = Application.UserAppDataPath;
             AppLog.Extension = "log";
             AppLog.ErrPath = "log";
-
         }
 
         /// <summary>

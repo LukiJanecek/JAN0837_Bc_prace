@@ -36,10 +36,10 @@ namespace Bc_prace
 
         //DB11 => Maintain_DB 
         private int DBNumber_DB11 = 11;
-        public byte[] read_buffer_DB11 = new byte[1]; 
+        public byte[] read_buffer_DB11 = new byte[1];
         public byte[] previous_buffer_DB11;
         public byte[] PreviousBufferHash_DB11;
-        public byte[] send_buffer_DB11 = new byte[1]; 
+        public byte[] send_buffer_DB11 = new byte[1];
 
         //DB4 => Elevator_DB 
         private int DBNumber_DB4 = 4;
@@ -50,46 +50,46 @@ namespace Bc_prace
 
         //DB5 => CarWash_DB 
         private int DBNumber_DB5 = 5;
-        public byte[] read_buffer_DB5 = new byte[11]; 
+        public byte[] read_buffer_DB5 = new byte[11];
         public byte[] previous_buffer_DB5;
         public byte[] PreviousBufferHash_DB5;
-        public byte[] send_buffer_DB5 = new byte[11]; 
+        public byte[] send_buffer_DB5 = new byte[11];
 
         //DB14 => Crossroad_DB 
         private int DBNumber_DB14 = 14;
-        public byte[] read_buffer_DB14 = new byte[4]; 
+        public byte[] read_buffer_DB14 = new byte[4];
         public byte[] previous_buffer_DB14;
         public byte[] PreviousBufferHash_DB14;
-        public byte[] send_buffer_DB14 = new byte[4]; 
+        public byte[] send_buffer_DB14 = new byte[4];
         //+ other structs are Timers 
 
         //DB1 => Crossroad_1_DB 
         private int DBNumber_DB1 = 1;
-        public byte[] read_buffer_DB1 = new byte[7]; 
+        public byte[] read_buffer_DB1 = new byte[7];
         public byte[] previous_buffer_DB1;
         public byte[] PreviousBufferHash_DB1;
-        public byte[] send_buffer_DB1 = new byte[7]; 
+        public byte[] send_buffer_DB1 = new byte[7];
 
         //DB19 => Crossroad_2_DB 
         private int DBNumber_DB19 = 19;
-        public byte[] read_buffer_DB19 = new byte[7]; 
+        public byte[] read_buffer_DB19 = new byte[7];
         public byte[] previous_buffer_DB19;
         public byte[] PreviousBufferHash_DB19;
-        public byte[] send_buffer_DB19 = new byte[7]; 
+        public byte[] send_buffer_DB19 = new byte[7];
 
         //DB20 => Crossroad_LeftT_DB 
         private int DBNumber_DB20 = 20;
-        public byte[] read_buffer_DB20 = new byte[6]; 
+        public byte[] read_buffer_DB20 = new byte[6];
         public byte[] previous_buffer_DB20;
         public byte[] PreviousBufferHash_DB20;
-        public byte[] send_buffer_DB20 = new byte[6]; 
+        public byte[] send_buffer_DB20 = new byte[6];
 
         //DB21 => Crossroad_RightT_DB 
         private int DBNumber_DB21 = 21;
-        public byte[] read_buffer_DB21 = new byte[6]; 
+        public byte[] read_buffer_DB21 = new byte[6];
         public byte[] previous_buffer_DB21;
         public byte[] PreviousBufferHash_DB21;
-        public byte[] send_buffer_DB21 = new byte[6]; 
+        public byte[] send_buffer_DB21 = new byte[6];
 
         #endregion
 
@@ -479,7 +479,7 @@ namespace Bc_prace
                 }
 
                 reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, read_buffer_DB4.Length, ref read_buffer_DB4);
-                
+
                 int readResultDB4 = reader.Read();
 
                 if (readResultDB4 == 0)
@@ -552,16 +552,16 @@ namespace Bc_prace
                         //MEM variables 
                         #region MEM varialbes 
 
-                        ElevatorMEMDoor = S7.GetBitAt(read_buffer_DB4, 28, 0); 
-                        ElevatorMEMDoorTrig = S7.GetBitAt(read_buffer_DB4, 28, 1); 
-                        ElevatorMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB4, 28, 2); 
-                        ElevatorMEMMovingtrig = S7.GetBitAt(read_buffer_DB4, 28, 3); 
-                        ElevatorMEMEndMovingTrig = S7.GetBitAt(read_buffer_DB4, 28, 4); 
-                        ElevatorMEMBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 28, 5); 
-                        ElevatorMEMBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 28, 6); 
-                        ElevatorMEMBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 28, 7); 
-                        ElevatorMEMBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 29, 0); 
-                        ElevatorMEMBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 29, 1); 
+                        ElevatorMEMDoor = S7.GetBitAt(read_buffer_DB4, 28, 0);
+                        ElevatorMEMDoorTrig = S7.GetBitAt(read_buffer_DB4, 28, 1);
+                        ElevatorMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB4, 28, 2);
+                        ElevatorMEMMovingtrig = S7.GetBitAt(read_buffer_DB4, 28, 3);
+                        ElevatorMEMEndMovingTrig = S7.GetBitAt(read_buffer_DB4, 28, 4);
+                        ElevatorMEMBTNFloor1 = S7.GetBitAt(read_buffer_DB4, 28, 5);
+                        ElevatorMEMBTNFloor2 = S7.GetBitAt(read_buffer_DB4, 28, 6);
+                        ElevatorMEMBTNFloor3 = S7.GetBitAt(read_buffer_DB4, 28, 7);
+                        ElevatorMEMBTNFloor4 = S7.GetBitAt(read_buffer_DB4, 29, 0);
+                        ElevatorMEMBTNFloor5 = S7.GetBitAt(read_buffer_DB4, 29, 1);
 
                         #endregion
 
@@ -647,11 +647,11 @@ namespace Bc_prace
                         CarWashVarnishProtection = S7.GetBitAt(read_buffer_DB5, 3, 4);
                         CarWashDry = S7.GetBitAt(read_buffer_DB5, 3, 5);
                         CarWashPreWash = S7.GetBitAt(read_buffer_DB5, 3, 6);
-                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 3, 7); 
+                        CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 3, 7);
                         CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 0); ;
-                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 1); 
+                        CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 1);
                         CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
-                        CarWashMEMDoor = S7.GetBitAt(read_buffer_DB5, 10, 0); 
+                        CarWashMEMDoor = S7.GetBitAt(read_buffer_DB5, 10, 0);
                         CarWashMEMDoorTrig = S7.GetBitAt(read_buffer_DB5, 10, 1);
                         CarWashMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB5, 10, 2);
 
@@ -693,7 +693,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB14 = ComputeHash(read_buffer_DB14);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14.Length, ref read_buffer_DB14); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, read_buffer_DB14.Length, ref read_buffer_DB14);
 
                 int readResultDB14 = reader.Read();
 
@@ -758,7 +758,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB1 = ComputeHash(read_buffer_DB1);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1.Length, ref read_buffer_DB1); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB1, 0, read_buffer_DB1.Length, ref read_buffer_DB1);
 
                 int readResultDB1 = reader.Read();
 
@@ -789,7 +789,7 @@ namespace Bc_prace
                         Crossroad1TopGREEN = S7.GetBitAt(read_buffer_DB1, 4, 0);
                         Crossroad1TopYELLOW = S7.GetBitAt(read_buffer_DB1, 4, 1);
                         Crossroad1TopRED = S7.GetBitAt(read_buffer_DB1, 4, 2);
-                                                                        
+
                         Crossroad1LeftGREEN = S7.GetBitAt(read_buffer_DB1, 4, 3);
                         Crossroad1LeftYELLOW = S7.GetBitAt(read_buffer_DB1, 4, 4);
                         Crossroad1LeftRED = S7.GetBitAt(read_buffer_DB1, 4, 5);
@@ -848,7 +848,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB19 = ComputeHash(read_buffer_DB19);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19.Length, ref read_buffer_DB19); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB19, 0, read_buffer_DB19.Length, ref read_buffer_DB19);
 
                 int readResultDB19 = reader.Read();
 
@@ -875,11 +875,11 @@ namespace Bc_prace
                         #region Output variables
 
                         Crossroad2CrosswalkSQ = S7.GetIntAt(read_buffer_DB19, 2);
-                                                
+
                         Crossroad2TopGREEN = S7.GetBitAt(read_buffer_DB19, 4, 0);
                         Crossroad2TopYellow = S7.GetBitAt(read_buffer_DB19, 4, 1);
                         Crossroad2TopRED = S7.GetBitAt(read_buffer_DB19, 4, 2);
-                                                
+
                         Crossroad2LeftGREEN = S7.GetBitAt(read_buffer_DB19, 4, 3);
                         Crossroad2LeftYellow = S7.GetBitAt(read_buffer_DB19, 4, 4);
                         Crossroad2LeftRED = S7.GetBitAt(read_buffer_DB19, 4, 5);
@@ -938,7 +938,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB20 = ComputeHash(read_buffer_DB20);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20.Length, ref read_buffer_DB20); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB20, 0, read_buffer_DB20.Length, ref read_buffer_DB20);
 
                 int readResultDB20 = reader.Read();
 
@@ -963,15 +963,15 @@ namespace Bc_prace
                         #region Output variables
 
                         CrossroadLeftTCrosswalkSQ = S7.GetIntAt(read_buffer_DB20, 2);
-                                                
+
                         CrossroadLeftTTopGREEN = S7.GetBitAt(read_buffer_DB20, 4, 0);
                         CrossroadLeftTTopYellow = S7.GetBitAt(read_buffer_DB20, 4, 1);
                         CrossroadLeftTTopRED = S7.GetBitAt(read_buffer_DB20, 4, 2);
-                                                
+
                         CrossroadLeftTLeftGREEN = S7.GetBitAt(read_buffer_DB20, 4, 3);
                         CrossroadLeftTLeftYellow = S7.GetBitAt(read_buffer_DB20, 4, 4);
                         CrossroadLeftTLeftRED = S7.GetBitAt(read_buffer_DB20, 4, 5);
-                                                
+
                         CrossroadLeftTRightGREEN = S7.GetBitAt(read_buffer_DB20, 4, 6);
                         CrossroadLeftTRightYellow = S7.GetBitAt(read_buffer_DB20, 4, 7);
                         CrossroadLeftTRightRED = S7.GetBitAt(read_buffer_DB20, 5, 0);
@@ -1018,7 +1018,7 @@ namespace Bc_prace
                     PreviousBufferHash_DB21 = ComputeHash(read_buffer_DB21);
                 }
 
-                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21.Length, ref read_buffer_DB21); 
+                reader.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB21, 0, read_buffer_DB21.Length, ref read_buffer_DB21);
 
                 int readResultDB21 = reader.Read();
 
@@ -1043,15 +1043,15 @@ namespace Bc_prace
                         #region Output variables
 
                         CrossroadRightTCrosswalkSQ = S7.GetIntAt(read_buffer_DB21, 2);
-                                                
+
                         CrossroadRightTTopGREEN = S7.GetBitAt(read_buffer_DB21, 4, 0);
                         CrossroadRightTTopYellow = S7.GetBitAt(read_buffer_DB21, 4, 1);
                         CrossroadRightTTopRED = S7.GetBitAt(read_buffer_DB21, 4, 2);
-                                                
+
                         CrossroadRightTLeftGREEN = S7.GetBitAt(read_buffer_DB21, 4, 3);
                         CrossroadRightTLeftYellow = S7.GetBitAt(read_buffer_DB21, 4, 4);
                         CrossroadRightTLeftRED = S7.GetBitAt(read_buffer_DB21, 4, 5);
-                                                
+
                         CrossroadRightTRightGREEN = S7.GetBitAt(read_buffer_DB21, 4, 6);
                         CrossroadRightTRightYellow = S7.GetBitAt(read_buffer_DB21, 4, 7);
                         CrossroadRightTRightRED = S7.GetBitAt(read_buffer_DB21, 5, 0);
@@ -1349,24 +1349,30 @@ namespace Bc_prace
             //10 -> ISOTCP -> TCP/IP protocol -> Ethernet -> zde připojení nefunguje
             client.SetConnectionType(1);
 
-            int plc = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
+            int plcConnect = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
 
-            if (plc == 0)
+            if (plcConnect == 0)
             {
                 statusStripChooseOption.Items.Clear();
                 ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connected";
 
-                //start timer
+                //start Timer_read_from_PLC
                 Timer_read_from_PLC.Start();
                 //set time interval (ms)
                 Timer_read_from_PLC.Interval = 100;
 
+                //btns visibility
                 lblChooseSIM.Visible = true;
                 btnElevator.Visible = true;
                 btnCarWash.Visible = true;
                 btnCrossroad.Visible = true;
+                btnConnect.Visible = false;
+                btnDisconnect.Visible = true;
+
+                //work with folders
+
             }
             else
             {
@@ -1377,11 +1383,39 @@ namespace Bc_prace
 
                 //MessageBox
                 MessageBox.Show("PLC didn´t connected. Please, chech your IP address or PLC itself.\n\n" +
-                    $"Error message: {plc} \n", "Error",
+                    $"Error message: {plcConnect} \n", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
             }
         }
+
+        #endregion
+
+        //Disconnect + messages
+        #region Disconnect from PLC
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            btnDisconnect.Text = "Disconnecting...";
+            statusStripChooseOption.Items.Clear();
+            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Disconnecting from " + txtBoxPLCIP.Text);
+            statusStripChooseOption.Items.Add(lblStat);
+
+            int plcDisconnect = client.Disconnect();
+
+            //stop Timer_read_from_PLC
+            Timer_read_from_PLC.Stop();
+
+            //btns visibility
+            lblChooseSIM.Visible = false;
+            btnElevator.Visible = false;
+            btnCarWash.Visible = false;
+            btnCrossroad.Visible = false;
+            btnConnect.Visible = true;
+            btnDisconnect.Visible = false;
+
+            //work with folders
+
+        }
+
         #endregion
 
         //btn End 
@@ -1426,5 +1460,6 @@ namespace Bc_prace
         }
 
         #endregion
+
     }
 }
