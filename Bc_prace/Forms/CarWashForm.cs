@@ -21,6 +21,13 @@ namespace Bc_prace
 {
     public partial class CarWashForm : Form
     {
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
+
         private ChooseOptionForm chooseOptionFormInstance;
 
         public S7Client client;

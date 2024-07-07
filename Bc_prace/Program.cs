@@ -13,6 +13,13 @@ namespace JAN0837_BP
 {
     internal static class Program
     {
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
+
         public const string SETTINGS_FILE_JSON = "settings.json";
 
         public static AppSettingsJson<ElevatorSettingsData> AppSettings { get; private set; }

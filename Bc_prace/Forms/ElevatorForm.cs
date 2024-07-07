@@ -19,6 +19,13 @@ namespace Bc_prace
 {
     public partial class ElevatorForm : Form
     {
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
+
         private ChooseOptionForm chooseOptionFormInstance;
 
         public S7Client client;
@@ -160,7 +167,6 @@ namespace Bc_prace
         {
             userControlElevatorCabin1.SetControl(this);
         }
-
         
         private void UserControlElevatorCabin1_OnElevatorFloorBTNClick(object sender, string id)
         {
@@ -316,7 +322,6 @@ namespace Bc_prace
                     {
                         //write was successful
                     }
-
                     break;
             }
         }
@@ -1127,7 +1132,6 @@ namespace Bc_prace
                     }
 
                     break;
-
             }
         }
 

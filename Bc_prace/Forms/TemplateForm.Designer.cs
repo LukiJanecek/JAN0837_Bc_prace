@@ -1,6 +1,6 @@
 ﻿namespace Bc_prace.Forms
 {
-    partial class SablonaForm
+    partial class TemplateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@
             userControlSablona1.Size = new Size(881, 599);
             userControlSablona1.TabIndex = 1;
             // 
-            // SablonaForm
+            // TemplateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -82,9 +82,9 @@
             Controls.Add(userControlSablona1);
             Controls.Add(panel1);
             DoubleBuffered = true;
-            Name = "SablonaForm";
-            Text = "Sablona";
-            Load += Sablona_Load;
+            Name = "TemplateForm";
+            Text = "Template";
+            Load += Template_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }

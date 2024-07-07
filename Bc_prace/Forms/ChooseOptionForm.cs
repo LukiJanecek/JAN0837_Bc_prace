@@ -13,6 +13,8 @@ using Microsoft.VisualBasic;
 using Bc_prace.Settings;
 using Sharp7;
 using System.Security.Cryptography;
+using System.Web;
+using Newtonsoft.Json;
 
 namespace Bc_prace
 {
@@ -22,6 +24,13 @@ namespace Bc_prace
 
         //MessageBox control
         private bool errorMessageBoxShown;
+
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
 
         ElevatorForm Program1 = null;
         CarWashForm Program2 = null;
@@ -332,16 +341,16 @@ namespace Bc_prace
 
         public bool Crossroad2TopRED;
         public bool Crossroad2TopGREEN;
-        public bool Crossroad2TopYellow;
+        public bool Crossroad2TopYELLOW;
         public bool Crossroad2LeftRED;
         public bool Crossroad2LeftGREEN;
-        public bool Crossroad2LeftYellow;
+        public bool Crossroad2LeftYELLOW;
         public bool Crossroad2RightRED;
         public bool Crossroad2RightGREEN;
-        public bool Crossroad2RightYellow;
+        public bool Crossroad2RightYELLOW;
         public bool Crossroad2BottomRED;
         public bool Crossroad2BottomGREEN;
-        public bool Crossroad2BottomYellow;
+        public bool Crossroad2BottomYELLOW;
 
         public bool Crossroad2LeftCrosswalkRED1;
         public bool Crossroad2LeftCrosswalkRED2;
@@ -361,13 +370,13 @@ namespace Bc_prace
 
         public bool CrossroadLeftTTopRED;
         public bool CrossroadLeftTTopGREEN;
-        public bool CrossroadLeftTTopYellow;
+        public bool CrossroadLeftTTopYELLOW;
         public bool CrossroadLeftTLeftRED;
         public bool CrossroadLeftTLeftGREEN;
-        public bool CrossroadLeftTLeftYellow;
+        public bool CrossroadLeftTLeftYELLOW;
         public bool CrossroadLeftTRightRED;
         public bool CrossroadLeftTRightGREEN;
-        public bool CrossroadLeftTRightYellow;
+        public bool CrossroadLeftTRightYELLOW;
 
         public bool CrossroadLeftTLeftCrosswalkRED1;
         public bool CrossroadLeftTLeftCrosswalkRED2;
@@ -383,13 +392,13 @@ namespace Bc_prace
 
         public bool CrossroadRightTTopRED;
         public bool CrossroadRightTTopGREEN;
-        public bool CrossroadRightTTopYellow;
+        public bool CrossroadRightTTopYELLOW;
         public bool CrossroadRightTLeftRED;
         public bool CrossroadRightTLeftGREEN;
-        public bool CrossroadRightTLeftYellow;
+        public bool CrossroadRightTLeftYELLOW;
         public bool CrossroadRightTRightRED;
         public bool CrossroadRightTRightGREEN;
-        public bool CrossroadRightTRightYellow;
+        public bool CrossroadRightTRightYELLOW;
 
         public bool CrossroadRightTTopCrosswalkRED1;
         public bool CrossroadRightTTopCrosswalkRED2;
@@ -399,6 +408,8 @@ namespace Bc_prace
         #endregion
 
         #endregion
+
+        //MEMs
 
         #endregion
 
@@ -877,19 +888,19 @@ namespace Bc_prace
                         Crossroad2CrosswalkSQ = S7.GetIntAt(read_buffer_DB19, 2);
 
                         Crossroad2TopGREEN = S7.GetBitAt(read_buffer_DB19, 4, 0);
-                        Crossroad2TopYellow = S7.GetBitAt(read_buffer_DB19, 4, 1);
+                        Crossroad2TopYELLOW = S7.GetBitAt(read_buffer_DB19, 4, 1);
                         Crossroad2TopRED = S7.GetBitAt(read_buffer_DB19, 4, 2);
 
                         Crossroad2LeftGREEN = S7.GetBitAt(read_buffer_DB19, 4, 3);
-                        Crossroad2LeftYellow = S7.GetBitAt(read_buffer_DB19, 4, 4);
+                        Crossroad2LeftYELLOW = S7.GetBitAt(read_buffer_DB19, 4, 4);
                         Crossroad2LeftRED = S7.GetBitAt(read_buffer_DB19, 4, 5);
 
                         Crossroad2BottomGREEN = S7.GetBitAt(read_buffer_DB19, 4, 6);
-                        Crossroad2BottomYellow = S7.GetBitAt(read_buffer_DB19, 4, 7);
+                        Crossroad2BottomYELLOW = S7.GetBitAt(read_buffer_DB19, 4, 7);
                         Crossroad2BottomRED = S7.GetBitAt(read_buffer_DB19, 5, 0);
 
                         Crossroad2RightGREEN = S7.GetBitAt(read_buffer_DB19, 5, 1);
-                        Crossroad2RightYellow = S7.GetBitAt(read_buffer_DB19, 5, 2);
+                        Crossroad2RightYELLOW = S7.GetBitAt(read_buffer_DB19, 5, 2);
                         Crossroad2RightRED = S7.GetBitAt(read_buffer_DB19, 5, 3);
 
                         Crossroad2RightCrosswalkRED1 = S7.GetBitAt(read_buffer_DB19, 5, 4);
@@ -965,15 +976,15 @@ namespace Bc_prace
                         CrossroadLeftTCrosswalkSQ = S7.GetIntAt(read_buffer_DB20, 2);
 
                         CrossroadLeftTTopGREEN = S7.GetBitAt(read_buffer_DB20, 4, 0);
-                        CrossroadLeftTTopYellow = S7.GetBitAt(read_buffer_DB20, 4, 1);
+                        CrossroadLeftTTopYELLOW = S7.GetBitAt(read_buffer_DB20, 4, 1);
                         CrossroadLeftTTopRED = S7.GetBitAt(read_buffer_DB20, 4, 2);
 
                         CrossroadLeftTLeftGREEN = S7.GetBitAt(read_buffer_DB20, 4, 3);
-                        CrossroadLeftTLeftYellow = S7.GetBitAt(read_buffer_DB20, 4, 4);
+                        CrossroadLeftTLeftYELLOW = S7.GetBitAt(read_buffer_DB20, 4, 4);
                         CrossroadLeftTLeftRED = S7.GetBitAt(read_buffer_DB20, 4, 5);
 
                         CrossroadLeftTRightGREEN = S7.GetBitAt(read_buffer_DB20, 4, 6);
-                        CrossroadLeftTRightYellow = S7.GetBitAt(read_buffer_DB20, 4, 7);
+                        CrossroadLeftTRightYELLOW = S7.GetBitAt(read_buffer_DB20, 4, 7);
                         CrossroadLeftTRightRED = S7.GetBitAt(read_buffer_DB20, 5, 0);
 
                         CrossroadLeftTLeftCrosswalkRED1 = S7.GetBitAt(read_buffer_DB20, 5, 1);
@@ -1045,15 +1056,15 @@ namespace Bc_prace
                         CrossroadRightTCrosswalkSQ = S7.GetIntAt(read_buffer_DB21, 2);
 
                         CrossroadRightTTopGREEN = S7.GetBitAt(read_buffer_DB21, 4, 0);
-                        CrossroadRightTTopYellow = S7.GetBitAt(read_buffer_DB21, 4, 1);
+                        CrossroadRightTTopYELLOW = S7.GetBitAt(read_buffer_DB21, 4, 1);
                         CrossroadRightTTopRED = S7.GetBitAt(read_buffer_DB21, 4, 2);
 
                         CrossroadRightTLeftGREEN = S7.GetBitAt(read_buffer_DB21, 4, 3);
-                        CrossroadRightTLeftYellow = S7.GetBitAt(read_buffer_DB21, 4, 4);
+                        CrossroadRightTLeftYELLOW = S7.GetBitAt(read_buffer_DB21, 4, 4);
                         CrossroadRightTLeftRED = S7.GetBitAt(read_buffer_DB21, 4, 5);
 
                         CrossroadRightTRightGREEN = S7.GetBitAt(read_buffer_DB21, 4, 6);
-                        CrossroadRightTRightYellow = S7.GetBitAt(read_buffer_DB21, 4, 7);
+                        CrossroadRightTRightYELLOW = S7.GetBitAt(read_buffer_DB21, 4, 7);
                         CrossroadRightTRightRED = S7.GetBitAt(read_buffer_DB21, 5, 0);
 
                         CrossroadRightTTopCrosswalkRED1 = S7.GetBitAt(read_buffer_DB21, 5, 1);
@@ -1173,11 +1184,55 @@ namespace Bc_prace
 
         private void ChooseOption_Load(object sender, EventArgs e)
         {
+            //file verification
+            CreateFileIfNotExists(backupJSONFilePath);
+            CreateFileIfNotExists(ElevatroDBJSONFilePath);
+            CreateFileIfNotExists(CarWashDBJSONFilePath);
+            CreateFileIfNotExists(CrossroadDBJSONFilePath);
+            CreateFileIfNotExists(logger_file);
+
+            //visibility 
             lblChooseSIM.Visible = false;
             btnElevator.Visible = false;
             btnCarWash.Visible = false;
             btnCrossroad.Visible = false;
         }
+
+        //Functions for work with JSON files
+        #region Functions for work with JSON files
+        private void CreateFileIfNotExists(string relativePath)
+        {
+            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+            string directory = Path.GetDirectoryName(fullPath);
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            if (!File.Exists(fullPath))
+            {
+                File.Create(fullPath).Dispose(); 
+            }
+        }
+
+        public void WriteDataToFileJSON<T>(string filePath, T data)
+        {
+            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+            File.WriteAllText(filePath, jsonData);
+        }
+
+        public static T ReadDataFromFile<T>(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string jsonData = File.ReadAllText(filePath);
+                return JsonConvert.DeserializeObject<T>(jsonData);
+            }
+            return default(T);
+        }
+
+        #endregion
 
         //Choices and messages 
         #region Choose your simulation
@@ -1371,7 +1426,8 @@ namespace Bc_prace
                 btnConnect.Visible = false;
                 btnDisconnect.Visible = true;
 
-                //work with folders
+                //work with .json file
+
 
             }
             else
@@ -1412,7 +1468,7 @@ namespace Bc_prace
             btnConnect.Visible = true;
             btnDisconnect.Visible = false;
 
-            //work with folders
+            //work with .json file
 
         }
 
@@ -1446,7 +1502,7 @@ namespace Bc_prace
 
                         //MessageBox
                         MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                                $"Error message: {writeResultDB11} \n", "Error",
+                            $"Error message: {writeResultDB11} \n", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
@@ -1454,6 +1510,8 @@ namespace Bc_prace
                 //Tia disconnect
                 client.Disconnect();
             }
+
+            //work with .json file
 
             //close program
             this.Close();

@@ -11,8 +11,14 @@ using System.Windows.Forms;
 
 namespace Bc_prace.Forms
 {
-    public partial class SablonaForm : Form
+    public partial class TemplateForm : Form
     {
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
 
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -21,12 +27,12 @@ namespace Bc_prace.Forms
         //MessageBox control
         private bool errorMessageBoxShown = false;
 
-        //Your variables 
-        #region Your variables 
+        //Variables 
+        #region Variables 
 
         #endregion
 
-        public SablonaForm(ChooseOptionForm chooseOptionFormInstance)
+        public TemplateForm(ChooseOptionForm chooseOptionFormInstance)
         {
             InitializeComponent();
             //this.Minimumsize = new Size(x, y);
@@ -51,7 +57,7 @@ namespace Bc_prace.Forms
             }
         }
 
-        private void Sablona_Load(object sender, EventArgs e)
+        private void Template_Load(object sender, EventArgs e)
         {
 
         }

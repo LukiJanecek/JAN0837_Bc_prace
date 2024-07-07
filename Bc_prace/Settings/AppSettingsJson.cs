@@ -13,6 +13,8 @@ namespace Bc_prace.Settings
 {
     public class AppSettingsJson<T> where T : new()
     {
+        int tries = 0;
+
         private object locker = new object();
 
         public AppSettingsJson(string settingsFile)
@@ -40,7 +42,6 @@ namespace Bc_prace.Settings
             Data = JsonConvert.DeserializeObject<T>(json);
         }
 
-
         public void SaveSettings(string message = "Unknown call")
         {
             SaveSettings(this.settingsFile, message);
@@ -51,7 +52,7 @@ namespace Bc_prace.Settings
             tries = 0;
             SaveSettingsSafe(fileName, message);
         }
-        int tries = 0;
+        
         private void SaveSettingsSafe(string fileName, string message)
         {
 
@@ -89,7 +90,6 @@ namespace Bc_prace.Settings
                     AppLog.Log("SaveSettingsSafe: Settings probably corrupted.", AppLog.MessageType.Exclamation);
                 }
             }
-
         }
 
         private bool IsDataEqual(T data1, T data2)

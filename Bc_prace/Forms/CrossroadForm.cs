@@ -19,6 +19,13 @@ namespace Bc_prace
 {
     public partial class CrossroadForm : Form
     {
+        //files
+        public const string backupJSONFilePath = "~/Data/backupFile.json";
+        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
+        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
+        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
+        public const string logger_file = "~/Data/Logger_file.json";
+
         private ChooseOptionForm chooseOptionFormInstance;
 
         public S7Client client;
@@ -667,7 +674,6 @@ namespace Bc_prace
                     }
 
                     break;
-
             }
         }
 
@@ -778,16 +784,16 @@ namespace Bc_prace
 
                 Crossroad2TopRED = chooseOptionFormInstance.Crossroad2TopRED;
                 Crossroad2TopGREEN = chooseOptionFormInstance.Crossroad2TopGREEN;
-                Crossroad2TopYELLOW = chooseOptionFormInstance.Crossroad2TopYellow;
+                Crossroad2TopYELLOW = chooseOptionFormInstance.Crossroad2TopYELLOW;
                 Crossroad2LeftRED = chooseOptionFormInstance.Crossroad2LeftRED;
                 Crossroad2LeftGREEN = chooseOptionFormInstance.Crossroad2LeftGREEN;
-                Crossroad2LeftYELLOW = chooseOptionFormInstance.Crossroad2LeftYellow;
+                Crossroad2LeftYELLOW = chooseOptionFormInstance.Crossroad2LeftYELLOW;
                 Crossroad2RightRED = chooseOptionFormInstance.Crossroad2RightRED;
                 Crossroad2RightGREEN = chooseOptionFormInstance.Crossroad2RightGREEN;
-                Crossroad2RightYELLOW = chooseOptionFormInstance.Crossroad2RightYellow;
+                Crossroad2RightYELLOW = chooseOptionFormInstance.Crossroad2RightYELLOW;
                 Crossroad2BottomRED = chooseOptionFormInstance.Crossroad2BottomRED;
                 Crossroad2BottomGREEN = chooseOptionFormInstance.Crossroad2BottomGREEN;
-                Crossroad2BottomYELLOW = chooseOptionFormInstance.Crossroad2BottomYellow;
+                Crossroad2BottomYELLOW = chooseOptionFormInstance.Crossroad2BottomYELLOW;
 
                 Crossroad2LeftCrosswalkRED1 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED1;
                 Crossroad2LeftCrosswalkRED2 = chooseOptionFormInstance.Crossroad2LeftCrosswalkRED2;
@@ -807,13 +813,13 @@ namespace Bc_prace
 
                 CrossroadLeftTTopRED = chooseOptionFormInstance.CrossroadLeftTTopRED;
                 CrossroadLeftTTopGREEN = chooseOptionFormInstance.CrossroadLeftTTopGREEN;
-                CrossroadLeftTTopYELLOW = chooseOptionFormInstance.CrossroadLeftTTopYellow;
+                CrossroadLeftTTopYELLOW = chooseOptionFormInstance.CrossroadLeftTTopYELLOW;
                 CrossroadLeftTLeftRED = chooseOptionFormInstance.CrossroadLeftTLeftRED;
                 CrossroadLeftTLeftGREEN = chooseOptionFormInstance.CrossroadLeftTLeftGREEN;
-                CrossroadLeftTLeftYELLOW = chooseOptionFormInstance.CrossroadLeftTLeftYellow;
+                CrossroadLeftTLeftYELLOW = chooseOptionFormInstance.CrossroadLeftTLeftYELLOW;
                 CrossroadLeftTRightRED = chooseOptionFormInstance.CrossroadLeftTRightRED;
                 CrossroadLeftTRightGREEN = chooseOptionFormInstance.CrossroadLeftTRightGREEN;
-                CrossroadLeftTRightYELLOW = chooseOptionFormInstance.CrossroadLeftTRightYellow;
+                CrossroadLeftTRightYELLOW = chooseOptionFormInstance.CrossroadLeftTRightYELLOW;
 
                 CrossroadLeftTLeftCrosswalkRED1 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED1;
                 CrossroadLeftTLeftCrosswalkRED2 = chooseOptionFormInstance.CrossroadLeftTLeftCrosswalkRED2;
@@ -829,13 +835,13 @@ namespace Bc_prace
 
                 CrossroadRightTTopRED = chooseOptionFormInstance.CrossroadRightTTopRED;
                 CrossroadRightTTopGREEN = chooseOptionFormInstance.CrossroadRightTTopGREEN;
-                CrossroadRightTTopYELLOW = chooseOptionFormInstance.CrossroadRightTTopYellow;
+                CrossroadRightTTopYELLOW = chooseOptionFormInstance.CrossroadRightTTopYELLOW;
                 CrossroadRightTLeftRED = chooseOptionFormInstance.CrossroadRightTLeftRED;
                 CrossroadRightTLeftGREEN = chooseOptionFormInstance.CrossroadRightTLeftGREEN;
-                CrossroadRightTLeftYELLOW = chooseOptionFormInstance.CrossroadRightTLeftYellow;
+                CrossroadRightTLeftYELLOW = chooseOptionFormInstance.CrossroadRightTLeftYELLOW;
                 CrossroadRightTRightRED = chooseOptionFormInstance.CrossroadRightTRightRED;
                 CrossroadRightTRightGREEN = chooseOptionFormInstance.CrossroadRightTRightGREEN;
-                CrossroadRightTRightYELLOW = chooseOptionFormInstance.CrossroadRightTRightYellow;
+                CrossroadRightTRightYELLOW = chooseOptionFormInstance.CrossroadRightTRightYELLOW;
 
                 CrossroadRightTTopCrosswalkRED1 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED1;
                 CrossroadRightTTopCrosswalkRED2 = chooseOptionFormInstance.CrossroadRightTTopCrosswalkRED2;

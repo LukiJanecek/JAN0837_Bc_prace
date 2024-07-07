@@ -1,43 +1,59 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\",
+  "WorkspaceRootPath": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\dokumenty\\v\u0161\\bc_prace\\bc\\c#\\final\\jan0837_bc_prace\\bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\forms\\templateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\templateform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\carwashform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\classes\\elevatordb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\classes\\elevatordb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\classes\\carwash_db_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\classes\\carwash_db_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\Bc_prace.csproj|solutionrelative:bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\forms\\crossroadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\crossroadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\classes\\crossroaddb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\classes\\crossroaddb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\classes\\maintaindb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\classes\\maintaindb_class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\bc_prace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\settings\\appsettingsjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\settings\\appsettingsjson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
+      "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 401,
+          "DockedWidth": 200,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -47,8 +63,8 @@
           ]
         },
         {
-          "DockedHeight": 241,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 1638,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -56,96 +72,151 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CarWashForm.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
-              "RelativeToolTip": "Bc_prace\\Forms\\CarWashForm.cs",
-              "ViewState": "AQIAAHsCAAAAAAAAAAAUwJQCAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-07T07:52:55.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ElevatorForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs [Design]",
-              "RelativeToolTip": "Bc_prace\\Forms\\ElevatorForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:16:05.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CarWashForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs [Design]",
-              "RelativeToolTip": "Bc_prace\\Forms\\CarWashForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:13:56.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ElevatorForm.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
-              "RelativeToolTip": "Bc_prace\\Forms\\ElevatorForm.cs",
-              "ViewState": "AQIAAOAFAAAAAAAAAAAmwA8GAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T21:01:17.457Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ChooseOptionForm.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ViewState": "AQIAAB4FAAAAAAAAAAAmwEcFAAAmAAAA",
+              "ViewState": "AQIAAHUEAAAAAAAAAAAhwH4EAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T12:18:48.268Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CarWashForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\CarWashForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CarWashForm.cs [Design]",
-              "RelativeToolTip": "Bc_prace\\Forms\\CarWashForm.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "ElevatorForm.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
+              "RelativeToolTip": "Bc_prace\\Forms\\ElevatorForm.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAADwv6oAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-20T06:38:15.198Z"
+              "WhenOpened": "2024-07-07T13:35:42.063Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "CrossroadForm.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\CrossroadForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
+              "RelativeToolTip": "Bc_prace\\Forms\\CrossroadForm.cs",
+              "ViewState": "AQIAAAMBAAAAAAAAAIAwwCgBAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T15:27:59.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TemplateForm.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TemplateForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\TemplateForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TemplateForm.cs",
+              "RelativeToolTip": "Bc_prace\\Forms\\TemplateForm.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAgwDwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:16:21.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ElevatorForm.cs",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ElevatorForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\Dokumenty\\V\u0160\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ElevatorForm.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\ElevatorForm.cs",
               "ViewState": "AQIAACcLAAAAAAAAAAAqwGwLAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-02T16:17:04.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Program.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
+              "RelativeToolTip": "Bc_prace\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-02T10:38:32.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppSettingsJson.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Settings\\AppSettingsJson.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Settings\\AppSettingsJson.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Settings\\AppSettingsJson.cs",
+              "RelativeToolTip": "Bc_prace\\Settings\\AppSettingsJson.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA1wFsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T12:31:52.907Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 11,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 839,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ElevatorDB_Class.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\ElevatorDB_Class.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Classes\\ElevatorDB_Class.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\ElevatorDB_Class.cs",
+              "RelativeToolTip": "Bc_prace\\Classes\\ElevatorDB_Class.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAzwEkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:14:34.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarWash_DB_Class.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\CarWash_DB_Class.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Classes\\CarWash_DB_Class.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\CarWash_DB_Class.cs",
+              "RelativeToolTip": "Bc_prace\\Classes\\CarWash_DB_Class.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:15:30.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CrossroadDB_Class.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\CrossroadDB_Class.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Classes\\CrossroadDB_Class.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\CrossroadDB_Class.cs",
+              "RelativeToolTip": "Bc_prace\\Classes\\CrossroadDB_Class.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:15:08.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MaintainDB_Class.cs",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\MaintainDB_Class.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Classes\\MaintainDB_Class.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Classes\\MaintainDB_Class.cs",
+              "RelativeToolTip": "Bc_prace\\Classes\\MaintainDB_Class.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T14:14:17.713Z",
+              "EditorCaption": ""
             }
           ]
         }
