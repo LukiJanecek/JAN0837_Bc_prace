@@ -15,6 +15,7 @@ using Sharp7;
 using System.Security.Cryptography;
 using System.Web;
 using Newtonsoft.Json;
+using JAN0837_BP.Classes;
 
 namespace Bc_prace
 {
@@ -26,6 +27,7 @@ namespace Bc_prace
         private bool errorMessageBoxShown;
 
         //files
+        public const string testJSONFilePath = "/Data/Test.json"; //~
         public const string backupJSONFilePath = "~/Data/backupFile.json";
         public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
         public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
@@ -413,6 +415,413 @@ namespace Bc_prace
 
         #endregion
 
+        public static OperationResults CalculateResults()
+        {
+            OperationResults results = new OperationResults
+            {
+                Sum_3_3 = 3 + 3,
+                Concatenate_3_3 = "3" + "3",
+                Concatenate_3_String3 = 3 + "3",
+                Concatenate_String3_3 = "3" + 3,
+                Expression_3_3_3 = 3 + 3 - 3,
+                Expression_String3_String3_String3 = int.Parse("3") + int.Parse("3") - int.Parse("3")
+            };
+
+            return results;
+        }
+
+        public ChooseOptionForm()
+        {
+            InitializeComponent();
+            this.MinimumSize = new Size(450, 300);
+        }
+
+        private void ChooseOption_Load(object sender, EventArgs e)
+        {
+            string fullPath = Path.Combine(Application.StartupPath, testJSONFilePath);
+            EnsureFileExists(fullPath);
+
+            //file verification
+            /*
+            CreateFileIfNotExists(testJSONFilePath);
+            CreateFileIfNotExists(backupJSONFilePath);
+            CreateFileIfNotExists(ElevatroDBJSONFilePath);
+            CreateFileIfNotExists(CarWashDBJSONFilePath);
+            CreateFileIfNotExists(CrossroadDBJSONFilePath);
+            CreateFileIfNotExists(logger_file);
+            */
+
+            //visibility 
+            lblChooseSIM.Visible = false;
+            btnElevator.Visible = false;
+            btnCarWash.Visible = false;
+            btnCrossroad.Visible = false;
+
+            //test json 
+            OperationResults results = CalculateResults();
+            WriteDataToFileJSON(testJSONFilePath, results);
+
+            string fileContent = File.ReadAllText(fullPath);
+        }
+
+        //Functions for work with JSON files
+        #region Functions for work with JSON files
+        private void CreateFileIfNotExists(string relativePath)
+        {
+            try
+            {
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+                string directory = Path.GetDirectoryName(fullPath);
+
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                if (!File.Exists(fullPath))
+                {
+                    File.Create(fullPath).Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+        private void EnsureFileExists(string filePath)
+        {
+            try
+            {
+                string directoryPath = Path.GetDirectoryName(filePath);
+
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                    Console.WriteLine("Directory created: " + directoryPath);
+
+                    //MessageBox
+                    MessageBox.Show($"Error: \n" + "Directory created: " + directoryPath, "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+
+                if (!File.Exists(filePath))
+                {
+                    File.Create(filePath).Close(); // Vytvoříme prázdný soubor a zavřeme ho
+                    Console.WriteLine("File created: " + filePath);
+
+                    //MessageBox
+                    MessageBox.Show($"Error: \n" + "File created: " + filePath, "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                else
+                {
+                    Console.WriteLine("File already exists: " + filePath);
+                    
+                    //MessageBox
+                    MessageBox.Show($"Error: \n" + "File already exists: " + filePath, "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessageBoxShown = true;
+
+                //MessageBox
+                MessageBox.Show($"Error: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        public void WriteDataToFileJSON<T>(string filePath, T data)
+        {
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
+                File.WriteAllText(filePath, jsonData);
+            }
+            catch (Exception ex) 
+            {
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+        public static T ReadDataFromFile<T>(string filePath)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (File.Exists(filePath))
+            {
+                string jsonData = File.ReadAllText(filePath);
+                return JsonConvert.DeserializeObject<T>(jsonData);
+            }
+
+            return default(T);
+        }
+
+        #endregion
+
+        //Choices and messages 
+        #region Choose your simulation
+        private void btnProgram1_Click(object sender, EventArgs e)
+        {
+            if (!program1Opened)
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+                Option1 = true;
+                S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
+
+                //write to PLC
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResultDB11} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                Program1 = new ElevatorForm(this);
+                Program1.Show();
+                program1Opened = true;
+
+                Program1.FormClosed += (sender, e) => { program1Opened = false; };
+            }
+            else
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 1 is already running.");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+                if (Program1 != null && !Program1.IsDisposed)
+                {
+                    Program1.BringToFront();
+                }
+            }
+        }
+
+        private void btnProgram2_Click(object sender, EventArgs e)
+        {
+            if (!program2Opened)
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+                Option2 = true;
+                S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
+
+                //write to PLC
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResultDB11} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                Program2 = new CarWashForm(this);
+                Program2.Show();
+                program2Opened = true;
+
+                Program2.FormClosed += (sender, e) => { program2Opened = false; };
+            }
+            else
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 2 is already running");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+                if (Program2 != null && !Program2.IsDisposed)
+                {
+                    Program2.BringToFront();
+                }
+            }
+        }
+
+        private void btnProgram3_Click(object sender, EventArgs e)
+        {
+            if (!program3Opened)
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+                Option3 = true;
+                S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
+
+                //write to PLC
+                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
+                if (writeResultDB11 == 0)
+                {
+                    //write was successful
+                }
+                else
+                {
+                    //write error
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
+                            $"Error message: {writeResultDB11} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                Program3 = new CrossroadForm(this);
+                Program3.Show();
+                program3Opened = true;
+
+                Program3.FormClosed += (sender, e) => { program3Opened = false; };
+            }
+            else
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 3 is already running");
+                statusStripChooseOption.Items.Add(lblStatus);
+
+
+                if (Program3 != null && !Program3.IsDisposed)
+                {
+                    Program3.BringToFront();
+                }
+            }
+        }
+        #endregion
+
+        //Connection + messages
+        #region Connecting to PLC 
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            btnConnect.Text = "Connecting...";
+            statusStripChooseOption.Items.Clear();
+            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text);
+            statusStripChooseOption.Items.Add(lblStat);
+
+            //0 -> MPI -> Multi Point Interface -> zde připojení nefunguje 
+            //1 -> PPI -> Point to Point interface
+            //2 -> OP -> Engineering point
+            //3 -> S7 Basic -> S7 communication using Ethernet or Profibus
+            //10 -> ISOTCP -> TCP/IP protocol -> Ethernet -> zde připojení nefunguje
+            client.SetConnectionType(1);
+
+            int plcConnect = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
+
+            if (plcConnect == 0)
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
+                statusStripChooseOption.Items.Add(lblStatus);
+                btnConnect.Text = "Connected";
+
+                //start Timer_read_from_PLC
+                Timer_read_from_PLC.Start();
+                //set time interval (ms)
+                Timer_read_from_PLC.Interval = 100;
+
+                //btns visibility
+                lblChooseSIM.Visible = true;
+                btnElevator.Visible = true;
+                btnCarWash.Visible = true;
+                btnCrossroad.Visible = true;
+                btnConnect.Visible = false;
+                btnDisconnect.Visible = true;
+
+                //work with .json file
+
+
+            }
+            else
+            {
+                statusStripChooseOption.Items.Clear();
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text + "FAILED! Please, chech your IP address or PLC itself.");
+                statusStripChooseOption.Items.Add(lblStatus);
+                btnConnect.Text = "Connect";
+
+                //MessageBox
+                MessageBox.Show("PLC didn´t connected. Please, chech your IP address or PLC itself.\n\n" +
+                    $"Error message: {plcConnect} \n", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        #endregion
+
+        //Disconnect + messages
+        #region Disconnect from PLC
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            btnDisconnect.Text = "Disconnecting...";
+            statusStripChooseOption.Items.Clear();
+            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Disconnecting from " + txtBoxPLCIP.Text);
+            statusStripChooseOption.Items.Add(lblStat);
+
+            int plcDisconnect = client.Disconnect();
+
+            //stop Timer_read_from_PLC
+            Timer_read_from_PLC.Stop();
+
+            //btns visibility
+            lblChooseSIM.Visible = false;
+            btnElevator.Visible = false;
+            btnCarWash.Visible = false;
+            btnCrossroad.Visible = false;
+            btnConnect.Visible = true;
+            btnDisconnect.Visible = false;
+
+            //work with .json file
+
+        }
+
+        #endregion
+        
         //Tia variables
         #region Tia connection
 
@@ -1141,9 +1550,11 @@ namespace Bc_prace
             {
                 if (!errorMessageBoxShown)
                 {
+                    errorMessageBoxShown = true;
+
                     //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
         }
@@ -1175,305 +1586,7 @@ namespace Bc_prace
         }
 
         #endregion
-
-        public ChooseOptionForm()
-        {
-            InitializeComponent();
-            this.MinimumSize = new Size(450, 300);
-        }
-
-        private void ChooseOption_Load(object sender, EventArgs e)
-        {
-            //file verification
-            CreateFileIfNotExists(backupJSONFilePath);
-            CreateFileIfNotExists(ElevatroDBJSONFilePath);
-            CreateFileIfNotExists(CarWashDBJSONFilePath);
-            CreateFileIfNotExists(CrossroadDBJSONFilePath);
-            CreateFileIfNotExists(logger_file);
-
-            //visibility 
-            lblChooseSIM.Visible = false;
-            btnElevator.Visible = false;
-            btnCarWash.Visible = false;
-            btnCrossroad.Visible = false;
-        }
-
-        //Functions for work with JSON files
-        #region Functions for work with JSON files
-        private void CreateFileIfNotExists(string relativePath)
-        {
-            string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-            string directory = Path.GetDirectoryName(fullPath);
-
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-
-            if (!File.Exists(fullPath))
-            {
-                File.Create(fullPath).Dispose(); 
-            }
-        }
-
-        public void WriteDataToFileJSON<T>(string filePath, T data)
-        {
-            string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
-            File.WriteAllText(filePath, jsonData);
-        }
-
-        public static T ReadDataFromFile<T>(string filePath)
-        {
-            if (File.Exists(filePath))
-            {
-                string jsonData = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<T>(jsonData);
-            }
-            return default(T);
-        }
-
-        #endregion
-
-        //Choices and messages 
-        #region Choose your simulation
-        private void btnProgram1_Click(object sender, EventArgs e)
-        {
-            if (!program1Opened)
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 1");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-                Option1 = true;
-                S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
-
-                //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-                if (writeResultDB11 == 0)
-                {
-                    //write was successful
-                }
-                else
-                {
-                    //write error
-                    if (!errorMessageBoxShown)
-                    {
-                        errorMessageBoxShown = true;
-
-                        //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResultDB11} \n", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    }
-                }
-
-                Program1 = new ElevatorForm(this);
-                Program1.Show();
-                program1Opened = true;
-
-                Program1.FormClosed += (sender, e) => { program1Opened = false; };
-            }
-            else
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 1 is already running.");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-                if (Program1 != null && !Program1.IsDisposed)
-                {
-                    Program1.BringToFront();
-                }
-            }
-        }
-
-        private void btnProgram2_Click(object sender, EventArgs e)
-        {
-            if (!program2Opened)
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 2");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-                Option2 = true;
-                S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
-
-                //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-                if (writeResultDB11 == 0)
-                {
-                    //write was successful
-                }
-                else
-                {
-                    //write error
-                    if (!errorMessageBoxShown)
-                    {
-                        errorMessageBoxShown = true;
-
-                        //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResultDB11} \n", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    }
-                }
-
-                Program2 = new CarWashForm(this);
-                Program2.Show();
-                program2Opened = true;
-
-                Program2.FormClosed += (sender, e) => { program2Opened = false; };
-            }
-            else
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 2 is already running");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-                if (Program2 != null && !Program2.IsDisposed)
-                {
-                    Program2.BringToFront();
-                }
-            }
-        }
-
-        private void btnProgram3_Click(object sender, EventArgs e)
-        {
-            if (!program3Opened)
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Running Program 3");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-                Option3 = true;
-                S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
-
-                //write to PLC
-                int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
-                if (writeResultDB11 == 0)
-                {
-                    //write was successful
-                }
-                else
-                {
-                    //write error
-                    if (!errorMessageBoxShown)
-                    {
-                        errorMessageBoxShown = true;
-
-                        //MessageBox
-                        MessageBox.Show("BE doesn't work properly. Data could´t be written to DB11!!! \n\n" +
-                            $"Error message: {writeResultDB11} \n", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                    }
-                }
-
-                Program3 = new CrossroadForm(this);
-                Program3.Show();
-                program3Opened = true;
-
-                Program3.FormClosed += (sender, e) => { program3Opened = false; };
-            }
-            else
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Program 3 is already running");
-                statusStripChooseOption.Items.Add(lblStatus);
-
-
-                if (Program3 != null && !Program3.IsDisposed)
-                {
-                    Program3.BringToFront();
-                }
-            }
-        }
-        #endregion
-
-        //Connection + messages
-        #region Connecting to PLC 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            btnConnect.Text = "Connecting...";
-            statusStripChooseOption.Items.Clear();
-            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text);
-            statusStripChooseOption.Items.Add(lblStat);
-
-            //0 -> MPI -> Multi Point Interface -> zde připojení nefunguje 
-            //1 -> PPI -> Point to Point interface
-            //2 -> OP -> Engineering point
-            //3 -> S7 Basic -> S7 communication using Ethernet or Profibus
-            //10 -> ISOTCP -> TCP/IP protocol -> Ethernet -> zde připojení nefunguje
-            client.SetConnectionType(1);
-
-            int plcConnect = client.ConnectTo(txtBoxPLCIP.Text, 0, 1);
-
-            if (plcConnect == 0)
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connected to " + txtBoxPLCIP.Text);
-                statusStripChooseOption.Items.Add(lblStatus);
-                btnConnect.Text = "Connected";
-
-                //start Timer_read_from_PLC
-                Timer_read_from_PLC.Start();
-                //set time interval (ms)
-                Timer_read_from_PLC.Interval = 100;
-
-                //btns visibility
-                lblChooseSIM.Visible = true;
-                btnElevator.Visible = true;
-                btnCarWash.Visible = true;
-                btnCrossroad.Visible = true;
-                btnConnect.Visible = false;
-                btnDisconnect.Visible = true;
-
-                //work with .json file
-
-
-            }
-            else
-            {
-                statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text + "FAILED! Please, chech your IP address or PLC itself.");
-                statusStripChooseOption.Items.Add(lblStatus);
-                btnConnect.Text = "Connect";
-
-                //MessageBox
-                MessageBox.Show("PLC didn´t connected. Please, chech your IP address or PLC itself.\n\n" +
-                    $"Error message: {plcConnect} \n", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-        }
-
-        #endregion
-
-        //Disconnect + messages
-        #region Disconnect from PLC
-        private void btnDisconnect_Click(object sender, EventArgs e)
-        {
-            btnDisconnect.Text = "Disconnecting...";
-            statusStripChooseOption.Items.Clear();
-            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Disconnecting from " + txtBoxPLCIP.Text);
-            statusStripChooseOption.Items.Add(lblStat);
-
-            int plcDisconnect = client.Disconnect();
-
-            //stop Timer_read_from_PLC
-            Timer_read_from_PLC.Stop();
-
-            //btns visibility
-            lblChooseSIM.Visible = false;
-            btnElevator.Visible = false;
-            btnCarWash.Visible = false;
-            btnCrossroad.Visible = false;
-            btnConnect.Visible = true;
-            btnDisconnect.Visible = false;
-
-            //work with .json file
-
-        }
-
-        #endregion
-
+        
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
@@ -1518,6 +1631,5 @@ namespace Bc_prace
         }
 
         #endregion
-
     }
 }
