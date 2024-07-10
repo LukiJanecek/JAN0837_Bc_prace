@@ -28,12 +28,13 @@ namespace Bc_prace
         private bool errorMessageBoxShown;
 
         //files
-        public const string testJSONFilePath = "/Data/Test.json"; //~
-        public const string backupJSONFilePath = "~/Data/backupFile.json";
-        public const string ElevatroDBJSONFilePath = "~/Data/ElevatorDB.json";
-        public const string CarWashDBJSONFilePath = "~/Data/CarWashDB.json";
-        public const string CrossroadDBJSONFilePath = "~/Data/CrossroadDB.json";
-        public const string logger_file = "~/Data/Logger_file.json";
+        public const string Test_JSONFilePath = "/Data/Test.json"; 
+        public const string Backup_JSONFilePath = "/Data/backupFile.json";
+        public const string ElevatroDB_JSONFilePath = "/Data/ElevatorDB.json";
+        public const string CarWashDB_JSONFilePath = "/Data/CarWashDB.json";
+        public const string CrossroadDB_JSONFilePath = "/Data/CrossroadDB.json";
+        public const string Logger_JSONFilePath = "/Data/Logger_file.json";
+        public const string PLC_Startup_Data_JSONFilePath = "/Data/PLC_Startup_data.json";
 
         ElevatorForm Program1 = null;
         CarWashForm Program2 = null;
@@ -415,22 +416,7 @@ namespace Bc_prace
         //MEMs
 
         #endregion
-
-        public static OperationResults CalculateResults()
-        {
-            OperationResults results = new OperationResults
-            {
-                Sum_3_3 = 3 + 3,
-                Concatenate_3_3 = "3" + "3",
-                Concatenate_3_String3 = 3 + "3",
-                Concatenate_String3_3 = "3" + 3,
-                Expression_3_3_3 = 3 + 3 - 3,
-                Expression_String3_String3_String3 = int.Parse("3") + int.Parse("3") - int.Parse("3")
-            };
-
-            return results;
-        }
-
+                
         public ChooseOptionForm()
         {
             InitializeComponent();
@@ -439,38 +425,99 @@ namespace Bc_prace
 
         private void ChooseOption_Load(object sender, EventArgs e)
         {
-            string fullPath = Path.Combine(Application.StartupPath, testJSONFilePath);
-            EnsureFileExists(fullPath);
-
-            //file verification
-            /*
-            CreateFileIfNotExists(testJSONFilePath);
-            CreateFileIfNotExists(backupJSONFilePath);
-            CreateFileIfNotExists(ElevatroDBJSONFilePath);
-            CreateFileIfNotExists(CarWashDBJSONFilePath);
-            CreateFileIfNotExists(CrossroadDBJSONFilePath);
-            CreateFileIfNotExists(logger_file);
-            */
-
             //visibility 
             lblChooseSIM.Visible = false;
             btnElevator.Visible = false;
             btnCarWash.Visible = false;
             btnCrossroad.Visible = false;
 
+            //Files verification and header
+            #region Files verification and header
+
+            //Test
+            string TestfullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
+            EnsureFileExists(TestfullPath);
+            Header_json_Class TestHeader = CreateHeader();
+            TestHeader.title = "Test file";
+            TestHeader.message = "Here is some test data: \n";
+            WriteDataToFileJSON(TestfullPath, TestHeader);
+
+            //Backup data
+            string BackupfullPath = Path.Combine(Application.StartupPath, Backup_JSONFilePath);
+            EnsureFileExists(BackupfullPath);
+            Header_json_Class BackupHeader = CreateHeader();
+            BackupHeader.title = "Backup data";
+            BackupHeader.message = "Backup of all variables: \n";
+            WriteDataToFileJSON(BackupfullPath, BackupHeader);
+
+            //Elevator data
+            string ElevatorfullPath = Path.Combine(Application.StartupPath, ElevatroDB_JSONFilePath);
+            EnsureFileExists(ElevatorfullPath);
+            Header_json_Class ElevatorHeader = CreateHeader();
+            ElevatorHeader.title = "Elevator variables";
+            ElevatorHeader.message = "ElevatorDB: \n";
+            WriteDataToFileJSON(ElevatorfullPath, ElevatorHeader);
+
+            //CarWash data
+            string CarWashfullPath = Path.Combine(Application.StartupPath, CarWashDB_JSONFilePath);
+            EnsureFileExists(CarWashfullPath);
+            Header_json_Class CarWashHeader = CreateHeader();
+            CarWashHeader.title = "CarWash variables";
+            CarWashHeader.message = "CarWashDB: \n";
+            WriteDataToFileJSON(CarWashfullPath, CarWashHeader);
+
+            //Crossroad data
+            string CrossoradfullPath = Path.Combine(Application.StartupPath, CrossroadDB_JSONFilePath);
+            EnsureFileExists(CrossoradfullPath);
+            Header_json_Class CrossroadHeader = CreateHeader();
+            CrossroadHeader.title = "CrossroadDB variables";
+            CrossroadHeader.message = "CrossroadDB: \n";
+            WriteDataToFileJSON(CrossoradfullPath, CrossroadHeader);
+
+            //Logger data
+            string LoggerfullPath = Path.Combine(Application.StartupPath, Logger_JSONFilePath);
+            EnsureFileExists(LoggerfullPath);
+            Header_json_Class LoggerHeader = CreateHeader();
+            LoggerHeader.title = "Logger file";
+            LoggerHeader.message = "Logger messages: \n";
+            WriteDataToFileJSON(LoggerfullPath, LoggerHeader);
+
+            //PLC Startup data
+            string PLC_Startup_Data_fullPath = Path.Combine(Application.StartupPath, PLC_Startup_Data_JSONFilePath);
+            EnsureFileExists(PLC_Startup_Data_fullPath);
+            Header_json_Class PLC_Startup_Data_Header = CreateHeader();
+            PLC_Startup_Data_Header.title = "PLC Startup Data";
+            PLC_Startup_Data_Header.message = "StartupDB: \n";
+            WriteDataToFileJSON(PLC_Startup_Data_fullPath, PLC_Startup_Data_Header);
+
+            /*
+            CreateFileIfNotExists(TestJSONFilePath);
+            CreateFileIfNotExists(BackupJSONFilePath);
+            CreateFileIfNotExists(ElevatroDBJSONFilePath);
+            CreateFileIfNotExists(CarWashDBJSONFilePath);
+            CreateFileIfNotExists(CrossroadDBJSONFilePath);
+            CreateFileIfNotExists(Logger_file);
+            */
+
             //test json 
+            /*
+            string fullPath = Path.Combine(Application.StartupPath, TestJSONFilePath);
+            EnsureFileExists(fullPath);
+
             OperationResults results = CalculateResults();
             WriteDataToFileJSON(testJSONFilePath, results);
 
             string fileContent = File.ReadAllText(fullPath);
-            textBox1.Text = fileContent;
+            //showing json file
             Process.Start(new ProcessStartInfo
             {
                 FileName = "notepad.exe",
                 Arguments = fullPath,
                 UseShellExecute = true
             });
+            */
 
+            #endregion
         }
 
         //Functions for work with JSON files
@@ -514,28 +561,24 @@ namespace Bc_prace
                 if (!Directory.Exists(directoryPath))
                 {
                     Directory.CreateDirectory(directoryPath);
-                    Console.WriteLine("Directory created: " + directoryPath);
 
                     //MessageBox
-                    MessageBox.Show($"Error: \n" + "Directory created: " + directoryPath, "Error",
+                    MessageBox.Show($"Info: \n" + "Directory created: " + directoryPath, "Info",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
 
                 if (!File.Exists(filePath))
                 {
-                    File.Create(filePath).Close(); // Vytvoříme prázdný soubor a zavřeme ho
-                    Console.WriteLine("File created: " + filePath);
+                    File.Create(filePath).Close(); 
 
                     //MessageBox
-                    MessageBox.Show($"Error: \n" + "File created: " + filePath, "Error",
+                    MessageBox.Show($"Info: \n" + "File created: " + filePath, "Info",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
-                    Console.WriteLine("File already exists: " + filePath);
-                    
                     //MessageBox
-                    MessageBox.Show($"Error: \n" + "File already exists: " + filePath, "Error",
+                    MessageBox.Show($"Info: \n" + "File already exists: " + filePath, "Info",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -589,6 +632,47 @@ namespace Bc_prace
             return default(T);
         }
 
+        private void AddDataToFile(object data, string filePath)
+        {
+            string existingJson = File.ReadAllText(filePath);
+            List<object> existingData = JsonConvert.DeserializeObject<List<object>>(existingJson);
+
+            existingData.Add(data);
+
+            string updatedJson = JsonConvert.SerializeObject(existingData);
+            File.WriteAllText(filePath, updatedJson);
+        }
+
+        //header
+        public static Header_json_Class CreateHeader()
+        {
+            Header_json_Class result = new Header_json_Class
+            {
+                title = "Title",
+                data_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                message = "Default Message"
+            };
+
+            return result;
+        }
+
+        //testing
+        /*
+        public static TestingResults CalculateResults()
+        {
+            TestingResults results = new TestingResults
+            {
+                Sum_3_3 = 3 + 3,
+                Concatenate_3_3 = "3" + "3",
+                Concatenate_3_String3 = 3 + "3",
+                Concatenate_String3_3 = "3" + 3,
+                Expression_3_3_3 = 3 + 3 - 3,
+                Expression_String3_String3_String3 = int.Parse("3") + int.Parse("3") - int.Parse("3")
+            };
+
+            return results;
+        }
+        */
         #endregion
 
         //Choices and messages 

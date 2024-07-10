@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JAN0837_BP.Classes
 {
-    public class OperationResults
+    public class TestingResults
     {
         public int Sum_3_3 { get; set; }
         public string Concatenate_3_3 { get; set; }
