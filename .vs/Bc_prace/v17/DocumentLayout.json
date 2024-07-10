@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\data\\test.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\data\\test.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\users\\lukas\\onedrive\\bp\\jan0837_bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\bc_prace\\forms\\elevatorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -61,15 +61,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Test.json",
-              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Data\\Test.json",
-              "RelativeDocumentMoniker": "Bc_prace\\Data\\Test.json",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Data\\Test.json",
-              "RelativeToolTip": "Bc_prace\\Data\\Test.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-10T07:29:59.818Z",
-              "EditorCaption": ""
+              "Title": "ChooseOptionForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs [Design]*",
+              "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T07:49:24.189Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -77,9 +76,9 @@
               "Title": "ChooseOptionForm.cs",
               "DocumentMoniker": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ViewState": "AQIAAOIBAAAAAAAAAAAiwA0CAABKAAAA",
+              "ToolTip": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs*",
+              "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs*",
+              "ViewState": "AQIAALUBAAAAAAAAAAAowNcBAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T12:18:48.268Z",
               "EditorCaption": ""

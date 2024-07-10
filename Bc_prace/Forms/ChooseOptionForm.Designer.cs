@@ -39,10 +39,10 @@
             statusStripChooseOption = new StatusStrip();
             btnEnd = new Button();
             panel2 = new Panel();
+            btnDisconnect = new Button();
             panel3 = new Panel();
             panel1 = new Panel();
             Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
-            btnDisconnect = new Button();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
@@ -86,11 +86,10 @@
             btnConnect.Location = new Point(10, 53);
             btnConnect.Margin = new Padding(3, 2, 3, 2);
             btnConnect.Name = "btnConnect";
-            btnConnect.Size = new Size(82, 39);
+            btnConnect.Size = new Size(95, 40);
             btnConnect.TabIndex = 3;
             btnConnect.Text = "Connect";
             btnConnect.UseVisualStyleBackColor = true;
-            btnConnect.Visible = true;
             btnConnect.Click += btnConnect_Click;
             // 
             // txtBoxPLCIP
@@ -155,6 +154,18 @@
             panel2.Size = new Size(434, 101);
             panel2.TabIndex = 11;
             // 
+            // btnDisconnect
+            // 
+            btnDisconnect.Location = new Point(119, 53);
+            btnDisconnect.Margin = new Padding(3, 2, 3, 2);
+            btnDisconnect.Name = "btnDisconnect";
+            btnDisconnect.Size = new Size(95, 40);
+            btnDisconnect.TabIndex = 6;
+            btnDisconnect.Text = "Disconnect";
+            btnDisconnect.UseVisualStyleBackColor = true;
+            btnDisconnect.Visible = false;
+            btnDisconnect.Click += btnDisconnect_Click;
+            // 
             // panel3
             // 
             panel3.Controls.Add(btnElevator);
@@ -181,18 +192,6 @@
             // Timer_read_from_PLC
             // 
             Timer_read_from_PLC.Tick += Timer_read_from_PLC_Tick;
-            // 
-            // btnDisconnect
-            // 
-            btnDisconnect.Location = new Point(132, 53);
-            btnDisconnect.Margin = new Padding(3, 2, 3, 2);
-            btnDisconnect.Name = "btnDisconnect";
-            btnDisconnect.Size = new Size(82, 39);
-            btnDisconnect.TabIndex = 6;
-            btnDisconnect.Text = "Disconnect";
-            btnDisconnect.UseVisualStyleBackColor = true;
-            btnDisconnect.Visible = false;
-            btnDisconnect.Click += btnDisconnect_Click;
             // 
             // ChooseOptionForm
             // 

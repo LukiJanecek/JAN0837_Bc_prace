@@ -16,6 +16,7 @@ using System.Security.Cryptography;
 using System.Web;
 using Newtonsoft.Json;
 using JAN0837_BP.Classes;
+using System.Diagnostics;
 
 namespace Bc_prace
 {
@@ -462,6 +463,14 @@ namespace Bc_prace
             WriteDataToFileJSON(testJSONFilePath, results);
 
             string fileContent = File.ReadAllText(fullPath);
+            textBox1.Text = fileContent;
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "notepad.exe",
+                Arguments = fullPath,
+                UseShellExecute = true
+            });
+
         }
 
         //Functions for work with JSON files
