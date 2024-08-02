@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace JAN0837_BP.Classes
 {
-    public class CarWash_DB_Class
+    public class CarWashDB_Class
     {
-        //input
+        //Input
         public bool CarWashEmergencySTOP { get; set; }
         public bool CarWashErrorSystem { get; set; }
         public bool CarWashStartCarWash { get; set; }
@@ -19,7 +19,7 @@ namespace JAN0837_BP.Classes
         public bool CarWashPositionShower { get; set; }
         public bool CarWashPositionCar { get; set; }
 
-        //output
+        //Output
         public bool CarWashGreenLight { get; set; }
         public bool CarWashRedLight { get; set; }
         public bool CarWashYellowLight { get; set; }

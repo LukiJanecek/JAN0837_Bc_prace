@@ -30,11 +30,14 @@ namespace Bc_prace
         //files
         public const string Test_JSONFilePath = "/Data/Test.json"; 
         public const string Backup_JSONFilePath = "/Data/backupFile.json";
-        public const string ElevatroDB_JSONFilePath = "/Data/ElevatorDB.json";
+        public const string ElevatorDB_JSONFilePath = "/Data/ElevatorDB.json";
         public const string CarWashDB_JSONFilePath = "/Data/CarWashDB.json";
         public const string CrossroadDB_JSONFilePath = "/Data/CrossroadDB.json";
         public const string Logger_JSONFilePath = "/Data/Logger_file.json";
         public const string PLC_Startup_Data_JSONFilePath = "/Data/PLC_Startup_data.json";
+
+        //
+        private bool BackupDataDone = false;
 
         ElevatorForm Program1 = null;
         CarWashForm Program2 = null;
@@ -107,9 +110,13 @@ namespace Bc_prace
         #endregion
 
         //MaintainDB variables
+        #region MaintainDB variables
+
         public bool Option1 = false;
         public bool Option2 = false;
         public bool Option3 = false;
+
+        #endregion
 
         //ElevatorDB variables 
         #region ElevatorDB variables 
@@ -451,7 +458,7 @@ namespace Bc_prace
             WriteDataToFileJSON(BackupfullPath, BackupHeader);
 
             //Elevator data
-            string ElevatorfullPath = Path.Combine(Application.StartupPath, ElevatroDB_JSONFilePath);
+            string ElevatorfullPath = Path.Combine(Application.StartupPath, ElevatorDB_JSONFilePath);
             EnsureFileExists(ElevatorfullPath);
             Header_json_Class ElevatorHeader = CreateHeader();
             ElevatorHeader.title = "Elevator variables";
@@ -643,7 +650,6 @@ namespace Bc_prace
             File.WriteAllText(filePath, updatedJson);
         }
 
-        //header
         public static Header_json_Class CreateHeader()
         {
             Header_json_Class result = new Header_json_Class
@@ -651,6 +657,59 @@ namespace Bc_prace
                 title = "Title",
                 data_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                 message = "Default Message"
+            };
+
+            return result;
+        }
+
+        public static Logger_Class Log()
+        {
+            Logger_Class result = new Logger_Class
+            {
+                title = "Title",
+                data_time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                author = "Author",
+                message = "Message"
+            };
+
+            return result;
+        }
+
+        public static MaintainDB_Class MaintainDB()
+        {
+            MaintainDB_Class result = new MaintainDB_Class
+            {
+
+            };
+
+            return result;
+        }
+
+        public static ElevatorDB_Class ElevatorDB()
+        {
+            ElevatorDB_Class result = new ElevatorDB_Class
+            {
+
+            };
+
+            return result;
+        }
+
+        public static CarWashDB_Class CarWashDB()
+        {
+            CarWashDB_Class result = new CarWashDB_Class
+            {
+
+            };
+
+            return result;
+        }
+
+        public static CrossroadDB_Class CrossroadDB()
+        {
+            CrossroadDB_Class result = new CrossroadDB_Class
+            {
+
             };
 
             return result;
@@ -891,32 +950,424 @@ namespace Bc_prace
         #region Disconnect from PLC
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
+            S7MultiVar writer = new S7MultiVar(client);
+
+            ToolStripStatusLabel lblStat;
+
             btnDisconnect.Text = "Disconnecting...";
             statusStripChooseOption.Items.Clear();
-            ToolStripStatusLabel lblStat = new ToolStripStatusLabel("Disconnecting from " + txtBoxPLCIP.Text);
+            lblStat = new ToolStripStatusLabel("Disconnecting from " + txtBoxPLCIP.Text);
             statusStripChooseOption.Items.Add(lblStat);
-
-            int plcDisconnect = client.Disconnect();
 
             //stop Timer_read_from_PLC
             Timer_read_from_PLC.Stop();
+
+            //
+            BackupDataDone = false;
 
             //btns visibility
             lblChooseSIM.Visible = false;
             btnElevator.Visible = false;
             btnCarWash.Visible = false;
             btnCrossroad.Visible = false;
-            btnConnect.Visible = true;
-            btnDisconnect.Visible = false;
+            btnConnect.Visible = false;
+            btnDisconnect.Visible = true;
 
-            //work with .json file
+            //Reading variables form backup and writting them to DBs
+            #region Reading variables form backup and writting them to DBs
 
+            //MaintainDB DB11
+            MaintainDB_Class MaintainDB_Data = ReadDataFromFile<MaintainDB_Class>(Backup_JSONFilePath);
+            //ElevatorDB DB4
+            ElevatorDB_Class ElevatorDB_Data = ReadDataFromFile<ElevatorDB_Class>(Backup_JSONFilePath);
+            //CarWashDB DB5
+            CarWashDB_Class CarWashDB_Data = ReadDataFromFile<CarWashDB_Class>(Backup_JSONFilePath);
+            //CrossoradDB DB14
+            CrossroadDB_Class CrossroadDB_Data = ReadDataFromFile<CrossroadDB_Class>(Backup_JSONFilePath);
+
+            //MaintainDB DB11
+            #region MaintainDB DB11 variables
+
+            Option1 = MaintainDB_Data.Option1;
+            Option2 = MaintainDB_Data.Option2;
+            Option3 = MaintainDB_Data.Option3;
+
+            Option1 = false;
+            S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
+            Option2 = false;
+            S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
+            Option3 = false;
+            S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
+
+            #endregion
+
+            //MaintainDB write result
+            #region MaintainDB write result
+            int writeResultDB11 = writer.Write();
+
+            if (writeResultDB11 == 0)
+            {
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were writtne to MaintainDB DB11.");
+                statusStripChooseOption.Items.Add(lblStat);
+            }
+            else
+            {
+                //error
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were not writtne to MaintainDB DB11.");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't written to MaintainDB DB11! \n\n" +
+                        $"Error message: {writeResultDB11} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
+
+            //ElevatorDB DB4
+            #region ElevatorDB DB4 variables
+
+            //Elevator variables
+            #region Elevator variables
+
+            //Input
+            ElevatorBTNCabin1 = ElevatorDB_Data.ElevatorBTNCabin1;
+            ElevatorBTNCabin2 = ElevatorDB_Data.ElevatorBTNCabin2;
+            ElevatorBTNCabin3 = ElevatorDB_Data.ElevatorBTNCabin3;
+            ElevatorBTNCabin4 = ElevatorDB_Data.ElevatorBTNCabin4;
+            ElevatorBTNCabin5 = ElevatorDB_Data.ElevatorBTNCabin5;
+            ElevatorBTNFloor1 = ElevatorDB_Data.ElevatorBTNFloor1;
+            ElevatorBTNFloor2 = ElevatorDB_Data.ElevatorBTNFloor2;
+            ElevatorBTNFloor3 = ElevatorDB_Data.ElevatorBTNFloor3;
+            ElevatorBTNFloor4 = ElevatorDB_Data.ElevatorBTNFloor4;
+            ElevatorBTNFloor5 = ElevatorDB_Data.ElevatorBTNFloor5;
+            ElevatorDoorSEQ = ElevatorDB_Data.ElevatorDoorSEQ;
+            ElevatorBTNOPENCLOSE = ElevatorDB_Data.ElevatorBTNOPENCLOSE;
+            ElevatorEmergencySTOP = ElevatorDB_Data.ElevatorEmergencySTOP;
+            ElevatorErrorSystem = ElevatorDB_Data.ElevatorErrorSystem;
+            ElevatorActualFloorSENS1 = ElevatorDB_Data.ElevatorActualFloorSENS1;
+            ElevatorActualFloorSENS2 = ElevatorDB_Data.ElevatorActualFloorSENS2;
+            ElevatorActualFloorSENS3 = ElevatorDB_Data.ElevatorActualFloorSENS3;
+            ElevatorActualFloorSENS4 = ElevatorDB_Data.ElevatorActualFloorSENS4;
+            ElevatorActualFloorSENS5 = ElevatorDB_Data.ElevatorActualFloorSENS5;
+            ElevatorDoorClOSE = ElevatorDB_Data.ElevatorDoorClOSE;
+            ElevatorDoorOPEN = ElevatorDB_Data.ElevatorDoorOPEN;
+            ElevatorInactivity = ElevatorDB_Data.ElevatorInactivity;
+            //Output
+            ElevatorMotorON = ElevatorDB_Data.ElevatorMotorON;
+            ElevatorMotorDOWN = ElevatorDB_Data.ElevatorMotorDOWN;
+            ElevatorMotorUP = ElevatorDB_Data.ElevatorMotorUP;
+            ElevatroHoming = ElevatorDB_Data.ElevatroHoming;
+            ElevatorSystemReady = ElevatorDB_Data.ElevatorSystemReady;
+            ElevatorActualFloor = ElevatorDB_Data.ElevatorActualFloor;
+            ElevatorMoving = ElevatorDB_Data.ElevatorMoving;
+            ElevatorSystemWorking = ElevatorDB_Data.ElevatorSystemWorking;
+            ElevatorGoToFloor = ElevatorDB_Data.ElevatorGoToFloor;
+            ElevatorDirection = ElevatorDB_Data.ElevatorDirection;
+            ElevatorActualFloorLED1 = ElevatorDB_Data.ElevatorActualFloorLED1;
+            ElevatorActualFloorLED2 = ElevatorDB_Data.ElevatorActualFloorLED2;
+            ElevatorActualFloorLED3 = ElevatorDB_Data.ElevatorActualFloorLED3;
+            ElevatorActualFloorLED4 = ElevatorDB_Data.ElevatorActualFloorLED4;
+            ElevatorActualFloorLED5 = ElevatorDB_Data.ElevatorActualFloorLED5;
+            ElevatorActualFloorCabinLED1 = ElevatorDB_Data.ElevatorActualFloorCabinLED1;
+            ElevatorActualFloorCabinLED2 = ElevatorDB_Data.ElevatorActualFloorCabinLED2;
+            ElevatorActualFloorCabinLED3 = ElevatorDB_Data.ElevatorActualFloorCabinLED3;
+            ElevatorActualFloorCabinLED4 = ElevatorDB_Data.ElevatorActualFloorCabinLED4;
+            ElevatorActualFloorCabinLED5 = ElevatorDB_Data.ElevatorActualFloorCabinLED5;
+            ElevatorTimeDoorSQOPEN = ElevatorDB_Data.ElevatorTimeDoorSQOPEN;
+            ElevatroTimeDoorSQCLOSE = ElevatorDB_Data.ElevatroTimeDoorSQCLOSE;
+            ElevatorCabinSpeed = ElevatorDB_Data.ElevatorCabinSpeed;
+            ElevatorTimeToGetDown = ElevatorDB_Data.ElevatorTimeToGetDown;
+            //MEMs
+            ElevatorMEMDoor = ElevatorDB_Data.ElevatorMEMDoor;
+            ElevatorMEMDoorTrig = ElevatorDB_Data.ElevatorMEMDoorTrig;
+            ElevatorMEMDoorCloseTrig = ElevatorDB_Data.ElevatorMEMDoorCloseTrig;
+            ElevatorMEMEndMovingTrig = ElevatorDB_Data.ElevatorMEMEndMovingTrig;
+            ElevatorMEMBTNFloor1 = ElevatorDB_Data.ElevatorMEMBTNFloor1;
+            ElevatorMEMBTNFloor2 = ElevatorDB_Data.ElevatorMEMBTNFloor2;
+            ElevatorMEMBTNFloor3 = ElevatorDB_Data.ElevatorMEMBTNFloor3;
+            ElevatorMEMBTNFloor4 = ElevatorDB_Data.ElevatorMEMBTNFloor4;
+            ElevatorMEMBTNFloor5 = ElevatorDB_Data.ElevatorMEMBTNFloor5;
+
+            #endregion
+
+            //Setting bits 
+            #region Setting bits
+
+
+
+            #endregion
+
+            #endregion
+
+            //ElevatorDB write result
+            #region ElevatorDB write result
+            int writeResultDB4 = writer.Write();
+
+            if (writeResultDB4 == 0)
+            {
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were writtne to ElevatorDB DB4.");
+                statusStripChooseOption.Items.Add(lblStat);
+            }
+            else
+            {
+                //error
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were not writtne to ElevatorDB DB4.");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't written to ElevatorDB DB4! \n\n" +
+                        $"Error message: {writeResultDB4} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
+
+            //CarWashDB DB5
+            #region CarWashDB DB5 variables
+
+            //CarWashDB variables
+            #region CarWashDB variables
+
+            //Input
+
+            //Output
+
+            //MEMs
+
+            #endregion
+
+            //Setting bits 
+            #region Setting bits
+
+
+
+            #endregion
+
+            #endregion
+
+            //CarWashDB write result
+            #region CarWashDB write result
+            int writeResultDB5 = writer.Write();
+
+            if (writeResultDB5 == 0)
+            {
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were writtne to CarWashDB DB5.");
+                statusStripChooseOption.Items.Add(lblStat);
+            }
+            else
+            {
+                //error
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were not writtne to CarWashDB DB5.");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't written to CarWashDB DB5! \n\n" +
+                        $"Error message: {writeResultDB5} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
+
+            //CrossoradDB DB14
+            #region CrossoradDB DB14 variables
+
+            //CrossoradDB variables
+            #region CrossoradDB variable
+
+            CrossroadModeOFF = CrossroadDB_Data.CrossroadModeOFF;
+            CrossroadModeNIGHT = CrossroadDB_Data.CrossroadModeNIGHT;
+            CrossroadModeDAY = CrossroadDB_Data.CrossroadModeDAY;
+            CrossroadEmergencySTOP = CrossroadDB_Data.CrossroadEmergencySTOP;
+            CrossroadErrorSystem = CrossroadDB_Data.CrossroadErrorSystem;
+
+            //Input
+
+            //Output
+
+            //MEMs
+
+            //Crossroad_DB DB14
+            //Input
+            //Output
+            //Crossroad_1_DB DB1
+            //Input
+            //Output
+            //Crossroad_2_DB DB19
+            //Input
+            //Output
+            //Crossroad_LeftT_DB DB20
+            //Input
+            //Output
+            //Crossroad_RightT_DB DB21
+            //Input
+            //Output
+
+            #endregion
+
+            //Setting bits 
+            #region Setting bits
+
+            //Crossroad_DB DB14
+            //Input
+            //Output
+            //Crossroad_1_DB DB1
+            //Input
+            //Output
+            //Crossroad_2_DB DB19
+            //Input
+            //Output
+            //Crossroad_LeftT_DB DB20
+            //Input
+            //Output
+            //Crossroad_RightT_DB DB21
+            //Input
+            //Output
+
+            #endregion
+
+            #endregion
+
+            //CrossoradDB write result
+            #region CrossoradDB write result
+            int writeResultDB14 = writer.Write();
+
+            if (writeResultDB14 == 0)
+            {
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were writtne to CrossoradDB DB14.");
+                statusStripChooseOption.Items.Add(lblStat);
+            }
+            else
+            {
+                //error
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Variables were not writtne to CrossoradDB DB14.");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't written to CrossoradDB DB14! \n\n" +
+                        $"Error message: {writeResultDB14} \n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
+
+            #endregion
+
+            //PLC Disconnect 
+            #region PLC Disconnect 
+
+            int plcDisconnect = client.Disconnect();
+
+            if (plcDisconnect == 0)
+            {
+                btnDisconnect.Text = "Disconnected";
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Disconnected");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                btnConnect.Visible = true;
+                btnDisconnect.Visible = false;
+            }
+            else
+            {
+                btnDisconnect.Text = "Disconnect";
+                statusStripChooseOption.Items.Clear();
+                lblStat = new ToolStripStatusLabel("Disconnection from PLC failed");
+                statusStripChooseOption.Items.Add(lblStat);
+
+                btnConnect.Visible = false;
+                btnDisconnect.Visible = true;
+
+                //write error
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show("BE doesn't work properly.Disconnection from PLC failed. \n\n", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
         }
 
         #endregion
-        
-        //Tia variables
-        #region Tia connection
+
+        //PLC Stop
+        private void StopPLC()
+        {
+            client.PlcStop();
+        }
+
+        //PLC Cold Start
+        private void ColdStartPLC()
+        {
+            client.PlcColdStart();
+        }
+
+        //PLC Hot Start 
+        private void HotStartPLC()
+        {
+            client.PlcHotStart();
+        }
+
+        //PLC Get Status 
+        private void GetPLCStatus()
+        {
+            int status = 0;
+            
+            int PLCStatus = client.PlcGetStatus(ref status);
+
+            if (PLCStatus == 0)
+            {
+                string statusMessage = status switch
+                {
+                    S7Consts.S7CpuStatusRun => "PLC is in RUN mode.",
+                    S7Consts.S7CpuStatusStop => "PLC is in STOP mode.",
+                    S7Consts.S7CpuStatusUnknown => "PLC status is unknown.",
+                    _ => "Unknown status code."
+                };
+
+                //
+            }
+            else
+            {
+                //
+
+            }
+        }
+
+        //Periodical reading from DBs
+        #region Periodical reading from DBs
 
         private void Timer_read_from_PLC_Tick(object sender, EventArgs e)
         {
@@ -1638,6 +2089,175 @@ namespace Bc_prace
                 #endregion
 
                 */
+
+                //Writting variables to files 
+                #region Writting variables to files 
+
+                //New Class
+                MaintainDB_Class MaintainDB_Data = MaintainDB();
+                ElevatorDB_Class ElevatorDB_Data = ElevatorDB();
+                CarWashDB_Class CarWashDB_Data = CarWashDB();
+                CrossroadDB_Class CrossroadDB_Data = CrossroadDB();
+
+                //Writing all values of variables to class variables
+                #region Writing all values of variables to class variables
+
+                //MaintainDB
+                #region MaintainDB
+                MaintainDB_Data.Option1 = Option1;
+                MaintainDB_Data.Option2 = Option2;
+                MaintainDB_Data.Option3 = Option3;
+                #endregion
+
+                //ElevatorDB
+                #region ElevatorDB
+                //Input
+                ElevatorDB_Data.ElevatorBTNCabin1 = ElevatorBTNCabin1;
+                ElevatorDB_Data.ElevatorBTNCabin2 = ElevatorBTNCabin2;
+                ElevatorDB_Data.ElevatorBTNCabin3 = ElevatorBTNCabin3;
+                ElevatorDB_Data.ElevatorBTNCabin4 = ElevatorBTNCabin4;
+                ElevatorDB_Data.ElevatorBTNCabin5 = ElevatorBTNCabin5;
+                ElevatorDB_Data.ElevatorBTNFloor1 = ElevatorBTNFloor1;
+                ElevatorDB_Data.ElevatorBTNFloor2 = ElevatorBTNFloor2;
+                ElevatorDB_Data.ElevatorBTNFloor3 = ElevatorBTNFloor3;
+                ElevatorDB_Data.ElevatorBTNFloor4 = ElevatorBTNFloor4;
+                ElevatorDB_Data.ElevatorBTNFloor5 = ElevatorBTNFloor5;
+                ElevatorDB_Data.ElevatorDoorSEQ = ElevatorDoorSEQ;
+                ElevatorDB_Data.ElevatorBTNOPENCLOSE = ElevatorBTNOPENCLOSE;
+                ElevatorDB_Data.ElevatorEmergencySTOP = ElevatorEmergencySTOP;
+                ElevatorDB_Data.ElevatorErrorSystem = ElevatorErrorSystem;
+                ElevatorDB_Data.ElevatorActualFloorSENS1 = ElevatorActualFloorSENS1;
+                ElevatorDB_Data.ElevatorActualFloorSENS2 = ElevatorActualFloorSENS2;
+                ElevatorDB_Data.ElevatorActualFloorSENS3 = ElevatorActualFloorSENS3;
+                ElevatorDB_Data.ElevatorActualFloorSENS4 = ElevatorActualFloorSENS4;
+                ElevatorDB_Data.ElevatorActualFloorSENS5 = ElevatorActualFloorSENS5;
+                ElevatorDB_Data.ElevatorDoorClOSE = ElevatorDoorClOSE;
+                ElevatorDB_Data.ElevatorDoorOPEN = ElevatorDoorOPEN;
+                ElevatorDB_Data.ElevatorInactivity = ElevatorInactivity;
+                //Output
+                ElevatorDB_Data.ElevatorMotorON = ElevatorMotorON;
+                ElevatorDB_Data.ElevatorMotorDOWN = ElevatorMotorDOWN;
+                ElevatorDB_Data.ElevatorMotorUP = ElevatorMotorUP;
+                ElevatorDB_Data.ElevatroHoming = ElevatroHoming;
+                ElevatorDB_Data.ElevatorSystemReady = ElevatorSystemReady;
+                ElevatorDB_Data.ElevatorActualFloor = ElevatorActualFloor;
+                ElevatorDB_Data.ElevatorMoving = ElevatorMoving;
+                ElevatorDB_Data.ElevatorSystemWorking = ElevatorSystemWorking;
+                ElevatorDB_Data.ElevatorGoToFloor = ElevatorGoToFloor;
+                ElevatorDB_Data.ElevatorDirection = ElevatorDirection;
+                ElevatorDB_Data.ElevatorActualFloorLED1 = ElevatorActualFloorLED1;
+                ElevatorDB_Data.ElevatorActualFloorLED2 = ElevatorActualFloorLED2;
+                ElevatorDB_Data.ElevatorActualFloorLED3 = ElevatorActualFloorLED3;
+                ElevatorDB_Data.ElevatorActualFloorLED4 = ElevatorActualFloorLED4;
+                ElevatorDB_Data.ElevatorActualFloorLED5 = ElevatorActualFloorLED5;
+                ElevatorDB_Data.ElevatorActualFloorCabinLED1 = ElevatorActualFloorCabinLED1;
+                ElevatorDB_Data.ElevatorActualFloorCabinLED2 = ElevatorActualFloorCabinLED2;
+                ElevatorDB_Data.ElevatorActualFloorCabinLED3 = ElevatorActualFloorCabinLED3;
+                ElevatorDB_Data.ElevatorActualFloorCabinLED4 = ElevatorActualFloorCabinLED4;
+                ElevatorDB_Data.ElevatorActualFloorCabinLED5 = ElevatorActualFloorCabinLED5;
+                ElevatorDB_Data.ElevatorTimeDoorSQOPEN = ElevatorTimeDoorSQOPEN;
+                ElevatorDB_Data.ElevatroTimeDoorSQCLOSE = ElevatroTimeDoorSQCLOSE;
+                ElevatorDB_Data.ElevatorCabinSpeed = ElevatorCabinSpeed;
+                ElevatorDB_Data.ElevatorTimeToGetDown = ElevatorTimeToGetDown;
+                //MEMs
+                ElevatorDB_Data.ElevatorMEMDoor = ElevatorMEMDoor;
+                ElevatorDB_Data.ElevatorMEMDoorTrig = ElevatorMEMDoorTrig;
+                ElevatorDB_Data.ElevatorMEMDoorCloseTrig = ElevatorMEMDoorCloseTrig;
+                ElevatorDB_Data.ElevatorMEMEndMovingTrig = ElevatorMEMEndMovingTrig;
+                ElevatorDB_Data.ElevatorMEMBTNFloor1 = ElevatorMEMBTNFloor1;
+                ElevatorDB_Data.ElevatorMEMBTNFloor2 = ElevatorMEMBTNFloor2;
+                ElevatorDB_Data.ElevatorMEMBTNFloor3 = ElevatorMEMBTNFloor3;
+                ElevatorDB_Data.ElevatorMEMBTNFloor4 = ElevatorMEMBTNFloor4;
+                ElevatorDB_Data.ElevatorMEMBTNFloor5 = ElevatorMEMBTNFloor5;
+                #endregion
+
+                //CarWashDB
+                #region CarWashDB
+                //Input
+                CarWashDB_Data.CarWashEmergencySTOP = CarWashEmergencySTOP;
+                CarWashDB_Data.CarWashErrorSystem = CarWashErrorSystem;
+                CarWashDB_Data.CarWashStartCarWash = CarWashStartCarWash;
+                CarWashDB_Data.CarWashWaitingForIncomingCar = CarWashWaitingForIncomingCar;
+                CarWashDB_Data.CarWashActiveFoam = CarWashWaitingForOutgoingCar;
+                CarWashDB_Data.CarWashPerfetWash = CarWashPerfetWash;
+                CarWashDB_Data.CarWashPerfectPolish = CarWashPerfectPolish;
+                CarWashDB_Data.CarWashPositionShower = CarWashPositionShower;
+                CarWashDB_Data.CarWashPositionCar = CarWashPositionCar;
+                //Output
+                CarWashDB_Data.CarWashGreenLight = CarWashGreenLight;
+                CarWashDB_Data.CarWashRedLight = CarWashRedLight;
+                CarWashDB_Data.CarWashYellowLight = CarWashYellowLight;
+                CarWashDB_Data.CarWashDoor1UP = CarWashDoor1UP;
+                CarWashDB_Data.CarWashDoor1DOWN = CarWashDoor1DOWN;
+                CarWashDB_Data.CarWashDoor2UP = CarWashDoor2UP;
+                CarWashDB_Data.CarWashDoor2DOWN = CarWashDoor2DOWN;
+                CarWashDB_Data.CarWashWater = CarWashWater;
+                CarWashDB_Data.CarWashWashingChemicalsFRONT = CarWashWashingChemicalsFRONT;
+                CarWashDB_Data.CarWashWashingChemicalsSIDES = CarWashWashingChemicalsSIDES;
+                CarWashDB_Data.CarWashWashingChemicalsBACK = CarWashWashingChemicalsBACK;
+                CarWashDB_Data.CarWashWax = CarWashWax;
+                CarWashDB_Data.CarWashVarnishProtection = CarWashVarnishProtection;
+                CarWashDB_Data.CarWashDry = CarWashDry;
+                CarWashDB_Data.CarWashPreWash = CarWashPreWash;
+                CarWashDB_Data.CarWashBrushes = CarWashBrushes;
+                CarWashDB_Data.CarWashSoap = CarWashSoap;
+                CarWashDB_Data.CarWashActiveFoam = CarWashActiveFoam;
+                CarWashDB_Data.CarWashTimeDoorMovement = CarWashTimeDoorMovement;
+                //MEMs
+                CarWashDB_Data.CarWashMEMDoor = CarWashMEMDoor;
+                CarWashDB_Data.CarWashMEMDoorTrig = CarWashMEMDoorTrig;
+                CarWashDB_Data.CarWashMEMDoorCloseTrig = CarWashMEMDoorCloseTrig;
+                #endregion
+
+                //CrossroadDB
+                #region CrossroadDB
+                CrossroadDB_Data.CrossroadModeOFF = CrossroadModeOFF;
+                CrossroadDB_Data.CrossroadModeNIGHT = CrossroadModeNIGHT;
+                CrossroadDB_Data.CrossroadModeDAY = CrossroadModeDAY;
+                CrossroadDB_Data.CrossroadEmergencySTOP = CrossroadEmergencySTOP;
+                CrossroadDB_Data.CrossroadErrorSystem = CrossroadErrorSystem;
+
+                //Crossroad_DB DB14
+                //Input
+                //Output
+                //Crossroad_1_DB DB1
+                //Input
+                //Output
+                //Crossroad_2_DB DB19
+                //Input
+                //Output
+                //Crossroad_LeftT_DB DB20
+                //Input
+                //Output
+                //Crossroad_RightT_DB DB21
+                //Input
+                //Output
+
+                #endregion
+
+                #endregion
+
+                //Backup data
+                if (!BackupDataDone)
+                {
+                    AddDataToFile(MaintainDB_Data, Backup_JSONFilePath);
+                    AddDataToFile(ElevatorDB_Data, Backup_JSONFilePath);
+                    AddDataToFile(CarWashDB_Data, Backup_JSONFilePath);
+                    AddDataToFile(CrossroadDB_Data, Backup_JSONFilePath);
+
+                    BackupDataDone = true;
+                }
+
+                //MaintainDB
+                AddDataToFile(MaintainDB_Data, Backup_JSONFilePath);
+                //ElevatorDB
+                AddDataToFile(ElevatorDB_Data, ElevatorDB_JSONFilePath);
+                //CarWashDB
+                AddDataToFile(CarWashDB_Data, CarWashDB_JSONFilePath);
+                //CrossoradDB
+                AddDataToFile(CrossroadDB_Data, CrossroadDB_JSONFilePath);
+
+                #endregion
             }
             catch (Exception ex)
             {
@@ -1684,16 +2304,19 @@ namespace Bc_prace
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {
-            Option1 = false;
-            S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
-            Option2 = false;
-            S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
-            Option3 = false;
-            S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
-
             if (client.Connected)
             {
-                //write to PLC
+                btnDisconnect_Click(sender, e);
+
+                //MaintainDB 
+                Option1 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
+                Option2 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
+                Option3 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
+                               
+                //MaintainDB
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResultDB11 == 0)
                 {
@@ -1712,15 +2335,10 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
-
-                //Tia disconnect
-                client.Disconnect();
             }
 
-            //work with .json file
-
             //close program
-            this.Close();
+            this.Close(); 
         }
 
         #endregion

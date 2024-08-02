@@ -8,7 +8,7 @@ namespace JAN0837_BP.Classes
 {
     public class CrossroadDB_Class
     {
-        //input
+        //Input
         //Crossroad_DB DB14
         public bool CrossroadModeOFF { get; set; }
         public bool CrossroadModeNIGHT { get; set; }
@@ -32,7 +32,7 @@ namespace JAN0837_BP.Classes
         public bool CrossroadRightTTopCrosswalkBTN1 { get; set; }
         public bool CrossroadRightTTopCrosswalkBTN2 { get; set; }
 
-        //ouput
+        //Output
         //Crossroad_DB DB14
         public int TrafficLightsSQ;
         //Crossroad_1_DB DB1

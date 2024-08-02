@@ -1,0 +1,307 @@
+﻿namespace Bc_prace.Forms
+{
+    partial class TestForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panel1 = new Panel();
+            btnEnd = new Button();
+            btnEmergency = new Button();
+            userControlSablona1 = new JAN0837_BP.Controls.UserControlSablona();
+            btnSend = new Button();
+            listBoxJSON = new ListBox();
+            statusStrip1 = new StatusStrip();
+            listBox1 = new ListBox();
+            textBoxInt1 = new TextBox();
+            textBoxBool2 = new TextBox();
+            textBoxInt2 = new TextBox();
+            textBoxTime1 = new TextBox();
+            textBoxBool1 = new TextBox();
+            textBoxTime2 = new TextBox();
+            lblInt1 = new Label();
+            lblTime2 = new Label();
+            lblBool2 = new Label();
+            lblInt2 = new Label();
+            lblTime1 = new Label();
+            lblBool1 = new Label();
+            btnRead = new Button();
+            btnReadJSON = new Button();
+            panel1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnEnd);
+            panel1.Controls.Add(btnEmergency);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(881, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(164, 599);
+            panel1.TabIndex = 0;
+            // 
+            // btnEnd
+            // 
+            btnEnd.Location = new Point(6, 537);
+            btnEnd.Name = "btnEnd";
+            btnEnd.Size = new Size(155, 59);
+            btnEnd.TabIndex = 1;
+            btnEnd.Text = "Close";
+            btnEnd.UseVisualStyleBackColor = true;
+            btnEnd.Click += btnEnd_Click;
+            // 
+            // btnEmergency
+            // 
+            btnEmergency.Location = new Point(6, 3);
+            btnEmergency.Name = "btnEmergency";
+            btnEmergency.Size = new Size(155, 59);
+            btnEmergency.TabIndex = 0;
+            btnEmergency.Text = "Emergency BTN";
+            btnEmergency.UseVisualStyleBackColor = true;
+            btnEmergency.Click += btnEmergency_Click;
+            // 
+            // userControlSablona1
+            // 
+            userControlSablona1.Dock = DockStyle.Fill;
+            userControlSablona1.Location = new Point(0, 0);
+            userControlSablona1.Margin = new Padding(3, 2, 3, 2);
+            userControlSablona1.Name = "userControlSablona1";
+            userControlSablona1.Size = new Size(881, 599);
+            userControlSablona1.TabIndex = 1;
+            // 
+            // btnSend
+            // 
+            btnSend.Location = new Point(470, 322);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new Size(100, 56);
+            btnSend.TabIndex = 2;
+            btnSend.Text = "Send";
+            btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
+            // 
+            // listBoxJSON
+            // 
+            listBoxJSON.FormattingEnabled = true;
+            listBoxJSON.ItemHeight = 15;
+            listBoxJSON.Location = new Point(12, 74);
+            listBoxJSON.Name = "listBoxJSON";
+            listBoxJSON.Size = new Size(223, 304);
+            listBoxJSON.TabIndex = 3;
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Location = new Point(0, 577);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(881, 22);
+            statusStrip1.TabIndex = 4;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(241, 74);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(223, 304);
+            listBox1.TabIndex = 5;
+            // 
+            // textBoxInt1
+            // 
+            textBoxInt1.Location = new Point(470, 74);
+            textBoxInt1.Name = "textBoxInt1";
+            textBoxInt1.Size = new Size(100, 23);
+            textBoxInt1.TabIndex = 6;
+            // 
+            // textBoxBool2
+            // 
+            textBoxBool2.Location = new Point(470, 190);
+            textBoxBool2.Name = "textBoxBool2";
+            textBoxBool2.Size = new Size(100, 23);
+            textBoxBool2.TabIndex = 7;
+            // 
+            // textBoxInt2
+            // 
+            textBoxInt2.Location = new Point(470, 161);
+            textBoxInt2.Name = "textBoxInt2";
+            textBoxInt2.Size = new Size(100, 23);
+            textBoxInt2.TabIndex = 8;
+            // 
+            // textBoxTime1
+            // 
+            textBoxTime1.Location = new Point(470, 132);
+            textBoxTime1.Name = "textBoxTime1";
+            textBoxTime1.Size = new Size(100, 23);
+            textBoxTime1.TabIndex = 9;
+            // 
+            // textBoxBool1
+            // 
+            textBoxBool1.Location = new Point(470, 103);
+            textBoxBool1.Name = "textBoxBool1";
+            textBoxBool1.Size = new Size(100, 23);
+            textBoxBool1.TabIndex = 10;
+            // 
+            // textBoxTime2
+            // 
+            textBoxTime2.Location = new Point(470, 219);
+            textBoxTime2.Name = "textBoxTime2";
+            textBoxTime2.Size = new Size(100, 23);
+            textBoxTime2.TabIndex = 11;
+            // 
+            // lblInt1
+            // 
+            lblInt1.AutoSize = true;
+            lblInt1.Location = new Point(576, 77);
+            lblInt1.Name = "lblInt1";
+            lblInt1.Size = new Size(27, 15);
+            lblInt1.TabIndex = 12;
+            lblInt1.Text = "Int1";
+            // 
+            // lblTime2
+            // 
+            lblTime2.AutoSize = true;
+            lblTime2.Location = new Point(576, 222);
+            lblTime2.Name = "lblTime2";
+            lblTime2.Size = new Size(39, 15);
+            lblTime2.TabIndex = 13;
+            lblTime2.Text = "Time2";
+            // 
+            // lblBool2
+            // 
+            lblBool2.AutoSize = true;
+            lblBool2.Location = new Point(576, 193);
+            lblBool2.Name = "lblBool2";
+            lblBool2.Size = new Size(37, 15);
+            lblBool2.TabIndex = 14;
+            lblBool2.Text = "Bool2";
+            // 
+            // lblInt2
+            // 
+            lblInt2.AutoSize = true;
+            lblInt2.Location = new Point(576, 164);
+            lblInt2.Name = "lblInt2";
+            lblInt2.Size = new Size(27, 15);
+            lblInt2.TabIndex = 15;
+            lblInt2.Text = "Int2";
+            // 
+            // lblTime1
+            // 
+            lblTime1.AutoSize = true;
+            lblTime1.Location = new Point(576, 135);
+            lblTime1.Name = "lblTime1";
+            lblTime1.Size = new Size(39, 15);
+            lblTime1.TabIndex = 16;
+            lblTime1.Text = "Time1";
+            // 
+            // lblBool1
+            // 
+            lblBool1.AutoSize = true;
+            lblBool1.Location = new Point(576, 106);
+            lblBool1.Name = "lblBool1";
+            lblBool1.Size = new Size(37, 15);
+            lblBool1.TabIndex = 17;
+            lblBool1.Text = "Bool1";
+            // 
+            // btnRead
+            // 
+            btnRead.Location = new Point(241, 384);
+            btnRead.Name = "btnRead";
+            btnRead.Size = new Size(100, 56);
+            btnRead.TabIndex = 18;
+            btnRead.Text = "Read";
+            btnRead.UseVisualStyleBackColor = true;
+            btnRead.Click += btnRead_Click;
+            // 
+            // btnReadJSON
+            // 
+            btnReadJSON.Location = new Point(12, 384);
+            btnReadJSON.Name = "btnReadJSON";
+            btnReadJSON.Size = new Size(100, 56);
+            btnReadJSON.TabIndex = 19;
+            btnReadJSON.Text = "Read JSON";
+            btnReadJSON.UseVisualStyleBackColor = true;
+            btnReadJSON.Click += btnReadJSON_Click;
+            // 
+            // TestForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1045, 599);
+            Controls.Add(btnReadJSON);
+            Controls.Add(btnRead);
+            Controls.Add(lblBool1);
+            Controls.Add(lblTime1);
+            Controls.Add(lblInt2);
+            Controls.Add(lblBool2);
+            Controls.Add(lblTime2);
+            Controls.Add(lblInt1);
+            Controls.Add(textBoxTime2);
+            Controls.Add(textBoxBool1);
+            Controls.Add(textBoxTime1);
+            Controls.Add(textBoxInt2);
+            Controls.Add(textBoxBool2);
+            Controls.Add(textBoxInt1);
+            Controls.Add(listBox1);
+            Controls.Add(statusStrip1);
+            Controls.Add(listBoxJSON);
+            Controls.Add(btnSend);
+            Controls.Add(userControlSablona1);
+            Controls.Add(panel1);
+            DoubleBuffered = true;
+            Name = "TestForm";
+            Text = "Test";
+            Load += Test_Load;
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Panel panel1;
+        private Button btnEmergency;
+        private System.Windows.Forms.Timer Timer_read_actual;
+        private Button btnEnd;
+        private JAN0837_BP.Controls.UserControlSablona userControlSablona1;
+        private Button btnSend;
+        private ListBox listBoxJSON;
+        private StatusStrip statusStrip1;
+        private ListBox listBox1;
+        private TextBox textBoxInt1;
+        private TextBox textBoxBool2;
+        private TextBox textBoxInt2;
+        private TextBox textBoxTime1;
+        private TextBox textBoxBool1;
+        private TextBox textBoxTime2;
+        private Label lblInt1;
+        private Label lblTime2;
+        private Label lblBool2;
+        private Label lblInt2;
+        private Label lblTime1;
+        private Label lblBool1;
+        private Button btnRead;
+        private Button btnReadJSON;
+    }
+}
