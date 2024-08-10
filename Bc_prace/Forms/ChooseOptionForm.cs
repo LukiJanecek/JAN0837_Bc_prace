@@ -529,7 +529,7 @@ namespace Bc_prace
 
         //Functions for work with JSON files
         #region Functions for work with JSON files
-        private void CreateFileIfNotExists(string relativePath)
+        public void CreateFileIfNotExists(string relativePath)
         {
             try
             {
@@ -559,7 +559,7 @@ namespace Bc_prace
             }
         }
 
-        private void EnsureFileExists(string filePath)
+        public void EnsureFileExists(string filePath)
         {
             try
             {
@@ -639,7 +639,7 @@ namespace Bc_prace
             return default(T);
         }
 
-        private void AddDataToFile(object data, string filePath)
+        public void AddDataToFile(object data, string filePath)
         {
             string existingJson = File.ReadAllText(filePath);
             List<object> existingData = JsonConvert.DeserializeObject<List<object>>(existingJson);
@@ -1322,6 +1322,9 @@ namespace Bc_prace
 
         #endregion
 
+        //PLC Control Functions 
+        #region PLC Control Functions 
+
         //PLC Stop
         private void StopPLC()
         {
@@ -1365,6 +1368,8 @@ namespace Bc_prace
 
             }
         }
+
+        #endregion
 
         //Periodical reading from DBs
         #region Periodical reading from DBs

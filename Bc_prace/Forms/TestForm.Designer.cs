@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             btnEnd = new Button();
             btnEmergency = new Button();
             userControlSablona1 = new JAN0837_BP.Controls.UserControlSablona();
-            btnSend = new Button();
+            btnSendToPLC = new Button();
             listBoxJSON = new ListBox();
-            statusStrip1 = new StatusStrip();
+            statusStripTestForm = new StatusStrip();
             listBox1 = new ListBox();
             textBoxInt1 = new TextBox();
             textBoxBool2 = new TextBox();
@@ -48,8 +49,11 @@
             lblInt2 = new Label();
             lblTime1 = new Label();
             lblBool1 = new Label();
-            btnRead = new Button();
+            btnReadFromPLC = new Button();
             btnReadJSON = new Button();
+            btnSendToJSON = new Button();
+            listBoxJSONVariables = new ListBox();
+            Periodic_Function = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,15 +96,15 @@
             userControlSablona1.Size = new Size(881, 599);
             userControlSablona1.TabIndex = 1;
             // 
-            // btnSend
+            // btnSendToPLC
             // 
-            btnSend.Location = new Point(470, 322);
-            btnSend.Name = "btnSend";
-            btnSend.Size = new Size(100, 56);
-            btnSend.TabIndex = 2;
-            btnSend.Text = "Send";
-            btnSend.UseVisualStyleBackColor = true;
-            btnSend.Click += btnSend_Click;
+            btnSendToPLC.Location = new Point(470, 248);
+            btnSendToPLC.Name = "btnSendToPLC";
+            btnSendToPLC.Size = new Size(100, 56);
+            btnSendToPLC.TabIndex = 2;
+            btnSendToPLC.Text = "Send to PLC";
+            btnSendToPLC.UseVisualStyleBackColor = true;
+            btnSendToPLC.Click += btnSendToPLC_Click;
             // 
             // listBoxJSON
             // 
@@ -111,13 +115,14 @@
             listBoxJSON.Size = new Size(223, 304);
             listBoxJSON.TabIndex = 3;
             // 
-            // statusStrip1
+            // statusStripTestForm
             // 
-            statusStrip1.Location = new Point(0, 577);
-            statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(881, 22);
-            statusStrip1.TabIndex = 4;
-            statusStrip1.Text = "statusStrip1";
+            statusStripTestForm.ImageScalingSize = new Size(20, 20);
+            statusStripTestForm.Location = new Point(0, 577);
+            statusStripTestForm.Name = "statusStripTestForm";
+            statusStripTestForm.Size = new Size(881, 22);
+            statusStripTestForm.TabIndex = 4;
+            statusStripTestForm.Text = "statusStrip1";
             // 
             // listBox1
             // 
@@ -224,15 +229,15 @@
             lblBool1.TabIndex = 17;
             lblBool1.Text = "Bool1";
             // 
-            // btnRead
+            // btnReadFromPLC
             // 
-            btnRead.Location = new Point(241, 384);
-            btnRead.Name = "btnRead";
-            btnRead.Size = new Size(100, 56);
-            btnRead.TabIndex = 18;
-            btnRead.Text = "Read";
-            btnRead.UseVisualStyleBackColor = true;
-            btnRead.Click += btnRead_Click;
+            btnReadFromPLC.Location = new Point(241, 384);
+            btnReadFromPLC.Name = "btnReadFromPLC";
+            btnReadFromPLC.Size = new Size(100, 56);
+            btnReadFromPLC.TabIndex = 18;
+            btnReadFromPLC.Text = "Read from PLC";
+            btnReadFromPLC.UseVisualStyleBackColor = true;
+            btnReadFromPLC.Click += btnReadFromPLC_Click;
             // 
             // btnReadJSON
             // 
@@ -244,13 +249,38 @@
             btnReadJSON.UseVisualStyleBackColor = true;
             btnReadJSON.Click += btnReadJSON_Click;
             // 
+            // btnSendToJSON
+            // 
+            btnSendToJSON.Location = new Point(347, 384);
+            btnSendToJSON.Name = "btnSendToJSON";
+            btnSendToJSON.Size = new Size(100, 56);
+            btnSendToJSON.TabIndex = 20;
+            btnSendToJSON.Text = "Send to JSON";
+            btnSendToJSON.UseVisualStyleBackColor = true;
+            btnSendToJSON.Click += btnSendToJSON_Click;
+            // 
+            // listBoxJSONVariables
+            // 
+            listBoxJSONVariables.FormattingEnabled = true;
+            listBoxJSONVariables.ItemHeight = 15;
+            listBoxJSONVariables.Location = new Point(12, 446);
+            listBoxJSONVariables.Name = "listBoxJSONVariables";
+            listBoxJSONVariables.Size = new Size(223, 124);
+            listBoxJSONVariables.TabIndex = 21;
+            //
+            //Periodic_Function
+            //
+            Periodic_Function.Tick += Periodic_Function_Tick;
+            // 
             // TestForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 599);
+            Controls.Add(listBoxJSONVariables);
+            Controls.Add(btnSendToJSON);
             Controls.Add(btnReadJSON);
-            Controls.Add(btnRead);
+            Controls.Add(btnReadFromPLC);
             Controls.Add(lblBool1);
             Controls.Add(lblTime1);
             Controls.Add(lblInt2);
@@ -264,9 +294,9 @@
             Controls.Add(textBoxBool2);
             Controls.Add(textBoxInt1);
             Controls.Add(listBox1);
-            Controls.Add(statusStrip1);
+            Controls.Add(statusStripTestForm);
             Controls.Add(listBoxJSON);
-            Controls.Add(btnSend);
+            Controls.Add(btnSendToPLC);
             Controls.Add(userControlSablona1);
             Controls.Add(panel1);
             DoubleBuffered = true;
@@ -282,12 +312,12 @@
 
         private Panel panel1;
         private Button btnEmergency;
-        private System.Windows.Forms.Timer Timer_read_actual;
+        private System.Windows.Forms.Timer Periodic_Function;
         private Button btnEnd;
         private JAN0837_BP.Controls.UserControlSablona userControlSablona1;
-        private Button btnSend;
+        private Button btnSendToPLC;
         private ListBox listBoxJSON;
-        private StatusStrip statusStrip1;
+        private StatusStrip statusStripTestForm;
         private ListBox listBox1;
         private TextBox textBoxInt1;
         private TextBox textBoxBool2;
@@ -301,7 +331,9 @@
         private Label lblInt2;
         private Label lblTime1;
         private Label lblBool1;
-        private Button btnRead;
+        private Button btnReadFromPLC;
         private Button btnReadJSON;
+        private Button btnSendToJSON;
+        private ListBox listBoxJSONVariables;
     }
 }
