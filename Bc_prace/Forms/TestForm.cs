@@ -11,6 +11,7 @@ using JAN0837_BP.Classes;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
 using Sharp7;
+using System.Runtime.CompilerServices;
 
 namespace Bc_prace.Forms
 {
@@ -340,6 +341,9 @@ namespace Bc_prace.Forms
                 Int2 = S7.GetIntAt(read_buffer_DB28, 5);
                 Bool2 = S7.GetBitAt(read_buffer_DB28, 7, 0);
                 Time2 = S7.GetIntAt(read_buffer_DB28, 9);
+
+                //writting to JSON
+
             }
             else
             {
@@ -364,15 +368,143 @@ namespace Bc_prace.Forms
         {
             S7MultiVar writer = new S7MultiVar(client);
 
+            //TextBox iput 
+            #region TextBox input 
 
+            bool Int1_verification;
+            bool Bool1_verification;
+            bool Time1_verification;
+            bool Int2_verification;
+            bool Bool2_verification;
+            bool Time2_verification;
 
-            S7.SetIntAt(write_buffer_DB28, 0, (short)Int1);
-            S7.SetBitAt(write_buffer_DB28, 2, 0, Bool1);
-            S7.SetIntAt(write_buffer_DB28, 3, (short)Time1);
+            if (!string.IsNullOrEmpty(textBoxInt1.Text)) {
+                if (int.TryParse(textBoxInt1.Text, out int value))
+                {
+                    Int1 = value;
+                    Int1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Int1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Int1_verification = false;
+            }
 
-            S7.SetIntAt(write_buffer_DB28, 5, (short)Int2);
-            S7.SetBitAt(write_buffer_DB28, 7, 0, Bool2);
-            S7.SetIntAt(write_buffer_DB28, 9, (short)Time2);
+            if (!string.IsNullOrEmpty(textBoxBool1.Text)) {
+                if (TryParseBoolean(textBoxBool1.Text, out bool value))
+                {
+                    Bool1 = value;
+                    Bool1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Bool1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Bool1_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxTime1.Text)) {
+                if (int.TryParse(textBoxTime1.Text, out int value))
+                {
+                    Time1 = value;
+                    Time1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Time1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Time1_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxInt2.Text)) {
+                if (int.TryParse(textBoxInt2.Text, out int value))
+                {
+                    Int2 = value;
+                    Int2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Int2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Int2_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxBool2.Text)) {
+                if (TryParseBoolean(textBoxBool2.Text, out bool value))
+                {
+                    Bool2 = value;
+                    Bool2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Bool2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Bool2_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxTime2.Text)) {
+                if (int.TryParse(textBoxTime2.Text, out int value))
+                {
+                    Time2 = value;
+                    Time2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Time2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Time2_verification = false;
+            }
+
+            #endregion
+
+            if (Int1_verification == true)
+                S7.SetIntAt(write_buffer_DB28, 0, (short)Int1);
+                        
+            if (Bool1_verification == true)
+                S7.SetBitAt(write_buffer_DB28, 2, 0, Bool1);
+
+            if (Time1_verification == true)
+                S7.SetIntAt(write_buffer_DB28, 3, (short)Time1);
+
+            if (Int2_verification == true)
+                S7.SetIntAt(write_buffer_DB28, 5, (short)Int2);
+
+            if (Bool2_verification == true)
+                S7.SetBitAt(write_buffer_DB28, 7, 0, Bool2);
+
+            if (Time2_verification == true)
+                S7.SetIntAt(write_buffer_DB28, 9, (short)Time2);
 
             writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB28, 0, read_buffer_DB28.Length, ref read_buffer_DB28);
 
@@ -380,7 +512,18 @@ namespace Bc_prace.Forms
 
             if (writeResultDB28 == 0)
             {
-                //
+                //write successfull
+
+                textBoxInt1.Clear();
+                textBoxBool1.Clear();
+                textBoxTime1.Clear();
+                textBoxInt2.Clear();
+                textBoxBool2.Clear();
+                textBoxTime2.Clear();
+
+                statusStripTestForm.Items.Clear();
+                ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were written to PLC.");
+                statusStripTestForm.Items.Add(lblStatus1);
             }
             else
             {
@@ -437,5 +580,26 @@ namespace Bc_prace.Forms
             this.Close();
         }
         #endregion
+
+        private bool TryParseBoolean(string input, out bool result)
+        {
+            input = input.ToLower().Trim();
+
+            if (input == "true" || input == "1")
+            {
+                result = true;
+                return true;
+            }
+            else if (input == "false" || input == "0")
+            {
+                result = false;
+                return true;
+            }
+            else
+            {
+                result = false;
+                return false;
+            }
+        }
     }
 }

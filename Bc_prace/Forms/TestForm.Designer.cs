@@ -62,16 +62,18 @@
             panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnEmergency);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(881, 0);
+            panel1.Location = new Point(1007, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(164, 599);
+            panel1.Size = new Size(187, 799);
             panel1.TabIndex = 0;
             // 
             // btnEnd
             // 
-            btnEnd.Location = new Point(6, 537);
+            btnEnd.Location = new Point(7, 716);
+            btnEnd.Margin = new Padding(3, 4, 3, 4);
             btnEnd.Name = "btnEnd";
-            btnEnd.Size = new Size(155, 59);
+            btnEnd.Size = new Size(177, 79);
             btnEnd.TabIndex = 1;
             btnEnd.Text = "Close";
             btnEnd.UseVisualStyleBackColor = true;
@@ -79,9 +81,10 @@
             // 
             // btnEmergency
             // 
-            btnEmergency.Location = new Point(6, 3);
+            btnEmergency.Location = new Point(7, 4);
+            btnEmergency.Margin = new Padding(3, 4, 3, 4);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(155, 59);
+            btnEmergency.Size = new Size(177, 79);
             btnEmergency.TabIndex = 0;
             btnEmergency.Text = "Emergency BTN";
             btnEmergency.UseVisualStyleBackColor = true;
@@ -91,16 +94,16 @@
             // 
             userControlSablona1.Dock = DockStyle.Fill;
             userControlSablona1.Location = new Point(0, 0);
-            userControlSablona1.Margin = new Padding(3, 2, 3, 2);
             userControlSablona1.Name = "userControlSablona1";
-            userControlSablona1.Size = new Size(881, 599);
+            userControlSablona1.Size = new Size(1007, 799);
             userControlSablona1.TabIndex = 1;
             // 
             // btnSendToPLC
             // 
-            btnSendToPLC.Location = new Point(470, 248);
+            btnSendToPLC.Location = new Point(537, 331);
+            btnSendToPLC.Margin = new Padding(3, 4, 3, 4);
             btnSendToPLC.Name = "btnSendToPLC";
-            btnSendToPLC.Size = new Size(100, 56);
+            btnSendToPLC.Size = new Size(114, 75);
             btnSendToPLC.TabIndex = 2;
             btnSendToPLC.Text = "Send to PLC";
             btnSendToPLC.UseVisualStyleBackColor = true;
@@ -109,131 +112,141 @@
             // listBoxJSON
             // 
             listBoxJSON.FormattingEnabled = true;
-            listBoxJSON.ItemHeight = 15;
-            listBoxJSON.Location = new Point(12, 74);
+            listBoxJSON.ItemHeight = 20;
+            listBoxJSON.Location = new Point(14, 99);
+            listBoxJSON.Margin = new Padding(3, 4, 3, 4);
             listBoxJSON.Name = "listBoxJSON";
-            listBoxJSON.Size = new Size(223, 304);
+            listBoxJSON.Size = new Size(254, 404);
             listBoxJSON.TabIndex = 3;
             // 
             // statusStripTestForm
             // 
             statusStripTestForm.ImageScalingSize = new Size(20, 20);
-            statusStripTestForm.Location = new Point(0, 577);
+            statusStripTestForm.Location = new Point(0, 777);
             statusStripTestForm.Name = "statusStripTestForm";
-            statusStripTestForm.Size = new Size(881, 22);
+            statusStripTestForm.Padding = new Padding(1, 0, 16, 0);
+            statusStripTestForm.Size = new Size(1007, 22);
             statusStripTestForm.TabIndex = 4;
             statusStripTestForm.Text = "statusStrip1";
             // 
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(241, 74);
+            listBox1.ItemHeight = 20;
+            listBox1.Location = new Point(275, 99);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(223, 304);
+            listBox1.Size = new Size(254, 404);
             listBox1.TabIndex = 5;
             // 
             // textBoxInt1
             // 
-            textBoxInt1.Location = new Point(470, 74);
+            textBoxInt1.Location = new Point(537, 99);
+            textBoxInt1.Margin = new Padding(3, 4, 3, 4);
             textBoxInt1.Name = "textBoxInt1";
-            textBoxInt1.Size = new Size(100, 23);
+            textBoxInt1.Size = new Size(114, 27);
             textBoxInt1.TabIndex = 6;
             // 
             // textBoxBool2
             // 
-            textBoxBool2.Location = new Point(470, 190);
+            textBoxBool2.Location = new Point(537, 253);
+            textBoxBool2.Margin = new Padding(3, 4, 3, 4);
             textBoxBool2.Name = "textBoxBool2";
-            textBoxBool2.Size = new Size(100, 23);
+            textBoxBool2.Size = new Size(114, 27);
             textBoxBool2.TabIndex = 7;
             // 
             // textBoxInt2
             // 
-            textBoxInt2.Location = new Point(470, 161);
+            textBoxInt2.Location = new Point(537, 215);
+            textBoxInt2.Margin = new Padding(3, 4, 3, 4);
             textBoxInt2.Name = "textBoxInt2";
-            textBoxInt2.Size = new Size(100, 23);
+            textBoxInt2.Size = new Size(114, 27);
             textBoxInt2.TabIndex = 8;
             // 
             // textBoxTime1
             // 
-            textBoxTime1.Location = new Point(470, 132);
+            textBoxTime1.Location = new Point(537, 176);
+            textBoxTime1.Margin = new Padding(3, 4, 3, 4);
             textBoxTime1.Name = "textBoxTime1";
-            textBoxTime1.Size = new Size(100, 23);
+            textBoxTime1.Size = new Size(114, 27);
             textBoxTime1.TabIndex = 9;
             // 
             // textBoxBool1
             // 
-            textBoxBool1.Location = new Point(470, 103);
+            textBoxBool1.Location = new Point(537, 137);
+            textBoxBool1.Margin = new Padding(3, 4, 3, 4);
             textBoxBool1.Name = "textBoxBool1";
-            textBoxBool1.Size = new Size(100, 23);
+            textBoxBool1.Size = new Size(114, 27);
             textBoxBool1.TabIndex = 10;
             // 
             // textBoxTime2
             // 
-            textBoxTime2.Location = new Point(470, 219);
+            textBoxTime2.Location = new Point(537, 292);
+            textBoxTime2.Margin = new Padding(3, 4, 3, 4);
             textBoxTime2.Name = "textBoxTime2";
-            textBoxTime2.Size = new Size(100, 23);
+            textBoxTime2.Size = new Size(114, 27);
             textBoxTime2.TabIndex = 11;
             // 
             // lblInt1
             // 
             lblInt1.AutoSize = true;
-            lblInt1.Location = new Point(576, 77);
+            lblInt1.Location = new Point(658, 103);
             lblInt1.Name = "lblInt1";
-            lblInt1.Size = new Size(27, 15);
+            lblInt1.Size = new Size(34, 20);
             lblInt1.TabIndex = 12;
             lblInt1.Text = "Int1";
             // 
             // lblTime2
             // 
             lblTime2.AutoSize = true;
-            lblTime2.Location = new Point(576, 222);
+            lblTime2.Location = new Point(658, 296);
             lblTime2.Name = "lblTime2";
-            lblTime2.Size = new Size(39, 15);
+            lblTime2.Size = new Size(50, 20);
             lblTime2.TabIndex = 13;
             lblTime2.Text = "Time2";
             // 
             // lblBool2
             // 
             lblBool2.AutoSize = true;
-            lblBool2.Location = new Point(576, 193);
+            lblBool2.Location = new Point(658, 257);
             lblBool2.Name = "lblBool2";
-            lblBool2.Size = new Size(37, 15);
+            lblBool2.Size = new Size(48, 20);
             lblBool2.TabIndex = 14;
             lblBool2.Text = "Bool2";
             // 
             // lblInt2
             // 
             lblInt2.AutoSize = true;
-            lblInt2.Location = new Point(576, 164);
+            lblInt2.Location = new Point(658, 219);
             lblInt2.Name = "lblInt2";
-            lblInt2.Size = new Size(27, 15);
+            lblInt2.Size = new Size(34, 20);
             lblInt2.TabIndex = 15;
             lblInt2.Text = "Int2";
             // 
             // lblTime1
             // 
             lblTime1.AutoSize = true;
-            lblTime1.Location = new Point(576, 135);
+            lblTime1.Location = new Point(658, 180);
             lblTime1.Name = "lblTime1";
-            lblTime1.Size = new Size(39, 15);
+            lblTime1.Size = new Size(50, 20);
             lblTime1.TabIndex = 16;
             lblTime1.Text = "Time1";
             // 
             // lblBool1
             // 
             lblBool1.AutoSize = true;
-            lblBool1.Location = new Point(576, 106);
+            lblBool1.Location = new Point(658, 141);
             lblBool1.Name = "lblBool1";
-            lblBool1.Size = new Size(37, 15);
+            lblBool1.Size = new Size(48, 20);
             lblBool1.TabIndex = 17;
             lblBool1.Text = "Bool1";
             // 
             // btnReadFromPLC
             // 
-            btnReadFromPLC.Location = new Point(241, 384);
+            btnReadFromPLC.Location = new Point(277, 511);
+            btnReadFromPLC.Margin = new Padding(3, 4, 3, 4);
             btnReadFromPLC.Name = "btnReadFromPLC";
-            btnReadFromPLC.Size = new Size(100, 56);
+            btnReadFromPLC.Size = new Size(114, 75);
             btnReadFromPLC.TabIndex = 18;
             btnReadFromPLC.Text = "Read from PLC";
             btnReadFromPLC.UseVisualStyleBackColor = true;
@@ -241,9 +254,10 @@
             // 
             // btnReadJSON
             // 
-            btnReadJSON.Location = new Point(12, 384);
+            btnReadJSON.Location = new Point(14, 512);
+            btnReadJSON.Margin = new Padding(3, 4, 3, 4);
             btnReadJSON.Name = "btnReadJSON";
-            btnReadJSON.Size = new Size(100, 56);
+            btnReadJSON.Size = new Size(114, 75);
             btnReadJSON.TabIndex = 19;
             btnReadJSON.Text = "Read JSON";
             btnReadJSON.UseVisualStyleBackColor = true;
@@ -251,9 +265,10 @@
             // 
             // btnSendToJSON
             // 
-            btnSendToJSON.Location = new Point(347, 384);
+            btnSendToJSON.Location = new Point(397, 512);
+            btnSendToJSON.Margin = new Padding(3, 4, 3, 4);
             btnSendToJSON.Name = "btnSendToJSON";
-            btnSendToJSON.Size = new Size(100, 56);
+            btnSendToJSON.Size = new Size(114, 75);
             btnSendToJSON.TabIndex = 20;
             btnSendToJSON.Text = "Send to JSON";
             btnSendToJSON.UseVisualStyleBackColor = true;
@@ -262,21 +277,22 @@
             // listBoxJSONVariables
             // 
             listBoxJSONVariables.FormattingEnabled = true;
-            listBoxJSONVariables.ItemHeight = 15;
-            listBoxJSONVariables.Location = new Point(12, 446);
+            listBoxJSONVariables.ItemHeight = 20;
+            listBoxJSONVariables.Location = new Point(14, 595);
+            listBoxJSONVariables.Margin = new Padding(3, 4, 3, 4);
             listBoxJSONVariables.Name = "listBoxJSONVariables";
-            listBoxJSONVariables.Size = new Size(223, 124);
+            listBoxJSONVariables.Size = new Size(254, 164);
             listBoxJSONVariables.TabIndex = 21;
-            //
-            //Periodic_Function
-            //
+            // 
+            // Periodic_Function
+            // 
             Periodic_Function.Tick += Periodic_Function_Tick;
             // 
             // TestForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1045, 599);
+            ClientSize = new Size(1194, 799);
             Controls.Add(listBoxJSONVariables);
             Controls.Add(btnSendToJSON);
             Controls.Add(btnReadJSON);
@@ -300,6 +316,7 @@
             Controls.Add(userControlSablona1);
             Controls.Add(panel1);
             DoubleBuffered = true;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TestForm";
             Text = "Test";
             Load += Test_Load;
