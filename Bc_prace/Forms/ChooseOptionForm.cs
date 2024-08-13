@@ -933,7 +933,7 @@ namespace Bc_prace
             else
             {
                 statusStripChooseOption.Items.Clear();
-                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connecting to " + txtBoxPLCIP.Text + "FAILED! Please, chech your IP address or PLC itself.");
+                ToolStripStatusLabel lblStatus = new ToolStripStatusLabel("Connection to " + txtBoxPLCIP.Text + " FAILED! Please, chech your IP address or PLC itself.");
                 statusStripChooseOption.Items.Add(lblStatus);
                 btnConnect.Text = "Connect";
 
