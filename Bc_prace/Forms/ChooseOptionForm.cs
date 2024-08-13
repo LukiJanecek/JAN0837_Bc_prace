@@ -738,6 +738,8 @@ namespace Bc_prace
         #region Choose your simulation
         private void btnProgram1_Click(object sender, EventArgs e)
         {
+            S7MultiVar writer = new S7MultiVar(client);
+            
             if (!program1Opened)
             {
                 statusStripChooseOption.Items.Clear();
@@ -788,6 +790,8 @@ namespace Bc_prace
 
         private void btnProgram2_Click(object sender, EventArgs e)
         {
+            S7MultiVar writer = new S7MultiVar(client);
+
             if (!program2Opened)
             {
                 statusStripChooseOption.Items.Clear();
@@ -838,6 +842,8 @@ namespace Bc_prace
 
         private void btnProgram3_Click(object sender, EventArgs e)
         {
+            S7MultiVar writer = new S7MultiVar(client);
+
             if (!program3Opened)
             {
                 statusStripChooseOption.Items.Clear();
@@ -977,21 +983,23 @@ namespace Bc_prace
             #region Reading variables form backup and writting them to DBs
 
             //MaintainDB DB11
-            MaintainDB_Class MaintainDB_Data = ReadDataFromFile<MaintainDB_Class>(Backup_JSONFilePath);
+            MaintainDB_Class MaintainDB_Data_Backup = ReadDataFromFile<MaintainDB_Class>(Backup_JSONFilePath);
             //ElevatorDB DB4
-            ElevatorDB_Class ElevatorDB_Data = ReadDataFromFile<ElevatorDB_Class>(Backup_JSONFilePath);
+            ElevatorDB_Class ElevatorDB_Data_Backup = ReadDataFromFile<ElevatorDB_Class>(Backup_JSONFilePath);
             //CarWashDB DB5
-            CarWashDB_Class CarWashDB_Data = ReadDataFromFile<CarWashDB_Class>(Backup_JSONFilePath);
+            CarWashDB_Class CarWashDB_Data_Backup = ReadDataFromFile<CarWashDB_Class>(Backup_JSONFilePath);
             //CrossoradDB DB14
-            CrossroadDB_Class CrossroadDB_Data = ReadDataFromFile<CrossroadDB_Class>(Backup_JSONFilePath);
+            CrossroadDB_Class CrossroadDB_Data_Backup = ReadDataFromFile<CrossroadDB_Class>(Backup_JSONFilePath);
 
             //MaintainDB DB11
-            #region MaintainDB DB11 variables
+            #region MaintainDB DB11 
 
-            Option1 = MaintainDB_Data.Option1;
-            Option2 = MaintainDB_Data.Option2;
-            Option3 = MaintainDB_Data.Option3;
+            //MAintain variables
+            Option1 = MaintainDB_Data_Backup.Option1;
+            Option2 = MaintainDB_Data_Backup.Option2;
+            Option3 = MaintainDB_Data_Backup.Option3;
 
+            //Set bits
             Option1 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
             Option2 = false;
@@ -999,10 +1007,6 @@ namespace Bc_prace
             Option3 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
-            #endregion
-
-            //MaintainDB write result
-            #region MaintainDB write result
             int writeResultDB11 = writer.Write();
 
             if (writeResultDB11 == 0)
@@ -1030,98 +1034,168 @@ namespace Bc_prace
             }
 
             #endregion
-
+                        
             //ElevatorDB DB4
-            #region ElevatorDB DB4 variables
+            #region ElevatorDB DB4 
 
             //Elevator variables
             #region Elevator variables
 
             //Input
-            ElevatorBTNCabin1 = ElevatorDB_Data.ElevatorBTNCabin1;
-            ElevatorBTNCabin2 = ElevatorDB_Data.ElevatorBTNCabin2;
-            ElevatorBTNCabin3 = ElevatorDB_Data.ElevatorBTNCabin3;
-            ElevatorBTNCabin4 = ElevatorDB_Data.ElevatorBTNCabin4;
-            ElevatorBTNCabin5 = ElevatorDB_Data.ElevatorBTNCabin5;
-            ElevatorBTNFloor1 = ElevatorDB_Data.ElevatorBTNFloor1;
-            ElevatorBTNFloor2 = ElevatorDB_Data.ElevatorBTNFloor2;
-            ElevatorBTNFloor3 = ElevatorDB_Data.ElevatorBTNFloor3;
-            ElevatorBTNFloor4 = ElevatorDB_Data.ElevatorBTNFloor4;
-            ElevatorBTNFloor5 = ElevatorDB_Data.ElevatorBTNFloor5;
-            ElevatorDoorSEQ = ElevatorDB_Data.ElevatorDoorSEQ;
-            ElevatorBTNOPENCLOSE = ElevatorDB_Data.ElevatorBTNOPENCLOSE;
-            ElevatorEmergencySTOP = ElevatorDB_Data.ElevatorEmergencySTOP;
-            ElevatorErrorSystem = ElevatorDB_Data.ElevatorErrorSystem;
-            ElevatorActualFloorSENS1 = ElevatorDB_Data.ElevatorActualFloorSENS1;
-            ElevatorActualFloorSENS2 = ElevatorDB_Data.ElevatorActualFloorSENS2;
-            ElevatorActualFloorSENS3 = ElevatorDB_Data.ElevatorActualFloorSENS3;
-            ElevatorActualFloorSENS4 = ElevatorDB_Data.ElevatorActualFloorSENS4;
-            ElevatorActualFloorSENS5 = ElevatorDB_Data.ElevatorActualFloorSENS5;
-            ElevatorDoorClOSE = ElevatorDB_Data.ElevatorDoorClOSE;
-            ElevatorDoorOPEN = ElevatorDB_Data.ElevatorDoorOPEN;
-            ElevatorInactivity = ElevatorDB_Data.ElevatorInactivity;
+            ElevatorBTNCabin1 = ElevatorDB_Data_Backup.ElevatorBTNCabin1;
+            ElevatorBTNCabin2 = ElevatorDB_Data_Backup.ElevatorBTNCabin2;
+            ElevatorBTNCabin3 = ElevatorDB_Data_Backup.ElevatorBTNCabin3;
+            ElevatorBTNCabin4 = ElevatorDB_Data_Backup.ElevatorBTNCabin4;
+            ElevatorBTNCabin5 = ElevatorDB_Data_Backup.ElevatorBTNCabin5;
+            ElevatorBTNFloor1 = ElevatorDB_Data_Backup.ElevatorBTNFloor1;
+            ElevatorBTNFloor2 = ElevatorDB_Data_Backup.ElevatorBTNFloor2;
+            ElevatorBTNFloor3 = ElevatorDB_Data_Backup.ElevatorBTNFloor3;
+            ElevatorBTNFloor4 = ElevatorDB_Data_Backup.ElevatorBTNFloor4;
+            ElevatorBTNFloor5 = ElevatorDB_Data_Backup.ElevatorBTNFloor5;
+            ElevatorDoorSEQ = ElevatorDB_Data_Backup.ElevatorDoorSEQ;
+            ElevatorBTNOPENCLOSE = ElevatorDB_Data_Backup.ElevatorBTNOPENCLOSE;
+            ElevatorEmergencySTOP = ElevatorDB_Data_Backup.ElevatorEmergencySTOP;
+            ElevatorErrorSystem = ElevatorDB_Data_Backup.ElevatorErrorSystem;
+            ElevatorActualFloorSENS1 = ElevatorDB_Data_Backup.ElevatorActualFloorSENS1;
+            ElevatorActualFloorSENS2 = ElevatorDB_Data_Backup.ElevatorActualFloorSENS2;
+            ElevatorActualFloorSENS3 = ElevatorDB_Data_Backup.ElevatorActualFloorSENS3;
+            ElevatorActualFloorSENS4 = ElevatorDB_Data_Backup.ElevatorActualFloorSENS4;
+            ElevatorActualFloorSENS5 = ElevatorDB_Data_Backup.ElevatorActualFloorSENS5;
+            ElevatorDoorClOSE = ElevatorDB_Data_Backup.ElevatorDoorClOSE;
+            ElevatorDoorOPEN = ElevatorDB_Data_Backup.ElevatorDoorOPEN;
+            ElevatorInactivity = ElevatorDB_Data_Backup.ElevatorInactivity;
+            
             //Output
-            ElevatorMotorON = ElevatorDB_Data.ElevatorMotorON;
-            ElevatorMotorDOWN = ElevatorDB_Data.ElevatorMotorDOWN;
-            ElevatorMotorUP = ElevatorDB_Data.ElevatorMotorUP;
-            ElevatroHoming = ElevatorDB_Data.ElevatroHoming;
-            ElevatorSystemReady = ElevatorDB_Data.ElevatorSystemReady;
-            ElevatorActualFloor = ElevatorDB_Data.ElevatorActualFloor;
-            ElevatorMoving = ElevatorDB_Data.ElevatorMoving;
-            ElevatorSystemWorking = ElevatorDB_Data.ElevatorSystemWorking;
-            ElevatorGoToFloor = ElevatorDB_Data.ElevatorGoToFloor;
-            ElevatorDirection = ElevatorDB_Data.ElevatorDirection;
-            ElevatorActualFloorLED1 = ElevatorDB_Data.ElevatorActualFloorLED1;
-            ElevatorActualFloorLED2 = ElevatorDB_Data.ElevatorActualFloorLED2;
-            ElevatorActualFloorLED3 = ElevatorDB_Data.ElevatorActualFloorLED3;
-            ElevatorActualFloorLED4 = ElevatorDB_Data.ElevatorActualFloorLED4;
-            ElevatorActualFloorLED5 = ElevatorDB_Data.ElevatorActualFloorLED5;
-            ElevatorActualFloorCabinLED1 = ElevatorDB_Data.ElevatorActualFloorCabinLED1;
-            ElevatorActualFloorCabinLED2 = ElevatorDB_Data.ElevatorActualFloorCabinLED2;
-            ElevatorActualFloorCabinLED3 = ElevatorDB_Data.ElevatorActualFloorCabinLED3;
-            ElevatorActualFloorCabinLED4 = ElevatorDB_Data.ElevatorActualFloorCabinLED4;
-            ElevatorActualFloorCabinLED5 = ElevatorDB_Data.ElevatorActualFloorCabinLED5;
-            ElevatorTimeDoorSQOPEN = ElevatorDB_Data.ElevatorTimeDoorSQOPEN;
-            ElevatroTimeDoorSQCLOSE = ElevatorDB_Data.ElevatroTimeDoorSQCLOSE;
-            ElevatorCabinSpeed = ElevatorDB_Data.ElevatorCabinSpeed;
-            ElevatorTimeToGetDown = ElevatorDB_Data.ElevatorTimeToGetDown;
+            ElevatorMotorON = ElevatorDB_Data_Backup.ElevatorMotorON;
+            ElevatorMotorDOWN = ElevatorDB_Data_Backup.ElevatorMotorDOWN;
+            ElevatorMotorUP = ElevatorDB_Data_Backup.ElevatorMotorUP;
+            ElevatroHoming = ElevatorDB_Data_Backup.ElevatroHoming;
+            ElevatorSystemReady = ElevatorDB_Data_Backup.ElevatorSystemReady;
+            ElevatorActualFloor = ElevatorDB_Data_Backup.ElevatorActualFloor;
+            ElevatorMoving = ElevatorDB_Data_Backup.ElevatorMoving;
+            ElevatorSystemWorking = ElevatorDB_Data_Backup.ElevatorSystemWorking;
+            ElevatorGoToFloor = ElevatorDB_Data_Backup.ElevatorGoToFloor;
+            ElevatorDirection = ElevatorDB_Data_Backup.ElevatorDirection;
+            ElevatorActualFloorLED1 = ElevatorDB_Data_Backup.ElevatorActualFloorLED1;
+            ElevatorActualFloorLED2 = ElevatorDB_Data_Backup.ElevatorActualFloorLED2;
+            ElevatorActualFloorLED3 = ElevatorDB_Data_Backup.ElevatorActualFloorLED3;
+            ElevatorActualFloorLED4 = ElevatorDB_Data_Backup.ElevatorActualFloorLED4;
+            ElevatorActualFloorLED5 = ElevatorDB_Data_Backup.ElevatorActualFloorLED5;
+            ElevatorActualFloorCabinLED1 = ElevatorDB_Data_Backup.ElevatorActualFloorCabinLED1;
+            ElevatorActualFloorCabinLED2 = ElevatorDB_Data_Backup.ElevatorActualFloorCabinLED2;
+            ElevatorActualFloorCabinLED3 = ElevatorDB_Data_Backup.ElevatorActualFloorCabinLED3;
+            ElevatorActualFloorCabinLED4 = ElevatorDB_Data_Backup.ElevatorActualFloorCabinLED4;
+            ElevatorActualFloorCabinLED5 = ElevatorDB_Data_Backup.ElevatorActualFloorCabinLED5;
+            ElevatorTimeDoorSQOPEN = ElevatorDB_Data_Backup.ElevatorTimeDoorSQOPEN;
+            ElevatroTimeDoorSQCLOSE = ElevatorDB_Data_Backup.ElevatroTimeDoorSQCLOSE;
+            ElevatorCabinSpeed = ElevatorDB_Data_Backup.ElevatorCabinSpeed;
+            ElevatorTimeToGetDown = ElevatorDB_Data_Backup.ElevatorTimeToGetDown;
+            
             //MEMs
-            ElevatorMEMDoor = ElevatorDB_Data.ElevatorMEMDoor;
-            ElevatorMEMDoorTrig = ElevatorDB_Data.ElevatorMEMDoorTrig;
-            ElevatorMEMDoorCloseTrig = ElevatorDB_Data.ElevatorMEMDoorCloseTrig;
-            ElevatorMEMEndMovingTrig = ElevatorDB_Data.ElevatorMEMEndMovingTrig;
-            ElevatorMEMBTNFloor1 = ElevatorDB_Data.ElevatorMEMBTNFloor1;
-            ElevatorMEMBTNFloor2 = ElevatorDB_Data.ElevatorMEMBTNFloor2;
-            ElevatorMEMBTNFloor3 = ElevatorDB_Data.ElevatorMEMBTNFloor3;
-            ElevatorMEMBTNFloor4 = ElevatorDB_Data.ElevatorMEMBTNFloor4;
-            ElevatorMEMBTNFloor5 = ElevatorDB_Data.ElevatorMEMBTNFloor5;
+            ElevatorMEMDoor = ElevatorDB_Data_Backup.ElevatorMEMDoor;
+            ElevatorMEMDoorTrig = ElevatorDB_Data_Backup.ElevatorMEMDoorTrig;
+            ElevatorMEMDoorCloseTrig = ElevatorDB_Data_Backup.ElevatorMEMDoorCloseTrig;
+            ElevatorMEMEndMovingTrig = ElevatorDB_Data_Backup.ElevatorMEMEndMovingTrig;
+            ElevatorMEMBTNFloor1 = ElevatorDB_Data_Backup.ElevatorMEMBTNFloor1;
+            ElevatorMEMBTNFloor2 = ElevatorDB_Data_Backup.ElevatorMEMBTNFloor2;
+            ElevatorMEMBTNFloor3 = ElevatorDB_Data_Backup.ElevatorMEMBTNFloor3;
+            ElevatorMEMBTNFloor4 = ElevatorDB_Data_Backup.ElevatorMEMBTNFloor4;
+            ElevatorMEMBTNFloor5 = ElevatorDB_Data_Backup.ElevatorMEMBTNFloor5;
 
             #endregion
 
             //Setting bits 
             #region Setting bits
 
+            //Input variables
+            #region Input variables
 
+            S7.SetBitAt(read_buffer_DB4, 0, 0, ElevatorBTNCabin1);
+            S7.SetBitAt(read_buffer_DB4, 0, 1, ElevatorBTNCabin2);
+            S7.SetBitAt(read_buffer_DB4, 0, 2, ElevatorBTNCabin3);
+            S7.SetBitAt(read_buffer_DB4, 0, 3, ElevatorBTNCabin4);
+            S7.SetBitAt(read_buffer_DB4, 0, 4, ElevatorBTNCabin5);
+            S7.SetBitAt(read_buffer_DB4, 0, 5, ElevatorBTNFloor1);
+            S7.SetBitAt(read_buffer_DB4, 0, 6, ElevatorBTNFloor2);
+            S7.SetBitAt(read_buffer_DB4, 0, 7, ElevatorBTNFloor3);
+            S7.SetBitAt(read_buffer_DB4, 1, 0, ElevatorBTNFloor4);
+            S7.SetBitAt(read_buffer_DB4, 1, 1, ElevatorBTNFloor5);
+            S7.SetBitAt(read_buffer_DB4, 1, 2, ElevatorDoorSEQ);
+            S7.SetBitAt(read_buffer_DB4, 1, 3, ElevatorBTNOPENCLOSE);
+            S7.SetBitAt(read_buffer_DB4, 1, 4, ElevatorEmergencySTOP);
+            S7.SetBitAt(read_buffer_DB4, 1, 5, ElevatorErrorSystem);
+            S7.SetBitAt(read_buffer_DB4, 1, 6, ElevatorActualFloorSENS1);
+            S7.SetBitAt(read_buffer_DB4, 1, 7, ElevatorActualFloorSENS2);
+            S7.SetBitAt(read_buffer_DB4, 2, 0, ElevatorActualFloorSENS3);
+            S7.SetBitAt(read_buffer_DB4, 2, 1, ElevatorActualFloorSENS4);
+            S7.SetBitAt(read_buffer_DB4, 2, 2, ElevatorActualFloorSENS5);
+            S7.SetBitAt(read_buffer_DB4, 2, 3, ElevatorDoorClOSE);
+            S7.SetBitAt(read_buffer_DB4, 2, 4, ElevatorDoorOPEN);
+            S7.SetBitAt(read_buffer_DB4, 2, 5, ElevatorInactivity);
+
+            #endregion
+
+            //Output variables
+            #region Output variables
+
+            S7.SetBitAt(read_buffer_DB4, 4, 0, ElevatorMotorON);
+            S7.SetBitAt(read_buffer_DB4, 4, 1, ElevatorMotorDOWN);
+            S7.SetBitAt(read_buffer_DB4, 4, 2, ElevatorMotorUP);
+            S7.SetBitAt(read_buffer_DB4, 4, 3, ElevatroHoming);
+            S7.SetBitAt(read_buffer_DB4, 4, 4, ElevatorSystemReady);
+            S7.SetIntAt(read_buffer_DB4, 6, (short) ElevatorActualFloor);
+            S7.SetBitAt(read_buffer_DB4, 8, 0, ElevatorMoving);
+            S7.SetBitAt(read_buffer_DB4, 8, 1, ElevatorSystemWorking);
+            S7.SetIntAt(read_buffer_DB4, 10, (short) ElevatorGoToFloor);
+            S7.SetBitAt(read_buffer_DB4, 12, 0, ElevatorDirection);
+            S7.SetBitAt(read_buffer_DB4, 12, 1, ElevatorActualFloorLED1);
+            S7.SetBitAt(read_buffer_DB4, 12, 2, ElevatorActualFloorLED2);
+            S7.SetBitAt(read_buffer_DB4, 12, 3, ElevatorActualFloorLED3);
+            S7.SetBitAt(read_buffer_DB4, 12, 4, ElevatorActualFloorLED4);
+            S7.SetBitAt(read_buffer_DB4, 12, 5, ElevatorActualFloorLED5);
+            S7.SetBitAt(read_buffer_DB4, 12, 6, ElevatorActualFloorCabinLED1);
+            S7.SetBitAt(read_buffer_DB4, 12, 7, ElevatorActualFloorCabinLED2);
+            S7.SetBitAt(read_buffer_DB4, 13, 0, ElevatorActualFloorCabinLED3);
+            S7.SetBitAt(read_buffer_DB4, 13, 1, ElevatorActualFloorCabinLED4);
+            S7.SetBitAt(read_buffer_DB4, 13, 2, ElevatorActualFloorCabinLED5);
+            S7.SetDIntAt(read_buffer_DB4, 14, ElevatorTimeDoorSQOPEN); //Time
+            S7.SetDIntAt(read_buffer_DB4, 18, ElevatroTimeDoorSQCLOSE); //Time
+            S7.SetIntAt(read_buffer_DB4, 22, (short)ElevatorCabinSpeed);
+            S7.SetDIntAt(read_buffer_DB4, 24, ElevatorTimeToGetDown); //Time
+
+            #endregion
+
+            //MEM variables 
+            #region MEM varialbes 
+
+            S7.SetBitAt(read_buffer_DB4, 28, 0, ElevatorMEMDoor);
+            S7.SetBitAt(read_buffer_DB4, 28, 1, ElevatorMEMDoorTrig);
+            S7.SetBitAt(read_buffer_DB4, 28, 2, ElevatorMEMDoorCloseTrig);
+            S7.SetBitAt(read_buffer_DB4, 28, 3, ElevatorMEMMovingtrig);
+            S7.SetBitAt(read_buffer_DB4, 28, 4, ElevatorMEMEndMovingTrig);
+            S7.SetBitAt(read_buffer_DB4, 28, 5, ElevatorMEMBTNFloor1);
+            S7.SetBitAt(read_buffer_DB4, 28, 6, ElevatorMEMBTNFloor2);
+            S7.SetBitAt(read_buffer_DB4, 28, 7, ElevatorMEMBTNFloor3);
+            S7.SetBitAt(read_buffer_DB4, 29, 0, ElevatorMEMBTNFloor4);
+            S7.SetBitAt(read_buffer_DB4, 29, 1, ElevatorMEMBTNFloor5);
 
             #endregion
 
             #endregion
 
-            //ElevatorDB write result
-            #region ElevatorDB write result
             int writeResultDB4 = writer.Write();
 
             if (writeResultDB4 == 0)
             {
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were writtne to ElevatorDB DB4.");
+                lblStat = new ToolStripStatusLabel("Variables were written to ElevatorDB DB4.");
                 statusStripChooseOption.Items.Add(lblStat);
             }
             else
             {
                 //error
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were not writtne to ElevatorDB DB4.");
+                lblStat = new ToolStripStatusLabel("Variables were not written to ElevatorDB DB4.");
                 statusStripChooseOption.Items.Add(lblStat);
 
                 if (!errorMessageBoxShown)
@@ -1138,43 +1212,117 @@ namespace Bc_prace
             #endregion
 
             //CarWashDB DB5
-            #region CarWashDB DB5 variables
+            #region CarWashDB DB5 
 
             //CarWashDB variables
             #region CarWashDB variables
 
-            //Input
+            //Input variables
+            #region Input variables
 
-            //Output
+            CarWashEmergencySTOP = CarWashDB_Data_Backup.CarWashEmergencySTOP;
+            CarWashErrorSystem = CarWashDB_Data_Backup.CarWashErrorSystem;
+            CarWashStartCarWash = CarWashDB_Data_Backup.CarWashStartCarWash;
+            CarWashWaitingForIncomingCar = CarWashDB_Data_Backup.CarWashWaitingForIncomingCar;
+            CarWashWaitingForOutgoingCar = CarWashDB_Data_Backup.CarWashWaitingForOutgoingCar;
+            CarWashPerfetWash = CarWashDB_Data_Backup.CarWashPerfetWash;
+            CarWashPerfectPolish = CarWashDB_Data_Backup.CarWashPerfectPolish;
+            CarWashPositionShower = CarWashDB_Data_Backup.CarWashPositionShower;
+            CarWashPositionCar = CarWashDB_Data_Backup.CarWashPositionCar;
 
-            //MEMs
+            #endregion
+
+            //Output variables
+            #region Output variables 
+
+            CarWashGreenLight = CarWashDB_Data_Backup.CarWashGreenLight;
+            CarWashRedLight = CarWashDB_Data_Backup.CarWashRedLight;
+            CarWashYellowLight = CarWashDB_Data_Backup.CarWashYellowLight;
+            CarWashDoor1UP = CarWashDB_Data_Backup.CarWashDoor1UP;
+            CarWashDoor1DOWN = CarWashDB_Data_Backup.CarWashDoor1DOWN;
+            CarWashDoor2UP = CarWashDB_Data_Backup.CarWashDoor2UP;
+            CarWashDoor2DOWN = CarWashDB_Data_Backup.CarWashDoor2DOWN;
+            CarWashWater = CarWashDB_Data_Backup.CarWashWater;
+            CarWashWashingChemicalsFRONT = CarWashDB_Data_Backup.CarWashWashingChemicalsFRONT;
+            CarWashWashingChemicalsSIDES = CarWashDB_Data_Backup.CarWashWashingChemicalsSIDES;
+            CarWashWashingChemicalsBACK = CarWashDB_Data_Backup.CarWashWashingChemicalsBACK;
+            CarWashWax = CarWashDB_Data_Backup.CarWashWax;
+            CarWashVarnishProtection = CarWashDB_Data_Backup.CarWashVarnishProtection;
+            CarWashDry = CarWashDB_Data_Backup.CarWashDry;
+            CarWashPreWash = CarWashDB_Data_Backup.CarWashPreWash;
+            CarWashBrushes = CarWashDB_Data_Backup.CarWashBrushes;
+            CarWashSoap = CarWashDB_Data_Backup.CarWashSoap; ;
+            CarWashActiveFoam = CarWashDB_Data_Backup.CarWashActiveFoam;
+            CarWashTimeDoorMovement = CarWashDB_Data_Backup.CarWashTimeDoorMovement;
+            CarWashMEMDoor = CarWashDB_Data_Backup.CarWashMEMDoor;
+            CarWashMEMDoorTrig = CarWashDB_Data_Backup.CarWashMEMDoorTrig;
+            CarWashMEMDoorCloseTrig = CarWashDB_Data_Backup.CarWashMEMDoorCloseTrig;
+
+            #endregion
 
             #endregion
 
             //Setting bits 
             #region Setting bits
 
+            //Input variables
+            #region Input variables
 
+            S7.SetBitAt(read_buffer_DB5, 0, 0, CarWashEmergencySTOP);
+            S7.SetBitAt(read_buffer_DB5, 0, 1, CarWashErrorSystem);
+            S7.SetBitAt(read_buffer_DB5, 0, 2, CarWashStartCarWash);
+            S7.SetBitAt(read_buffer_DB5, 0, 3, CarWashWaitingForIncomingCar);
+            S7.SetBitAt(read_buffer_DB5, 0, 4, CarWashWaitingForOutgoingCar);
+            S7.SetBitAt(read_buffer_DB5, 0, 5, CarWashPerfetWash);
+            S7.SetBitAt(read_buffer_DB5, 0, 6, CarWashPerfectPolish);
+            S7.SetBitAt(read_buffer_DB5, 0, 7, CarWashPositionShower);
+            S7.SetBitAt(read_buffer_DB5, 1, 0, CarWashPositionCar);
+
+            #endregion
+
+            //Output variables
+            #region Output variables 
+
+            S7.SetBitAt(read_buffer_DB5, 2, 0, CarWashGreenLight);
+            S7.SetBitAt(read_buffer_DB5, 2, 1, CarWashRedLight);
+            S7.SetBitAt(read_buffer_DB5, 2, 2, CarWashYellowLight);
+            S7.SetBitAt(read_buffer_DB5, 2, 3, CarWashDoor1UP);
+            S7.SetBitAt(read_buffer_DB5, 2, 4, CarWashDoor1DOWN);
+            S7.SetBitAt(read_buffer_DB5, 2, 5, CarWashDoor2UP);
+            S7.SetBitAt(read_buffer_DB5, 2, 6, CarWashDoor2DOWN);
+            S7.SetBitAt(read_buffer_DB5, 2, 7, CarWashWater);
+            S7.SetBitAt(read_buffer_DB5, 3, 0, CarWashWashingChemicalsFRONT);
+            S7.SetBitAt(read_buffer_DB5, 3, 1, CarWashWashingChemicalsSIDES);
+            S7.SetBitAt(read_buffer_DB5, 3, 2, CarWashWashingChemicalsBACK);
+            S7.SetBitAt(read_buffer_DB5, 3, 3, CarWashWax);
+            S7.SetBitAt(read_buffer_DB5, 3, 4, CarWashVarnishProtection);
+            S7.SetBitAt(read_buffer_DB5, 3, 5, CarWashDry);
+            S7.SetBitAt(read_buffer_DB5, 3, 6, CarWashPreWash);
+            S7.SetBitAt(read_buffer_DB5, 3, 7, CarWashBrushes);
+            S7.SetBitAt(read_buffer_DB5, 4, 0, CarWashSoap); 
+            S7.SetBitAt(read_buffer_DB5, 4, 1, CarWashActiveFoam);
+            S7.SetDIntAt(read_buffer_DB5, 6, CarWashTimeDoorMovement); //Time
+            S7.SetBitAt(read_buffer_DB5, 10, 0, CarWashMEMDoor);
+            S7.SetBitAt(read_buffer_DB5, 10, 1, CarWashMEMDoorTrig);
+            S7.SetBitAt(read_buffer_DB5, 10, 2, CarWashMEMDoorCloseTrig);
 
             #endregion
 
             #endregion
 
-            //CarWashDB write result
-            #region CarWashDB write result
             int writeResultDB5 = writer.Write();
 
             if (writeResultDB5 == 0)
             {
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were writtne to CarWashDB DB5.");
+                lblStat = new ToolStripStatusLabel("Variables were written to CarWashDB DB5.");
                 statusStripChooseOption.Items.Add(lblStat);
             }
             else
             {
                 //error
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were not writtne to CarWashDB DB5.");
+                lblStat = new ToolStripStatusLabel("Variables were not written to CarWashDB DB5.");
                 statusStripChooseOption.Items.Add(lblStat);
 
                 if (!errorMessageBoxShown)
@@ -1191,26 +1339,21 @@ namespace Bc_prace
             #endregion
 
             //CrossoradDB DB14
-            #region CrossoradDB DB14 variables
+            #region CrossoradDB DB14 
 
             //CrossoradDB variables
             #region CrossoradDB variable
 
-            CrossroadModeOFF = CrossroadDB_Data.CrossroadModeOFF;
-            CrossroadModeNIGHT = CrossroadDB_Data.CrossroadModeNIGHT;
-            CrossroadModeDAY = CrossroadDB_Data.CrossroadModeDAY;
-            CrossroadEmergencySTOP = CrossroadDB_Data.CrossroadEmergencySTOP;
-            CrossroadErrorSystem = CrossroadDB_Data.CrossroadErrorSystem;
-
-            //Input
-
-            //Output
-
-            //MEMs
-
             //Crossroad_DB DB14
             //Input
+            CrossroadModeOFF = CrossroadDB_Data_Backup.CrossroadModeOFF;
+            CrossroadModeNIGHT = CrossroadDB_Data_Backup.CrossroadModeNIGHT;
+            CrossroadModeDAY = CrossroadDB_Data_Backup.CrossroadModeDAY;
+            CrossroadEmergencySTOP = CrossroadDB_Data_Backup.CrossroadEmergencySTOP;
+            CrossroadErrorSystem = CrossroadDB_Data_Backup.CrossroadErrorSystem;
             //Output
+            TrafficLightsSQ = CrossroadDB_Data_Backup.TrafficLightsSQ;
+
             //Crossroad_1_DB DB1
             //Input
             //Output
@@ -1231,7 +1374,14 @@ namespace Bc_prace
 
             //Crossroad_DB DB14
             //Input
+            S7.SetBitAt(read_buffer_DB14, 0, 0, CrossroadModeOFF);
+            S7.SetBitAt(read_buffer_DB14, 0, 1, CrossroadModeNIGHT);
+            S7.SetBitAt(read_buffer_DB14, 0, 2, CrossroadModeDAY);
+            S7.SetBitAt(read_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
+            S7.SetBitAt(read_buffer_DB14, 0, 4, CrossroadErrorSystem);
             //Output
+            S7.SetIntAt(read_buffer_DB14, 2, (short) TrafficLightsSQ);
+
             //Crossroad_1_DB DB1
             //Input
             //Output
@@ -1247,23 +1397,19 @@ namespace Bc_prace
 
             #endregion
 
-            #endregion
-
-            //CrossoradDB write result
-            #region CrossoradDB write result
             int writeResultDB14 = writer.Write();
 
             if (writeResultDB14 == 0)
             {
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were writtne to CrossoradDB DB14.");
+                lblStat = new ToolStripStatusLabel("Variables were written to CrossoradDB DB14.");
                 statusStripChooseOption.Items.Add(lblStat);
             }
             else
             {
                 //error
                 statusStripChooseOption.Items.Clear();
-                lblStat = new ToolStripStatusLabel("Variables were not writtne to CrossoradDB DB14.");
+                lblStat = new ToolStripStatusLabel("Variables were not written to CrossoradDB DB14.");
                 statusStripChooseOption.Items.Add(lblStat);
 
                 if (!errorMessageBoxShown)
@@ -1278,7 +1424,7 @@ namespace Bc_prace
             }
 
             #endregion
-
+                        
             #endregion
 
             //PLC Disconnect 
@@ -1619,7 +1765,7 @@ namespace Bc_prace
                         CarWashBrushes = S7.GetBitAt(read_buffer_DB5, 3, 7);
                         CarWashSoap = S7.GetBitAt(read_buffer_DB5, 4, 0); ;
                         CarWashActiveFoam = S7.GetBitAt(read_buffer_DB5, 4, 1);
-                        CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6);
+                        CarWashTimeDoorMovement = S7.GetDIntAt(read_buffer_DB5, 6); //Time
                         CarWashMEMDoor = S7.GetBitAt(read_buffer_DB5, 10, 0);
                         CarWashMEMDoorTrig = S7.GetBitAt(read_buffer_DB5, 10, 1);
                         CarWashMEMDoorCloseTrig = S7.GetBitAt(read_buffer_DB5, 10, 2);

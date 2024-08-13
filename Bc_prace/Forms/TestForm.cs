@@ -246,15 +246,7 @@ namespace Bc_prace.Forms
         {
             Test_Class result = new Test_Class
             {
-                /*
-                PLC_Int1 =
-                PLC_Bool1 = 
-                PLC_Time1 = 
-
-                PLC_Int2 = 
-                PLC_Bool2 = 
-                PLC_Time2 = 
-                */
+                
             };
 
             return result;
@@ -504,7 +496,7 @@ namespace Bc_prace.Forms
                 S7.SetBitAt(write_buffer_DB28, 2, 0, Bool1);
 
             if (Time1_verification == true)
-                S7.SetIntAt(write_buffer_DB28, 3, (short)Time1);
+                S7.SetDIntAt(write_buffer_DB28, 3, (short)Time1); //Time
 
             if (Int2_verification == true)
                 S7.SetIntAt(write_buffer_DB28, 5, (short)Int2);
@@ -513,7 +505,7 @@ namespace Bc_prace.Forms
                 S7.SetBitAt(write_buffer_DB28, 7, 0, Bool2);
 
             if (Time2_verification == true)
-                S7.SetIntAt(write_buffer_DB28, 9, (short)Time2);
+                S7.SetDIntAt(write_buffer_DB28, 9, (short)Time2); //Time
 
             writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB28, 0, read_buffer_DB28.Length, ref read_buffer_DB28);
 
