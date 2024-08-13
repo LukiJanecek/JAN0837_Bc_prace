@@ -571,7 +571,7 @@ namespace Bc_prace
 
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "Directory created: " + directoryPath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
 
                 if (!File.Exists(filePath))
@@ -580,13 +580,13 @@ namespace Bc_prace
 
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "File created: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "File already exists: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
             }
             catch (Exception ex)

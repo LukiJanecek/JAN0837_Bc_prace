@@ -343,7 +343,16 @@ namespace Bc_prace.Forms
                 Time2 = S7.GetIntAt(read_buffer_DB28, 9);
 
                 //writting to JSON
+                Test_Class Test_DB = TestVariables();
 
+                Test_DB.PLC_Int1 = Int1;
+                Test_DB.PLC_Bool1 = Bool1;
+                Test_DB.PLC_Time1 = Time1;
+                Test_DB.PLC_Int2 = Int2;
+                Test_DB.PLC_Bool2 = Bool2;
+                Test_DB.PLC_Time2 = Time2;
+
+                AddDataToFile(Test_DB, Test_JSONFilePath);
             }
             else
             {
