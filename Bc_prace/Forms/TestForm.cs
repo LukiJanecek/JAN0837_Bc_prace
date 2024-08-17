@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Security.Cryptography;
 using Sharp7;
 using System.Runtime.CompilerServices;
+using Newtonsoft.Json.Linq;
 
 namespace Bc_prace.Forms
 {
@@ -38,10 +39,10 @@ namespace Bc_prace.Forms
 
         //Buffers variables => Testing_DB
         private int DBNumber_DB28 = 28;
-        public byte[] read_buffer_DB28 = new byte[10];
+        public byte[] read_buffer_DB28 = new byte[14];
         public byte[] previous_buffer_DB28;
         public byte[] PreviousBufferHash_DB28;
-        public byte[] write_buffer_DB28 = new byte[10];
+        public byte[] write_buffer_DB28 = new byte[14];
 
         //Top
         private int Int1;
@@ -166,14 +167,27 @@ namespace Bc_prace.Forms
             return default(T);
         }
 
-        public void AddDataToFile(object data, string filePath)
+        public void AddDataToFile(object data, string filePath, string sectionName)
         {
             string existingJson = File.ReadAllText(filePath);
-            List<object> existingData = JsonConvert.DeserializeObject<List<object>>(existingJson);
 
-            existingData.Add(data);
+            var jsonData = JsonConvert.DeserializeObject<Dictionary<string, object>>(existingJson);
 
-            string updatedJson = JsonConvert.SerializeObject(existingData);
+            JArray dataList;
+            if (jsonData.ContainsKey(sectionName))
+            {
+                dataList = jsonData[sectionName] as JArray;
+            }
+            else
+            {
+                dataList = new JArray();
+            }
+
+            dataList.Add(JObject.FromObject(data));
+
+            jsonData[sectionName] = dataList;
+
+            string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
             File.WriteAllText(filePath, updatedJson);
         }
 
@@ -344,7 +358,7 @@ namespace Bc_prace.Forms
                 Test_DB.PLC_Bool2 = Bool2;
                 Test_DB.PLC_Time2 = Time2;
 
-                AddDataToFile(Test_DB, Test_JSONFilePath);
+                AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
             }
             else
             {
@@ -551,17 +565,14 @@ namespace Bc_prace.Forms
 
             listBoxJSON.Items.Clear();
             listBoxJSONVariables.Items.Clear();
+                        
+            var jsonData = JsonConvert.DeserializeObject<Test_Class>(fileContent);
 
-            var items = JsonConvert.DeserializeObject<List<string>>(fileContent);
-            foreach (var item in items)
+            foreach (var property in jsonData.GetType().GetProperties())
             {
-                listBoxJSON.Items.Add(item);
-            }
-
-            List<string> variables = ReadDataFromFile<List<string>>(fullPath);
-            foreach(var variable in variables)
-            {
-                listBoxJSONVariables.Items.Add(variable);
+                string propertyName = property.Name;
+                object propertyValue = property.GetValue(jsonData, null);
+                listBoxJSONVariables.Items.Add($"{propertyName}: {propertyValue}");
             }
         }
 

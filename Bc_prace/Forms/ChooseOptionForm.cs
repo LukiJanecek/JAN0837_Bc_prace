@@ -17,6 +17,8 @@ using System.Web;
 using Newtonsoft.Json;
 using JAN0837_BP.Classes;
 using System.Diagnostics;
+using Newtonsoft.Json.Linq;
+using Bc_prace.Forms;
 
 namespace Bc_prace
 {
@@ -28,8 +30,9 @@ namespace Bc_prace
         private bool errorMessageBoxShown;
 
         //files
-        public const string Test_JSONFilePath = "/Data/Test.json"; 
+        public const string Test_JSONFilePath = "/Data/Test.json";
         public const string Backup_JSONFilePath = "/Data/backupFile.json";
+        public const string MaintainDB_JSONFilePath = "/Data/MaintainDB.json";
         public const string ElevatorDB_JSONFilePath = "/Data/ElevatorDB.json";
         public const string CarWashDB_JSONFilePath = "/Data/CarWashDB.json";
         public const string CrossroadDB_JSONFilePath = "/Data/CrossroadDB.json";
@@ -43,9 +46,13 @@ namespace Bc_prace
         CarWashForm Program2 = null;
         CrossroadForm Program3 = null;
 
+        TestForm TestForm = null;
+
         private static bool program1Opened = false;
         private static bool program2Opened = false;
         private static bool program3Opened = false;
+
+        private static bool TestFormOpened = false;
 
         //Buffers variables 
         #region Buffers variables
@@ -423,7 +430,7 @@ namespace Bc_prace
         //MEMs
 
         #endregion
-                
+
         public ChooseOptionForm()
         {
             InitializeComponent();
@@ -456,6 +463,14 @@ namespace Bc_prace
             BackupHeader.title = "Backup data";
             BackupHeader.message = "Backup of all variables: \n";
             WriteDataToFileJSON(BackupfullPath, BackupHeader);
+
+            //Maintain data
+            string MaintainfullPath = Path.Combine(Application.StartupPath, MaintainDB_JSONFilePath);
+            EnsureFileExists(MaintainfullPath);
+            Header_json_Class MaintainHeader = CreateHeader();
+            MaintainHeader.title = "Maintain variables";
+            MaintainHeader.message = "MaintainDB: \n";
+            WriteDataToFileJSON(MaintainfullPath, MaintainHeader);
 
             //Elevator data
             string ElevatorfullPath = Path.Combine(Application.StartupPath, ElevatorDB_JSONFilePath);
@@ -576,7 +591,7 @@ namespace Bc_prace
 
                 if (!File.Exists(filePath))
                 {
-                    File.Create(filePath).Close(); 
+                    File.Create(filePath).Close();
 
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "File created: " + filePath, "Info",
@@ -606,7 +621,7 @@ namespace Bc_prace
                 string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
                 File.WriteAllText(filePath, jsonData);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 if (!errorMessageBoxShown)
                 {
@@ -639,14 +654,27 @@ namespace Bc_prace
             return default(T);
         }
 
-        public void AddDataToFile(object data, string filePath)
+        public void AddDataToFile(object data, string filePath, string sectionName)
         {
             string existingJson = File.ReadAllText(filePath);
-            List<object> existingData = JsonConvert.DeserializeObject<List<object>>(existingJson);
 
-            existingData.Add(data);
+            var jsonData = JsonConvert.DeserializeObject<Dictionary<string, object>>(existingJson);
 
-            string updatedJson = JsonConvert.SerializeObject(existingData);
+            JArray dataList;
+            if (jsonData.ContainsKey(sectionName))
+            {
+                dataList = jsonData[sectionName] as JArray;
+            }
+            else
+            {
+                dataList = new JArray();
+            }
+
+            dataList.Add(JObject.FromObject(data));
+
+            jsonData[sectionName] = dataList;
+
+            string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
             File.WriteAllText(filePath, updatedJson);
         }
 
@@ -739,7 +767,7 @@ namespace Bc_prace
         private void btnProgram1_Click(object sender, EventArgs e)
         {
             S7MultiVar writer = new S7MultiVar(client);
-            
+
             if (!program1Opened)
             {
                 statusStripChooseOption.Items.Clear();
@@ -1034,7 +1062,7 @@ namespace Bc_prace
             }
 
             #endregion
-                        
+
             //ElevatorDB DB4
             #region ElevatorDB DB4 
 
@@ -1064,7 +1092,7 @@ namespace Bc_prace
             ElevatorDoorClOSE = ElevatorDB_Data_Backup.ElevatorDoorClOSE;
             ElevatorDoorOPEN = ElevatorDB_Data_Backup.ElevatorDoorOPEN;
             ElevatorInactivity = ElevatorDB_Data_Backup.ElevatorInactivity;
-            
+
             //Output
             ElevatorMotorON = ElevatorDB_Data_Backup.ElevatorMotorON;
             ElevatorMotorDOWN = ElevatorDB_Data_Backup.ElevatorMotorDOWN;
@@ -1090,7 +1118,7 @@ namespace Bc_prace
             ElevatroTimeDoorSQCLOSE = ElevatorDB_Data_Backup.ElevatroTimeDoorSQCLOSE;
             ElevatorCabinSpeed = ElevatorDB_Data_Backup.ElevatorCabinSpeed;
             ElevatorTimeToGetDown = ElevatorDB_Data_Backup.ElevatorTimeToGetDown;
-            
+
             //MEMs
             ElevatorMEMDoor = ElevatorDB_Data_Backup.ElevatorMEMDoor;
             ElevatorMEMDoorTrig = ElevatorDB_Data_Backup.ElevatorMEMDoorTrig;
@@ -1143,10 +1171,10 @@ namespace Bc_prace
             S7.SetBitAt(read_buffer_DB4, 4, 2, ElevatorMotorUP);
             S7.SetBitAt(read_buffer_DB4, 4, 3, ElevatroHoming);
             S7.SetBitAt(read_buffer_DB4, 4, 4, ElevatorSystemReady);
-            S7.SetIntAt(read_buffer_DB4, 6, (short) ElevatorActualFloor);
+            S7.SetIntAt(read_buffer_DB4, 6, (short)ElevatorActualFloor);
             S7.SetBitAt(read_buffer_DB4, 8, 0, ElevatorMoving);
             S7.SetBitAt(read_buffer_DB4, 8, 1, ElevatorSystemWorking);
-            S7.SetIntAt(read_buffer_DB4, 10, (short) ElevatorGoToFloor);
+            S7.SetIntAt(read_buffer_DB4, 10, (short)ElevatorGoToFloor);
             S7.SetBitAt(read_buffer_DB4, 12, 0, ElevatorDirection);
             S7.SetBitAt(read_buffer_DB4, 12, 1, ElevatorActualFloorLED1);
             S7.SetBitAt(read_buffer_DB4, 12, 2, ElevatorActualFloorLED2);
@@ -1299,7 +1327,7 @@ namespace Bc_prace
             S7.SetBitAt(read_buffer_DB5, 3, 5, CarWashDry);
             S7.SetBitAt(read_buffer_DB5, 3, 6, CarWashPreWash);
             S7.SetBitAt(read_buffer_DB5, 3, 7, CarWashBrushes);
-            S7.SetBitAt(read_buffer_DB5, 4, 0, CarWashSoap); 
+            S7.SetBitAt(read_buffer_DB5, 4, 0, CarWashSoap);
             S7.SetBitAt(read_buffer_DB5, 4, 1, CarWashActiveFoam);
             S7.SetDIntAt(read_buffer_DB5, 6, CarWashTimeDoorMovement); //Time
             S7.SetBitAt(read_buffer_DB5, 10, 0, CarWashMEMDoor);
@@ -1380,7 +1408,7 @@ namespace Bc_prace
             S7.SetBitAt(read_buffer_DB14, 0, 3, CrossroadEmergencySTOP);
             S7.SetBitAt(read_buffer_DB14, 0, 4, CrossroadErrorSystem);
             //Output
-            S7.SetIntAt(read_buffer_DB14, 2, (short) TrafficLightsSQ);
+            S7.SetIntAt(read_buffer_DB14, 2, (short)TrafficLightsSQ);
 
             //Crossroad_1_DB DB1
             //Input
@@ -1424,7 +1452,7 @@ namespace Bc_prace
             }
 
             #endregion
-                        
+
             #endregion
 
             //PLC Disconnect 
@@ -1493,7 +1521,7 @@ namespace Bc_prace
         private void GetPLCStatus()
         {
             int status = 0;
-            
+
             int PLCStatus = client.PlcGetStatus(ref status);
 
             if (PLCStatus == 0)
@@ -2391,22 +2419,22 @@ namespace Bc_prace
                 //Backup data
                 if (!BackupDataDone)
                 {
-                    AddDataToFile(MaintainDB_Data, Backup_JSONFilePath);
-                    AddDataToFile(ElevatorDB_Data, Backup_JSONFilePath);
-                    AddDataToFile(CarWashDB_Data, Backup_JSONFilePath);
-                    AddDataToFile(CrossroadDB_Data, Backup_JSONFilePath);
+                    AddDataToFile(MaintainDB_Data, Backup_JSONFilePath, "MaintainDB");
+                    AddDataToFile(ElevatorDB_Data, Backup_JSONFilePath, "ElevatorDB");
+                    AddDataToFile(CarWashDB_Data, Backup_JSONFilePath, "CarWashDB");
+                    AddDataToFile(CrossroadDB_Data, Backup_JSONFilePath, "CrossroadDB");
 
                     BackupDataDone = true;
                 }
 
                 //MaintainDB
-                AddDataToFile(MaintainDB_Data, Backup_JSONFilePath);
+                AddDataToFile(MaintainDB_Data, MaintainDB_JSONFilePath, "MaintainDB");
                 //ElevatorDB
-                AddDataToFile(ElevatorDB_Data, ElevatorDB_JSONFilePath);
+                AddDataToFile(ElevatorDB_Data, ElevatorDB_JSONFilePath, "ElevatorDB");
                 //CarWashDB
-                AddDataToFile(CarWashDB_Data, CarWashDB_JSONFilePath);
+                AddDataToFile(CarWashDB_Data, CarWashDB_JSONFilePath, "CarWashDB");
                 //CrossoradDB
-                AddDataToFile(CrossroadDB_Data, CrossroadDB_JSONFilePath);
+                AddDataToFile(CrossroadDB_Data, CrossroadDB_JSONFilePath, "CrossroadDB");
 
                 #endregion
             }
@@ -2450,7 +2478,7 @@ namespace Bc_prace
         }
 
         #endregion
-        
+
         //btn End 
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
@@ -2466,7 +2494,7 @@ namespace Bc_prace
                 S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
                 Option3 = false;
                 S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
-                               
+
                 //MaintainDB
                 int writeResultDB11 = client.DBWrite(DBNumber_DB11, 0, send_buffer_DB11.Length, send_buffer_DB11);
                 if (writeResultDB11 == 0)
@@ -2489,10 +2517,18 @@ namespace Bc_prace
             }
 
             //close program
-            this.Close(); 
+            this.Close();
         }
 
         #endregion
-                
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            TestForm = new TestForm(this);
+            TestForm.Show();
+            TestFormOpened = true;
+
+            TestForm.FormClosed += (sender, e) => { TestFormOpened = false; };
+        }
     }
 }
