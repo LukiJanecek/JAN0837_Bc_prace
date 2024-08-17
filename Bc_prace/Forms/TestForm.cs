@@ -574,6 +574,8 @@ namespace Bc_prace.Forms
                 object propertyValue = property.GetValue(jsonData, null);
                 listBoxJSONVariables.Items.Add($"{propertyName}: {propertyValue}");
             }
+
+            listBoxJSON.Items.Add(fileContent);
         }
 
         private void btnSendToJSON_Click(object sender, EventArgs e)
