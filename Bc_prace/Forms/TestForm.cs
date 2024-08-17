@@ -562,6 +562,10 @@ namespace Bc_prace.Forms
         }
         private void btnReadJSON_Click(object sender, EventArgs e)
         {
+            statusStripTestForm.Items.Clear();
+            ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Reading JSON...");
+            statusStripTestForm.Items.Add(lblStatus1);
+
             string fullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
             string fileContent = File.ReadAllText(fullPath);
 
@@ -578,6 +582,8 @@ namespace Bc_prace.Forms
             }
 
             listBoxJSON.Items.Add(fileContent);
+
+            statusStripTestForm.Items.Clear();
         }
 
         private void btnSendToJSON_Click(object sender, EventArgs e)
@@ -711,37 +717,37 @@ namespace Bc_prace.Forms
             string fullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
             EnsureFileExists(fullPath);
 
-            Test_Class results = TestVariables();
+            Test_Class Test_DB = TestVariables();
 
             if (Int1_verification == true)
-                Int1 = results.PLC_Int1;
+                Test_DB.PLC_Int1 = Int1;
 
             if (Bool1_verification == true)
-                Bool1 = results.PLC_Bool1;
+                Test_DB.PLC_Bool1 = Bool1;
 
             if (Time1_verification == true)
-                Time1 = results.PLC_Time1; //Time
+                Test_DB.PLC_Time1 = Time1; //Time
 
             if (Int2_verification == true)
-                Int2 = results.PLC_Int2;
+                Test_DB.PLC_Int2 = Int2;
 
             if (Bool2_verification == true)
-                Bool2 = results.PLC_Bool2;
+                Test_DB.PLC_Bool2 = Bool2;
 
             if (Time2_verification == true)
-                Time2 = results.PLC_Time2; //Time          
+                Test_DB.PLC_Time2 = Time2; //Time          
 
-            WriteDataToFileJSON(Test_JSONFilePath, results);
+            WriteDataToFileJSON(Test_JSONFilePath, Test_DB);
 
             //write successfull
-            /*
+            
             textBoxInt1.Clear();
             textBoxBool1.Clear();
             textBoxTime1.Clear();
             textBoxInt2.Clear();
             textBoxBool2.Clear();
             textBoxTime2.Clear();
-            */
+            
 
             statusStripTestForm.Items.Clear();
             ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were written to JSON.");
