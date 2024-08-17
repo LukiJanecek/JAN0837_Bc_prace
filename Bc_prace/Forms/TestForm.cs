@@ -99,7 +99,7 @@ namespace Bc_prace.Forms
 
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "Directory created: " + directoryPath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
 
                 if (!File.Exists(filePath))
@@ -108,13 +108,15 @@ namespace Bc_prace.Forms
 
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "File created: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 }
                 else
                 {
+                    /*
                     //MessageBox
                     MessageBox.Show($"Info: \n" + "File already exists: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    */
                 }
             }
             catch (Exception ex)
@@ -580,11 +582,170 @@ namespace Bc_prace.Forms
 
         private void btnSendToJSON_Click(object sender, EventArgs e)
         {
+            //TextBox iput 
+            #region TextBox input 
+
+            bool Int1_verification;
+            bool Bool1_verification;
+            bool Time1_verification;
+            bool Int2_verification;
+            bool Bool2_verification;
+            bool Time2_verification;
+
+            if (!string.IsNullOrEmpty(textBoxInt1.Text))
+            {
+                if (int.TryParse(textBoxInt1.Text, out int value))
+                {
+                    Int1 = value;
+                    Int1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Int1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Int1_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxBool1.Text))
+            {
+                if (TryParseBoolean(textBoxBool1.Text, out bool value))
+                {
+                    Bool1 = value;
+                    Bool1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Bool1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Bool1_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxTime1.Text))
+            {
+                if (int.TryParse(textBoxTime1.Text, out int value))
+                {
+                    Time1 = value;
+                    Time1_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Time1_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Time1_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxInt2.Text))
+            {
+                if (int.TryParse(textBoxInt2.Text, out int value))
+                {
+                    Int2 = value;
+                    Int2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Int2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Int2_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxBool2.Text))
+            {
+                if (TryParseBoolean(textBoxBool2.Text, out bool value))
+                {
+                    Bool2 = value;
+                    Bool2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Bool2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Bool2_verification = false;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxTime2.Text))
+            {
+                if (int.TryParse(textBoxTime2.Text, out int value))
+                {
+                    Time2 = value;
+                    Time2_verification = true;
+                }
+                else
+                {
+                    //error -> bad input
+                    Time2_verification = false;
+                }
+            }
+            else
+            {
+                //textbox is empty or null
+                Time2_verification = false;
+            }
+
+            #endregion
+
             string fullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
             EnsureFileExists(fullPath);
 
             Test_Class results = TestVariables();
+
+            if (Int1_verification == true)
+                Int1 = results.PLC_Int1;
+
+            if (Bool1_verification == true)
+                Bool1 = results.PLC_Bool1;
+
+            if (Time1_verification == true)
+                Time1 = results.PLC_Time1; //Time
+
+            if (Int2_verification == true)
+                Int2 = results.PLC_Int2;
+
+            if (Bool2_verification == true)
+                Bool2 = results.PLC_Bool2;
+
+            if (Time2_verification == true)
+                Time2 = results.PLC_Time2; //Time          
+
             WriteDataToFileJSON(Test_JSONFilePath, results);
+
+            //write successfull
+            /*
+            textBoxInt1.Clear();
+            textBoxBool1.Clear();
+            textBoxTime1.Clear();
+            textBoxInt2.Clear();
+            textBoxBool2.Clear();
+            textBoxTime2.Clear();
+            */
+
+            statusStripTestForm.Items.Clear();
+            ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were written to JSON.");
+            statusStripTestForm.Items.Add(lblStatus1);
         }
 
         //btn End

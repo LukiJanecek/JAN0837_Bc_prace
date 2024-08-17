@@ -112,6 +112,7 @@
             // listBoxJSON
             // 
             listBoxJSON.FormattingEnabled = true;
+            listBoxJSON.HorizontalScrollbar = true;
             listBoxJSON.ItemHeight = 20;
             listBoxJSON.Location = new Point(14, 99);
             listBoxJSON.Margin = new Padding(3, 4, 3, 4);
