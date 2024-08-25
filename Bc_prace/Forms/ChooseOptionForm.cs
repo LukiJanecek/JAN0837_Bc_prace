@@ -600,8 +600,10 @@ namespace Bc_prace
                 else
                 {
                     //MessageBox
+                    /*
                     MessageBox.Show($"Info: \n" + "File already exists: " + filePath, "Info",
                             MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    */
                 }
             }
             catch (Exception ex)

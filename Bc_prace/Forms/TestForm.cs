@@ -172,8 +172,8 @@ namespace Bc_prace.Forms
         public void AddDataToFile(object data, string filePath, string sectionName)
         {
             string existingJson = File.ReadAllText(filePath);
-
-            var jsonData = JsonConvert.DeserializeObject<Dictionary<string, object>>(existingJson);
+            /*
+            var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson);
 
             JArray dataList;
             if (jsonData.ContainsKey(sectionName))
@@ -183,11 +183,29 @@ namespace Bc_prace.Forms
             else
             {
                 dataList = new JArray();
+                jsonData[sectionName] = dataList;
             }
 
-            dataList.Add(JObject.FromObject(data));
+            var dataObject = JObject.FromObject(data);
 
-            jsonData[sectionName] = dataList;
+            dataObject.Remove("title");
+            dataObject.Remove("data_time");
+            dataObject.Remove("message");
+
+            dataList.Add(dataObject);
+
+            //dataList.Add(JObject.FromObject(data));
+            */
+
+            var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson) ?? new JObject();
+
+            var dataObject = JObject.FromObject(data);
+
+            dataObject.Remove("title");
+            dataObject.Remove("data_time");
+            dataObject.Remove("message");
+
+            jsonData[sectionName] = dataObject;
 
             string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
             File.WriteAllText(filePath, updatedJson);
@@ -344,11 +362,11 @@ namespace Bc_prace.Forms
             {
                 Int1 = S7.GetIntAt(read_buffer_DB28, 0);
                 Bool1 = S7.GetBitAt(read_buffer_DB28, 2, 0);
-                Time1 = S7.GetIntAt(read_buffer_DB28, 3);
+                Time1 = S7.GetIntAt(read_buffer_DB28, 4);
 
-                Int2 = S7.GetIntAt(read_buffer_DB28, 5);
-                Bool2 = S7.GetBitAt(read_buffer_DB28, 7, 0);
-                Time2 = S7.GetIntAt(read_buffer_DB28, 9);
+                Int2 = S7.GetIntAt(read_buffer_DB28, 8);
+                Bool2 = S7.GetBitAt(read_buffer_DB28, 10, 0);
+                Time2 = S7.GetIntAt(read_buffer_DB28, 12);
 
                 //writting to JSON
                 Test_Class Test_DB = TestVariables();
@@ -571,14 +589,87 @@ namespace Bc_prace.Forms
 
             listBoxJSON.Items.Clear();
             listBoxJSONVariables.Items.Clear();
-                        
+
+            /*
             var jsonData = JsonConvert.DeserializeObject<Test_Class>(fileContent);
 
             foreach (var property in jsonData.GetType().GetProperties())
             {
                 string propertyName = property.Name;
                 object propertyValue = property.GetValue(jsonData, null);
-                listBoxJSONVariables.Items.Add($"{propertyName}: {propertyValue}");
+                listBoxJSONVariables.Items.Add($"{propertyName}: {propertyValue} \n");
+            }
+            */
+
+            /*
+            var jsonData = JsonConvert.DeserializeObject<Dictionary<string, JArray>>(fileContent);
+
+            if (jsonData.ContainsKey("TestDB"))
+            {
+                foreach (JObject dataItem in jsonData["TestDB"])
+                {
+                    foreach (var property in dataItem.Properties())
+                    {
+                        listBoxJSONVariables.Items.Add($"{property.Name}: {property.Value}");
+                    }
+                }
+            }
+            */
+
+            var jsonData = JsonConvert.DeserializeObject<JObject>(fileContent);
+            /*
+            foreach (var property in jsonData.Properties())
+            {
+                if (property.Value is JArray array)
+                {
+                    listBoxJSON.Items.Add($"{property.Name}:");
+                    foreach (JObject dataItem in array)
+                    {
+                        foreach (var itemProperty in dataItem.Properties())
+                        {
+                            listBoxJSONVariables.Items.Add($"{itemProperty.Name}: {itemProperty.Value}");
+                        }
+                        listBoxJSONVariables.Items.Add(""); 
+                    }
+                }
+                else
+                {
+                    listBoxJSON.Items.Add($"{property.Name}: {property.Value}");
+                }
+            }
+            */
+
+            listBoxJSON.Items.Add($"title: {jsonData["title"]}");
+            listBoxJSON.Items.Add($"data_time: {jsonData["data_time"]}");
+            listBoxJSON.Items.Add($"message: {jsonData["message"]}");
+
+            if (jsonData.ContainsKey("TestDB"))
+            {
+                var testDbData = jsonData["TestDB"];
+
+                // Zkontrolujte, zda je TestDB pole (JArray) nebo objekt (JObject)
+                if (testDbData is JArray testDbArray)
+                {
+                    // Pokud je to pole, iterujeme přes každý objekt v poli
+                    listBoxJSON.Items.Add("TestDB:");
+                    foreach (JObject dataItem in testDbArray)
+                    {
+                        foreach (var itemProperty in dataItem.Properties())
+                        {
+                            listBoxJSONVariables.Items.Add($"{itemProperty.Name}: {itemProperty.Value}");
+                        }
+                        listBoxJSONVariables.Items.Add(""); 
+                    }
+                }
+                else if (testDbData is JObject testDbObject)
+                {
+                    // Pokud je to objekt, přímo iterujeme přes jeho vlastnosti
+                    listBoxJSON.Items.Add("TestDB:");
+                    foreach (var itemProperty in testDbObject.Properties())
+                    {
+                        listBoxJSONVariables.Items.Add($"{itemProperty.Name}: {itemProperty.Value}");
+                    }
+                }
             }
 
             listBoxJSON.Items.Add(fileContent);
@@ -737,10 +828,11 @@ namespace Bc_prace.Forms
             if (Time2_verification == true)
                 Test_DB.PLC_Time2 = Time2; //Time          
 
-            WriteDataToFileJSON(Test_JSONFilePath, Test_DB);
+            //WriteDataToFileJSON(Test_JSONFilePath, Test_DB);
+            AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
 
             //write successfull
-            
+
             textBoxInt1.Clear();
             textBoxBool1.Clear();
             textBoxTime1.Clear();
