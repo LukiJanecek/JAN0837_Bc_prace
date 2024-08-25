@@ -39,10 +39,10 @@ namespace Bc_prace.Forms
 
         //Buffers variables => Testing_DB
         private int DBNumber_DB28 = 28;
-        public byte[] read_buffer_DB28 = new byte[14];
+        public byte[] read_buffer_DB28 = new byte[16];
         public byte[] previous_buffer_DB28;
         public byte[] PreviousBufferHash_DB28;
-        public byte[] write_buffer_DB28 = new byte[14];
+        public byte[] write_buffer_DB28 = new byte[16];
 
         //Top
         private int Int1;
@@ -512,18 +512,18 @@ namespace Bc_prace.Forms
                 S7.SetBitAt(write_buffer_DB28, 2, 0, Bool1);
 
             if (Time1_verification == true)
-                S7.SetDIntAt(write_buffer_DB28, 3, (short)Time1); //Time
+                S7.SetDIntAt(write_buffer_DB28, 4, (short)Time1); //Time
 
             if (Int2_verification == true)
-                S7.SetIntAt(write_buffer_DB28, 5, (short)Int2);
+                S7.SetIntAt(write_buffer_DB28, 8, (short)Int2);
 
             if (Bool2_verification == true)
-                S7.SetBitAt(write_buffer_DB28, 7, 0, Bool2);
+                S7.SetBitAt(write_buffer_DB28, 10, 0, Bool2);
 
             if (Time2_verification == true)
-                S7.SetDIntAt(write_buffer_DB28, 9, (short)Time2); //Time
+                S7.SetDIntAt(write_buffer_DB28, 12, (short)Time2); //Time
 
-            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB28, 0, read_buffer_DB28.Length, ref read_buffer_DB28);
+            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB28, 0, write_buffer_DB28.Length, ref write_buffer_DB28);
 
             int writeResultDB28 = writer.Write();
 
