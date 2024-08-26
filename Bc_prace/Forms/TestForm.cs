@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using Sharp7;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace Bc_prace.Forms
 {
@@ -275,12 +276,12 @@ namespace Bc_prace.Forms
 
             return result;
         }
-                
+
         public static Test_Class TestVariables()
         {
             Test_Class result = new Test_Class
             {
-                
+
             };
 
             return result;
@@ -316,7 +317,7 @@ namespace Bc_prace.Forms
 
         private void Test_Load(object sender, EventArgs e)
         {
-
+            PopulateComboBoxWithJsonFiles();
         }
 
         private async void Periodic_Function_Tick(object sender, EventArgs e)
@@ -349,7 +350,7 @@ namespace Bc_prace.Forms
         {
 
         }
-        
+
         private void btnReadFromPLC_Click(object sender, EventArgs e)
         {
             S7MultiVar reader = new S7MultiVar(client);
@@ -413,7 +414,8 @@ namespace Bc_prace.Forms
             bool Bool2_verification;
             bool Time2_verification;
 
-            if (!string.IsNullOrEmpty(textBoxInt1.Text)) {
+            if (!string.IsNullOrEmpty(textBoxInt1.Text))
+            {
                 if (int.TryParse(textBoxInt1.Text, out int value))
                 {
                     Int1 = value;
@@ -431,7 +433,8 @@ namespace Bc_prace.Forms
                 Int1_verification = false;
             }
 
-            if (!string.IsNullOrEmpty(textBoxBool1.Text)) {
+            if (!string.IsNullOrEmpty(textBoxBool1.Text))
+            {
                 if (TryParseBoolean(textBoxBool1.Text, out bool value))
                 {
                     Bool1 = value;
@@ -449,7 +452,8 @@ namespace Bc_prace.Forms
                 Bool1_verification = false;
             }
 
-            if (!string.IsNullOrEmpty(textBoxTime1.Text)) {
+            if (!string.IsNullOrEmpty(textBoxTime1.Text))
+            {
                 if (int.TryParse(textBoxTime1.Text, out int value))
                 {
                     Time1 = value;
@@ -467,7 +471,8 @@ namespace Bc_prace.Forms
                 Time1_verification = false;
             }
 
-            if (!string.IsNullOrEmpty(textBoxInt2.Text)) {
+            if (!string.IsNullOrEmpty(textBoxInt2.Text))
+            {
                 if (int.TryParse(textBoxInt2.Text, out int value))
                 {
                     Int2 = value;
@@ -485,7 +490,8 @@ namespace Bc_prace.Forms
                 Int2_verification = false;
             }
 
-            if (!string.IsNullOrEmpty(textBoxBool2.Text)) {
+            if (!string.IsNullOrEmpty(textBoxBool2.Text))
+            {
                 if (TryParseBoolean(textBoxBool2.Text, out bool value))
                 {
                     Bool2 = value;
@@ -503,7 +509,8 @@ namespace Bc_prace.Forms
                 Bool2_verification = false;
             }
 
-            if (!string.IsNullOrEmpty(textBoxTime2.Text)) {
+            if (!string.IsNullOrEmpty(textBoxTime2.Text))
+            {
                 if (int.TryParse(textBoxTime2.Text, out int value))
                 {
                     Time2 = value;
@@ -525,7 +532,7 @@ namespace Bc_prace.Forms
 
             if (Int1_verification == true)
                 S7.SetIntAt(write_buffer_DB28, 0, (short)Int1);
-                        
+
             if (Bool1_verification == true)
                 S7.SetBitAt(write_buffer_DB28, 2, 0, Bool1);
 
@@ -658,7 +665,7 @@ namespace Bc_prace.Forms
                         {
                             listBoxJSONVariables.Items.Add($"{itemProperty.Name}: {itemProperty.Value}");
                         }
-                        listBoxJSONVariables.Items.Add(""); 
+                        listBoxJSONVariables.Items.Add("");
                     }
                 }
                 else if (testDbData is JObject testDbObject)
@@ -839,7 +846,7 @@ namespace Bc_prace.Forms
             textBoxInt2.Clear();
             textBoxBool2.Clear();
             textBoxTime2.Clear();
-            
+
 
             statusStripTestForm.Items.Clear();
             ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were written to JSON.");
@@ -873,6 +880,49 @@ namespace Bc_prace.Forms
                 result = false;
                 return false;
             }
+        }
+
+        private void btnShowJson_Click(object sender, EventArgs e)
+        {
+            if (comboBoxFileChoice.SelectedItem != null)
+            {
+                string selectedFile = comboBoxFileChoice.SelectedItem.ToString();
+                string fullPath = Path.Combine(Application.StartupPath, selectedFile);
+
+                // Zobrazení JSON souboru v Notepadu
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "notepad.exe",
+                    Arguments = fullPath,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("Please select a JSON file from the list.", "No File Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PopulateComboBoxWithJsonFiles()
+        {
+            string directoryPath = Application.StartupPath; // Nebo specifická složka
+            string[] jsonFiles = Directory.GetFiles(directoryPath, "*.json");
+
+            comboBoxFileChoice.Items.Clear();
+            foreach (string file in jsonFiles)
+            {
+                comboBoxFileChoice.Items.Add(Path.GetFileName(file));
+            }
+
+            if (comboBoxFileChoice.Items.Count > 0)
+            {
+                comboBoxFileChoice.SelectedIndex = 0; // Nastaví výchozí výběr na první soubor
+            }
+        }
+
+        private void comboBoxFileChoice_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
