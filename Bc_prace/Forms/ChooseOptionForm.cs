@@ -447,12 +447,12 @@ namespace Bc_prace
 
             //Files verification and header
             #region Files verification and header
-
-            //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
-
-
+            
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+                        
             //Test
-            string TestfullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
+            string TestfullPath = Path.Combine(dataDirectoryPath, Test_JSONFilePath);
             EnsureFileExists(TestfullPath);
             Header_json_Class TestHeader = CreateHeader();
             TestHeader.title = "Test file";
@@ -460,7 +460,7 @@ namespace Bc_prace
             WriteDataToFileJSON(TestfullPath, TestHeader);
 
             //Backup data
-            string BackupfullPath = Path.Combine(Application.StartupPath, Backup_JSONFilePath);
+            string BackupfullPath = Path.Combine(dataDirectoryPath, Backup_JSONFilePath);
             EnsureFileExists(BackupfullPath);
             Header_json_Class BackupHeader = CreateHeader();
             BackupHeader.title = "Backup data";
@@ -468,7 +468,7 @@ namespace Bc_prace
             WriteDataToFileJSON(BackupfullPath, BackupHeader);
 
             //Maintain data
-            string MaintainfullPath = Path.Combine(Application.StartupPath, MaintainDB_JSONFilePath);
+            string MaintainfullPath = Path.Combine(dataDirectoryPath, MaintainDB_JSONFilePath);
             EnsureFileExists(MaintainfullPath);
             Header_json_Class MaintainHeader = CreateHeader();
             MaintainHeader.title = "Maintain variables";
@@ -476,7 +476,7 @@ namespace Bc_prace
             WriteDataToFileJSON(MaintainfullPath, MaintainHeader);
 
             //Elevator data
-            string ElevatorfullPath = Path.Combine(Application.StartupPath, ElevatorDB_JSONFilePath);
+            string ElevatorfullPath = Path.Combine(dataDirectoryPath, ElevatorDB_JSONFilePath);
             EnsureFileExists(ElevatorfullPath);
             Header_json_Class ElevatorHeader = CreateHeader();
             ElevatorHeader.title = "Elevator variables";
@@ -484,7 +484,7 @@ namespace Bc_prace
             WriteDataToFileJSON(ElevatorfullPath, ElevatorHeader);
 
             //CarWash data
-            string CarWashfullPath = Path.Combine(Application.StartupPath, CarWashDB_JSONFilePath);
+            string CarWashfullPath = Path.Combine(dataDirectoryPath, CarWashDB_JSONFilePath);
             EnsureFileExists(CarWashfullPath);
             Header_json_Class CarWashHeader = CreateHeader();
             CarWashHeader.title = "CarWash variables";
@@ -492,7 +492,7 @@ namespace Bc_prace
             WriteDataToFileJSON(CarWashfullPath, CarWashHeader);
 
             //Crossroad data
-            string CrossoradfullPath = Path.Combine(Application.StartupPath, CrossroadDB_JSONFilePath);
+            string CrossoradfullPath = Path.Combine(dataDirectoryPath, CrossroadDB_JSONFilePath);
             EnsureFileExists(CrossoradfullPath);
             Header_json_Class CrossroadHeader = CreateHeader();
             CrossroadHeader.title = "CrossroadDB variables";
@@ -500,7 +500,7 @@ namespace Bc_prace
             WriteDataToFileJSON(CrossoradfullPath, CrossroadHeader);
 
             //Logger data
-            string LoggerfullPath = Path.Combine(Application.StartupPath, Logger_JSONFilePath);
+            string LoggerfullPath = Path.Combine(dataDirectoryPath, Logger_JSONFilePath);
             EnsureFileExists(LoggerfullPath);
             Header_json_Class LoggerHeader = CreateHeader();
             LoggerHeader.title = "Logger file";
@@ -508,13 +508,13 @@ namespace Bc_prace
             WriteDataToFileJSON(LoggerfullPath, LoggerHeader);
 
             //PLC Startup data
-            string PLC_Startup_Data_fullPath = Path.Combine(Application.StartupPath, PLC_Startup_Data_JSONFilePath);
+            string PLC_Startup_Data_fullPath = Path.Combine(dataDirectoryPath, PLC_Startup_Data_JSONFilePath);
             EnsureFileExists(PLC_Startup_Data_fullPath);
             Header_json_Class PLC_Startup_Data_Header = CreateHeader();
             PLC_Startup_Data_Header.title = "PLC Startup Data";
             PLC_Startup_Data_Header.message = "StartupDB: \n";
             WriteDataToFileJSON(PLC_Startup_Data_fullPath, PLC_Startup_Data_Header);
-
+            
             /*
             CreateFileIfNotExists(TestJSONFilePath);
             CreateFileIfNotExists(BackupJSONFilePath);
@@ -543,6 +543,7 @@ namespace Bc_prace
             */
 
             #endregion
+
         }
 
         //Functions for work with JSON files

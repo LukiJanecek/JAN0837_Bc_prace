@@ -318,6 +318,19 @@ namespace Bc_prace.Forms
         private void Test_Load(object sender, EventArgs e)
         {
             PopulateComboBoxWithJsonFiles();
+
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+
+            listBoxPath.Items.Clear();
+
+            listBoxPath.Items.Add("projectRootPath: ");
+            listBoxPath.Items.Add(projectRootPath);
+            listBoxPath.Items.Add("\n");
+
+            listBoxPath.Items.Add("dataDirectoryPath: ");
+            listBoxPath.Items.Add(dataDirectoryPath);
+            listBoxPath.Items.Add("\n");
         }
 
         private async void Periodic_Function_Tick(object sender, EventArgs e)
@@ -887,10 +900,9 @@ namespace Bc_prace.Forms
             if (comboBoxFileChoice.SelectedItem != null)
             {
                 string selectedFile = comboBoxFileChoice.SelectedItem.ToString();
-
-                //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
-
-                string fullPath = Path.Combine(Application.StartupPath, "Data", selectedFile);
+                string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+                string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+                string fullPath = Path.Combine(dataDirectoryPath, selectedFile);
 
                 // Zobrazení JSON souboru v Notepadu
                 Process.Start(new ProcessStartInfo
@@ -908,11 +920,9 @@ namespace Bc_prace.Forms
 
         private void PopulateComboBoxWithJsonFiles()
         {
-            //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
-
-
-            string directoryPath = Path.Combine(Application.StartupPath, "Data");
-            string[] jsonFiles = Directory.GetFiles(directoryPath, "*.json");
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+            string[] jsonFiles = Directory.GetFiles(dataDirectoryPath, "*.json");
 
             comboBoxFileChoice.Items.Clear();
             foreach (string file in jsonFiles)
