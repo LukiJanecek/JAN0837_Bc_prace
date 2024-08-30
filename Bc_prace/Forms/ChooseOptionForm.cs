@@ -448,6 +448,9 @@ namespace Bc_prace
             //Files verification and header
             #region Files verification and header
 
+            //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
+
+
             //Test
             string TestfullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
             EnsureFileExists(TestfullPath);

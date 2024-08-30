@@ -309,7 +309,6 @@
             comboBoxFileChoice.Name = "comboBoxFileChoice";
             comboBoxFileChoice.Size = new Size(235, 28);
             comboBoxFileChoice.TabIndex = 23;
-            comboBoxFileChoice.SelectedIndexChanged += comboBoxFileChoice_SelectedIndexChanged;
             // 
             // TestForm
             // 

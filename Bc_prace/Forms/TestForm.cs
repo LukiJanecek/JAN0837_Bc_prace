@@ -887,7 +887,10 @@ namespace Bc_prace.Forms
             if (comboBoxFileChoice.SelectedItem != null)
             {
                 string selectedFile = comboBoxFileChoice.SelectedItem.ToString();
-                string fullPath = Path.Combine(Application.StartupPath, selectedFile);
+
+                //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
+
+                string fullPath = Path.Combine(Application.StartupPath, "Data", selectedFile);
 
                 // Zobrazení JSON souboru v Notepadu
                 Process.Start(new ProcessStartInfo
@@ -905,7 +908,10 @@ namespace Bc_prace.Forms
 
         private void PopulateComboBoxWithJsonFiles()
         {
-            string directoryPath = Application.StartupPath; // Nebo specifická složka
+            //string directoryPath = Path.Combine(Directory.GetParent(Application.StartupPath).Parent.Parent.FullName, "Data");
+
+
+            string directoryPath = Path.Combine(Application.StartupPath, "Data");
             string[] jsonFiles = Directory.GetFiles(directoryPath, "*.json");
 
             comboBoxFileChoice.Items.Clear();
@@ -920,9 +926,6 @@ namespace Bc_prace.Forms
             }
         }
 
-        private void comboBoxFileChoice_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

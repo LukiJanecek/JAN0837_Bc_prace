@@ -161,11 +161,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
+      "projectUniqueName": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
       "projectName": "JAN0837_BP",
-      "projectPath": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
+      "projectPath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
       "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lukas\\OneDrive\\BP\\JAN0837_Bc_prace\\Bc_prace\\obj\\",
+      "outputPath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
