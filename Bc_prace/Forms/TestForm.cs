@@ -14,6 +14,8 @@ using Sharp7;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using JAN0837_BP.FileHelper;
+using JAN0837_BP.FileHelper.JSON;
 
 namespace Bc_prace.Forms
 {
@@ -58,160 +60,7 @@ namespace Bc_prace.Forms
 
         //Functions for work with JSON files
         #region Functions for work with JSON files
-        public void CreateFileIfNotExists(string relativePath)
-        {
-            try
-            {
-                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-                string directory = Path.GetDirectoryName(fullPath);
-
-                if (!Directory.Exists(directory))
-                {
-                    Directory.CreateDirectory(directory);
-                }
-
-                if (!File.Exists(fullPath))
-                {
-                    File.Create(fullPath).Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                if (!errorMessageBoxShown)
-                {
-                    errorMessageBoxShown = true;
-
-                    //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                }
-            }
-        }
-
-        public void EnsureFileExists(string filePath)
-        {
-            try
-            {
-                string directoryPath = Path.GetDirectoryName(filePath);
-
-                if (!Directory.Exists(directoryPath))
-                {
-                    Directory.CreateDirectory(directoryPath);
-
-                    //MessageBox
-                    MessageBox.Show($"Info: \n" + "Directory created: " + directoryPath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                }
-
-                if (!File.Exists(filePath))
-                {
-                    File.Create(filePath).Close();
-
-                    //MessageBox
-                    MessageBox.Show($"Info: \n" + "File created: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                }
-                else
-                {
-                    /*
-                    //MessageBox
-                    MessageBox.Show($"Info: \n" + "File already exists: " + filePath, "Info",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    */
-                }
-            }
-            catch (Exception ex)
-            {
-                errorMessageBoxShown = true;
-
-                //MessageBox
-                MessageBox.Show($"Error: {ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-        }
-
-        public void WriteDataToFileJSON<T>(string filePath, T data)
-        {
-            try
-            {
-                string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
-                File.WriteAllText(filePath, jsonData);
-            }
-            catch (Exception ex)
-            {
-                if (!errorMessageBoxShown)
-                {
-                    errorMessageBoxShown = true;
-
-                    //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                }
-            }
-        }
-
-        public static T ReadDataFromFile<T>(string filePath)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            if (File.Exists(filePath))
-            {
-                string jsonData = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<T>(jsonData);
-            }
-
-            return default(T);
-        }
-
-        public void AddDataToFile(object data, string filePath, string sectionName)
-        {
-            string existingJson = File.ReadAllText(filePath);
-            /*
-            var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson);
-
-            JArray dataList;
-            if (jsonData.ContainsKey(sectionName))
-            {
-                dataList = jsonData[sectionName] as JArray;
-            }
-            else
-            {
-                dataList = new JArray();
-                jsonData[sectionName] = dataList;
-            }
-
-            var dataObject = JObject.FromObject(data);
-
-            dataObject.Remove("title");
-            dataObject.Remove("data_time");
-            dataObject.Remove("message");
-
-            dataList.Add(dataObject);
-
-            //dataList.Add(JObject.FromObject(data));
-            */
-
-            var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson) ?? new JObject();
-
-            var dataObject = JObject.FromObject(data);
-
-            dataObject.Remove("title");
-            dataObject.Remove("data_time");
-            dataObject.Remove("message");
-
-            jsonData[sectionName] = dataObject;
-
-            string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
-            File.WriteAllText(filePath, updatedJson);
-        }
-
+        
         public static Header_json_Class CreateHeader()
         {
             Header_json_Class result = new Header_json_Class
@@ -392,7 +241,7 @@ namespace Bc_prace.Forms
                 Test_DB.PLC_Bool2 = Bool2;
                 Test_DB.PLC_Time2 = Time2;
 
-                AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
+                JsonFileHelper.AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
             }
             else
             {
@@ -826,7 +675,7 @@ namespace Bc_prace.Forms
             #endregion
 
             string fullPath = Path.Combine(Application.StartupPath, Test_JSONFilePath);
-            EnsureFileExists(fullPath);
+            JsonFileHelper.EnsureFileExists(fullPath);
 
             Test_Class Test_DB = TestVariables();
 
@@ -849,7 +698,7 @@ namespace Bc_prace.Forms
                 Test_DB.PLC_Time2 = Time2; //Time          
 
             //WriteDataToFileJSON(Test_JSONFilePath, Test_DB);
-            AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
+            JsonFileHelper.AddDataToFile(Test_DB, Test_JSONFilePath, "TestDB");
 
             //write successfull
 

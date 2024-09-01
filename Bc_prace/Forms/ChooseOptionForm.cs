@@ -19,6 +19,8 @@ using JAN0837_BP.Classes;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 using Bc_prace.Forms;
+using JAN0837_BP.FileHelper;
+using JAN0837_BP.FileHelper.JSON;
 
 namespace Bc_prace
 {
@@ -453,67 +455,67 @@ namespace Bc_prace
                         
             //Test
             string TestfullPath = Path.Combine(dataDirectoryPath, Test_JSONFilePath);
-            EnsureFileExists(TestfullPath);
+            JsonFileHelper.EnsureFileExists(TestfullPath);
             Header_json_Class TestHeader = CreateHeader();
             TestHeader.title = "Test file";
             TestHeader.message = "Here is some test data: \n";
-            WriteDataToFileJSON(TestfullPath, TestHeader);
-
+            JsonFileHelper.WriteDataToFileJSON(TestfullPath, TestHeader);
+            
             //Backup data
             string BackupfullPath = Path.Combine(dataDirectoryPath, Backup_JSONFilePath);
-            EnsureFileExists(BackupfullPath);
+            JsonFileHelper.EnsureFileExists(BackupfullPath);
             Header_json_Class BackupHeader = CreateHeader();
             BackupHeader.title = "Backup data";
             BackupHeader.message = "Backup of all variables: \n";
-            WriteDataToFileJSON(BackupfullPath, BackupHeader);
+            JsonFileHelper.WriteDataToFileJSON(BackupfullPath, BackupHeader);
 
             //Maintain data
             string MaintainfullPath = Path.Combine(dataDirectoryPath, MaintainDB_JSONFilePath);
-            EnsureFileExists(MaintainfullPath);
+            JsonFileHelper.EnsureFileExists(MaintainfullPath);
             Header_json_Class MaintainHeader = CreateHeader();
             MaintainHeader.title = "Maintain variables";
             MaintainHeader.message = "MaintainDB: \n";
-            WriteDataToFileJSON(MaintainfullPath, MaintainHeader);
+            JsonFileHelper.WriteDataToFileJSON(MaintainfullPath, MaintainHeader);
 
             //Elevator data
             string ElevatorfullPath = Path.Combine(dataDirectoryPath, ElevatorDB_JSONFilePath);
-            EnsureFileExists(ElevatorfullPath);
+            JsonFileHelper.EnsureFileExists(ElevatorfullPath);
             Header_json_Class ElevatorHeader = CreateHeader();
             ElevatorHeader.title = "Elevator variables";
             ElevatorHeader.message = "ElevatorDB: \n";
-            WriteDataToFileJSON(ElevatorfullPath, ElevatorHeader);
+            JsonFileHelper.WriteDataToFileJSON(ElevatorfullPath, ElevatorHeader);
 
             //CarWash data
             string CarWashfullPath = Path.Combine(dataDirectoryPath, CarWashDB_JSONFilePath);
-            EnsureFileExists(CarWashfullPath);
+            JsonFileHelper.EnsureFileExists(CarWashfullPath);
             Header_json_Class CarWashHeader = CreateHeader();
             CarWashHeader.title = "CarWash variables";
             CarWashHeader.message = "CarWashDB: \n";
-            WriteDataToFileJSON(CarWashfullPath, CarWashHeader);
+            JsonFileHelper.WriteDataToFileJSON(CarWashfullPath, CarWashHeader);
 
             //Crossroad data
             string CrossoradfullPath = Path.Combine(dataDirectoryPath, CrossroadDB_JSONFilePath);
-            EnsureFileExists(CrossoradfullPath);
+            JsonFileHelper.EnsureFileExists(CrossoradfullPath);
             Header_json_Class CrossroadHeader = CreateHeader();
             CrossroadHeader.title = "CrossroadDB variables";
             CrossroadHeader.message = "CrossroadDB: \n";
-            WriteDataToFileJSON(CrossoradfullPath, CrossroadHeader);
+            JsonFileHelper.WriteDataToFileJSON(CrossoradfullPath, CrossroadHeader);
 
             //Logger data
             string LoggerfullPath = Path.Combine(dataDirectoryPath, Logger_JSONFilePath);
-            EnsureFileExists(LoggerfullPath);
+            JsonFileHelper.EnsureFileExists(LoggerfullPath);
             Header_json_Class LoggerHeader = CreateHeader();
             LoggerHeader.title = "Logger file";
             LoggerHeader.message = "Logger messages: \n";
-            WriteDataToFileJSON(LoggerfullPath, LoggerHeader);
+            JsonFileHelper.WriteDataToFileJSON(LoggerfullPath, LoggerHeader);
 
             //PLC Startup data
             string PLC_Startup_Data_fullPath = Path.Combine(dataDirectoryPath, PLC_Startup_Data_JSONFilePath);
-            EnsureFileExists(PLC_Startup_Data_fullPath);
+            JsonFileHelper.EnsureFileExists(PLC_Startup_Data_fullPath);
             Header_json_Class PLC_Startup_Data_Header = CreateHeader();
             PLC_Startup_Data_Header.title = "PLC Startup Data";
             PLC_Startup_Data_Header.message = "StartupDB: \n";
-            WriteDataToFileJSON(PLC_Startup_Data_fullPath, PLC_Startup_Data_Header);
+            JsonFileHelper.WriteDataToFileJSON(PLC_Startup_Data_fullPath, PLC_Startup_Data_Header);
             
             /*
             CreateFileIfNotExists(TestJSONFilePath);
@@ -548,6 +550,8 @@ namespace Bc_prace
 
         //Functions for work with JSON files
         #region Functions for work with JSON files
+        
+        //old
         public void CreateFileIfNotExists(string relativePath)
         {
             try
@@ -683,6 +687,7 @@ namespace Bc_prace
             string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
             File.WriteAllText(filePath, updatedJson);
         }
+
 
         public static Header_json_Class CreateHeader()
         {
@@ -1017,13 +1022,13 @@ namespace Bc_prace
             #region Reading variables form backup and writting them to DBs
 
             //MaintainDB DB11
-            MaintainDB_Class MaintainDB_Data_Backup = ReadDataFromFile<MaintainDB_Class>(Backup_JSONFilePath);
+            MaintainDB_Class MaintainDB_Data_Backup = JsonFileHelper.ReadDataFromFile<MaintainDB_Class>(Backup_JSONFilePath);
             //ElevatorDB DB4
-            ElevatorDB_Class ElevatorDB_Data_Backup = ReadDataFromFile<ElevatorDB_Class>(Backup_JSONFilePath);
+            ElevatorDB_Class ElevatorDB_Data_Backup = JsonFileHelper.ReadDataFromFile<ElevatorDB_Class>(Backup_JSONFilePath);
             //CarWashDB DB5
-            CarWashDB_Class CarWashDB_Data_Backup = ReadDataFromFile<CarWashDB_Class>(Backup_JSONFilePath);
+            CarWashDB_Class CarWashDB_Data_Backup = JsonFileHelper.ReadDataFromFile<CarWashDB_Class>(Backup_JSONFilePath);
             //CrossoradDB DB14
-            CrossroadDB_Class CrossroadDB_Data_Backup = ReadDataFromFile<CrossroadDB_Class>(Backup_JSONFilePath);
+            CrossroadDB_Class CrossroadDB_Data_Backup = JsonFileHelper.ReadDataFromFile<CrossroadDB_Class>(Backup_JSONFilePath);
 
             //MaintainDB DB11
             #region MaintainDB DB11 
@@ -2425,22 +2430,22 @@ namespace Bc_prace
                 //Backup data
                 if (!BackupDataDone)
                 {
-                    AddDataToFile(MaintainDB_Data, Backup_JSONFilePath, "MaintainDB");
-                    AddDataToFile(ElevatorDB_Data, Backup_JSONFilePath, "ElevatorDB");
-                    AddDataToFile(CarWashDB_Data, Backup_JSONFilePath, "CarWashDB");
-                    AddDataToFile(CrossroadDB_Data, Backup_JSONFilePath, "CrossroadDB");
+                    JsonFileHelper.AddDataToFile(MaintainDB_Data, Backup_JSONFilePath, "MaintainDB");
+                    JsonFileHelper.AddDataToFile(ElevatorDB_Data, Backup_JSONFilePath, "ElevatorDB");
+                    JsonFileHelper.AddDataToFile(CarWashDB_Data, Backup_JSONFilePath, "CarWashDB");
+                    JsonFileHelper.AddDataToFile(CrossroadDB_Data, Backup_JSONFilePath, "CrossroadDB");
 
                     BackupDataDone = true;
                 }
 
                 //MaintainDB
-                AddDataToFile(MaintainDB_Data, MaintainDB_JSONFilePath, "MaintainDB");
+                JsonFileHelper.AddDataToFile(MaintainDB_Data, MaintainDB_JSONFilePath, "MaintainDB");
                 //ElevatorDB
-                AddDataToFile(ElevatorDB_Data, ElevatorDB_JSONFilePath, "ElevatorDB");
+                JsonFileHelper.AddDataToFile(ElevatorDB_Data, ElevatorDB_JSONFilePath, "ElevatorDB");
                 //CarWashDB
-                AddDataToFile(CarWashDB_Data, CarWashDB_JSONFilePath, "CarWashDB");
+                JsonFileHelper.AddDataToFile(CarWashDB_Data, CarWashDB_JSONFilePath, "CarWashDB");
                 //CrossoradDB
-                AddDataToFile(CrossroadDB_Data, CrossroadDB_JSONFilePath, "CrossroadDB");
+                JsonFileHelper.AddDataToFile(CrossroadDB_Data, CrossroadDB_JSONFilePath, "CrossroadDB");
 
                 #endregion
             }
