@@ -12,6 +12,9 @@ namespace JAN0837_BP.FileHelper.JSON
     {
         public static bool errorMessageBoxShown = false;
 
+        public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+        public static string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+
         public static void CreateFileIfNotExists(string relativePath)
         {
             try
@@ -86,8 +89,6 @@ namespace JAN0837_BP.FileHelper.JSON
 
         public static void WriteDataToFileJSON<T>(string selectedFile, T data)
         {
-            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
-            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
             string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
 
             try
@@ -110,8 +111,6 @@ namespace JAN0837_BP.FileHelper.JSON
 
         public static T ReadDataFromFile<T>(string selectedFile)
         {
-            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
-            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
             string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
 
             try
@@ -134,8 +133,6 @@ namespace JAN0837_BP.FileHelper.JSON
 
         public static void AddDataToFile(object data, string selectedFile, string sectionName)
         {
-            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
-            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
             string fullfilePath = Path.Combine(dataDirectoryPath, selectedFile);
 
             string existingJson = File.ReadAllText(fullfilePath);

@@ -23,6 +23,16 @@ namespace Bc_prace.Controls
     {
         public event CarWashPositionCar OnCarWashPositionCar;
 
+        public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+        public static string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+        public static string resourcesDirectoryPath = Path.Combine(projectRootPath, "Resources");
+
+        //pictures 
+        public static string Car64Path = "car_64.png";
+        public static string CarBrushes64Path = "car_brushes_64.png";
+        public static string CarDone64Path = "car_done_64.png";
+        public static string CarWashing64Path = "car_washing_64.png";
+
         //Drawing variables
         #region Drawing variables 
 
@@ -771,6 +781,8 @@ namespace Bc_prace.Controls
 
         public void InitializeCarImage(int index)
         {
+            string pictureFullPath;
+            
             if (pictureBoxCar != null && !pictureBoxCar.IsDisposed)
             {
                 Controls.Remove(pictureBoxCar);
@@ -778,26 +790,34 @@ namespace Bc_prace.Controls
             }
 
             pictureBoxCar = new PictureBox();
-
+            
             //moving car 
             if (picture == 1)
             {
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
+                pictureFullPath = Path.Combine(resourcesDirectoryPath, Car64Path);
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_64.png");
+                pictureBoxCar.Image = Image.FromFile(pictureFullPath);
             }
             //brushes
             else if (picture == 2)
             {
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
+                pictureFullPath = Path.Combine(resourcesDirectoryPath, CarBrushes64Path);
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_brushes_64.png");
+                pictureBoxCar.Image = Image.FromFile(pictureFullPath);
             }
             //washing
             else if (picture == 3)
             {
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
+                pictureFullPath = Path.Combine(resourcesDirectoryPath, CarWashing64Path);
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_washing_64.png");
+                pictureBoxCar.Image = Image.FromFile(pictureFullPath);
             }
             //shinny car 
             else if (picture == 4)
-            {  
-                pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+            {
+                pictureFullPath = Path.Combine(resourcesDirectoryPath, CarDone64Path);
+                //pictureBoxCar.Image = Image.FromFile("C:\\Users\\lukas\\OneDrive\\Dokumenty\\VŠ\\Bc_prace\\Bc\\C#\\final\\JAN0837_Bc_prace\\Bc_prace\\Resources\\car_done_64.png");
+                pictureBoxCar.Image = Image.FromFile(pictureFullPath);
             }
             else
             {

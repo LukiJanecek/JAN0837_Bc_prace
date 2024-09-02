@@ -1033,7 +1033,7 @@ namespace Bc_prace
             //MaintainDB DB11
             #region MaintainDB DB11 
 
-            //MAintain variables
+            //Maintain variables
             Option1 = MaintainDB_Data_Backup.Option1;
             Option2 = MaintainDB_Data_Backup.Option2;
             Option3 = MaintainDB_Data_Backup.Option3;
@@ -2509,7 +2509,7 @@ namespace Bc_prace
                 btnDisconnect_Click(sender, e);
 
                 //DBWrite
-
+                /*
                 //MaintainDB 
                 Option1 = false;
                 S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
@@ -2537,8 +2537,10 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
+                */
 
                 //S7MulitVar -> je to zbytečné, je to v Disconnect 
+                /*
                 //MaintainDB 
                 Option1 = false;
                 S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
@@ -2574,7 +2576,7 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
-
+                */
             }
 
             //close program
