@@ -84,12 +84,16 @@ namespace JAN0837_BP.FileHelper.JSON
             }
         }
 
-        public static void WriteDataToFileJSON<T>(string filePath, T data)
+        public static void WriteDataToFileJSON<T>(string selectedFile, T data)
         {
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+            string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
+
             try
             {
                 string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
-                File.WriteAllText(filePath, jsonData);
+                File.WriteAllText(filefullPath, jsonData);
             }
             catch (Exception ex)
             {
@@ -104,8 +108,12 @@ namespace JAN0837_BP.FileHelper.JSON
             }
         }
 
-        public static T ReadDataFromFile<T>(string filePath)
+        public static T ReadDataFromFile<T>(string selectedFile)
         {
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+            string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
+
             try
             {
 
@@ -115,18 +123,23 @@ namespace JAN0837_BP.FileHelper.JSON
 
             }
 
-            if (File.Exists(filePath))
+            if (File.Exists(filefullPath))
             {
-                string jsonData = File.ReadAllText(filePath);
+                string jsonData = File.ReadAllText(filefullPath);
                 return JsonConvert.DeserializeObject<T>(jsonData);
             }
 
             return default(T);
         }
 
-        public static void AddDataToFile(object data, string filePath, string sectionName)
+        public static void AddDataToFile(object data, string selectedFile, string sectionName)
         {
-            string existingJson = File.ReadAllText(filePath);
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+            string fullfilePath = Path.Combine(dataDirectoryPath, selectedFile);
+
+            string existingJson = File.ReadAllText(fullfilePath);
+
             /*
             var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson);
 
@@ -163,7 +176,7 @@ namespace JAN0837_BP.FileHelper.JSON
             jsonData[sectionName] = dataObject;
 
             string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
-            File.WriteAllText(filePath, updatedJson);
+            File.WriteAllText(fullfilePath, updatedJson);
         }
 
 

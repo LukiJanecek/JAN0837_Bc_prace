@@ -9,6 +9,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\backupFile.json" />
+    <None Remove="Data\CarWashDB.json" />
+    <None Remove="Data\CrossroadDB.json" />
+    <None Remove="Data\ElevatorDB.json" />
+    <None Remove="Data\Logger_file.json" />
+    <None Remove="Data\PLC_Startup_data.json" />
+    <None Remove="Data\Test.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\PLC_Startup_data.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\backupFile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\CarWashDB.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\CrossroadDB.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ElevatorDB.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Logger_file.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Test.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Forms\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>

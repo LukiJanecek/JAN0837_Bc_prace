@@ -39,10 +39,10 @@
             statusStripChooseOption = new StatusStrip();
             btnEnd = new Button();
             panel2 = new Panel();
+            btnTest = new Button();
             btnDisconnect = new Button();
             panel3 = new Panel();
             panel1 = new Panel();
-            btnTest = new Button();
             Timer_read_from_PLC = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -123,17 +123,17 @@
             // statusStripChooseOption
             // 
             statusStripChooseOption.ImageScalingSize = new Size(20, 20);
-            statusStripChooseOption.Location = new Point(0, 370);
+            statusStripChooseOption.Location = new Point(0, 239);
             statusStripChooseOption.Name = "statusStripChooseOption";
             statusStripChooseOption.Padding = new Padding(1, 0, 12, 0);
-            statusStripChooseOption.Size = new Size(652, 22);
+            statusStripChooseOption.Size = new Size(434, 22);
             statusStripChooseOption.TabIndex = 8;
             statusStripChooseOption.Text = "statusStrip1";
             // 
             // btnEnd
             // 
             btnEnd.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEnd.Location = new Point(11, 214);
+            btnEnd.Location = new Point(11, 83);
             btnEnd.Margin = new Padding(3, 2, 3, 2);
             btnEnd.Name = "btnEnd";
             btnEnd.Size = new Size(124, 53);
@@ -144,6 +144,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnTest);
             panel2.Controls.Add(btnDisconnect);
             panel2.Controls.Add(btnConnect);
             panel2.Controls.Add(txtBoxPLCIP);
@@ -152,8 +153,20 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(652, 101);
+            panel2.Size = new Size(434, 101);
             panel2.TabIndex = 11;
+            // 
+            // btnTest
+            // 
+            btnTest.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnTest.Location = new Point(304, 2);
+            btnTest.Margin = new Padding(3, 2, 3, 2);
+            btnTest.Name = "btnTest";
+            btnTest.Size = new Size(124, 53);
+            btnTest.TabIndex = 10;
+            btnTest.Text = "Test dev";
+            btnTest.UseVisualStyleBackColor = true;
+            btnTest.Click += btnTest_Click;
             // 
             // btnDisconnect
             // 
@@ -177,30 +190,18 @@
             panel3.Location = new Point(0, 101);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(652, 269);
+            panel3.Size = new Size(434, 138);
             panel3.TabIndex = 12;
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnTest);
             panel1.Controls.Add(btnEnd);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(511, 101);
+            panel1.Location = new Point(293, 101);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(141, 269);
+            panel1.Size = new Size(141, 138);
             panel1.TabIndex = 13;
-            // 
-            // btnTest
-            // 
-            btnTest.Location = new Point(11, 26);
-            btnTest.Margin = new Padding(3, 2, 3, 2);
-            btnTest.Name = "btnTest";
-            btnTest.Size = new Size(124, 53);
-            btnTest.TabIndex = 10;
-            btnTest.Text = "Test dev";
-            btnTest.UseVisualStyleBackColor = true;
-            btnTest.Click += btnTest_Click;
             // 
             // Timer_read_from_PLC
             // 
@@ -210,7 +211,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(652, 392);
+            ClientSize = new Size(434, 261);
             Controls.Add(panel1);
             Controls.Add(panel3);
             Controls.Add(panel2);

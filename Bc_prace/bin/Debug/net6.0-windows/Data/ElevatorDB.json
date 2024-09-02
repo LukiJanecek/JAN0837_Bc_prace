@@ -1,6 +1,6 @@
 {
   "title": "Elevator variables",
-  "data_time": "2024-09-02 09:57:31",
+  "data_time": "2024-09-02 09:51:51",
   "message": "ElevatorDB: \n",
   "ElevatorDB": {
     "ElevatorBTNCabin1": false,
@@ -17,7 +17,7 @@
     "ElevatorBTNOPENCLOSE": false,
     "ElevatorEmergencySTOP": false,
     "ElevatorErrorSystem": false,
-    "ElevatorActualFloorSENS1": true,
+    "ElevatorActualFloorSENS1": false,
     "ElevatorActualFloorSENS2": false,
     "ElevatorActualFloorSENS3": false,
     "ElevatorActualFloorSENS4": false,
@@ -35,7 +35,7 @@
     "ElevatorSystemWorking": false,
     "ElevatorGoToFloor": 0,
     "ElevatorDirection": false,
-    "ElevatorActualFloorLED1": true,
+    "ElevatorActualFloorLED1": false,
     "ElevatorActualFloorLED2": false,
     "ElevatorActualFloorLED3": false,
     "ElevatorActualFloorLED4": false,

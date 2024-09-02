@@ -32,14 +32,14 @@ namespace Bc_prace
         private bool errorMessageBoxShown;
 
         //files
-        public const string Test_JSONFilePath = "/Data/Test.json";
-        public const string Backup_JSONFilePath = "/Data/backupFile.json";
-        public const string MaintainDB_JSONFilePath = "/Data/MaintainDB.json";
-        public const string ElevatorDB_JSONFilePath = "/Data/ElevatorDB.json";
-        public const string CarWashDB_JSONFilePath = "/Data/CarWashDB.json";
-        public const string CrossroadDB_JSONFilePath = "/Data/CrossroadDB.json";
-        public const string Logger_JSONFilePath = "/Data/Logger_file.json";
-        public const string PLC_Startup_Data_JSONFilePath = "/Data/PLC_Startup_data.json";
+        public const string Test_JSONFilePath = "Test.json";
+        public const string Backup_JSONFilePath = "backupFile.json";
+        public const string MaintainDB_JSONFilePath = "MaintainDB.json";
+        public const string ElevatorDB_JSONFilePath = "ElevatorDB.json";
+        public const string CarWashDB_JSONFilePath = "CarWashDB.json";
+        public const string CrossroadDB_JSONFilePath = "CrossroadDB.json";
+        public const string Logger_JSONFilePath = "Logger_file.json";
+        public const string PLC_Startup_Data_JSONFilePath = "PLC_Startup_data.json";
 
         //
         private bool BackupDataDone = false;
@@ -1046,6 +1046,8 @@ namespace Bc_prace
             Option3 = false;
             S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
 
+            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, send_buffer_DB11.Length, ref send_buffer_DB11);
+
             int writeResultDB11 = writer.Write();
 
             if (writeResultDB11 == 0)
@@ -1222,6 +1224,8 @@ namespace Bc_prace
 
             #endregion
 
+            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB4, 0, send_buffer_DB4.Length, ref send_buffer_DB4);
+
             int writeResultDB4 = writer.Write();
 
             if (writeResultDB4 == 0)
@@ -1349,6 +1353,8 @@ namespace Bc_prace
 
             #endregion
 
+            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB5, 0, send_buffer_DB5.Length, ref send_buffer_DB5);
+
             int writeResultDB5 = writer.Write();
 
             if (writeResultDB5 == 0)
@@ -1435,6 +1441,8 @@ namespace Bc_prace
             //Output
 
             #endregion
+
+            writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB14, 0, send_buffer_DB14.Length, ref send_buffer_DB14);
 
             int writeResultDB14 = writer.Write();
 
@@ -2494,9 +2502,13 @@ namespace Bc_prace
         #region Close window 
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            S7MultiVar writer = new S7MultiVar(client);
+
             if (client.Connected)
             {
                 btnDisconnect_Click(sender, e);
+
+                //DBWrite
 
                 //MaintainDB 
                 Option1 = false;
@@ -2525,6 +2537,44 @@ namespace Bc_prace
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
+
+                //S7MulitVar -> je to zbytečné, je to v Disconnect 
+                //MaintainDB 
+                Option1 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 0, Option1);
+                Option2 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 1, Option2);
+                Option3 = false;
+                S7.SetBitAt(send_buffer_DB11, 0, 2, Option3);
+
+                writer.Add(S7Consts.S7AreaDB, S7Consts.S7WLByte, DBNumber_DB11, 0, send_buffer_DB11.Length, ref send_buffer_DB11);
+
+                int writeResultDB11_2 = writer.Write();
+
+                if (writeResultDB11_2 == 0)
+                {
+                    statusStripChooseOption.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were written to PLC.");
+                    statusStripChooseOption.Items.Add(lblStatus1);
+                }
+                else
+                {
+                    //error
+                    statusStripChooseOption.Items.Clear();
+                    ToolStripStatusLabel lblStatus1 = new ToolStripStatusLabel("Variables were not read.");
+                    statusStripChooseOption.Items.Add(lblStatus1);
+
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show("Tia didn't respond. BE doesn't work properly. Data weren't written to DB11!!! \n\n" +
+                            $"Error message {writeResultDB11_2} \n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
             }
 
             //close program
