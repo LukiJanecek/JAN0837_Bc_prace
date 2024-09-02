@@ -31,6 +31,11 @@ namespace Bc_prace
         //MessageBox control
         private bool errorMessageBoxShown;
 
+        //Paths
+        public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+        public static string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
+        public static string resourcesDirectoryPath = Path.Combine(projectRootPath, "Resources");
+
         //files
         public const string Test_JSONFilePath = "Test.json";
         public const string Backup_JSONFilePath = "backupFile.json";
@@ -41,7 +46,13 @@ namespace Bc_prace
         public const string Logger_JSONFilePath = "Logger_file.json";
         public const string PLC_Startup_Data_JSONFilePath = "PLC_Startup_data.json";
 
-        //
+        //pictures 
+        public static string Car64Path = "car_64.png";
+        public static string CarBrushes64Path = "car_brushes_64.png";
+        public static string CarDone64Path = "car_done_64.png";
+        public static string CarWashing64Path = "car_washing_64.png";
+
+        //Backup data variable
         private bool BackupDataDone = false;
 
         ElevatorForm Program1 = null;
@@ -2585,6 +2596,8 @@ namespace Bc_prace
 
         #endregion
 
+        //Test window 
+        #region Test window
         private void btnTest_Click(object sender, EventArgs e)
         {
             TestForm = new TestForm(this);
@@ -2593,5 +2606,7 @@ namespace Bc_prace
 
             TestForm.FormClosed += (sender, e) => { TestFormOpened = false; };
         }
+
+        #endregion
     }
 }

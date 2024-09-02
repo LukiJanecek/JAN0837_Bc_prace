@@ -23,9 +23,20 @@ namespace Bc_prace.Controls
     {
         public event CarWashPositionCar OnCarWashPositionCar;
 
+        //Paths
         public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
         public static string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
         public static string resourcesDirectoryPath = Path.Combine(projectRootPath, "Resources");
+
+        //files
+        public const string Test_JSONFilePath = "Test.json";
+        public const string Backup_JSONFilePath = "backupFile.json";
+        public const string MaintainDB_JSONFilePath = "MaintainDB.json";
+        public const string ElevatorDB_JSONFilePath = "ElevatorDB.json";
+        public const string CarWashDB_JSONFilePath = "CarWashDB.json";
+        public const string CrossroadDB_JSONFilePath = "CrossroadDB.json";
+        public const string Logger_JSONFilePath = "Logger_file.json";
+        public const string PLC_Startup_Data_JSONFilePath = "PLC_Startup_data.json";
 
         //pictures 
         public static string Car64Path = "car_64.png";
