@@ -79,22 +79,48 @@ namespace JAN0837_BP.FileHelper.JSON
             }
             catch (Exception ex)
             {
-                errorMessageBoxShown = true;
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
 
-                //MessageBox
-                MessageBox.Show($"Error: {ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
         }
 
         public static void WriteDataToFileJSON<T>(string selectedFile, T data)
         {
-            string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
+            string fullFilePath = Path.Combine(dataDirectoryPath, selectedFile);
 
             try
             {
                 string jsonData = JsonConvert.SerializeObject(data, Formatting.Indented);
-                File.WriteAllText(filefullPath, jsonData);
+                File.WriteAllText(fullFilePath, jsonData);
+
+                //Verify written data
+                #region Verify written data
+
+                bool isVerified = VerifyData(fullFilePath, data);
+
+                if (isVerified)
+                {
+                    //all good
+                }
+                else
+                {
+                    if (!errorMessageBoxShown)
+                    {
+                        errorMessageBoxShown = true;
+
+                        //MessageBox
+                        MessageBox.Show($"Error: \n" + "Written data were not verified. Please check writting data and the data itself.\n", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    }
+                }
+
+                #endregion
             }
             catch (Exception ex)
             {
@@ -111,31 +137,35 @@ namespace JAN0837_BP.FileHelper.JSON
 
         public static T ReadDataFromFile<T>(string selectedFile)
         {
-            string filefullPath = Path.Combine(dataDirectoryPath, selectedFile);
+            string fileFullPath = Path.Combine(dataDirectoryPath, selectedFile);
 
             try
             {
+                EnsureFileExists(fileFullPath);
 
+                string jsonData = File.ReadAllText(fileFullPath);
+                return JsonConvert.DeserializeObject<T>(jsonData);
             }
             catch (Exception ex)
             {
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
 
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
-
-            if (File.Exists(filefullPath))
-            {
-                string jsonData = File.ReadAllText(filefullPath);
-                return JsonConvert.DeserializeObject<T>(jsonData);
-            }
-
+                        
             return default(T);
         }
 
         public static void AddDataToFile(object data, string selectedFile, string sectionName)
         {
-            string fullfilePath = Path.Combine(dataDirectoryPath, selectedFile);
+            string fullFilePath = Path.Combine(dataDirectoryPath, selectedFile);
 
-            string existingJson = File.ReadAllText(fullfilePath);
+            string existingJson = File.ReadAllText(fullFilePath);
 
             /*
             var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson);
@@ -173,9 +203,58 @@ namespace JAN0837_BP.FileHelper.JSON
             jsonData[sectionName] = dataObject;
 
             string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
-            File.WriteAllText(fullfilePath, updatedJson);
+            File.WriteAllText(fullFilePath, updatedJson);
+
+            //Verify written data
+            #region Verify written data
+
+            bool isVerified = VerifyData(fullFilePath, data);
+
+            if (isVerified)
+            {
+                //all good
+            }
+            else
+            {
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: \n" + "Written data were not verified. Please check writting data and the data itself.\n", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+
+            #endregion
         }
 
+        public static bool VerifyData<T>(string filePath, T originalData)
+        {
+            try
+            {
+                EnsureFileExists(filePath);
+
+                string jsonDataRead = File.ReadAllText(filePath);
+                T readData = JsonConvert.DeserializeObject<T>(jsonDataRead);
+
+                return JsonConvert.SerializeObject(originalData) == JsonConvert.SerializeObject(readData);
+                
+            }
+            catch (Exception ex)
+            { 
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+
+                return false;
+            }
+        }
 
     }
 }
