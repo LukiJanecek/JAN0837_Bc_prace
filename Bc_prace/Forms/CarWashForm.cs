@@ -47,7 +47,8 @@ namespace Bc_prace
         public S7Client client;
 
         //MessageBox control
-        private bool errorMessageBoxShown = false;
+        public static bool exceptionMessageBoxShown = false;
+        public static bool errorMessageBoxShown = false;
 
         private int carCurrentPoint = 1;
 

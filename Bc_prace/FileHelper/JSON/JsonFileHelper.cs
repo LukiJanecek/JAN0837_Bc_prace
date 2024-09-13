@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace JAN0837_BP.FileHelper.JSON
 {
     public static class JsonFileHelper
     {
+        public static bool exceptionMessageBoxShown = false;
         public static bool errorMessageBoxShown = false;
 
         public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
@@ -34,12 +36,18 @@ namespace JAN0837_BP.FileHelper.JSON
             }
             catch (Exception ex)
             {
-                if (!errorMessageBoxShown)
+                if (!exceptionMessageBoxShown)
                 {
-                    errorMessageBoxShown = true;
+                    exceptionMessageBoxShown = true;
+
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0); 
+                    var file = frame.GetFileName(); 
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
 
                     //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -79,12 +87,18 @@ namespace JAN0837_BP.FileHelper.JSON
             }
             catch (Exception ex)
             {
-                if (!errorMessageBoxShown)
+                if (!exceptionMessageBoxShown)
                 {
-                    errorMessageBoxShown = true;
+                    exceptionMessageBoxShown = true;
+
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0);
+                    var file = frame.GetFileName();
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
 
                     //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -114,9 +128,16 @@ namespace JAN0837_BP.FileHelper.JSON
                     {
                         errorMessageBoxShown = true;
 
+                        var stackTrace = new StackTrace(true);
+                        var frame = stackTrace.GetFrame(1); 
+                        var file = frame.GetFileName(); 
+                        var line = frame.GetFileLineNumber();
+                        string title = "Error MessageBox";
+
                         //MessageBox
-                        MessageBox.Show($"Error: \n" + "Written data were not verified. Please check writting data and the data itself.\n", "Error",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show($"Error: \nFile: {file}\nLine: {line}\n\n" + 
+                            "Written data were not verified. Please check writting data and the data itself.\n", 
+                            title, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     }
                 }
 
@@ -128,8 +149,14 @@ namespace JAN0837_BP.FileHelper.JSON
                 {
                     errorMessageBoxShown = true;
 
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0);
+                    var file = frame.GetFileName();
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
+
                     //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -152,8 +179,14 @@ namespace JAN0837_BP.FileHelper.JSON
                 {
                     errorMessageBoxShown = true;
 
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0);
+                    var file = frame.GetFileName();
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
+
                     //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
@@ -227,6 +260,28 @@ namespace JAN0837_BP.FileHelper.JSON
             }
 
             #endregion
+
+            try
+            {
+
+            }
+            catch (Exception ex) 
+            {
+                if (!errorMessageBoxShown)
+                {
+                    errorMessageBoxShown = true;
+
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0);
+                    var file = frame.GetFileName();
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
         }
 
         public static bool VerifyData<T>(string filePath, T originalData)
@@ -247,8 +302,14 @@ namespace JAN0837_BP.FileHelper.JSON
                 {
                     errorMessageBoxShown = true;
 
+                    var stackTrace = new StackTrace(ex, true);
+                    var frame = stackTrace.GetFrame(0);
+                    var file = frame.GetFileName();
+                    var line = frame.GetFileLineNumber();
+                    string title = "Exception MessageBox";
+
                     //MessageBox
-                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                    MessageBox.Show($"Error: {ex.Message}\nFile: {file}\nLine: {line}", title,
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
 

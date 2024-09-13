@@ -29,7 +29,8 @@ namespace Bc_prace
         public S7Client client = new S7Client();
 
         //MessageBox control
-        private bool errorMessageBoxShown;
+        public static bool exceptionMessageBoxShown = false;
+        public static bool errorMessageBoxShown = false;
 
         //Paths
         public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));

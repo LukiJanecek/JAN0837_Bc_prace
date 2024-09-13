@@ -48,7 +48,8 @@ namespace Bc_prace.Forms
         public S7Client client;
 
         //MessageBox control
-        private bool errorMessageBoxShown = false;
+        public static bool exceptionMessageBoxShown = false;
+        public static bool errorMessageBoxShown = false;
 
         //Variables 
         #region Variables 
@@ -73,7 +74,7 @@ namespace Bc_prace.Forms
 
         //Functions for work with JSON files
         #region Functions for work with JSON files
-        
+
         public static Header_json_Class CreateHeader()
         {
             Header_json_Class result = new Header_json_Class
@@ -205,14 +206,12 @@ namespace Bc_prace.Forms
                 #region Action on variable value
 
                 #endregion
-
-                errorMessageBoxShown = false;
             }
             catch (Exception ex)
             {
-                if (!errorMessageBoxShown)
+                if (!exceptionMessageBoxShown)
                 {
-                    errorMessageBoxShown = true;
+                    exceptionMessageBoxShown = true;
 
                     //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
@@ -802,6 +801,45 @@ namespace Bc_prace.Forms
             }
         }
 
-        
+        private void btnShowErrorMessageBox_Click(object sender, EventArgs e)
+        {
+            if (!errorMessageBoxShown)
+            {
+                errorMessageBoxShown = true;
+
+                var stackTrace = new StackTrace(true);
+                var frame = stackTrace.GetFrame(0);
+                var file = frame.GetFileName();
+                var line = frame.GetFileLineNumber();
+                string title = "Error MessageBox";
+
+                //MessageBox
+                MessageBox.Show($"Error: Message\nFile: {file}\nLine: {line}", title,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnShowExceptionMessageBox_Click(object sender, EventArgs e)
+        {
+            if (!exceptionMessageBoxShown)
+            {
+                exceptionMessageBoxShown = true;
+
+                var stackTrace = new StackTrace(true);
+                var frame = stackTrace.GetFrame(0);
+                var file = frame.GetFileName();
+                var line = frame.GetFileLineNumber();
+                string title = "Exception MessageBox";
+
+                //MessageBox
+                MessageBox.Show($"Error: Message\nFile: {file}\nLine: {line}", title,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void statusStripTestForm_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

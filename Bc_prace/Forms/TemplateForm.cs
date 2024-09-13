@@ -39,7 +39,8 @@ namespace Bc_prace.Forms
         public S7Client client;
 
         //MessageBox control
-        private bool errorMessageBoxShown = false;
+        public static bool exceptionMessageBoxShown = false;
+        public static bool errorMessageBoxShown = false;
 
         //Variables 
         #region Variables 

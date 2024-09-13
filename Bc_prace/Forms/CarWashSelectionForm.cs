@@ -40,7 +40,9 @@ namespace Bc_prace
 
         S7Client client;
 
-        private bool errorMessageBoxShown = false;
+        //MessageBox control
+        public static bool exceptionMessageBoxShown = false;
+        public static bool errorMessageBoxShown = false;
 
         //DB11 => Maintain_DB 
         private int DBNumber_DB11 = 11;

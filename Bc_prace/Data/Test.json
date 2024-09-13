@@ -1,13 +1,5 @@
 {
   "title": "Test file",
-  "data_time": "2024-09-12 21:00:22",
-  "message": "Here is some test data: \n",
-  "TestDB": {
-    "PLC_Int1": 5,
-    "PLC_Bool1": false,
-    "PLC_Time1": 5,
-    "PLC_Int2": 5,
-    "PLC_Bool2": false,
-    "PLC_Time2": 5
-  }
+  "data_time": "2024-09-13 16:31:50",
+  "message": "Here is some test data: \n"
 }
