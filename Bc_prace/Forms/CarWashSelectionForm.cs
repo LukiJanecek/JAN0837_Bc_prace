@@ -351,12 +351,14 @@ namespace Bc_prace
 
                 */
 
-                errorMessageBoxShown = false;
+                exceptionMessageBoxShown = false;
             }
             catch (Exception ex)
             {
-                if (!errorMessageBoxShown)
+                if (!exceptionMessageBoxShown)
                 {
+                    exceptionMessageBoxShown = true;
+
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }

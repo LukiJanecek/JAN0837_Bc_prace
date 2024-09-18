@@ -42,7 +42,6 @@ namespace Bc_prace.Forms
         public static string CarDone64Path = "car_done_64.png";
         public static string CarWashing64Path = "car_washing_64.png";
 
-
         private ChooseOptionForm chooseOptionFormInstance;
 
         public S7Client client;

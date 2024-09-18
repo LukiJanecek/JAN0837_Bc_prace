@@ -2540,9 +2540,9 @@ namespace Bc_prace
             {
                 ErrorSystem();
 
-                if (!errorMessageBoxShown)
+                if (!exceptionMessageBoxShown)
                 {
-                    errorMessageBoxShown = true;
+                    exceptionMessageBoxShown = true;
 
                     //MessageBox
                     MessageBox.Show($"Error: {ex.Message}", "Error",
