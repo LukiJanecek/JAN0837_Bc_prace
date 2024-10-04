@@ -16,6 +16,7 @@ using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using JAN0837_BP.FileHelper;
 using JAN0837_BP.FileHelper.JSON;
+using JAN0837_BP.WebApp;
 
 namespace Bc_prace.Forms
 {
@@ -40,7 +41,7 @@ namespace Bc_prace.Forms
         public static string Car64Path = "car_64.png";
         public static string CarBrushes64Path = "car_brushes_64.png";
         public static string CarDone64Path = "car_done_64.png";
-        public static string CarWashing64Path = "car_washing_64.png";
+        public static string CarWashing64Path = "car_washing_64.png"; 
 
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -836,9 +837,34 @@ namespace Bc_prace.Forms
             }
         }
 
-        private void statusStripTestForm_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private async void btnShowWebApp_Click(object sender, EventArgs e)
         {
+            ToolStripStatusLabel lblStatus1;
 
+
+            statusStripTestForm.Items.Clear();
+            lblStatus1 = new ToolStripStatusLabel("WebApp starting...");
+            statusStripTestForm.Items.Add(lblStatus1);
+
+            try
+            {
+                await Task.Run(() => WebAppStarter.StartApiServer());
+
+                statusStripTestForm.Items.Clear();
+                lblStatus1 = new ToolStripStatusLabel("WebApp running...");
+                statusStripTestForm.Items.Add(lblStatus1);
+            }
+            catch (Exception ex)
+            {
+                if (!exceptionMessageBoxShown)
+                {
+                    exceptionMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
         }
     }
 }
