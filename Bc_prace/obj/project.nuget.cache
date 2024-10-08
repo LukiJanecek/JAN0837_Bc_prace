@@ -1,19 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "JcnavqUdtbgTTkdPUiI9Lr2+jJGMLC6nJbdsq4j2g4LVj5i/XZbmcSsnABNzgNhtC2sizo4qhoKBPDYEd2OiGw==",
+  "dgSpecHash": "CkaLNIki1M4dP8EMPddSPY+gh0ejjAPZ8dLlUWGMg2Kpv3nvLi16Qcq2E4n9yUpKAR4CcruJy6QseptNvoFR3Q==",
   "success": true,
   "projectFilePath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\JAN0837_BP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\oxyplot.core\\2.2.0\\oxyplot.core.2.2.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\oxyplot.windowsforms\\2.2.0\\oxyplot.windowsforms.2.2.0.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\sharp7\\1.1.84\\sharp7.1.1.84.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore\\6.8.1\\swashbuckle.aspnetcore.6.8.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.8.1\\swashbuckle.aspnetcore.swagger.6.8.1.nupkg.sha512",
     "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.8.1\\swashbuckle.aspnetcore.swaggergen.6.8.1.nupkg.sha512",
-    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.8.1\\swashbuckle.aspnetcore.swaggerui.6.8.1.nupkg.sha512"
+    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.8.1\\swashbuckle.aspnetcore.swaggerui.6.8.1.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

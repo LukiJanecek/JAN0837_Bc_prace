@@ -16,9 +16,13 @@ namespace JAN0837_BP.WebApp
 {
     public class WebAppStarter
     {
+        private static bool exceptionMessageBoxShown = false;
+
         public static void StartApiServer()
         {
-            var builder = Host.CreateDefaultBuilder()  
+            try
+            {
+                var builder = Host.CreateDefaultBuilder()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseUrls("http://localhost:5000");
@@ -48,7 +52,7 @@ namespace JAN0837_BP.WebApp
                             });
                         }
 
-                        app.UseHttpsRedirection();
+                        //app.UseHttpsRedirection();
                         app.UseRouting();
                         app.UseAuthorization();
 
@@ -59,7 +63,23 @@ namespace JAN0837_BP.WebApp
                     });
                 });
 
-            builder.Build().Run();
+                builder.Build().Run();
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "http://localhost:5000/swagger",
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                if (!exceptionMessageBoxShown)
+                {
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }            
         }
     }
 }

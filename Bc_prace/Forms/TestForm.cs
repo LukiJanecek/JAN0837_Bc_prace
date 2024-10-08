@@ -17,6 +17,7 @@ using System.Diagnostics;
 using JAN0837_BP.FileHelper;
 using JAN0837_BP.FileHelper.JSON;
 using JAN0837_BP.WebApp;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Bc_prace.Forms
 {
@@ -41,7 +42,7 @@ namespace Bc_prace.Forms
         public static string Car64Path = "car_64.png";
         public static string CarBrushes64Path = "car_brushes_64.png";
         public static string CarDone64Path = "car_done_64.png";
-        public static string CarWashing64Path = "car_washing_64.png"; 
+        public static string CarWashing64Path = "car_washing_64.png";
 
         private ChooseOptionForm chooseOptionFormInstance;
 
@@ -841,9 +842,8 @@ namespace Bc_prace.Forms
         {
             ToolStripStatusLabel lblStatus1;
 
-
             statusStripTestForm.Items.Clear();
-            lblStatus1 = new ToolStripStatusLabel("WebApp starting...");
+            lblStatus1 = new ToolStripStatusLabel("WebApp 1 starting...");
             statusStripTestForm.Items.Add(lblStatus1);
 
             try
@@ -851,7 +851,48 @@ namespace Bc_prace.Forms
                 await Task.Run(() => WebAppStarter.StartApiServer());
 
                 statusStripTestForm.Items.Clear();
-                lblStatus1 = new ToolStripStatusLabel("WebApp running...");
+                lblStatus1 = new ToolStripStatusLabel("WebApp 1 running...");
+                statusStripTestForm.Items.Add(lblStatus1);
+            }
+            catch (Exception ex)
+            {
+                if (!exceptionMessageBoxShown)
+                {
+                    exceptionMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+        private async void btnShowWebApp2_Click(object sender, EventArgs e)
+        {
+            ToolStripStatusLabel lblStatus1;
+
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string parentDirectory = Directory.GetParent(Directory.GetParent(projectRootPath).FullName).FullName;
+            string WebAppFile = Path.Combine("JAN0837_WebApp", "JAN0837_WebApp.csproj");
+            string fullFilePath = Path.Combine(parentDirectory, WebAppFile);
+
+            statusStripTestForm.Items.Clear();
+            lblStatus1 = new ToolStripStatusLabel("WebApp 2 starting...");
+            statusStripTestForm.Items.Add(lblStatus1);
+
+            try
+            {
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    Arguments = $"run --project \"{fullFilePath}\"",
+                    UseShellExecute = true,
+                    CreateNoWindow = false
+                };
+
+                Process.Start(processInfo);
+
+                statusStripTestForm.Items.Clear();
+                lblStatus1 = new ToolStripStatusLabel("WebApp 2 running...");
                 statusStripTestForm.Items.Add(lblStatus1);
             }
             catch (Exception ex)
