@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "BX1eAOG6nRCOYf6vM5jz4u2xEJa4K2MN6LxKbJSdBExMofxHUx1myep8cW56Bb2wo4nn5lUbb8gMmee0rUu3pw==",
+  "success": true,
+  "projectFilePath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.Server\\jan0837_react.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\6.0.35\\microsoft.aspnetcore.spaproxy.6.0.35.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 namespace JAN0837_WebApp
 {
     public class Program
@@ -24,10 +26,19 @@ namespace JAN0837_WebApp
 
             app.UseAuthorization();
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "ReactFE", "build")),
+                RequestPath = "/app"
+            });
 
             app.MapControllers();
 
             app.Run();
+
+            
+
         }
     }
 }

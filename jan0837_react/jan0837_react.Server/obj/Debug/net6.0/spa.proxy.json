@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:5173",
+"LaunchCommand": "npm run dev",
+"WorkingDirectory": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.Server\\..\\jan0837_react.client",
+"MaxTimeoutInSeconds": "120"
+}
+}

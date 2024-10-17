@@ -18,6 +18,7 @@ using JAN0837_BP.FileHelper;
 using JAN0837_BP.FileHelper.JSON;
 using JAN0837_BP.WebApp;
 using Microsoft.AspNetCore.Hosting;
+using System.Security.Policy;
 
 namespace Bc_prace.Forms
 {
@@ -881,6 +882,7 @@ namespace Bc_prace.Forms
 
             try
             {
+                //starting ASP:NET project 
                 var processInfo = new ProcessStartInfo
                 {
                     FileName = "dotnet",
@@ -891,9 +893,111 @@ namespace Bc_prace.Forms
 
                 Process.Start(processInfo);
 
+                var urlSwagger = "http://localhost:5203/swagger/index.html";
+
+                //starting localhost swagger window in browser 
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = urlSwagger,
+                    UseShellExecute = true
+                });
+
+                var urlReact = "http://localhost:5203/app";
+
+                //starting localhost react window in browser 
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = urlReact,
+                    UseShellExecute = true
+                });
+
+                /*
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    Arguments = $"run --project \"{fullFilePath}\"",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true, // Přesměrování výstupu
+                    CreateNoWindow = false
+                };
+
+                using (var process = Process.Start(processInfo))
+                {
+                    // Čtení výstupu a hledání URL
+                    using (var reader = process.StandardOutput)
+                    {
+                        string? output;
+                        while ((output = reader.ReadLine()) != null)
+                        {
+                            if (output.Contains("Server running on:"))
+                            {
+                                var url = output.Split(": ")[1];
+                                // Otevření prohlížeče na správné URL
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = url,
+                                    UseShellExecute = true
+                                });
+                                break;
+                            }
+                        }
+                    }
+                }
+                */
+
                 statusStripTestForm.Items.Clear();
                 lblStatus1 = new ToolStripStatusLabel("WebApp 2 running...");
                 statusStripTestForm.Items.Add(lblStatus1);
+            }
+            catch (Exception ex)
+            {
+                if (!exceptionMessageBoxShown)
+                {
+                    exceptionMessageBoxShown = true;
+
+                    //MessageBox
+                    MessageBox.Show($"Error: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+            }
+        }
+
+        private void btnOpenReactWithASPNET_Click(object sender, EventArgs e)
+        {
+            ToolStripStatusLabel lblStatus1;
+
+            string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
+            string parentDirectory = Directory.GetParent(Directory.GetParent(projectRootPath).FullName).FullName;
+            string projectPath = Path.Combine("jan0837_react", "jan0837_react.Server", "jan0837_react.Server.csproj"); 
+            string serverfullFilePath = Path.Combine(parentDirectory, projectPath);
+
+            statusStripTestForm.Items.Clear();
+            lblStatus1 = new ToolStripStatusLabel("Openning ReactFE with ASP.NET.");
+            statusStripTestForm.Items.Add(lblStatus1);
+
+            try
+            {
+                // Starting ASP.NET Core server project
+                var processInfo = new ProcessStartInfo
+                {
+                    FileName = "dotnet",
+                    Arguments = $"run --project \"{serverfullFilePath}\"", // cesta k serverovému projektu
+                    UseShellExecute = true,
+                    CreateNoWindow = false
+                };
+
+                Process.Start(processInfo);
+
+                // Waiting for the server to start (you can adjust the wait time)
+                System.Threading.Thread.Sleep(5000);
+
+                // Opening the client-side React project in the browser
+                var url = "http://localhost:5000"; // nebo podle toho, jaký port tvůj server běží
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
             }
             catch (Exception ex)
             {

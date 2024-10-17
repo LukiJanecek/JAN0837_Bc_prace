@@ -5,7 +5,11 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JAN0837_BP", "Bc_prace\JAN0837_BP.csproj", "{EB440898-79F2-4F53-9B35-FBB44FACF4B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAN0837_WebApp", "JAN0837_WebApp\JAN0837_WebApp.csproj", "{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JAN0837_WebApp", "JAN0837_WebApp\JAN0837_WebApp.csproj", "{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jan0837_react.Server", "jan0837_react\jan0837_react.Server\jan0837_react.Server.csproj", "{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "jan0837_react.client", "jan0837_react\jan0837_react.client\jan0837_react.client.esproj", "{8C995F14-8D93-4A0B-BBB6-5C21057C4431}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,16 @@ Global
 		{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C995F14-8D93-4A0B-BBB6-5C21057C4431}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ReactFE\**" />
+    <Content Remove="ReactFE\**" />
+    <EmbeddedResource Remove="ReactFE\**" />
+    <None Remove="ReactFE\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 

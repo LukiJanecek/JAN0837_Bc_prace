@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "oS5OtEf8SImHDMEopAQPm97tfy6gdjBvLOIzjG8EH5E=",
+  "Source": "jan0837_react.Server",
+  "BasePath": "_content/jan0837_react.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.client\\jan0837_react.client.esproj",
+      "Version": 2,
+      "Source": "jan0837_react.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

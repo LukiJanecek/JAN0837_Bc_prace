@@ -60,11 +60,13 @@
             Periodic_Function = new System.Windows.Forms.Timer(components);
             btnShowJson = new Button();
             comboBoxFileChoice = new ComboBox();
+            btnOpenReactWithASPNET = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnOpenReactWithASPNET);
             panel1.Controls.Add(btnShowWebApp2);
             panel1.Controls.Add(btnShowWebApp1);
             panel1.Controls.Add(btnShowExceptionMessageBox);
@@ -367,6 +369,17 @@
             comboBoxFileChoice.Size = new Size(235, 28);
             comboBoxFileChoice.TabIndex = 23;
             // 
+            // btnOpenReactWithASPNET
+            // 
+            btnOpenReactWithASPNET.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnOpenReactWithASPNET.Location = new Point(7, 412);
+            btnOpenReactWithASPNET.Name = "btnOpenReactWithASPNET";
+            btnOpenReactWithASPNET.Size = new Size(177, 75);
+            btnOpenReactWithASPNET.TabIndex = 6;
+            btnOpenReactWithASPNET.Text = "Open ReactFE with ASP.NET BE";
+            btnOpenReactWithASPNET.UseVisualStyleBackColor = true;
+            btnOpenReactWithASPNET.Click += btnOpenReactWithASPNET_Click;
+            // 
             // TestForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -439,5 +452,6 @@
         private Button btnShowErrorMessageBox;
         private Button btnShowWebApp1;
         private Button btnShowWebApp2;
+        private Button btnOpenReactWithASPNET;
     }
 }
