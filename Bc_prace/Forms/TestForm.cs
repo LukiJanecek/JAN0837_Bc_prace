@@ -19,11 +19,14 @@ using JAN0837_BP.FileHelper.JSON;
 using JAN0837_BP.WebApp;
 using Microsoft.AspNetCore.Hosting;
 using System.Security.Policy;
+using System.Net.Http;
 
 namespace Bc_prace.Forms
 {
     public partial class TestForm : Form
     {
+        Process serverProcess = null;
+        
         //Paths
         public static string projectRootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\"));
         public static string dataDirectoryPath = Path.Combine(projectRootPath, "Data");
@@ -962,7 +965,7 @@ namespace Bc_prace.Forms
             }
         }
 
-        private void btnOpenReactWithASPNET_Click(object sender, EventArgs e)
+        private async void btnOpenReactWithASPNET_Click(object sender, EventArgs e)
         {
             ToolStripStatusLabel lblStatus1;
 
@@ -970,6 +973,8 @@ namespace Bc_prace.Forms
             string parentDirectory = Directory.GetParent(Directory.GetParent(projectRootPath).FullName).FullName;
             string projectPath = Path.Combine("jan0837_react", "jan0837_react.Server", "jan0837_react.Server.csproj"); 
             string serverfullFilePath = Path.Combine(parentDirectory, projectPath);
+
+            int port = int.TryParse(Environment.GetEnvironmentVariable("ASPNETCORE_PORT"), out var envPort) ? envPort : 5000;
 
             statusStripTestForm.Items.Clear();
             lblStatus1 = new ToolStripStatusLabel("Openning ReactFE with ASP.NET.");
@@ -982,11 +987,41 @@ namespace Bc_prace.Forms
                 {
                     FileName = "dotnet",
                     Arguments = $"run --project \"{serverfullFilePath}\"", // cesta k serverovému projektu
-                    UseShellExecute = true,
-                    CreateNoWindow = false
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true, // Přesměrování výstupu pro sledování
+                    RedirectStandardError = true,  // Přesměrování chybového výstupu
+                    CreateNoWindow = true
+                };
+
+                serverProcess = new Process
+                {
+                    StartInfo = processInfo,
+                    EnableRaisingEvents = true // Povolit události jako 'Exited'
+                };
+
+                serverProcess.Exited += (sender, e) =>
+                {
+                    //build či proces je dokončen 
                 };
 
                 Process.Start(processInfo);
+
+                string output = serverProcess.StandardOutput.ReadToEnd();
+                string errorOutput = serverProcess.StandardError.ReadToEnd();
+
+                // Případně pokud chceš čekat, až proces skončí synchronně
+                serverProcess.WaitForExit();
+
+                // Kontrola, jestli server naslouchá na portu
+                bool isRunning = await IsServerRunningAsync(port);
+                if (isRunning)
+                {
+                    MessageBox.Show($"Server běží na localhost:{port}");
+                }
+                else
+                {
+                    MessageBox.Show($"Server na localhost:{port} nebyl nalezen.");
+                }
 
                 // Waiting for the server to start (you can adjust the wait time)
                 System.Threading.Thread.Sleep(5000);
@@ -1009,6 +1044,24 @@ namespace Bc_prace.Forms
                     MessageBox.Show($"Error: {ex.Message}", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
+            }
+        }
+
+        private async Task<bool> IsServerRunningAsync(int port)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    // Kontrola dostupnosti serveru na localhost:port
+                    var response = await client.GetAsync($"http://localhost:{port}");
+                    return response.IsSuccessStatusCode;
+                }
+            }
+            catch (HttpRequestException)
+            {
+                // Server není dostupný
+                return false;
             }
         }
     }

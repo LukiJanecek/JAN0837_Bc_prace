@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            btnOpenReactWithASPNET = new Button();
             btnShowWebApp2 = new Button();
             btnShowWebApp1 = new Button();
             btnShowExceptionMessageBox = new Button();
@@ -39,7 +40,6 @@
             userControlSablona1 = new JAN0837_BP.Controls.UserControlSablona();
             btnSendToPLC = new Button();
             listBoxJSON = new ListBox();
-            statusStripTestForm = new StatusStrip();
             listBoxPath = new ListBox();
             textBoxInt1 = new TextBox();
             textBoxBool2 = new TextBox();
@@ -60,7 +60,7 @@
             Periodic_Function = new System.Windows.Forms.Timer(components);
             btnShowJson = new Button();
             comboBoxFileChoice = new ComboBox();
-            btnOpenReactWithASPNET = new Button();
+            statusStripTestForm = new StatusStrip();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -79,6 +79,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(187, 799);
             panel1.TabIndex = 0;
+            // 
+            // btnOpenReactWithASPNET
+            // 
+            btnOpenReactWithASPNET.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnOpenReactWithASPNET.Location = new Point(7, 412);
+            btnOpenReactWithASPNET.Name = "btnOpenReactWithASPNET";
+            btnOpenReactWithASPNET.Size = new Size(177, 75);
+            btnOpenReactWithASPNET.TabIndex = 6;
+            btnOpenReactWithASPNET.Text = "Open ReactFE with ASP.NET BE";
+            btnOpenReactWithASPNET.UseVisualStyleBackColor = true;
+            btnOpenReactWithASPNET.Click += btnOpenReactWithASPNET_Click;
             // 
             // btnShowWebApp2
             // 
@@ -178,18 +189,6 @@
             listBoxJSON.Name = "listBoxJSON";
             listBoxJSON.Size = new Size(254, 404);
             listBoxJSON.TabIndex = 3;
-            // 
-            // statusStripTestForm
-            // 
-            statusStripTestForm.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            statusStripTestForm.Dock = DockStyle.None;
-            statusStripTestForm.ImageScalingSize = new Size(20, 20);
-            statusStripTestForm.Location = new Point(0, 776);
-            statusStripTestForm.Name = "statusStripTestForm";
-            statusStripTestForm.Padding = new Padding(1, 0, 16, 0);
-            statusStripTestForm.Size = new Size(202, 22);
-            statusStripTestForm.TabIndex = 4;
-            statusStripTestForm.Text = "statusStrip1";
             // 
             // listBoxPath
             // 
@@ -369,22 +368,21 @@
             comboBoxFileChoice.Size = new Size(235, 28);
             comboBoxFileChoice.TabIndex = 23;
             // 
-            // btnOpenReactWithASPNET
+            // statusStripTestForm
             // 
-            btnOpenReactWithASPNET.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnOpenReactWithASPNET.Location = new Point(7, 412);
-            btnOpenReactWithASPNET.Name = "btnOpenReactWithASPNET";
-            btnOpenReactWithASPNET.Size = new Size(177, 75);
-            btnOpenReactWithASPNET.TabIndex = 6;
-            btnOpenReactWithASPNET.Text = "Open ReactFE with ASP.NET BE";
-            btnOpenReactWithASPNET.UseVisualStyleBackColor = true;
-            btnOpenReactWithASPNET.Click += btnOpenReactWithASPNET_Click;
+            statusStripTestForm.ImageScalingSize = new Size(20, 20);
+            statusStripTestForm.Location = new Point(0, 775);
+            statusStripTestForm.Name = "statusStripTestForm";
+            statusStripTestForm.Size = new Size(1007, 24);
+            statusStripTestForm.TabIndex = 24;
+            statusStripTestForm.Text = "statusStrip1";
             // 
             // TestForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1194, 799);
+            Controls.Add(statusStripTestForm);
             Controls.Add(comboBoxFileChoice);
             Controls.Add(btnShowJson);
             Controls.Add(listBoxJSONVariables);
@@ -404,7 +402,6 @@
             Controls.Add(textBoxBool2);
             Controls.Add(textBoxInt1);
             Controls.Add(listBoxPath);
-            Controls.Add(statusStripTestForm);
             Controls.Add(listBoxJSON);
             Controls.Add(btnSendToPLC);
             Controls.Add(userControlSablona1);
@@ -428,7 +425,6 @@
         private JAN0837_BP.Controls.UserControlSablona userControlSablona1;
         private Button btnSendToPLC;
         private ListBox listBoxJSON;
-        private StatusStrip statusStripTestForm;
         private ListBox listBoxPath;
         private TextBox textBoxInt1;
         private TextBox textBoxBool2;
@@ -453,5 +449,6 @@
         private Button btnShowWebApp1;
         private Button btnShowWebApp2;
         private Button btnOpenReactWithASPNET;
+        private StatusStrip statusStripTestForm;
     }
 }

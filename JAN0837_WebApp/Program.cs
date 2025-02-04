@@ -37,7 +37,21 @@ namespace JAN0837_WebApp
 
             app.Run();
 
-            
+            var urls = app.Urls;
+
+            foreach (var url in urls)
+            {
+                Console.WriteLine(url);
+            }
+
+            var addressFeature = app.Services.GetService<Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature>();
+            if (addressFeature != null)
+            {
+                foreach (var address in addressFeature.Addresses)
+                {
+                    Console.WriteLine($"Server is running on: {address}");
+                }
+            }
 
         }
     }

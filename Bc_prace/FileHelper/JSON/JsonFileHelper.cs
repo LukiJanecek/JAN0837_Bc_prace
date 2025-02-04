@@ -228,11 +228,11 @@ namespace JAN0837_BP.FileHelper.JSON
             var jsonData = JsonConvert.DeserializeObject<JObject>(existingJson) ?? new JObject();
 
             var dataObject = JObject.FromObject(data);
-
+            /*
             dataObject.Remove("title");
             dataObject.Remove("data_time");
             dataObject.Remove("message");
-
+            */
             jsonData[sectionName] = dataObject;
 
             string updatedJson = JsonConvert.SerializeObject(jsonData, Formatting.Indented);
