@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\programovani_kody\\c#\\jan0837_bc_prace\\bc_prace\\forms\\testform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\testform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}|jan0837_react\\jan0837_react.Server\\jan0837_react.Server.csproj|c:\\programovani_kody\\c#\\jan0837_bc_prace\\jan0837_react\\jan0837_react.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6F28CF7-DC27-41CA-B620-A84E69C0B38B}|jan0837_react\\jan0837_react.Server\\jan0837_react.Server.csproj|solutionrelative:jan0837_react\\jan0837_react.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}|JAN0837_WebApp\\JAN0837_WebApp.csproj|C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A1AE5809-5BC5-4C32-9FAF-CC68C49F75A7}|JAN0837_WebApp\\JAN0837_WebApp.csproj|solutionrelative:jan0837_webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\bc_prace\\webapp\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\webapp\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\bc_prace\\webapp\\webappstarter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\webapp\\webappstarter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\programovani_kody\\c#\\jan0837_bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,17 +13,34 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1372,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 204,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChooseOptionForm.cs",
+              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAYwB4CAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T07:47:53.286Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 918,
+          "DockedWidth": 915,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -50,82 +51,11 @@
         },
         {
           "DockedWidth": 915,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.Server\\Program.cs",
-              "RelativeDocumentMoniker": "jan0837_react\\jan0837_react.Server\\Program.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.Server\\Program.cs",
-              "RelativeToolTip": "jan0837_react\\jan0837_react.Server\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T11:07:14.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestForm.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TestForm.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Forms\\TestForm.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TestForm.cs",
-              "RelativeToolTip": "Bc_prace\\Forms\\TestForm.cs",
-              "ViewState": "AQIAAEgDAAAAAAAAAAAQwFYDAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:15:46.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "WebAppStarter.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\WebApp\\WebAppStarter.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\WebApp\\WebAppStarter.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\WebApp\\WebAppStarter.cs",
-              "RelativeToolTip": "Bc_prace\\WebApp\\WebAppStarter.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACUAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T15:27:53.374Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Controller.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\WebApp\\Controller.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\WebApp\\Controller.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\WebApp\\Controller.cs",
-              "RelativeToolTip": "Bc_prace\\WebApp\\Controller.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T16:12:23.533Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 681,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\JAN0837_WebApp\\Program.cs",
-              "RelativeDocumentMoniker": "JAN0837_WebApp\\Program.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\JAN0837_WebApp\\Program.cs",
-              "RelativeToolTip": "JAN0837_WebApp\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T11:03:48.01Z",
-              "EditorCaption": ""
             }
           ]
         }
