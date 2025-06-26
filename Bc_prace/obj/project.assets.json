@@ -199,22 +199,6 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
-      },
-      "JAN0837_WebApp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Swashbuckle.AspNetCore": "6.5.0"
-        },
-        "compile": {
-          "bin/placeholder/JAN0837_WebApp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/JAN0837_WebApp.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -751,16 +735,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "JAN0837_WebApp/1.0.0": {
-      "type": "project",
-      "path": "../JAN0837_WebApp/JAN0837_WebApp.csproj",
-      "msbuildProject": "../JAN0837_WebApp/JAN0837_WebApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "JAN0837_WebApp >= 1.0.0",
       "Microsoft.AspNet.WebApi.Client >= 6.0.0",
       "Newtonsoft.Json >= 13.0.3",
       "OxyPlot.WindowsForms >= 2.2.0",
@@ -799,11 +777,7 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {
-            "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\JAN0837_WebApp\\JAN0837_WebApp.csproj": {
-              "projectPath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\JAN0837_WebApp\\JAN0837_WebApp.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
