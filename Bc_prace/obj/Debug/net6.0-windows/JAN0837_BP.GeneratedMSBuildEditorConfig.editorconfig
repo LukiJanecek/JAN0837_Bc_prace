@@ -17,3 +17,6 @@ build_property.RootNamespace = JAN0837_BP
 build_property.ProjectDir = C:\programovani_kody\C#\JAN0837_Bc_prace\Bc_prace\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
