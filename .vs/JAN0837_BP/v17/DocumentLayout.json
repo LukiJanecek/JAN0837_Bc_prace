@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\programovani_kody\\c#\\jan0837_bc_prace\\bc_prace\\forms\\crossroadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\crossroadform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|c:\\programovani_kody\\c#\\jan0837_bc_prace\\bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB440898-79F2-4F53-9B35-FBB44FACF4B6}|Bc_prace\\JAN0837_BP.csproj|solutionrelative:bc_prace\\forms\\chooseoptionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -102,19 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
-              "RelativeDocumentMoniker": "Bc_prace\\Program.cs",
-              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
-              "RelativeToolTip": "Bc_prace\\Program.cs",
-              "ViewState": "AQIAAJ0AAAAAAAAAAAAwwBAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T16:36:00.292Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TestForm.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TestForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\TestForm.cs",
@@ -127,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TestForm.cs [Design]",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\TestForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\TestForm.cs",
@@ -138,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ChooseOptionForm.cs [Design]",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
@@ -150,20 +142,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ChooseOptionForm.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.cs",
               "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.cs",
               "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.cs",
-              "ViewState": "AgIAAE4IAAAAAAAAAAD4v1AIAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBUDAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-28T07:32:46.765Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "CrossroadForm.cs",
+              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Forms\\CrossroadForm.cs",
+              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\CrossroadForm.cs",
+              "RelativeToolTip": "Bc_prace\\Forms\\CrossroadForm.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAqwBMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T07:11:24.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
+              "RelativeDocumentMoniker": "Bc_prace\\Program.cs",
+              "ToolTip": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Program.cs",
+              "RelativeToolTip": "Bc_prace\\Program.cs",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAwwBAAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T16:36:00.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "JsonFileHelper.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\FileHelper\\JSON\\JsonFileHelper.cs",
               "RelativeDocumentMoniker": "Bc_prace\\FileHelper\\JSON\\JsonFileHelper.cs",
@@ -175,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CarWashSettingsData.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Settings\\CarWashSettingsData.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Settings\\CarWashSettingsData.cs",
@@ -187,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ChooseOptionForm.Designer.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Forms\\ChooseOptionForm.Designer.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Forms\\ChooseOptionForm.Designer.cs",
@@ -195,11 +212,12 @@
               "RelativeToolTip": "Bc_prace\\Forms\\ChooseOptionForm.Designer.cs",
               "ViewState": "AQIAAKgAAAAAAAAAAAAswMMAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T07:33:11.494Z"
+              "WhenOpened": "2025-08-28T07:33:11.494Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "DeepCloneExtensions.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Extensions\\DeepCloneExtensions.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Extensions\\DeepCloneExtensions.cs",
@@ -211,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PLC_Startup_data.json",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Data\\PLC_Startup_data.json",
               "RelativeDocumentMoniker": "Bc_prace\\Data\\PLC_Startup_data.json",
@@ -223,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ElevatorDB_Class.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Classes\\ElevatorDB_Class.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Classes\\ElevatorDB_Class.cs",
@@ -235,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "TestOperand.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Classes\\TestOperand.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Classes\\TestOperand.cs",
@@ -247,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Test_Class.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Classes\\Test_Class.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Classes\\Test_Class.cs",
@@ -259,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Template_Class.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Classes\\Template_Class.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Classes\\Template_Class.cs",
@@ -271,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Logger_file.json",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Data\\Logger_file.json",
               "RelativeDocumentMoniker": "Bc_prace\\Data\\Logger_file.json",
@@ -283,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Header_json.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Classes\\Header_json.cs",
               "RelativeDocumentMoniker": "Bc_prace\\Classes\\Header_json.cs",
@@ -295,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\jan0837_react\\jan0837_react.Server\\Program.cs",
               "RelativeDocumentMoniker": "jan0837_react\\jan0837_react.Server\\Program.cs",
@@ -307,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CarWashDB.json",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Data\\CarWashDB.json",
               "RelativeDocumentMoniker": "Bc_prace\\Data\\CarWashDB.json",
@@ -319,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "CrossroadDB.json",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Data\\CrossroadDB.json",
               "RelativeDocumentMoniker": "Bc_prace\\Data\\CrossroadDB.json",
@@ -331,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ElevatorDB.json",
               "DocumentMoniker": "C:\\programovani_kody\\C#\\JAN0837_Bc_prace\\Bc_prace\\Data\\ElevatorDB.json",
               "RelativeDocumentMoniker": "Bc_prace\\Data\\ElevatorDB.json",
